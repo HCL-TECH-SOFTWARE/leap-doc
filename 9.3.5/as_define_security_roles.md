@@ -1,17 +1,19 @@
-# Defining basic security roles for users {#definesecurityroles .task}
+# Defining basic security roles for users 
 
 Create roles for users in your organization so they can work with data that is relevant to them.
 
 HCL Leap uses a customizable role-based model to define who can access data and who can modify the application. Roles allow the assignment of data access, and application maintenance permissions.Individuals or groups are then assigned to the roles with the access component, or programmatically through web services. There are three predefined roles:
 
-Administrator
-:   A role that includes users, or groups, with administrator privileges for an application.
+#### Administrator
 
-Initiator
-:   A role that includes any user, or group, who can submit a form or initiate an application. For example, if the application was for Vacation Requests, you can allow all users in your organization to initiate, or submit, a Vacation Request.
+A role that includes users, or groups, with administrator privileges for an application.
 
-Record Owner
-:   A role that contains the user, or group, who submitted the form dynamically at run time.
+#### Initiator
+
+A role that includes any user, or group, who can submit a form or initiate an application. For example, if the application was for Vacation Requests, you can allow all users in your organization to initiate, or submit, a Vacation Request.
+
+#### Record Owner
+A role that contains the user, or group, who submitted the form dynamically at run time.
 
 Each role can be Open \(dynamic\) or Closed \(static\).
 

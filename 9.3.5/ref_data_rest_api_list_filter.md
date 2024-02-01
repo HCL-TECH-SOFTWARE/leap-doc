@@ -1,4 +1,4 @@
-# Filtering Data REST API results {#reference_eqx_gq1_4v .reference}
+# Filtering Data REST API results 
 
 The following information describes how to filter Data REST API results.
 
@@ -20,23 +20,23 @@ For example, the colon in a time value of “09:40” would need to be encoded a
 
 Two simple examples of single filter parameters are:
 
-F\_Age\_\_equals=5
+**F\_Age\_\_equals=5**
 
-author\_name\_\_equals=James%20Smith
+**author\_name\_\_equals=James%20Smith**
 
 ## Multiple Filters { .section}
 
 Multiple filter parameters can be included in a single URL along with a searchOperator parameter.
 
-OR
-:   In an OR relationship, any one of the filters is true.
+**OR**
+In an OR relationship, any one of the filters is true.
 
     ```
     ?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=OR
     ```
 
-AND
-:   In an AND relationship, all of the filters must be true.
+**AND**
+In an AND relationship, all of the filters must be true.
 
     ```
     ?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=AND
@@ -48,17 +48,21 @@ AND
 
 Each record can use the following properties for filtering.
 
+Table 1. Metadata filtering properties
+
 |Element|Operator Type|Description|
 |-------|-------------|-----------|
 |author\_name|See the table of **String Operators**|The name of the user that initially created the record.|
-|updater\_name|The name of the user that last updated the record.|
+|updater\_name|See the table of **String Operators**|The name of the user that last updated the record.|
 |creation\_time|See the table of **Time Stamp Operators**|The time stamp of when the record was initially created.|
-|updated|The time stamp of when the record was last updated|
+|updated|See the table of **Time Stamp Operators**|The time stamp of when the record was last updated|
 |flow\_state|See the table of **Stage Operators**|The ID of the stage that the record is in. For example, “ST\_End”|
 
 ## String Operators { .section}
 
 String operators are used on the values of the following form items: **Single-Line Entry**, **Multi-Line Entry**, **Email**, **Drop Down**, **Select One**, **Select Many**, **Survey** question, **Choice Slider**, and **Website**. String operators are also used on the following metadata properties: author\_nameand updater\_name.
+
+Table 2. String operators
 
 |Operator|Description|
 |--------|-----------|
@@ -70,6 +74,8 @@ String operators are used on the values of the following form items: **Single-Li
 ## Number operators { .section}
 
 Number operators are used on the values of the following form items: **Number**, **Currency**, and**Numeric Slider**.
+
+Table 3. Number operators
 
 |Operator|Description|
 |--------|-----------|
@@ -83,6 +89,8 @@ Number operators are used on the values of the following form items: **Number**,
 ## Boolean operator { .section}
 
 This operator is only used on the value of the **Checkbox** form item.
+
+Table 4. Boolean operator
 
 |Operator|Description|
 |--------|-----------|
@@ -101,25 +109,23 @@ This operator is only used on the value of the **Checkbox** form item.
 -   Times must be passed in the format **hh:mm:ss**
 -   Remember that all values must be properly URL encoded. For example, a value of 2015-06-21T17:00:00Z**+8:00** must be encoded as 2015-06-21T17%3A00%3A00**%2B8%3A00**.
 
+Table 5. Time, Date, and Time Stamp operators
+
 |Operator|Description|
 |--------|-----------|
 |after|Filters so that the results provided come after the specified time and date.|
 |before|Filters so that the results provided come before the specified time and date.|
-|between|Filters so that the results provided fit on or within the specified times and dates. The between operator takes a value in the following format: ```
-{start moment}**A\*N\*D**{end moment}
-```
+|between|Filters so that the results provided fit on or within the specified times and dates. The between operator takes a value in the following format:|
+| |``` {start moment}**A\*N\*D**{end moment} ``` |
+| | For example, to search between the start of day 1 June 2015 and the start of day 8 June 2015 \(in Pacific Daylight Time\) the value is:|
+| | `2015-06-01T07:00:01Z**A\*N\*D**2015-06-08T07:00:01Z` |
 
-For example, to search between the start of day 1 June 2015 and the start of day 8 June 2015 \(in Pacific Daylight Time\) the value is:
-
-```
-2015-06-01T07:00:01Z**A\*N\*D**2015-06-08T07:00:01Z
-```
-
-|
 
 ## Additional Date and Time Stamp operators { .section}
 
 To adjust for different time zones, use the tzOffset URL parameter. The value is the number of seconds of offset from Coordinated Universal Time. For example, for Pacific Standard Time use tzOffset=-28000
+
+Table 6. Additional Date and Time Stamp operators
 
 |Operator|Description|
 |--------|-----------|
@@ -130,6 +136,8 @@ To adjust for different time zones, use the tzOffset URL parameter. The value is
 ## Stage ID operators { .section}
 
 Stage operators are used with the value of the flow\_state metadata property.
+
+Table 7. Stage ID operators
 
 |Operator|Description|
 |--------|-----------|

@@ -1,4 +1,4 @@
-# Mapping Data for a Service Description {#ref_service_mapping_service_description .reference}
+# Mapping Data for a Service Description 
 
 The serviceMapping element of the Service Description contains all the information needed for the HCL Leap server to map data from the Service Description inbound data to the Service Transport
 
@@ -14,22 +14,30 @@ The text of the value element is used as the value of the constant. Any XML or J
 
 Mapping Service Description parameters to Service Transport parameters, and vice versa, is defined using mapping elements. A root mapping element must be placed as a child of serviceDescription. This root mapping contains other mapping elements that describe how data is to be mapped. The source and target of a mapping are declared using attributes on the mapping element. These attributes are: source, sourceType, sourceRef, target, targetType, and targetRef. Each mapping element can also have child mapping elements that allow repeating structures and large XML or JSON documents to be produced.
 
-Mapping Structure
-:   The input and output of both Service Descriptions and Service Transports is a simple map of key value pairs. A value can be either a string, or a list of maps of key value pairs. Leap does not support a map as a value. A value of a key in one map cannot be another map, it must be either a string or a list of maps. The mapping elements within a Service Description instruct Leap on how to produce one such structure from another, potentially extracting values from strings treated as XML or JSON.
+**Mapping Structure**
 
-Mapping Definition
-:   Each mapping element within a Service Description describes how Leap must map data from a source to a destination. Each mapping is made up of a source, and a target. The value of the source and target attributes is a colon separated value containing the scheme of the value and its name. Valid values for the scheme depend on the binding in which the mapping is located, and whether the scheme refers to the source or target of the mapping. For inbound mapping, the source scheme must be parameter or constant, and the target must be transport. For outbound mapping, the source scheme must be transport or constant, and the target must be parameter. A summary of the valid schemes and their contexts are listed in Table 1. The name component of a scheme identifies the key to use when looking up a value or where to place the result.
+The input and output of both Service Descriptions and Service Transports is a simple map of key value pairs. A value can be either a string, or a list of maps of key value pairs. Leap does not support a map as a value. A value of a key in one map cannot be another map, it must be either a string or a list of maps. The mapping elements within a Service Description instruct Leap on how to produce one such structure from another, potentially extracting values from strings treated as XML or JSON.
 
-    |Scheme|Inbound|Inbound|Outbound|Outbound|
-    |------|-------|-------|--------|--------|
-    |Type|Source|Target|Source|Target|
-    |constant|Yes|No|Yes|No|
-    |parameter|Yes|No|No|Yes|
-    |transport|No|Yes|Yes|No|
+**Mapping Definition**
 
-    Both the source and target have a type which instructs Leap how to work with the value. Both ends of a mapping can contain a reference, which allows a subset of the source to be placed at a specific location within the target. Valid values for type are string, xml, jsonand list, with string being the default. If the type is xml or json, the reference represents an XPath expression that determines which nodes are affected by the mapping. A source reference is used to extract a subset of the value identified by the source scheme. A target reference is used to construct the path where the value extracted from the source is placed. If there are no nodes that match a target reference, the node and its missing parent nodes are created. For this reason, only simple XPath predicates, those that use only the and operator, are permitted. In all other cases, the value of the reference is not used and is omitted.
+Each mapping element within a Service Description describes how Leap must map data from a source to a destination. Each mapping is made up of a source, and a target. The value of the source and target attributes is a colon separated value containing the scheme of the value and its name. Valid values for the scheme depend on the binding in which the mapping is located, and whether the scheme refers to the source or target of the mapping. For inbound mapping, the source scheme must be parameter or constant, and the target must be transport. For outbound mapping, the source scheme must be transport or constant, and the target must be parameter. A summary of the valid schemes and their contexts are listed in Table 1. The name component of a scheme identifies the key to use when looking up a value or where to place the result.
 
-    Each mapping element can also contain sub-mappings, which allow repeating structures to be iterated over and built. At run time, Leap server processes the mapping elements in top-down order. Nested mappings evaluate their source and target in the context of their parent source or target mapping.
+Table 1. Summary of valid schemes and their contexts
+<br>
+
+|Scheme|Inbound|Inbound|Outbound|Outbound|
+|------|-------|-------|--------|--------|
+|Type|Source|Target|Source|Target|
+|constant|Yes|No|Yes|No|
+|parameter|Yes|No|No|Yes|
+|transport|No|Yes|Yes|No|
+<br>
+
+
+Both the source and target have a type which instructs Leap how to work with the value. Both ends of a mapping can contain a reference, which allows a subset of the source to be placed at a specific location within the target. Valid values for type are string, xml, jsonand list, with string being the default. If the type is xml or json, the reference represents an XPath expression that determines which nodes are affected by the mapping. A source reference is used to extract a subset of the value identified by the source scheme. A target reference is used to construct the path where the value extracted from the source is placed. If there are no nodes that match a target reference, the node and its missing parent nodes are created. For this reason, only simple XPath predicates, those that use only the and operator, are permitted. In all other cases, the value of the reference is not used and is omitted.
+<br>
+
+Each mapping element can also contain sub-mappings, which allow repeating structures to be iterated over and built. At run time, Leap server processes the mapping elements in top-down order. Nested mappings evaluate their source and target in the context of their parent source or target mapping.
 
 ## Run time Mapping { .section}
 

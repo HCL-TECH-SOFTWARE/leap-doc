@@ -1,4 +1,4 @@
-# Creating rules in your application {#assigningrulestowidgetsinyourform .concept}
+# Creating rules in your application 
 
 Rules help you gather the correct information from users and organize your information after data is entered in a form. You can create composite rules that govern how your form, and the data in your form behaves.
 
@@ -6,19 +6,23 @@ With the Rules feature, you can create a dynamic user experience that ensures ac
 
 Rules can be set for the following conditions:
 
-Show or Hide
-:   You can set data entry items, buttons, and containers to be hidden, or visible.
+#### Show or Hide
 
-Enable or Disable
-:   You can set buttons and data entry items as enabled or disabled.
+You can set data entry items, buttons, and containers to be hidden, or visible.
 
-Valid or Not Valid
-:   In a data entry item, such as a **Single Line Entry** field, you can set conditions on what type of information is acceptable. For example, in a timesheet application, you can set a rule that the check-out time cannot occur before a check in time.
+#### Enable or Disable
 
-Required or Not required
-:   You can choose whether you want data entry items to be mandatory, or optional.
+You can set buttons and data entry items as enabled or disabled.
 
-Additional general information on Rules:
+#### Valid or Not Valid
+
+In a data entry item, such as a **Single Line Entry** field, you can set conditions on what type of information is acceptable. For example, in a timesheet application, you can set a rule that the check-out time cannot occur before a check in time.
+
+#### Required or Not required
+
+You can choose whether you want data entry items to be mandatory, or optional.
+
+#### Additional general information on Rules
 
 -   You can add multiple Boolean operators, such as AND, and OR, for each rule. However, you cannot mix the two conditions in a rule.
 -   You can name and rename rules. It is useful to give each rule a unique and descriptive name. If you have several rules with similar operations, a descriptive name lets you quickly find the specific rule without having to open each one to view the details.

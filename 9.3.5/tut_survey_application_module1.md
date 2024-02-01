@@ -1,4 +1,4 @@
-# Building a survey with Leap {#buildingasurveyapplication .learningContent}
+# Building a survey with Leap 
 
 This tutorial contains two sections.
 
@@ -26,11 +26,13 @@ The scenario: The coffee services in your office are not ideal. Every morning in
 
 Your options:
 
-Email
-:   Send out an email to all your coworkers and ask them to provide their opinions on the coffee and how it can be improved. If you send out a mass email, sporadic responses from people arrive throughout the day, cluttering up your inbox. You must then take the feedback from the emails and collate it in a spreadsheet program, and there is no easy way to track who did not answer.
+**Email**
 
-Create a survey
-:   Create a survey form in Leap. You email the survey link to your coworkers, and they go online to provide you with feedback. All results are stored in a database and are easy to review and sort, and your email inbox is not filled with the sporadic responses.
+Send out an email to all your coworkers and ask them to provide their opinions on the coffee and how it can be improved. If you send out a mass email, sporadic responses from people arrive throughout the day, cluttering up your inbox. You must then take the feedback from the emails and collate it in a spreadsheet program, and there is no easy way to track who did not answer.
+
+**Create a survey**
+
+Create a survey form in Leap. You email the survey link to your coworkers, and they go online to provide you with feedback. All results are stored in a database and are easy to review and sort, and your email inbox is not filled with the sporadic responses.
 
 Creating a survey is the option that you select.
 

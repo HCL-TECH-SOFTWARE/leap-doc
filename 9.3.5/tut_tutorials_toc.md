@@ -1,4 +1,4 @@
-# Tutorials for app design {#tutorials .task}
+# Tutorials for app design 
 
 The HCL Leap tutorial section contains two tutorials to help you learn to use Leap.
 

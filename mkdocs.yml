@@ -82,6 +82,23 @@ nav:
           - ac_experience_builder_accessibility.md
           - Accessibility features for application designers: ac_accessibility_features_for_designers.md
           - Accessibility features for application users: ac_accessibility_features_for_users.md
+# Guide Me
+      - Guide Me:
+        - guide_me.md
+        # Tutorials    
+        - Tutorials for form design: 
+          - tut_tutorials_toc.md
+          - Video -- Creating and deploying an application using Leap: tut_video_overview.md
+          - Building a Survey application: 
+            - tut_survey_application_OV.md
+            - Building a survey with Leap: tut_survey_application_module1.md
+            - Tutorial summary: tut_survey_application_SM.md
+          - Adding tables and workflow elements to a Leap form:
+            - tut_roles_and_stages_OV.md
+            - Adding tables to forms: tut_roles_and_stages_module1.md
+            - Adding workflow Stages to a form: tut_roles_and_stages_module2.md
+            - Applying access control through Roles: tut_roles_and_stages_module3.md
+            - Tutorial summary: tut_roles_and_stages_SM.md 
 # Deploying
       - Deploying: 
         - in_overview.md
@@ -151,8 +168,8 @@ nav:
           - tr_troubleshooting_toc.md
           - Troubleshooting and support: tr_troubleshooting_and_support.md
           - Troubleshooting Leap: tr_troubleshooting.md
-# Creating and managing applications
-      - Creating and managing applications:
+# Creating and managing applications (Building Apps)
+      - Building Apps:
         - cr_creating_and_managing_toc.md
         - Creating an application: cr_creating_application_overview.md
         - Creating an application from an excel spreadsheet: cr_creating_application_excel.md
@@ -242,97 +259,80 @@ nav:
           - Service Oriented Architecture -– Service Transport:
             - ex_soa_service_transport.md
             - Creating your own custom Service Transport: ser_create_custom_service_transport.md
-# Guide Me
-      - Guide Me:
-        - guide_me.md
-        # Tutorials    
-        - Tutorials for form design: 
-          - tut_tutorials_toc.md
-          - Video -- Creating and deploying an application using Leap: tut_video_overview.md
-          - Building a Survey application: 
-            - tut_survey_application_OV.md
-            - Building a survey with Leap: tut_survey_application_module1.md
-            - Tutorial summary: tut_survey_application_SM.md
-          - Adding tables and workflow elements to a Leap form:
-            - tut_roles_and_stages_OV.md
-            - Adding tables to forms: tut_roles_and_stages_module1.md
-            - Adding workflow Stages to a form: tut_roles_and_stages_module2.md
-            - Applying access control through Roles: tut_roles_and_stages_module3.md
-            - Tutorial summary: tut_roles_and_stages_SM.md   
-        # Reference  
-        - References:
-          - reference_toc.md
-          - REST API reference:
-            - ref_rest_api_ref.md
-            - Data access REST API:
-              - ref_data_access_rest_api.md
-              - List:
-                - ref_data_rest_api_list.md
-                - Filtering Data REST API results: ref_data_rest_api_list_filter.md
-              - Retrieve: ref_data_rest_api_retrieve.md
-              - Create: ref_data_rest_api_create.md
-              - Update: ref_data_rest_api_update.md
-              - Delete: ref_data_rest_api_delete.md
-              - Metadata: ref_data_rest_api_metadata.md
-              - Retrieve Attachment: ref_data_rest_api_retrieve_attachment.md
-              - Create Attachment: ref_data_rest_api_create_attachment.md
-            - Application management REST API: ref_rest_api_auto_deploy.md
-            - Application statistics REST API: app_stats_restapi.md
-          - JavaScript API:
-            - ref_javascript_api.md
-            - Running Custom JavaScript -– Events:
-              - ref_jsapi_running_custom_js_events.md
-              - Application Events: ref_jsapi_application_events.md
-              - Form Events: ref_jsapi_form_events.md
-              - Page Events: ref_jsapi_page_events.md
-              - Item Events: ref_jsapi_item_events.md
-            - Running Custom JavaScript Files: ref_jsapi_running_external_js_files.md
-            - Reference Objects and Functions: 
-              - ref_jsapi_objects_and_functions.md
-              - Interface objects:
-                - ref_jsapi_running_external_js_files.md
-                - Application objects: ref_application_object.md
-                - Form objects: ref_form_objects.md
-                - Page and App Page objects: ref_page_app_page_objects.md
-                - Item objects: ref_item_objects.md
-                - Other objects: ref_other_objects.md
-              - Data objects: ref_jsapi_ref_data_objects.md
-              - JavaScript Security: ref_jsapi_javascript_security.md
-          - Services:
-            - ref_services_toc.md
-            - Basic Credentials Provider: ref_service_basic_credentials_provider.md
-            - Cookie Credentials Provider: ref_service_cookie_credentials_provider.md
-            - Java 2 Connector (J2C) Authentication Credentials Provider: ref_service_j2c_credentials_provider.md
-            - Service Description:
-              - ref_service_service_description.md
-              - Localizing Service Descriptions: ref_service_localizing_service_description.md
-              - Mapping Data for a Service Description: ref_service_mapping_service_description.md
-              - Deploying a Service Description: ref_service_deploying_service_description.md
-            - Using the service description tool for WSDL web service:
-              - ref_service_wsdl_ovr.md
-              - WSDL service description tool parameters: ref_service_wsdl_param.md
-              - Troubleshooting the WSDL service description generator - FAQ: tr_troubleshooting_wsdl_sd_tool.md
-            - HTTP Service Transport: ref_service_http_service_transport.md
-            - Send Email service: ref_send_email.md
-          - Embedding items in an iframe: ref_embed_iframe.md
-          - Embedding API: ref_embedding_api.md
-          - Creating customized Cascading Style Sheets: ref_customized_css.md
-          - Custom Widget API v1.0.0:
-            - customwidgetapi_landing.md
-            - Data Widgets vs Display Widgets: datawidgets_displaywidgets.md
-            - Data Types: datatypes_widgets.md
-            - Rules: rules_widgets.md
-            - Built-In Properties: builtin_properties_widgets.md
-            - Custom Properties: custom_properties_widgets.md
-            - Widgets with Options: widgets_options.md
-            - Widget Instantiation: widget_instantiation.md
-            - Validation: widget_validation.md
-            - Internationalization: widget_internationalization.md
-            - Usage of JavaScript API: widget_javaapi.md
-            - Versioning: widget_versioning.md
-            - Upgrading: widget_upgrade.md
-            - Security Considerations: widgets_security.md
-            - Incorporating third-party libraries: widgets_thirdpartylibraries.md
-            - Known limitations: widgets_limitations.md
-            - Examples: widgets_examples.md
+# Reference  
+      - References:
+        - reference_toc.md
+        - REST API reference:
+          - ref_rest_api_ref.md
+          - Data access REST API:
+            - ref_data_access_rest_api.md
+            - List:
+              - ref_data_rest_api_list.md
+              - Filtering Data REST API results: ref_data_rest_api_list_filter.md
+            - Retrieve: ref_data_rest_api_retrieve.md
+            - Create: ref_data_rest_api_create.md
+            - Update: ref_data_rest_api_update.md
+            - Delete: ref_data_rest_api_delete.md
+            - Metadata: ref_data_rest_api_metadata.md
+            - Retrieve Attachment: ref_data_rest_api_retrieve_attachment.md
+            - Create Attachment: ref_data_rest_api_create_attachment.md
+          - Application management REST API: ref_rest_api_auto_deploy.md
+          - Application statistics REST API: app_stats_restapi.md
+        - JavaScript API:
+          - ref_javascript_api.md
+          - Running Custom JavaScript -– Events:
+            - ref_jsapi_running_custom_js_events.md
+            - Application Events: ref_jsapi_application_events.md
+            - Form Events: ref_jsapi_form_events.md
+            - Page Events: ref_jsapi_page_events.md
+            - Item Events: ref_jsapi_item_events.md
+          - Running Custom JavaScript Files: ref_jsapi_running_external_js_files.md
+          - Reference Objects and Functions: 
+            - ref_jsapi_objects_and_functions.md
+            - Interface objects:
+              - ref_jsapi_running_external_js_files.md
+              - Application objects: ref_application_object.md
+              - Form objects: ref_form_objects.md
+              - Page and App Page objects: ref_page_app_page_objects.md
+              - Item objects: ref_item_objects.md
+              - Other objects: ref_other_objects.md
+            - Data objects: ref_jsapi_ref_data_objects.md
+            - JavaScript Security: ref_jsapi_javascript_security.md
+        - Services:
+          - ref_services_toc.md
+          - Basic Credentials Provider: ref_service_basic_credentials_provider.md
+          - Cookie Credentials Provider: ref_service_cookie_credentials_provider.md
+          - Java 2 Connector (J2C) Authentication Credentials Provider: ref_service_j2c_credentials_provider.md
+          - Service Description:
+            - ref_service_service_description.md
+            - Localizing Service Descriptions: ref_service_localizing_service_description.md
+            - Mapping Data for a Service Description: ref_service_mapping_service_description.md
+            - Deploying a Service Description: ref_service_deploying_service_description.md
+          - Using the service description tool for WSDL web service:
+            - ref_service_wsdl_ovr.md
+            - WSDL service description tool parameters: ref_service_wsdl_param.md
+            - Troubleshooting the WSDL service description generator - FAQ: tr_troubleshooting_wsdl_sd_tool.md
+          - HTTP Service Transport: ref_service_http_service_transport.md
+          - Send Email service: ref_send_email.md
+        - Embedding items in an iframe: ref_embed_iframe.md
+        - Embedding API: ref_embedding_api.md
+        - Creating customized Cascading Style Sheets: ref_customized_css.md
+        - Custom Widget API v1.0.0:
+          - customwidgetapi_landing.md
+          - Data Widgets vs Display Widgets: datawidgets_displaywidgets.md
+          - Data Types: datatypes_widgets.md
+          - Rules: rules_widgets.md
+          - Built-In Properties: builtin_properties_widgets.md
+          - Custom Properties: custom_properties_widgets.md
+          - Widgets with Options: widgets_options.md
+          - Widget Instantiation: widget_instantiation.md
+          - Validation: widget_validation.md
+          - Internationalization: widget_internationalization.md
+          - Usage of JavaScript API: widget_javaapi.md
+          - Versioning: widget_versioning.md
+          - Upgrading: widget_upgrade.md
+          - Security Considerations: widgets_security.md
+          - Incorporating third-party libraries: widgets_thirdpartylibraries.md
+          - Known limitations: widgets_limitations.md
+          - Examples: widgets_examples.md
           

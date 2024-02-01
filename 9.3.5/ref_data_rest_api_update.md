@@ -1,8 +1,8 @@
-# Update {#update-rest-api .reference}
+# Update 
 
 This action updates an existing record.
 
-**Note:** The curl command must be entered as a single line.
+**Note:** The **curl** command must be entered as a single line.
 
 ```
 curl --user <loginId>:<passwd> --request PUT --header "Accept:application/atom+xml" --header "Content-Type:application/atom+xml" --data-binary @put.xml
@@ -10,26 +10,31 @@ curl --user <loginId>:<passwd> --request PUT --header "Accept:application/atom+x
      cb67-4008-8219-f49a1b369f7d?freedomIdentifyKey=x" --header "Cookie: freedomIdentifyKey=x"
 ```
 
-Content-Type
-:   Indicates the type of document submitted.
+**Content-Type**
 
-    -   ATOM Feed: application/atom+xml
-    -   JSON: application/json.
+Indicates the type of document submitted.
 
-Accept
-:   Indicates the type of accepted response.
+    -   ATOM Feed: **application/atom+xml**
+    -   JSON: **application/json.**
 
-    -   ATOM Feed: application/atom+xml
-    -   JSON: application/json.
+**Accept**
 
---data-binary
-:   Provides the actual data that is PUT to the URL. In this case, it is pointing to a file, put.xml, on the local system that contains the data to send.
+Indicates the type of accepted response.
 
---request PUT
-:   Specifies the correct HTTP method verb for the action.
+    -   ATOM Feed: **application/atom+xml**
+    -   JSON: **application/json.**
 
---header "Cookie: freedomIdentifyKey=x
-:   Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the freedomIdentifyKey URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.
+**--data-binary**
+
+Provides the actual data that is PUT to the URL. In this case, it is pointing to a file, put.xml, on the local system that contains the data to send.
+
+**--request PUT**
+
+Specifies the correct HTTP method verb for the action.
+
+**--header "Cookie: freedomIdentifyKey=x**
+
+Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the **freedomIdentifyKey** URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.
 
 ## ATOM Feed {#section_afj_djl_nzb .section}
 
@@ -50,23 +55,27 @@ Example PUT data:
 </entry>
 ```
 
-<title\>
-:   The ID of the form to which this record is being submitted.
+**<title\>**
 
-<updated\>
-:   This must be included, but its value is replaced by the server with a new timestamp. A value of 1970-01-01T00:00:00Z can always be used.
+The ID of the form to which this record is being submitted.
 
-<content\>
-:   Contains the submitted data. The structure of the data within the content element is different for each application, and is based on the list of form items used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.
+**<updated\>**
 
-The root element of the submitted data, in this example the <F\_Form1\> element, is always in the null namespace, xmlns="".
-:   The root element must have the application\_uid, pressedButton, flowState, uid, and id attributes.
+This must be included, but its value is replaced by the server with a new timestamp. A value of **1970-01-01T00:00:00Z** can always be used.
 
-    -   The application\_uid is the UID of the application.
-    -   The flowState is the ID of the current stage of the record.
-    -   The pressedButton is the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.
-    -   The uid is the unique ID for the record being updated.
-    -   The id must be an integer, although the actual value is meaningless. A value of 0 can always be used.
+**<content\>**
+
+Contains the submitted data. The structure of the data within the content element is different for each application, and is based on the list of form items used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.
+
+**The root element of the submitted data, in this example the <F\_Form1\> element, is always in the null namespace, xmlns=""**
+
+The root element must have the **application\_uid, pressedButton, flowState, uid,** and **id** attributes.
+
+   - The **application\_uid** is the UID of the application.
+   - The **flowState** is the ID of the current stage of the record.
+   - The **pressedButton** is the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.
+   - The **uid** is the unique ID for the record being updated.
+   - The **id** must be an integer, although the actual value is meaningless. A value of **0** can always be used.
 
 **Note:** A PUT REST command updates an existing record with new values. All data fields in the old record will be replaced by the data fields provided in the payload. If the new submission does not include a field, the field will be updated to have an empty value even if it previously had a value \(i.e. the two records are NOT merged\).
 

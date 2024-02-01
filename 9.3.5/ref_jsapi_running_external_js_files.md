@@ -1,13 +1,22 @@
-# Running Custom JavaScript Files {#runningcustomjavascript-externalfiles .reference}
+# Running Custom JavaScript Files 
 
 Custom JavaScript™ can also be loaded from attached JavaScript files. Any .js file that is added to the application in the **Settings** \> **Files** section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.
 
-|Variable|Full name|Description|Example|Type|
-|--------|---------|-----------|-------|----|
-|app|Application object|Contains functions for accessing global general information|-   `app.getCurrentUser();`
--   A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:
+Table 1. JavaScript™ objects available in attached JavaScript™ files
 
-    ```
+<table>
+<tr>
+<td> <b>Variable</b> </td><td> <b>Full name</b> <td><b>Description</b></td> <td> <b>Example</b></td> <td> <b>Type</b>
+</tr>
+<tr>
+<td>app
+<td>Application object
+<td>Contains functions for accessing global general information
+<td>   <ul> <li>-   <code>app.getCurrentUser();</code></li>
+       <li>-   A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:</li></ol><br>
+
+
+```
 app.getSharedData().sumNumbers = function(section)
 {
 	var total = 0;
@@ -22,14 +31,18 @@ app.getSharedData().sumNumbers = function(section)
 };
     ```
 
-Then from an event where you want to sum all numbers in a section:
+<br>
+<br>
+<br>
+Then from an event where you want to sum all numbers in a section:<br>
+<br>
+   
+<code>var sub = app.getSharedData().sumNumbers(page.F_Expense);</code>
+   
 
-    ```
-var sub = app.getSharedData().sumNumbers(page.F_Expense);
-    ```
-
-
-|GUI|
+<td>GUI
+</tr>
+</table>
 
 **Note:**
 
