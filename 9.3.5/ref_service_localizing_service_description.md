@@ -12,5 +12,5 @@ Naming the .properties files is important because the Leap looks for .properties
 
 For example, if the Service Description XML file is CurrencyConvService.xml, then the default .properties file is CurrencyConvService.properties and the French messages are in a file named CurrencyConvService\_fr.properties. For details on locale specifier formats, refer to the documentation of java.util.Locale.
 
-**Parent topic:**[Service Description](ref_service_service_description.md)
+**Parent topic: **[Service Description](ref_service_service_description.md)
 

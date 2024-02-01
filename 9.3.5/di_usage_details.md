@@ -30,5 +30,5 @@ The following usage details describe the best practices and limitations for inte
     -   Some Leap items that cannot be mapped are **Image**, **HTML Fragments**, **Text**, **Button**, **Line**, **Media**, **Web Link**, **Attachment**, **Page Navigation**, **Section**, and **Tabbed Folder**.
     -   Some PDF items that cannot be mapped are **Button**, **Digital Signature**, **Image**, and **Text**.
 
-**Parent topic:**[Leap document integration](di_pop_doc_with_app_data.md)
+**Parent topic: **[Leap document integration](di_pop_doc_with_app_data.md)
 

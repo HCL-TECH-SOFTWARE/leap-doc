@@ -10,5 +10,5 @@ Screen reader compatibility
 Tab key
 :   You can navigate to any visible form item, link, or menu by pressing the **Tab** key.
 
-**Parent topic:**[Accessibility overview](ac_experience_builder_accessibility.md)
+**Parent topic: **[Accessibility overview](ac_experience_builder_accessibility.md)
 

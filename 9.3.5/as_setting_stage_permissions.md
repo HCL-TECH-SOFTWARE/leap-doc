@@ -28,5 +28,5 @@ For example, you can add a custom stage for manager approval by adding a stage, 
     Permissions must be set for each stage of a form. The permissions that are set on one stage do not carry forward to another stage.
 
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

@@ -74,5 +74,5 @@ The provider ID for the Basic Credentials Provider to enter in a Service Descrip
 </serviceDescription>
 ```
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

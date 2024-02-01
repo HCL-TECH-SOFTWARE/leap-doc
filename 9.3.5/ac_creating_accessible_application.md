@@ -16,5 +16,5 @@ HCL Leap is designed to make building accessible forms easy. For example, the ta
 -   **[Using a Text item as a label](ac_using_text_item_as_label.md)**  
 For accessibility ease of use, users might prefer to see the title of an entry field to the side of the field, rather than above the field.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

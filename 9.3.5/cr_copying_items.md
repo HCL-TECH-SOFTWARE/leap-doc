@@ -15,5 +15,5 @@ If you want to copy an item from one form to another, select the item and press 
 -   Users can only copy one item at a time.
 -   If the browser clipboard is not accessible, the copy/paste action will not be allowed.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

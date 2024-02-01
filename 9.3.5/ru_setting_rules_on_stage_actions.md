@@ -35,5 +35,5 @@ In a stage, you can build two approval buttons that appear identical, but send t
 
 The form developer sees two different buttons that perform two different actions. When you preview the form, only one Submit button appears. You can now create stages and form pages specific to the user’s salary.
 
-**Parent topic:**[Creating rules in your application](ru_creating_rules_in_your_form.md)
+**Parent topic: **[Creating rules in your application](ru_creating_rules_in_your_form.md)
 

@@ -57,5 +57,5 @@ To create a complex formula:
 
 Save and preview your form to test the formula.
 
-**Parent topic:**[Adding formulas to your application](cr_adding_formulas_toc.md)
+**Parent topic: **[Adding formulas to your application](cr_adding_formulas_toc.md)
 

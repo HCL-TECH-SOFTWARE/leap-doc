@@ -63,5 +63,5 @@ The following steps describe how to add form items to your application and to cr
     The rule is set so that if the user states they are a full-time worker, the additional fields appear and request information on the work location and job title.
 
 
-**Parent topic:**[Creating rules in your application](ru_creating_rules_in_your_form.md)
+**Parent topic: **[Creating rules in your application](ru_creating_rules_in_your_form.md)
 

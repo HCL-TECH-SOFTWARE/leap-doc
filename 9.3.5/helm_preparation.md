@@ -53,5 +53,5 @@ Sometimes you may need to increase the log level to troubleshoot unexpected beha
 -   **[Enabling additional Open Liberty features](helm_extending_image.md)**  
 Learn how to install additional Open Liberty server features by extending the Leap image.
 
-**Parent topic:**[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

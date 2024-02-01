@@ -46,5 +46,5 @@ This scenario uses a Vacation Request application to describe how to use multipl
 -   **[Saving a PDF to a file location](sub_saving_pdf.md)**  
 Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the Leap submission record, or both.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

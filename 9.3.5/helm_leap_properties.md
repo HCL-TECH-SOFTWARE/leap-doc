@@ -17,5 +17,5 @@ configuration:
 
 For more information, see [Configuration properties](co_configuration_properties.md).
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

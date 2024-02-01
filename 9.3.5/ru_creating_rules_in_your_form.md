@@ -41,5 +41,5 @@ You can set rules that govern how pages are shown or hidden in a form.
 -   **[Setting rules on Stages](ru_setting_rules_on_stage_actions.md)**  
 You can direct the workflow of an application by setting rules on buttons within Stages.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

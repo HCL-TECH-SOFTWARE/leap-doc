@@ -17,5 +17,5 @@ In the Workflow tab, you can choose what message users see when they submit a fo
     **Note:** To show no dialog clear the message field.
 
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

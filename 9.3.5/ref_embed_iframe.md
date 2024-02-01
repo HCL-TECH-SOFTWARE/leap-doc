@@ -43,5 +43,5 @@ width=value
 
 When the forms are embedded, the banner is hidden and when form is shown, the first item does not initially grab focus
 
-**Parent topic:**[Reference](reference_toc.md)
+**Parent topic: **[Reference](reference_toc.md)
 

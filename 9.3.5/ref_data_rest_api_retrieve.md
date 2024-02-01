@@ -1,8 +1,8 @@
-# Retrieve {#retrieve-rest-api .reference}
+# Retrieve 
 
 This action retrieves a single record.
 
-**Note:** The curl command must be entered as a single line.
+**Note:** The **curl** command must be entered as a single line.
 
 ```
 curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" "http://<host>:<port>/volt-api/secure/
@@ -13,15 +13,14 @@ curl --user <loginId>:<passwd> "http://<host>:<port>/volt-api/secure/
       ?itemOnly=true&format=application%2fjson"
 ```
 
-format or Accept header
-:   The format in which the data must be returned. You can use either format or Accept header.
+**format or Accept header**
 
-    -   application/atom+xml returns data as a standard ATOM feed in XML format. This is the default value.
+The format in which the data must be returned. You can use either **format** or **Accept header**.
 
-        **Note:** When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml.
-
-    -   application/json returns data in JavaScript™ Object Notation format
-    -   Set itemOnly to **true** if you want to receive a simplified response. itemOnly is only available for JSON.
+   - **application/atom+xml** returns data as a standard ATOM feed in XML format. This is the default value.<br>
+        **Note:** When using the format parameter, you must encode the value. For example, **application/atom+xml** must be inserted into the curl command as **application%2Fatom%2Bxml**.
+   -   **application/json** returns data in JavaScript™ Object Notation format
+   -   Set **itemOnly** to **true** if you want to receive a simplified response. **itemOnly** is only available for JSON.
 
 The result of this request is an ATOM Entry XML document:
 
@@ -85,5 +84,5 @@ The result of this request as a JSON document:
 
 Refer to the [List](ref_data_rest_api_list.md) action for a detailed description of the returned entry.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

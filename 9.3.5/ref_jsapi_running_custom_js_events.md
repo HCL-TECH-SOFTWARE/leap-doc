@@ -11,5 +11,5 @@ This topic describes the Page Events, and their parameters when using JavaScript
 -   **[Item Events](ref_jsapi_item_events.md)**  
 This topic describes the Item Events, and their parameters when using JavaScript API in HCL Leap.
 
-**Parent topic:**[JavaScript API](ref_javascript_api.md)
+**Parent topic: **[JavaScript API](ref_javascript_api.md)
 

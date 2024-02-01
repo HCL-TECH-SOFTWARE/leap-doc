@@ -175,5 +175,5 @@ For more examples using the HTTP Service Transport, see [Service Description](re
 </serviceDescription>
 ```
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

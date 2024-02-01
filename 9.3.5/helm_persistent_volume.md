@@ -117,5 +117,5 @@ volumes:
         storage: "250Mi" 
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

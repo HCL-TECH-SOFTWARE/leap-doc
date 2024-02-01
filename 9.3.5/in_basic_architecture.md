@@ -28,7 +28,7 @@ The components perform the following functions:
 
 -   **Email server**: Leap can optionally send emails when configured with a proper email relay.
 
-**Parent topic:**[Deploying to a traditional platform](deploytraditional_leap.md)
+**Parent topic: **[Deploying to a traditional platform](deploytraditional_leap.md)
 
 **Related information**  
 

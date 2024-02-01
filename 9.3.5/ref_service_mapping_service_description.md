@@ -62,5 +62,5 @@ When the source is a single value, that value is assigned directly to the target
 
 For more information on creating a Service Description that returns JSON, see the [developerWorks® Leap wiki](https://hclleapwiki.atlassian.net/wiki/spaces/HL/pages/33213/Creating+a+Service+Description+for+a+Service+that+Returns+JSON).
 
-**Parent topic:**[Service Description](ref_service_service_description.md)
+**Parent topic: **[Service Description](ref_service_service_description.md)
 

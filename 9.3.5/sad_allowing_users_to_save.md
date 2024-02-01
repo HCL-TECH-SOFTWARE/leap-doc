@@ -15,5 +15,5 @@ In any stage, you can enable authenticated users to save their work as a draft. 
     **Note:** The **Save Draft** button must be added manually to each stage of the form.
 
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

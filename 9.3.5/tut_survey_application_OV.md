@@ -11,5 +11,5 @@ This tutorial contains two sections.
 -   **[Tutorial summary](tut_survey_application_SM.md#)**  
 You successfully built a basic Leap application.
 
-**Parent topic:**[Tutorials for app design](tut_tutorials_toc.md)
+**Parent topic: **[Tutorials for app design](tut_tutorials_toc.md)
 

@@ -132,5 +132,5 @@ A Service Catalog is implemented in much the same manner as a Service Catalog Gr
     Multiple OSGi services can be packaged within the same OSGi bundle, so the same .jar file can be used for your custom Service Catalog Group and custom Service Catalog.
 
 
-**Parent topic:**[Providing Groups of Dynamic Services](ser_provide_groups_of_dynamic_services.md)
+**Parent topic: **[Providing Groups of Dynamic Services](ser_provide_groups_of_dynamic_services.md)
 

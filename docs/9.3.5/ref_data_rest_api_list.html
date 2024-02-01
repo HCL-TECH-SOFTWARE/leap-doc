@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#list-ref-api" class="md-skip">
+        <a href="#list" class="md-skip">
           Skip to content
         </a>
       
@@ -5030,40 +5030,41 @@
   </a>
 
 
-<h1 class="reference" id="list-ref-api">List</h1>
+<h1 id="list">List</h1>
 <p>This action retrieves a list of records.</p>
-<p><strong>Note:</strong> The curl command must be entered as a single line.</p>
+<p><strong>Note:</strong> The <strong>curl</strong> command must be entered as a single line.</p>
 <div class="highlight"><pre><span></span><code>curl --user &lt;loginId&gt;:&lt;passwd&gt; http://&lt;host&gt;:&lt;port&gt;/apps-basic/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/
      F_Form1?format=application%2Fatom%2Bxml&amp;sortBy=lastUpdated&amp;order=DESC&amp;from=10&amp;to=20
 </code></pre></div>
-<p>format or Accept header
-:   The format in which the data must be returned. You can use either format or Accept header.</p>
-<pre><code>-   application/atom+xml returns data as a standard ATOM feed in XML format. This is the default value.
-
-    **Note:** When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml.
-
--   application/x-msexcel returns data as an Excel document
--   application/vnd.oasis.opendocument.spreadsheet returns data as an OpenDocument spreadsheet
--   application/json returns data in JavaScript™ Object Notation format
-</code></pre>
-<p>sortBy
-:   The order in which the data must be returned. The default sort order is indeterminate.</p>
-<pre><code>-   lastUpdated uses the last updated date as the sort attribute.
--   itemAuthor uses the display name of the author as the sort attribute.
--   flowState uses the stage name as the sort attribute.
--   &lt;item ID\&gt; uses the values of a particular form item, for example ,F\_SingleLine, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the Multi-Line Entry, Select Many, Table, and Attachment widgets.
-</code></pre>
-<p>order
-:   The direction of the sort.</p>
-<pre><code>-   ASC uses an ascending sort order. This is the default value.
--   DESC uses a descending sort order.
-</code></pre>
-<p>from
-:   The starting offset of a range of results. The default value is 0.</p>
-<p>to
-:   The ending offset of a range of results. The default value is the end of the list. If you set a value for <strong>to</strong>, the result is not inclusive of the <strong>to</strong> value. For example, there are 100 submitted records. You want to view the results 5 per page. You set the <strong>from</strong> value to 6, and the <strong>to</strong> value to 11. Records 6 - 10 are displayed.</p>
-<p>metadata
-:   Set to <strong>true</strong> to display extra information about items in the form. This parameter is only valid for JSON.</p>
+<p><strong>format or Accept header</strong></p>
+<p>The format in which the data must be returned. You can use either format or Accept header.</p>
+<ul>
+<li><strong>application/atom+xml</strong> returns data as a standard ATOM feed in XML format. This is the default value.<br>  <strong>Note:</strong> When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml</li>
+<li><strong>application/x-msexcel</strong> returns data as an Excel document</li>
+<li><strong>application/vnd.oasis.opendocument.spreadsheet</strong> returns data as an OpenDocument spreadsheet</li>
+<li><strong>application/json</strong> returns data in JavaScript™ Object Notation format</li>
+</ul>
+<p><strong>sortBy</strong></p>
+<p>The order in which the data must be returned. The default sort order is indeterminate.</p>
+<ul>
+<li><strong>lastUpdated</strong> uses the last updated date as the sort attribute.</li>
+<li><strong>itemAuthor</strong> uses the display name of the author as the sort attribute.</li>
+<li><strong>flowState</strong> uses the stage name as the sort attribute.</li>
+<li>&lt;<em>item ID</em>&gt; uses the values of a particular form item, for example, <strong>F_SingleLine</strong>, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the <strong>Multi-Line Entry</strong>, <strong>Select Many</strong>,<strong> Table</strong>, and <strong>Attachment widgets</strong>.</li>
+</ul>
+<p><strong>order</strong></p>
+<p>The direction of the sort.</p>
+<ul>
+<li><strong>ASC</strong> uses an ascending sort order. This is the default value.</li>
+<li><strong>DESC</strong> uses a descending sort order.</li>
+</ul>
+<p><strong>from</strong></p>
+<p>The starting offset of a range of results. The default value is 0.</p>
+<p><strong>to</strong></p>
+<p>The ending offset of a range of results. The default value is the end of the list. If you set a value for <strong>to</strong>, the result is not inclusive of the <strong>to</strong> value. For example, there are 100 submitted records. You want to view the results 5 per page. You set the <strong>from</strong> value to 6, and the <strong>to</strong> value to 11. Records 6 - 10 are displayed.</p>
+<p><strong>metadata</strong></p>
+<p>Set to <strong>true</strong> to display extra information about items in the form. 
+This parameter is only valid for JSON.</p>
 <p>The result of this request is a list of records. An example result represented as an ATOM feed:</p>
 <div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot; xml:base=&quot;http://&lt;host&gt;:&lt;port&gt;/apps-basic/landing/1/app/
@@ -5117,14 +5118,14 @@
 </code></pre></div>
 <p>It is important to note:</p>
 <ul>
-<li>Each submission record is represented by an &lt;entry> within the feed.</li>
-<li>Each entry has an &lt;author> that represents the person who initially created the record.</li>
-<li>Each entry has a &lt;contributor> that represents the person who last updated the record.</li>
-<li>Each entry has a &lt;link> with rel="edit" that represents the URL to use to Retrieve and Update just this record.</li>
-<li>Each entry has a &lt;link> with rel="print" that represents the URL that, when displayed in a browser, is the print version of the record.</li>
-<li>Each entry has a &lt;link> with rel="form" that represents the URL that, when displayed in a browser, allows the editing of this record.</li>
-<li>Each entry has a &lt;content> that contains the actual data for this record.</li>
-<li>The root element of the actual data, which in this example is &lt;F_Form1>, has a generated uid attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.</li>
+<li>Each submission record is represented by an <strong><entry></strong> within the feed.</li>
+<li>Each entry has an <strong><author></strong> that represents the person who initially created the record.</li>
+<li>Each entry has a <strong><contributor></strong> that represents the person who last updated the record.</li>
+<li>Each entry has a <strong><link></strong> with <strong>rel="edit"</strong>** that represents the URL to use to Retrieve and Update just this record.</li>
+<li>Each entry has a <strong><link></strong> with <strong>rel="print"</strong>** that represents the URL that, when displayed in a browser, is the print version of the record.</li>
+<li>Each entry has a <strong><link></strong> with <strong>rel="form"</strong>** that represents the URL that, when displayed in a browser, allows the editing of this record.</li>
+<li>Each entry has a <strong><content></strong> that contains the actual data for this record.</li>
+<li>The root element of the actual data, which in this example is <strong><F\_Form1></strong>, has a generated <strong>uid</strong> attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.</li>
 </ul>
 <p>An example result represented as a JSON feed:</p>
 <div class="highlight"><pre><span></span><code>{
@@ -5193,11 +5194,8 @@
     }]
 }
 </code></pre></div>
-<ul>
-<li><strong><a href="ref_data_rest_api_list_filter.html">Filtering Data REST API results</a></strong><br />
-The following information describes how to filter Data REST API results.</li>
-</ul>
-<p><strong>Parent topic:</strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
+<p>The following information describes how to filter Data REST API results.  <strong><a href="ref_data_rest_api_list_filter.html">Filtering Data REST API results</a></strong>  </p>
+<p><strong>Parent topic: </strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
 
 
 

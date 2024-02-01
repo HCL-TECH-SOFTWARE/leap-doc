@@ -25,5 +25,5 @@ You can set rules about which search results you see, as well as what is exporte
 7.  To return to your full result set, click **Clear Filters**.
 
 
-**Parent topic:**[Exporting data from your application](da_exporting_data_from_your_application.md)
+**Parent topic: **[Exporting data from your application](da_exporting_data_from_your_application.md)
 

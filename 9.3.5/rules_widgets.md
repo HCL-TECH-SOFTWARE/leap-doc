@@ -26,5 +26,5 @@ Condition Operators:
 
 -   Based on widget's datatype.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

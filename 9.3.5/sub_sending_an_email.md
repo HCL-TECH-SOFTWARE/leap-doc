@@ -20,5 +20,5 @@ You can send one or more email on a Submit action, or send one email to multiple
     -   Populate each of the fields with information from the form. Under each field, click **Insert** and select a form item from the list.
     -   Address an email to everyone in a predefined role by clicking **Insert Item** \> **Roles**, and selecting the role that you want.
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

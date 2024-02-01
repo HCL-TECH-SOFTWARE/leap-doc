@@ -14,5 +14,5 @@ You can set Leap to redirect the user to another application, URL, form, or app 
     -   Website URL
     -   A Form or App Page
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

@@ -21,5 +21,5 @@ In this tutorial, you learned how to:
 
 For more detailed information about specific topics that are covered in this tutorial, see [Creating and managing applications](cr_creating_and_managing_toc.md) in the HCL Leap product documentation.
 
-**Parent topic:**[Building a Survey application](tut_survey_application_OV.md)
+**Parent topic: **[Building a Survey application](tut_survey_application_OV.md)
 

@@ -96,5 +96,5 @@ Example JSON payload:
 
 **Note:** The **uid** is optional. If supplied, it must match the record uid. For example: f82e576f- cb67-4008-8219-f49a1b369f7d.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

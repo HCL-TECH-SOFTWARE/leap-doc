@@ -26,5 +26,5 @@ You can use the **Table** form item to create a section where a user can submit 
     You are returned to the main form design area. The table appears on the form, and the titles of the table items are displayed as column headers.
 
 
-**Parent topic:**[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
+**Parent topic: **[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
 

@@ -29,5 +29,5 @@ In a production environment, you must create a PostgreSQL database before you in
     ```
 
 
-**Parent topic:**[Create a Database](in_create_db.md)
+**Parent topic: **[Create a Database](in_create_db.md)
 

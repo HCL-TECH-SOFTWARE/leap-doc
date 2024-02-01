@@ -16,5 +16,5 @@ After a user submits a form, you can show them the next stage of a form. For exa
     -   Show the success message in a dialog and then display a new form
     -   Show the success message in a dialog and then display the next stage of the form
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

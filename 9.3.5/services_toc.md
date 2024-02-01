@@ -9,5 +9,5 @@ You can develop, deploy, and use Service Catalogs and Service Catalog Groups wit
 -   **[Service Oriented Architecture – Service Transport](ex_soa_service_transport.md)**  
 HCL Leap has a powerful, and extensible, Service Oriented Architecture \(SOA\) integration feature. The foundation of this feature is the Service Transport.
 
-**Parent topic:**[Extending](extending_toc.md)
+**Parent topic: **[Extending](extending_toc.md)
 

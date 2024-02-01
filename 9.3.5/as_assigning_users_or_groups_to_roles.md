@@ -44,5 +44,5 @@ To add users from predefined groups:
     -   To remove a member from a group, click **Delete group** for the name of the member.
     -   To test if Leap can find a group member, click **Validate**.
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

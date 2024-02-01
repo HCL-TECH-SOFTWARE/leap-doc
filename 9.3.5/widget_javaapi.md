@@ -31,5 +31,5 @@ const myPageNavigator = {
 }
 ```
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

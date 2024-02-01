@@ -62,5 +62,5 @@ These instructions provide a general overview of adding and configuring services
 7.  Click **OK** to exit the **Service Configuration** window.
 
 
-**Parent topic:**[Incorporating web services into your applications](cr_using_apps_as_services_toc.md)
+**Parent topic: **[Incorporating web services into your applications](cr_using_apps_as_services_toc.md)
 

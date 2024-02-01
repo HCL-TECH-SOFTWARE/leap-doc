@@ -55,5 +55,5 @@ This documentation refers to the custom configuration file as custom-values.yaml
 
 **Note:** Including all of the parameters from the values.yaml is not necessary and may bloat your configuration file with values that are already present in the Leap Helm Chart. Only specify what you want to change from its default value.
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

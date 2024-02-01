@@ -12,5 +12,5 @@ environment:
        value: "-Xmx2048m"
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

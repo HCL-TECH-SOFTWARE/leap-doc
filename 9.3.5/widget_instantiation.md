@@ -26,5 +26,5 @@ The returned `object` is expected to supply the following functions:
 
 The widget creator is free to decide how they want to code and manage the widget instance internally.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

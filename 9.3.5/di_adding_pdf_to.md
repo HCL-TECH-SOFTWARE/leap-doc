@@ -22,5 +22,5 @@ The following instructions describe how to add a PDF to Leap.
     **Note:** You must save the application after the PDF is loaded. Without saving the application, the PDF is not available when you attempt to create a Service Configuration.
 
 
-**Parent topic:**[Leap document integration](di_pop_doc_with_app_data.md)
+**Parent topic: **[Leap document integration](di_pop_doc_with_app_data.md)
 

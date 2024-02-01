@@ -487,5 +487,5 @@ This service description utilizes the previous sample LDAP transport to search a
 </serviceDescription>
 ```
 
-**Parent topic:**[Service Oriented Architecture – Service Transport](ex_soa_service_transport.md)
+**Parent topic: **[Service Oriented Architecture – Service Transport](ex_soa_service_transport.md)
 

@@ -29,5 +29,5 @@ After a style sheet is uploaded, you can select it from the drop-down menu. Whil
 
 See [Creating customized Cascading Style Sheets](ref_customized_css.md) for information about creating your own custom CSS.
 
-**Parent topic:**[Using custom style sheets](ex_css_toc.md)
+**Parent topic: **[Using custom style sheets](ex_css_toc.md)
 

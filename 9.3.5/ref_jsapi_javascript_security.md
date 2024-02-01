@@ -92,5 +92,5 @@ Changing this configuration setting should only be done if all the Leaps on the 
 
 It should be noted that this configuration only applies to applications that are deployed after making this configuration change. Applications that are deployed before this configuration change must be redeployed for the configuration to take effect.
 
-**Parent topic:**[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
+**Parent topic: **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
 

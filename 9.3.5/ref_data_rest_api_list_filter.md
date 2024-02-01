@@ -172,5 +172,5 @@ This filter returns the first 20 records where the value of the F\_Number field 
 ?F_Number__lt=5&F_Number__gt=10&searchOperator=OR&to=20
 ```
 
-**Parent topic:**[List](ref_data_rest_api_list.md)
+**Parent topic: **[List](ref_data_rest_api_list.md)
 

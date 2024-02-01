@@ -16,5 +16,5 @@ There are many reasons why you might need to update, or stop, a deployed applica
         **Note:** If you want to set a Deployment period, you must stop the deployment first, set the **Start** and **Stop** dates, then deploy the application again.
 
 
-**Parent topic:**[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
+**Parent topic: **[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
 

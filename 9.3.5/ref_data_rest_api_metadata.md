@@ -35,5 +35,5 @@ dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/metadata
 }
 ```
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

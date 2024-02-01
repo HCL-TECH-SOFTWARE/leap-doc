@@ -15,5 +15,5 @@ The following topics describe and gives samples for interface objects that are u
 -   **[Other objects](ref_other_objects.md)**  
 
 
-**Parent topic:**[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
+**Parent topic: **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
 

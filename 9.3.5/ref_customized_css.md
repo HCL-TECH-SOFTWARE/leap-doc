@@ -280,5 +280,5 @@ Use a CSS development tool to test your custom CSS changes. Most web browsers co
 
 If you do not have access to a CSS development tool, an alternative approach is to place the CSS file on a web server. Reference the web location when you add the CSS file to your Leap application. You can modify the CSS file on the web server, then refresh the Leap application to pick up the changes. This approach quickly tests style changes without requiring you to repeatedly upload a new CSS file into your application, save the application, and then redeploy.
 
-**Parent topic:**[Reference](reference_toc.md)
+**Parent topic: **[Reference](reference_toc.md)
 

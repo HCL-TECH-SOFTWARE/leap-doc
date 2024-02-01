@@ -41,5 +41,5 @@ This action retrieves a list of all apps, available query parameters:
 
 This action retrieves the details for a single app.
 
-**Parent topic:**[REST API reference](ref_rest_api_ref.md)
+**Parent topic: **[REST API reference](ref_rest_api_ref.md)
 

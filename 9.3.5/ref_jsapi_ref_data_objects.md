@@ -150,5 +150,5 @@ var hdl = BOA.connectEvent("onChange", function (newValue)
 |
 |BOL.getRequired\(\)|Gets a value set previously using setRequired\(\).|
 
-**Parent topic:**[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
+**Parent topic: **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
 

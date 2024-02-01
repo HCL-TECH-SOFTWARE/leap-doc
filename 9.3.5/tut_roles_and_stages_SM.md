@@ -17,5 +17,5 @@ For more information about Stages and Access Control, see the following topics:
 -   [Adding Stages to an application](sub_adding_stages_toc.md)
 -   [Security overview](se_security_toc.md).
 
-**Parent topic:**[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
+**Parent topic: **[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
 

@@ -63,7 +63,7 @@ There are two phases to set up the Leap environment:
     **Note:** This is for DB2 databases only.
 
 
-**Parent topic:**[Deploying Leap](in_overview.md)
+**Parent topic: **[Deploying Leap](in_overview.md)
 
 **Related information**  
 

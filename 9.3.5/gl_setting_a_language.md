@@ -19,5 +19,5 @@ To set a language for an application other than your default locale:
 5.  Click **Save** to apply the changes.
 
 
-**Parent topic:**[Globalization features](gl_forms_experience_builder_globalization.md)
+**Parent topic: **[Globalization features](gl_forms_experience_builder_globalization.md)
 

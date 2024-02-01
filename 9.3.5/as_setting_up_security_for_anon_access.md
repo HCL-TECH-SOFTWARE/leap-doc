@@ -25,5 +25,5 @@ To allow anyone to complete a form anonymously, without asking for authenticatio
     This setting allows anonymous users to view responses. You can now send users the View Data URL from the **Manage** tab. For more information on the View Data URL, see [Viewing submitted responses](cr_viewing_submitted_responses.md).
 
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

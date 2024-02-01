@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#itemevents" class="md-skip">
+        <a href="#item-events" class="md-skip">
           Skip to content
         </a>
       
@@ -5038,9 +5038,10 @@
   </a>
 
 
-<h1 class="reference" id="itemevents">Item Events</h1>
+<h1 id="item-events">Item Events</h1>
 <p>This topic describes the Item Events, and their parameters when using JavaScript™ API in HCL Leap.</p>
 <p>There are many events available to hook into on an item that is accessed from the item <strong>Edit Properties</strong> dialog.</p>
+<p>Table 1. JavaScript™ objects available in item events</p>
 <table>
 <thead>
 <tr>
@@ -5096,6 +5097,7 @@
 </tr>
 </tbody>
 </table>
+<p>Table 2. Item Events</p>
 <table>
 <thead>
 <tr>
@@ -5122,73 +5124,116 @@
 </tr>
 <tr>
 <td>onItemChange</td>
-<td>Called when the item data is changed and saved into the Business Object. For some types of items, it occurs when the user tabs or switches focus, for example, when users select Number, Single Line, Multi-Line, and Currency form items. For other items, it occurs every time they make a change, such as Check Box, Survey, or drop-down. <strong>Note:</strong> You cannot change the value of an item within this event as its value has changed, and it is locked.</td>
+<td>Called when the item data is changed and saved into the Business Object. For some types of items, it occurs when the user tabs or switches focus, for example, when users select Number, Single Line, Multi-Line, and Currency form items. For other items, it occurs every time they make a change, such as Check Box, Survey, or drop-down.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Note:</strong> You cannot change the value of an item within this event as its value has changed, and it is locked.</td>
+</tr>
+<tr>
+<td>onItemFocus</td>
+<td>Called when focus is received by an item.</td>
+</tr>
+<tr>
+<td>onItemLiveChange (items which can be incrementally changed)</td>
+<td>Called every time data is entered but not yet updated to the Business Object, such as Number, Single Line, Multi-Line, and Currency.</td>
+</tr>
+<tr>
+<td>onMouseOut</td>
+<td>Called every time the mouse moves out of the item bounding area (not including label).</td>
+</tr>
+<tr>
+<td>onMouseOver</td>
+<td>Called every time the mouse moves into the item bounding area (not including label).</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>Called every time the item goes from being hidden to being shown, whether from a page flip or because of a rule or JavaScript change.</td>
+</tr>
+<tr>
+<td>onValid (only data items)</td>
+<td>Called when a data item goes from being invalid to valid.</td>
 </tr>
 </tbody>
 </table>
-<p>|
-|onItemFocus|Called when focus is received by an item.|
-|onItemLiveChange (items which can be incrementally changed)|Called every time data is entered but not yet updated to the Business Object, such as Number, Single Line, Multi-Line, and Currency.|
-|onMouseOut|Called every time the mouse moves out of the item bounding area (not including label).|
-|onMouseOver|Called every time the mouse moves into the item bounding area (not including label).|
-|onShow|Called every time the item goes from being hidden to being shown, whether from a page flip or because of a rule or JavaScript change.|
-|onValid (only data items)|Called when a data item goes from being invalid to valid.|</p>
+<p>Table 3. Item Events - Table only</p>
+<table>
+<tr>
+<td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+</tr>
+<tr>
+<td>onAdd
+<td>This event is called after an entry is added to the table. The newly added item data is available from the variable itemBO.
+<td>Add a value from the new row to a subtotal field:
+
+<div class="highlight"><pre><span></span><code>var curValue = BO.F_Total.getValue();
+curValue += itemBO.F_Price.getValue();
+BO.F_Total.setValue(curValue);
+</code></pre></div>
+
+</tr>
+<tr>
+<td>onEdit
+<td>Called after an existing row is edited by the user. The item that was edited is available from the variable itemBO.
+<td>
+</tr>
+<tr>
+<td>onRemove
+<td>Called after a row is deleted from the table by the user. The item that was deleted is available from the variable itemBO.
+<td>
+</tr>
+</table>
+
+<p>Table 4. Item Events - Tabbed Folder only</p>
 <table>
 <thead>
 <tr>
 <th>Event</th>
 <th>Description</th>
-<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>onAdd</td>
-<td>This event is called after an entry is added to the table. The newly added item data is available from the variable itemBO.</td>
-<td>Add a value from the new row to a subtotal field:```</td>
-</tr>
-<tr>
-<td>var curValue = BO.F_Total.getValue();</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>curValue += itemBO.F_Price.getValue();</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>BO.F_Total.setValue(curValue);</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="highlight"><pre><span></span><code>|
-|onEdit|Called after an existing row is edited by the user. The item that was edited is available from the variable itemBO.| |
-|onRemove|Called after a row is deleted from the table by the user. The item that was deleted is available from the variable itemBO.| |
-
-|Event|Description|
-|-----|-----------|
-|onTabSelected|Called after a tab is selected.|
-
-|Event|Description|
-|-----|-----------|
-|onCollapse|Called when the section is collapsed.|
-|onExpand|Called when the section is expanded.|
-
-|Event|Description|Example|
-|-----|-----------|-------|
-|beforeOptionsUpdate|This event is called before the options in a drop-down list are updated from a service call or from an API call. The array of options is passed in as pOptions and can be modified by the event code. By default, when a new options list is set into a drop-down list and the current selected item is not in the new list, it is added into the new list automatically. If you return false from this event, it does not copy the missing option into the new list.|```
-pOptions.push({title:&#39;Pizza&#39;, value:&#39;fooditem3&#39;});
-return false;
-</code></pre></div></td>
-<td></td>
-<td></td>
+<td>onTabSelected</td>
+<td>Called after a tab is selected.</td>
 </tr>
 </tbody>
 </table>
-<p>|</p>
-<p><strong>Parent topic:</strong><a href="ref_jsapi_running_custom_js_events.html">Running Custom JavaScript – Events</a></p>
+<p>Table 5. Item Events - Section only</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onCollapse</td>
+<td>Called when the section is collapsed.</td>
+</tr>
+<tr>
+<td>onExpand</td>
+<td>Called when the section is expanded.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 6. beforeOptionsUpdate</p>
+<table>
+<tr>
+<td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+</tr>
+<tr>
+<td>beforeOptionsUpdate
+<td>This event is called before the options in a drop-down list are updated from a service call or from an API call. The array of options is passed in as pOptions and can be modified by the event code. By default, when a new options list is set into a drop-down list and the current selected item is not in the new list, it is added into the new list automatically. If you return false from this event, it does not copy the missing option into the new list.
+<td>
+<div class="highlight"><pre><span></span><code>pOptions.push({title:&#39;Pizza&#39;, value:&#39;fooditem3&#39;});
+return false;
+</code></pre></div>
+
+</table>
+
+<p><strong>Parent topic: </strong><a href="ref_jsapi_running_custom_js_events.html">Running Custom JavaScript – Events</a></p>
 
 
 

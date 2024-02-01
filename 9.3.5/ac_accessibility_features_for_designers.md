@@ -51,5 +51,5 @@ The following [WAI ARIA](http://www.w3.org/TR/wai-aria/) attributes are automati
 -   aria-alert is used with Aria-invalid in error messages. Screen readers read the Aria-alert text to the user.
 -   aria-valuemin and aria-valuemax are used to denote if the file has an acceptable value range. If the value is outside the range, the aria-invalid attribute is set.
 
-**Parent topic:**[Accessibility overview](ac_experience_builder_accessibility.md)
+**Parent topic: **[Accessibility overview](ac_experience_builder_accessibility.md)
 

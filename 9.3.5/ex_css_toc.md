@@ -9,5 +9,5 @@ You can add custom cascading style sheet \(CSS\) themes to your HCL Leap applica
 -   **[Removing a custom style sheet](ex_removing_a_css.md)**  
 The following instructions describe how to remove a custom style sheet from the drop-down menu of available options.
 
-**Parent topic:**[Extending](extending_toc.md)
+**Parent topic: **[Extending](extending_toc.md)
 

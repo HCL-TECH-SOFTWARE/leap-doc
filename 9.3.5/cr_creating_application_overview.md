@@ -47,5 +47,5 @@ The following steps are a general overview of the lifecycle of an application.
     **Note:** As an application creator, you can edit an application at any time. If you edit a live application, you must redeploy and relaunch it after your changes are saved. If a user is entering data into an application as you redeploy, their work is not saved.
 
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

@@ -62,5 +62,5 @@ The service does not return any parameters. The service could throw the followin
 |CLFNI1804E: Email body may not be empty.|If the text content and the html content are empty|
 |CLFNI1805E: Failed to send email.|If an error is received from the mail server configured with Leap.|
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

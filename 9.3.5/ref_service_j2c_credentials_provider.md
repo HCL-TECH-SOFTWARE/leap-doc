@@ -89,5 +89,5 @@ The provider ID for the J2C Credentials Provider to enter in a Service Descripti
 </serviceDescription>
 ```
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

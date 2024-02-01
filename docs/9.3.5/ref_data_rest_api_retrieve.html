@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#retrieve-rest-api" class="md-skip">
+        <a href="#retrieve" class="md-skip">
           Skip to content
         </a>
       
@@ -5038,9 +5038,9 @@
   </a>
 
 
-<h1 class="reference" id="retrieve-rest-api">Retrieve</h1>
+<h1 id="retrieve">Retrieve</h1>
 <p>This action retrieves a single record.</p>
-<p><strong>Note:</strong> The curl command must be entered as a single line.</p>
+<p><strong>Note:</strong> The <strong>curl</strong> command must be entered as a single line.</p>
 <div class="highlight"><pre><span></span><code>curl --user &lt;loginId&gt;:&lt;passwd&gt; --header &quot;Accept:application/atom+xml&quot; &quot;http://&lt;host&gt;:&lt;port&gt;/volt-api/secure/
      org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/f82e576f-cb67-4008-8219-f49a1b369f7d&quot;
 
@@ -5048,15 +5048,14 @@ curl --user &lt;loginId&gt;:&lt;passwd&gt; &quot;http://&lt;host&gt;:&lt;port&gt
       org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/f82e576f-cb67-4008-8219-f49a1b369f7d
       ?itemOnly=true&amp;format=application%2fjson&quot;
 </code></pre></div>
-<p>format or Accept header
-:   The format in which the data must be returned. You can use either format or Accept header.</p>
-<pre><code>-   application/atom+xml returns data as a standard ATOM feed in XML format. This is the default value.
-
-    **Note:** When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml.
-
--   application/json returns data in JavaScript™ Object Notation format
--   Set itemOnly to **true** if you want to receive a simplified response. itemOnly is only available for JSON.
-</code></pre>
+<p><strong>format or Accept header</strong></p>
+<p>The format in which the data must be returned. You can use either <strong>format</strong> or <strong>Accept header</strong>.</p>
+<ul>
+<li><strong>application/atom+xml</strong> returns data as a standard ATOM feed in XML format. This is the default value.<br>
+        <strong>Note:</strong> When using the format parameter, you must encode the value. For example, <strong>application/atom+xml</strong> must be inserted into the curl command as <strong>application%2Fatom%2Bxml</strong>.</li>
+<li><strong>application/json</strong> returns data in JavaScript™ Object Notation format</li>
+<li>Set <strong>itemOnly</strong> to <strong>true</strong> if you want to receive a simplified response. <strong>itemOnly</strong> is only available for JSON.</li>
+</ul>
 <p>The result of this request is an ATOM Entry XML document:</p>
 <div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
    &lt;entry xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
@@ -5112,7 +5111,7 @@ curl --user &lt;loginId&gt;:&lt;passwd&gt; &quot;http://&lt;host&gt;:&lt;port&gt
     }
 </code></pre></div>
 <p>Refer to the <a href="ref_data_rest_api_list.html">List</a> action for a detailed description of the returned entry.</p>
-<p><strong>Parent topic:</strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
+<p><strong>Parent topic: </strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
 
 
 

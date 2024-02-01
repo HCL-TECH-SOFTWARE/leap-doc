@@ -54,5 +54,5 @@ To set up an Oracle database:
 
 The Oracle database is created.
 
-**Parent topic:**[Create a Database](in_create_db.md)
+**Parent topic: **[Create a Database](in_create_db.md)
 

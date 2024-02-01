@@ -39,5 +39,5 @@ A new image with the specified feature is installed. Use this extended image whe
 
 **Note:** This is the only supported mechanism for enabling Open Liberty features. There are many features that can be added that have not been tested by HCL and you do so at your own risk. HCL will provide best-effort support for added features as it pertains to Leap.
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

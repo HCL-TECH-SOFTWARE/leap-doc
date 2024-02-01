@@ -13,5 +13,5 @@ You can use a web service to populate to a Drop Down, Select One, and Select Man
 -   **[Integrating your application with existing HCL Leap applications](cr_using_other_apps_as_services.md)**  
 Each Leap application can be used within another Leap applications as a service.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

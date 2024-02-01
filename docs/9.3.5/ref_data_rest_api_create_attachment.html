@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference_vtk_lsf_2z" class="md-skip">
+        <a href="#create-attachment" class="md-skip">
           Skip to content
         </a>
       
@@ -5038,15 +5038,16 @@
   </a>
 
 
-<h1 class="reference" id="reference_vtk_lsf_2z">Create Attachment</h1>
+<h1 id="create-attachment">Create Attachment</h1>
 <p>This action creates a single attachment.</p>
 <div class="highlight"><pre><span></span><code>curl --user &lt;loginId&gt;:&lt;passwd&gt; -F filename=@c:\new file.doc --header &quot;Accept:application/json&quot; &quot;http://&lt;host&gt;:&lt;port&gt;/apps-basic/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/attachment/&quot;
 </code></pre></div>
-<p>Accept
-:   Indicates the type of accepted response.</p>
-<pre><code>-   ATOM: application/atom+xml
--   JSON: application/json
-</code></pre>
+<p><strong>Accept</strong></p>
+<p>Indicates the type of accepted response.</p>
+<ul>
+<li>ATOM: <strong>application/atom+xml</strong></li>
+<li>JSON: <strong>application/json</strong></li>
+</ul>
 <p>The attachment that is created must be uploaded to the server as multipart/form-data in the body of a POST.</p>
 <p>The response from this call contains the UID, ID, and filename of the newly created attachment.</p>
 <p>For example:</p>
@@ -5069,7 +5070,7 @@
 }
 </code></pre></div>
 <p>If an attachment is not associated with a form record within a certain time period (48 hours by default), the attachment is deleted automatically. Deleting the record that is associated with an attachment also deletes the attachment.</p>
-<p><strong>Parent topic:</strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
+<p><strong>Parent topic: </strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
 
 
 

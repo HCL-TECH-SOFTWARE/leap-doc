@@ -18,5 +18,5 @@ Other examples will be coming soon to [https://github.com/HCL-TECH-SOFTWARE](htt
 
 Coming soon to [https://github.com/HCL-TECH-SOFTWARE](https://github.com/HCL-TECH-SOFTWARE)
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

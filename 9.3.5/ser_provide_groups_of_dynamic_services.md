@@ -7,5 +7,5 @@ A Service Catalog Group provides a way to group web services in HCL Leap.
 -   **[Adding a Service Catalog](ser_add_service_catalog.md)**  
 A Service Catalog serves two purposes. First, a Service Catalog is a programmatic mechanism to dynamically provide Service Descriptions to HCL Leap instead of using static XML files. Second, a Service Catalog is linked to a Service Catalog Group and provides a mechanism to assign Service Descriptions to a specific Service Catalog Group.
 
-**Parent topic:**[Adding services](services_toc.md)
+**Parent topic: **[Adding services](services_toc.md)
 

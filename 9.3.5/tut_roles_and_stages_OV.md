@@ -25,5 +25,5 @@ Access control defines who is able to view and modify the form in different stag
 -   **[Tutorial summary](tut_roles_and_stages_SM.md#)**  
 You successfully completed this tutorial, which demonstrated an application with workflow and access permissions.
 
-**Parent topic:**[Tutorials for app design](tut_tutorials_toc.md)
+**Parent topic: **[Tutorials for app design](tut_tutorials_toc.md)
 

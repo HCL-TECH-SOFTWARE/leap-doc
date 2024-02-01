@@ -31,5 +31,5 @@ The following widget attributes are globalizable:
 -   `properties > (property) > defaultValue`
 -   `properties > (property) > options > (option) > title`
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

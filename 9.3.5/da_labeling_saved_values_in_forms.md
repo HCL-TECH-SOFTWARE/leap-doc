@@ -19,5 +19,5 @@ Display Values are shown to users when they view forms. By default, the Display 
 5.  If you want to have one option display to the users as a preselected default, click the radio button for the **Saved Value** field.
 
 
-**Parent topic:**[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
+**Parent topic: **[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
 

@@ -7,5 +7,5 @@
 -   **Multilingual Apps**: There is no mechanism \(beyond an app author's custom JavaScript\) to allow app authors to supply property values for an application that is to be used by end-users who speak different languages.
 -   **Author-Defined Data Constraints** - There are limited mechanisms for app authors to define data constraints on the values supplied by end-users. Values can be constrained in the UI by the custom widget itself, or by the author's custom JavaScript.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

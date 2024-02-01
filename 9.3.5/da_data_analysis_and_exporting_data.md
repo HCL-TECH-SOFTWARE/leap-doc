@@ -13,5 +13,5 @@ Data labels added to form items provide descriptive column names when data is ex
 -   **[Exporting data from your application](da_exporting_data_from_your_application.md)**  
 After users complete and submit forms, you can export the data to a spreadsheet.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

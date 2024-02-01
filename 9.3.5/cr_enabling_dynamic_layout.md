@@ -23,5 +23,5 @@ To set dynamic width on a page:
     **Note:** If you have or add a Section on the page, the Dynamic Layout settings of the Page are duplicated in the Section. For best results, Carousel mode should be used on forms that do not contain sections.
 
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

@@ -14,5 +14,5 @@ HCL Leap exports the data from your application to an Atom feed in XML format, J
 -   **[Controlling data available for export](da_controlling_data_available_for_export.md)**  
 Use Filters to set rules, and select which data you want to export.
 
-**Parent topic:**[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
+**Parent topic: **[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
 

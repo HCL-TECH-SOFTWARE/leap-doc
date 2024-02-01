@@ -50,5 +50,5 @@ The following list is a **Summary** of page chart features:
 
 **Viewing individual responses** – A list of submitted responses is displayed in a table. By clicking the row of a response, the user’s submitted form is displayed in the Application View frame. If the form contains workflow elements, such as approving or denying the form, buttons that are associated with the workflow are provided for you.
 
-**Parent topic:**[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
+**Parent topic: **[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
 

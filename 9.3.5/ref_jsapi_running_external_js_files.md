@@ -50,5 +50,5 @@ When JavaScript security is enabled: For added security, external JavaScript fil
 
 When JavaScript security is disabled: External JavaScript files that are referenced by URL are loaded by using a `<script>` tag and does not have access to the app variable. These scripts must use **window.NitroApplication** to access the Leap API functions. JavaScript files that are uploaded to the application are evaluated by using the `eval()` function.
 
-**Parent topic:**[JavaScript API](ref_javascript_api.md)
+**Parent topic: **[JavaScript API](ref_javascript_api.md)
 

@@ -91,5 +91,5 @@ The following instructions describe how to upgrade Leap by using the WebSphere®
 21. Review your changes and click **Finish**.
 
 
-**Parent topic:**[Upgrading](upgradingleap_sec.md)
+**Parent topic: **[Upgrading](upgradingleap_sec.md)
 

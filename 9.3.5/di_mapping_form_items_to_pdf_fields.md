@@ -33,5 +33,5 @@ The following instructions describe how to create a Service Configuration to map
 7.  When all inputs are mapped, click **OK**.
 
 
-**Parent topic:**[Leap document integration](di_pop_doc_with_app_data.md)
+**Parent topic: **[Leap document integration](di_pop_doc_with_app_data.md)
 

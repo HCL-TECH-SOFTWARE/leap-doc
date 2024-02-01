@@ -60,5 +60,5 @@ Table 4. General Leap information
 |Using the **Upgrade** link on the **Manage** tab.| You can upgrade an application with a new application definition using theLeap **Upgrade** feature. Upgrading replaces all access rules, business rules, formulas, interface options, Stages definitions, JavaScript™, images, and service mappings with those in the new version. It then updates the data base definition to the model described by the new application, and merges existing data into that model.|
 | | If data elements were removed in the new version, or their unique identifiers changed, the data associated with those elements is not migrated to the new application. Data elements that did not exist in the previous version, but were added in the new version, are added as columns to existing data records with a NULL value.|
 
-**Parent topic:**[Troubleshooting](tr_troubleshooting_toc.md)
+**Parent topic: **[Troubleshooting](tr_troubleshooting_toc.md)
 

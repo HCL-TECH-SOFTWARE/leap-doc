@@ -21,5 +21,5 @@ After a successful deployment, Helm responds with the following message:
 release "your-release-name" uninstalled
 ```
 
-**Parent topic:**[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

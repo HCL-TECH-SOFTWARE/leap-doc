@@ -9,5 +9,5 @@ Display Values are shown to users when they view forms. While informative, Displ
 2.  Add text in the **Data Label** field. When you export the data, the text you entered in the data label becomes the name of the column.
 
 
-**Parent topic:**[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
+**Parent topic: **[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
 

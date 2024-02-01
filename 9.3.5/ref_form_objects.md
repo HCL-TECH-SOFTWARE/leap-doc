@@ -126,5 +126,5 @@ form.sendData(BO.F_ServerURL.getValue() + "/apps/secure/org/app/b5806ef1-b784-4c
 
 |
 
-**Parent topic:**[Interface objects](ref_jsapi_user_interface_objects.md)
+**Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
 

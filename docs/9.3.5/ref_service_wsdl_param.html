@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsdlservicedescriptiontoolparameters" class="md-skip">
+        <a href="#wsdl-service-description-tool-parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -5100,20 +5100,18 @@
   </a>
 
 
-<h1 class="reference" id="wsdlservicedescriptiontoolparameters">WSDL service description tool parameters</h1>
+<h1 id="wsdl-service-description-tool-parameters">WSDL service description tool parameters</h1>
 <p>Build a command to expose services for a WSDL based web device.</p>
 <h2 class="section" id="running-the-wsdl-service-description-tool">Running the WSDL service description tool</h2>
 <p>At the command line prompt, type the following command to activate the tool:</p>
 <div class="highlight"><pre><span></span><code>java -jar serviceDescriptionGenerator.jar -wsdlFile=webService.wsdl
 </code></pre></div>
 <p>In this command,</p>
-<p>serviceDescriptionGenerator.jar
-:   is the name of the executable .jar file.</p>
-<p>-wsdlFile
-:   The command you use if the WSDL file is local.</p>
-<p>webService.wsdl
-:   is the file name of the WSDL file.</p>
+<p><strong>serviceDescriptionGenerator.jar</strong>: is the name of the executable .jar file.</p>
+<p><strong>-wsdlFile</strong>:  the command you use if the WSDL file is local.</p>
+<p><strong>webService.wsdl</strong>  is the file name of the WSDL file.</p>
 <p>Use the following options to customize the commands for your file:</p>
+<p>Table 1. WSDL command optionsSummary of the support commands </p>
 <table>
 <thead>
 <tr>
@@ -5143,143 +5141,147 @@
 <td>You can specify the locale used to generate the service description.</td>
 <td>Optional</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td>The default is English.</td>
+</tr>
+<tr>
+<td>-transformNames</td>
+<td>You can convert the service description parameter names to a more readable format. It supports camelCase, underscores and dashes.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The default is false.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The possible values are true or false.</td>
+</tr>
+<tr>
+<td>-credentialProvider</td>
+<td>Adds a credential provider to all generated service description.</td>
+<td>The values are basic and cookie.</td>
+</tr>
+<tr>
+<td>-realm</td>
+<td>Use when the credential provider is set to basic.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>-cookies</td>
+<td>Use when the credential provider is set to cookie.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>-log</td>
+<td>Set the logging level of messages displayed to the user.</td>
+<td>The default is WARNING.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The possible values are ALL, CONFIG, FINE, FINER, FINEST, INFO, OFF, SEVERE, and WARNING.</td>
+</tr>
+<tr>
+<td>-help</td>
+<td>Displays a quick reference of the commands for the tool.</td>
+<td>Optional</td>
+</tr>
 </tbody>
 </table>
-<p>The default is English.|
-|-transformNames|You can convert the service description parameter names to a more readable format. It supports camelCase, underscores and dashes.|Optional</p>
-<p>The default is false.</p>
-<p>The possible values are true or false.</p>
-<p>|
-|-credentialProvider|Adds a credential provider to all generated service description.|The values are basic and cookie.|
-|-realm|Use when the credential provider is set to basic.|Optional|
-|-cookies|Use when the credential provider is set to cookie.|Optional|
-|-log|Set the logging level of messages displayed to the user.|The default is WARNING.</p>
-<p>The possible values are ALL, CONFIG, FINE, FINER, FINEST, INFO, OFF, SEVERE, and WARNING.</p>
-<p>|
-|-help|Displays a quick reference of the commands for the tool.|Optional|</p>
 <h2 class="section" id="schema-data-type-interpretation">Schema Data Type Interpretation</h2>
 <p>In cases where an element or attribute type is a union of two or more schema data types, the parameter type will be set to string.</p>
 <p>The schema data type <code>xsd:anyType</code> is valid schema data type. However, there is no equivalent parameter type for it. Therefore, the tool is unable to create the equivalent parameter for any elements and attributes with this type.</p>
 <p>A parameter type depends on its schema data type. The following table lists the equivalent schema data types for a given parameter type.</p>
+<p>Table 2. Schema data types and its equivalent service parameter data type </p>
 <table>
-<thead>
 <tr>
-<th>Service Description Parameter Type</th>
-<th>Schema Data Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>String</td>
-<td>-   String</td>
+<td><b>Service Description Parameter Type</b> </td><td> <b>Schema Data Type</b></td>
 </tr>
 <tr>
-<td>-   gYearMonth</td>
-<td></td>
+<td>String
+<td><ul>
+<li> string></li>
+<li> gYearMonth</li>
+<li> gMonthDay</li>
+<li> gYear</li>
+<li> gDay</li>
+<li> gMonth</li>
+<li> hexBinary</li>
+<li> base64Binary</li>
+<li> anyURI</li>
+<li> QName</li>
+<li> NOTATION</li>
+<li> normalizedString</li>
+<li> token</li>
+<li> language</li>
+<li> Name</li>
+<li> NMTOKEN</li>
+<li> NCName</li>
+<li> NMTOKENS</li>
+<li> ID</li>
+<li> IDREF</li>
+<li> ENTITY</li>
+</ul>
 </tr>
 <tr>
-<td>-   gMonthDay</td>
-<td></td>
+<td>Integer
+<td><ul>
+<li> integer</li>
+<li> nonPositiveInteger</li>
+<li> long</li>
+<li> nonNegativeInteger</li>
+<li> negativeInteger</li>
+<li> int</li>
+<li> short</li>
+<li> byte</li>
+<li> unsignedLong</li>
+<li> postiveInteger</li>
+<li> unsignedInt</li>
+<li> unsignedShort</li>
+<li> unsignedByte</li>
+</ul>
 </tr>
 <tr>
-<td>-   gYear</td>
-<td></td>
+<td>Boolean
+<td>Boolean
 </tr>
 <tr>
-<td>-   gDay</td>
-<td></td>
+<td>Decimal
+<td>Decimal
 </tr>
 <tr>
-<td>-   gMonth</td>
-<td></td>
+<td>Float
+<td>|Float
 </tr>
 <tr>
-<td>-   hexBinary</td>
-<td></td>
+<td>Double
+<td>Double
 </tr>
 <tr>
-<td>-   base64Binary</td>
-<td></td>
+<td>Duration
+<td>Duration
 </tr>
 <tr>
-<td>-   anyURI</td>
-<td></td>
+<td>DateTime
+<td>DateTime
 </tr>
 <tr>
-<td>-   QName</td>
-<td></td>
+<td>Time
+<td>Time
 </tr>
 <tr>
-<td>-   NOTATION</td>
-<td></td>
+<td>Date
+<td>Date
 </tr>
-<tr>
-<td>-   normalizedString</td>
-<td></td>
-</tr>
-<tr>
-<td>-   token</td>
-<td></td>
-</tr>
-<tr>
-<td>-   language</td>
-<td></td>
-</tr>
-<tr>
-<td>-   Name</td>
-<td></td>
-</tr>
-<tr>
-<td>-   NMTOKEN</td>
-<td></td>
-</tr>
-<tr>
-<td>-   NCName</td>
-<td></td>
-</tr>
-<tr>
-<td>-   NMTOKENS</td>
-<td></td>
-</tr>
-<tr>
-<td>-   ID</td>
-<td></td>
-</tr>
-<tr>
-<td>-   IDREF</td>
-<td></td>
-</tr>
-<tr>
-<td>-   ENTITY</td>
-<td></td>
-</tr>
-</tbody>
 </table>
-<p>|
-|Integer|-   integer
--   nonPositiveInteger
--   long
--   nonNegativeInteger
--   negativeInteger
--   int
--   short
--   byte
--   unsignedLong
--   postiveInteger
--   unsignedInt
--   unsignedShort
--   unsignedByte</p>
-<p>|
-|Boolean|Boolean|
-|Decimal|Decimal|
-|Float|Float|
-|Double|Double|
-|Duration|Duration|
-|DateTime|DateTime|
-|Time|Time|
-|Date|Date|</p>
+
 <p>The parameter description contains any restrictions of an element or attribute. The description contains the schema data type, all restrictions and all values of each restriction.</p>
-<p><strong>Parent topic:</strong><a href="ref_service_wsdl_ovr.html">Using the service description tool for WSDL web service</a></p>
+<p><strong>Parent topic: </strong><a href="ref_service_wsdl_ovr.html">Using the service description tool for WSDL web service</a></p>
 
 
 

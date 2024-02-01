@@ -42,5 +42,5 @@ serviceConfig.connectEvent('onCallFinished', function(success)
 </table>
 
 
-**Parent topic:**[Running Custom JavaScript – Events](ref_jsapi_running_custom_js_events.md)
+**Parent topic: **[Running Custom JavaScript – Events](ref_jsapi_running_custom_js_events.md)
 

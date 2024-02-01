@@ -19,5 +19,5 @@ The widget `version` must follow "Semantic Versioning" \([semver.org](https://se
 
 **Note:** This Custom Widget API will also follow "semver" practices.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

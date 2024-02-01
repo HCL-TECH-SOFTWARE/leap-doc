@@ -15,5 +15,5 @@ The data may be updated by clicking **Refresh**. The data may be exported to a s
 
 For more information, see [Application statistics REST API](app_stats_restapi.md).
 
-**Parent topic:**[Administering Leap](administering_leap.md)
+**Parent topic: **[Administering Leap](administering_leap.md)
 

@@ -70,5 +70,5 @@ The provider ID for the Cookie Credentials Provider to enter in a Service Descri
 </serviceDescription>
 ```
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

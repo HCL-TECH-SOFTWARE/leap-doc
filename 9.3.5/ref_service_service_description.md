@@ -435,5 +435,5 @@ The serviceMapping element of the Service Description contains all the informati
 -   **[Deploying a Service Description](ref_service_deploying_service_description.md)**  
 This topic contains information about how to deploy an HCL Leap Service Description.
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

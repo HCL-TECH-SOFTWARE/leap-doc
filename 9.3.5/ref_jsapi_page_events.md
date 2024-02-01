@@ -55,5 +55,5 @@ if(!BO.F_Agree.getValue())
 </table>
 
 
-**Parent topic:**[Running Custom JavaScript – Events](ref_jsapi_running_custom_js_events.md)
+**Parent topic: **[Running Custom JavaScript – Events](ref_jsapi_running_custom_js_events.md)
 

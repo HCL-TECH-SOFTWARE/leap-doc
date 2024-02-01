@@ -49,5 +49,5 @@ This action retrieves a single attachment.
 -   **[Create Attachment](ref_data_rest_api_create_attachment.md)**  
 This action creates a single attachment.
 
-**Parent topic:**[REST API reference](ref_rest_api_ref.md)
+**Parent topic: **[REST API reference](ref_rest_api_ref.md)
 

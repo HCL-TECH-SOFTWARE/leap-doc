@@ -26,5 +26,5 @@ The `-f path/to/your/custom-values.yaml` parameter must point to the custom-valu
 
 The `path/to/hcl-leap-deployment-vX.X.X_XXXXXXXX-XXXX.tar.gz` is the HCL Leap Helm Chart that you extracted in the preparation steps.
 
-**Parent topic:**[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

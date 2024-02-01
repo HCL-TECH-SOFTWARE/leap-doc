@@ -1,8 +1,8 @@
-# Create {#create-rest-api .reference}
+# Create 
 
 This action creates new records.
 
-**Note:** The curl command must be entered as a single line.
+**Note:** The **curl** command must be entered as a single line.
 
 ```
 curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" --header "Content-Type:application/atom+xml" --data-binary
@@ -10,27 +10,31 @@ curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" --header "
      ?freedomIdentifyKey=x" --header "Cookie: freedomIdentifyKey=x"
 ```
 
-Content-Type
-:   Indicates the type of document submitted:
+**Content-Type**
 
-    -   ATOM Feed: application/atom+xml
-    -   JSON: application/json.
+Indicates the type of document submitted:
 
-Accept
-:   Indicates the type of accepted response.
+   -   ATOM Feed: **application/atom+xml**
+   -   JSON: **application/json**
 
-    -   ATOM Feed: application/atom+xml
-    -   JSON: application/json.
+**Accept**
 
---data-binary
-:   Provides the actual data that is POSTed to the URL. In this case, it is a file on the local system, post.xml, that contains the data to send.
+Indicates the type of accepted response.
 
---header "Cookie: freedomIdentifyKey=x
-:   Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the freedomIdentifyKey URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.
+   -   ATOM Feed: **application/atom+xml**
+   -   JSON: **application/json**
+
+**--data-binary**
+
+Provides the actual data that is POSTed to the URL. In this case, it is a file on the local system, post.xml, that contains the data to send.
+
+**--header "Cookie: freedomIdentifyKey=x**
+
+Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the **freedomIdentifyKey** URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.
 
 ## ATOM Feed {#section_ng4_v3l_nzb .section}
 
-One type of data to POST when doing a creation is a full ATOM Feed. The data starts with a <feed\> element and contains one or more <entry\> elements. Each <entry\> element represents a single record to add to the application.
+One type of data to POST when doing a creation is a full ATOM Feed. The data starts with a <feed> element and contains one or more <entry> elements. Each <entry> element represents a single record to add to the application.
 
 ``` {#codeblock_xyr_v3l_nzb}
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -52,9 +56,10 @@ One type of data to POST when doing a creation is a full ATOM Feed. The data sta
 </feed>
 ```
 
-It is also possible to POST a single stand alone <entry\> element such as:
+It is also possible to POST a single stand alone <entry> element such as: 
 
-``` {#codeblock_yyr_v3l_nzb}
+``` 
+{#codeblock_yyr_v3l_nzb}
 <entry xmlns="http://www.w3.org/2005/Atom">
    <title type="text">F_Form1</title>
    <updated>1970-01-01T00:00:00Z</updated>
@@ -68,22 +73,25 @@ It is also possible to POST a single stand alone <entry\> element such as:
 </entry>
 ```
 
-<title\>
-:   The ID of the form to which this record is being submitted.
+#### `<title>`
 
-<updated\>
-:   Mandatory, but its value is replaced with a new timestamp by the server. A value of 1970-01-01T00:00:00Z can always be used.
+The ID of the form to which this record is being submitted.
 
-<content\>
-:   Contains the submitted data. The structure of the data within the <content\> element is different for each application, and is based on the list of form items that were used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.
+#### `<updated>`
 
-The root element of the submitted data, which in this example is the <F\_Form1\> element, must be in the null namespace, which is xmlns="".
-:   The root element must have the pressedButton and flowState attributes.
+Mandatory, but its value is replaced with a new timestamp by the server. A value of **1970-01-01T00:00:00Z** can always be used.
 
-    -   The flowState is the ID of the current stage of the record. For all Create REST calls, this is always ST\_Start, which is the ID of the Start stage.
-    -   The pressedButton indicates the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.
+#### `<content>`
 
-Upon creation, the new record is assigned a generated unique record UID. This UID can be found in the response data, which is similar to the data returned from a Retrieve action. Response data is only returned when a stand alone <entry\> is POSTed rather than multiple entries in a <feed\>.
+Contains the submitted data. The structure of the data within the <content> element is different for each application, and is based on the list of form items that were used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.
+
+#### `The root element of the submitted data, which in this example is the <F_Form1> element, must be in the null namespace, which is xmlns=""`
+The root element must have the **pressedButton** and **flowState** attributes.
+
+   -   The **flowState** is the ID of the current stage of the record. For all Create REST calls, this is always **ST\_Start**, which is the ID of the Start stage.
+   -   The **pressedButton** indicates the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.
+
+Upon creation, the new record is assigned a generated unique record UID. This UID can be found in the response data, which is similar to the data returned from a Retrieve action. Response data is only returned when a stand alone <entry> is POSTed rather than multiple entries in a <fee>.
 
 ## JSON {#section_y4x_w3l_nzb .section}
 
@@ -102,5 +110,5 @@ You can also POST a JSON payload, for example:
 
 **Note:** The **uid** is optional. If supplied, it must be unique and use the format displayed in the JSON example. If not supplied, a unique uid is generated.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

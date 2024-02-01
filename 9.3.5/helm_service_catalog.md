@@ -24,5 +24,5 @@ configuration:
          </serviceDescription>
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

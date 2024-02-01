@@ -24,5 +24,5 @@ Each of these three parts are external to Leap and will be configured in the dep
 3.  Customizations applied through the WebSphere Application Server admin console, may need to be reapplied using snippets of XML according to Open Liberty's configuration technique \(see [https://openliberty.io/docs/latest/reference/config/server-configuration-overview.html](https://openliberty.io/docs/latest/reference/config/server-configuration-overview.html).)\). This additional configuration can be supplied as "overrides" in Leap 9.3.2's Helm charts. For more information, see [Customized deployment](openliberty_customized_deploy.md).
 4.  The persistent volumes defined for use with the Leap 9.3.1 container are not the same for Leap 9.3.2. When upgrading to Leap 9.3.2, create new persistent volumes. For more information, see [Prerequisite - Specifying persistant volumes](deploy_container_kubernetes_openliberty.md#section_f4f_24s_gxb).
 
-**Parent topic:**[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

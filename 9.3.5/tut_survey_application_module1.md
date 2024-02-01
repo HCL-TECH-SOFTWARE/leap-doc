@@ -408,5 +408,5 @@ Deploying an application – Deploying, or publishing forms is done in the Manag
 
 The survey form is complete and ready to send to your coworkers. You can send out the survey link in an office-wide email. After two weeks, the survey deployment period ends, and you provide the survey results to the Office Manager.
 
-**Parent topic:**[Building a Survey application](tut_survey_application_OV.md)
+**Parent topic: **[Building a Survey application](tut_survey_application_OV.md)
 

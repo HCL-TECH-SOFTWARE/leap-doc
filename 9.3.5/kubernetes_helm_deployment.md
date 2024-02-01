@@ -21,5 +21,5 @@ This topic describes how to configure an HCL Leap server that was deployed using
 -   **[Migrating From WebSphere to Liberty](migrating_websphere_liberty.md)**  
 It is possible to migrate from Leap on a WebSphere platform to Leap on Open Liberty.
 
-**Parent topic:**[Deploying Leap](in_overview.md)
+**Parent topic: **[Deploying Leap](in_overview.md)
 

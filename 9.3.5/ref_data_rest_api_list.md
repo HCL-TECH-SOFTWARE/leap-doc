@@ -1,47 +1,51 @@
-# List {#list-ref-api .reference}
+# List 
 
 This action retrieves a list of records.
 
-**Note:** The curl command must be entered as a single line.
+**Note:** The **curl** command must be entered as a single line.
 
 ```
 curl --user <loginId>:<passwd> http://<host>:<port>/apps-basic/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/
      F_Form1?format=application%2Fatom%2Bxml&sortBy=lastUpdated&order=DESC&from=10&to=20
 ```
 
-format or Accept header
-:   The format in which the data must be returned. You can use either format or Accept header.
+**format or Accept header**
 
-    -   application/atom+xml returns data as a standard ATOM feed in XML format. This is the default value.
+The format in which the data must be returned. You can use either format or Accept header.
 
-        **Note:** When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml.
+   - **application/atom+xml** returns data as a standard ATOM feed in XML format. This is the default value.<br>  **Note:** When using the format parameter, you must encode the value. For example, application/atom+xml must be inserted into the curl command as application%2Fatom%2Bxml
+   - **application/x-msexcel** returns data as an Excel document
+   -   **application/vnd.oasis.opendocument.spreadsheet** returns data as an OpenDocument spreadsheet
+   -   **application/json** returns data in JavaScript™ Object Notation format
 
-    -   application/x-msexcel returns data as an Excel document
-    -   application/vnd.oasis.opendocument.spreadsheet returns data as an OpenDocument spreadsheet
-    -   application/json returns data in JavaScript™ Object Notation format
+**sortBy**
 
-sortBy
-:   The order in which the data must be returned. The default sort order is indeterminate.
+The order in which the data must be returned. The default sort order is indeterminate.
 
-    -   lastUpdated uses the last updated date as the sort attribute.
-    -   itemAuthor uses the display name of the author as the sort attribute.
-    -   flowState uses the stage name as the sort attribute.
-    -   <item ID\> uses the values of a particular form item, for example ,F\_SingleLine, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the Multi-Line Entry, Select Many, Table, and Attachment widgets.
+   -   **lastUpdated** uses the last updated date as the sort attribute.
+   -   **itemAuthor** uses the display name of the author as the sort attribute.
+   -   **flowState** uses the stage name as the sort attribute.
+   -   <*item ID*> uses the values of a particular form item, for example, **F_SingleLine**, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the **Multi-Line Entry**, **Select Many**,** Table**, and **Attachment widgets**.
 
-order
-:   The direction of the sort.
+**order**
 
-    -   ASC uses an ascending sort order. This is the default value.
-    -   DESC uses a descending sort order.
+The direction of the sort.
 
-from
-:   The starting offset of a range of results. The default value is 0.
+   - **ASC** uses an ascending sort order. This is the default value.
+   - **DESC** uses a descending sort order.
 
-to
-:   The ending offset of a range of results. The default value is the end of the list. If you set a value for **to**, the result is not inclusive of the **to** value. For example, there are 100 submitted records. You want to view the results 5 per page. You set the **from** value to 6, and the **to** value to 11. Records 6 - 10 are displayed.
+**from**
 
-metadata
-:   Set to **true** to display extra information about items in the form. This parameter is only valid for JSON.
+The starting offset of a range of results. The default value is 0.
+
+**to**
+
+The ending offset of a range of results. The default value is the end of the list. If you set a value for **to**, the result is not inclusive of the **to** value. For example, there are 100 submitted records. You want to view the results 5 per page. You set the **from** value to 6, and the **to** value to 11. Records 6 - 10 are displayed.
+
+**metadata**
+
+Set to **true** to display extra information about items in the form. 
+This parameter is only valid for JSON.
 
 The result of this request is a list of records. An example result represented as an ATOM feed:
 
@@ -99,14 +103,14 @@ The result of this request is a list of records. An example result represented a
 
 It is important to note:
 
--   Each submission record is represented by an <entry\> within the feed.
--   Each entry has an <author\> that represents the person who initially created the record.
--   Each entry has a <contributor\> that represents the person who last updated the record.
--   Each entry has a <link\> with rel="edit" that represents the URL to use to Retrieve and Update just this record.
--   Each entry has a <link\> with rel="print" that represents the URL that, when displayed in a browser, is the print version of the record.
--   Each entry has a <link\> with rel="form" that represents the URL that, when displayed in a browser, allows the editing of this record.
--   Each entry has a <content\> that contains the actual data for this record.
--   The root element of the actual data, which in this example is <F\_Form1\>, has a generated uid attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.
+-   Each submission record is represented by an **<entry>** within the feed.
+-   Each entry has an **<author>** that represents the person who initially created the record.
+-   Each entry has a **<contributor>** that represents the person who last updated the record.
+-   Each entry has a **<link>** with **rel="edit"**** that represents the URL to use to Retrieve and Update just this record.
+-   Each entry has a **<link>** with **rel="print"**** that represents the URL that, when displayed in a browser, is the print version of the record.
+-   Each entry has a **<link>** with **rel="form"**** that represents the URL that, when displayed in a browser, allows the editing of this record.
+-   Each entry has a **<content>** that contains the actual data for this record.
+-   The root element of the actual data, which in this example is **<F\_Form1>**, has a generated **uid** attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.
 
 An example result represented as a JSON feed:
 
@@ -178,8 +182,9 @@ An example result represented as a JSON feed:
 }
 ```
 
--   **[Filtering Data REST API results](ref_data_rest_api_list_filter.md)**  
-The following information describes how to filter Data REST API results.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+The following information describes how to filter Data REST API results.  **[Filtering Data REST API results](ref_data_rest_api_list_filter.md)**  
+
+
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

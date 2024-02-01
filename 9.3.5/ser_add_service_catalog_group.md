@@ -108,5 +108,5 @@ To the application designer, Service Catalog Groups are listed in the **Service 
     -   If the extensions directory does not exist, you must restart the Leap server after the directory is created.
     -   /opt/HCL/Leap/ is not case-sensitive.
 
-**Parent topic:**[Providing Groups of Dynamic Services](ser_provide_groups_of_dynamic_services.md)
+**Parent topic: **[Providing Groups of Dynamic Services](ser_provide_groups_of_dynamic_services.md)
 

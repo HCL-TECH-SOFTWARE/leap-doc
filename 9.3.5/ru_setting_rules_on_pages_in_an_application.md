@@ -27,5 +27,5 @@ Rules in the HCL Leap can help you administer a form so different groups of user
     The rule is now set so when a user enters less than $30,000, they are not shown the second page of the form.
 
 
-**Parent topic:**[Creating rules in your application](ru_creating_rules_in_your_form.md)
+**Parent topic: **[Creating rules in your application](ru_creating_rules_in_your_form.md)
 

@@ -23,5 +23,5 @@ To make the user's portion of the form read-only: In the **Approval** stage, go 
 
 Using a basic example, this scenario described how to set properties on form items within Stages. Setting items or sections as hidden or read-only simplifies form design, yet allows for complex processes to be built into one form.
 
-**Parent topic:**[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
 

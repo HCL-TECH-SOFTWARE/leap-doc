@@ -339,5 +339,5 @@ app.showMessage
 
 |
 
-**Parent topic:**[Interface objects](ref_jsapi_user_interface_objects.md)
+**Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
 

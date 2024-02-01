@@ -13,5 +13,5 @@ For more information about creating roles, see [Defining basic security roles fo
 3.  For a specific role, click the **Read**, **Write**, or both check boxes.
 
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

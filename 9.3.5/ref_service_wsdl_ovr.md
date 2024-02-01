@@ -24,5 +24,5 @@ Build a command to expose services for a WSDL based web device.
 -   **[Troubleshooting the WSDL service description generator - FAQ](tr_troubleshooting_wsdl_sd_tool.md)**  
 Use the following information to help you troubleshoot your WSDL service description generator.
 
-**Parent topic:**[Services](ref_services_toc.md)
+**Parent topic: **[Services](ref_services_toc.md)
 

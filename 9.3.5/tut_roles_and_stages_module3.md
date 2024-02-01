@@ -103,5 +103,5 @@ The users who submit Expense Reports are Initiators, and for this scenario the u
     Accept or reject the sample data to test the workflow elements you built into the form.
 
 
-**Parent topic:**[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
+**Parent topic: **[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
 

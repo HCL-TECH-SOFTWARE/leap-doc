@@ -26,5 +26,5 @@ You can update Leap applications with existing data that are currently deployed.
 
 After an application is deployed, the **Launch** tool is activated.
 
-**Parent topic:**[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
+**Parent topic: **[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
 

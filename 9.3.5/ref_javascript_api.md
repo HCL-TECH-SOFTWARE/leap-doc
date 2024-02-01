@@ -51,5 +51,5 @@ Custom JavaScript can also be loaded from attached JavaScript files. Any .js fil
 -   **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)**  
  Describes the Functions available on different parts of the HCL Leap object model.
 
-**Parent topic:**[Reference](reference_toc.md)
+**Parent topic: **[Reference](reference_toc.md)
 

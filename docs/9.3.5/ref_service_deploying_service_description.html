@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ref_service_deploying_service_description" class="md-skip">
+        <a href="#deploying-a-service-description" class="md-skip">
           Skip to content
         </a>
       
@@ -5038,7 +5038,7 @@
   </a>
 
 
-<h1 class="reference" id="ref_service_deploying_service_description">Deploying a Service Description</h1>
+<h1 id="deploying-a-service-description">Deploying a Service Description</h1>
 <p>This topic contains information about how to deploy an HCL Leap Service Description.</p>
 <p>To deploy a Service Description, place the XML document in one of the following directories, or in a subdirectory of one of the following directories:</p>
 <ul>
@@ -5062,52 +5062,32 @@
 <p>Deleting Service Descriptions and changing Service Descriptions must be done with care. Applications might depend on any or all of the parameters for the Service Description, as well as data returned within the Service Description. Therefore, modifying the structure or ID of parameters, or how data is mapped into the parameters, can potentially cause failures within deployed applications.</p>
 <p>Deleted Service Descriptions are unregistered and immediately become unavailable to any applications, deployed or otherwise. It is critical that before deregistering a Service Description, a check is performed to ensure that there are no applications that are using the Service Description.</p>
 <p>In general, adding new parameters or mappings and changing names and descriptions does not cause failures. However, removing existing parameters, changing parameter mapping, or modifying IDs for Service Description, Service Transport, or a parameter, are likely to cause failures. A list of potentially safe and unsafe operations are summarized in Table 2.</p>
+<p>Table 1. Summary of potentially safe and unsafe changes</p>
 <table>
-<thead>
 <tr>
-<th>Potentially Safe Changes</th>
-<th>Potentially Unsafe Changes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-   Adding new parameters</td>
-<td></td>
+<td><b>Potentially Safe Changes</b> </td><td> <b>Potentially Unsafe Changes</b></td>
 </tr>
 <tr>
-<td>-   Changing the name of a parameter</td>
-<td></td>
+<td><ul>
+<li> Adding new parameters</li>
+<li> Changing the name of a parameter</li>
+<li> Changing the description of a parameter</li>
+<li> Changing the name of the Service Description</li>
+<li> Changing the description of the Service Description</li>
+<li> Adding support for an additional language within the Service Description</li>
+<li> Changing the Service Description default locale</li>
+</ul>
+<td><ul>
+<li> Removing existing parameters</li>
+<li> Changing the ID of an existing parameter</li>
+<li> Changing the ID of the Service Description</li>
+<li> Changing the Transport ID of the Service Description</li>
+<li> Changing the mapping of existing parameters.</li>
 </tr>
-<tr>
-<td>-   Changing the description of a parameter</td>
-<td></td>
-</tr>
-<tr>
-<td>-   Changing the name of the Service Description</td>
-<td></td>
-</tr>
-<tr>
-<td>-   Changing the description of the Service Description</td>
-<td></td>
-</tr>
-<tr>
-<td>-   Adding support for an additional language within the Service Description</td>
-<td></td>
-</tr>
-<tr>
-<td>-   Changing the Service Description default locale.</td>
-<td></td>
-</tr>
-</tbody>
 </table>
-<p>|-   Removing existing parameters
--   Changing the ID of an existing parameter
--   Changing the ID of the Service Description
--   Changing the Transport ID of the Service Description
--   Changing the mapping of existing parameters.</p>
-<p>|</p>
+
 <p>If significant changes must be made to a Service Description that is in use by deployed applications, a new Service Description must be created and the existing Service Description that remains intact. The new Service Description must be given a unique ID, and given a distinct name with a version number to indicate that this new Service Description is different from similarly named ones.</p>
-<p><strong>Parent topic:</strong><a href="ref_service_service_description.html">Service Description</a></p>
+<p><strong>Parent topic: </strong><a href="ref_service_service_description.html">Service Description</a></p>
 
 
 

@@ -659,5 +659,5 @@ ibm.nitro.NitroConfig.xFrameOptions = SAMEORIGIN
 </tr>
 </table>
 
-**Parent topic:**[Configuring the properties file](co_configuring_the_properties_file.md)
+**Parent topic: **[Configuring the properties file](co_configuring_the_properties_file.md)
 

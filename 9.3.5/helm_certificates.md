@@ -23,5 +23,5 @@ configuration:
 
 This adds the certificates and key to the keystore with the id defaultKeyStore which can then be referenced in the server.xml or any overrides. The defaultKeyStore is also used as the default by many configuration elements in Open Liberty that require a keystore.
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

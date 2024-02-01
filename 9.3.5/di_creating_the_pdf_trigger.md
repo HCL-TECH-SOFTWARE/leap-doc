@@ -19,5 +19,5 @@ When the application is deployed, you can click the **Create PDF** button and a 
 
 **Note:** You can use other common form events as triggers, including **validateButtonPressed**. Stage action buttons cannot be used as triggers.
 
-**Parent topic:**[Leap document integration](di_pop_doc_with_app_data.md)
+**Parent topic: **[Leap document integration](di_pop_doc_with_app_data.md)
 

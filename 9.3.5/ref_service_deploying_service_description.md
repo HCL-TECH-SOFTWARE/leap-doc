@@ -1,4 +1,4 @@
-# Deploying a Service Description {#ref_service_deploying_service_description .reference}
+# Deploying a Service Description 
 
 This topic contains information about how to deploy an HCL Leap Service Description.
 
@@ -29,25 +29,33 @@ Deleted Service Descriptions are unregistered and immediately become unavailable
 
 In general, adding new parameters or mappings and changing names and descriptions does not cause failures. However, removing existing parameters, changing parameter mapping, or modifying IDs for Service Description, Service Transport, or a parameter, are likely to cause failures. A list of potentially safe and unsafe operations are summarized in Table 2.
 
-|Potentially Safe Changes|Potentially Unsafe Changes|
-|------------------------|--------------------------|
-|-   Adding new parameters
--   Changing the name of a parameter
--   Changing the description of a parameter
--   Changing the name of the Service Description
--   Changing the description of the Service Description
--   Adding support for an additional language within the Service Description
--   Changing the Service Description default locale.
+Table 1. Summary of potentially safe and unsafe changes
 
-|-   Removing existing parameters
--   Changing the ID of an existing parameter
--   Changing the ID of the Service Description
--   Changing the Transport ID of the Service Description
--   Changing the mapping of existing parameters.
+<table>
+<tr>
+<td><b>Potentially Safe Changes</b> </td><td> <b>Potentially Unsafe Changes</b></td>
+</tr>
+<tr>
+<td><ul>
+<li> Adding new parameters</li>
+<li> Changing the name of a parameter</li>
+<li> Changing the description of a parameter</li>
+<li> Changing the name of the Service Description</li>
+<li> Changing the description of the Service Description</li>
+<li> Adding support for an additional language within the Service Description</li>
+<li> Changing the Service Description default locale</li>
+</ul>
+<td><ul>
+<li> Removing existing parameters</li>
+<li> Changing the ID of an existing parameter</li>
+<li> Changing the ID of the Service Description</li>
+<li> Changing the Transport ID of the Service Description</li>
+<li> Changing the mapping of existing parameters.</li>
+</tr>
+</table>
 
-|
 
 If significant changes must be made to a Service Description that is in use by deployed applications, a new Service Description must be created and the existing Service Description that remains intact. The new Service Description must be given a unique ID, and given a distinct name with a version number to indicate that this new Service Description is different from similarly named ones.
 
-**Parent topic:**[Service Description](ref_service_service_description.md)
+**Parent topic: **[Service Description](ref_service_service_description.md)
 

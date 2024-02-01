@@ -25,5 +25,5 @@ Use the Text item from the Palette to create a header or title for your form. Yo
     You can separate the selected items by spaces, commas, line breaks, or other formatting.
 
 
-**Parent topic:**[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
+**Parent topic: **[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
 

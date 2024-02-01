@@ -11,5 +11,5 @@ By default, only administrators can edit and maintain an application. However, y
 2.  To grant or remove edit permission from a user role, click the **Edit** check box next to that role.
 
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

@@ -6,5 +6,5 @@ The process of upgrading from IBM Forms Experience Builder to HCL Leap is very s
 
 When upgrading the EAR in the WebSphere Application Server Administrative console, choose the **Detailed** option for “How do you want to install the application?”. When you reach the **Map context roots for Web modules** step, ensure the **Context Root** values are the same as what you had previously.
 
-**Parent topic:**[Deploying Leap](in_overview.md)
+**Parent topic: **[Deploying Leap](in_overview.md)
 

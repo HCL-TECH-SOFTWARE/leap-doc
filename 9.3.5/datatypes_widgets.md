@@ -82,5 +82,5 @@ const myWidgetDefinition = {
     -   `minValue` : minimum value of time stamp expected. Can be omitted or set to `null` if no minimum
     -   `maxValue` : maximum value of time stamp expected. Can be omitted or set to `null` if no maximum
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

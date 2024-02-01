@@ -50,5 +50,5 @@ Check the **Leap SystemOut.log**. There is an entry that indicates which directo
 -   **[Configuration properties](co_configuration_properties.md)**  
 The following table contains a list of properties in the HCL Leap Leap\_config.properties file. You can adjust the settings listed in the file, or add your own for a custom configuration.
 
-**Parent topic:**[Configuring](co_config_toc.md)
+**Parent topic: **[Configuring](co_config_toc.md)
 

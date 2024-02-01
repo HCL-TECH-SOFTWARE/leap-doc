@@ -11,5 +11,5 @@ Using the HTML Fragment item, you can add HTML anywhere in your form.
 -   **[Adding media to a form](wi_adding_media_to_a_form.md)**  
 You can add media to the form anywhere you place the Media form item.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

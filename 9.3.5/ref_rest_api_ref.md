@@ -11,5 +11,5 @@ The Application management REST API allows for programmatic import, export, upgr
 -   **[Application statistics REST API](app_stats_restapi.md)**  
 Application statistics REST API exposes statistics data on all applications, such as an application's last updated date, record count, attachment size etc.
 
-**Parent topic:**[Reference](reference_toc.md)
+**Parent topic: **[Reference](reference_toc.md)
 

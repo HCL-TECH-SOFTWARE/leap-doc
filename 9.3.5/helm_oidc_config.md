@@ -104,5 +104,5 @@ For more details on setting Leap properties, see [Leap properties](helm_leap_pro
 
 After restarting the Leap pod, accessing Leap should redirect you to authenticate using your OIDC IDP.
 
-**Parent topic:**[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

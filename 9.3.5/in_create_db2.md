@@ -25,5 +25,5 @@ In a production environment, you must create DB2 database before you install HCL
         ```
 
 
-**Parent topic:**[Create a Database](in_create_db.md)
+**Parent topic: **[Create a Database](in_create_db.md)
 

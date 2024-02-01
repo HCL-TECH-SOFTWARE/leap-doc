@@ -44,5 +44,5 @@ NEW - The following instructions describe how to create a Service Configuration 
 12. Click **Ok**.
 
 
-**Parent topic:**[Leap document integration](di_pop_doc_with_app_data.md)
+**Parent topic: **[Leap document integration](di_pop_doc_with_app_data.md)
 

@@ -24,5 +24,5 @@ For more information, see [WebSphere Application Server documentation](http://ww
 
 For more WebSphere Application Server information, see [WebSphere Application Server documentation](http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/tfullp_sec.html), and [Advanced Security Hardening WebSphere Application Server](http://www.ibm.com/developerworks/websphere/techjournal/1210_lansche/1210_lansche.html).
 
-**Parent topic:**[Configuring](co_config_toc.md)
+**Parent topic: **[Configuring](co_config_toc.md)
 

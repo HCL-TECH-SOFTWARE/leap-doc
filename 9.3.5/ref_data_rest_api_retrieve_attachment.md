@@ -25,5 +25,5 @@ For example:
 
 When retrieving an attachment, the credentials used for authentication must match the users and permissions specified by the application designer in the **Access** tab.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

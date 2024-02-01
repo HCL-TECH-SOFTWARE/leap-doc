@@ -13,5 +13,5 @@ It is responsibility of the custom widget to render itself appropriately based o
 
 **Note:** Any additional validation provided by the custom widget via a `validateValue()` function will not be enforced on the server; however, it will prevent the form from being submitted by the user in the browser.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

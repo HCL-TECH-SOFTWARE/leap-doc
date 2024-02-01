@@ -176,5 +176,5 @@ If you use an inbound service mapping and use XPath in your `targetRef`, the `ta
 
 Verify that all prefixes you use in all service mapping element references are binded. Namespace declarations are in the `<serviceMapping>`.
 
-**Parent topic:**[Using the service description tool for WSDL web service](ref_service_wsdl_ovr.md)
+**Parent topic: **[Using the service description tool for WSDL web service](ref_service_wsdl_ovr.md)
 

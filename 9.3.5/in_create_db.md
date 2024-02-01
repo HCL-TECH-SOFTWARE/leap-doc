@@ -11,5 +11,5 @@ The following steps describe how to manually create an Oracle database for use w
 -   **[Creating a PostgreSQL database](create_postgresql_db.md)**  
 The following instructions describe how to manually create the PostgreSQL database for Leap.
 
-**Parent topic:**[Preparing to deploy](in_prep.md)
+**Parent topic: **[Preparing to deploy](in_prep.md)
 

@@ -15,5 +15,5 @@ The following instructions describe how to remove a custom style sheet from the 
     The file is removed from the list.
 
 
-**Parent topic:**[Using custom style sheets](ex_css_toc.md)
+**Parent topic: **[Using custom style sheets](ex_css_toc.md)
 

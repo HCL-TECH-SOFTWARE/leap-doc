@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-rest-api" class="md-skip">
+        <a href="#create" class="md-skip">
           Skip to content
         </a>
       
@@ -3914,6 +3914,40 @@
     ATOM Feed
   </a>
   
+    <nav class="md-nav" aria-label="ATOM Feed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    &lt;title&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated" class="md-nav__link">
+    &lt;updated&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    &lt;content&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-root-element-of-the-submitted-data-which-in-this-example-is-the-f_form1-element-must-be-in-the-null-namespace-which-is-xmlns" class="md-nav__link">
+    The root element of the submitted data, which in this example is the &lt;F_Form1&gt; element, must be in the null namespace, which is xmlns=""
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5071,6 +5105,40 @@
     ATOM Feed
   </a>
   
+    <nav class="md-nav" aria-label="ATOM Feed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    &lt;title&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated" class="md-nav__link">
+    &lt;updated&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    &lt;content&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-root-element-of-the-submitted-data-which-in-this-example-is-the-f_form1-element-must-be-in-the-null-namespace-which-is-xmlns" class="md-nav__link">
+    The root element of the submitted data, which in this example is the &lt;F_Form1&gt; element, must be in the null namespace, which is xmlns=""
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5100,29 +5168,31 @@
   </a>
 
 
-<h1 class="reference" id="create-rest-api">Create</h1>
+<h1 id="create">Create</h1>
 <p>This action creates new records.</p>
-<p><strong>Note:</strong> The curl command must be entered as a single line.</p>
+<p><strong>Note:</strong> The <strong>curl</strong> command must be entered as a single line.</p>
 <div class="highlight"><pre><span></span><code>curl --user &lt;loginId&gt;:&lt;passwd&gt; --header &quot;Accept:application/atom+xml&quot; --header &quot;Content-Type:application/atom+xml&quot; --data-binary
      @post.xml &quot;http://&lt;host&gt;:&lt;port&gt;/volt-api/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1
      ?freedomIdentifyKey=x&quot; --header &quot;Cookie: freedomIdentifyKey=x&quot;
 </code></pre></div>
-<p>Content-Type
-:   Indicates the type of document submitted:</p>
-<pre><code>-   ATOM Feed: application/atom+xml
--   JSON: application/json.
-</code></pre>
-<p>Accept
-:   Indicates the type of accepted response.</p>
-<pre><code>-   ATOM Feed: application/atom+xml
--   JSON: application/json.
-</code></pre>
-<p>--data-binary
-:   Provides the actual data that is POSTed to the URL. In this case, it is a file on the local system, post.xml, that contains the data to send.</p>
-<p>--header "Cookie: freedomIdentifyKey=x
-:   Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the freedomIdentifyKey URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.</p>
+<p><strong>Content-Type</strong></p>
+<p>Indicates the type of document submitted:</p>
+<ul>
+<li>ATOM Feed: <strong>application/atom+xml</strong></li>
+<li>JSON: <strong>application/json</strong></li>
+</ul>
+<p><strong>Accept</strong></p>
+<p>Indicates the type of accepted response.</p>
+<ul>
+<li>ATOM Feed: <strong>application/atom+xml</strong></li>
+<li>JSON: <strong>application/json</strong></li>
+</ul>
+<p><strong>--data-binary</strong></p>
+<p>Provides the actual data that is POSTed to the URL. In this case, it is a file on the local system, post.xml, that contains the data to send.</p>
+<p><strong>--header "Cookie: freedomIdentifyKey=x</strong></p>
+<p>Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the <strong>freedomIdentifyKey</strong> URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.</p>
 <h2 class="section" id="section_ng4_v3l_nzb">ATOM Feed</h2>
-<p>One type of data to POST when doing a creation is a full ATOM Feed. The data starts with a &lt;feed> element and contains one or more &lt;entry> elements. Each &lt;entry> element represents a single record to add to the application.</p>
+<p>One type of data to POST when doing a creation is a full ATOM Feed. The data starts with a <feed> element and contains one or more <entry> elements. Each <entry> element represents a single record to add to the application.</p>
 <div id="codeblock_xyr_v3l_nzb" class="highlight"><pre><span></span><code>&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
 &lt;entry&gt;
    &lt;title type=&quot;text&quot;&gt;F_Form1&lt;/title&gt;
@@ -5141,8 +5211,9 @@
 ...
 &lt;/feed&gt;
 </code></pre></div>
-<p>It is also possible to POST a single stand alone &lt;entry> element such as:</p>
-<div id="codeblock_yyr_v3l_nzb" class="highlight"><pre><span></span><code>&lt;entry xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+<p>It is also possible to POST a single stand alone <entry> element such as: </p>
+<div class="highlight"><pre><span></span><code>{#codeblock_yyr_v3l_nzb}
+&lt;entry xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
    &lt;title type=&quot;text&quot;&gt;F_Form1&lt;/title&gt;
    &lt;updated&gt;1970-01-01T00:00:00Z&lt;/updated&gt;
    &lt;content type=&quot;application/xml&quot;&gt;
@@ -5154,18 +5225,19 @@
    &lt;/content&gt;
 &lt;/entry&gt;
 </code></pre></div>
-<p>&lt;title>
-:   The ID of the form to which this record is being submitted.</p>
-<p>&lt;updated>
-:   Mandatory, but its value is replaced with a new timestamp by the server. A value of 1970-01-01T00:00:00Z can always be used.</p>
-<p>&lt;content>
-:   Contains the submitted data. The structure of the data within the &lt;content> element is different for each application, and is based on the list of form items that were used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.</p>
-<p>The root element of the submitted data, which in this example is the &lt;F_Form1> element, must be in the null namespace, which is xmlns="".
-:   The root element must have the pressedButton and flowState attributes.</p>
-<pre><code>-   The flowState is the ID of the current stage of the record. For all Create REST calls, this is always ST\_Start, which is the ID of the Start stage.
--   The pressedButton indicates the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.
-</code></pre>
-<p>Upon creation, the new record is assigned a generated unique record UID. This UID can be found in the response data, which is similar to the data returned from a Retrieve action. Response data is only returned when a stand alone &lt;entry> is POSTed rather than multiple entries in a &lt;feed>.</p>
+<h4 id="title"><code>&lt;title&gt;</code></h4>
+<p>The ID of the form to which this record is being submitted.</p>
+<h4 id="updated"><code>&lt;updated&gt;</code></h4>
+<p>Mandatory, but its value is replaced with a new timestamp by the server. A value of <strong>1970-01-01T00:00:00Z</strong> can always be used.</p>
+<h4 id="content"><code>&lt;content&gt;</code></h4>
+<p>Contains the submitted data. The structure of the data within the <content> element is different for each application, and is based on the list of form items that were used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.</p>
+<h4 id="the-root-element-of-the-submitted-data-which-in-this-example-is-the-f_form1-element-must-be-in-the-null-namespace-which-is-xmlns"><code>The root element of the submitted data, which in this example is the &lt;F_Form1&gt; element, must be in the null namespace, which is xmlns=""</code></h4>
+<p>The root element must have the <strong>pressedButton</strong> and <strong>flowState</strong> attributes.</p>
+<ul>
+<li>The <strong>flowState</strong> is the ID of the current stage of the record. For all Create REST calls, this is always <strong>ST_Start</strong>, which is the ID of the Start stage.</li>
+<li>The <strong>pressedButton</strong> indicates the ID of the stage action submit button, which simulates the submission. A submit button ID must be specified to activate the appropriate stage activities and transfer the record to the next appropriate stage.</li>
+</ul>
+<p>Upon creation, the new record is assigned a generated unique record UID. This UID can be found in the response data, which is similar to the data returned from a Retrieve action. Response data is only returned when a stand alone <entry> is POSTed rather than multiple entries in a <fee>.</p>
 <h2 class="section" id="section_y4x_w3l_nzb">JSON</h2>
 <p>You can also POST a JSON payload, for example:</p>
 <div id="codeblock_vf1_x3l_nzb" class="highlight"><pre><span></span><code>{
@@ -5178,7 +5250,7 @@
 }
 </code></pre></div>
 <p><strong>Note:</strong> The <strong>uid</strong> is optional. If supplied, it must be unique and use the format displayed in the JSON example. If not supplied, a unique uid is generated.</p>
-<p><strong>Parent topic:</strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
+<p><strong>Parent topic: </strong><a href="ref_data_access_rest_api.html">Data access REST API</a></p>
 
 
 

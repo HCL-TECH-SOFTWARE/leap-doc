@@ -7,5 +7,5 @@ Leap relies on two central components: the application server and the database.
 -   **[Manually deploying to WebSphere Application Server](in_deploying_was.md)**  
 The following instructions describe how to manually deploy HCL Leap to WebSphere® Application Server.
 
-**Parent topic:**[Deploying Leap](in_overview.md)
+**Parent topic: **[Deploying Leap](in_overview.md)
 

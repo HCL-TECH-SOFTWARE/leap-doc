@@ -27,5 +27,5 @@ The Media item supports .avi, .mpeg, .mpg, .wmv, .wma, .mov, .mp3, .mp4, and .sw
 6.  Your changes are saved automatically.
 
 
-**Parent topic:**[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
+**Parent topic: **[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
 

@@ -125,7 +125,7 @@ Prior to deploying HCL Leap to WebSphere Application Server, you must create a n
     4.  Click **Apply** to apply your changes.
 
 
-**Parent topic:**[Deploying to a traditional platform](deploytraditional_leap.md)
+**Parent topic: **[Deploying to a traditional platform](deploytraditional_leap.md)
 
 **Related information**  
 

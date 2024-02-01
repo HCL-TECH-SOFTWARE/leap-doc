@@ -37,5 +37,5 @@ To add a role:
 4.  Use the radio buttons to select whether the role is **Open** or **Closed**.
 
 
-**Parent topic:**[Securing](se_security_toc.md)
+**Parent topic: **[Securing](se_security_toc.md)
 

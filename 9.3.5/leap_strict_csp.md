@@ -53,5 +53,5 @@ When using the [Embedding API](ref_embedding_api.md), the product is not in cont
 -   As mentioned above, Strict CSP only applies to the rendering of Leap Forms. It is the responsibility of the customer to ensure other product pages \(ex. App Pages\) are not exposed to an audience that is meant to be protected by Strict CSP.
 -   Not all browsers may support CSP equally. It is the responsibility of the customer to ensure the CSP header is configured with suitable fallbacks, if necessary for their user-base.
 
-**Parent topic:**[Administering Leap](administering_leap.md)
+**Parent topic: **[Administering Leap](administering_leap.md)
 

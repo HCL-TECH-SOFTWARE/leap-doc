@@ -43,5 +43,5 @@ You must set the formula on the form item that stores the result. For example, i
 
 Save and preview your form to test the formula.
 
-**Parent topic:**[Adding formulas to your application](cr_adding_formulas_toc.md)
+**Parent topic: **[Adding formulas to your application](cr_adding_formulas_toc.md)
 

@@ -17,5 +17,5 @@ Use the following documents to gain a better understanding of the steps required
 
 **Creating and deploying service descriptions** – The Service Description provides an interface to Leap mapping interface, and an interface to a Service Transport. For more information on creating Service Descriptions, see [Service Description](ref_service_service_description.md)
 
-**Parent topic:**[Incorporating web services into your applications](cr_using_apps_as_services_toc.md)
+**Parent topic: **[Incorporating web services into your applications](cr_using_apps_as_services_toc.md)
 

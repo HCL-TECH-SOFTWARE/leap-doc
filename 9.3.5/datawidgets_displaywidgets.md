@@ -10,5 +10,5 @@ A data widget is required to:
 
 Some display widgets are still expected to trigger events \(for example, `onClick`\), which can be used by the app author to invoke an action, by custom JavaScript or other techniques.
 
-**Parent topic:**[Custom Widget API](customwidgetapi_landing.md)
+**Parent topic: **[Custom Widget API](customwidgetapi_landing.md)
 

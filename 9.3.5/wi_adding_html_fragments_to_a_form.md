@@ -11,5 +11,5 @@ Using the HTML Fragment item, you can add HTML anywhere in your form.
     **Note:** Any application Cascading Style Sheets \(CSS\) used by the form are also applied to the HTML code you enter in the HTML Fragment form item. To see the CSS associated with your form, click the **Styles** tab.
 
 
-**Parent topic:**[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
+**Parent topic: **[Adding specialized form items](wi_introduction_to_specialized_form_items.md)
 

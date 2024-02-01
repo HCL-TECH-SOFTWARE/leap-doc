@@ -82,5 +82,5 @@ This is the basic flow of an application communicating with the Leap REST API:
 3.  Set extra headers or body content if required for the action.
 4.  Process the response.
 
-**Parent topic:**[REST API reference](ref_rest_api_ref.md)
+**Parent topic: **[REST API reference](ref_rest_api_ref.md)
 

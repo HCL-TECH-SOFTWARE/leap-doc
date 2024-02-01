@@ -13,5 +13,5 @@ After users complete and submit forms, you can view the submitted responses. Res
 -   **[Importing data in View Data](cr_import_data_in_view_responses.md)**  
 Application Owners can use an Import Data operation on the **View Data** page to import spreadsheet data into their application. This can provide a quick start method for adding many records/rows of data into an application from an existing spreadsheet.
 
-**Parent topic:**[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
 

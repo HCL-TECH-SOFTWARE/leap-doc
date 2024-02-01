@@ -23,5 +23,5 @@ General formulas by default run whenever a form item is changed by the user. You
 6.  After you either select or create the formula, click **OK** to close the onClick window.
 
 
-**Parent topic:**[Adding formulas to your application](cr_adding_formulas_toc.md)
+**Parent topic: **[Adding formulas to your application](cr_adding_formulas_toc.md)
 

@@ -18,5 +18,5 @@ Specifies the correct HTTP method verb for this action.
 
 Includes a required cookie as part of the request. The value of the key must match the value of the freedomIdentifyKey URL parameter. Requiring a cookie value that matches the URL parameter value avoids XSS vulnerabilities.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

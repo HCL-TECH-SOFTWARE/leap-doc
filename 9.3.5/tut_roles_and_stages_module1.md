@@ -174,5 +174,5 @@ First, create a page in the form to use as the Approval page. It displays the To
 
 The approval page is created, but is only used when a workflow is applied to the form. Creating a workflow with Stages is covered in the next section of the tutorial.
 
-**Parent topic:**[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
+**Parent topic: **[Adding tables and workflow elements to a HCL Leap form](tut_roles_and_stages_OV.md)
 

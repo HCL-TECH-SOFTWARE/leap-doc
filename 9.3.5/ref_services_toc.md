@@ -17,5 +17,5 @@ This topic provides reference information on HTTP Service Transports used in HCL
 -   **[Send Email service](ref_send_email.md)**  
 This topic provides reference information on the Send Email service in HCL Leap.
 
-**Parent topic:**[Reference](reference_toc.md)
+**Parent topic: **[Reference](reference_toc.md)
 

@@ -1,4 +1,4 @@
-# Create Attachment {#reference_vtk_lsf_2z .reference}
+# Create Attachment 
 
 This action creates a single attachment.
 
@@ -6,11 +6,12 @@ This action creates a single attachment.
 curl --user <loginId>:<passwd> -F filename=@c:\new file.doc --header "Accept:application/json" "http://<host>:<port>/apps-basic/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/attachment/"
 ```
 
-Accept
-:   Indicates the type of accepted response.
+**Accept**
 
-    -   ATOM: application/atom+xml
-    -   JSON: application/json
+Indicates the type of accepted response.
+
+   -   ATOM: **application/atom+xml**
+   -   JSON: **application/json**
 
 The attachment that is created must be uploaded to the server as multipart/form-data in the body of a POST.
 
@@ -44,5 +45,5 @@ Example JSON payload:
 
 If an attachment is not associated with a form record within a certain time period \(48 hours by default\), the attachment is deleted automatically. Deleting the record that is associated with an attachment also deletes the attachment.
 
-**Parent topic:**[Data access REST API](ref_data_access_rest_api.md)
+**Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

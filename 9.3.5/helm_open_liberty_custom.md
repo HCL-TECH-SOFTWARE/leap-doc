@@ -208,5 +208,5 @@ configuration:
          <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

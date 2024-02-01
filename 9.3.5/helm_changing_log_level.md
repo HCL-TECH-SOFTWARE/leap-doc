@@ -10,5 +10,5 @@ logging:
     level: Leap:*=detail:com.ibm.form.nitro.*=finest
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

@@ -40,5 +40,5 @@ metadata:
 oc apply -f namespace.yaml 
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

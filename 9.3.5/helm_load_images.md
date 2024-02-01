@@ -31,5 +31,5 @@ images:
     leap: v1.0.0_20231010-0638_Leap_v9.3.3.40_pjs_release_leap-9.3.3 
 ```
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 

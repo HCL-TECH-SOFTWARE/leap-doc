@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#embeddingapi" class="md-skip">
+        <a href="#embedding-api" class="md-skip">
           Skip to content
         </a>
       
@@ -5152,8 +5152,10 @@
   </a>
 
 
-<h1 class="reference" id="embeddingapi">Embedding API</h1>
-<p>The Embedding API can be used to embed a Leap form directly in another webpage without using an &lt;iframe>. The Leap form will be inserted into the DOM of the hosting page and can be interacted with using the Leap JavaScript API or any custom JavaScript. Additionally, the style of items in the Leap form can be customized by the CSS of the hosting page.</p>
+<h1 id="embedding-api">Embedding API</h1>
+<p>The Embedding API can be used to embed a Leap form directly in another webpage without using an &lt;iframe>. 
+The Leap form will be inserted into the DOM of the hosting page and can be interacted with using the Leap JavaScript API or any custom JavaScript. 
+Additionally, the style of items in the Leap form can be customized by the CSS of the hosting page.</p>
 <h2 class="section" id="example-1-declarative">Example 1 - Declarative</h2>
 <div class="highlight"><pre><span></span><code>&lt;html&gt; 
 …  
@@ -5209,19 +5211,19 @@
 <div class="highlight"><pre><span></span><code>&lt;script src=&quot;https://leap.example.com/apps/api/leap.js&quot; data-leap-config=&quot;[leap configuration]&quot; id=&quot;leapJS&#39;&quot;&gt;&lt;/script&gt;
 </code></pre></div>
 <ul>
-<li>id (optional) - fallback for older browsers; the value should always be "leapJS"</li>
-<li>data-leap-config (optional) - JSON or the name of an existing JavaScript object. Properties:<ul>
+<li><strong>id</strong> (optional) - fallback for older browsers; the value should always be "leapJS"</li>
+<li><strong>data-leap-config</strong> (optional) - JSON or the name of an existing JavaScript object. Properties:<ul>
 <li>locale (optional) - indicates the preferred locale to the Leap API. For example, "fr-FR"</li>
-<li>launch (optional) - equivalent to calling Leap.launch({…}) function with respective parameters (see below for more details)</li>
-<li>overwriteExistingDojoConfig (optional) - In some environments, such as HCL Digital Experience or IBM WebSphere Portal, the djConfig or dojoConfig object may be defined on a page and not used. Set the value of this property to true to override it.</li>
+<li><strong>launch</strong> (optional) - equivalent to calling <strong>Leap.launch</strong>({…}) function with respective parameters (see below for more details)</li>
+<li><strong>overwriteExistingDojoConfig</strong> (optional) - In some environments, such as HCL Digital Experience or IBM WebSphere Portal, the <strong>djConfig</strong> or <strong>dojoConfig</strong> object may be defined on a page and not used. Set the value of this property to <strong>true</strong> to override it.</li>
 </ul>
 </li>
 </ul>
 <p>Loading the Leap API will result in the creation of global object named Leap.</p>
-<p>After initial load of the leap.js, you can define a Leap.onReady() function which will be called when the necessary Leap resources have been loaded into the page and the API is ready to be used.</p>
+<p>After initial load of the leap.js, you can define a <strong>Leap.onReady</strong>() function which will be called when the necessary Leap resources have been loaded into the page and the API is ready to be used.</p>
 <h2 class="section" id="embedding-a-form-programmatically">Embedding a form programmatically</h2>
 <p>To embed a Leap form programmatically, call Leap.launch({launch_params});</p>
-<p>{launch_params} properties:</p>
+<p>{<strong>launch_params</strong>} properties:</p>
 <table>
 <thead>
 <tr>
@@ -5236,42 +5238,93 @@
 <td>Yes</td>
 <td>The Leap application UUID.</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td>For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'</td>
+</tr>
+<tr>
+<td>formId</td>
+<td>Yes</td>
+<td>The Leap form ID.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>For example, 'F_Form1'</td>
+</tr>
+<tr>
+<td>targetId</td>
+<td>Either <strong>target</strong> or <strong>targetId</strong> must be provided.</td>
+<td>The id of the HTML DOM element to embed the Leap form within.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>For example, 'myLeapFormDiv'</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Either <strong>target</strong> or <strong>targetId</strong> must be provided.</td>
+<td>The HTML DOM element to place the Leap form within.</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>No</td>
+<td>Determines the mode for embedding.  Possible values:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   '<strong>iframe</strong>': embeds the form in an &lt;iframe> element. For complete isolation of the form, if necessary</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   '<strong>embed</strong>' (default): embeds the form into the hosting page in a &lt;div></td>
+</tr>
+<tr>
+<td>locale</td>
+<td>No</td>
+<td>Indicates the preferred locale for the embedded form.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>For example, 'fr-FR'</td>
+</tr>
+<tr>
+<td>prefSecMode</td>
+<td>No</td>
+<td>If the form supports both anonymous and authenticated usage, this property can be used to automatically choose the preferred security mode.  Possible values:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   '<strong>anon</strong>': for anonymous usage</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   '<strong>secure</strong>': for authenticated usage</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>No</td>
+<td>A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.  The callback function will be passed the following parameters:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <strong>app</strong>: the Leap JavaScript API application object. For more details, see <a href="ref_jsapi_user_interface_objects.html">Interface objects</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <strong>launchParams</strong>: the original launch parameters object, for convenience</td>
+</tr>
 </tbody>
 </table>
-<p>For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'</p>
-<p>|
-|formId|Yes|The Leap form ID.</p>
-<p>For example, 'F_Form1'</p>
-<p>|
-|targetId|Either target or targetId must be provided.|The id of the HTML DOM element to embed the Leap form within.</p>
-<p>For example, 'myLeapFormDiv'</p>
-<p>|
-|target|Either target or targetId must be provided.|The HTML DOM element to place the Leap form within.</p>
-<p>|
-|mode|No|Determines the mode for embedding.</p>
-<p>Possible values:</p>
-<ul>
-<li>'iframe' - embeds the form in an &lt;iframe> element. For complete isolation of the form, if necessary</li>
-<li>'embed' (default) - embeds the form into the hosting page in a &lt;div></li>
-</ul>
-<p>|
-|locale|No|Indicates the preferred locale for the embedded form.</p>
-<p>For example, 'fr-FR'</p>
-<p>|
-|prefSecMode|No|If the form supports both anonymous and authenticated usage, this property can be used to automatically choose the preferred security mode.</p>
-<p>Possible values:</p>
-<ul>
-<li>'anon' - for anonymous usage</li>
-<li>'secure' - for authenticated usage</li>
-</ul>
-<p>|
-|callback|No|A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.</p>
-<p>The callback function will be passed the following parameters:</p>
-<ul>
-<li>app - the Leap JavaScript API application object. For more details, see <a href="ref_jsapi_user_interface_objects.html">Interface objects</a></li>
-<li>launchParams - the original launch parameters object, for convenience</li>
-</ul>
-<p>|</p>
 <h2 class="section" id="known-limitations">Known Limitations</h2>
 <ul>
 <li>Only one Leap form can be embedded on the page at a time.</li>
@@ -5281,7 +5334,7 @@
 </ul>
 <h2 class="section" id="cross-domain-usage">Cross-Domain Usage</h2>
 <p>If Leap and the hosting page are in different domains, the Leap front-end must be configured to return appropriate CORS headers.</p>
-<p><strong>Parent topic:</strong><a href="reference_toc.html">Reference</a></p>
+<p><strong>Parent topic: </strong><a href="reference_toc.html">Reference</a></p>
 
 
 

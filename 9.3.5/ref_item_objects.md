@@ -477,5 +477,5 @@ appPage.F_DataGrid1.setFilters(null);
 
 |
 
-**Parent topic:**[Interface objects](ref_jsapi_user_interface_objects.md)
+**Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
 

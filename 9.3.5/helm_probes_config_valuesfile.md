@@ -21,5 +21,5 @@ The `liveness` and `readiness` probes such as the status thresholds and time val
 
 Information about the configuration options can be found in the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes).
 
-**Parent topic:**[Preparation](helm_preparation.md)
+**Parent topic: **[Preparation](helm_preparation.md)
 
