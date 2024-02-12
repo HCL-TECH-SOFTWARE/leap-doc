@@ -12,7 +12,7 @@
       
       
       
-        <link rel="canonical" href="https://opensource.hcltechsw.com/connections/helm_extending_image.html">
+        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/helm_extending_image.html">
       
       <link rel="icon" href="assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -5042,22 +5042,24 @@
 <p>Learn how to install additional Open Liberty server features by extending the Leap image.</p>
 <p>The Leap image is shipped with the following server features:</p>
 <ul>
-<li>appSecurity-3.0</li>
 <li>adminCenter-1.0</li>
+<li>appSecurity-3.0</li>
+<li>federatedRegistry-1.0</li>
+<li>javaMail-1.6</li>
 <li>jdbc-4.2</li>
 <li>jndi-1.0</li>
-<li>servlet-4.0</li>
-<li>javaMail-1.6</li>
 <li>jpa-2.2</li>
-<li>transportSecurity-1.0</li>
-<li>federatedRegistry-1.0</li>
+<li>jwtSso-1.0</li>
 <li>ldapRegistry-3.0</li>
 <li>localConnector-1.0</li>
-<li>restConnector-2.0</li>
-<li>passwordUtilities-1.0</li>
+<li>mpJwt-2.1</li>
 <li>openidConnectClient-1.0</li>
+<li>passwordUtilities-1.0</li>
+<li>restConnector-2.0</li>
+<li>servlet-4.0</li>
+<li>transportSecurity-1.0</li>
 </ul>
-<p>Open Liberty has many features that can be enabled. For more information, see the <a href="https://openliberty.io/docs/latest/reference/feature/feature-overview.html">Open Liberty documentation</a>.</p>
+<p>Open Liberty has many features that can be enabled. Some features have dependencies on other features, which will be installed automatically. For more information, see the <a href="https://openliberty.io/docs/latest/reference/feature/feature-overview.html">Open Liberty documentation</a>.</p>
 <p>If you require a different feature to be installed, you may extend our image. This can be accomplished by creating a Dockerfile. See the following example:</p>
 <div id="codeblock_ldv_1gk_d1c" class="highlight"><pre><span></span><code>FROM &lt;image-repo&gt;
 
@@ -5071,7 +5073,6 @@ RUN /opt/openliberty/wlp/bin/featureUtility installFeature &lt;feature-to-instal
 </ol>
 <p>A new image with the specified feature is installed. Use this extended image when running helm.</p>
 <p><strong>Note:</strong> This is the only supported mechanism for enabling Open Liberty features. There are many features that can be added that have not been tested by HCL and you do so at your own risk. HCL will provide best-effort support for added features as it pertains to Leap.</p>
-<p><strong>Parent topic: </strong><a href="helm_preparation.html">Preparation</a></p>
 
 
 

@@ -4,16 +4,18 @@ For a full list of fixes by release, see this [article](https://support.hcltechs
 
 ## New features {#section_zml_blt_b1c .section}
 
+-   Bug fixes.
+
 ## 9.3.4 {#section_y12_hlh_jzb .section}
 
 -   Bug fixes.
--   Added support for Secrets in Kubernetes. For more information, see [Provide admin user a custom secret](helm_admin_customsecret.md).
+-   Added support for Secrets in Kubernetes. For more information, see [helm\_admin\_customsecret.md](helm_admin_customsecret.md).
 
 ## 9.3.3 {#section_f3b_htl_2yb .section}
 
--   Support for Custom Widget API. For more information, see [Custom Widget API](customwidgetapi_landing.md).
--   Support for PostgreSQL databases. For more information, see [Creating a PostgreSQL database](create_postgresql_db.md).
--   Admin Application Dashboard. For more information, see [Admin Application Dashboard](admin_application_dashboard.md).
+-   Support for Custom Widget API. For more information, see [customwidgetapi\_landing.md](customwidgetapi_landing.md).
+-   Support for PostgreSQL databases. For more information, see [create\_postgresql\_db.md](create_postgresql_db.md).
+-   Admin Application Dashboard. For more information, see [admin\_application\_dashboard.md](admin_application_dashboard.md).
 
 ## 9.3.2 {#section_um3_2mt_2xb .section}
 
@@ -21,17 +23,17 @@ For a full list of fixes by release, see this [article](https://support.hcltechs
 
     For more information, see the following topics:
 
-    -   [Deploying to a Container \(Kubernetes\) Platform - Open Liberty](deploy_container_kubernetes_openliberty.md)
+    -   [deploy\_container\_kubernetes\_openliberty.md](deploy_container_kubernetes_openliberty.md)
 
 ## 9.3.1 {#section_vzz_w4p_rvb .section}
 
 -   New **Copy/Paste** feature.
 
-    The "copy/paste" feature enables the application author to copy an item from their form and paste it into another page/form/app page within the same application or another one on the same Leap server. For more information, see [Copying items](cr_copying_items.md).
+    The "copy/paste" feature enables the application author to copy an item from their form and paste it into another page/form/app page within the same application or another one on the same Leap server. For more information, see [cr\_copying\_items.md](cr_copying_items.md).
 
 -   New **Workflow Branching** feature.
 
-    The "workflow branching" feature enables the application author to specify a condition that changes where a submitted form is directed. For more information, see [Branching](sub_adding_stages_toc.md#section_hjd_3rw_rvb).
+    The "workflow branching" feature enables the application author to specify a condition that changes where a submitted form is directed. For more information, see [sub\_adding\_stages\_toc.md\#section\_hjd\_3rw\_rvb](sub_adding_stages_toc.md#section_hjd_3rw_rvb).
 
 -   Improved HTML editor experience.
 -   Improved page navigation and validation behavior, including custom error handling with JavaScript API.
@@ -39,11 +41,11 @@ For a full list of fixes by release, see this [article](https://support.hcltechs
 
 Administrative improvements:
 
--   Beginning with this release, Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy. For more information, see [Strict CSP](leap_strict_csp.md).
+-   Beginning with this release, Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy. For more information, see [leap\_strict\_csp.md](leap_strict_csp.md).
 -   Kubernetes-friendly Container.
 -   Access to service descriptions may be restricted by user, group or special role \(i.e. authenticated, anonymous, etc\). For more information, see the following topics:
-    -   [Deploying a Service Description](ref_service_deploying_service_description.md)
-    -   [Configuration properties](co_configuration_properties.md)
+    -   [ref\_service\_deploying\_service\_description.md](ref_service_deploying_service_description.md)
+    -   [co\_configuration\_properties.md](co_configuration_properties.md)
 
 ## 9.3 { .section}
 
@@ -149,8 +151,8 @@ New features include:
 Support for the following versions:
 
 -   Oracle 12c and 11g
--   DB2® 10.5 and 11.x
--   WebSphere® Application Server 8.5.5 and 9
+-   10.5 and 11.x
+-   8.5.5 and 9
 -   Java™ 7
 -   Derby 10.10.2
 -   ICU 55.1
@@ -167,8 +169,8 @@ New features include:
 Support for the following versions:
 
 -   Oracle 12c and 11g
--   DB2 10.5
--   WebSphere Application Server 8.5.5
+-   10.5
+-   8.5.5
 -   Java 7
 -   Derby 10.10.2
 -   ICU 55.1
@@ -184,7 +186,7 @@ New features include:
     -   Simplified JSON requests and response structures.
     -   New **metadata** option
 -   Automatic generation of swagger files for applications.
--   A new Service Configuration window where you can quickly set up your application to make JSON service calls. For more information, see [Adding and configuring a service](cr_in_app_service.md).
+-   A new Service Configuration window where you can quickly set up your application to make JSON service calls. For more information, see [cr\_in\_app\_service.md](cr_in_app_service.md).
 -   The addition of a new configuration flag that disables the embedding of your application into other web sites.
 -   General usability enhancements include:
     -   Carbon Copy and Blind Carbon Copy fields for Stage Action emails.
@@ -198,20 +200,20 @@ New features include:
 Support for the following versions:
 
 -   Oracle 12c and 11g
--   DB2 10.5
--   WebSphere Application Server 8.5.5
+-   10.5
+-   8.5.5
 -   Java 7
 -   Derby 10.10.2
 -   ICU 55.1
 
 New features include:
 
--   A new **Events** tab for easier management of custom JavaScript within an application. The Events tab displays all JavaScript used within an application.
+-   A new **Events** tab for easier management of custom JavaScript™ within an application. The Events tab displays all JavaScript used within an application.
 -   A new **Alterntative text** tag for Image and Media form items. To increase the accessibility of your form, you can now add alternative text to the Image and Media form items.
 -   You can now import a list of choices from a spreadsheet into **Select One**,**Select Many**, and **Dropdown** form items. The lists can be comma separated, or space separated. If you copy two columns of choices from a spreadsheet, the first column is set as the Displayed Value, and the second column set as the Saved Value.
 -   In the **Settings** tab, under **Files**, you can now download any previously uploaded file.
--   A Java 2 Connector \(J2C\) provider is now supported for use in the HTTP Service Transport with WebSphere Application Server.
--   A new **openURL** query parameter so you can dynamically set a Forms Experience Builder application to open at run time.
+-   A Java 2 Connector \(J2C\) provider is now supported for use in the HTTP Service Transport with .
+-   A new **openURL** query parameter so you can dynamically set a application to open at run time.
 -   The **Media** form item is supported in Google Chrome via HTML5.
 -   Two new JavaScript functions were added to the User Interface Objects: **setTabTitle** and**setTabTitleList**.
 -   The amount of Stage Action data an application can have has been increased.
@@ -222,31 +224,31 @@ New features include:
 Support for the following versions:
 
 -   Oracle 11g
--   DB2 10.5
--   WebSphere Application Server 8.5.5
+-   10.5
+-   8.5.5
 -   Java 7
 -   Derby 10.10.2
 
 New features include:
 
--   **Document Integration**: Where compliance or regulatory requirements mandate it, integrating Leapcaptured data with existing documents can be an important part of the overall Leapsolution. These output documents can be provided for precise printing, document signing or archiving. Using a Service Configuration, you can map Forms Experience Builder form items to PDF items. When the user clicks a button, the PDF is populated. For more information, see [Forms Experience Builder document integration](di_pop_doc_with_app_data.md).
+-   **Document Integration**: Where compliance or regulatory requirements mandate it, integrating captured data with existing documents can be an important part of the overall solution. These output documents can be provided for precise printing, document signing or archiving. Using a Service Configuration, you can map form items to PDF items. When the user clicks a button, the PDF is populated. For more information, see [document integration](di_pop_doc_with_app_data.md).
 
--   **WebSphere Portal integration features**
-    -   **Render parameters**: Two public render parameters were added to provide additional portlet-to-portlet communication. For more information, see [Public render parameters](ref_public_render_parameters.md)
-    -   **Page refresh setting**: A new page refresh setting is available in theWebSphere Portal **Shared Settings**. This property lets you set whether the portal page is refreshed when the form is submitted. For more information, see [Selecting an application using Edit Shared Setting](in_portlet_selecting_application_using_edit_shared_setting.md).
+-   **integration features**
+    -   **Render parameters**: Two public render parameters were added to provide additional portlet-to-portlet communication. For more information, see [ref\_public\_render\_parameters.md](ref_public_render_parameters.md)
+    -   **Page refresh setting**: A new page refresh setting is available in the **Shared Settings**. This property lets you set whether the portal page is refreshed when the form is submitted. For more information, see [in\_portlet\_selecting\_application\_using\_edit\_shared\_setting.md](in_portlet_selecting_application_using_edit_shared_setting.md).
     -   **Support for non-default portal context root**: The Leap Portlet now supports portal with a non-default context root, or an empty context root.
-    -   **Script Portlet and DDC samples**: Two new samples are available for usingLeapwith WebSphere Portal. Both samples are available on the developerWorks® Leap wiki:
+    -   **Script Portlet and DDC samples**: Two new samples are available for usingwith . Both samples are available on the developerWorks® wiki:
         -   [DDC integration](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20and%20DDC%20(IBM%20Digital%20Data%20Connector)%20Sample)
         -   [Script Portlet integration](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20and%20Script%20Portlet%20Sample)
--   **Additional in-product help**: If you're new to Forms Experience Builder, blue help bubbles describe the basic function of each page or section, as well as provide additional help resources. Additional hover help, and context sensitive help were added throughout the application.
+-   **Additional in-product help**: If you're new to , blue help bubbles describe the basic function of each page or section, as well as provide additional help resources. Additional hover help, and context sensitive help were added throughout the application.
 -   **JSON is now supported in the**:
     -   HTTP Transport
     -   JavaScript Data Access Rest API
 -   **New JavaScript functionality**: New JavaScript functions were added to the User Interface Objects.
 -   **Forms Tab**:
-    -   **Moving items in an application**: You can now move form items between pages of a form. For more information, see [Moving items on a form](cr_moving_items_on_a_form.md).
+    -   **Moving items in an application**: You can now move form items between pages of a form. For more information, see [cr\_moving\_items\_on\_a\_form.md](cr_moving_items_on_a_form.md).
     -   **Order of forms in a application**: You can change the order of the forms within an application by dragging and dropping them in the Outline view. When the application is deployed and launched, the first form in the application becomes the default form seen by the user.
-    -   **Warning message on Save**: Forms Experience Builder does not support multiple people editing the same application. If you and another user edit the same application, and the other user saves changes while you are still editing, a warning message is now displayed asking if you want to overwrite the changes made by the other user.
+    -   **Warning message on Save**: does not support multiple people editing the same application. If you and another user edit the same application, and the other user saves changes while you are still editing, a warning message is now displayed asking if you want to overwrite the changes made by the other user.
     -   **Date item loads current date**: A new property is available for the**Date** field. When selected, if the user leaves the **Date**field empty, the current date is loaded upon form submission. If the user fills in the date field, the date supplied by the user is used.
     -   **Single and Multi-Line entries uppercase**: This new feature, located in the**Basic** tab of the Properties window lets you automatically change the user's entered text into upper case letters.
     -   **Hiding Table buttons for Add, Edit, and Delete**: In the**Advanced** tab for a **Table**, you can now set that no buttons are displayed with your table. The buttons can be enabled using JavaScript, if required.
@@ -269,5 +271,5 @@ New features include:
     -   **Selected results open in a new window**: When you click on a submitted record, it opens in a window, rather than in a side pane.
     -   **Default view changed**: When you click the **View Responses** link, the default view is now **Responses**, rather than**Summary**.
 -   A number of upgrade routine fixes, accessibility, and usability changes were implemented.
--   Values entered into the password item are not stored in your Forms Experience Builder application. Since the password is never stored, it is never exported or shown in any field. The password field is empty when the form is rendered in its next stage. Using the password for calling server-side services during stage transitions still work as the value is included as part of the submitted data and not stored as part of the application record.
+-   Values entered into the password item are not stored in your application. Since the password is never stored, it is never exported or shown in any field. The password field is empty when the form is rendered in its next stage. Using the password for calling server-side services during stage transitions still work as the value is included as part of the submitted data and not stored as part of the application record.
 

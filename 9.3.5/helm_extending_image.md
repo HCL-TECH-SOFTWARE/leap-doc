@@ -4,22 +4,24 @@ Learn how to install additional Open Liberty server features by extending the Le
 
 The Leap image is shipped with the following server features:
 
--   appSecurity-3.0
 -   adminCenter-1.0
+-   appSecurity-3.0
+-   federatedRegistry-1.0
+-   javaMail-1.6
 -   jdbc-4.2
 -   jndi-1.0
--   servlet-4.0
--   javaMail-1.6
 -   jpa-2.2
--   transportSecurity-1.0
--   federatedRegistry-1.0
+-   jwtSso-1.0
 -   ldapRegistry-3.0
 -   localConnector-1.0
--   restConnector-2.0
--   passwordUtilities-1.0
+-   mpJwt-2.1
 -   openidConnectClient-1.0
+-   passwordUtilities-1.0
+-   restConnector-2.0
+-   servlet-4.0
+-   transportSecurity-1.0
 
-Open Liberty has many features that can be enabled. For more information, see the [Open Liberty documentation](https://openliberty.io/docs/latest/reference/feature/feature-overview.html).
+Open Liberty has many features that can be enabled. Some features have dependencies on other features, which will be installed automatically. For more information, see the [Open Liberty documentation](https://openliberty.io/docs/latest/reference/feature/feature-overview.html).
 
 If you require a different feature to be installed, you may extend our image. This can be accomplished by creating a Dockerfile. See the following example:
 
@@ -38,6 +40,4 @@ After creating a Dockerfile, build the new docker image:
 A new image with the specified feature is installed. Use this extended image when running helm.
 
 **Note:** This is the only supported mechanism for enabling Open Liberty features. There are many features that can be added that have not been tested by HCL and you do so at your own risk. HCL will provide best-effort support for added features as it pertains to Leap.
-
-**Parent topic: **[Preparation](helm_preparation.md)
 

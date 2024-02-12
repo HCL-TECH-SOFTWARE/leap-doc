@@ -12,7 +12,7 @@
       
       
       
-        <link rel="canonical" href="https://opensource.hcltechsw.com/connections/helm_oidc_config.html">
+        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/helm_oidc_config.html">
       
       <link rel="icon" href="assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -5180,7 +5180,7 @@
     customCertificateSecrets:
       keycloakCert: &quot;keycloakcert&quot;
 </code></pre></div>
-<p>For more information, see to <a href="helm_admin_customsecret.html">Provide admin user a custom secret</a>.</p>
+<p>For more information, see to <a href="helm_admin_customsecret.html">helm_admin_customsecret.md</a>.</p>
 <h2 class="section" id="section_vxv_fnt_b1c">Add OIDC definition as a server customization</h2>
 <p>The properties that you need to specify may differ based on your identify provider. For additional information, see the <a href="https://openliberty.io/docs/latest/reference/config/openidConnectClient.html">Open Liberty documentation on OpenID Connect</a>.</p>
 <p>Before moving on from this step:</p>
@@ -5211,10 +5211,9 @@
              httpPort=&quot;9080&quot;
              httpsPort=&quot;9443&quot;&gt;
              &lt;samesite none=&quot;*&quot; /&gt;
-          &lt;/httpEndpoint&gt;
         &lt;/server&gt; 
 </code></pre></div>
-<p>For more details on defining a server customization, see <a href="helm_open_liberty_custom.html">Open Liberty server customizations</a>.</p>
+<p>For more details on defining a server customization, see <a href="helm_open_liberty_custom.html">helm_open_liberty_custom.md</a>.</p>
 <h2 class="section" id="section_r3z_knt_b1c">Add config properties related to OIDC config</h2>
 <p>The following properties must be set to complete the OIDC configuration:</p>
 <ul>
@@ -5226,13 +5225,13 @@
    leap:
      leapProperties: |
        ibm.nitro.NitroConfig.hasUserLookup=false
-       ibm.nitro.NitroConfig.hasUserGroups=false ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myOIDCServer.com/realms/Leap/protocol/openid-
-       connect/logout?client_id=hcl-leap-oidc-client&amp;post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
+       ibm.nitro.NitroConfig.hasUserGroups=false 
+       ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myOIDCServer.com/realms/Leap/protocol/openid-
+                 connect/logout?client_id=hcl-leap-oidc-client&amp;post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
 </code></pre></div>
-<p>For more details on setting Leap properties, see <a href="helm_leap_properties.html">Leap properties</a>.</p>
+<p>For more details on setting Leap properties, see <a href="helm_leap_properties.html">helm_leap_properties.md</a>.</p>
 <h2 class="section" id="section_zq2_vmt_b1c">Restart the pod</h2>
 <p>After restarting the Leap pod, accessing Leap should redirect you to authenticate using your OIDC IDP.</p>
-<p><strong>Parent topic: </strong><a href="kubernetes_helm_deployment.html">Kubernetes Helm deployment</a></p>
 
 
 

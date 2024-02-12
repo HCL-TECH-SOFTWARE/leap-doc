@@ -1,27 +1,46 @@
-# Page and App Page objects {#ref_page_app_page_objects .concept}
+# Page and App Page objects 
 
-|Object|Description|Example|
-|------|-----------|-------|
-|page.<itemId\>appPage.<itemId\>
+<table class="table-wrap">
+<tr>
+<td> <b>Object</b> </td><td> <b>Description</b> </td><td> <b>Example</b> </td>
+</tr>
+<tr>
+<td> page.<itemId><br>
+appPage.<itemId></td>
+<td>Provides convenient direct access to all items on the page, including those inside Sections and Tab Folders.</td>
 
-|Provides convenient direct access to all items on the page, including those inside Sections and Tab Folders.|Hide a specific button on the page:```
+<td> Hide a specific button on the page:
+
+```
 page.F_NextButton.setVisible(false);
 ```
+</td>
+</tr>
+<tr>
+<td>page.addClasses(classes)</br>
+appPage.addClasses(classes)</td>
+<td>Adds a list of custom class names to the page for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and false is returned.</td>
+<td>
 
-|
-|page.addClasses\(classes\)appPage.addClasses\(classes\)
-
-|Adds a list of custom class names to the page for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and false is returned.|```
+```
 page.addClasses(“emphasized error”);
 ```
-
-|
-|page.connectEvent\(eventName, callbackFunction\)appPage.connectEvent\(eventName, callbackFunction\)
-
-|Connects a function to an event on the page. The list of events is the same as for the page in the Design interface. Useful for utility functions defined in JavaScript™ files to hook behavior into the page dynamically. Returns a handle object that represents the connection of the function to that event name. That handle can be used to disconnect this same event using page.disconnectEvent or appPage.disconnectEvent.| |
-|page.disconnectEvent\(eventHandle\)appPage.disconnectEvent\(eventHandle\)
-
-|Disconnects the event handler specified by the passed-in event handle object that was returned by a page.connectEvent or **appPage.connectEvent** call. To avoid duplicate event handlers being connected to pages, connect to page events from within the application **onStart** or form **onLoad** events. If you connect to a page event outside of these two events you should explicitly disconnect from the page event using the **disconnectEvent** method.|``` {#codeblock_wlb_xr5_vvb}
+</td>
+</tr>
+<tr>
+<td>page.connectEvent(eventName,<br>
+callbackFunction)<br>
+appPage.connectEvent(eventName,<br>
+callbackFunction)</td>
+<td>Connects a function to an event on the page. The list of events is the same as for the page in the Design interface. Useful for utility functions defined in JavaScript™ files to hook behavior into the page dynamically. Returns a handle object that represents the connection of the function to that event name. That handle can be used to disconnect this same event using page.disconnectEvent or appPage.disconnectEvent.</td>
+<td> </td>
+</tr>
+<tr>
+<td>page.disconnectEvent(eventHandle)<br>
+appPage.disconnectEvent(eventHandle)</td>
+<td>Disconnects the event handler specified by the passed-in event handle object that was returned by a page.connectEvent or <b>appPage.connectEvent</b> call. To avoid duplicate event handlers being connected to pages, connect to page events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to a page event outside of these two events you should explicitly disconnect from the page event using the <b>disconnectEvent</b> method.</td>
+<td>
+``` {#codeblock_wlb_xr5_vvb}
 var eventHdl = page.connectEvent("<some event>", function(pSuccess, pErrorObj)
  {
   if (pSuccess) {
@@ -30,17 +49,23 @@ var eventHdl = page.connectEvent("<some event>", function(pSuccess, pErrorObj)
   page.disconnectEvent(eventHndl);
 });
 ```
-
-|
-|page.getBO\(\)|Returns the object that contains the Business Object data for the entire form.|```
+</td>
+</tr>
+<tr>
+<td>page.getBO()</td>
+<td>Returns the object that contains the Business Object data for the entire form.</td>
+<td>
+```
 var theBO = page.getBO();
 theBO.F_SingleLine.setValue('new Value');
 ```
-
-|
-|page.getChildren\(\)appPage.getChildren\(\)
-
-|Returns the list object that provides access to all direct children items for this page. For example, items in a Section on the page are not in the list, however the Section itself is. The list object has the getLength\(\) function and get\(index\) function for accessing the objects in the list.|Hide all button items on a page:```
+</td>
+</tr>
+<td>page.getChildren()</br>
+appPage.getChildren()</td>
+<td>Returns the list object that provides access to all direct children items for this page. For example, items in a Section on the page are not in the list, however the Section itself is. The list object has the getLength() function and get(index) function for accessing the objects in the list.</td>
+<td>Hide all button items on a page:
+```
 var list = page.getChildren();
      for(var i=0; i<list.getLength(); i++)
      {
@@ -49,36 +74,64 @@ var list = page.getChildren();
      }
 ```
 
-|
-|page.getClasses\(\)appPage.getClasses\(\)
+</td>
+</tr>
+<td>page.getClasses()<br>
+<td>appPage.getClasses()</td>
+<td>Returns an Array of custom class names currently applied to the page.</td>
+<td> </td>
+</tr>
+<td>page.getForm()</td>
+<td>Returns the form object to which this page belongs.</td>
+<td> </td>
+</tr>
+<td>page.getId()<br>
+appPage.getId()<td>
+<td>Returns the unique ID, within the application, of this page. For example, <b>P_Page1</b>.</b></td>
+<td> </td>
+</tr>
+<td>appPage.getServiceConfigurationIds()</td>
+<td>Returns an array of all the IDs for services mapped in this app page.</td>
+<td>
 
-|Returns an Array of custom class names currently applied to the page.| |
-|page.getForm\(\)|Returns the form object to which this page belongs.| |
-|page.getId\(\)appPage.getId\(\)
-
-|Returns the unique ID, within the application, of this page. For example, P\_Page1.| |
-|appPage.getServiceConfigurationIds\(\)|Returns an array of all the IDs for services mapped in this app page.|```
+```
 var serviceConfigs = appPage.getServiceConfigurationIds();
 ```
 
-|
-|appPage.getServiceConfiguration\(serviceId\)|Gets the service object for a particular service ID.|Lookup and execute a service from JavaScript™:```
+</td>
+</tr>
+<td>appPage.getServiceConfiguration(serviceId)</td>
+<td>Gets the service object for a particular service ID.</td>
+<td>Lookup and execute a service from JavaScript™:
+
+```
 var service = appPage.getServiceConfiguration('SC_ServiceConfig');
      service.callService();
 ```
 
-|
-|page.getType\(\)appPage.getType\(\)
+</td>
+</tr>
+<td>page.getType()<br>
+appPage.getType()</td>
+<td>Returns a string identifying the object type. For example,“page”.</td>
+<td> </td>
+</tr>
+<td>page.getVisibility()</td>
+<td>Returns true if the page is being shown, and false if it is hidden.</td>
+</tr>
+<td>page.removeClasses(classes)<br>
+appPage.removeClasses(classes)</td>
+<td>Removes a list of custom class names from the page for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.</td>
+<td>
 
-|Returns a string identifying the object type. For example,“page”.| |
-|page.getVisibility\(\)|Returns true if the page is being shown, and false if it is hidden.| |
-|page.removeClasses\(classes\)appPage.removeClasses\(classes\)
-
-|Removes a list of custom class names from the page for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.|```
+```
 page.removeClasses(“emphasized”);
 ```
 
-|
+</td>
+</tr>
+</table>
+
 
 **Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
 

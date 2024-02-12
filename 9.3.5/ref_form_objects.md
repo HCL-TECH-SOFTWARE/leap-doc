@@ -1,18 +1,39 @@
-# Form objects {#ref_form_objects .concept}
+# Form objects
 
-|Object|Description|Example|
-|------|-----------|-------|
-|form.addClasses\(classes\)|Adds a list of custom class names to the form for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and false is returned.|```
+Table 1. Form Object (form) The form object provides access to a number of functions that affect the entire form.
+
+<table class="table-wrap">
+<tr>
+<td> <b>Object</b> </td><td> <b>Description</b> </td><td> <b>Example</b> </td>
+</tr>
+<tr>
+<td>form.addClasses(classes)</td>
+<td>Adds a list of custom class names to the form for dynamic CSS styling. The <b>classes</b> parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and <b>false</b> is returned.</td>
+<td>
+
+```
 form.addClasses(“emphasized error”);
 ```
 
-|
-|form.backwardPage\(\)|Return the form to the previous page in navigation order. If the first page is reached, then nothing happens.|The following could be used to turn a regular button into a navigation button. In the **onClick** event of a button: ```
+</td>
+</tr>
+<tr>
+<td>form.backwardPage()</td>
+<td>Return the form to the previous page in navigation order. If the first page is reached, then nothing happens.</td>
+<td>The following could be used to turn a regular button into a navigation button. In the <b>onClick</b> event of a button:
+
+```
 form.backwardPage();
 ```
 
-|
-|form.connectEvent\(eventName, callbackFunction\)|Connects a function to an event on the form. This is useful for utility functions defined in external JavaScript™ files to hook behavior into the form dynamically. Returns a handle object that represents the connection of the function to that event name. The handle can be used to disconnect this same event using form.disconnectEvent.|If there is a F\_CurrentUser field, then populate the currentUser:```
+</td>
+</tr>
+<tr>
+<td>form.connectEvent(eventName, callbackFunction)</td>
+<td>Connects a function to an event on the form. This is useful for utility functions defined in external JavaScript™ files to hook behavior into the form dynamically. Returns a handle object that represents the connection of the function to that event name. The handle can be used to disconnect this same event using <b>form.disconnectEvent</b>.</td>
+<td>If there is a F_CurrentUser field, then populate the currentUser:
+
+```
 var hndl = form.connectEvent('onLoad', function()
      {
      if(form.getBO().F_CurrentUser)
@@ -21,10 +42,14 @@ form.getBO().F_CurrentUser.setValue(app.getCurrentUser());
      });
 ```
 
-|
-|form.disconnectEvent\(eventHandle\)|Disconnects the event handler specified by the passed-in event handle object that was returned by a form.connectEvent call.To avoid duplicate event handlers being connected, connect to events from within the application **onStart** or form **onLoad** events. If you connect to an event outside of these two events, you should explicitly disconnect from the event using the **disconnectEvent** method.
+</td>
+</tr>
+<tr>
+<td>form.disconnectEvent(eventHandle)</td>
+<td>Disconnects the event handler specified by the passed-in event handle object that was returned by a form.connectEvent call.  To avoid duplicate event handlers being connected, connect to events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to an event outside of these two events, you should explicitly disconnect from the event using the <b>disconnectEvent</b> method.</td>
+<td>
 
-|```
+```
 var hndl = form.connectEvent('onLoad', function()
 {
   if(form.getBO().F_CurrentUser)
@@ -34,19 +59,39 @@ var hndl = form.connectEvent('onLoad', function()
 });
 ```
 
-|
-|form.forwardPage\(\)|Advance the form to the next page in navigation order. If the last page is reached, then nothing happens.|The following could be used to turn a regular button into a navigation button. In the **onClick** event of a button: ```
+</td>
+</tr>
+<tr>
+<td>form.forwardPage()</td>
+<td>Advance the form to the next page in navigation order. If the last page is reached, then nothing happens.</td>
+<td>The following could be used to turn a regular button into a navigation button. In the <b>onClick</b> event of a button:
+
+```
 form.forwardPage();
 ```
 
-|
-|form.getApp\(\)|Returns the application object: app. Not a commonly used function, because within the form scope the “app” variable is also available.| |
-|form.getBO\(\)|Returns the object that contains the Business Object data for the entire form.|This is commonly used in the application **onStart**, since at this scope the “form” variable is not defined. ```
+</td>
+</tr>
+<tr>
+<td>|form.getApp()</td>
+<td> Returns the application object: app. Not a commonly used function, because within the form scope the <b>app</b> variable is also available.</td>
+</tr>
+<tr>
+<td>form.getBO()</td>
+Returns the object that contains the Business Object data for the entire form.</td>
+<td>This is commonly used in the application <b>onStart</b>, since at this scope the <b>form</b> variable is not defined.
+
+```
 var myForm = app.getForm('F_Form1');
 var formBO = myForm.getBO();
 formBO.F_SingleLine.setValue('setting the value using code!');
 ```
 
+</td>
+</tr>
+<tr>
+<td>
+</table>
 |
 |form.getClasses\(\)|Returns an Array of custom class names currently applied to the form.| |
 |form.getCurrentPage\(\)|Gets the currently shown page. If there is no page shown, then null is returned. It is possible, though rarely desirable, to have all pages hidden.|```
