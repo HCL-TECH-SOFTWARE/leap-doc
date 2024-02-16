@@ -10,12 +10,12 @@ A Service Description is represented as an XML document that follows an XML sche
 
 Each Service Description must contain a unique id that identifies it to the Leap server. The id can contain any characters that are valid as a component of a URL path. These characters include:
 
-    -   Alphabetical letters – \[A-Z\], and \[a-z\]
+   - Alphabetical letters – \[A-Z\], and \[a-z\]
     -   Numerals – \[0-9\]
     -   Hyphens – \[-\]
     -   Underscore – \[\_\]
 
-    Because a Service Description ID is a surrogate for the Service Description itself, this ID does not must be descriptive. Any UUID is a valid choice for a Service Description ID because it guarantees uniqueness and contains only characters that are valid in a URL path component.
+  Because a Service Description ID is a surrogate for the Service Description itself, this ID does not must be descriptive. Any UUID is a valid choice for a Service Description ID because it guarantees uniqueness and contains only characters that are valid in a URL path component.
 
 **Transport ID**
 

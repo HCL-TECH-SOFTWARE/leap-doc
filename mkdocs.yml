@@ -313,7 +313,6 @@ nav:
             - WSDL service description tool parameters: ref_service_wsdl_param.md
             - Troubleshooting the WSDL service description generator - FAQ: tr_troubleshooting_wsdl_sd_tool.md
           - HTTP Service Transport: ref_service_http_service_transport.md
-          - Send Email service: ref_send_email.md
         - Embedding items in an iframe: ref_embed_iframe.md
         - Embedding API: ref_embedding_api.md
         - Creating customized Cascading Style Sheets: ref_customized_css.md

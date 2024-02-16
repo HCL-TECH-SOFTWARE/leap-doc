@@ -4382,8 +4382,6 @@
         
           
         
-          
-        
       
       
         
@@ -4616,20 +4614,6 @@
     <li class="md-nav__item">
       <a href="ref_service_http_service_transport.html" class="md-nav__link">
         HTTP Service Transport
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ref_send_email.html" class="md-nav__link">
-        Send Email service
       </a>
     </li>
   
@@ -5071,39 +5055,7 @@
 <li><a href="helm_leap_properties.html">Leap properties</a></li>
 <li><a href="helm_jvm_options.html">JVM options</a></li>
 <li><a href="helm_changing_log_level.html">Changing the log level</a></li>
-<li>
-<p><a href="helm_extending_image.html">Enabling additional Open Liberty features</a></p>
-</li>
-<li>
-<p><strong><a href="helm_prepare_namespace.html">Prepare a namespace</a></strong><br />
-You need to create a namespace in your Kubernetes cluster that contains all the resources related to your HCL Leap Container deployment.</p>
-</li>
-<li><strong><a href="prepare_config_helm.html">Prepare configuration</a></strong><br />
-Create a configuration file that fits the needs of your target HCL Leap Container deployment. The configuration file is the heart of your deployment using Helm. It defines how HCL Leap is deployed to supported platforms, and how it behaves during runtime operations.</li>
-<li><strong><a href="helm_load_images.html">Load images</a></strong><br />
-This section presents how to load the Leap Container or later images into your container image repository, tag them to fit your repository structure, and push them to your repository, so that all Nodes in your Kubernetes or OpenShift cluster can deploy HCL Leap Pods.</li>
-<li><strong><a href="helm_persistent_volume.html">PersistentVolumeClaims</a></strong><br />
-Defining persistent volumes (PVs) for Leap is optional and dependent on your needs.</li>
-<li><strong><a href="helm_admin_customsecret.html">Provide admin user a custom secret</a></strong><br />
-Instead of providing adminUser and adminPassword for Leap directly in the custom values, a secret can be used to pass the credentials to the deployments.</li>
-<li><strong><a href="helm_probes_config_valuesfile.html">Probes configuration in values.yaml file</a></strong><br />
-The <code>liveness</code> and <code>readiness</code> probes such as the status thresholds and time values can be modified.</li>
-<li><strong><a href="helm_saml_config.html">SAML configuration</a></strong><br />
-The Leap Helm chart and container offer a basic SAML configuration through the Helm values. To enable SAML you must pass the IdP Metadata of the identity provider.</li>
-<li><strong><a href="helm_certificates.html">Certificates</a></strong><br />
-The customCertificateSecrets parameter can be used to reference certificates or keys that might be required for SSL communication to the Leap server, the LDAP server, the database, or other services.</li>
-<li><strong><a href="helm_open_liberty_custom.html">Open Liberty server customizations</a></strong><br />
-The configOverrideFiles parameter allows configuration snippets to be passed to the Leap server.</li>
-<li><strong><a href="helm_service_catalog.html">Service Catalog</a></strong><br />
-The serviceCatalog parameter can be used to pass service descriptions to Leap, which will be picked up by Leap automatically.</li>
-<li><strong><a href="helm_leap_properties.html">Leap properties</a></strong><br />
-The leapProperties parameter can be used to add or modify properties to Leap.</li>
-<li><strong><a href="helm_jvm_options.html">JVM options</a></strong><br />
-JVM options can be specified by passing them as environment variables.</li>
-<li><strong><a href="helm_changing_log_level.html">Changing the log level</a></strong><br />
-Sometimes you may need to increase the log level to troubleshoot unexpected behavior.</li>
-<li><strong><a href="helm_extending_image.html">Enabling additional Open Liberty features</a></strong><br />
-Learn how to install additional Open Liberty server features by extending the Leap image.</li>
+<li><a href="helm_extending_image.html">Enabling additional Open Liberty features</a></li>
 </ul>
 <p><strong>Parent topic: </strong><a href="kubernetes_helm_deployment.html">Kubernetes Helm deployment</a></p>
 

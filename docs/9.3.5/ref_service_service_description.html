@@ -4380,8 +4380,6 @@
         
           
         
-          
-        
       
       
         
@@ -4616,20 +4614,6 @@
     <li class="md-nav__item">
       <a href="ref_service_http_service_transport.html" class="md-nav__link">
         HTTP Service Transport
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ref_send_email.html" class="md-nav__link">
-        Send Email service
       </a>
     </li>
   
@@ -5070,13 +5054,15 @@
 <p>A Service Description is represented as an XML document that follows an XML schema. This single XML document contains all the information for a single Service Description: name, description, input and output parameters, and input and output mapping. For a full listing of the XML schema, refer to <a href="ref_service_service_description.html#ServDescAppendixA">Appendix A - Service Description schema</a>. The top-level element in a <strong>Service Description</strong> is the serviceDescription element. This element, and all of its childs, must be in the XML namespace with a URI of http://www.ibm.com/xmlns/prod/forms/services/serviceDescription/1.0.</p>
 <p><strong>ID</strong></p>
 <p>Each Service Description must contain a unique id that identifies it to the Leap server. The id can contain any characters that are valid as a component of a URL path. These characters include:</p>
-<pre><code>-   Alphabetical letters – \[A-Z\], and \[a-z\]
--   Numerals – \[0-9\]
--   Hyphens – \[-\]
--   Underscore – \[\_\]
-
-Because a Service Description ID is a surrogate for the Service Description itself, this ID does not must be descriptive. Any UUID is a valid choice for a Service Description ID because it guarantees uniqueness and contains only characters that are valid in a URL path component.
-</code></pre>
+<ul>
+<li>Alphabetical letters – [A-Z], and [a-z]<ul>
+<li>Numerals – [0-9]</li>
+<li>Hyphens – [-]</li>
+<li>Underscore – [_]</li>
+</ul>
+</li>
+</ul>
+<p>Because a Service Description ID is a surrogate for the Service Description itself, this ID does not must be descriptive. Any UUID is a valid choice for a Service Description ID because it guarantees uniqueness and contains only characters that are valid in a URL path component.</p>
 <p><strong>Transport ID</strong></p>
 <p>A Service Description must reference a Service Transport to perform its underlying operation. Each Service Transport has its own unique transportId that uniquely identifies it to the Leap server. The ID for a Service Transport must be made available by its developer.</p>
 <p><strong>Name and Description</strong></p>
