@@ -27,9 +27,4 @@ Updates may be performed only to markdown files under **leap-doc/9.3.5**.
 
 This repo contains the HCL Leap source and output (doc) files. The help docs are published from the source folder, 9.3.5 in this repo.
 
-## setup
- 
-Install pre-requisites : https://pages.git.cwp.pnp-hcl.com/Team-Q/internal-doc/enable/documentation/mkdocs_local_setup#pre-requisites
-
-clone (not fork) the repo: https://git.cwp.pnp-hcl.com/CWPdoc/leap-mkdocs/tree/version
 
