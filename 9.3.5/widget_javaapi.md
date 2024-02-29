@@ -4,7 +4,7 @@ Custom widgets can use Leap's JavaScript API to help achieve their objectives.
 
 The API can be accessed via the global `NitroApplication` object or by the passed-in `context` object. For example, the following is a widget that renders itself appropriately based on the form's currently selected page:
 
-``` {#codeblock_b5q_kym_jyb}
+```javascript
 const myPageNavigator = {
     ...
     instantiate: function (context, domNode) {

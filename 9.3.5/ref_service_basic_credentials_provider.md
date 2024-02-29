@@ -32,16 +32,16 @@ The provider ID for the Basic Credentials Provider to enter in a Service Descrip
 
 ## Sample Service Description { .section}
 
-```
+```xml
 <serviceDescription>
   <id>make-http-request</id>
   <defaultLocale>en-us</defaultLocale>
   <transportId>HTTPServiceTransport</transportId>
   <name xml:lang="en-us">Make an HTTP Request</name>
   <description xml:lang="en-us">Makes an HTTP request to the configured URL and returns the result</description>
-  <credentials providerId="basic"\>
-    <property name="realm" value="myRealm"/\>
-  </credentials\>
+  <credentials providerId="basic">
+    <property name="realm" value="myRealm" />
+  </credentials>
   <inbound>
     <parameters>
       <parameter>

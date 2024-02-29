@@ -29,7 +29,7 @@ Table 2. Page Events
 <td>Called as the page is about to be switched away from this one. A pAllowSwitch variable is passed to this event that contains one property called allow. Setting this property to false cancels the page switch.
 <td>Cancel the page switch if a check box is not checked:
 
-```
+```JavaScript
 if(!BO.F_Agree.getValue())
    pAllowSwitch.allow = false;
 ```
@@ -37,12 +37,12 @@ if(!BO.F_Agree.getValue())
 </tr>
 <tr>
 <td>onRemoveFromNavigation
-<td>Called when this page is removed from navigation by calling the form.removePageFromNavigation\(\) method for this page.
+<td>Called when this page is removed from navigation by calling the form.removePageFromNavigation() method for this page.
 <td>
 </tr>
 <tr>
 <td>onRestoreFromNavigation
-<td>Called when a page is restored to navigation by calling the form.restorePageNavigation\(\) method for this page.
+<td>Called when a page is restored to navigation by calling the form.restorePageNavigation() method for this page.
 <td>
 </tr>
 <tr>

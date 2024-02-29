@@ -17,7 +17,7 @@ Statistics are collected by a timer task which can be configured by an administr
     |/apps-basic/secure/org/admin/apps|GET|list|
     |/apps-basic/secure/org/admin/apps/\{app-uid\}|GET|app detail|
 
-    **Note:** `app-uid` is the UID of the application.
+    **Note:** `{app-uid}` is the UID of the application.
 
 
 ## List {#section_p5n_2bc_kyb .section}
@@ -30,11 +30,12 @@ This action retrieves a list of all apps, available query parameters:
 
 -   `includeAdmins`: whether includes app administrators information in response. Default value: `false`
 
--   `format`: \(case sensitive\) acceptable values: json, application/json, xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+-   `format`: \(case sensitive\) acceptable values:
+    - JSON: `json` or `application/json`
+    - Spreadsheet: `xlsx` or `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+-   `filename`: (optional) only used when `pFormat` is set to `xlsx` format. The file extension must be `.xlsx`.
 
--   `filename`: only used when pFormat is set to xlsx format. The file extension has to be xlsx.
-
-    **Note:** When the format is an open document and a file is downloaded, if the file name is not set, the default file name is app.xlsx.
+    **Note:** If this parameter is not specified, the default file name is **app.xlsx**.
 
 
 ## App detail {#section_qwb_qbc_kyb .section}

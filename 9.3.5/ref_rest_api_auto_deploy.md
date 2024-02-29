@@ -23,22 +23,22 @@ The following table lists the types of actions that are available and the URLs a
 
 Exports the defined application as a .nitro\_s file. You can use the following parameters to export the application:
 
-submitted=true
-:   Can be set to **true** or **false**. **true** returns the application and all submission data that exists in the application.
+#### `submitted=true` 
+Can be set to **true** or **false**. **true** returns the application and all submission data that exists in the application.
 
-    **Note:** If no value is passed, then the default is **true**.
+**Note:** If no value is passed, then the default is **true**.
 
 ## Upgrade { .section}
 
 Allows the user to upgrade the content of an application to match the application that is contained in the POST request. You can use the following parameters to upgrade the application:
 
-replaceSubmittedData=off
-:   Can be **on** or **off**. **on** replaces the existing submission data with the submission data contained in the application being uploaded.
+#### `replaceSubmittedData=off`
+Can be **on** or **off**. **on** replaces the existing submission data with the submission data contained in the application being uploaded.
 
-    **Note:** The default for replaceSubmittedData is **off**.
+**Note:** The default for replaceSubmittedData is **off**.
 
-freedomIdentifyKey=x
-:   The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
+#### `freedomIdentifyKey=x`
+The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
 
 The upgraded application must be uploaded to the server as multipart/form-data in the body of the POST.
 
@@ -46,23 +46,23 @@ The upgraded application must be uploaded to the server as multipart/form-data i
 
 Imports the specified application into the Leap server. The user that performs the import is automatically added as an administrator. You can use the following parameters to import the application:
 
-deploy=false
-:   Can be set to **true** or **false**. **true** automatically deploys the application as part of the import.
+#### `deploy=false`
+Can be set to **true** or **false**. **true** automatically deploys the application as part of the import.
 
-    **Note:** The default is **false**.
+**Note:** The default is **false**.
 
-importData=false
-:   Can be set to **true** or **false**. **true** imports the submission data, or submitted records, if they were included when the application was exported.
+#### `importData=false`
+Can be set to **true** or **false**. **true** imports the submission data, or submitted records, if they were included when the application was exported.
 
-    **Note:** The default is **false**.
+**Note:** The default is **false**.
 
-cleanIds=false
-:   Can be set to **true** or **false**. **true** removes all groups and users from roles within the imported application ensuring that only the current authenticated user has access to the application.
+#### `cleanIds=false`
+Can be set to **true** or **false**. **true** removes all groups and users from roles within the imported application ensuring that only the current authenticated user has access to the application.
 
-    **Note:** The default is **false**.
+**Note:** The default is **false**.
 
-freedomIdentifyKey=x
-:   The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
+#### `freedomIdentifyKey=x`
+The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
 
 The application to be imported must be uploaded to the server as multipart/form-data.
 
@@ -70,8 +70,8 @@ The application to be imported must be uploaded to the server as multipart/form-
 
 Deletes the specified application from the server.
 
-freedomIdentifyKey=x
-:   The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
+#### `freedomIdentifyKey=x`
+The value of *x*, must be a randomly generated, difficult to guess, single-use numerical value. The value of this URL parameter must match the value of the freedomIdentifyKey cookie. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities. See [Data REST API Delete](ref_data_rest_api_delete.md#) for more information.
 
 ## Basic Application Flow { .section}
 

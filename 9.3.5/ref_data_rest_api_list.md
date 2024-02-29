@@ -25,7 +25,7 @@ The order in which the data must be returned. The default sort order is indeterm
    -   **lastUpdated** uses the last updated date as the sort attribute.
    -   **itemAuthor** uses the display name of the author as the sort attribute.
    -   **flowState** uses the stage name as the sort attribute.
-   -   <*item ID*> uses the values of a particular form item, for example, **F_SingleLine**, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the **Multi-Line Entry**, **Select Many**,** Table**, and **Attachment widgets**.
+   -   <*item ID*> uses the values of a particular form item, for example, **F_SingleLine**, as the sort attribute. Several widgets cannot be used as the sort attribute due to their storage representation in the database. This includes the **Multi-Line Entry**, **Select Many**, **Table**, and **Attachment** widgets.
 
 **order**
 
@@ -49,7 +49,7 @@ This parameter is only valid for JSON.
 
 The result of this request is a list of records. An example result represented as an ATOM feed:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://<host>:<port>/apps-basic/landing/1/app/
         dd34da19-15c4-4267-8f1e-9f12ece743d7/viewdata/index.html">
@@ -103,18 +103,18 @@ The result of this request is a list of records. An example result represented a
 
 It is important to note:
 
--   Each submission record is represented by an **<entry>** within the feed.
--   Each entry has an **<author>** that represents the person who initially created the record.
--   Each entry has a **<contributor>** that represents the person who last updated the record.
--   Each entry has a **<link>** with **rel="edit"**** that represents the URL to use to Retrieve and Update just this record.
--   Each entry has a **<link>** with **rel="print"**** that represents the URL that, when displayed in a browser, is the print version of the record.
--   Each entry has a **<link>** with **rel="form"**** that represents the URL that, when displayed in a browser, allows the editing of this record.
--   Each entry has a **<content>** that contains the actual data for this record.
--   The root element of the actual data, which in this example is **<F\_Form1>**, has a generated **uid** attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.
+-   Each submission record is represented by an `<entry>` within the feed.
+-   Each entry has an `<author>` that represents the person who initially created the record.
+-   Each entry has a `<contributor>` that represents the person who last updated the record.
+-   Each entry has a `<link>` with `rel="edit"` that represents the URL to use to Retrieve and Update just this record.
+-   Each entry has a `<link>` with `rel="print"` that represents the URL that, when displayed in a browser, is the print version of the record.
+-   Each entry has a `<link>` with `rel="form"` that represents the URL that, when displayed in a browser, allows the editing of this record.
+-   Each entry has a `<content>` that contains the actual data for this record.
+-   The root element of the actual data, which in this example is `<F_Form1>`, has a generated **uid** attribute. This attribute is the unique ID for the record and can be used for subsequent calls to Retrieve, Update, or Delete for that particular record.
 
 An example result represented as a JSON feed:
 
-```
+```json
 {
 	"metadata": {
 		"fields": [{
@@ -139,17 +139,16 @@ An example result represented as a JSON feed:
 	},
 	"items": [{
 		"lastModified": "2013-11-22T19:37:09.060Z",
-		"lastModifiedBy" :           
-                  {             
-                     "displayName" : "Demo User 1",
-                     "email" : "demo_user1@yourcompany.com",
-                     "login" : "demo_user1"           
-                  },
+		"lastModifiedBy" : {             
+			"displayName" : "Demo User 1",
+			"email" : "demo_user1@yourcompany.com",
+			"login" : "demo_user1"           
+		},
 		"created": "2013-11-22T19:37:09.060Z",
 		"createdBy": {
 			"displayName": "Demo User 2",
 			"email": "demo_user2@yourcompany.com",
-                     "login" : "demo_user2" 
+			"login" : "demo_user2" 
 		},
 		"flowState": "ST_End",
 		"id": 0,
@@ -160,17 +159,16 @@ An example result represented as a JSON feed:
 	},
 	{
 		"lastModified": "2013-11-22T19:37:09.060Z",
-		"lastModifiedBy" :  
-                         {    
-                           "displayName" : "Demo User 1",
-                           "email" : "demo_user1@yourcompany.com", 
-                           "login" : "demo_user1"
-                          },
+		"lastModifiedBy" : {    
+			"displayName" : "Demo User 1",
+			"email" : "demo_user1@yourcompany.com", 
+			"login" : "demo_user1"
+			},
 		"created": "2013-11-22T19:37:09.060Z",
 		"createdBy": {
 			"displayName": "Demo User 2",
 			"email": "demo_user2@yourcompany.com",
-                     "login" : "demo_user2" 
+			"login" : "demo_user2" 
 		},
 		"flowState": "ST_End",
 		"id": 1,

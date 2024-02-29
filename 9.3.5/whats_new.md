@@ -1,39 +1,39 @@
-# What's new in 9.3.5? {#whatsnew .concept}
+# What's new in 9.3.5? 
 
 For a full list of fixes by release, see this [article](https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0104676).
 
-## New features {#section_zml_blt_b1c .section}
+## New features
 
 -   Bug fixes.
 
-## 9.3.4 {#section_y12_hlh_jzb .section}
+## 9.3.4 { .section}
 
 -   Bug fixes.
--   Added support for Secrets in Kubernetes. For more information, see [helm\_admin\_customsecret.md](helm_admin_customsecret.md).
+-   Added support for Secrets in Kubernetes. For more information, see [Provide admin user a custom secret](helm_admin_customsecret.md).
 
-## 9.3.3 {#section_f3b_htl_2yb .section}
+## 9.3.3 { .section}
 
--   Support for Custom Widget API. For more information, see [customwidgetapi\_landing.md](customwidgetapi_landing.md).
--   Support for PostgreSQL databases. For more information, see [create\_postgresql\_db.md](create_postgresql_db.md).
--   Admin Application Dashboard. For more information, see [admin\_application\_dashboard.md](admin_application_dashboard.md).
+-   Support for Custom Widget API. For more information, see [Custom Widget API](customwidgetapi_landing.md).
+-   Support for PostgreSQL databases. For more information, see [Creating a PostgreSQL database](create_postgresql_db.md).
+-   Admin Application Dashboard. For more information, see [Admin Application Dashboard](admin_application_dashboard.md).
 
-## 9.3.2 {#section_um3_2mt_2xb .section}
+## 9.3.2 { .section}
 
 -   **Open Liberty** support.
 
-    For more information, see the following topics:
+    For more information, see the following topics
 
-    -   [deploy\_container\_kubernetes\_openliberty.md](deploy_container_kubernetes_openliberty.md)
+    -   [Deploying to a Container (Kubernetes) Platform - Open Liberty](deploy_container_kubernetes_openliberty.md)
 
-## 9.3.1 {#section_vzz_w4p_rvb .section}
+## 9.3.1 { .section}
 
 -   New **Copy/Paste** feature.
 
-    The "copy/paste" feature enables the application author to copy an item from their form and paste it into another page/form/app page within the same application or another one on the same Leap server. For more information, see [cr\_copying\_items.md](cr_copying_items.md).
+    The "copy/paste" feature enables the application author to copy an item from their form and paste it into another page/form/app page within the same application or another one on the same Leap server. For more information, see [Copying items](cr_copying_items.md).
 
 -   New **Workflow Branching** feature.
 
-    The "workflow branching" feature enables the application author to specify a condition that changes where a submitted form is directed. For more information, see [sub\_adding\_stages\_toc.md\#section\_hjd\_3rw\_rvb](sub_adding_stages_toc.md#section_hjd_3rw_rvb).
+    The "workflow branching" feature enables the application author to specify a condition that changes where a submitted form is directed. For more information, see [Branching](sub_adding_stages_toc.md#section_hjd_3rw_rvb).
 
 -   Improved HTML editor experience.
 -   Improved page navigation and validation behavior, including custom error handling with JavaScript API.
@@ -41,11 +41,11 @@ For a full list of fixes by release, see this [article](https://support.hcltechs
 
 Administrative improvements:
 
--   Beginning with this release, Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy. For more information, see [leap\_strict\_csp.md](leap_strict_csp.md).
+-   Beginning with this release, Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy. For more information, see [Strict CSP](leap_strict_csp.md).
 -   Kubernetes-friendly Container.
 -   Access to service descriptions may be restricted by user, group or special role \(i.e. authenticated, anonymous, etc\). For more information, see the following topics:
-    -   [ref\_service\_deploying\_service\_description.md](ref_service_deploying_service_description.md)
-    -   [co\_configuration\_properties.md](co_configuration_properties.md)
+    -   [Deploying a Service Description](ref_service_deploying_service_description.md)
+    -   [Configuration properties](co_configuration_properties.md)
 
 ## 9.3 { .section}
 
@@ -86,9 +86,9 @@ Support for the following:
 
 New features include:
 
--   Embedding of forms without an <iframe\>
+-   Embedding of forms without an `<iframe>`
 
-## 9.2 { .section}
+## 9.2  { .section}
 
 New features include:
 
@@ -97,18 +97,18 @@ New features include:
 -   Send attachments in email notifications \(including filled PDF’s\)
 -   Numerous visual and usability improvements, including:
     -   Double-click to open item properties
-    -   One-click “copy to clipboard” on URLs and embed codes
+    -   One-click copy to clipboard on URLs and embed codes
     -   Improved first-time-user experience
     -   Redesigned palette
     -   Additional confirmation prompts on irreversible actions
-    -   Stylistic improvements to the “Manager” page
--   Addition of “has value” and “not” operators for View Responses and the Data REST API
--   Addition of “has value” and “has no value” for rules
+    -   Stylistic improvements to the Manager page
+-   Addition of has value and not operators for View Responses and the Data REST API
+-   Addition of has value and has no value for rules
 -   Improved experience for those using FlexNet licensing
 -   Print view enhancements
     -   Vertical table layout option \(for wide tables\)
     -   Removed application size limit
-    -   Use the “Data Label” property
+    -   Use the Data Label property
     -   mark-up is instrumented to allow for easier manipulation
 -   Better default logging on failed service calls
 -   Attachment clean-up service now configurable
@@ -126,12 +126,12 @@ New features include:
 -   New JavaScript API functions:
     -   app.getLocation\(\)
     -   item.setColumnHeaders\(\) and item.getColumnHeaders\(\) for Table items
--   A new “Custom Attribute” property
+-   A new Custom Attribute property
 -   Full accessibility of the date picker
 -   Ability to render HCL Leap applications within ElectronJS desktop applications
--   New applications now have a middle “Submitted” stage by default
+-   New applications now have a middle Submitted stage by default
 -   Option to block UI interaction while a service call is executing
--   Ability to hide the “Use” tab
+-   Ability to hide the Use tab
 -   General fixes and minor improvements
 
 ## 9.0 { .section}
@@ -186,7 +186,7 @@ New features include:
     -   Simplified JSON requests and response structures.
     -   New **metadata** option
 -   Automatic generation of swagger files for applications.
--   A new Service Configuration window where you can quickly set up your application to make JSON service calls. For more information, see [cr\_in\_app\_service.md](cr_in_app_service.md).
+-   A new Service Configuration window where you can quickly set up your application to make JSON service calls.
 -   The addition of a new configuration flag that disables the embedding of your application into other web sites.
 -   General usability enhancements include:
     -   Carbon Copy and Blind Carbon Copy fields for Stage Action emails.
@@ -231,22 +231,20 @@ Support for the following versions:
 
 New features include:
 
--   **Document Integration**: Where compliance or regulatory requirements mandate it, integrating captured data with existing documents can be an important part of the overall solution. These output documents can be provided for precise printing, document signing or archiving. Using a Service Configuration, you can map form items to PDF items. When the user clicks a button, the PDF is populated. For more information, see [document integration](di_pop_doc_with_app_data.md).
+-   **Document Integration**: Where compliance or regulatory requirements mandate it, integrating captured data with existing documents can be an important part of the overall solution. These output documents can be provided for precise printing, document signing or archiving. Using a Service Configuration, you can map form items to PDF items. When the user clicks a button, the PDF is populated. For more information, see [Leap document integration](di_pop_doc_with_app_data.md).
 
--   **integration features**
-    -   **Render parameters**: Two public render parameters were added to provide additional portlet-to-portlet communication. For more information, see [ref\_public\_render\_parameters.md](ref_public_render_parameters.md)
-    -   **Page refresh setting**: A new page refresh setting is available in the **Shared Settings**. This property lets you set whether the portal page is refreshed when the form is submitted. For more information, see [in\_portlet\_selecting\_application\_using\_edit\_shared\_setting.md](in_portlet_selecting_application_using_edit_shared_setting.md).
+-   **Integration features**
+    -   **Render parameters**: Two public render parameters were added to provide additional portlet-to-portlet communication.
+    -   **Page refresh setting**: A new page refresh setting is available in the **Shared Settings**. This property lets you set whether the portal page is refreshed when the form is submitted.
     -   **Support for non-default portal context root**: The Leap Portlet now supports portal with a non-default context root, or an empty context root.
-    -   **Script Portlet and DDC samples**: Two new samples are available for usingwith . Both samples are available on the developerWorks® wiki:
-        -   [DDC integration](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20and%20DDC%20(IBM%20Digital%20Data%20Connector)%20Sample)
-        -   [Script Portlet integration](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20and%20Script%20Portlet%20Sample)
+    -   **Script Portlet and DDC samples**: Two new samples are available for usingwith . Both samples are available on the developerWorks® wiki.
 -   **Additional in-product help**: If you're new to , blue help bubbles describe the basic function of each page or section, as well as provide additional help resources. Additional hover help, and context sensitive help were added throughout the application.
 -   **JSON is now supported in the**:
     -   HTTP Transport
     -   JavaScript Data Access Rest API
 -   **New JavaScript functionality**: New JavaScript functions were added to the User Interface Objects.
 -   **Forms Tab**:
-    -   **Moving items in an application**: You can now move form items between pages of a form. For more information, see [cr\_moving\_items\_on\_a\_form.md](cr_moving_items_on_a_form.md).
+    -   **Moving items in an application**: You can now move form items between pages of a form.
     -   **Order of forms in a application**: You can change the order of the forms within an application by dragging and dropping them in the Outline view. When the application is deployed and launched, the first form in the application becomes the default form seen by the user.
     -   **Warning message on Save**: does not support multiple people editing the same application. If you and another user edit the same application, and the other user saves changes while you are still editing, a warning message is now displayed asking if you want to overwrite the changes made by the other user.
     -   **Date item loads current date**: A new property is available for the**Date** field. When selected, if the user leaves the **Date**field empty, the current date is loaded upon form submission. If the user fills in the date field, the date supplied by the user is used.

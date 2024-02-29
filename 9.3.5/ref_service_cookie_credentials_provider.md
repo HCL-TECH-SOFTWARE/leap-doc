@@ -28,16 +28,16 @@ The provider ID for the Cookie Credentials Provider to enter in a Service Descri
 
 ## Sample Service Description { .section}
 
-```
+```xml
 <serviceDescription>
   <id>make-http-request</id>
   <defaultLocale>en-us</defaultLocale>
   <transportId>HTTPServiceTransport</transportId>
   <name xml:lang="en-us">Make an HTTP Request</name>
   <description xml:lang="en-us">Makes an HTTP request to the configured URL and returns the result</description>
-  **<credentials providerId="cookie"\>
+  <credentials providerId="cookie"\>
     <property name="cookies" value="LtpaToken,LtpaToken2"/\>
-  </credentials\>**
+  </credentials\>
   <inbound>
     <parameters>
       <parameter>

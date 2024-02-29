@@ -29,6 +29,17 @@
     text-decoration: underline;
 }
 
+.table-wrap {
+  border: 1px solid black;
+  table-layout: fixed;
+  width: 820px;
+}
+
+td {
+  border: 1px solid black;
+ 
+  overflow: hidden;
+}
 
 .md-banner__inner {
     color: white;

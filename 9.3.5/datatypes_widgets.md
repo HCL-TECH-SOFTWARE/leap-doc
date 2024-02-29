@@ -4,7 +4,7 @@ Data widgets can declare one of the listed data types, each with additional opti
 
 Constraints on the data type goes beyond the UI. These constraints will be enforced when data is submitted to the server.
 
-`**string**`
+**`string`**
 
 -   A piece of text.
 -   Constraints:
@@ -17,7 +17,7 @@ Constraints on the data type goes beyond the UI. These constraints will be enfor
         -   `invalidMessage`
     -   `multiValue` - `true` or `false`. If `true`, the value returned by the widget is an array of strings, otherwise it is a single string. The default value is `false`.
 
-``` {#codeblock_ixv_ktm_jyb}
+```javascript
 const myWidgetDefinition = {
    ...
    datatype: {
@@ -47,7 +47,7 @@ const myWidgetDefinition = {
     -   `minValue` : minimum value of number expected. Can be omitted or set to `null` if no minimum
     -   `maxValue` : maximum value of number expected. Can be omitted or set to `null` if no maximum
 
-``` {#codeblock_mgm_4tm_jyb}
+```javascript
 const myWidgetDefinition = {
    ...
    datatype: {

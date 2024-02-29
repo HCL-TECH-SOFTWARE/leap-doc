@@ -2,7 +2,7 @@
 
 You can add an HCL Leap application to a WebSphere® Portal page with the **Edit Shared Settings** menu option.
 
-To permanently set which application is displayed in the Leap Portlet, use the following instructions. To dynamically set the application displayed at run time, see[Leap Portlet parameters](ref_portlet_parameters.md) .
+To permanently set which application is displayed in the Leap Portlet, use the following instructions.
 
 To select an application for a WebSphere Portal page, you must have Edit privileges for both the WebSphere Portal page, and the Leap Portlet. Ensure the WebSphere Portal page is in **Edit** mode.
 

@@ -8,7 +8,7 @@ You can filter the results of the **List** action by providing extra URL paramet
 /apps-basic/secure/org/data/{app-uid}/{form-id}?F_Amount__lt=1000
 ```
 
-This sample query would limit results to records whose **F\_Amount** currency field value is less than 1000. The syntax of a single filter parameter is \{element\}\_\_\{operator\}=\{value\}, where \{element\} is the ID of an item in the form, or one of the record metadata properties. For example, the author\_name is used to filter by the name of the initial submitter of a record.
+This sample query would limit results to records whose **F\_Amount** currency field value is less than 1000. The syntax of a single filter parameter is `{element}__{operator}={value}`, where `{element}` is the ID of an item in the form, or one of the record metadata properties. For example, the author\_name is used to filter by the name of the initial submitter of a record.
 
 **Note:** All filter parameters must be properly URL encoded. Common encoding characters are described as follows:
 
@@ -28,21 +28,21 @@ Two simple examples of single filter parameters are:
 
 Multiple filter parameters can be included in a single URL along with a searchOperator parameter.
 
-**OR**
+**OR**  
 In an OR relationship, any one of the filters is true.
 
-    ```
-    ?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=OR
-    ```
+```
+?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=OR
+```
 
-**AND**
+**AND**  
 In an AND relationship, all of the filters must be true.
 
-    ```
-    ?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=AND
-    ```
+```
+?{element1}__{operator1}={value1}&{element2}__{operator2}={value2}&searchOperator=AND
+```
 
-**Note:** Only a single searchOperator parameter is supported in a request. You cannot use both AND and OR in a single request. If no searchOperator parameter is present, the default is AND.
+**Note:** Only a single **searchOperator** parameter is supported in a request. You cannot use both AND and OR in a single request. If no **searchOperator** parameter is present, the default is AND.
 
 ## Metadata properties { .section}
 
@@ -73,7 +73,7 @@ Table 2. String operators
 
 ## Number operators { .section}
 
-Number operators are used on the values of the following form items: **Number**, **Currency**, and**Numeric Slider**.
+Number operators are used on the values of the following form items: **Number**, **Currency**, and **Numeric Slider**.
 
 Table 3. Number operators
 
@@ -103,22 +103,52 @@ Table 4. Boolean operator
 -   Time stamp values are valid against **Time Stamp** form items, or the creation\_time and updated metadata properties.
 -   Time, date, and time stamp values must be provided in ISO 8601 extended format. For example, a time stamp for 21 Dec 2015 10:00 AM Pacific Standard Time must be given as: 2015-12-21T10:00:00-08:00 or 2015-12-21T18:00:00Z.
 
-    **Note:** Remember to take daylight savings into account based on the time zone and the date of a time stamp value. For example, 21 June 2015 10:00 AM Pacific **Daylight**Time must be given as 2015-06-21T10:00:00-**07:00** or 2015-06-21T**17:00**:00Z
+    **Note:** Remember to take daylight savings into account based on the time zone and the date of a time stamp value. For example, 21 June 2015 10:00 AM Pacific *Daylight* Time must be given as 2015-06-21T10:00:00-**07:00** or 2015-06-21T**17:00**:00Z
 
 -   Dates must be passed in the format **yyyy-mm-dd**
 -   Times must be passed in the format **hh:mm:ss**
--   Remember that all values must be properly URL encoded. For example, a value of 2015-06-21T17:00:00Z**+8:00** must be encoded as 2015-06-21T17%3A00%3A00**%2B8%3A00**.
+-   Remember that all values must be properly URL encoded. For example, a value of `2015-06-21T17:00:00Z+8:00` must be encoded as `2015-06-21T17%3A00%3A00%2B8%3A00`.
 
 Table 5. Time, Date, and Time Stamp operators
 
-|Operator|Description|
-|--------|-----------|
-|after|Filters so that the results provided come after the specified time and date.|
-|before|Filters so that the results provided come before the specified time and date.|
-|between|Filters so that the results provided fit on or within the specified times and dates. The between operator takes a value in the following format:|
-| |``` {start moment}**A\*N\*D**{end moment} ``` |
-| | For example, to search between the start of day 1 June 2015 and the start of day 8 June 2015 \(in Pacific Daylight Time\) the value is:|
-| | `2015-06-01T07:00:01Z**A\*N\*D**2015-06-08T07:00:01Z` |
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+after
+</td>
+<td>
+Filters so that the results provided come after the specified time and date.
+</td>
+</tr>
+<tr>
+<td>
+before
+</td>
+<td>
+Filters so that the results provided come before the specified time and date.
+</td>
+</tr>
+<tr>
+<td>
+between
+</td>
+<td>
+Filters so that the results provided fit on or within the specified times and dates. The between operator takes a value in the following format:<br>
+<code>{start moment}<strong>A*N*D</strong>{end moment}</code><br>
+<br>
+For example, to search between the start of day 1 June 2015 and the start of day 8 June 2015 (in Pacific Daylight Time) the value is:<br>
+<code>2015-06-01T07:00:01Z<strong>>A*N*D</strong>2015-06-08T07:00:01Z</code>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ## Additional Date and Time Stamp operators { .section}

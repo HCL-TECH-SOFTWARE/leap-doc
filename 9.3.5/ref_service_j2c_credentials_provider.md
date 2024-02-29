@@ -26,7 +26,7 @@ The provider ID for the J2C Credentials Provider to enter in a Service Descripti
 
 ## Sample Service Description { .section}
 
-```
+```xml
 <serviceDescription>
    <id>watsonTranslateJ2C</id>
    <defaultLocale>en</defaultLocale>

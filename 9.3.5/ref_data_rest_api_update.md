@@ -14,15 +14,15 @@ curl --user <loginId>:<passwd> --request PUT --header "Accept:application/atom+x
 
 Indicates the type of document submitted.
 
-    -   ATOM Feed: **application/atom+xml**
-    -   JSON: **application/json.**
+-   ATOM Feed: **application/atom+xml**
+-   JSON: **application/json.**
 
 **Accept**
 
 Indicates the type of accepted response.
 
-    -   ATOM Feed: **application/atom+xml**
-    -   JSON: **application/json.**
+-   ATOM Feed: **application/atom+xml**
+-   JSON: **application/json.**
 
 **--data-binary**
 
@@ -32,7 +32,7 @@ Provides the actual data that is PUT to the URL. In this case, it is pointing to
 
 Specifies the correct HTTP method verb for the action.
 
-**--header "Cookie: freedomIdentifyKey=x**
+**--header "Cookie: freedomIdentifyKey=x"**
 
 Includes a required cookie as part of the request where x is a randomly generated, difficult to guess single-use numerical value. The value of the key must match the value of the **freedomIdentifyKey** URL parameter. Requiring a cookie value that matches the URL parameter helps avoid possible browser vulnerabilities.
 
@@ -40,7 +40,7 @@ Includes a required cookie as part of the request where x is a randomly generate
 
 Example PUT data:
 
-``` {#codeblock_qql_djl_nzb}
+```xml 
 <entry xmlns="http://www.w3.org/2005/Atom">
    <title type="text">F_Form1</title>
    <updated>1970-01-01T00:00:00Z</updated>
@@ -55,19 +55,19 @@ Example PUT data:
 </entry>
 ```
 
-**<title\>**
+**`<title>`**
 
 The ID of the form to which this record is being submitted.
 
-**<updated\>**
+**`<updated>`**
 
 This must be included, but its value is replaced by the server with a new timestamp. A value of **1970-01-01T00:00:00Z** can always be used.
 
-**<content\>**
+**`<content>`**
 
 Contains the submitted data. The structure of the data within the content element is different for each application, and is based on the list of form items used to create the application. The easiest way to find the complete list of elements is to issue a Retrieve REST call and look at the resulting data.
 
-**The root element of the submitted data, in this example the <F\_Form1\> element, is always in the null namespace, xmlns=""**
+**Note**: The root element of the submitted data, in this example the `<F_Form1>` element, is always in the null namespace, `xmlns=""`
 
 The root element must have the **application\_uid, pressedButton, flowState, uid,** and **id** attributes.
 
@@ -83,18 +83,18 @@ The root element must have the **application\_uid, pressedButton, flowState, uid
 
 Example JSON payload:
 
-``` {#codeblock_y3m_2jl_nzb}
+```json 
 {
-	 "uid": "f82e576f-cb67-4008-8219-f49a1b369f7d",
-        "flowState": "ST_ReviewStage",
-        "pressedButton" : "S_Approve",
-	 "F_SingleLine1": "Jane",
-	 "F_SingleLine2": "Test",
-	 "F_Number1": 26.75
+   "uid": "f82e576f-cb67-4008-8219-f49a1b369f7d",
+   "flowState": "ST_ReviewStage",
+   "pressedButton" : "S_Approve",
+   "F_SingleLine1": "Jane",
+   "F_SingleLine2": "Test",
+   "F_Number1": 26.75
 }
 ```
 
-**Note:** The **uid** is optional. If supplied, it must match the record uid. For example: f82e576f- cb67-4008-8219-f49a1b369f7d.
+**Note:** The **uid** is optional. If supplied, it must match the record uid. For example: f82e576f-cb67-4008-8219-f49a1b369f7d.
 
 **Parent topic: **[Data access REST API](ref_data_access_rest_api.md)
 

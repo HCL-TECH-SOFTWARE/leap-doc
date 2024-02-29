@@ -22,14 +22,14 @@ ibm.nitro.NitroConfig.runtimeResources.1 = \
 
 As your custom .js is loaded into the page, it is expected to register one or more widget definitions:
 
-``` {#codeblock_gcn_z3n_jyb}
+```javascript
 const myWidgetDefinition = {...};
 nitro.registerWidget(myWidgetDefintion);
 ```
 
 Full descriptions and examples are provided in the following topics. The following example is the basic skeleton of a custom widget:
 
-``` {#codeblock_omy_y3n_jyb}
+```javascript
 const myWidgetDefinition = {
     id: 'example.YesNo', // uniquely identifies this widget
     version: '2.0.0', // the widget's version

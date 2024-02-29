@@ -4,7 +4,7 @@ You can apply your own custom Cascading Style Sheet \(CSS\) to the rendering of 
 
 Elements are assigned specific class names, prefaced by lf in the custom theme. The following code is an example of a Leap custom theme.
 
-```
+```css
 /* Form - centered with a drop shadow*/
 .lfMn .lfAppFormArea .lfFormBox {
    -moz-box-shadow: 5px 5px 12px #AEA4A4;
@@ -241,10 +241,10 @@ The following graphic shows where the class names for creating dialog windows ar
 
 Your custom CSS is the last style sheet that is applied in an application. However, you must ensure that your CSS rules are more specific \(higher weighted\) than the ones already specified in the base CSS rules.
 
--   In some cases, you must append the !important declaration to your rules to override the Leap base rules. For example, to change the font color of all item titles use .lfMn .lfFormLabel \{color: \#094291 !important\}.
--   In some cases you must add the universal, “\*”, selector to your rules. For example, to change the font color of all buttons use .lfMn .lfFormBtn \* \{color: white\}
+-   In some cases, you must append the !important declaration to your rules to override the Leap base rules. For example, to change the font color of all item titles use `.lfMn .lfFormLabel {color: #094291 !important}`.
+-   In some cases you must add the universal, “\*”, selector to your rules. For example, to change the font color of all buttons use `.lfMn .lfFormBtn * {color: white}`
 
-To reference image files that are contained within the same application, use a relative URL of ../image/.... For example, to reference the image named background.jpg contained within your application, use url\('../image/background.jpg'\). For more information about referencing image files within an application, see [Managing the files associated with your application](wf_managing_the_files_associated_with_your_appl.md)
+To reference image files that are contained within the same application, use a relative URL of ../image/.... For example, to reference the image named background.jpg contained within your application, use `url('../image/background.jpg')`. For more information about referencing image files within an application, see [Managing the files associated with your application](wf_managing_the_files_associated_with_your_appl.md)
 
 **Note:** Pop-up menus and dialogs are direct childs of the main body, even when they appear to be otherwise. These child menus and dialogs must be styled to match the main body.
 
@@ -266,7 +266,7 @@ There are no technical limitations to the CSS rules that can be applied to a for
 
 ## Styling individual form items { .section}
 
-Each item on the form is assigned a unique class name. The syntax for this class name is <form id\>-<page id\>-<item id\>. For example, a class name of F\_Form1-P\_Page1-F\_EmailAddress is applied to the item with an ID of **F\_EmailAddress**, on the page with an ID of **P\_Page1**, on the form with an ID of **F\_Form1**. You can use these unique class names to style specific items in your application.
+Each item on the form is assigned a unique class name. The syntax for this class name is `<form id>-<page id>-<item id>`. For example, a class name of `F_Form1-P_Page1-F_EmailAddress` is applied to the item with an ID of **F\_EmailAddress**, on the page with an ID of **P\_Page1**, on the form with an ID of **F\_Form1**. You can use these unique class names to style specific items in your application.
 
 **Note:** It is possible that two separate applications each have an item with the same unique class name.
 

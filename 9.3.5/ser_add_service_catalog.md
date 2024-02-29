@@ -117,7 +117,7 @@ A Service Catalog is implemented in much the same manner as a Service Catalog Gr
     </scr:component>
     ```
 
-    For the class attribute of the implementation element, use the fully qualified name of the Java class you created in [Step 1](ser_add_service_catalog.md#add_service_catalog_step_1). Ensure that the name attribute of the component element is unique. Although not required, you can make the name attribute the same as the fully qualified name of the Java class that you created in [Step 1](ser_add_service_catalog.md#add_service_catalog_step_1).
+    For the class attribute of the implementation element, use the fully qualified name of the Java class you created in [Step 1](ser_add_service_catalog.md#add_service_catalog_step_1). Ensure that the name attribute of the component element is unique. Although not required, you can make the name attribute the same as the fully qualified name of the Java class that you created in Step 1.
 
     Notice the inclusion of the <reference\> element in this example. This ensures that your custom Service Catalog has access to an IServiceDescriptionBuilderFactory for programmatically building up Service Descriptions.
 

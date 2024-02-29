@@ -1,10 +1,10 @@
 # Strict CSP {#leap_strict_csp .concept}
 
-HCL Leap 9.3.1 has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy.
+HCL Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy.
 
 Strict CSP mode can be enabled using the `ibm.nitro.NitroConfig.runtimeCSP` configuration parameter. For example:
 
-``` {#codeblock_rlp_hp3_rvb}
+```
 ibm.nitro.NitroConfig.runtimeCSP=script-src 'self' 
 https://trusted.example.com 'nonce-{nonce}'; object-src 'none'; 
 base-uri 'none'; style-src 'self' https://trusted.example.com 
@@ -15,7 +15,7 @@ The `{nonce}` token is replaced with a generated, cryptographically strong rando
 
 When using the [Embedding API](ref_embedding_api.md), the product is not in control of the page and therefore needs to be informed of the nonce value in the `data-leap-config` attribute so that it can load the product’s scripts in a secure manner. Furthermore, the value of the `data-leap-config` attribute must be valid JSON syntax. For example:
 
-``` {#codeblock_mzc_4p3_rvb}
+```html 
 <script
    src="https://leap.example.com/apps/api/leap.js"  
    data-leap-config="{

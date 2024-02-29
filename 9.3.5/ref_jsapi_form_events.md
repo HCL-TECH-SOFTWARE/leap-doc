@@ -22,8 +22,8 @@ Table 2. Form Events
 <td> afterSave </td>
 <td>Called after the form is submitted or saved to the server. Changes made to the form in this event are lost, as it was already submitted.<td>Custom alert message:<br>
 
-```
-alert(“Thank you for submitting” + app.getCurrentUser());
+```javascript
+alert('Thank you for submitting ' + app.getCurrentUser());
 ```
 </tr>
 <tr>
@@ -31,7 +31,7 @@ alert(“Thank you for submitting” + app.getCurrentUser());
 <td> Called just before the form is about to be submitted to the server. Any changes to data in the form are saved.
 <td>Make a field lowercase before submission:
 
-```
+```javascript
 BO.F_tag.setValue(BO.F_tag.getValue().toLowerCase()); 
 ```
 
@@ -41,7 +41,7 @@ BO.F_tag.setValue(BO.F_tag.getValue().toLowerCase());
 <td>Applicable only when the form is hosted inside IBM® WebSphere® Portal. This event is called when the form receives data from another portlet. The data is provided with the pData parameter, which is a string containing arbitrary data passed in by portal.
 <td>Update Info Message:
 
-```
+```javascript
 form.getPage('P_Page1').F_Info.setContent(pData);
 ```
 
@@ -61,7 +61,7 @@ form.getPage('P_Page1').F_Info.setContent(pData);
 <td>Called after data Business Object is attached to the Form, and its values loaded into the interface, whether it is a new form or an existing form. If the form is new, this event is called after onNew.
 <td>Update the current Datetime into a Timestamp item:
 
-```
+```javascript
 BO.F_Date.setValue(new Date()); 
 ```
 </tr>
@@ -70,7 +70,7 @@ BO.F_Date.setValue(new Date());
 <td>Called when a blank form is created, and after the default values are loaded. Ideal location to pre-populate, or do first time setup of data.
 <td>Populate an item with the current user:
 
-```
+```javascript
 BO.F_User.setValue(app.getCurrentUser());
 ```
 
@@ -89,7 +89,7 @@ BO.F_User.setValue(app.getCurrentUser());
 <td>Called after every stage action button is pressed and the ID of the button is passed in as the pActionId parameter. Returning false in this event cancels the action taken by the button press.
 <td>Verify the user is cancelling:
 
-```
+```javascript
 if(pActionId === 'S_Cancel')
 {    
    if(confirm('Are you sure you want to cancel?'))

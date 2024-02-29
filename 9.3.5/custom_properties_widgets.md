@@ -22,7 +22,7 @@ Each property is an `object` with the following attributes:
 
 Example:
 
-``` {#codeblock_wdj_pfn_jyb}
+```javascript
 const myWidgetDefintion = {
   ...
   properties: [

@@ -43,7 +43,7 @@ Table 3. Item Events - Table only
 <td>This event is called after an entry is added to the table. The newly added item data is available from the variable itemBO.
 <td>Add a value from the new row to a subtotal field:
 
-```
+```javascript
 var curValue = BO.F_Total.getValue();
 curValue += itemBO.F_Price.getValue();
 BO.F_Total.setValue(curValue);
@@ -85,7 +85,8 @@ Table 6. beforeOptionsUpdate
 <td>beforeOptionsUpdate
 <td>This event is called before the options in a drop-down list are updated from a service call or from an API call. The array of options is passed in as pOptions and can be modified by the event code. By default, when a new options list is set into a drop-down list and the current selected item is not in the new list, it is added into the new list automatically. If you return false from this event, it does not copy the missing option into the new list.
 <td>
-```
+
+```javascript
 pOptions.push({title:'Pizza', value:'fooditem3'});
 return false;
 ```

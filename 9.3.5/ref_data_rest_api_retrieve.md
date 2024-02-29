@@ -24,7 +24,7 @@ The format in which the data must be returned. You can use either **format** or 
 
 The result of this request is an ATOM Entry XML document:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
    <entry xmlns="http://www.w3.org/2005/Atom">
       <id>f82e576f-cb67-4008-8219-f49a1b369f7d</id>
@@ -58,28 +58,27 @@ The result of this request is an ATOM Entry XML document:
 
 The result of this request as a JSON document:
 
-```
+```json
 {
-		"lastModified": "2013-11-22T19:37:09.060Z",
-		"lastModifiedBy" :           
-                  {             
-                     "displayName" : "Demo User 1",
-                     "email" : "demo_user1@yourcompany.com",
-                     "login" : "demo_user1"           
-                  },
-		"created": "2013-11-22T19:37:09.060Z",
-		"createdBy": {			
-                     "displayName": "Demo User 2",
-			"email": "demo_user2@yourcompany.com",
-                     "login" : "demo_user2" 
-		},
-		"flowState": "ST_End",
-		"id": 1,
-		"uid": "f82e576f-cb67-4008-8219-f49a1b369f7d",
-		"F_SingleLine1": "Jane",
-		"F_SingleLine2": "Test",
-		"F_Number1": 25.0
-	}
+   "lastModified": "2013-11-22T19:37:09.060Z",
+   "lastModifiedBy" : {             
+      "displayName" : "Demo User 1",
+      "email" : "demo_user1@yourcompany.com",
+      "login" : "demo_user1"           
+   },
+   "created": "2013-11-22T19:37:09.060Z",
+   "createdBy": {
+      "displayName": "Demo User 2",
+      "email": "demo_user2@yourcompany.com",
+      "login" : "demo_user2" 
+   },
+   "flowState": "ST_End",
+   "id": 1,
+   "uid": "f82e576f-cb67-4008-8219-f49a1b369f7d",
+   "F_SingleLine1": "Jane",
+   "F_SingleLine2": "Test",
+   "F_Number1": 25.0
+}
 ```
 
 Refer to the [List](ref_data_rest_api_list.md) action for a detailed description of the returned entry.

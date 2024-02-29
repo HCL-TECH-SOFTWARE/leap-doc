@@ -135,7 +135,7 @@ Table 2. Available Outbound Parameters
 
 For more examples using the HTTP Service Transport, see [Service Description](ref_service_service_description.md).
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <serviceDescription>
   <id>make-http-request</id>

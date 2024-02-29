@@ -8,7 +8,7 @@ If a widget requires app authors to define their own options, define a property 
 
 Example:
 
-``` {#codeblock_w13_vfn_jyb}
+```javascript
 const myWidgetDefintion = {
     ...
     properties: [
@@ -30,7 +30,7 @@ If the widget's options are hardcoded, add a `getOptions()` function to your wid
 
 Example:
 
-``` {#codeblock_xk3_xfn_jyb}
+```javascript
 const myWidgetDefintion = {
     ...
     getOptions : function () {

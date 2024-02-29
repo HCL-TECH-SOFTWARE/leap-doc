@@ -12,10 +12,14 @@ The following built-in properties are supported for custom widgets:
 
 Example:
 
-``` {#codeblock_ngp_vcn_jyb}
+```javascript
 const myWidgetDefinition = {
     ...
-    builtInProperties : [{ id: 'required'}, {id: 'title'}, {id: 'seenInOverview', defaultValue: true}],
+    builtInProperties : [
+        {id: 'required'}, 
+        {id: 'title'}, 
+        {id: 'seenInOverview', defaultValue: true}
+    ],
     ...
 }
 ```

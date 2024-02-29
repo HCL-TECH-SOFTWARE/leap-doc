@@ -60,7 +60,7 @@ The same lookup, conversion, and resolve operations are then performed on the ta
 
 When the source is a single value, that value is assigned directly to the target value. When the source is a list, a new list is created to contain the results. For each item in the source list, the child mappings of the current mapping element are evaluated. The results of these mappings are added to the list being constructed. When all the source items are evaluated, the list is assigned to the target value.
 
-For more information on creating a Service Description that returns JSON, see the [developerWorks® Leap wiki](https://hclleapwiki.atlassian.net/wiki/spaces/HL/pages/33213/Creating+a+Service+Description+for+a+Service+that+Returns+JSON).
+For more information on creating a Service Description that returns JSON, see the [Leap wiki](https://hclwiki.atlassian.net/wiki/spaces/HL/pages/461239/Creating+a+Service+Description+for+a+Service+that+Returns+JSON).
 
 **Parent topic: **[Service Description](ref_service_service_description.md)
 

@@ -57,7 +57,7 @@ To the application designer, Service Catalog Groups are listed in the **Service 
     </scr:component>
     ```
 
-    For the class attribute of the implementation element, use the fully qualified name of the Java class you created in [Step 1](ser_add_service_catalog_group.md#add_service_catalog_group_step_1). Ensure that the name attribute of the component element is unique. Although not required, you can make the name attribute the same as the fully qualified name of the Java class that you created in Step 1.
+    For the class attribute of the implementation element, use the fully qualified name of the Java class you created in Step 1. Ensure that the name attribute of the component element is unique. Although not required, you can make the name attribute the same as the fully qualified name of the Java class that you created in Step 1.
 
 3.  Create a MANIFEST.MF file
 

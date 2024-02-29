@@ -30,6 +30,11 @@ configuration:
     configOverrideFiles: 
       db2Override: |  
         <server description="leapServer"> 
+          <!-- Adds the jdbc library to the Leap application classpath -->
+          <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
+            <application-bnd id="leapBind" />
+            <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcPostgreSQL"/>
+          </application>          
           <!-- Disable the hard-coded derby datasource -->
           <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
           <authData id="db2AuthAlias" user="db2inst1" password="diet4coke" /> 
@@ -79,6 +84,11 @@ configuration:
     configOverrideFiles: 
       oracleOverride: | 
         <server description="leapServer"> 
+            <!-- Adds the jdbc library to the Leap application classpath -->
+            <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
+                <application-bnd id="leapBind" />
+                <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcOracle"/>
+          </application>            
             <!-- Disable the hard-coded derby datasource -->
             <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
             <library id="jdbcOracle" >
@@ -105,6 +115,11 @@ leap:
     configOverrideFiles: 
       postgreSQLOverride: |  
         <server description="leapServer"> 
+          <!-- Adds the jdbc library to the Leap application classpath -->        
+          <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
+            <application-bnd id="leapBind" />
+            <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcPostgreSQL"/>
+          </application>        
           <!-- Disable the hard-coded derby datasource -->
           <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
           <library id="jdbcPostgreSQL" > 

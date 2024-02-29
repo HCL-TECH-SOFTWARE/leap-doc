@@ -4,18 +4,18 @@ Certain attributes of the widget definition can be displayed to app authors work
 
 For example:
 
-``` {#codeblock_bvb_ygn_jyb}
+```javascript
 label: 'Yes/No',
 ```
 
 can be written as
 
-``` {#codeblock_m4g_2ym_jyb}
-  label: {
-    "default": 'Yes/No',
-    "fr": 'Oui/No',
-    "de": 'Ja/Nein'
-  },
+```javascript
+label: {
+  "default": 'Yes/No',
+  "fr": 'Oui/No',
+  "de": 'Ja/Nein'
+},
 ```
 
 The property names are expected to match the `lang` attribute of the current HTML page. For example, `"fr": 'Oui/No'` matches `<html lang="fr">`.

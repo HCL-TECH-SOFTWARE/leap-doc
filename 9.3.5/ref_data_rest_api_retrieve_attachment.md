@@ -14,7 +14,7 @@ To determine the UID of an attachment, you can use the [Data access REST API](re
 
 For example:
 
-```
+```json
 "F_Attachment1" :
 {
   "fileName" : "some file.doc",

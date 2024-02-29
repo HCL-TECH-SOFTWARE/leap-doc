@@ -7,109 +7,205 @@ Additionally, the style of items in the Leap form can be customized by the CSS o
 
 ## Example 1 - Declarative { .section}
 
-```
-
+```html
 <html> 
 …  
-<body> 
- 
-    <div id="myLeapDiv"> <!-- Leap form will go here --> </div> 
- 
-    <script src="https://leap.example.com/apps/api/leap.js" 
-		data-leap-config="{launch: {appId: 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55', formId: 'F_Form1', targetId: 'myLeapDiv'}}">
-	</script> 
- 
+<body>
+   … 
+   <div id="myLeapDiv"> <!-- Leap form will go here --> </div> 
+   …
+   <script src="https://leap.example.com/apps/api/leap.js" 
+    data-leap-config="{launch: {appId: 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55', formId: 'F_Form1', targetId: 'myLeapDiv'}}">
+   </script> 
 </body> 
-</html> 
-			
+</html>
 ```
 
 ## Example 2 - Programmatic { .section}
 
-```
-
+```html
 <html> 
 … 
 <body> 
- 
-<div id="myLeapDiv"> <!-- Leap form will go here --> </div> 
+  …
+  <div id="myLeapDiv"> <!-- Leap form will go here --> </div> 
+  …
+  <script src="https://leap.example.com/apps/api/leap.js"></script> 
 
-<script src="https://leap.example.com/apps/api/leap.js"></script> 
+  <script> 
+    function onLeapFormSubmitted (BO) 
+    { 
+      alert ("submitted record id: " + submittedBO.getDataId());       
+    } 
 
-<script> 
-  function onLeapFormSubmitted (BO) 
-  { 
-	 alert ("submitted record id: " + submittedBO.getDataId());       
-  } 
+    function onLeapFormLoaded (app, launchParams) 
+    { 
+      app.getForm(launchParams.formId).connectEvent("afterSave", onLeapFormSubmitted); 
+    } 
 
-  function onLeapFormLoaded (app, launchParams) 
-  { 
-	 app.getForm(launchParams.formId).connectEvent("afterSave", onLeapFormSubmitted); 
-  } 
+    Leap.onReady = function() { 
+      var launchParams =  
+      { 
+      appId: 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55', 
+      formId: 'F_Form1', 
+      target: document.getElementById("myLeapDiv"), 
+      locale: 'fr-FR' 
+      callback: onLeapFormLoaded 
+      }; 
+      Leap.launch(launchParams);  
+    }; 
 
-  Leap.onReady = function() { 
-	  var launchParams =  
-	  { 
-		 appId: 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55', 
-		 formId: 'F_Form1', 
-		 target: document.getElementById("myLeapDiv"), 
-		 locale: 'fr-FR' 
-		 callback: onLeapFormLoaded 
-	  }; 
-	  Leap.launch(launchParams);  
-  }; 
-
-</script> 
+  </script> 
  
 </body> 
 </html>  
-			
+      
 ```
 
 ## Loading the Leap Embedding UI { .section}
 
-```
-
+```html
 <script src="https://leap.example.com/apps/api/leap.js" data-leap-config="[leap configuration]" id="leapJS'"></script>
-			
 ```
 
--   **id** \(optional\) - fallback for older browsers; the value should always be "leapJS"
+-   **id** \(optional\) - fallback for older browsers; the value should always be `"leapJS"`
 -   **data-leap-config** \(optional\) - JSON or the name of an existing JavaScript object. Properties:
-    -   locale \(optional\) - indicates the preferred locale to the Leap API. For example, "fr-FR"
-    -   **launch** \(optional\) - equivalent to calling **Leap.launch**\(\{…\}\) function with respective parameters \(see below for more details\)
+    -   **locale** \(optional\) - indicates the preferred locale to the Leap API. For example, `"fr-FR"`
+    -   **launch** \(optional\) - equivalent to calling `Leap.launch({…})` function with respective parameters \(see below for more details\)
     -   **overwriteExistingDojoConfig** \(optional\) - In some environments, such as HCL Digital Experience or IBM WebSphere Portal, the **djConfig** or **dojoConfig** object may be defined on a page and not used. Set the value of this property to **true** to override it.
 
-Loading the Leap API will result in the creation of global object named Leap.
+Loading the Leap API will result in the creation of global object named `Leap`.
 
-After initial load of the leap.js, you can define a **Leap.onReady**\(\) function which will be called when the necessary Leap resources have been loaded into the page and the API is ready to be used.
+After initial load of the leap.js, you can define a `Leap.onReady()` function which will be called when the necessary Leap resources have been loaded into the page and the API is ready to be used.
 
 ## Embedding a form programmatically { .section}
 
-To embed a Leap form programmatically, call Leap.launch\(\{launch\_params\}\);
+To embed a Leap form programmatically, call `Leap.launch({launch_params})`;
 
-\{**launch\_params**\} properties:
+**`{launch_params}`** properties:
 
-|Property|Required?|Description|
-|--------|---------|-----------|
-|appId|Yes|The Leap application UUID.|
-| | |  For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'|
-|formId|Yes|The Leap form ID.|
-| | |  For example, 'F\_Form1'|
-|targetId|Either **target** or **targetId** must be provided.|The id of the HTML DOM element to embed the Leap form within.|
-| | |  For example, 'myLeapFormDiv'|
-|target|Either **target** or **targetId** must be provided.|The HTML DOM element to place the Leap form within.|
-|mode|No|Determines the mode for embedding.  Possible values:|
-| | | -   '**iframe**': embeds the form in an <iframe\> element. For complete isolation of the form, if necessary|
-| | | -   '**embed**' \(default\): embeds the form into the hosting page in a <div\>|
-|locale|No|Indicates the preferred locale for the embedded form.|
-| | | For example, 'fr-FR'|
-|prefSecMode|No|If the form supports both anonymous and authenticated usage, this property can be used to automatically choose the preferred security mode.  Possible values:|
-| | | -   '**anon**': for anonymous usage|
-| | | -   '**secure**': for authenticated usage|
-|callback|No|A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.  The callback function will be passed the following parameters:
-| | | -   **app**: the Leap JavaScript API application object. For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)|
-| | | -   **launchParams**: the original launch parameters object, for convenience|
+<table>
+<thead>
+<tr>
+<th>
+Property
+</th>
+<th>
+Required?
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+appId
+</td>
+<td>
+Yes
+</td>
+<td>
+The Leap application UUID.<br>
+For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'
+</td>
+</tr>
+
+<tr>
+<td>
+formId
+</td>
+<td>
+Yes
+</td>
+<td>
+The Leap form ID.<br>
+For example, 'F_Form1'
+</td>
+</tr>
+
+<tr>
+<td>
+targetId
+</td>
+<td>
+Either <b>target</b> or <b>targetId</b> must be provided.
+</td>
+<td>
+The id of the HTML DOM element to embed the Leap form within.<br>
+For example, 'myLeapFormDiv'
+</td>
+</tr>
+
+<tr>
+<td>
+target
+</td>
+<td>
+Either <b>target</b> or <b>targetId</b> must be provided.
+</td>
+<td>
+The HTML DOM element to place the Leap form within.
+</td>
+</tr>
+
+<tr>
+<td>
+mode
+</td>
+<td>
+No
+</td>
+<td>
+Determines the mode for embedding.  Possible values:
+<ul>
+<li><code>'iframe'</code>: embeds the form in an <code>&lt;iframe&gt;</code> element. For complete isolation of the form, if necessary</li>
+<li><code>'embed'</code> (default): embeds the form into the hosting page in a <code>&lt;div&gt;</li></ul></td>
+</tr>
+
+<tr>
+<td>
+locale
+</td>
+<td>
+No
+</td>
+<td>
+Indicates the preferred locale for the embedded form.<br>
+For example, 'fr-FR'
+</td>
+</tr>
+
+<tr>
+<td>
+prefSecMode
+</td>
+<td>
+No
+</td>
+<td>
+If the form supports both anonymous and authenticated usage, this property can be used to automatically choose the preferred security mode.  Possible values:
+<ul>
+<li><code>'anon'</code>: for anonymous usage</li>
+<li><code>'secure'</code>: for authenticated usage</li></ul></td>
+</tr>
+
+<tr>
+<td>
+callback
+</td>
+<td>
+No
+</td>
+<td>
+A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.  The callback function will be passed the following parameters:
+<ul>
+<li><code>app</code>: the Leap JavaScript API application object. <!-- For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)--></li>
+<li><code>launchParams</code>: the original launch parameters object, for convenience</li></ul></td>
+</tr>
+</tbody>
+</table>
 
 ## Known Limitations { .section}
 
