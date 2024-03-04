@@ -1,4 +1,4 @@
-# Configuring Leap with OIDC {#helm_oidc_config .concept}
+# Configuring Leap with OIDC 
 
 This topic describes how to configure an HCL Leap server that was deployed using Helm with an OpenID Connect identity provider.
 
@@ -84,21 +84,21 @@ For more details on defining a server customization, see [helm\_open\_liberty\_c
 
 The following properties must be set to complete the OIDC configuration:
 
--   hasUserLookups - By setting this to false it will disable user lookups, which is not available when configured with OIDC.
--   hasUserGroups - By setting this to false it will disable group lookups, which is not available when configured with OIDC.
+-   userLookups - By setting this to false it will disable user lookups, which is not available when configured with OIDC.
+-   userGroups - By setting this to false it will disable group lookups, which is not available when configured with OIDC.
 -   postLogoutRedirectURL - This is the URL to which Leap will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.
 
 ``` {#codeblock_hbq_pnt_b1c}
 configuration:
    leap:
      leapProperties: |
-       ibm.nitro.NitroConfig.hasUserLookup=false
-       ibm.nitro.NitroConfig.hasUserGroups=false 
+       ibm.nitro.NitroConfig.userLookup=false
+       ibm.nitro.NitroConfig.userGroups=false 
        ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myOIDCServer.com/realms/Leap/protocol/openid-
                  connect/logout?client_id=hcl-leap-oidc-client&post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
 ```
 
-For more details on setting Leap properties, see [helm\_leap\_properties.md](helm_leap_properties.md).
+For more details on setting Leap properties, see [Leap properties](helm\_leap\_properties.md).
 
 ## Restart the pod {#section_zq2_vmt_b1c .section}
 
