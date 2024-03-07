@@ -17,6 +17,9 @@ This section outlines mandatory and optional tasks that need to be done before i
 -   [Probes configuration in values.yaml file](helm_probes_config_valuesfile.md)
 -   [SAML configuration](helm_saml_config.md)
 -   [Certificates](helm_certificates.md)
+-   [Configure Database](helm_configure_db.md)
+-   [Configure SMTP](helm_configure_smtp.md)
+-   [Configure LDAP](helm_configure_ldap.md)
 -   [Open Liberty server customizations](helm_open_liberty_custom.md)
 -   [Service Catalog](helm_service_catalog.md)
 -   [Leap properties](helm_leap_properties.md)
@@ -25,5 +28,5 @@ This section outlines mandatory and optional tasks that need to be done before i
 -   [Enabling additional Open Liberty features](helm_extending_image.md)
 
 
-**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic:** [Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 
