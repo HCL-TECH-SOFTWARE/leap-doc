@@ -1,4 +1,4 @@
-# Install commads to deploy {#helm_install_commands .concept}
+# Install commands to deploy {#helm_install_commands .concept}
 
 This topic details install commands that are used to deploy HCL Leap Helm Charts.
 

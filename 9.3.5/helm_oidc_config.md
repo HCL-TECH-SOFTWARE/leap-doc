@@ -98,7 +98,7 @@ configuration:
                  connect/logout?client_id=hcl-leap-oidc-client&post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
 ```
 
-For more details on setting Leap properties, see [Leap properties](helm\_leap\_properties.md).
+For more details on setting Leap properties, see [Leap properties](helm_leap_properties.md).
 
 ## Restart the pod {#section_zq2_vmt_b1c .section}
 
