@@ -20,6 +20,7 @@ This section outlines mandatory and optional tasks that need to be done before i
 -   [Configure Database](helm_configure_db.md)
 -   [Configure SMTP](helm_configure_smtp.md)
 -   [Configure LDAP](helm_configure_ldap.md)
+-   [Configure Role Mapping](helm_configure_roleMapping.md)
 -   [Open Liberty server customizations](helm_open_liberty_custom.md)
 -   [Service Catalog](helm_service_catalog.md)
 -   [Leap properties](helm_leap_properties.md)

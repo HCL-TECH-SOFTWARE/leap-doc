@@ -121,6 +121,7 @@ nav:
             - Probes configuration in values.yaml file: helm_probes_config_valuesfile.md
             - SAML configuration: helm_saml_config.md
             - Certificates: helm_certificates.md
+            - Configure Role Mapping: helm_configure_roleMapping.md
             - Open Liberty server customizations: helm_open_liberty_custom.md
             - Configure Database: helm_configure_db.md
             - Configure SMTP: helm_configure_smtp.md

@@ -12,13 +12,13 @@
       
       
       
-        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/in_upgrading.html">
+        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/helm_configure_roleMapping.html">
       
       
-        <link rel="prev" href="upgradingleap_sec.html">
+        <link rel="prev" href="helm_certificates.html">
       
       
-        <link rel="next" href="in_migrating_feb.html">
+        <link rel="next" href="helm_open_liberty_custom.html">
       
       
       <link rel="icon" href="assets/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Upgrading Leap on a traditional platform - HCL Leap 9.3.5 Help Center</title>
+        <title>Configure Role Mapping - HCL Leap 9.3.5 Help Center</title>
       
     
     
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upgradingformsexperiencebuilder" class="md-skip">
+        <a href="#configure-leap-role-mapping" class="md-skip">
           Skip to content
         </a>
       
@@ -188,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upgrading Leap on a traditional platform
+              Configure Role Mapping
             
           </span>
         </div>
@@ -1357,8 +1357,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1380,11 +1382,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           
@@ -1406,7 +1408,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Kubernetes Helm deployment
@@ -1417,8 +1419,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1464,11 +1468,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" checked>
         
           
           
@@ -1490,7 +1494,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2_1">
             <span class="md-nav__icon md-icon"></span>
             Preparation
@@ -1669,10 +1673,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="helm_configure_roleMapping.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configure Role Mapping
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="helm_configure_roleMapping.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1681,6 +1705,61 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-a-usergroup-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference a User/Group from LDAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference a User/Group from LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-a-user-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping a user from LDAP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-a-group-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping a group from LDAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2123,8 +2202,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2138,11 +2215,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
           
@@ -2164,7 +2241,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Upgrading
@@ -2175,19 +2252,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="in_upgrading.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="in_upgrading.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2196,7 +2264,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -6946,6 +7013,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-a-usergroup-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference a User/Group from LDAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference a User/Group from LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-a-user-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping a user from LDAP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-a-group-from-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping a group from LDAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6962,148 +7070,46 @@
   
 
 
-<h1 class="task" id="upgradingformsexperiencebuilder">Upgrading Leap on a traditional platform</h1>
-<p>The following instructions describe how to upgrade Leap by using the WebSphere® Application Server Administrative console.</p>
+<h1 id="configure-leap-role-mapping">Configure Leap Role Mapping</h1>
+<p>There are 3 roles that must be configured for proper access to Leap: "Administrative Users", "EditApplicationUsers", and "UseApplicationUsers".</p>
 <ul>
-<li>Download the upgrade package from HCL License Portal.</li>
-<li>Back up your existing installation prior to installing the update.</li>
-<li>
-<p>Back up your DB2® or Oracle database before you install the update.</p>
-</li>
-<li>
-<p>To back up your current Leap installation:</p>
-</li>
-<li>
-<p>Export the Leap EAR file.</p>
-<ol>
-<li>
-<p>Open the WebSphere Application Server Administrative console.</p>
-</li>
-<li>
-<p>Go to <strong>Applications</strong> &gt; <strong>Application Types</strong> &gt; <strong>WebSphere enterprise applications</strong>.</p>
-</li>
-<li>
-<p>Select Leap.</p>
-</li>
-<li>
-<p>Click <strong>Export</strong>.</p>
-</li>
-<li>
-<p>Click Leap.ear to download the installation file as a backup.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>After the backup is complete, use the following instructions to install the upgrade file.</p>
-</li>
-<li>
-<p>Stop the Leap server.</p>
-<ol>
-<li>
-<p>Go to <strong>Applications</strong> &gt; <strong>Application Types</strong> &gt; <strong>WebSphere enterprise applications</strong></p>
-</li>
-<li>
-<p>Select Leap, and click <strong>Stop</strong>.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Check the version of your currently installed Leap.</p>
-<p>You need the version number in step 4c.</p>
-<ol>
-<li>
-<p>Go to <strong>Modules</strong> &gt; <strong>Display module build Ids</strong>.</p>
-</li>
-<li>
-<p>Check the version for the HCL Leap WAR. An example module version is  “Leap 9.0.0.0 GA”.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Update the Leap installation.</p>
-<ol>
-<li>
-<p>Return to <strong>Applications</strong> &gt; <strong>Application Types</strong> &gt; <strong>WebSphere enterprise applications</strong> &gt; <strong>Leap</strong>, and click <strong>Update</strong>.</p>
-</li>
-<li>
-<p>In the <strong>Application update options</strong>, select <strong>Replace the entire application</strong>.</p>
-</li>
-<li>
-<p>In <strong>Specify the path to the replacement ear file</strong>, select <strong>Local file system</strong>, and provide the location of the EAR file you downloaded from HCL License Portal.</p>
-</li>
-<li>
-<p>Click <strong>Next</strong>.</p>
-</li>
-<li>
-<p>In <strong>Preparing for the application update</strong>, click <strong>Next</strong>.</p>
-<p>Do not change the default settings on the page.</p>
-</li>
-<li>
-<p>On the <strong>Install New Application</strong> page, go to <strong>Step 3: Map resource references to resources</strong>.</p>
-<ul>
-<li>In the <strong>javax.mail.Session</strong> table, set the <strong>Target Resource JDMI Name</strong>. Click <strong>Browse</strong> and select &lt;Leap Mail Session&gt;.</li>
-<li>In the <strong>javax.sql.DataSource</strong> table, set the <strong>Target Resource JDMI Name</strong>. Click <strong>Browse</strong> and select &lt;Leap Data Source&gt;.<ol>
-<li>Click <strong>Next</strong>.</li>
-</ol>
-</li>
+<li>Administrative Users can access the admin UI, create and use applications.</li>
+<li>EditApplicationUsers can create and use application.</li>
+<li>UseApplicationUsers can use applications.</li>
 </ul>
-</li>
-<li>
-<p>Go to <strong>Step 4: Map virtual hosts for Web modules</strong> to validate that both <strong>Virtual host</strong> names are identical and correct, then click <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Finish</strong> to save the update.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>If Leap is running on nodes that are managed by Deployment Manager, you must synchronize all nodes where Leap is installed.</p>
-</li>
-<li>
-<p>Open the WebSphere Application Server Administrative console.</p>
-</li>
-<li>
-<p>Go to <strong>System Administration</strong> &gt; <strong>Nodes</strong>.</p>
-</li>
-<li>
-<p>Select all nodes where Leap is installed.</p>
-</li>
-<li>
-<p>Click <strong>Synchronize</strong>.</p>
-</li>
-<li>
-<p>When the upgrade is complete, restart the Leap server.</p>
-</li>
-<li>
-<p>Go to <strong>Applications</strong> &gt; <strong>Application Types</strong> &gt; <strong>WebSphere enterprise applications</strong></p>
-</li>
-<li>
-<p>Select Leap.</p>
-</li>
-<li>
-<p>Click <strong>Start</strong>.</p>
-</li>
-<li>
-<p>If you use Leap with WebSphere Portal, you must update the Leap Portlet.</p>
-</li>
-<li>
-<p>Log in to WebSphere Portal as an administrative user.</p>
-</li>
-<li>
-<p>Go to <strong>Portlet Management</strong> &gt; <strong>Web Modules</strong> and locate LeapPortlet.war.</p>
-</li>
-<li>
-<p>Click the <strong>Update Web module</strong> icon.</p>
-<p>The <strong>Update Web module</strong> icon is located to the right of the <strong>Web module properties</strong> icon.</p>
-</li>
-<li>
-<p>Click <strong>Browse</strong> to select the updated version of the Leap Portlet, and click <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Review your changes and click <strong>Finish</strong>.</p>
-</li>
-</ul>
-<p><strong>Parent topic: </strong><a href="upgradingleap_sec.html">Upgrading</a></p>
+<p>The Edit and Use roles support an extra property that adds all authenticated users to the role. Valid values are true and false.</p>
+<p>These properties are defined in the .yaml file.  Below is a basic example of mapping users to the roles.</p>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    roleMapping:
+       AdministrativeUsers:
+         MappedUsers:
+          - leapadmin
+       EditApplicationsUsers:
+         AllAuthenticated: false
+         MappedUsers:
+          - leapadmin
+       UseApplicationsUsers:
+         AllAuthenticated: true
+</code></pre></div>
+<h2 id="reference-a-usergroup-from-ldap">Reference a User/Group from LDAP</h2>
+<p>To reference a specific user or group from a connected LDAP requires specific syntax, "realmName/userOrGroupId".  The realmName referenced here is the property from the ldapRegistry object, refer to <a href="helm_configure_ldap.html">Connect Leap to LDAP</a>.</p>
+<h3 id="mapping-a-user-from-ldap">Mapping a user from LDAP</h3>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    roleMapping:
+       AdministrativeUsers:
+         MappedUsersAccessIDs:
+          - acmeRealm/cn=Admin,o=Acme
+</code></pre></div>
+<h3 id="mapping-a-group-from-ldap">Mapping a group from LDAP</h3>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    roleMapping:
+       AdministrativeUsers:
+         MappedGroupsAccessIDs:
+          - acmeRealm/cn=Sales,o=Acme
+</code></pre></div>
 
 
 
