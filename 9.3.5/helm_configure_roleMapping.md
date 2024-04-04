@@ -1,4 +1,4 @@
-# Configure Leap Role Mapping
+# Configure Leap Role Mapping {#helm_configure_roleMapping}
 
 There are 3 roles that must be configured for proper access to Leap: "Administrative Users", "EditApplicationUsers", and "UseApplicationUsers".
 
@@ -25,10 +25,10 @@ configuration:
          AllAuthenticated: true
 ```
 
-## Reference a User/Group from LDAP
+## Reference a User/Group from LDAP {#ref_usergroup_ldap .section}
 To reference a specific user or group from a connected LDAP requires specific syntax, "realmName/userOrGroupId".  The realmName referenced here is the property from the ldapRegistry object, refer to [Connect Leap to LDAP](helm_configure_ldap.md).
 
-### Mapping a user from LDAP
+### Mapping a user from LDAP {#map_user_ldap .section}
 ```
 configuration:
   leap:
@@ -38,7 +38,7 @@ configuration:
           - acmeRealm/cn=Admin,o=Acme
 ```
 
-### Mapping a group from LDAP
+### Mapping a group from LDAP {#map_group_ldap .section}
 ```
 configuration:
   leap:
