@@ -4,14 +4,15 @@ To connect Leap with an LDAP you must use the [configOverrideFiles](helm_open_li
 Below is an example snippet of configuring Leap to use an LDAP server as part of a federated repository. The baseDN, bindDN and bindPassword will need to be replaced with the proper values. The searchBase for the ldap entity types will also need to be updated. The participatingBaseEntry will need to match the baseDN defined in the LDAP server snippet.
 
 Valid values for the "ldapType" are:
-- Custom
-- IBM Lotus Domino
-- IBM SecureWay Directory Server
-- IBM Tivoli Directory Server
-- Microsoft Active Directory
-- Netscape Directory Server
-- Novell eDirectory
-- Sun Java System Directory Server
+
+-   Custom
+-   IBM Lotus Domino
+-   IBM SecureWay Directory Server
+-   IBM Tivoli Directory Server
+-   Microsoft Active Directory
+-   Netscape Directory Server
+-   Novell eDirectory
+-   Sun Java System Directory Server
 
 It is recommended to specify a "realmName" as it makes it easier to reference entries from this LDAP configuration, specifically in the Leap role assignments.
 

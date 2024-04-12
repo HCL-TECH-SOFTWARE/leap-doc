@@ -12,7 +12,7 @@ A custom Service Transport can be added to the Leap environment by creating and 
 
     The following example is a Hello example transport that returns a greeting to a person. This transport expects a single input parameter person and responds with a single output parameter greeting. In this simple example, the transport does not talk to any external system to run the service. The transport implements the service itself.
 
-    ```
+    ```java
     package com.mycompany.services;
     
     import com.ibm.form.nitro.service.model.IUser;
@@ -67,7 +67,7 @@ A custom Service Transport can be added to the Leap environment by creating and 
 
     You must create an .xml file to declare your Java class as an OSGi service. For example, create a HelloServiceTransport.xml file with the following content:
 
-    ```
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
       configuration-policy="optional" 
@@ -142,7 +142,7 @@ A custom Service Transport can be added to the Leap environment by creating and 
 
 The following example is a more complex Service Transport that demonstrates one possible way to query an LDAP server. The transport itself remains fairly generic so that multiple different service descriptions, each with their own custom parameters and LDAP search properties, can use this same transport. This sample uses the JVM's naming services \(javax.naming.directory and javax.naming.ldap\) to communicate with the external LDAP server. LDAP search results are converted to XML which can then be pulled apart by the outgoing mapping section of the service description as needed. For example:
 
-```
+```xml
 <searchresults>
 	<searchresult>
 		<telephone>1-555-555-555</telephone>
@@ -160,7 +160,7 @@ If necessary, the Basic Credentials Provider is used to collect the credentials 
 
 Sample Java code:
 
-```
+```java
 package com.mycompany.services;
 
 import com.ibm.form.nitro.service.model.*;
@@ -388,7 +388,7 @@ public class SampleLDAPServiceTransport implements IServiceTransport {
 
 This service description utilizes the previous sample LDAP transport to search an LDAP server for employee info. The results returned are based on a wildcard match of the employee's name or email address.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <serviceDescription>
 	<id>com.mycompany.services.SampleLDAPSearch</id>

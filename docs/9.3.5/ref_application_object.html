@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/ref_application_object.html">
       
       
-        <link rel="prev" href="ref_jsapi_running_external_js_files.html">
+        <link rel="prev" href="ref_jsapi_objects_and_functions.html">
       
       
         <link rel="next" href="ref_form_objects.html">
@@ -5848,24 +5848,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6968,16 +6960,16 @@
 
 <h1 id="application-objects">Application objects</h1>
 <p>Table 1. Application Object (app) The Leap application object provides access to information relevant to the whole application.</p>
-<table>
+<table class="table-wrap">
 <tr>
-<td> <b>Object</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+<td width="225"> <b>Object</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>
 <tr>
-<td>app.getAppPage\(appPageId\)
+<td>app.getAppPage(appPageId)
 <td>Returns the user interface app page object for the provided
 <td>
 
-<div class="highlight"><pre><span></span><code>var myAppPage = app.getAppPage(“AP_Welcome”);
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">myAppPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getAppPage</span><span class="p">(</span><span class="s2">&quot;AP_Welcome&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 </tr>
@@ -6990,68 +6982,75 @@
 <td>
 </tr>
 <tr>
-<td>app.getAppURL\(\)
+<td>app.getAppURL()
 <td>Returns the URL for navigating directly to the application.<br>
 <br>
 
-<b>Note:</b> The application will load the form or app page defined in the “Home Page” field on the Settings tab.
+<b>Note:</b> The application will load the form or app page defined in the "Home Page" field on the Settings tab.
+<td></td>
 </tr>
 <tr>
-<td>app.getChartsURL\(formId, appUid\)
+<td>app.getChartsURL(formId, appUid)
 <td>Returns the URL for navigating directly to the charts page of the form for the provided form uid and application uid.<br>
 <br>
 
 <b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
 <td>
 
-<div class="highlight"><pre><span></span><code>var url = app.getChartsURL(form.getId(), app.getUID());
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getChartsURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
 </code></pre></div>
 
 </tr>
 <tr>
-<td>app.getCurrentUser\(\)
-<td>Returns the identifying name of the currently logged in user. The identifying name is the property as defined by the ibm.was.MemberManager.userProps.id property that is located in the Leap\_config.properties file. For example, <b>uid</b>, <b>cn</b>, <b>mail</b>, <b>displayName</b>. If the Initiator Role is set to <b>Anonymous User</b>, then the function returns the string “Anonymous Guest User”.
-<td>To populate the current user's login name into a field in the form, place the following statement in the <b>onLoad</b> event of the form:<br>
-<br>
-
-<b>Note:</b> The following code must be entered as a single line.
-
-<div class="highlight"><pre><span></span><code>//change F_SingleLine to the ID of the desired field 
-BO.F_SingleLine.setValue(app.getCurrentUser());
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getCurrentUserId\(\)
-<td>Returns the user's "identifier" - the identifying name of the currently logged in user. The identifying name is the property as defined by the ibm.was.MemberManager.userProps.id property that is located in the Leap\_config.properties file. For example, <b>uid</b>, <b>cn</b>, <b>mail</b>, <b>displayName</b>. If the Initiator Role is set to <b>Anonymous User</b>, then the function returns the string “Anonymous Guest User”.
+<td>app.getCurrentUser()
+<td>Deprecated - Use app.getCurrentUserId()
 <td>
 </tr>
 <tr>
-<td>app.getCurrentUserEmail\(\)
+<td>app.getCurrentUserId()
+<td>Returns the user's "identifier" - the identifying name of the currently logged in user.<br>
+<br>
+The identifying name is the property as defined by the ibm.was.MemberManager.userProps.id property that is located in the Leap_config.properties file. For example, <b>uid</b>, <b>cn</b>, <b>mail</b>, <b>displayName</b>.<br>
+<br>
+If the user is not authenticated, then the function returns the string "Anonymous Guest User".
+<td>
+To populate the current user's login name into a field in the form, place the following statement in the <b>onLoad</b> event of the form:<br>
+<br>
+<div class="highlight"><pre><span></span><code><span class="c1">// change F_SingleLine to the ID of the desired field </span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUser</span><span class="p">());</span>
+</code></pre></div>
+
+</tr>
+<tr>
+<td>app.getCurrentUserEmail()
 <td>Returns the user's email.
 <td>
 </tr>
 <tr>
-<td>app.getCurrentUserDisplayName\(\)
-<td>|Returns the user's full display name.
+<td>app.getCurrentUserDisplayName()
+<td>Returns the user's full display name.
 <td>Ex. "Eduardo Ramírez López".
 </tr>
 <tr>
-<td>app.getCurrentUserInfo\(\)
+<td>app.getCurrentUserInfo()
 <td>Returns the object containing the attributes of the current user.
 <td>For example:
 
-<div class="highlight"><pre><span></span><code>{id: &quot;pflorez123&quot;, email: &quot;Pedro.Flores@example.com&quot;, displayName: &quot;Pedro Flores&quot;, userType: &quot;owner&quot;}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pflorez123&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedro.Flores@example.com&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">displayName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedro Flores&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">userType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;owner&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<b>Note:</b> Not all attributes are available in all deployments. In that case, some of these values will be null.
-
-<b>userType</b>** – possible values:
-
+<b>Note:</b> Not all attributes are available in all deployments. In that case, some of these values will be null.<br>
+<br>
+<b>userType</b> – possible values:
 <ul>
 <li>  "owner" – if current user is the app owner</li>
 <li>  "guest" – if the current user is anonymous</li>
-<li>   "" \(empty string\) – in all other cases</li>
+<li>   "" (empty string) – in all other cases</li>
 </ul>
 </tr>
 <tr>
@@ -7059,55 +7058,54 @@ BO.F_SingleLine.setValue(app.getCurrentUser());
 <td>Returns a comma-separated list of all the roles for which the current user is a member.
 <td>For example:
 
-<div class="highlight"><pre><span></span><code>item.setValue(app.getCurrentUserRoles());
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserRoles</span><span class="p">());</span>
 </code></pre></div>
 
 </td>
 </tr>
-<td>app.getFileBaseURL\(\)
+<td>app.getFileBaseURL()
 <td>Returns the relative URL to the current browser page where all files that are uploaded into the application at design time are stored. This does not include images and CSS files. All files are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/files/
 <td>
 </tr>
 <tr>
-<td>app.getForm\(formID\)
+<td>app.getForm(formID)
 <td>Returns the user interface form object for the provided formID. If used to return a form that is not shown or loaded, then the object that is returned is not fully operational and should be used for hooking up dynamic event handlers only.
 <td>Register an event listener to a service in order to do something when it returns:
 
-<div class="highlight"><pre><span></span><code>var form = app.getForm(&#39;F_Form1&#39;);
-     var service = form.getServiceConfiguration(&#39;SC_ServiceConfig0&#39;);
-
-     service.connectEvent(&#39;onCallFinished&#39;, function(pSuccess)
-     {
-     alert(&#39;call finished&#39;);
-     });
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getServiceConfiguration</span><span class="p">(</span><span class="s1">&#39;SC_ServiceConfig0&#39;</span><span class="p">);</span>
+<span class="nx">service</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s1">&#39;onCallFinished&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">pSuccess</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;call finished&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 
 </tr>
 <tr>
-<td>app.getFormLaunchURL\(formId, appUid\)
-<td>Returns the URL for navigating directly to the form for the provided application uid and form uid.
-
+<td>app.getFormLaunchURL(formId, appUid)
+<td>Returns the URL for navigating directly to the form for the provided application uid and form uid.<br>
+<br>
 <b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
 
 <td>
-<div class="highlight"><pre><span></span><code>var url = app.getFormLaunchURL();
-var url = app.getFormLaunchURL(form.getId());
-var url = app.getFormLaunchURL(form.getId(), app.getUID());
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
 </code></pre></div>
 
 </tr>
 <tr>
-<td>app.getImageBaseURL\(\)
+<td>app.getImageBaseURL()
 <td>Returns the relative URL to the current browser page where all images that are uploaded into the application at design time are stored. All images are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/image/
 <td>
 </tr>
 <tr>
-<td> app.getLocale\(\)
-<td>Returns the current locale of the application, according to the application's settings or the current user's preferences. The returned value is a locale code, in accordance with [Tags for the Identification of Languages \(RFC 3066\)](https://www.ietf.org/rfc/rfc3066.txt).
+<td> app.getLocale()
+<td>Returns the current locale of the application, according to the application's settings or the current user's preferences. The returned value is a locale code, in accordance with <a href="https://www.ietf.org/rfc/rfc3066.txt" target="_blank">Tags for the Identification of Languages (RFC 3066)</a>.
 <td>
 </tr>
 <tr>
-<td>app.getLocation\(callbackFunction, highAccuracy\)
+<td>app.getLocation(callbackFunction, highAccuracy)
 <td>Allows the form designer to get the current user's location.<br>
 <br>
  <b>callbackFunction</b> - the callback that occurs after the location request finishes. The designer must define the function to have one argument which will be assigned a Position object if the location request was successful, or null if the request was unsuccessful. Inside the function the designer can assign location attributes to different fields. Five values can be accessed:
@@ -7120,161 +7118,206 @@ var url = app.getFormLaunchURL(form.getId(), app.getUID());
 <li>   position.coords.altitudeAccuracy</li>
 </ul>
 <br>
-More information in [https://developer.mozilla.org/en-US/docs/Web/API/Position/](https://developer.mozilla.org/en-US/docs/Web/API/Position/).<br>
+More information at <a href="https://developer.mozilla.org/en-US/docs/Web/API/Position/" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Position/</a>.<br>
+
+<td>Set the value of F_SingleLine1 to the current location:
+
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">highAccuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myCallbackFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Location request failed&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(</span><span class="nx">myCallbackFunction</span><span class="p">,</span><span class="nx">highAccuracy</span><span class="p">);</span>
+</code></pre></div>
+
+</tr>
+<tr>
+<td>app.getProductBaseURL()
+<td>Returns the host and context of the Leap server.
+<td>
+
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getProductBaseURL</span><span class="p">();</span>
+</code></pre></div>
+
+</tr>
+<td>app.getRecordURL(recordUid, formId, appUid)
+<td>Returns the URL for navigating directly to the record.
+
+<b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
+<td>
+
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+</code></pre></div>
+
+</tr>
+<tr>
+<td>
+app.getSharedData()
+<td>
+Returns a JavaScript™ object that can be easily accessed from all custom JavaScript code on the form, and is the suggested location to share data, or create reusable functions.
+
+<td>
+Create some data and functions to be used later:
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Welcome Form&#39;</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">v2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">v2</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+Example of referencing the established variable and function:
+<div class="highlight"><pre><span></span><code><span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="p">);</span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_Number</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
+</code></pre></div>
+
+<tr>
+<td>app.getStyleBaseURL()
+<td>Returns the relative URL to the current browser page where all CSS style files that are uploaded into the application at design time are stored. All css files are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/styles/| 
+<td>
+
+<tr>
+<td>app.getSuppressWarning()
+<td>Gets the current set value for suppressing the warning. See setSuppressWarning for information.
+<td>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getSuppressWarning</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>app.getUID()
+<td>The UID of the application
+<td>Can be used to create a link to another form
+<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">F_StaticWebLink</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_ServerURL</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="s1">&#39;/apps/secure/1/app/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="s1">&#39;/launch/index.html?form=F_Form2&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>app.getUrlParameter(parm)
+<td>Looks up a single URL query parameter.
+<td>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">param</span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameter</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">param</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Shown only when debug param is present&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>app.getUrlParameters()
+<td>Returns an object with all URL parameters.
+<td>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameters</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">)</span>
+<span class="w">     </span><span class="nx">alert</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>app.getViewDataURL(appUid)
+<td>Returns the URL for navigating directly to the View Data page.<br>
 <br>
-highAccuracy - a boolean value that requests a high accuracy location from the browser if true. See [https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/enableHighAccuracy](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/enableHighAccuracy).
-<td>Set the value of F\_SingleLine1 to the current location:
-
- ```
-
-var highAccuracy = true;
-var myCallbackFunction = function (position) {
-  if (position !== null) {
-    BO.F_SingleLine1.setValue(position.coords.latitude+", "+position.coords.longitude);
-  } else {
-    alert("Location request failed");
-  }
-};
-app.getLocation(myCallbackFunction,highAccuracy);
-
-<div class="highlight"><pre><span></span><code>&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;app.getProductBaseURL\(\)
-&lt;td&gt;Returns the host and context of the Leap server.
-&lt;td&gt;
-</code></pre></div>
-var url = app.getProductBaseURL();
-<div class="highlight"><pre><span></span><code>&lt;/tr&gt;
-&lt;td&gt;app.getRecordURL\(recordUid, formId, appUid\)
-&lt;td&gt;Returns the URL for navigating directly to the record.
-
-&lt;b&gt;Note:&lt;/b&gt; All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
-&lt;td&gt;
-</code></pre></div>
-var url = app.getRecordURL(‘d1f6eb71-9483-479c-8d47-dd30bd7e9de9’);
-var url = app.getRecordURL(‘d1f6eb71-9483-479c-8d47-dd30bd7e9de9’, form.getId());
-var url = app.getRecordURL(‘d1f6eb71-9483-479c-8d47-dd30bd7e9de9’, form.getId(), app.getUID());
-
-<div class="highlight"><pre><span></span><code>&lt;/tr&gt;
-&lt;/table&gt;
-|app.getSharedData\(\)|Returns a JavaScript™ object that can be easily accessed from all custom JavaScript code on the form, and is the suggested location to share data, or create reusable functions.|Create some data and functions to be used later:```
-app.getSharedData().titleToShow = &#39;Welcome Form&#39;;
-     app.getSharedData().addTwoValues = function(v1,v2)
-     {
-     return v1 + v2;
-     };
+<b>Note:</b> The parameter is optional. If you do not supply a parameter, it will be set to the object in the current scope.
+<td>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
 </code></pre></div>
 
-Example of referencing the established variable and function:```
-BO.F_SingleLine.setValue(app.getSharedData().titleToShow);
-BO.F_Number.setValue(app.getSharedData().addTwoValues(5, 5));
-<div class="highlight"><pre><span></span><code>|
-|app.getStyleBaseURL\(\)|Returns the relative URL to the current browser page where all CSS style files that are uploaded into the application at design time are stored. All css files are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/styles/| |
-|app.getSuppressWarning\(\)|Gets the current set value for suppressing the warning. See setSuppressWarning for information.|```
-var suppressWarning = app.getSuppressWarning();
-if(suppressWarning === false)
-  app.setSuppressWarning(true);
+<tr>
+<td>app.isCurrentUserInRole (roleName)
+<td>Returns true if the current user is a member of the provided role, otherwise false.<br>
+<br>
+<b>Note:</b> The function does not validate the role with the provided roleName, therefore if the role does not exist <code>false</code> is returned.
+
+<td>For example:
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">app</span><span class="p">.</span><span class="nx">isCurrentUserInRole</span><span class="p">(</span><span class="s2">&quot;Manager&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">F_Instructions</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 
-|
-|app.getUID\(\)|The UID of the application|Can be used to create a link to another form ```
-page.F_StaticWebLink.setLinkValue(BO.F_ServerURL.getValue() + '/apps/secure/1/app/' + app.getUID() + '/launch/index.html?form=F_Form2'));
-<div class="highlight"><pre><span></span><code>|
-|app.getUrlParameter\(parm\)|Looks up a single parameter.|```
-var param= app.getUrlParameter(&#39;debug&#39;)
-if(param === &#39;true&#39;)
-   alert(&#39;Shown only when debug param is present&#39;);
+<tr>
+<td>app.isSingleFormView()
+<td>Returns true if the form is shown by itself in the browser and false if it is shown in view data.| 
+<td>
+
+<tr>
+<td>app.openApp(appUid, newTab)
+<td>Opens the home page of an application. The current app is used if you do not supply an app id. If <code>newTab</code> is <code>true</code>, the app is presented in a new browser tab. The default behavior is for the application to be opened in a new tab.
+<td>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">(),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 
-|
-|app.getUrlParameters\(\)|Returns an object with all URL parameters.|```
-var params = app.getUrlParameters();
-     if(params.CustomWarning)
-     alert(params.CustomWarning);
-<div class="highlight"><pre><span></span><code>|
-|app.getViewDataURL\(appUid\)|Returns the URL for navigating directly to the View Data page.
+<tr>
+<td>app.openAppPage(appPageId, appUid, newTab)
+<td>Opens the app page of an application that matches the provided <i>appPageid</i>.<br>
+<br>
+<b>Note:</b> appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
 
-**Note:** The parameter is optional. If you do not supply a parameter, it will be set to the object in the current scope.
-
-|```
-var url = app.getViewDataURL();
-var url = app.getViewDataURL(app.getUID());
+<td>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 
-|
-|app.isCurrentUserInRole\(roleName\)|Returns true if the current user is a member of the provided role, otherwise false.**Note:** The function does not validate the role with the provided roleName, therefore if the role does not exist false is returned.
+<tr>
+<td>app.openForm(formId, appUid, newTab)
+<td>Opens the form of an application that matches the provided <i>formId</i>.<br>
+<br>
+<b>Note:</b> appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
 
-|For example:```
-item.setValue(app.isCurrentUserInRole("Manager"));
-<div class="highlight"><pre><span></span><code>|
-|app.isSingleFormView\(\)|Returns true if the form is shown by itself in the browser and false if it is shown in view data.| |
-|app.openApp\(appUid, newTab\)|Opens the home page of an application. The current app is used if you do not supply an app id. If “newTab” is “true”, the app is presented in a new browser tab. The default behavior is for the application to be opened in a new tab.
-
-|```
-app.openApp(‘d1f6eb71-9483-479c-8d47-dd30bd7e9de9’);
-app.openApp (‘d1f6eb71-9483-479c-8d47-dd30bd7e9de9’, true);
-app.openApp (app.getUID(), false);
+<td>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 
-|
-|app.openAppPage\(appPageId, appUid, newTab\)|Opens the app page of an application that matches the provided *appPageid*.
+<tr>
+<td>openRecord(recordUid, formId, appUid, newTab)
+<td>Opens the record of a form that matches the provided <i>recordId</i> and <i>formId</i>.<br>
+<br>
+<b>Note:</b> formId, appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
 
-**Note:** appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-|```
-app.openAppPage(‘AP_Page1’);
-app.openAppPage (‘AP_Page1’, true);
-app.openAppPage (‘AP_Page1’, false);
-
-<div class="highlight"><pre><span></span><code>|
-|app.openForm\(formId, appUid, newTab\)|Opens the form of an application that matches the provided *formId*.
-
-**Note:** appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-|```
-app.openForm(‘F_Form1’);
-app.openForm(‘F_Form1’, true);
-app.openForm (‘F_Form1’, false);
+<td>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 
-|
-|openRecord\(recordUid, formId, appUid, newTab\)|Opens the record of a form that matches the provided *recordId* and *formId*.
-
-**Note:** formId, appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-|```
-app.openRecord(‘xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx’);
-app.openRecord(‘xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx’, ‘yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy’);
-app.openRecord(‘xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx’, ‘yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy’, true);
-app.openRecord(‘xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx’, ‘yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy’, ‘zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz’, false);
-
-<div class="highlight"><pre><span></span><code>|
-|app.setSuppressWarning\(pSuppress\)|If a user interacts with a form, or JavaScript, they are prompted with a warning message whenever the current browser page tries to navigate to a different URL. This function allows the suppression of that warning. When set to true the message is suppressed until it is set to false again|Can be used at any scope, for example in the application onStart, form onLoad, onItemChange, etc.```
-app.setSuppressWarning(true);
+<tr>
+<td>app.setSuppressWarning (pSuppress)
+<td>If a user interacts with a form, or JavaScript, they are prompted with a warning message whenever the current browser page tries to navigate to a different URL. This function allows the suppression of that warning. When set to true the message is suppressed until it is set to false again
+<td>Can be used at any scope, for example in the application onStart, form onLoad, onItemChange, etc.
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 
-|
-|app.showMessage\(title, message, type, subtitle\)
+<tr>
+<td>app.showMessage(title, message, type, subtitle)
 
-|Allow usage of a built-in dialog for end-user messages. title: The title to display in the dialog title bar.
+<td>Allow usage of a built-in dialog for end-user messages. title: The title to display in the dialog title bar.<br>
+<br>
+ message: The message text to display.<br>
+<br>
+ type (optional): can be one of "info", "success", "warn", or "error" and results in appropriate icon being displayed. If type is absent or not one of these values, then no icon will be displayed.<br>
+<br>
+ subtitle (optional): Heading text for the message.
 
- message: The message text to display.
-
- type \(optional\): can be one of "info", "success", "warn", or "error" and results in appropriate icon being displayed. If type is absent or not one of these values, then no icon will be displayed.
-
- subtitle \(optional\): Heading text for the message.
-
-|```
-app.showMessage
-("Error found in data",
- "The booking date cannot be after the event.",
- "error",
- "Please change the booking or event date, then re-submit.");
-```
-
-|
-
-**Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
+<td>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">showMessage</span><span class="w"> </span><span class="p">(</span>
+<span class="w"> </span><span class="s2">&quot;Error found in data&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;The booking date cannot be after the event.&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;Please change the booking or event date, then re-submit.&quot;</span>
+<span class="p">);</span>
+</code></pre></div>
+</table>
+<p><strong>Parent topic: </strong><a href="ref_jsapi_user_interface_objects.html">Interface objects</a></p>
 
 
 

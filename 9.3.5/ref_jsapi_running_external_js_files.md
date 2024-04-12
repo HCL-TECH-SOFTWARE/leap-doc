@@ -4,13 +4,12 @@ Custom JavaScript™ can also be loaded from attached JavaScript files. Any .js 
 
 Table 1. JavaScript™ objects available in attached JavaScript™ files
 
-<table>
+<table class="table-wrap">
 <tr>
-<td> <b>Variable</b> </td><td> <b>Full name</b> <td><b>Description</b></td> <td> <b>Example</b></td> <td> <b>Type</b>
+<td width="100"><b>Variable</b></td><td width="200"><b>Description</b></td><td><b>Example</b></td>
 </tr>
 <tr>
 <td>app
-<td>Application object
 <td>Contains functions for accessing global general information
 <td>   A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:<br>
 
@@ -39,7 +38,6 @@ var sub = app.getSharedData().sumNumbers(page.F_Expense);
 ```
    
 
-<td>GUI
 </tr>
 </table>
 

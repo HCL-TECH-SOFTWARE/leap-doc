@@ -8,7 +8,7 @@ A Service Catalog is implemented in much the same manner as a Service Catalog Gr
 
     The following example of a custom Service Catalog provides the description of a single sample service called Hello Service. This service has one input parameter and one output parameter. This custom Service Catalog is linked with the sample Service Catalog Group described in the [Service Catalog Group](ser_add_service_catalog_group.md) help topic by returning the com.mycompany.services.MyServiceCatalogGroup.id from the getGroupId\(\) method. The Hello Service service is started when My Services is selected by the application designer from the **Service Catalog** dropdown in the **Service Configuration** dialog.
 
-    ```
+    ```java
     package com.mycompany.services;
     
     import com.ibm.form.nitro.service.model.*;
@@ -98,7 +98,7 @@ A Service Catalog is implemented in much the same manner as a Service Catalog Gr
 
     You must create an .xml file to declare your Java class as an OSGi service. For example, create a MyServiceCatalog.xml file with the following content:
 
-    ```
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
      configuration-policy="optional" 

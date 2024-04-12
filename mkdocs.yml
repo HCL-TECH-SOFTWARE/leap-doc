@@ -294,7 +294,6 @@ nav:
           - Reference Objects and Functions: 
             - ref_jsapi_objects_and_functions.md
             - Interface objects:
-              - ref_jsapi_running_external_js_files.md
               - Application objects: ref_application_object.md
               - Form objects: ref_form_objects.md
               - Page and App Page objects: ref_page_app_page_objects.md

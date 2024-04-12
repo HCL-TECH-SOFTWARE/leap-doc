@@ -49,7 +49,7 @@ A parameter type depends on its schema data type. The following table lists the 
 
 Table 2. Schema data types and its equivalent service parameter data type 
 
-<table>
+<table class="table-wrap">
 <tr>
 <td><b>Service Description Parameter Type</b> </td><td> <b>Schema Data Type</b></td>
 </tr>

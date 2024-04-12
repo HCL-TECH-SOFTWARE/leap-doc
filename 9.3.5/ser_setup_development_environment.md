@@ -8,7 +8,7 @@ The HCL Leap runs within an OSGi framework environment. Code that extends the Le
 
     The extracted JAR files are placed in the %EXTRACT\_DIR%\\Leap\_bundles\\ directory.
 
-    ```
+    ```bat
     SET EXTRACT_DIR=C:\temp\Builder_extract
     SET JAVA_BIN=C:\hcl-java-sdk-60-win-i386\bin
     SET LEAP_INSTALL_DIR=C:\Program Files\HCL\Leap Server\8.0\Leap

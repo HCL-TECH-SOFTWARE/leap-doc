@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configure-leap-role-mapping" class="md-skip">
+        <a href="#helm_configure_roleMapping" class="md-skip">
           Skip to content
         </a>
       
@@ -1724,7 +1724,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reference-a-usergroup-from-ldap" class="md-nav__link">
+  <a href="#ref_usergroup_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Reference a User/Group from LDAP
     </span>
@@ -1734,7 +1734,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mapping-a-user-from-ldap" class="md-nav__link">
+  <a href="#map_user_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Mapping a user from LDAP
     </span>
@@ -1743,7 +1743,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mapping-a-group-from-ldap" class="md-nav__link">
+  <a href="#map_group_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Mapping a group from LDAP
     </span>
@@ -5921,24 +5921,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -7020,7 +7012,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reference-a-usergroup-from-ldap" class="md-nav__link">
+  <a href="#ref_usergroup_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Reference a User/Group from LDAP
     </span>
@@ -7030,7 +7022,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mapping-a-user-from-ldap" class="md-nav__link">
+  <a href="#map_user_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Mapping a user from LDAP
     </span>
@@ -7039,7 +7031,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mapping-a-group-from-ldap" class="md-nav__link">
+  <a href="#map_group_ldap" class="md-nav__link">
     <span class="md-ellipsis">
       Mapping a group from LDAP
     </span>
@@ -7070,7 +7062,7 @@
   
 
 
-<h1 id="configure-leap-role-mapping">Configure Leap Role Mapping</h1>
+<h1 id="helm_configure_roleMapping">Configure Leap Role Mapping</h1>
 <p>There are 3 roles that must be configured for proper access to Leap: "Administrative Users", "EditApplicationUsers", and "UseApplicationUsers".</p>
 <ul>
 <li>Administrative Users can access the admin UI, create and use applications.</li>
@@ -7092,9 +7084,9 @@
        UseApplicationsUsers:
          AllAuthenticated: true
 </code></pre></div>
-<h2 id="reference-a-usergroup-from-ldap">Reference a User/Group from LDAP</h2>
+<h2 class="section" id="ref_usergroup_ldap">Reference a User/Group from LDAP</h2>
 <p>To reference a specific user or group from a connected LDAP requires specific syntax, "realmName/userOrGroupId".  The realmName referenced here is the property from the ldapRegistry object, refer to <a href="helm_configure_ldap.html">Connect Leap to LDAP</a>.</p>
-<h3 id="mapping-a-user-from-ldap">Mapping a user from LDAP</h3>
+<h3 class="section" id="map_user_ldap">Mapping a user from LDAP</h3>
 <div class="highlight"><pre><span></span><code>configuration:
   leap:
     roleMapping:
@@ -7102,7 +7094,7 @@
          MappedUsersAccessIDs:
           - acmeRealm/cn=Admin,o=Acme
 </code></pre></div>
-<h3 id="mapping-a-group-from-ldap">Mapping a group from LDAP</h3>
+<h3 class="section" id="map_group_ldap">Mapping a group from LDAP</h3>
 <div class="highlight"><pre><span></span><code>configuration:
   leap:
     roleMapping:

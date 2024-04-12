@@ -111,7 +111,7 @@ Table 4. Boolean operator
 
 Table 5. Time, Date, and Time Stamp operators
 
-<table>
+<table class="table-wrap">
 <thead>
 <tr>
 <th>Operator</th>

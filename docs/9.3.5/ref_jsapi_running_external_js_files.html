@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html/ref_jsapi_running_external_js_files.html">
       
       
-        <link rel="prev" href="ref_jsapi_objects_and_functions.html">
+        <link rel="prev" href="ref_jsapi_item_events.html">
       
       
-        <link rel="next" href="ref_application_object.html">
+        <link rel="next" href="ref_jsapi_objects_and_functions.html">
       
       
       <link rel="icon" href="assets/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Interface objects - HCL Leap 9.3.5 Help Center</title>
+        <title>Running Custom JavaScript Files - HCL Leap 9.3.5 Help Center</title>
       
     
     
@@ -188,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interface objects
+              Running Custom JavaScript Files
             
           </span>
         </div>
@@ -5741,10 +5741,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -5753,6 +5762,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -5762,10 +5772,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -5781,11 +5789,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" >
         
           
           
@@ -5807,7 +5815,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3">
             <span class="md-nav__icon md-icon"></span>
             Reference Objects and Functions
@@ -5818,10 +5826,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -5841,33 +5847,25 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link md-nav__link--active">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
             <span class="md-nav__icon md-icon"></span>
             Interface objects
@@ -6959,13 +6957,12 @@
 <h1 id="running-custom-javascript-files">Running Custom JavaScript Files</h1>
 <p>Custom JavaScript™ can also be loaded from attached JavaScript files. Any .js file that is added to the application in the <strong>Settings</strong> &gt; <strong>Files</strong> section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.</p>
 <p>Table 1. JavaScript™ objects available in attached JavaScript™ files</p>
-<table>
+<table class="table-wrap">
 <tr>
-<td> <b>Variable</b> </td><td> <b>Full name</b> <td><b>Description</b></td> <td> <b>Example</b></td> <td> <b>Type</b>
+<td width="100"><b>Variable</b></td><td width="200"><b>Description</b></td><td><b>Example</b></td>
 </tr>
 <tr>
 <td>app
-<td>Application object
 <td>Contains functions for accessing global general information
 <td>   A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:<br>
 
@@ -6992,7 +6989,6 @@ Then from an event where you want to sum all numbers in a section:<br>
 </code></pre></div>
 
 
-<td>GUI
 </tr>
 </table>
 

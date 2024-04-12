@@ -5856,24 +5856,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6973,45 +6965,45 @@
 <li>
 <p>Create a Java class</p>
 <p>Create a Java class that implements the com.ibm.form.nitro.service.services.IServiceCatalogGroup interface to return a unique group identifier and a readable group name. The following example adds the <strong>My Services</strong> group to the Leap.</p>
-<div class="highlight"><pre><span></span><code>package com.mycompany.services;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.mycompany.services</span><span class="p">;</span>
 
-import com.ibm.form.nitro.service.services.IServiceCatalogGroup;
-import com.ibm.form.platform.service.framework.i18n.LocaleUtils;
-import java.util.Locale;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.nitro.service.services.IServiceCatalogGroup</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.platform.service.framework.i18n.LocaleUtils</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span>
 
-public class MyServiceCatalogGroup
-    implements IServiceCatalogGroup
-{
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyServiceCatalogGroup</span>
+<span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">IServiceCatalogGroup</span>
+<span class="p">{</span>
 
-    public String getGroupId()
-    {
-        return &quot;com.company.services.MyServiceCatalogGroup.id&quot;; 
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getGroupId</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.company.services.MyServiceCatalogGroup.id&quot;</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
 
-    public String getGroupName()
-    {
-        Locale requestLocale = LocaleUtils.getRequestLocale();
-        /* use request locale to determine a translated group name */
-        return &quot;My Services&quot;;
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getGroupName</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Locale</span><span class="w"> </span><span class="n">requestLocale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocaleUtils</span><span class="p">.</span><span class="na">getRequestLocale</span><span class="p">();</span>
+<span class="w">        </span><span class="cm">/* use request locale to determine a translated group name */</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;My Services&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>In this example, the locale used by the user can be retrieved by using com.ibm.form.platform.service.framework.i18n.LocaleUtils.getRequestLocale(. If you are using the Eclipse IDE, its Externalize Strings wizard can extract strings for your OSGi bundle.</p>
 </li>
 <li>
 <p>Create an OSGi Service Description</p>
 <p>You must create an .xml file to declare your Java class as an OSGi service. For example, create a MyServiceCatalogGroup.xml file with the following content:</p>
-<div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;scr:component xmlns:scr=&quot;http://www.osgi.org/xmlns/scr/v1.1.0&quot; 
- configuration-policy=&quot;optional&quot; 
- enabled=&quot;true&quot;  
- immediate=&quot;true&quot; 
- name=&quot;com.mycompany.services.MyServiceCatalogGroup.service&quot;&gt;
-   &lt;implementation class=&quot;com.mycompany.services.MyServiceCatalogGroup&quot; /&gt;  
-    &lt;service&gt;
-     &lt;provide interface=&quot;com.ibm.form.nitro.service.services.IServiceCatalogGroup&quot;/&gt;
-   &lt;/service&gt;
-&lt;/scr:component&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;scr:component</span><span class="w"> </span><span class="na">xmlns:scr=</span><span class="s">&quot;http://www.osgi.org/xmlns/scr/v1.1.0&quot;</span><span class="w"> </span>
+<span class="w"> </span><span class="na">configuration-policy=</span><span class="s">&quot;optional&quot;</span><span class="w"> </span>
+<span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="w">  </span>
+<span class="w"> </span><span class="na">immediate=</span><span class="s">&quot;true&quot;</span><span class="w"> </span>
+<span class="w"> </span><span class="na">name=</span><span class="s">&quot;com.mycompany.services.MyServiceCatalogGroup.service&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.mycompany.services.MyServiceCatalogGroup&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">  </span>
+<span class="w">    </span><span class="nt">&lt;service&gt;</span>
+<span class="w">     </span><span class="nt">&lt;provide</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.ibm.form.nitro.service.services.IServiceCatalogGroup&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span>
 </code></pre></div>
 <p>For the class attribute of the implementation element, use the fully qualified name of the Java class you created in Step 1. Ensure that the name attribute of the component element is unique. Although not required, you can make the name attribute the same as the fully qualified name of the Java class that you created in Step 1.</p>
 </li>

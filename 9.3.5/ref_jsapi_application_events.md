@@ -12,10 +12,10 @@ Table 1. JavaScript™ objects available in application events
 
 
 Table 2. Application Events
-<table>
+<table class="table-wrap">
 <thead>
 <tr>
-<th>Event</th><th>Description</th><th>Example</th>
+<th width="100">Event</th><th>Description</th><th>Example</th>
 </tr>
 </thead>
 <tbody>

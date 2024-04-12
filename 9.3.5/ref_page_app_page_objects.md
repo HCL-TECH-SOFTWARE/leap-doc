@@ -3,7 +3,7 @@
 <table class="table-wrap">
 <thead>
 <tr>
-<th>Object</th><th>Description</th><th>Example</th>
+<th width="250">Object</th><th>Description</th><th>Example</th>
 </tr>
 <thead>
 <tbody>
@@ -41,7 +41,7 @@ callbackFunction)</td>
 </tr>
 <tr>
 <td>page.disconnectEvent(eventHandle)<br>
-appPage.disconnectEvent(eventHandle)</td>
+appPage.disconnectEvent (eventHandle)</td>
 <td>Disconnects the event handler specified by the passed-in event handle object that was returned by a page.connectEvent or <b>appPage.connectEvent</b> call. To avoid duplicate event handlers being connected to pages, connect to page events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to a page event outside of these two events you should explicitly disconnect from the page event using the <b>disconnectEvent</b> method.</td>
 <td>
 
@@ -100,7 +100,7 @@ appPage.getClasses()
 
 <tr>
 <td>page.getId()<br>
-appPage.getId()<td>
+appPage.getId()</td>
 <td>Returns the unique ID, within the application, of this page. For example, <b>P_Page1</b>.</td>
 <td><!-- no example --></td>
 </tr>
@@ -115,8 +115,9 @@ var serviceConfigs = appPage.getServiceConfigurationIds();
 ```
 </td>
 </tr>
+
 <tr>
-<td>appPage.getServiceConfiguration(serviceId)</td>
+<td>appPage.getServiceConfiguration (serviceId)</td>
 <td>Gets the service object for a particular service ID.</td>
 <td>Lookup and execute a service from JavaScript™:
 
@@ -130,7 +131,7 @@ service.callService();
 <tr>
 <td>page.getType()<br>
 appPage.getType()</td>
-<td>Returns a string identifying the object type. For example,“page”.</td>
+<td>Returns a string identifying the object type. For example, "page".</td>
 <td><!-- no example --></td>
 </tr>
 

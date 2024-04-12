@@ -15,9 +15,9 @@ Table 1. JavaScript™ objects available in page events
 
 Table 2. Page Events
 
-<table>
+<table class="table-wrap">
 <tr>
-<td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+<td width="175"> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>
 <tr>
 <td>onHide

@@ -4,7 +4,7 @@ Leap relies on two central components: the application server and the database.
 
 Leap relies on two central components: the application server and the database. The following diagram shows how these components are set up in a typical installation:
 
-![A diagram that shows basic Leaparchitecture.](graphics/basic_overview_v30.gif)
+![A diagram that shows basic Leap architecture.](graphics/basic_overview_v30.gif)
 
 The components perform the following functions:
 

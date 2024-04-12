@@ -32,7 +32,7 @@ Validation and enforcement of your applications data types, required elements, a
 **Surveys** and **Select Many** items can contain values that are lists of multiple selected choices.
 
 -   Use commas to separate the selected choices.
--   In cases where one of the selected choices contains a comma, the following sequence can be used as an alternative separator: \_\_\#\_\_
+-   In cases where one of the selected choices contains a comma, the following sequence can be used as an alternative separator: __#__
 
 The data import operation stops when it encounters blank columns or rows in the spreadsheet.
 

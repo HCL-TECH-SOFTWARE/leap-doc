@@ -5848,24 +5848,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6967,705 +6959,793 @@
 
 
 <h1 class="concept" id="ref_item_objects">Item objects</h1>
-<p><strong>Note:</strong> The item.setTitle parameter is not applicable to Tabbed Folder form items.</p>
-<p>Table 1. Item (item) and App Page Item (apItem) Objects</p>
-<p><em>The item object represents a particular item on a page, and provides access to its properties. For Sections and Tab Folders, access to their child items is also granted.</em></p>
+<p><b>Note:</b> The item.setTitle parameter is not applicable to Tabbed Folder form items.</p>
+<p>Table 1. Item (item) and App Page Item (apItem) Objects<br>
+The item object represents a particular item on a page, and provides access to its properties. For Sections and Tab Folders, access to their child items is also granted.</p>
+<table class="table-wrap">
+<thead>
+<th width="250">Object
+<th>Description
+</thead>
+
+<tr>
+<td>item.addClasses(classes)<br>
+apItem.addClasses(classes)
+<td>Adds a list of custom class names to an item for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and false is returned.<br>
+<br>
+Example:
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">addClasses</span><span class="p">(</span><span class="s2">&quot;emphasized error&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.clearRequiredMessage()apItem.clearRequiredMessage()
+<td>Validates the item data, but prevents the required error message from displaying.
+
+<tr>
+<td>item.connectEvent (eventName, callbackFunction)<br>
+apItem.connectEvent (eventName, callbackFunction)
+<td>Connects a function to an event on the item. Useful for utility functions defined in external JavaScript™ files to hook behavior into the item dynamically. Returns a handle object that represents the connection of the function to that event name. That handle can be used to disconnect this same event using item.disconnectEvent.<br>
+<br>
+Example:<br>
+Connect a listener to the <b>onItemChange</b> event to make a section visible. This could be placed in the form <b>onLoad</b> event:  
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">hndl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s1">&#39;onItemChange&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Yes&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="nx">form</span><span class="p">.</span><span class="nx">getBO</span><span class="p">().</span><span class="nx">F_SectionA</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}});</span>
+</code></pre></div>
+
+<tr>
+<td>item.disconnectEvent (eventHandle)<br>
+apItem.disconnectEvent (eventHandle)
+<td>Disconnects the event handler specified by the passed-in event handle object that was returned by an item.connectEvent call.If you connect an item event, you must also disconnect it in the same event. Otherwise, multiple versions of the connected code are attached every time the event is triggered.<br>
+<br>
+Example:<br>
+If the connect event is placed in the item <b>onShow</b> then the listener needs to be disconnected: 
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">hndl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s1">&#39;onItemChange&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Yes&#39;</span><span class="p">)</span>
+<span class="w">     </span><span class="nx">form</span><span class="p">.</span><span class="nx">getBO</span><span class="p">().</span><span class="nx">F_SectionA</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="nx">item</span><span class="p">.</span><span class="nx">disconnectEvent</span><span class="p">(</span><span class="nx">hndl</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<tr>
+<td>item.getActive()<br>
+apItem.getActive()
+<td>Returns true if this item is active, or false if it is made read only by a rule, stage, or JavaScript.
+
+<tr>
+<td>apItem.getAppPage()
+<td>Returns the page object to which this item belongs.
+
+<tr>
+<td>item.getBO()
+<td>Returns the Business Object for the entire form.
+
+<tr>
+<td>item.getBOAttr()
+<td>An interface item that is collecting data, this method returns the Business Object Attribute that contains that data. If it is an interface-only item, then it returns null.<br>
+<br>
+Example:<br>
+Get data element for an item and set its value:
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">setValue</span><span class="p">(</span><span class="mf">45</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.getChildren()
+<td>If this item contains children, for example Section, or Tab Folder, it returns a list object that provides access to all direct children items. The list object has the getLength() function and get(index) function for accessing the objects in the list.<br>
+<br>
+Example:<br>
+Reset all numbers inside a section to 0:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">();</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">list</span><span class="p">.</span><span class="nx">getLength</span><span class="p">();</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">getType</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="nx">list</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">setValue</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<tr>
+<td>item.getClasses()<br>
+apItem.getClasses()
+<td>Returns an Array of custom class names currently applied to an item.
+
+<tr>
+<td>item.getDisplayValue()<br>
+apItem.getDisplayValue()
+<td>Returns the current value that is being displayed. It can be used in onItemLiveChange to get current, but not yet committed value.
+
+<tr>
+<td>item.getHoverText()<br>
+apItem.getHoverText()
+<td>Returns the current value set as hover text.
+
+<tr>
+<td>item.getHintText()<br>
+apItem.getHintText()
+<td>Returns the value set as <b>Hint</b> text.
+
+<tr>
+<td>item.getId()<br>
+apItem.getId()
+<td>Returns the unique ID, within the application, of this item. For example, F_FirstName.
+
+<tr>
+<td>apItem.getInvalidMessage()
+<td>An interface item that is collecting data, this method returns the Business Object Attribute that contains that data. If it is an interface-only item, then it returns null.
+
+<tr>
+<td>item.getPage()
+<td>Returns the page object to which this item belongs.<br>
+<br>
+Example:<br>
+Get the form object:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getPage</span><span class="p">().</span><span class="nx">getForm</span><span class="p">();</span>
+</code></pre></div>
+
+<tr>
+<td>item.getParent()<br>
+apItem.getParent()
+<td>Returns the object that is the direct parent of the item, which can be a page, section, or tab folder.
+
+<tr>
+<td>item.getPlaceholderText()apItem.getPlaceholderText()
+<td>Returns the current value set as place holder text.
+
+<tr>
+<td>apItem.getRequired()
+<td>Gets a value set previously using setRequired().
+
+<tr>
+<td>item.getRows()
+<td>Returns the current value set as the number of rows displayed. This method gets the number of rows the text area displayed.<br>
+<br>
+<b>Note:</b> This parameter works only on multi-line input areas.
+
+<tr>
+<td>item.getStartLabel()
+<td>This method gets the value of the label displayed at the start of a numeric or choice slider.
+
+<tr>
+<td>item.getStopLabel()
+<td>This method gets the value of the label displayed at the end of a numeric or choice slider.
+
+<tr>
+<td>item.getStyle()
+<td>Returns the current value set for display style.<br>
+<br>
+<b>Note:</b> This parameter works only on <b>Date</b> and <b>Time</b> input fields.
+
+<tr>
+<td>item.getTitle()<br>
+apItem.getTitle()
+<td>Returns the current value used as the field title.
+
+<tr>
+<td>item.getType()<br>
+apItem.getType()
+<td>Returns a string identifying the object type.
 <table>
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
+<th>Palette item<th>Type<th>Palette item<th>Type
 </thead>
-<tbody>
 <tr>
-<td>item.addClasses(classes) <br> apItem.addClasses(classes)</td>
-<td>Adds a list of custom class names to an item for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and false is returned.</td>
-<td><code>item.addClasses("emphasized error");</code></td>
-</tr>
+  <td>Attachment<td>attachment<td>Paragraph Text<td>textArea
 <tr>
-<td>item.clearRequiredMessage() <br> apItem.clearRequiredMessage()</td>
-<td>Validates the item data, but prevents the required error message from displaying.</td>
-<td> </td>
-</tr>
+  <td>Button<td>button<td>Password<td>password
 <tr>
-<td>item.connectEvent(eventName,callbackFunction) <br> apItem.connectEvent(eventName,callbackFunction)</td>
-<td>Connects a function to an event on the item. Useful for utility functions defined in external JavaScript™ files to hook behavior into the item dynamically. Returns a handle object that represents the connection of the function to that event name. That handle can be used to disconnect this same event using item.disconnectEvent.</td>
-<td>Connect a listener to the <strong>onItemChange</strong> event to make a section visible. This could be placed in the form <strong>onLoad</strong> event: <br> <code> var hndl = item.connectEvent('onItemChange', function() <br> { <br> if(item.getBOAttr().getValue() === 'Yes') <br> form.getBO().F_SectionA.setVisible(true); <br> } <br> }); </code></td>
-</tr>
+  <td>Check Box<td>checkBox<td>Section<td>section
 <tr>
-<td>item.disconnectEvent(eventHandle) <br> apItem.disconnectEvent(eventHandle)</td>
-<td>Disconnects the event handler specified by the passed-in event handle object that was returned by an item.connectEvent call. <br><br> If you connect an item event, you must also disconnect it in the same event. Otherwise, multiple versions of the connected code are attached every time the event is triggered.</td>
-<td>If the connect event is placed in the item <strong>onShow</strong> then the listener needs to be disconnected: <br> <code>var hndl = item.connectEvent('onItemChange', function() <br> { <br> if(item.getBOAttr().getValue() === 'Yes') <br> form.getBO().F_SectionA.setVisible(true); <br> } <br> item.disconnectEvent(hndl); <br> });</td>
-</tr>
+  <td>Currency<td>currency<td>Select Many<td>checkGroup
 <tr>
-<td>item.getActive() <br> apItem.getActive()</td>
-<td>Returns true if this item is active, or false if it is made read only by a rule, stage, or JavaScript.</td>
-<td> </td>
-</tr>
+  <td>Date<td>date<td>Select One<td>radioGroup
 <tr>
-<td>apItem.getAppPage()</td>
-<td>Returns the page object to which this item belongs.</td>
-<td> </td>
-</tr>
+  <td>Dropdown<td>comboBox<td>Single Line<td>text
 <tr>
-<td>item.getBO()</td>
-<td>Returns the Business Object for the entire form.</td>
-<td> </td>
-</tr>
+  <td>Email Address<td>emailAddress<td>Survey<td>survey
 <tr>
-<td>item.getBOAttr()</td>
-<td>An interface item that is collecting data, this method returns the Business Object Attribute that contains that data. If it is an interface-only item, then it returns null.</td>
-<td>Get data for an item and set its value: <br> <code>item.getBOAttr().setValue(45);</code></td>
-</tr>
+  <td>Folder Tab<td>tabFolderTab<td>Survey Question<td>surveyQuestion
 <tr>
-<td>item.getChildren()</td>
-<td>If this item contains children, for example Section, or Tab Folder, it returns a list object that provides access to all direct children items. The list object has the getLength() function and get(index) function for accessing the objects in the list.</td>
-<td>Rest all numbers inside a section to 0: <br> <code>var list = item.getChildren(); <br> for(var i=0; i&lt;list.getLength(); i++) <br> { <br> if(list.get(i).getType() === 'number') <br> list.get(i).getBOAttr().setValue(0); <br> }</code></td>
-</tr>
+  <td>HTML Fragment<td>htmlArea<td>Tabbed folder<td>tabFolder
 <tr>
-<td>item.getClasses() <br> apItem.getClasses()</td>
-<td>Returns an Array of custom class names currently applied to an item.</td>
-<td> </td>
-</tr>
+  <td>Image<td>image<td>Table<td>aggregationListContainer
 <tr>
-<td>item.getDisplayValue() <br> apItem.getDisplayValue()</td>
-<td>Returns the current value that is being displayed. It can be used in onItemLiveChange to get current, but not yet committed value.</td>
-<td> </td>
-</tr>
+  <td>Line<td>horizontalLine<td>Text<td>richText
 <tr>
-<td>item.getHoverText() <br> apItem.getHoverText()</td>
-<td>Returns the current value set as hover text.</td>
-<td> </td>
-</tr>
+  <td>Media<td>media<td>Time<td>time
 <tr>
-<td>item.getHintText() <br> apItem.getHintText()</td>
-<td>Returns the value set as <strong>Hint</strong> text.</td>
-<td> </td>
-</tr>
+  <td>Number<td>number<td>Timestamp<td>timeStamp
 <tr>
-<td>item.getId() <br> apItem.getId()</td>
-<td>Returns the unique ID, within the application, of this item. For example, F_FirstName.</td>
-<td> </td>
-</tr>
+  <td>Numeric Slider<td>horizontalSlider<td>Web Link<td>staticWebLink
 <tr>
-<td>apItem.getInvalidMessage()</td>
-<td>An interface item that is collecting data, this method returns the Business Object Attribute that contains that data. If it is an interface-only item, then it returns null.</td>
-<td> </td>
-</tr>
+  <td>Page<td>page<td>Website<td>weblink
 <tr>
-<td>item.getPage()</td>
-<td>Returns the page object to which this item belongs.</td>
-<td>Get the form object: <br> <code>var form = item.getPage().getForm();</code></td>
-</tr>
+  <td>Page Navigation<td>pageNavigator<td>Name Picker<td>name
 <tr>
-<td>item.getParent() <br> apItem.getParent()</td>
-<td>Returns the object that is the direct parent of the item, which can be a page, section, or tab folder.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getPlaceholderText() <br> apItem.getPlaceholderText()</td>
-<td>Returns the current value set as place holder text.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.getRequired()</td>
-<td>Gets a value set previously using setRequired().</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getRows()</td>
-<td>Returns the current value set as the number of rows displayed. This method gets the number of rows the text area displayed. <br><br> <strong>Note:</strong> This parameter works only on multi-line input areas.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getStartLabel()</td>
-<td>This method gets the value of the label displayed at the start of a numeric or choice slider.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getStopLabel()</td>
-<td>This method gets the value of the label displayed at the end of a numeric or choice slider.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getStyle()</td>
-<td>Returns the current value set for display style. <br><br> <strong>Note:</strong> This parameter works only on <strong>Date</strong> and <strong>Time</strong> input fields.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getTitle() <br> apItem.getTitle()</td>
-<td>Returns the current value used as the field title.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getType() <br> apItem.getType()</td>
-<td>Returns a string identifying the object type.</td>
-<td>See Table 2</td>
-</tr>
-<tr>
-<td>apItem.getValid()</td>
-<td>Gets a value set previously using setValid().</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getValue() <br> apItem.getValue()</td>
-<td>Returns the current value. Its type depends on the data type. <br> For example, <strong>String</strong> [check and radio list objects return a delimited list with _#_ as the delimiter], <strong>Number</strong> [number, currency], <strong>Boolean</strong>, <strong>Date</strong> [date, timestamp, time], or <strong>Object</strong> [attachment].</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getVisible() <br> apItem.getVisible()</td>
-<td>Returns true if this item is visible (does not take into account which page is being shown) or false if it is hidden by a rule, stage, or JavaScript, or if its parent is hidden.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.isMissing()</td>
-<td>Returns true if this item is required and it has no value.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.isRequired()</td>
-<td>Returns true if the item is required, otherwise false.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.isValid()</td>
-<td>Returns true if the data is valid. Returns false if the data is invalid.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.removeClasses(classes) <br> apItem.removeClasses(classes)</td>
-<td>Removes a list of custom class names from an item for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.</td>
-<td><code>item.removeClasses("emphasized");</code></td>
-</tr>
-<tr>
-<td>item.setActive(active) <br> apItem.setActive(active)</td>
-<td>Sets whether this item is inactive, or read only. <br><br> <strong>Note:</strong> If this item is made inactive by a rule or stage, then you cannot make it active with JavaScript.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setDisplayValue(pValue) <br> apItem.setDisplayValue(pValue)</td>
-<td>Takes a string or number in pValue. This method sets the value being displayed. If the user is editing, then it will update the value they are trying to enter. If the user is not editing, then it will be the same as setValue(). This method works on direct input items such as single line, multi line, number, currency, email and website.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setFocus() <br> apItem.setFocus()</td>
-<td>Causes this item to receive focus. This option has no effect on items that cannot have focus, are invisible, or are read-only.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setHintText(pValue) <br> apItem.setHintText(pValue)</td>
-<td>Takes a pValue string. This method sets the text that is used for hover text on input items. If an empty value is provided, the hint text area is removed.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setHoverText(pValue) <br> apItem.setHoverText(pValue)</td>
-<td>Takes a pValue string. This method sets the text that is used for <strong>Hint</strong> text on input items. If an empty value is provided, no hover help is displayed.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.setRequired(required)</td>
-<td>You can override non-required data to be required with this method. Passing true causes its data to be required and prevents submission if it is not set. Setting the valid to false clears any previously overridden value.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setRows(pValue)</td>
-<td>Takes a pValue number. This method sets the number of rows the text area displays. <br> <strong>Note:</strong> Whenever possible, do not exceed 40 rows.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setPlaceholderText(pValue) <br> apItem.setPlaceholderText(pValue)</td>
-<td>Takes a pValue string. This method sets the text used as placeholder text on input items.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setStartLabel(pValue)</td>
-<td>Takes a pValue string. This method sets the value of the label displayed at the start of a numeric or choice slider.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setStopLabel(pValue)</td>
-<td>Takes a pValue string. This method sets the value of the label displayed at the end of a numeric or choice slider.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setStyle(pValue)</td>
-<td>Takes a pValue string. This method sets the style used to display time and dates. Valid values are numeric, short, medium, long, and full. Valid values for time are numeric, short and medium.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setTitle(pValue) <br> apItem.setTitle(pValue)</td>
-<td>Takes a pValue string. This method sets the text used for a field titles on input items. If an empty value is provided, the title is removed.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.setValid(valid, msg)</td>
-<td>You can override valid data to be invalid with this method. Passing false causes the data to be invalid, and prevents submission. You can optionally provide a custom error message. Setting the valid to true clears any previously overridden valid value.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setValue(pValue) <br> apItem.setValue(pValue)</td>
-<td>Sets the value of this data item. The correct data type should be provided based on the Business Object Attribute’s type. Some type conversion is done where possible, for example, a Number converted to a String. <br><br> <strong>Note:</strong> The attachment data takes an object with a uid property, an id property, and a filename property. Modifying attachment data is not recommended in most circumstances.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setVisible(visible) <br> apItem.setVisible(visible)</td>
-<td>Sets whether this item is visible. <br><br> <strong>Note:</strong> If this item is made invisible by a rule or stage, or because a parent is hidden, then you cannot unhide it by calling this function.</td>
-<td> </td>
-</tr>
-<tr>
-<td>apItem.validate()</td>
-<td>Triggers the validation of the data item.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.getColumnHeaders()</td>
-<td>Returns a JSON object that contains the id, title and width of each header displayed for the table. <br><br> Sample JSON output: <br> <code>[{id:"F_Currency1",title:"La Currency",width:20}, &lt;br&gt; {id:"F_Date1",title:"La Date"}]</code></td>
-<td><code>var headers =  page.F_Table1.getColumnHeaders(); <br> for(var h in headers) { <br> alert("ID=" + get(headers,h).id + <br> ", title=" + get(headers,h).title + <br> ", width=" + get(headers,h).width); <br> }</code></td>
-</tr>
-<tr>
-<td>item.setColumnHeaders(headers)</td>
-<td>Function accepts a JSON object that can be used to set the id, title and width of each column in the table. <br> This is helpful, for example, to change the language of the column header displayed.</td>
-<td><code>var headers = new Array(); <br> set(headers, 0, {id: "F_Currency1", title: "La Currency", width: 20}); <br> set(headers, 1, {id: "F_Date1", title: "La Date"}); <br> page.F_Table1.setColumnHeaders(headers);`</td>
-</tr>
-</tbody>
+  <td>Rich text<td>richTextArea<td>Data Grid<td>dataGrid
 </table>
-<p>Table 2. List of item types</p>
-<table>
+
+<tr>
+<td>apItem.getValid()
+<td>Gets a value set previously using setValid().
+
+<tr>
+<td>item.getValue()<br>
+apItem.getValue()
+<td>Returns the current value. Its type depends on the data type.<br>
+<br>
+For example, <b>String</b> [multi-value fields return a delimited list with __#__ as the delimiter], <b>Number</b> [number, currency], <b>Boolean</b>, <b>Date</b> [date, timestamp, time], or <b>Object</b> [attachment].
+
+<tr>
+<td>item.getVisible()<br>
+apItem.getVisible()
+<td>Returns true if this item is visible (does not take into account which page is being shown) or false if it is hidden by a rule, stage, or JavaScript, or if its parent is hidden.
+
+<tr>
+<td>apItem.isMissing()
+<td>Returns true if this item is required and it has no value.
+
+<tr>
+<td>apItem.isRequired()
+<td>Returns true if the item is required, otherwise false.
+
+<tr>
+<td>apItem.isValid()
+<td>Returns true if the data is valid. Returns false if the data is invalid.
+
+<tr>
+<td>item.removeClasses(classes)<br>
+apItem.removeClasses(classes)
+<td>Removes a list of custom class names from an item for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.<br>
+<br>
+Example:<br>
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">removeClasses</span><span class="p">(</span><span class="s2">&quot;emphasized&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.setActive(active)<br>
+apItem.setActive(active)
+<td>Sets whether this item is inactive, or read only.<br>
+<b>Note:</b> If this item is made inactive by a rule or stage, then you cannot make it active with JavaScript.
+
+<tr>
+<td>item.setDisplayValue(pValue)<br>
+apItem.setDisplayValue(pValue)
+<td>Takes a string or number in pValue. This method sets the value being displayed. If the user is editing, then it will update the value they are trying to enter. If the user is not editing, then it will be the same as setValue(). This method works on direct input items such as single line, multi line, number, currency, email and website.
+
+<tr>
+<td>item.setFocus()<br>
+apItem.setFocus()
+<td>Causes this item to receive focus. This option has no effect on items that cannot have focus, are invisible, or are read-only.
+
+<tr>
+<td>item.setHintText(pValue)<br>
+apItem.setHintText(pValue)
+<td>Takes a pValue string. This method sets the text that is used for hover text on input items. If an empty value is provided, the hint text area is removed.
+
+<tr>
+<td>item.setHoverText(pValue)<br>
+apItem.setHoverText(pValue)
+<td>Takes a pValue string. This method sets the text that is used for <b>Hint</b> text on input items. If an empty value is provided, no hover help is displayed.
+
+<tr>
+<td>apItem.setRequired(required)
+<td>You can override non-required data to be required with this method. Passing true causes its data to be required and prevents submission if it is not set. Setting the valid to false clears any previously overridden value.
+
+<tr>
+<td>item.setRows(pValue)
+<td>Takes a pValue number. This method sets the number of rows the text area displays.<br>
+<b>Note:</b> Whenever possible, do not exceed 40 rows.
+
+<tr>
+<td>item.setPlaceholderText(pValue)<br>
+apItem.setPlaceholderText(pValue)
+<td>Takes a pValue string. This method sets the text used as placeholder text on input items.
+
+<tr>
+<td>item.setStartLabel(pValue)
+<td>Takes a pValue string. This method sets the value of the label displayed at the start of a numeric or choice slider.
+
+<tr>
+<td>item.setStopLabel(pValue)
+<td>Takes a pValue string. This method sets the value of the label displayed at the end of a numeric or choice slider.
+
+<tr>
+<td>item.setStyle(pValue)
+<td>Takes a pValue string. This method sets the style used to display time and dates. Valid values are numeric, short, medium, long, and full. Valid values for time are numeric, short and medium.
+
+<tr>
+<td>item.setTitle(pValue)<br>
+apItem.setTitle(pValue)
+<td>Takes a pValue string. This method sets the text used for a field titles on input items. If an empty value is provided, the title is removed.
+
+<tr>
+<td>apItem.setValid(valid, msg)
+<td>You can override valid data to be invalid with this method. Passing false causes the data to be invalid, and prevents submission. You can optionally provide a custom error message. Setting the valid to true clears any previously overridden valid value.
+
+<tr>
+<td>item.setValue(pValue)<br>
+apItem.setValue(pValue)
+<td>Sets the value of this data item. The correct data type should be provided based on the Business Object Attribute’s type. Some type conversion is done where possible, for example, a Number converted to a String.<br>
+<br>
+<b>Note:</b> The attachment data takes an object with a uid property, an id property, and a filename property. Modifying attachment data is not recommended in most circumstances.
+
+<tr>
+<td>item.setVisible(visible)<br>
+apItem.setVisible(visible)
+<td>Sets whether this item is visible.<br><br>
+<b>Note:</b> If this item is made invisible by a rule or stage, or because a parent is hidden, then you cannot unhide it by calling this function.
+
+<tr>
+<td>apItem.validate()
+<td>Triggers the validation of the data item.
+
+<tr>
+<td>item.getColumnHeaders()
+<td>Returns a JSON object that contains the id, title and width of each header displayed for the table.<br>
+<br>
+ Sample JSON output:<br>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s2">&quot;F_Currency1&quot;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s2">&quot;La Currency&quot;</span><span class="p">,</span><span class="nx">width</span><span class="o">:</span><span class="mf">20</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s2">&quot;F_Date1&quot;</span><span class="p">,</span><span class="nx">title</span><span class="o">:</span><span class="s2">&quot;La Date&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">F_Table1</span><span class="p">.</span><span class="nx">getColumnHeaders</span><span class="p">();</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">h</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">headers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;ID=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">headers</span><span class="p">,</span><span class="nx">h</span><span class="p">).</span><span class="nx">id</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="s2">&quot;, title=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">headers</span><span class="p">,</span><span class="nx">h</span><span class="p">).</span><span class="nx">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="s2">&quot;, width=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">headers</span><span class="p">,</span><span class="nx">h</span><span class="p">).</span><span class="nx">width</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<tr>
+<td>item.setColumnHeaders(headers)
+<td>Function accepts a JSON object that can be used to set the id, title and width of each column in the table.<br>
+<br>
+This is helpful, for example, to change the language of the column header displayed.  
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">();</span><span class="w"> </span>
+<span class="nx">set</span><span class="p">(</span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;F_Currency1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;La Currency&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">});</span><span class="w"> </span>
+<span class="nx">set</span><span class="p">(</span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;F_Date1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;La Date&quot;</span><span class="p">});</span><span class="w"> </span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">F_Table1</span><span class="p">.</span><span class="nx">setColumnHeaders</span><span class="p">(</span><span class="nx">headers</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+
+</table>
+<p><br>
+<br>
+Table 2. Item Object - Drop Down only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Palette item</th>
-<th>Type</th>
-<th>Palette item</th>
-<th>Type</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
+
+<td>item.getOptions()
+<td>Returns the array of options currently shown in the drop-down. Each object in the array has a "title" property that is shown in the interface, and a "value" property that is saved into the data.<br>
+<br>
+Example:<br>
+Get the title of a specific dropdown value:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">displayedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">savedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_DropDown1</span><span class="p">.</span><span class="nx">getValue</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">page</span><span class="p">.</span><span class="nx">F_DropDown1</span><span class="p">.</span><span class="nx">getOptions</span><span class="p">();</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">opts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">opt</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">savedValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">displayedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">opt</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <tr>
-<td>Attachment</td>
-<td>attachment</td>
-<td>Paragraph Text</td>
-<td>textArea</td>
-</tr>
-<tr>
-<td>Button</td>
-<td>button</td>
-<td>Password</td>
-<td>password</td>
-</tr>
-<tr>
-<td>Check Box</td>
-<td>checkBox</td>
-<td>Section</td>
-<td>section</td>
-</tr>
-<tr>
-<td>Currency</td>
-<td>currency</td>
-<td>Select Many</td>
-<td>checkGroup</td>
-</tr>
-<tr>
-<td>Date</td>
-<td>date</td>
-<td>Select One</td>
-<td>radioGroup</td>
-</tr>
-<tr>
-<td>Dropdown</td>
-<td>comboBox</td>
-<td>Single Line</td>
-<td>text</td>
-</tr>
-<tr>
-<td>Email Address</td>
-<td>emailAddress</td>
-<td>Survey</td>
-<td>survey</td>
-</tr>
-<tr>
-<td>Folder Tab</td>
-<td>tabFolderTab</td>
-<td>Survey Question</td>
-<td>surveyQuestion</td>
-</tr>
-<tr>
-<td>HTML Fragment</td>
-<td>htmlArea</td>
-<td>Tabbed folder</td>
-<td>tabFolder</td>
-</tr>
-<tr>
-<td>Image</td>
-<td>image</td>
-<td>Table</td>
-<td>aggregationListContainer</td>
-</tr>
-<tr>
-<td>Line</td>
-<td>horizontalLine</td>
-<td>Text</td>
-<td>richText</td>
-</tr>
-<tr>
-<td>Media</td>
-<td>media</td>
-<td>Time</td>
-<td>time</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>number</td>
-<td>Timestamp</td>
-<td>timeStamp</td>
-</tr>
-<tr>
-<td>Numeric Slider</td>
-<td>horizontalSlider</td>
-<td>Web Link</td>
-<td>staticWebLink</td>
-</tr>
-<tr>
-<td>Page</td>
-<td>page</td>
-<td>Website</td>
-<td>weblink</td>
-</tr>
-<tr>
-<td>Page Navigation</td>
-<td>pageNavigator</td>
-<td>Name Picker</td>
-<td>name</td>
-</tr>
-<tr>
-<td>Rich text</td>
-<td>richTextArea</td>
-<td>Data Grid</td>
-<td>dataGrid</td>
-</tr>
-</tbody>
+<td>item.setOptions(options)
+<td>Changes the list of options to show in the drop-down. It must be an array of objects. Each object must have a "title" property that is shown in the interface, and a "value" property that is saved into the data.<br>
+<br>
+Example:<br>
+Provide custom list for the drop-down:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">();</span>
+<span class="w">     </span><span class="nx">options</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="s1">&#39;BA&#39;</span><span class="p">});</span>
+<span class="w">     </span><span class="nx">options</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="s1">&#39;AP&#39;</span><span class="p">});</span>
+<span class="w">     </span><span class="nx">options</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">title</span><span class="o">:</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="s1">&#39;OR&#39;</span><span class="p">});</span>
+<span class="w">     </span><span class="nx">item</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</code></pre></div>
 </table>
-<p>Table 3. Item Object - Drop Down only</p>
-<table>
+<p><br>
+<br>
+Table 3. Item Object - Weblink only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
 <tr>
-<td>item.getOptions()</td>
-<td>Returns the array of options currently shown in the drop-down. Each object in the array has a “title” property that is shown in the interface, and a “value” property that is saved into the data.</td>
-<td>Get the title of a specific dropdown value: <br> <code> var displayedValue = ""; <br> var savedValue = BO.F_DropDown1.getValue(); <br> var opts = page.F_DropDown1.getOptions(); <br> for(var i=0; i&lt;opts.length; i++) { <br> var opt = get(opts, i); <br> if(opt.value === savedValue) { <br> displayedValue = opt.title; <br> break; <br> } <br> } </code></td>
-</tr>
+<td>item.setDisplayValue(display)
+<td>Sets the display value that the user sees as the link in the browser.
+
 <tr>
-<td>item.setOptions(options)</td>
-<td>Changes the list of options to show in the drop-down. It must be an array of objects. Each object must have a “title” property that is shown in the interface, and a “value” property that is saved into the data.</td>
-<td>Provide custom list for the drop-down: <br> <code>var options = new Array();</code> <br> <code>options.push({title:'Banana',value:'BA'});</code> <br> <code>options.push({title:'Apple',value:'AP'});</code> <br> <code>options.push({title:'Orange',value:'OR'});</code> <br> <code>item.setOptions(options);</code></td>
-</tr>
-</tbody>
+<td>item.setLinkValue(link)
+<td>Sets the URL to which the link navigates when this item is clicked.
 </table>
-<p>Table 4. Item Object - Weblink only</p>
-<table>
+<p><br>
+<br>
+Table 4. Item Object - HTML Fragment only</p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
+
 <tr>
-<td>item.setDisplayValue(display)</td>
-<td>Sets the display value that the user sees as the link in the browser.</td>
-</tr>
+<td>item.getContent()
+<td>Gets the currently shown content for this interface item.
+
 <tr>
-<td>item.setLinkValue(link)</td>
-<td>Sets the URL to which the link navigates when this item is clicked.</td>
-</tr>
-</tbody>
+<td>item.setContent(content)
+<td>Shows content in this interface only item. The content is evaluated as HTML code.
 </table>
-<p>Table 5. Item Object - HTML Fragment only</p>
-<table>
+<p><br>
+<br>
+Table 5. Item Object - Text only</p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
-<tr>
-<td>item.getContent()</td>
-<td>Gets the currently shown content for this interface item.</td>
-</tr>
-<tr>
-<td>item.setContent(content)</td>
-<td>Shows content in this interface only item. The content is evaluated as HTML code.</td>
-</tr>
-</tbody>
+<td>item.setContent(content)<td>
+Shows content in this interface-only item. In Text, it is the raw text to show, no special formatting is supported.
 </table>
-<p>Table 6. Item Object - Text only</p>
-<table>
+<p><br>
+<br>
+Table 6. Item Object - Button only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="250">Object
+<th>Description
 </thead>
-<tbody>
+<td>item.setAlternativeText(pText)
+<td>Sets the alt text of the image assigned to the button.
+
 <tr>
-<td>item.setContent(content)</td>
-<td>Shows content in this interface-only item. In Text, it is the raw text to show, no special formatting is supported.</td>
-</tr>
-</tbody>
+<td>item.setContent(content)
+<td>Sets the label that is shown on the button.
+
+<tr>
+<td>item.setDisabledImageUrl(pUrl)
+<td>Sets the background of the button to the image at the public URL when the button is disabled.
+
+<tr>
+<td>item.setImageHeight(pHeight)
+<td>Sets explicit height in pixels for the image.
+
+<tr>
+<td>item.setImageUrl(pUrl)
+<td>Sets the background of the button to the image at the public URL.
+
+<tr>
+<td>item.setImageWidth(pWidth)
+<td>Sets explicit width in pixels for the image.
+
+<tr>
+<td>item.setMouseDownImageUrl(pUrl)
+<td>Sets the background of the button to the image at the public URL when the mouse down event is triggered.
+
+<tr>
+<td>item.setMouseOverImageUrl(pUrl)
+<td>Sets the background of the button to the image at the public URL when the mouse over event is triggered.
 </table>
-<p>Table 7. Item Object - Button only</p>
-<table>
+
+<p><br>
+<br>
+Table 7. Item Object - Image only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
+<td>item.getHeight()
+<td>Returns the current image height. Can be zero or blank.
+
 <tr>
-<td>item.setAlternativeText(pText)</td>
-<td>Sets the alt text of the image assigned to the button.</td>
-</tr>
+<td>item.getURL()
+<td>Gets the current URL shown by this image item.
+
 <tr>
-<td>item.setContent(content)</td>
-<td>Sets the label that is shown on the button.</td>
-</tr>
+<td>item.getWidth()
+<td>Returns the current image width. Can be zero or blank.
+
 <tr>
-<td>item.setDisabledImageUrl(pUrl)</td>
-<td>Sets the background of the button to the image at the public URL when the button is disabled.</td>
-</tr>
+<td>item.setHeight(height)
+<td>Sets explicit height in pixels for the image. Setting "0" removes the explicit height.
+
 <tr>
-<td>item.setImageHeight(pHeight)</td>
-<td>Sets explicit height in pixels for the image.</td>
-</tr>
+<td>item.setURL(newURL)
+<td>Sets the URL shown by this image item.
+
 <tr>
-<td>item.setImageUrl(pUrl)</td>
-<td>Sets the background of the button to the image at the public URL.</td>
-</tr>
-<tr>
-<td>item.setImageWidth(pWidth)</td>
-<td>Sets explicit width in pixels for the image.</td>
-</tr>
-<tr>
-<td>item.setMouseDownImageUrl(pUrl)</td>
-<td>Sets the background of the button to the image at the public URL when the mouse down event is triggered.</td>
-</tr>
-<tr>
-<td>item.setMouseOverImageUrl(pUrl)</td>
-<td>Sets the background of the button to the image at the public URL when the mouse over event is triggered.</td>
-</tr>
-</tbody>
+<td>item.setWidth(width)
+<td>Sets explicit width in pixels for the image. Setting "0" removes the explicit width.
 </table>
-<p>Table 8. Item Object - Image only</p>
-<table>
+
+<p><br>
+<br>
+Table 8. Item Object - Section only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
+<td>item.getExpanded()
+<td>Returns true if the section is expanded and false if it is collapsed.
+
 <tr>
-<td>item.getHeight()</td>
-<td>Returns the current image height. Can be zero or blank.</td>
-</tr>
-<tr>
-<td>item.getURL()</td>
-<td>Gets the current URL shown by this image item.</td>
-</tr>
-<tr>
-<td>item.getWidth()</td>
-<td>Returns the current image width. Can be zero or blank.</td>
-</tr>
-<tr>
-<td>item.setHeight(height)</td>
-<td>Sets explicit height in pixels for the image. Setting “0” removes the explicit height.</td>
-</tr>
-<tr>
-<td>item.setURL(newURL)</td>
-<td>Sets the URL shown by this image item.</td>
-</tr>
-<tr>
-<td>item.setWidth(width)</td>
-<td>Sets explicit width in pixels for the image. Setting “0” removes the explicit width.</td>
-</tr>
-</tbody>
+<td>item.setExpanded(expanded)
+<td>Sets the expanded state of the section. If true, the section is expanded. If false, then it is collapsed.
 </table>
-<p>Table 9. Item Object - Section only</p>
-<table>
+
+<p><br>
+<br>
+Table 9. Item Object - Tabbed Folder only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
+
+<td>item.getSelectionIndex()
+<td>Returns the index of the currently selected tab.<br>
+<br>
+Example:<br>
+Set 12 into the first item in the currently shown tab:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">sel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getSelectionIndex</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">tabs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">selTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tabs</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">sel</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">tabChildren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">selTab</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">();</span>
+<span class="nx">tabChildren</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">setValue</span><span class="p">(</span><span class="mf">12</span><span class="p">);</span>
+</code></pre></div>
+
 <tr>
-<td>item.getExpanded()</td>
-<td>Returns true if the section is expanded and false if it is collapsed.</td>
-</tr>
+<td>item.getTabTitleList()
+<td>Returns an array of all the tab titles in this folder.
+
 <tr>
-<td>item.setExpanded(expanded)</td>
-<td>Sets the expanded state of the section. If true, the section is expanded. If false, then it is collapsed.</td>
-</tr>
-</tbody>
+<td>item.setSelectedTab(tabTitle)
+<td>Selects the Tab that matches the tabTitle string.
+
+<tr>
+<td>item.setTabTitle(tabIndex, pTitle)
+<td>Updates the title of a tab within a <b>Tabbed Folder</b> by using a <b>tabIndex</b> integer and <b>pTitle</b> string value. <b>tabIndex</b> denotes the location of the tab within the list of available tabs from left-to-right. For bidirectional languages, the order is right-to-left.<br>
+<br>
+Example:<br>
+On the form, a Tabbed folder contains 5 tabs: Red, Orange, Yellow, Green, Blue. The default start number of the <b>tabIndex</b> is 0.<br>
+<br>
+In our example tabbed folder, the <b>tabIndex</b> number 0 is the Red tab which is furthest left, while 4 is the tab furthest to the right.<br>
+<br>
+In a bidirectional language, the order is reversed. Tab 0 is assigned to Blue, which is the tab furthest to the right.<br>
+
+<tr>
+<td>item.setTabTitleList (pTitleArray)
+<td>Updates the titles of tabs within a <b>Tabbed Folder</b> from a list of strings by using a <b>pTitleArray</b> array of string values. The list of tabs is updated respective to the order of strings that are defined in the array. If there are more array values than tabs in the form, the additional values are ignored.<br>
+<br>
+Example:<br>
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setTabTitleList</span><span class="p">([</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span><span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span><span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span><span class="s1">&#39;Thursday&#39;</span><span class="p">,</span><span class="s1">&#39;Friday&#39;</span><span class="p">]);</span>
+</code></pre></div>
 </table>
-<p>Table 10. Item Object - Tabbed Folder only</p>
-<table>
+
+<p><br>
+<br>
+Table 10. Item Object - Table only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
 <tr>
-<td>item.getSelectionIndex()</td>
-<td>Returns the index of the currently selected tab.</td>
-<td>Set 12 into the first item in the currently shown tab:<code>var sel = item.getSelectionIndex();</code> <br> <code>var tabs = item.getChildren();</code> <br> <code>var selTab = tabs.get(sel);</code> <br> <code>var tabChildren = selTab.getChildren();</code> <br> <code>tabChildren.get(0).getBOAttr().setValue(12);</code></td>
-</tr>
+<td>item.getSelection()
+<td>Returns the Business Object of the selected row or null if there is no selection.
+
 <tr>
-<td>item.getTabTitleList()</td>
-<td>Returns an array of all the tab titles in this folder.</td>
-<td> </td>
-</tr>
+<td>item.setSelection(BO)
+<td>Selects the last Business Object in the table.<br>
+<br>
+Example:<br>
+Select that last row in the table:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">lastIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">getLength</span><span class="p">()</span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">lastRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">getBOAttr</span><span class="p">().</span><span class="nx">get</span><span class="p">(</span><span class="nx">lastIndex</span><span class="p">);</span>
+<span class="w">     </span><span class="nx">item</span><span class="p">.</span><span class="nx">setSelection</span><span class="p">(</span><span class="nx">lastRow</span><span class="p">);</span>
+</code></pre></div>
+
 <tr>
-<td>item.setSelectedTab(tabTitle)</td>
-<td>Takes a tabTable string. Selects the Tab that matches the tabTable string.</td>
-<td> </td>
-</tr>
+<td>item.showAdd(show)
+<td>If show is true, then the <b>Add</b> button is made visible.If false, then the <b>Add</b> button is hidden.
+
 <tr>
-<td>item.setTabTitle(tabIndex,pTitle)</td>
-<td>Updates the title of a tab within a <strong>Tabbed Folder</strong> by using a <strong>tabIndex</strong> integer and <strong>pTitle</strong> string value. <strong>tabIndex</strong> denotes the location of the tab within the list of available tabs from left-to-right. For bidirectional languages, the order is right-to-left.</td>
-<td>On the form, a Tabbed folder contains 5 tabs: Red, Orange, Yellow, Green, Blue. The default start number of the <strong>tabIndex</strong> is 0. <br><br> In our example tabbed folder, the <strong>tabIndex</strong> number 0 is the Red tab which is furthest left, while 4 is the tab furthest to the right. <br><br> In a bidirectional language, the order is reversed. Tab 0 is assigned to Blue, which is the tab furthest to the right.</td>
-</tr>
+<td>item.showEdit(show)
+<td>If show is true, then the <b>Edit</b> button is made visible. If false, then the <b>Edit</b> button is hidden.
+
 <tr>
-<td>item.setTabTitleList(pTitleArray)</td>
-<td>Updates the titles of tabs within a <strong>Tabbed Folder</strong> from a list of strings by using a <strong>pTitleArray</strong> array of string values. The list of tabs is updated respective to the order of strings that are defined in the array. If there are more array values than tabs in the form, the additional values are ignored.</td>
-<td><code>item.setTabTitleList(['Monday','Tuesday','Wednesday','Thursday','Friday']);</code></td>
-</tr>
-</tbody>
+<td>item.showRemove(show)
+<td>If show is true, then the <b>Remove</b> button is made visible. If false, then the <b>Remove</b> button is hidden.
+
 </table>
-<p>Table 11. Item Object - Table only</p>
-<p><em>See the Business Object List on the Data Objects page for more Table functionality.</em></p>
-<table>
+
+<p><br>
+<br>
+Table 11. Item Object - Survey only</p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
 <tr>
-<td>item.getSelection()</td>
-<td>Returns the Business Object of the selected row or null if there is no selection.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setSelection(BO)</td>
-<td>Selects the last Business Object in the table.</td>
-<td>Select that last row in the table: <br> <code>var lastIndex = item.getBOAttr().getLength()-1;</code> <br> <code>var lastRow = item.getBOAttr().get(lastIndex);</code> <br> <code>item.setSelection(lastRow);</code></td>
-</tr>
-<tr>
-<td>item.showAdd(show)</td>
-<td>If show is true, then the <strong>Add</strong> button is made visible. If false, then the <strong>Add</strong> button is hidden.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.showEdit(show)</td>
-<td>If show is true, then the <strong>Edit</strong> button is made visible. If false, then the <strong>Edit</strong> button is hidden.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.showRemove(show)</td>
-<td>If show is true, then the <strong>Remove</strong> button is made visible. If false, then the <strong>Remove</strong> button is hidden.</td>
-<td> </td>
-</tr>
-</tbody>
+<td>item.getOptions()
+<td>Returns an array of all the options for the survey questions. Each option has a value property, that gets saved in the data, and a display property, the title of at the beginning of the survey.
 </table>
-<p>Table 12. Item Object - Survey only</p>
-<table>
+
+<p><br>
+<br>
+Table 12. Item Object - DataGrid only<br></p>
+<table class="table-wrap">
 <thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-</tr>
+<th width="200">Object
+<th>Description
 </thead>
-<tbody>
 <tr>
-<td>item.getOptions()</td>
-<td>Returns an array of all the options for the survey questions. Each option has a value property, that gets saved in the data, and a display property, the title of at the beginning of the survey.</td>
-</tr>
-</tbody>
+<td>item.getDisplayedData()
+<td>
+<ul>
+  <li>Boolean: Checkbox</li>
+  <li>Number : Number, Currency, Numeric Slider</li>
+  <li>Date: Date, Time, Timestamp</li>
+  <li>Object: Attachment</li>
+    <ul>
+      <li><code>uid</code>: The identifier of the attachment.</li>
+      <li><code>filename</code>: the file name of the attachment.</li>
+      <li><code>viewUrl</code>: The url to view the attachment.</li>
+      <li><code>downloadUrl</code>: The url to download the attachment.</li>
+    </ul>
+  <li>Object: Name Picker</li>
+  <li>Object: Select Many</li>
+    <ul>
+      <li><code>savedValues</code>: An array of all the saved values.</li>
+      <li><code>displayValues</code>: An array of all the display values.
+      <li><code>displayString</code>: All the list values provided as a comma-separated string.</li>
+    </ul>
+  <li>String: All other items</li>
+</ul>
+<br>
+Examples:<br>
+Render all the row data displayed in the data grid as JSON:
+<div class="highlight"><pre><span></span><code><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_Text2</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="nx">toJson</span><span class="p">(</span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">getDisplayedData</span><span class="p">(),</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
+</code></pre></div>
+<br>
+Calculate the sum of a column from displayed data:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">getDisplayedData</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">dObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">dObj</span><span class="p">.</span><span class="nx">F_Number1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Sum = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">sum</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.isAllDataDisplayed()
+<td>Returns true if all the submitted data for the form connected to the data grid is rendered on screen in a single page.<br>
+<br>
+Example:<br>
+If all the known data is being displayed, then do something with that data. In this example the sum of a column is calculated:
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">isAllDataDisplayed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">allData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">getDisplayedData</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">allData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">dObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get</span><span class="p">(</span><span class="nx">allData</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">dObj</span><span class="p">.</span><span class="nx">F_Number1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Sum = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">sum</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<tr>
+<td>item.isColumnVisible (columnId)
+<td>Returns true if the specified column is visible in the data grid.<br>
+<br>
+Example:<br>
+<div class="highlight"><pre><span></span><code><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">isColumnVisble</span><span class="p">(</span><span class="s2">&quot;F_SingleLine1&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.refresh()
+<td>Forces the data grid to reload. For example, a submission with "apps as a service" may have been triggered and the content in the data grid is stale.<br>
+<br>
+Example:<br>
+Refresh the data grid after calling a service that changes (i.e. adds to, removes from, or updates) the data to which the data grid is connected:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">srv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getServiceConfiguration</span><span class="p">(</span><span class="s1">&#39;SC_theService&#39;</span><span class="p">);</span>
+<span class="nx">srv</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s2">&quot;onCallFinished&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">success</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;SC_theService: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<tr>
+<td>item.selectFirstRow()
+<td>Selects the first row in the data grid.
+
+<tr>
+<td>item.setColumnHeader (columnId, pHeaderValue)
+<td>Sets the header identified by columnId, to the value provided in pHeaderValue.<br>
+<br>
+Example:<br>
+See above for columnId values.<br>
+<br>
+Set the header of a column to another language:
+<div class="highlight"><pre><span></span><code><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">setColumnHeader</span><span class="p">(</span><span class="s2">&quot;createdBy&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;Créé par&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.setColumnVisible(columnId, boolVal)
+<td>Controls the visibility of the column identified by columnId. If boolVal is true, the column is shown. If boolVal is false, the column is hidden.<br>
+<br>
+Example:<br>
+See above for columnId values.
+
+Hide a column from the data grid if user is not part of a specific role:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">isAdmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserRoles</span><span class="p">().</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;Administrator&quot;</span><span class="p">);</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">setColumnVisible</span><span class="p">(</span><span class="s2">&quot;F_AdminOnly1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">);</span>
+</code></pre></div>
+
+<tr>
+<td>item.resetFilters()
+<td>Returns the filters to what was specified in the data grid configuration.
+
+<tr>
+<td>item.setFilters([filter], filterOp)
+<td>Set filters for the data grid, this will override any filters specified in the data grid configuration.<br>
+[filter] is an array of filter objects. <br>
+filterOp is either "and" or "or" and is required if there is more than one filter.<br>
+<br>
+A filter is made up of the following:
+<ul>
+  <li>name: the id of a meta-data attribute or a field of the form configured to the data grid.<br>
+  <b>Note:</b> The field id does not have to be displayed in the data grid.</li>
+  <li>operator: as documented in <a href="ref_data_rest_api_list_filter.html">Filtering Data REST API results</a>.</li>
+  <li>value: the value to search</li>
+<br>
+Examples:<br>
+Set a filter to show records that are older than one week and in the "ST_Triage" stage:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span><span class="w"> </span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">aWeekAgo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mf">7</span><span class="o">*</span><span class="mf">24</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">60</span><span class="o">*</span><span class="mf">1000</span><span class="p">));</span><span class="w"> </span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;created&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">operator</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;before&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">aWeekAgo</span><span class="p">},</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;stageId&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">operator</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;equals&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ST_Triage&quot;</span><span class="p">}</span><span class="w">   </span>
+<span class="p">];</span><span class="w"> </span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">setFilters</span><span class="p">(</span><span class="nx">filters</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;and&quot;</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+<br>
+Set a filter to show records between two dates, from fields on the same app page as the data grid:
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;F_BirthDate&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">operator</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;between&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_StartDate</span><span class="p">.</span><span class="nx">getValue</span><span class="p">(),</span><span class="w"> </span><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_EndDate</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">];</span>
+<span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid2</span><span class="p">.</span><span class="nx">setFilters</span><span class="p">(</span><span class="nx">filters</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;and&quot;</span><span class="p">);</span>
+</code></pre></div>
+<br>
+Remove all filters:
+<div class="highlight"><pre><span></span><code><span class="nx">appPage</span><span class="p">.</span><span class="nx">F_DataGrid1</span><span class="p">.</span><span class="nx">setFilters</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</code></pre></div>
+
 </table>
-<p>Table 13. Item Object - DataGrid only</p>
-<p><em>columnId is used generically to refer to the column in the DataGrid and the corresponding data attribute of the row’s data. The built-in columns are stageId, created, createdBy, lastModified, and lastModifiedBy.</em></p>
-<table>
-<thead>
-<tr>
-<th>Object</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>item.getDisplayedData()</td>
-<td>-   Boolean: Checkbox <br> -   Number : Number, Currency, Numeric Slider <br> -   Date: Date, Time, Timestamp <br> -   Object: Attachment <br> -   <code>uid</code>: The identifier of the attachment. <br> -   <code>filename</code>: the file name of the attachment. <br> -   <code>viewUrl</code>: The url to view the attachment. <br> -   <code>downloadUrl</code>: The url to download the attachment. <br> -   Object: Name Picker <br> -   Object: Select Many <br> -   <code>savedValues</code>: An array of all the saved values. <br> -   <code>displayValues</code>: An array of all the display values. <br> -   <code>displayString</code>: All the list values provided as a comma-separated string. <br> -   String: All other items</td>
-<td>Render all the row data displayed in the data grid as JSON: <br> <code>appPage.F_Text2.setContent(toJson(appPage.F_DataGrid1.getDisplayedData(), true));</code> <br><br> Calculate the sum of a column from displayed data: <br> <code>var data = appPage.F_DataGrid1.getDisplayedData();</code> <br> <code>var sum = 0;</code> <br> <code>for(var d in data) {</code> <br> <code>var dObj = get(data, d);</code> <br> <code>sum += dObj.F_Number1;</code> <br> <code>}</code> <br> <code>alert("Sum = " + sum);</code></td>
-</tr>
-<tr>
-<td>item.isAllDataDisplayed()</td>
-<td>Returns true if all the submitted data for the form connected to the data grid is rendered on screen in a single page.</td>
-<td>If all the known data is being displayed, then do something with that data. In this example the sum of a column is calculated: <br> <code> if(appPage.F_DataGrid1.isAllDataDisplayed()) { <br> var allData = appPage.F_DataGrid1.getDisplayedData(); <br> var sum = 0; <br> for(var d in allData) { <br> var dObj = get(allData, d); <br> sum += dObj.F_Number1; <br> } <br> alert("Sum = " + sum); <br> }</code></td>
-</tr>
-<tr>
-<td>item.isColumnVisible(columnId)</td>
-<td>Returns true if the specified column is visible in the data grid.</td>
-<td><code>appPage.F_DataGrid1.isColumnVisble(“F_SingleLine1”);</code></td>
-</tr>
-<tr>
-<td>item.refresh()</td>
-<td>Forces the data grid to reload. For example, a submission with “apps as a service” may have been triggered and the content in the data grid is stale.</td>
-<td>Refresh the data grid after calling a service that changes (i.e. adds to, removes from, or updates) the data to which the data grid is connected: <br> <code>var srv = form.getServiceConfiguration('SC_theService');</code> <br> <code>srv.connectEvent("onCallFinished", function(success)</code> <br> <code>{</code> <br> <code>if(success) {</code> <br> <code>try {</code> <br> <code>appPage.F_DataGrid1.refresh();</code> <br> <code>} catch (err) {</code> <br> <code>alert("SC_theService: " + err);</code> <br> <code>}</code> <br> <code>}</code> <br> <code>});</code></td>
-</tr>
-<tr>
-<td>item.selectFirstRow()</td>
-<td>Selects the first row in the data grid.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setColumnHeader(columnId, pHeaderValue)</td>
-<td>Sets the header identified by columnId, to the value provided in pHeaderValue.</td>
-<td>See above for columnId values. <br><br> Set the header of a column to another language: <br> <code>appPage.F_DataGrid1.setColumnHeader("createdBy",</code> <br> <code>"Créé par");</code></td>
-</tr>
-<tr>
-<td>item.setColumnVisible(columnId, boolVal)</td>
-<td>Controls the visibility of the column identified by columnId. If boolVal is true, the column is shown. If boolVal is false, the column is hidden.</td>
-<td>See above for columnId values. <br><br> Hide a column from the data grid if user is not part of a specific role: <br> <code>var isAdmin = app.getCurrentUserRoles().contains("Administrator");</code>  <br> <code>item.setColumnVisible("F_AdminOnly1", isAdmin);</code></td>
-</tr>
-<tr>
-<td>item.resetFilters()</td>
-<td>Returns the filters to what was specified in the data grid configuration.</td>
-<td> </td>
-</tr>
-<tr>
-<td>item.setFilters([filter], filterOp)</td>
-<td>Set filters for the data grid, this will override any filters specified in the data grid configuration. [filter] is an array of filter objects. filterOp is either “and” or “or” and is required if there is more than one filter. A filter is made up of the following: <br><br> -   name: the id of a meta-data attribute or a field of the form configured to the data grid. <br><br> <strong>Note:</strong> The field id does not have to be displayed in the data grid. <br><br> -   operator: as documented in <a href="ref_data_rest_api_list_filter.html">Filtering Data REST API results</a>. <br> -   value: the value to search</td>
-<td>Set a filter to show records that are older than one week and in the “ST_Triage” stage: <br> <code>var now = new Date();</code> <br> <code>var aWeekAgo = new Date (now.getTime() - (7*24*60*60*1000));</code> <br> <code>var filters = [</code> <br> <code>{name : "created", operator: "before", value: aWeekAgo},</code> <br> <code>{name: "stageId", operator: "equals", value: "ST_Triage"}</code> <br> <code>];</code> <br> <code>page.F_DataGrid1.setFilters(filters, "and");</code> <br><br> Set a filter to show records between two dates, from fields on the same app page as the data grid: <br> <code>var filters = [</code> <br> <code>{name: "F_BirthDate", operator: "between", value: [appPage.F_StartDate.getValue(), appPage.F_EndDate.getValue()]}</code> <br> <code>];</code> <br> <code>appPage.F_DataGrid2.setFilters(filters, "and");</code>  <br><br> Remove all filters: <br> <code>appPage.F_DataGrid1.setFilters(null);</code></td>
-</tr>
-</tbody>
-</table>
+
 <p><strong>Parent topic: </strong><a href="ref_jsapi_user_interface_objects.html">Interface objects</a></p>
 
 

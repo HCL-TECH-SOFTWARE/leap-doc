@@ -5856,24 +5856,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6966,7 +6958,7 @@
 
 <h1 id="open-liberty-server-customizations">Open Liberty server customizations</h1>
 <p>The configOverrideFiles parameter allows configuration snippets to be passed to the Leap server.</p>
-<p>The snippets are merged into the Open Liberty server.xml. After making changes to the .yaml, apply them using the helm upgrade ... command. Changes are picked up by Open Liberty and applied at runtime - this does not require a restart.</p>
+<p>The snippets are merged into the Open Liberty server.xml. After making changes to the .yaml, apply them using the <code>helm upgrade ...</code> command. Changes are picked up by Open Liberty and applied at runtime - this does not require a restart.</p>
 <p><strong>Note:</strong> The name of the customization (myCustomOverride1 in the following snippet) can be any string, but you may want it to be descriptive of what is being provided.</p>
 <p><div id="codeblock_t2s_pts_gxb" class="highlight"><pre><span></span><code>configuration: 
   leap: 

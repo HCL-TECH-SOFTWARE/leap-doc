@@ -5854,24 +5854,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6967,32 +6959,21 @@
 <ul>
 <li>Download the upgrade package from HCL License Portal.</li>
 <li>Back up your existing installation prior to installing the update.</li>
-<li>
-<p>Back up your DB2® or Oracle database before you install the update.</p>
-</li>
-<li>
-<p>To back up your current Leap installation:</p>
-</li>
-<li>
-<p>Export the Leap EAR file.</p>
+<li>Back up your DB2® or Oracle database before you install the update.</li>
+</ul>
+<p>To back up your current Leap installation:
+1.  Export the Leap EAR file.</p>
+<pre><code>1.  Open the WebSphere Application Server Administrative console.
+
+2.  Go to **Applications** \&gt; **Application Types** \&gt; **WebSphere enterprise applications**.
+
+3.  Select Leap.
+
+4.  Click **Export**.
+
+5.  Click Leap.ear to download the installation file as a backup.
+</code></pre>
 <ol>
-<li>
-<p>Open the WebSphere Application Server Administrative console.</p>
-</li>
-<li>
-<p>Go to <strong>Applications</strong> &gt; <strong>Application Types</strong> &gt; <strong>WebSphere enterprise applications</strong>.</p>
-</li>
-<li>
-<p>Select Leap.</p>
-</li>
-<li>
-<p>Click <strong>Export</strong>.</p>
-</li>
-<li>
-<p>Click Leap.ear to download the installation file as a backup.</p>
-</li>
-</ol>
-</li>
 <li>
 <p>After the backup is complete, use the following instructions to install the upgrade file.</p>
 </li>
@@ -7102,7 +7083,7 @@
 <li>
 <p>Review your changes and click <strong>Finish</strong>.</p>
 </li>
-</ul>
+</ol>
 <p><strong>Parent topic: </strong><a href="upgradingleap_sec.html">Upgrading</a></p>
 
 

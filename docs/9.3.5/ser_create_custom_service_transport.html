@@ -5897,24 +5897,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -7031,69 +7023,69 @@
 <p>Create a Java class</p>
 <p>Create a Java class that implements the com.ibm.form.nitro.service.services.IServiceTransport interface.</p>
 <p>The following example is a Hello example transport that returns a greeting to a person. This transport expects a single input parameter person and responds with a single output parameter greeting. In this simple example, the transport does not talk to any external system to run the service. The transport implements the service itself.</p>
-<div class="highlight"><pre><span></span><code>package com.mycompany.services;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.mycompany.services</span><span class="p">;</span>
 
-import com.ibm.form.nitro.service.model.IUser;
-import com.ibm.form.nitro.service.services.*;
-import com.ibm.form.platform.service.framework.i18n.LocaleUtils;
-import java.util.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.nitro.service.model.IUser</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.nitro.service.services.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.platform.service.framework.i18n.LocaleUtils</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
 
-public class HelloServiceTransport
-    implements IServiceTransport
-{
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloServiceTransport</span>
+<span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">IServiceTransport</span>
+<span class="p">{</span>
 
-    public String getId()
-    {
-        return &quot;com.mycompany.services.HelloServiceTransport.id&quot;;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.mycompany.services.HelloServiceTransport.id&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public ServiceResult run(IServiceDescription pDescription,
-                             IServiceCredentialsProvider pServiceCredentialsProvider, IUser pUser,
-                             Map&lt;String, Object&gt; pParameters)
-    {
-        String personName = (String) pParameters.get(&quot;person&quot;);
-        Locale requestLocale = LocaleUtils.getRequestLocale();
-        String greeting = &quot;&quot;;
-        if (requestLocale.getLanguage().equals(Locale.FRENCH.getLanguage()))
-            greeting = &quot;Bonjour&quot; + personName;
-        else
-            greeting = &quot;Hello &quot; + personName;
-        pParameters.put(&quot;greeting&quot;, greeting);
-        ServiceResult result = new ServiceResult(200, &quot;success&quot;);
-        return result;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ServiceResult</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">IServiceDescription</span><span class="w"> </span><span class="n">pDescription</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">IServiceCredentialsProvider</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span><span class="w"> </span><span class="n">IUser</span><span class="w"> </span><span class="n">pUser</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pParameters</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">personName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;person&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Locale</span><span class="w"> </span><span class="n">requestLocale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocaleUtils</span><span class="p">.</span><span class="na">getRequestLocale</span><span class="p">();</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestLocale</span><span class="p">.</span><span class="na">getLanguage</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">FRENCH</span><span class="p">.</span><span class="na">getLanguage</span><span class="p">()))</span>
+<span class="w">            </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bonjour&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
+<span class="w">        </span><span class="n">pParameters</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;greeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">greeting</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ServiceResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceResult</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Collection&lt;IServiceDescription&gt; getSampleServiceDescriptions()
-    {
-        return Collections.emptyList();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">IServiceDescription</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSampleServiceDescriptions</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public IServiceTransportMetadata getMetadata()
-    {
-        return new IServiceTransportMetadata()
-        {
-            public Set&lt;String&gt; getAllowableCredentialsProviderIds()
-            {
-                return Collections.emptySet();
-            }
-        };
-    }
-}
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IServiceTransportMetadata</span><span class="w"> </span><span class="nf">getMetadata</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IServiceTransportMetadata</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getAllowableCredentialsProviderIds</span><span class="p">()</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 </li>
 <li>
 <p>Create an OSGi Service Description</p>
 <p>You must create an .xml file to declare your Java class as an OSGi service. For example, create a HelloServiceTransport.xml file with the following content:</p>
-<div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;scr:component xmlns:scr=&quot;http://www.osgi.org/xmlns/scr/v1.1.0&quot; 
-  configuration-policy=&quot;optional&quot; 
-  immediate=&quot;true&quot; 
-  name=&quot;com.mycompany.services.HelloServiceTransport.service&quot;&gt;
-   &lt;implementation class=&quot;com.mycompany.services.HelloServiceTransport&quot;/&gt;
-   &lt;service&gt;
-      &lt;provide interface=&quot;com.ibm.form.nitro.service.services.IServiceTransport&quot;/&gt;
-   &lt;/service&gt;
-&lt;/scr:component&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;scr:component</span><span class="w"> </span><span class="na">xmlns:scr=</span><span class="s">&quot;http://www.osgi.org/xmlns/scr/v1.1.0&quot;</span><span class="w"> </span>
+<span class="w">  </span><span class="na">configuration-policy=</span><span class="s">&quot;optional&quot;</span><span class="w"> </span>
+<span class="w">  </span><span class="na">immediate=</span><span class="s">&quot;true&quot;</span><span class="w"> </span>
+<span class="w">  </span><span class="na">name=</span><span class="s">&quot;com.mycompany.services.HelloServiceTransport.service&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.mycompany.services.HelloServiceTransport&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;service&gt;</span>
+<span class="w">      </span><span class="nt">&lt;provide</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.ibm.form.nitro.service.services.IServiceTransport&quot;</span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span>
 </code></pre></div>
 <p>For the class attribute of the implementation element, use the fully qualified name of the Java class you created in Step 1. Ensure that the name attribute of the component element is unique.</p>
 <p>Although not required, you can make it the same as the fully qualified name of the Java class that you created in Step 1.</p>
@@ -7150,340 +7142,340 @@ Import-Package: com.ibm.form.nitro.service.model,
 </ol>
 <h2 class="example" id="sample-ldap-query-service-transport">Sample LDAP query Service Transport</h2>
 <p>The following example is a more complex Service Transport that demonstrates one possible way to query an LDAP server. The transport itself remains fairly generic so that multiple different service descriptions, each with their own custom parameters and LDAP search properties, can use this same transport. This sample uses the JVM's naming services (javax.naming.directory and javax.naming.ldap) to communicate with the external LDAP server. LDAP search results are converted to XML which can then be pulled apart by the outgoing mapping section of the service description as needed. For example:</p>
-<div class="highlight"><pre><span></span><code>&lt;searchresults&gt;
-    &lt;searchresult&gt;
-        &lt;telephone&gt;1-555-555-555&lt;/telephone&gt;
-        &lt;email&gt;csmith@mycompany.com&lt;/email&gt;
-        &lt;cn&gt;Chris Smith&lt;/cn&gt;
-    &lt;/searchresult&gt;
-    &lt;searchresult&gt;
-        ...
-    &lt;/searchresult&gt;
-    ...
-&lt;/searchresults&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;searchresults&gt;</span>
+<span class="w">    </span><span class="nt">&lt;searchresult&gt;</span>
+<span class="w">        </span><span class="nt">&lt;telephone&gt;</span>1-555-555-555<span class="nt">&lt;/telephone&gt;</span>
+<span class="w">        </span><span class="nt">&lt;email&gt;</span>csmith@mycompany.com<span class="nt">&lt;/email&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cn&gt;</span>Chris<span class="w"> </span>Smith<span class="nt">&lt;/cn&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/searchresult&gt;</span>
+<span class="w">    </span><span class="nt">&lt;searchresult&gt;</span>
+<span class="w">        </span>...
+<span class="w">    </span><span class="nt">&lt;/searchresult&gt;</span>
+<span class="w">    </span>...
+<span class="nt">&lt;/searchresults&gt;</span>
 </code></pre></div>
 <p>If necessary, the Basic Credentials Provider is used to collect the credentials needed to query the LDAP server.</p>
 <p>Sample Java code:</p>
-<div class="highlight"><pre><span></span><code>package com.mycompany.services;
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.mycompany.services</span><span class="p">;</span>
 
-import com.ibm.form.nitro.service.model.*;
-import com.ibm.form.nitro.service.services.*;
-import java.io.*;
-import java.util.*;
-import javax.naming.*;
-import javax.naming.directory.*;
-import javax.naming.ldap.*;
-import javax.xml.parsers.*;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.*;
-import javax.xml.transform.stream.*;
-import org.w3c.dom.*;
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.nitro.service.model.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ibm.form.nitro.service.services.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.naming.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.naming.directory.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.naming.ldap.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.xml.parsers.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.xml.transform.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.xml.transform.dom.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.xml.transform.stream.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.w3c.dom.*</span><span class="p">;</span>
 
-public class SampleLDAPServiceTransport implements IServiceTransport {
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SampleLDAPServiceTransport</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IServiceTransport</span><span class="w"> </span><span class="p">{</span>
 
-    private IServiceTransportMetadata metaData;
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">IServiceTransportMetadata</span><span class="w"> </span><span class="n">metaData</span><span class="p">;</span>
 
-    public String getId() {
-        return &quot;com.mycompany.services.SampleLDAPServiceTransport.id&quot;;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.mycompany.services.SampleLDAPServiceTransport.id&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public IServiceTransportMetadata getMetadata() {
-        if (this.metaData == null) {
-            this.metaData = new IServiceTransportMetadata() {
-                public Set&lt;String&gt; getAllowableCredentialsProviderIds() {
-                    Set&lt;String&gt; ids = new HashSet&lt;String&gt;();
-                    ids.add(&quot;basic&quot;);
-                    return ids;
-                }
-            };
-        }
-        return this.metaData;
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IServiceTransportMetadata</span><span class="w"> </span><span class="nf">getMetadata</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">metaData</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">metaData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IServiceTransportMetadata</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">public</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getAllowableCredentialsProviderIds</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">ids</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;basic&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">ids</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">metaData</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public Collection&lt;IServiceDescription&gt; getSampleServiceDescriptions() {
-        return Collections.emptyList();
-    }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">IServiceDescription</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSampleServiceDescriptions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    public ServiceResult run(IServiceDescription pDescription, IServiceCredentialsProvider pServiceCredentialsProvider,
-            IUser pUser, Map&lt;String, Object&gt; pParameters) {
-        if (pParameters == null) {
-            pParameters = new HashMap&lt;String, Object&gt;();
-        }
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ServiceResult</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">IServiceDescription</span><span class="w"> </span><span class="n">pDescription</span><span class="p">,</span><span class="w"> </span><span class="n">IServiceCredentialsProvider</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span>
+<span class="w">            </span><span class="n">IUser</span><span class="w"> </span><span class="n">pUser</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pParameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pParameters</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
 
-        String baseDN = (String) pParameters.get(&quot;basedn&quot;);
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">baseDN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;basedn&quot;</span><span class="p">);</span>
 
-        String filter = (String) pParameters.get(&quot;filter&quot;);
-        List&lt;String&gt; filterArgs = new ArrayList&lt;String&gt;();
-        int argIndex = 0;
-        while (pParameters.containsKey(&quot;filter-arg-&quot; + argIndex)) {
-            String filterArgValue = (String) pParameters.get(&quot;filter-arg-&quot; + argIndex);
-            filterArgs.add(filterArgValue == null ? &quot;&quot; : filterArgValue);
-            argIndex++;
-        }
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;filter&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filterArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">argIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pParameters</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="s">&quot;filter-arg-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">argIndex</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">filterArgValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;filter-arg-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">argIndex</span><span class="p">);</span>
+<span class="w">            </span><span class="n">filterArgs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">filterArgValue</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">filterArgValue</span><span class="p">);</span>
+<span class="w">            </span><span class="n">argIndex</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        String[] attributes = null;
-        if (pParameters.containsKey(&quot;result-attributes&quot;)) {
-            attributes = ((String) pParameters.get(&quot;result-attributes&quot;)).trim().split(&quot;[\\s]*,[\\s]*&quot;);
-        }
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pParameters</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="s">&quot;result-attributes&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;result-attributes&quot;</span><span class="p">)).</span><span class="na">trim</span><span class="p">().</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;[\\s]*,[\\s]*&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        int resultCountLimit = 50;
-        if (pParameters.containsKey(&quot;result-count-limit&quot;)) {
-            resultCountLimit = Integer.parseInt((String) pParameters.get(&quot;result-count-limit&quot;));
-        }
-        int resultCount = 0;
-        InitialLdapContext ctx = null;
-        try {
-            ctx = ldapConnect(pServiceCredentialsProvider, pParameters);
-            if (ctx != null) {
-                Document doc = createDocument();
-                Node rootNode = doc.createElement(&quot;searchresults&quot;);
-                doc.appendChild(rootNode);
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCountLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pParameters</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="s">&quot;result-count-limit&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">resultCountLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;result-count-limit&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">resultCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">InitialLdapContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ldapConnect</span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span><span class="w"> </span><span class="n">pParameters</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Document</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDocument</span><span class="p">();</span>
+<span class="w">                </span><span class="n">Node</span><span class="w"> </span><span class="n">rootNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="na">createElement</span><span class="p">(</span><span class="s">&quot;searchresults&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">doc</span><span class="p">.</span><span class="na">appendChild</span><span class="p">(</span><span class="n">rootNode</span><span class="p">);</span>
 
-                SearchControls sc = new SearchControls();
-                sc.setSearchScope(SearchControls.SUBTREE_SCOPE);
-                sc.setCountLimit(resultCountLimit);
-                sc.setReturningAttributes(attributes);
-                sc.setReturningObjFlag(false);
+<span class="w">                </span><span class="n">SearchControls</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SearchControls</span><span class="p">();</span>
+<span class="w">                </span><span class="n">sc</span><span class="p">.</span><span class="na">setSearchScope</span><span class="p">(</span><span class="n">SearchControls</span><span class="p">.</span><span class="na">SUBTREE_SCOPE</span><span class="p">);</span>
+<span class="w">                </span><span class="n">sc</span><span class="p">.</span><span class="na">setCountLimit</span><span class="p">(</span><span class="n">resultCountLimit</span><span class="p">);</span>
+<span class="w">                </span><span class="n">sc</span><span class="p">.</span><span class="na">setReturningAttributes</span><span class="p">(</span><span class="n">attributes</span><span class="p">);</span>
+<span class="w">                </span><span class="n">sc</span><span class="p">.</span><span class="na">setReturningObjFlag</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 
-                // fetch results
-                NamingEnumeration&lt;SearchResult&gt; searchResults = ctx.search(baseDN, filter,
-                        filterArgs.toArray(new String[0]), sc);
-                while (searchResults.hasMore()) {
-                    Node resultNode = doc.createElement(&quot;searchresult&quot;);
-                    rootNode.appendChild(resultNode);
-                    resultCount++;
-                    SearchResult result = searchResults.next();
-                    Attributes resultAttrs = result.getAttributes();
-                    NamingEnumeration&lt;String&gt; attrIds = resultAttrs.getIDs();
-                    while (attrIds.hasMore()) {
-                        String attrName = attrIds.next();
-                        String attrValue = (String) resultAttrs.get(attrName).get(0);
-                        Node attrNode = doc.createElement(attrName);
-                        attrNode.setTextContent(attrValue);
-                        resultNode.appendChild(attrNode);
-                    }
-                }
-                String result = serializeDocument(doc);
-                pParameters.put(&quot;resultXML&quot;, result);
-            }
-        } catch (AuthenticationException ex) {
-            if (pServiceCredentialsProvider != null) {
-                return new ServiceResult(401);
-            } else {
-                return new ServiceResult(500, ex.getLocalizedMessage());
-            }
-        } catch (Exception ex) {
-            return new ServiceResult(500, ex.getLocalizedMessage());
-        } finally {
-            if (ctx != null) {
-                try {
-                    ctx.close();
-                } catch (NamingException ex) {
-                    // Ignore
-                }
-            }
-        }
+<span class="w">                </span><span class="c1">// fetch results</span>
+<span class="w">                </span><span class="n">NamingEnumeration</span><span class="o">&lt;</span><span class="n">SearchResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">searchResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">search</span><span class="p">(</span><span class="n">baseDN</span><span class="p">,</span><span class="w"> </span><span class="n">filter</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">filterArgs</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">),</span><span class="w"> </span><span class="n">sc</span><span class="p">);</span>
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">searchResults</span><span class="p">.</span><span class="na">hasMore</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Node</span><span class="w"> </span><span class="n">resultNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="na">createElement</span><span class="p">(</span><span class="s">&quot;searchresult&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">rootNode</span><span class="p">.</span><span class="na">appendChild</span><span class="p">(</span><span class="n">resultNode</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">resultCount</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">SearchResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">searchResults</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">Attributes</span><span class="w"> </span><span class="n">resultAttrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="na">getAttributes</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">NamingEnumeration</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attrIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultAttrs</span><span class="p">.</span><span class="na">getIDs</span><span class="p">();</span>
+<span class="w">                    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">attrIds</span><span class="p">.</span><span class="na">hasMore</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">String</span><span class="w"> </span><span class="n">attrName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrIds</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">String</span><span class="w"> </span><span class="n">attrValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">resultAttrs</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">attrName</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">Node</span><span class="w"> </span><span class="n">attrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="na">createElement</span><span class="p">(</span><span class="n">attrName</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">attrNode</span><span class="p">.</span><span class="na">setTextContent</span><span class="p">(</span><span class="n">attrValue</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">resultNode</span><span class="p">.</span><span class="na">appendChild</span><span class="p">(</span><span class="n">attrNode</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serializeDocument</span><span class="p">(</span><span class="n">doc</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pParameters</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;resultXML&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">AuthenticationException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceResult</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceResult</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getLocalizedMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceResult</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getLocalizedMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">ctx</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NamingException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Ignore</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
 
-        // Success
-        return new ServiceResult(200, resultCount + &quot; LDAP search result(s)&quot;);
-    }
+<span class="w">        </span><span class="c1">// Success</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceResult</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="n">resultCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; LDAP search result(s)&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    /**
-     * Creates the LDAP Context used to call to the LDAP server.
-     */
-    private InitialLdapContext ldapConnect(IServiceCredentialsProvider pServiceCredentialsProvider,
-            Map&lt;String, Object&gt; pParameters) throws NamingException, ServiceException {
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Creates the LDAP Context used to call to the LDAP server.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">InitialLdapContext</span><span class="w"> </span><span class="nf">ldapConnect</span><span class="p">(</span><span class="n">IServiceCredentialsProvider</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pParameters</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NamingException</span><span class="p">,</span><span class="w"> </span><span class="n">ServiceException</span><span class="w"> </span><span class="p">{</span>
 
-        String url = (String) pParameters.get(&quot;url&quot;);
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;url&quot;</span><span class="p">);</span>
 
-        Map&lt;String, String&gt; securityInfo = this.getSecurityInfo(pServiceCredentialsProvider, pParameters);
-        String securityAuth = securityInfo.get(&quot;auth&quot;);
-        String securityPrincipal = securityInfo.get(&quot;principal&quot;);
-        String securityCredentials = securityInfo.get(&quot;credentials&quot;);
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">securityInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">getSecurityInfo</span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span><span class="w"> </span><span class="n">pParameters</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">securityAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">securityInfo</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;auth&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">securityPrincipal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">securityInfo</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;principal&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">securityCredentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">securityInfo</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;credentials&quot;</span><span class="p">);</span>
 
-        InitialLdapContext ctx = null;
-        Hashtable&lt;String, String&gt; contextConfig = null;
+<span class="w">        </span><span class="n">InitialLdapContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contextConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 
-        // Set up LDAP config settings
-        contextConfig = new Hashtable&lt;String, String&gt;();
-        contextConfig.put(Context.INITIAL_CONTEXT_FACTORY, &quot;com.sun.jndi.ldap.LdapCtxFactory&quot;);
-        contextConfig.put(Context.REFERRAL, &quot;follow&quot;);
-        contextConfig.put(Context.PROVIDER_URL, url);
+<span class="w">        </span><span class="c1">// Set up LDAP config settings</span>
+<span class="w">        </span><span class="n">contextConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">INITIAL_CONTEXT_FACTORY</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;com.sun.jndi.ldap.LdapCtxFactory&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">REFERRAL</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;follow&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">PROVIDER_URL</span><span class="p">,</span><span class="w"> </span><span class="n">url</span><span class="p">);</span>
 
-        // For non-anonymous authentication security needs to be configured
-        if (securityAuth != null &amp;&amp; securityAuth.equals(&quot;none&quot;) == false) {
-            contextConfig.put(Context.SECURITY_AUTHENTICATION, securityAuth);
-            contextConfig.put(Context.SECURITY_PRINCIPAL, securityPrincipal);
-            contextConfig.put(Context.SECURITY_CREDENTIALS, securityCredentials);
-        }
+<span class="w">        </span><span class="c1">// For non-anonymous authentication security needs to be configured</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">securityAuth</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">securityAuth</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;none&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">SECURITY_AUTHENTICATION</span><span class="p">,</span><span class="w"> </span><span class="n">securityAuth</span><span class="p">);</span>
+<span class="w">            </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">SECURITY_PRINCIPAL</span><span class="p">,</span><span class="w"> </span><span class="n">securityPrincipal</span><span class="p">);</span>
+<span class="w">            </span><span class="n">contextConfig</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">SECURITY_CREDENTIALS</span><span class="p">,</span><span class="w"> </span><span class="n">securityCredentials</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        ctx = new InitialLdapContext(contextConfig, null);
-        return ctx;
-    }
+<span class="w">        </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InitialLdapContext</span><span class="p">(</span><span class="n">contextConfig</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ctx</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    private Map&lt;String, String&gt; getSecurityInfo(IServiceCredentialsProvider pServiceCredentialsProvider,
-            Map&lt;String, Object&gt; pParameters) throws ServiceException {
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSecurityInfo</span><span class="p">(</span><span class="n">IServiceCredentialsProvider</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pParameters</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServiceException</span><span class="w"> </span><span class="p">{</span>
 
-        Map&lt;String, String&gt; resultMap = new HashMap&lt;String, String&gt;();
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
 
-        resultMap.put(&quot;auth&quot;, (String) pParameters.get(&quot;security-authentication&quot;));
-        if (resultMap.get(&quot;auth&quot;) != null) {
-            resultMap.put(&quot;principal&quot;, (String) pParameters.get(&quot;security-principal&quot;));
-            resultMap.put(&quot;credentials&quot;, (String) pParameters.get(&quot;security-credentials&quot;));
-        }
-        if (pServiceCredentialsProvider != null) {
+<span class="w">        </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;auth&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;security-authentication&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resultMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;auth&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;principal&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;security-principal&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;credentials&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pParameters</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;security-credentials&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-            if (pServiceCredentialsProvider.getId() == &quot;basic&quot;) {
-                resultMap.put(&quot;auth&quot;, &quot;simple&quot;);
-                try {
-                    // use reflection to get username and password
-                    resultMap.put(&quot;principal&quot;,
-                            (String) pServiceCredentialsProvider.getClass().getMethod(&quot;getUsername&quot;, new Class[0])
-                                    .invoke(pServiceCredentialsProvider, new Object[0]));
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;basic&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;auth&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;simple&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// use reflection to get username and password</span>
+<span class="w">                    </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;principal&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getMethod</span><span class="p">(</span><span class="s">&quot;getUsername&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Class</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+<span class="w">                                    </span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">));</span>
 
-                    resultMap.put(&quot;credentials&quot;,
-                            (String) pServiceCredentialsProvider.getClass().getMethod(&quot;getPassword&quot;, new Class[0])
-                                    .invoke(pServiceCredentialsProvider, new Object[0]));
-                } catch (Exception e) {
-                    throw new ServiceException(e);
-                }
-            }
-        }
-        if (resultMap.get(&quot;principal&quot;) == null)
-            resultMap.put(&quot;principal&quot;, &quot;&quot;);
-        if (resultMap.get(&quot;credentials&quot;) == null)
-            resultMap.put(&quot;credentials&quot;, &quot;&quot;);
-        return resultMap;
-    }
+<span class="w">                    </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;credentials&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">pServiceCredentialsProvider</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getMethod</span><span class="p">(</span><span class="s">&quot;getPassword&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Class</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+<span class="w">                                    </span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">pServiceCredentialsProvider</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">));</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resultMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;principal&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;principal&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resultMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;credentials&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">            </span><span class="n">resultMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;credentials&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resultMap</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    /**
-     * Creates an empty XML document.
-     */
-    private Document createDocument() throws ServiceException {
-        Document doc = null;
-        try {
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            doc = db.newDocument();
-        } catch (Exception ex) {
-            throw new ServiceException(ex);
-        }
-        return doc;
-    }
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Creates an empty XML document.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Document</span><span class="w"> </span><span class="nf">createDocument</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServiceException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Document</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">DocumentBuilderFactory</span><span class="w"> </span><span class="n">dbf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DocumentBuilderFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+<span class="w">            </span><span class="n">DocumentBuilder</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbf</span><span class="p">.</span><span class="na">newDocumentBuilder</span><span class="p">();</span>
+<span class="w">            </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">newDocument</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceException</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">doc</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    /**
-     * Serializes an XML document to a String.
-     */
-    private String serializeDocument(Document pDocument) throws ServiceException {
-        try {
-            Transformer t = TransformerFactory.newInstance().newTransformer();
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            t.transform(new DOMSource(pDocument), new StreamResult(baos));
-            return new String(baos.toByteArray(), &quot;UTF-8&quot;);
-        } catch (Exception ex) {
-            throw new ServiceException(ex);
-        }
-    }
-}
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Serializes an XML document to a String.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">serializeDocument</span><span class="p">(</span><span class="n">Document</span><span class="w"> </span><span class="n">pDocument</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServiceException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Transformer</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransformerFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">().</span><span class="na">newTransformer</span><span class="p">();</span>
+<span class="w">            </span><span class="n">ByteArrayOutputStream</span><span class="w"> </span><span class="n">baos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ByteArrayOutputStream</span><span class="p">();</span>
+<span class="w">            </span><span class="n">t</span><span class="p">.</span><span class="na">transform</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DOMSource</span><span class="p">(</span><span class="n">pDocument</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamResult</span><span class="p">(</span><span class="n">baos</span><span class="p">));</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">baos</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;UTF-8&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceException</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p><strong>Sample LDAP query Service Description</strong></p>
 <p>This service description utilizes the previous sample LDAP transport to search an LDAP server for employee info. The results returned are based on a wildcard match of the employee's name or email address.</p>
-<div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;serviceDescription&gt;
-    &lt;id&gt;com.mycompany.services.SampleLDAPSearch&lt;/id&gt;
-    &lt;defaultLocale&gt;en-us&lt;/defaultLocale&gt;
-    &lt;transportId&gt;com.mycompany.services.SampleLDAPServiceTransport.id&lt;/transportId&gt;
-    &lt;name&gt;Sample LDAP Search Service&lt;/name&gt;
-    &lt;description&gt;Searches an LDAP server for employee information.&lt;/description&gt;
-    &lt;credentials providerId=&quot;basic&quot;&gt;
-        &lt;property name=&quot;realm&quot; value=&quot;com.mycompany.services.SampleLDAPRealm&quot;/&gt;
-    &lt;/credentials&gt;
-    &lt;inbound&gt;
-        &lt;parameters&gt;
-            &lt;parameter&gt;
-                &lt;id&gt;searchName&lt;/id&gt;
-                &lt;name&gt;Search Name&lt;/name&gt;
-                &lt;description&gt;The employee name to search for.&lt;/description&gt;
-                &lt;mandatory&gt;false&lt;/mandatory&gt;
-                &lt;type&gt;STRING&lt;/type&gt;
-            &lt;/parameter&gt;
-            &lt;parameter&gt;
-                &lt;id&gt;searchEmail&lt;/id&gt;
-                &lt;name&gt;Search Email&lt;/name&gt;
-                &lt;description&gt;The employee email to search for.&lt;/description&gt;
-                &lt;mandatory&gt;false&lt;/mandatory&gt;
-                &lt;type&gt;STRING&lt;/type&gt;
-            &lt;/parameter&gt;            
-        &lt;/parameters&gt;
-        &lt;serviceMapping&gt;
-            &lt;constants&gt;
-                &lt;constant&gt;
-                    &lt;id&gt;url&lt;/id&gt;
-                    &lt;value&gt;ldap://ldap.mysite.com:389/&lt;/value&gt;
-                &lt;/constant&gt;
-                &lt;constant&gt;
-                    &lt;id&gt;basedn&lt;/id&gt;
-                    &lt;value&gt;ou=employees,o=mysite.com&lt;/value&gt;
-                &lt;/constant&gt;
-                &lt;constant&gt;
-                    &lt;id&gt;filter&lt;/id&gt;
-                    &lt;value&gt;(&amp;amp;(objectClass=person)(cn=*{0}*)(email=*{1}*))&lt;/value&gt;
-                &lt;/constant&gt;
-                &lt;constant&gt;
-                    &lt;id&gt;result-attributes&lt;/id&gt;
-                    &lt;value&gt;cn,telephone,email&lt;/value&gt;
-                &lt;/constant&gt;             
-            &lt;/constants&gt;
-            &lt;mapping&gt;
-                &lt;mapping target=&quot;transport:url&quot; source=&quot;constant:url&quot; /&gt;
-                &lt;mapping target=&quot;transport:basedn&quot; source=&quot;constant:basedn&quot; /&gt;
-                &lt;mapping target=&quot;transport:filter&quot; source=&quot;constant:filter&quot; /&gt;
-                &lt;mapping target=&quot;transport:filter-arg-0&quot; source=&quot;parameter:searchName&quot; /&gt;
-                &lt;mapping target=&quot;transport:filter-arg-1&quot; source=&quot;parameter:searchEmail&quot; /&gt;              
-                &lt;mapping target=&quot;transport:result-attributes&quot; source=&quot;constant:result-attributes&quot; /&gt;
-            &lt;/mapping&gt;
-        &lt;/serviceMapping&gt;
-    &lt;/inbound&gt;
-    &lt;outbound&gt;
-        &lt;parameters&gt;
-            &lt;parameter&gt;
-                &lt;id&gt;searchResults&lt;/id&gt;
-                &lt;name&gt;Search Results&lt;/name&gt;
-                &lt;description&gt;The list of search results&lt;/description&gt;
-                &lt;type&gt;LIST&lt;/type&gt;
-                &lt;parameters&gt;        
-                    &lt;parameter&gt;
-                        &lt;id&gt;name&lt;/id&gt;
-                        &lt;name&gt;Employee Name&lt;/name&gt;
-                        &lt;description&gt;The employee&#39;s name.&lt;/description&gt;
-                        &lt;type&gt;STRING&lt;/type&gt;
-                    &lt;/parameter&gt;        
-                    &lt;parameter&gt;
-                        &lt;id&gt;email&lt;/id&gt;
-                        &lt;name&gt;Employee Email&lt;/name&gt;
-                        &lt;description&gt;The employee&#39;s email address.&lt;/description&gt;
-                        &lt;type&gt;STRING&lt;/type&gt;
-                    &lt;/parameter&gt;            
-                    &lt;parameter&gt;
-                        &lt;id&gt;phone&lt;/id&gt;
-                        &lt;name&gt;Employee Phone Number&lt;/name&gt;
-                        &lt;description&gt;The employee&#39;s phone number.&lt;/description&gt;
-                        &lt;type&gt;STRING&lt;/type&gt;
-                    &lt;/parameter&gt;
-                &lt;/parameters&gt;
-            &lt;/parameter&gt;
-        &lt;/parameters&gt;       
-        &lt;serviceMapping&gt;
-            &lt;mapping&gt;
-                &lt;mapping target=&quot;parameter:searchResults&quot; source=&quot;transport:resultXML&quot; sourceRef=&quot;searchresults/searchresult&quot; sourceType=&quot;xml&quot;&gt;         
-                    &lt;mapping target=&quot;parameter:name&quot; sourceRef=&quot;cn&quot; sourceType=&quot;xml&quot; /&gt;
-                    &lt;mapping target=&quot;parameter:email&quot; sourceRef=&quot;email&quot; sourceType=&quot;xml&quot; /&gt;
-                    &lt;mapping target=&quot;parameter:phone&quot; sourceRef=&quot;telephone&quot; sourceType=&quot;xml&quot; /&gt;
-                &lt;/mapping&gt;              
-            &lt;/mapping&gt;
-        &lt;/serviceMapping&gt;
-    &lt;/outbound&gt;
-&lt;/serviceDescription&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;serviceDescription&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>com.mycompany.services.SampleLDAPSearch<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;defaultLocale&gt;</span>en-us<span class="nt">&lt;/defaultLocale&gt;</span>
+<span class="w">    </span><span class="nt">&lt;transportId&gt;</span>com.mycompany.services.SampleLDAPServiceTransport.id<span class="nt">&lt;/transportId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Sample<span class="w"> </span>LDAP<span class="w"> </span>Search<span class="w"> </span>Service<span class="nt">&lt;/name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;description&gt;</span>Searches<span class="w"> </span>an<span class="w"> </span>LDAP<span class="w"> </span>server<span class="w"> </span>for<span class="w"> </span>employee<span class="w"> </span>information.<span class="nt">&lt;/description&gt;</span>
+<span class="w">    </span><span class="nt">&lt;credentials</span><span class="w"> </span><span class="na">providerId=</span><span class="s">&quot;basic&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;realm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;com.mycompany.services.SampleLDAPRealm&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/credentials&gt;</span>
+<span class="w">    </span><span class="nt">&lt;inbound&gt;</span>
+<span class="w">        </span><span class="nt">&lt;parameters&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                </span><span class="nt">&lt;id&gt;</span>searchName<span class="nt">&lt;/id&gt;</span>
+<span class="w">                </span><span class="nt">&lt;name&gt;</span>Search<span class="w"> </span>Name<span class="nt">&lt;/name&gt;</span>
+<span class="w">                </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>employee<span class="w"> </span>name<span class="w"> </span>to<span class="w"> </span>search<span class="w"> </span>for.<span class="nt">&lt;/description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mandatory&gt;</span>false<span class="nt">&lt;/mandatory&gt;</span>
+<span class="w">                </span><span class="nt">&lt;type&gt;</span>STRING<span class="nt">&lt;/type&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                </span><span class="nt">&lt;id&gt;</span>searchEmail<span class="nt">&lt;/id&gt;</span>
+<span class="w">                </span><span class="nt">&lt;name&gt;</span>Search<span class="w"> </span>Email<span class="nt">&lt;/name&gt;</span>
+<span class="w">                </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>employee<span class="w"> </span>email<span class="w"> </span>to<span class="w"> </span>search<span class="w"> </span>for.<span class="nt">&lt;/description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mandatory&gt;</span>false<span class="nt">&lt;/mandatory&gt;</span>
+<span class="w">                </span><span class="nt">&lt;type&gt;</span>STRING<span class="nt">&lt;/type&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parameter&gt;</span><span class="w">            </span>
+<span class="w">        </span><span class="nt">&lt;/parameters&gt;</span>
+<span class="w">        </span><span class="nt">&lt;serviceMapping&gt;</span>
+<span class="w">            </span><span class="nt">&lt;constants&gt;</span>
+<span class="w">                </span><span class="nt">&lt;constant&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;id&gt;</span>url<span class="nt">&lt;/id&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value&gt;</span>ldap://ldap.mysite.com:389/<span class="nt">&lt;/value&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/constant&gt;</span>
+<span class="w">                </span><span class="nt">&lt;constant&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;id&gt;</span>basedn<span class="nt">&lt;/id&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value&gt;</span>ou=employees,o=mysite.com<span class="nt">&lt;/value&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/constant&gt;</span>
+<span class="w">                </span><span class="nt">&lt;constant&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;id&gt;</span>filter<span class="nt">&lt;/id&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value&gt;</span>(<span class="ni">&amp;amp;</span>(objectClass=person)(cn=*{0}*)(email=*{1}*))<span class="nt">&lt;/value&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/constant&gt;</span>
+<span class="w">                </span><span class="nt">&lt;constant&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;id&gt;</span>result-attributes<span class="nt">&lt;/id&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;value&gt;</span>cn,telephone,email<span class="nt">&lt;/value&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/constant&gt;</span><span class="w">             </span>
+<span class="w">            </span><span class="nt">&lt;/constants&gt;</span>
+<span class="w">            </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:url&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;constant:url&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:basedn&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;constant:basedn&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:filter&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;constant:filter&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:filter-arg-0&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;parameter:searchName&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:filter-arg-1&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;parameter:searchEmail&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">              </span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;transport:result-attributes&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;constant:result-attributes&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/serviceMapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/inbound&gt;</span>
+<span class="w">    </span><span class="nt">&lt;outbound&gt;</span>
+<span class="w">        </span><span class="nt">&lt;parameters&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                </span><span class="nt">&lt;id&gt;</span>searchResults<span class="nt">&lt;/id&gt;</span>
+<span class="w">                </span><span class="nt">&lt;name&gt;</span>Search<span class="w"> </span>Results<span class="nt">&lt;/name&gt;</span>
+<span class="w">                </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>search<span class="w"> </span>results<span class="nt">&lt;/description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;type&gt;</span>LIST<span class="nt">&lt;/type&gt;</span>
+<span class="w">                </span><span class="nt">&lt;parameters&gt;</span><span class="w">        </span>
+<span class="w">                    </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;id&gt;</span>name<span class="nt">&lt;/id&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;name&gt;</span>Employee<span class="w"> </span>Name<span class="nt">&lt;/name&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>employee&#39;s<span class="w"> </span>name.<span class="nt">&lt;/description&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;type&gt;</span>STRING<span class="nt">&lt;/type&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/parameter&gt;</span><span class="w">        </span>
+<span class="w">                    </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;id&gt;</span>email<span class="nt">&lt;/id&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;name&gt;</span>Employee<span class="w"> </span>Email<span class="nt">&lt;/name&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>employee&#39;s<span class="w"> </span>email<span class="w"> </span>address.<span class="nt">&lt;/description&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;type&gt;</span>STRING<span class="nt">&lt;/type&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/parameter&gt;</span><span class="w">            </span>
+<span class="w">                    </span><span class="nt">&lt;parameter&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;id&gt;</span>phone<span class="nt">&lt;/id&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;name&gt;</span>Employee<span class="w"> </span>Phone<span class="w"> </span>Number<span class="nt">&lt;/name&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;description&gt;</span>The<span class="w"> </span>employee&#39;s<span class="w"> </span>phone<span class="w"> </span>number.<span class="nt">&lt;/description&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;type&gt;</span>STRING<span class="nt">&lt;/type&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/parameters&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/parameters&gt;</span><span class="w">       </span>
+<span class="w">        </span><span class="nt">&lt;serviceMapping&gt;</span>
+<span class="w">            </span><span class="nt">&lt;mapping&gt;</span>
+<span class="w">                </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;parameter:searchResults&quot;</span><span class="w"> </span><span class="na">source=</span><span class="s">&quot;transport:resultXML&quot;</span><span class="w"> </span><span class="na">sourceRef=</span><span class="s">&quot;searchresults/searchresult&quot;</span><span class="w"> </span><span class="na">sourceType=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span><span class="w">         </span>
+<span class="w">                    </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;parameter:name&quot;</span><span class="w"> </span><span class="na">sourceRef=</span><span class="s">&quot;cn&quot;</span><span class="w"> </span><span class="na">sourceType=</span><span class="s">&quot;xml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;parameter:email&quot;</span><span class="w"> </span><span class="na">sourceRef=</span><span class="s">&quot;email&quot;</span><span class="w"> </span><span class="na">sourceType=</span><span class="s">&quot;xml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;mapping</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;parameter:phone&quot;</span><span class="w"> </span><span class="na">sourceRef=</span><span class="s">&quot;telephone&quot;</span><span class="w"> </span><span class="na">sourceType=</span><span class="s">&quot;xml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/mapping&gt;</span><span class="w">              </span>
+<span class="w">            </span><span class="nt">&lt;/mapping&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/serviceMapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/outbound&gt;</span>
+<span class="nt">&lt;/serviceDescription&gt;</span>
 </code></pre></div>
 <p><strong>Parent topic: </strong><a href="ex_soa_service_transport.html">Service Oriented Architecture – Service Transport</a></p>
 

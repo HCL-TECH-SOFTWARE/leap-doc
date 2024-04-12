@@ -12,7 +12,7 @@ To the application designer, Service Catalog Groups are listed in the **Service 
 
     Create a Java class that implements the com.ibm.form.nitro.service.services.IServiceCatalogGroup interface to return a unique group identifier and a readable group name. The following example adds the **My Services** group to the Leap.
 
-    ```
+    ```java
     package com.mycompany.services;
     
     import com.ibm.form.nitro.service.services.IServiceCatalogGroup;
@@ -43,7 +43,7 @@ To the application designer, Service Catalog Groups are listed in the **Service 
 
     You must create an .xml file to declare your Java class as an OSGi service. For example, create a MyServiceCatalogGroup.xml file with the following content:
 
-    ```
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
      configuration-policy="optional" 

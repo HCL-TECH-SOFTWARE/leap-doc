@@ -5854,24 +5854,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6969,34 +6961,34 @@
 <p>Gather Leap JAR files</p>
 <p>Use the following script, or a similar script, to extract appropriate .jar files from the Leap .ear file. If you use the following script, update the variables to match your system.</p>
 <p>The extracted JAR files are placed in the %EXTRACT_DIR%\Leap_bundles\ directory.</p>
-<div class="highlight"><pre><span></span><code>SET EXTRACT_DIR=C:\temp\Builder_extract
-SET JAVA_BIN=C:\hcl-java-sdk-60-win-i386\bin
-SET LEAP_INSTALL_DIR=C:\Program Files\HCL\Leap Server\8.0\Leap
-SET LEAP_VERSION=8.0.0.1013
-SET FSP_VERSION=8.0.0.494
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="nv">EXTRACT_DIR</span><span class="p">=</span>C:\temp\Builder_extract
+<span class="k">SET</span> <span class="nv">JAVA_BIN</span><span class="p">=</span>C:\hcl-java-sdk-60-win-i386\bin
+<span class="k">SET</span> <span class="nv">LEAP_INSTALL_DIR</span><span class="p">=</span>C:\Program Files\HCL\Leap Server\8.0\Leap
+<span class="k">SET</span> <span class="nv">LEAP_VERSION</span><span class="p">=</span>8.0.0.1013
+<span class="k">SET</span> <span class="nv">FSP_VERSION</span><span class="p">=</span>8.0.0.494
 
-mkdir &quot;%EXTRACT_DIR%&quot;
-mkdir &quot;%EXTRACT_DIR%\fsp&quot;
-mkdir &quot;%EXTRACT_DIR%\core&quot;
-mkdir &quot;%EXTRACT_DIR%\Leap_bundles&quot;
+<span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">&quot;</span>
+<span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\fsp&quot;</span>
+<span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\core&quot;</span>
+<span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\Leap_bundles&quot;</span>
 
-copy &quot;%LEAP_INSTALL_DIR%\deploy\hcl-leap.ear&quot; &quot;%EXTRACT_DIR%&quot;
-cd &quot;%EXTRACT_DIR%&quot;
-&quot;%JAVA_BIN%\jar&quot; xvf hcl-leap.ear
-&quot;%JAVA_BIN%\jar&quot; xvf leap.war
+<span class="k">copy</span> <span class="s2">&quot;</span><span class="nv">%LEAP_INSTALL_DIR%</span><span class="s2">\deploy\hcl-leap.ear&quot;</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">&quot;</span>
+<span class="k">cd</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf hcl-leap.ear
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf leap.war
 
-copy &quot;WEB-INF\lib\ibm.nitro.packaging.onejar.fsp-%LEAP_VERSION%.jar&quot; &quot;%EXTRACT_DIR%\fsp&quot;
-copy &quot;WEB-INF\lib\ibm.nitro.packaging.onejar.core-%LEAP_VERSION%.jar&quot; &quot;%EXTRACT_DIR%\core&quot;
+<span class="k">copy</span> <span class="s2">&quot;WEB-INF\lib\ibm.nitro.packaging.onejar.fsp-</span><span class="nv">%LEAP_VERSION%</span><span class="s2">.jar&quot;</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\fsp&quot;</span>
+<span class="k">copy</span> <span class="s2">&quot;WEB-INF\lib\ibm.nitro.packaging.onejar.core-</span><span class="nv">%LEAP_VERSION%</span><span class="s2">.jar&quot;</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\core&quot;</span>
 
-cd &quot;%EXTRACT_DIR%\fsp&quot;
-&quot;%JAVA_BIN%\jar&quot; xvf ibm.nitro.packaging.onejar.fsp-%LEAP_VERSION%.jar
-&quot;%JAVA_BIN%\jar&quot; xvf FSPJARS.jar
-copy ibm.fsp.core.service.framework-%FSP_VERSION%.jar ..\Leap_bundles
+<span class="k">cd</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\fsp&quot;</span>
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf ibm.nitro.packaging.onejar.fsp-<span class="nv">%LEAP_VERSION%</span>.jar
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf FSPJARS.jar
+<span class="k">copy</span> ibm.fsp.core.service.framework-<span class="nv">%FSP_VERSION%</span>.jar ..\Leap_bundles
 
-cd &quot;%EXTRACT_DIR%\core&quot;
-&quot;%JAVA_BIN%\jar&quot; xvf ibm.nitro.packaging.onejar.core-%LEAP_VERSION%.jar
-&quot;%JAVA_BIN%\jar&quot; xvf FSPBUNDLES.jar
-copy ibm.nitro.services-%LEAP_VERSION%.jar ..\Leap_bundles
+<span class="k">cd</span> <span class="s2">&quot;</span><span class="nv">%EXTRACT_DIR%</span><span class="s2">\core&quot;</span>
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf ibm.nitro.packaging.onejar.core-<span class="nv">%LEAP_VERSION%</span>.jar
+<span class="s2">&quot;</span><span class="nv">%JAVA_BIN%</span><span class="s2">\jar&quot;</span> xvf FSPBUNDLES.jar
+<span class="k">copy</span> ibm.nitro.services-<span class="nv">%LEAP_VERSION%</span>.jar ..\Leap_bundles
 </code></pre></div>
 </li>
 <li>

@@ -3,9 +3,9 @@
 ## Table 1. Service Configuration Object
 This object represents a mapped service in the form and is retrieved using `form.getServiceConfiguration()`.
 
-<table>
+<table class="table-wrap">
 <tr>
-<td><b>Object</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+<td width="200"><b>Object</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>
 <tr>
 <td>service.callService()
@@ -18,13 +18,13 @@ serviceConfig.callService();
 ```
 </tr>
 <tr>
-<td>service.connectEvent(eventName, callbackFunction)
+<td>service.connectEvent (eventName, callbackFunction)
 <td>The only supported event is <b>onCallFinished</b>, which is called every time after the service mapping is executed. It is passed two parameters:
 <ul>
 <li>  <b>pSuccess</b>, which indicates whether the service call succeeded.</li>
 <li>  <b>pErrorObj</b>, which is a JSON object (<code>{code: '', message: '', handled: ''}</code>) that contains details about the error (if thrown).</li></ul>
 
-If the error is being handled by javascript, setting `pErrorObj.handled = true` will suppress the error dialog.<br>
+If the error is being handled by javascript, setting <code>pErrorObj.handled = true</code> will suppress the error dialog.<br>
 <br>
 
 Resister these events in the Applications <b>onStart</b> event so that they are only registered once.
@@ -47,7 +47,7 @@ serviceConfig.connectEvent('onCallFinished', function(pSuccess, pErrorObj)
 ```
 </tr>
 <tr>
-<td>service.disconnectEvent(eventHandle)
+<td>service.disconnectEvent (eventHandle)
 <td>Disconnects the event handler specified by the passed-in event handle object that was returned by a <b>service.connectEvent</b> call. To avoid duplicate event handlers being connected, connect to events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to an event outside of these two events, you should explicitly disconnect from the event using the <b>disconnectEvent</b> method.
 <td> 
 
@@ -70,9 +70,9 @@ var serviceHdl = serviceConfig.connectEvent('onCallFinished', function(pSuccess,
 Represents an action button that is retrieved by calling `form.getStageActions()`.
 
 
-<table>
+<table class="table-wrap">
 <tr>
-<td><b>Object</b> </td><td> <b>Description</b></td>
+<td width="200"><b>Object</b> </td><td> <b>Description</b></td>
 </tr>
 <tr>
 <td>action.activate()
@@ -136,7 +136,7 @@ action.addClasses('emphasized error');
 </tr>
 
 <tr>
-<td>action.removeClasses(classes)
+<td>action.removeClasses (classes)
 <td>Removes a list of custom class names from an action for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.
 <td>
 

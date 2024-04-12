@@ -31,7 +31,7 @@ In general, adding new parameters or mappings and changing names and description
 
 Table 1. Summary of potentially safe and unsafe changes
 
-<table>
+<table class="table-wrap">
 <tr>
 <td><b>Potentially Safe Changes</b> </td><td> <b>Potentially Unsafe Changes</b></td>
 </tr>

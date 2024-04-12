@@ -26,20 +26,20 @@ As part of the configuration process for your identify provider, you will have c
 
 After copying the `.key` and `.crt` to the kubernetes image, create a secret using the following command:
 
-``` {#codeblock_tjk_knt_b1c}
+```text
 kubectl -n myns create secret tls oidccert --key="/tmp/oidc.key" --cert="/tmp/oidc.crt"
 ```
 
 Next, this secret can be referenced in the yaml file:
 
-``` {#codeblock_dyx_2nt_b1c}
+```yaml
 configuration:
   leap:
     customCertificateSecrets:
       keycloakCert: "keycloakcert"
 ```
 
-For more information, see to [helm\_admin\_customsecret.md](helm_admin_customsecret.md).
+For more information, see to [Provide admin user a custom secret](helm_admin_customsecret.md).
 
 ## Add OIDC definition as a server customization {#section_vxv_fnt_b1c .section}
 
@@ -52,7 +52,7 @@ Before moving on from this step:
 
 The following snippet is an example of an OIDC definition:
 
-``` {#codeblock_b5j_jnt_b1c}
+```yaml
 configOverrideFiles:
       openIdConnect: |
         <server description="leapServer">
@@ -64,6 +64,10 @@ configOverrideFiles:
             mapIdentityToRegistryUser="false"
             httpsRequired="true"
             scope="openid"
+            <!-- Defines a simple name that can be used to refer to this OIDC config -->
+            realmName="LeapOidc"
+            <!-- The property of the token that contains the user's group assignments -->
+	          groupIdentifier="group_membership"
             userIdentityToCreateSubject="preferred_username"
             discoveryEndpointUrl="https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration">
           </openidConnectClient>
@@ -78,7 +82,8 @@ configOverrideFiles:
         </server> 
 ```
 
-For more details on defining a server customization, see [helm\_open\_liberty\_custom.md](helm_open_liberty_custom.md).
+For more details on defining a server customization, see [Open Liberty server customizations](helm_open_liberty_custom.md).
+
 
 ## Add config properties related to OIDC config {#section_r3z_knt_b1c .section}
 
@@ -88,17 +93,43 @@ The following properties must be set to complete the OIDC configuration:
 -   userGroups - By setting this to false it will disable group lookups, which is not available when configured with OIDC.
 -   postLogoutRedirectURL - This is the URL to which Leap will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.
 
-``` {#codeblock_hbq_pnt_b1c}
+```yaml
 configuration:
    leap:
      leapProperties: |
        ibm.nitro.NitroConfig.userLookup=false
        ibm.nitro.NitroConfig.userGroups=false 
-       ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myOIDCServer.com/realms/Leap/protocol/openid-
+       ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myoidcServer.com/realms/Leap/protocol/openid-
                  connect/logout?client_id=hcl-leap-oidc-client&post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
 ```
 
 For more details on setting Leap properties, see [Leap properties](helm_leap_properties.md).
+
+## Referencing Users and Groups in Security Role Mapping 
+To assign a user or group from OIDC to one of the Leap roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user/group name.  
+
+To assign a user from OIDC to a Leap security role you would use {realmName}/{userName}:
+```yaml
+MappedUsersAccessIDs:
+ - LeapOidc/john.oidc
+```
+
+To assign a group from OIDC to a Leap security role you would use {realmName}/{groupName}:
+```yaml
+MappedGroupsAccessIDs:
+ - LeapOidc//Group1
+```
+Note: there is an extra slash in the group name because that is part of the definition in the IDP used for this example. Other IDPs may differ in how they define the group name, if in doubt leverage the logging trace string to identify the correct value.
+
+## Troubleshooting
+To get more information about how Liberty perceives the logged in user, add the trace string 'com.ibm.ws.security.authentication.*=all'.  This will provide useful information for understanding the user and group values.  An example output in the trace.log, after logging in, looks like:
+
+```text
+    Principal: WSPrincipal:john.oidc
+    Public Credential: com.ibm.ws.security.credentials.wscred.WSCredentialImpl@cb847b2d,realmName=LeapOidc,securityName=john.oidc,realmSecurityName=LeapOidc/john.oidc,uniqueSecurityName=john.oidc,primaryGroupId=null,accessId=user:LeapOidc/john.oidc,groupIds=[group:LeapOidc//Group2]
+    Private Credential: IDToken:{"exp":1710363581,"iat":1710363281,"auth_time":1710363280,"jti":"f343b1fe-6a9a-482f-a85e-1cf46f4eb1b8","iss":"https://myoidcserver:8443/realms/Leapdev","aud":"hcl-leap-oidc-client","sub":"9b8cd571-5d09-4de2-ba2d-22b985424831","typ":"ID","azp":"hcl-leap-oidc-client","session_state":"fff63a5e-8269-4e69-b4c3-9d4135c028da","at_hash":"ePO9yDI6IGdX1iDG17CNWQ","acr":"1","sid":"fff63a5e-8269-4e69-b4c3-9d4135c028da","group_membership":["/Group2"],"email_verified":false,"realmName":"Leapdev","name":"John Oidc","groups":["default-roles-leapdev","offline_access","uma_authorization"],"preferred_username":"john.oidc","given_name":"John","family_name":"Oidc","email":"john.oidc@acme.com"} 
+```
+Note: If the groupIds array is empty then the 'openidConnectClient' is not configured properly; the group claim may be missing from the token or the 'groupIdentifier' may not be set to the correct value.
 
 ## Restart the pod {#section_zq2_vmt_b1c .section}
 

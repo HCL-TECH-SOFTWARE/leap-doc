@@ -5906,24 +5906,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -7043,15 +7035,17 @@
 <h1 id="connect-leap-to-ldap">Connect Leap to LDAP</h1>
 <p>To connect Leap with an LDAP you must use the <a href="helm_open_liberty_custom.html">configOverrideFiles</a> parameter. A sample snippet has been provided, which will need to be updated with your specific details.</p>
 <p>Below is an example snippet of configuring Leap to use an LDAP server as part of a federated repository. The baseDN, bindDN and bindPassword will need to be replaced with the proper values. The searchBase for the ldap entity types will also need to be updated. The participatingBaseEntry will need to match the baseDN defined in the LDAP server snippet.</p>
-<p>Valid values for the "ldapType" are:
-- Custom
-- IBM Lotus Domino
-- IBM SecureWay Directory Server
-- IBM Tivoli Directory Server
-- Microsoft Active Directory
-- Netscape Directory Server
-- Novell eDirectory
-- Sun Java System Directory Server</p>
+<p>Valid values for the "ldapType" are:</p>
+<ul>
+<li>Custom</li>
+<li>IBM Lotus Domino</li>
+<li>IBM SecureWay Directory Server</li>
+<li>IBM Tivoli Directory Server</li>
+<li>Microsoft Active Directory</li>
+<li>Netscape Directory Server</li>
+<li>Novell eDirectory</li>
+<li>Sun Java System Directory Server</li>
+</ul>
 <p>It is recommended to specify a "realmName" as it makes it easier to reference entries from this LDAP configuration, specifically in the Leap role assignments.</p>
 <p>For more specific details on what is supported by OpenLiberty, refer to their <a href="https://openliberty.io/docs/latest/reference/config/ldapRegistry.html">ldap registry documentation</a>.</p>
 <p><strong>Note:</strong> The userSecurityNameMapping and groupSecurityNameMapping are required. These properties control how users and groups are displayed while using Leap.</p>

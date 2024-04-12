@@ -5848,24 +5848,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -6970,7 +6962,7 @@
 <table class="table-wrap">
 <thead>
 <tr>
-<th>Object</th><th>Description</th><th>Example</th>
+<th width="250">Object</th><th>Description</th><th>Example</th>
 </tr>
 <thead>
 <tbody>
@@ -7006,7 +6998,7 @@ callbackFunction)</td>
 </tr>
 <tr>
 <td>page.disconnectEvent(eventHandle)<br>
-appPage.disconnectEvent(eventHandle)</td>
+appPage.disconnectEvent (eventHandle)</td>
 <td>Disconnects the event handler specified by the passed-in event handle object that was returned by a page.connectEvent or <b>appPage.connectEvent</b> call. To avoid duplicate event handlers being connected to pages, connect to page events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to a page event outside of these two events you should explicitly disconnect from the page event using the <b>disconnectEvent</b> method.</td>
 <td>
 
@@ -7062,7 +7054,7 @@ appPage.getClasses()
 
 <tr>
 <td>page.getId()<br>
-appPage.getId()<td>
+appPage.getId()</td>
 <td>Returns the unique ID, within the application, of this page. For example, <b>P_Page1</b>.</td>
 <td><!-- no example --></td>
 </tr>
@@ -7076,8 +7068,9 @@ appPage.getId()<td>
 </code></pre></div>
 </td>
 </tr>
+
 <tr>
-<td>appPage.getServiceConfiguration(serviceId)</td>
+<td>appPage.getServiceConfiguration (serviceId)</td>
 <td>Gets the service object for a particular service ID.</td>
 <td>Lookup and execute a service from JavaScript™:
 
@@ -7090,7 +7083,7 @@ appPage.getId()<td>
 <tr>
 <td>page.getType()<br>
 appPage.getType()</td>
-<td>Returns a string identifying the object type. For example,“page”.</td>
+<td>Returns a string identifying the object type. For example, "page".</td>
 <td><!-- no example --></td>
 </tr>
 

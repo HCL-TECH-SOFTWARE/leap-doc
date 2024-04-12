@@ -84,7 +84,7 @@ To embed a Leap form programmatically, call `Leap.launch({launch_params})`;
 
 **`{launch_params}`** properties:
 
-<table>
+<table class="table-wrap">
 <thead>
 <tr>
 <th>

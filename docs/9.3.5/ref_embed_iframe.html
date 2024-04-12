@@ -5842,24 +5842,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="ref_jsapi_running_external_js_files.html" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Interface objects
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9_2_3_1" id="__nav_9_2_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3_1">
@@ -7053,7 +7045,10 @@ Displays a legend with the pie chart. Use in combination with <code>narrow=true<
 <p>When the charts are embedded, the banner is hidden and there are simple messages when no charts are available.</p>
 <h2 class="section" id="embedded-form-rendering">Embedded Form Rendering</h2>
 <p>To embed a form in a web page, use the following URL as a guide. Change the <code>host</code>, <code>port</code>, <code>app_uid</code> and <code>form_id</code> variables to suit your host, port, application ID and form ID.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:600px;height:600px&quot;</span>  <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://host:port/apps/secure/org/app/{app_uid}/launch/index.html?form={form_id}&amp;width=600px&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> 
+   <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:600px;height:600px&quot;</span>
+   <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://host:port/apps/secure/org/app/{app_uid}/launch/index.html?form={form_id}&amp;width=600px&quot;</span>
+<span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>The parameters in this URL are:</p>

@@ -34,7 +34,7 @@ Table 2. Item Events
 
 Table 3. Item Events - Table only
 
-<table>
+<table class="table-wrap">
 <tr>
 <td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>
@@ -77,7 +77,7 @@ Table 5. Item Events - Section only
 
 Table 6. beforeOptionsUpdate
 
-<table>
+<table class="table-wrap">
 <tr>
 <td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>

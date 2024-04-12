@@ -30,7 +30,10 @@ When the charts are embedded, the banner is hidden and there are simple messages
 To embed a form in a web page, use the following URL as a guide. Change the `host`, `port`, `app_uid` and `form_id` variables to suit your host, port, application ID and form ID.
 
 ```html
-<iframe style="width:600px;height:600px"  src="http://host:port/apps/secure/org/app/{app_uid}/launch/index.html?form={form_id}&width=600px">
+<iframe 
+   style="width:600px;height:600px"
+   src="http://host:port/apps/secure/org/app/{app_uid}/launch/index.html?form={form_id}&width=600px"
+>
 </iframe>
 ```
 

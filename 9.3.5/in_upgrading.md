@@ -6,8 +6,8 @@ The following instructions describe how to upgrade Leap by using the WebSphere®
 -   Back up your existing installation prior to installing the update.
 -   Back up your DB2® or Oracle database before you install the update.
 
-1.  To back up your current Leap installation:
-2.  Export the Leap EAR file.
+To back up your current Leap installation:
+1.  Export the Leap EAR file.
 
     1.  Open the WebSphere Application Server Administrative console.
 
@@ -19,15 +19,15 @@ The following instructions describe how to upgrade Leap by using the WebSphere®
 
     5.  Click Leap.ear to download the installation file as a backup.
 
-3.  After the backup is complete, use the following instructions to install the upgrade file.
+2.  After the backup is complete, use the following instructions to install the upgrade file.
 
-4.  Stop the Leap server.
+3.  Stop the Leap server.
 
     1.  Go to **Applications** \> **Application Types** \> **WebSphere enterprise applications**
 
     2.  Select Leap, and click **Stop**.
 
-5.  Check the version of your currently installed Leap.
+4.  Check the version of your currently installed Leap.
 
     You need the version number in step 4c.
 
@@ -35,7 +35,7 @@ The following instructions describe how to upgrade Leap by using the WebSphere®
 
     2.  Check the version for the HCL Leap WAR. An example module version is  “Leap 9.0.0.0 GA”.
 
-6.  Update the Leap installation.
+5.  Update the Leap installation.
 
     1.  Return to **Applications** \> **Application Types** \> **WebSphere enterprise applications** \> **Leap**, and click **Update**.
 
@@ -59,36 +59,36 @@ The following instructions describe how to upgrade Leap by using the WebSphere®
 
     9.  Click **Finish** to save the update.
 
-7.  If Leap is running on nodes that are managed by Deployment Manager, you must synchronize all nodes where Leap is installed.
+6.  If Leap is running on nodes that are managed by Deployment Manager, you must synchronize all nodes where Leap is installed.
 
-8.  Open the WebSphere Application Server Administrative console.
+7.  Open the WebSphere Application Server Administrative console.
 
-9.  Go to **System Administration** \> **Nodes**.
+8.  Go to **System Administration** \> **Nodes**.
 
-10. Select all nodes where Leap is installed.
+9. Select all nodes where Leap is installed.
 
-11. Click **Synchronize**.
+10. Click **Synchronize**.
 
-12. When the upgrade is complete, restart the Leap server.
+11. When the upgrade is complete, restart the Leap server.
 
-13. Go to **Applications** \> **Application Types** \> **WebSphere enterprise applications**
+12. Go to **Applications** \> **Application Types** \> **WebSphere enterprise applications**
 
-14. Select Leap.
+13. Select Leap.
 
-15. Click **Start**.
+14. Click **Start**.
 
-16. If you use Leap with WebSphere Portal, you must update the Leap Portlet.
-17. Log in to WebSphere Portal as an administrative user.
+15. If you use Leap with WebSphere Portal, you must update the Leap Portlet.
+16. Log in to WebSphere Portal as an administrative user.
 
-18. Go to **Portlet Management** \> **Web Modules** and locate LeapPortlet.war.
+17. Go to **Portlet Management** \> **Web Modules** and locate LeapPortlet.war.
 
-19. Click the **Update Web module** icon.
+18. Click the **Update Web module** icon.
 
     The **Update Web module** icon is located to the right of the **Web module properties** icon.
 
-20. Click **Browse** to select the updated version of the Leap Portlet, and click **Next**.
+19. Click **Browse** to select the updated version of the Leap Portlet, and click **Next**.
 
-21. Review your changes and click **Finish**.
+20. Review your changes and click **Finish**.
 
 
 **Parent topic: **[Upgrading](upgradingleap_sec.md)

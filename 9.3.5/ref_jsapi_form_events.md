@@ -14,9 +14,9 @@ Table 1. JavaScript™ objects available in form events
 
 Table 2. Form Events
 
-<table>
+<table class="table-wrap">
 <tr>
-<td> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+<td width="150"> <b>Event</b> </td><td> <b>Description</b> <td><b>Example</b></td>
 </tr>
 <tr>
 <td> afterSave </td>
