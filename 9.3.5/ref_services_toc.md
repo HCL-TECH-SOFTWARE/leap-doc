@@ -14,8 +14,6 @@ A Service Description provides a specific interface to a Service Transport. The 
 This tool is used to build a service description to expose services for WSDL based web service.
 -   **[HTTP Service Transport](ref_service_http_service_transport.md)**  
 This topic provides reference information on HTTP Service Transports used in HCL Leap.
--   **[Send Email service](ref_send_email.md)**  
-This topic provides reference information on the Send Email service in HCL Leap.
 
 **Parent topic: **[Reference](reference_toc.md)
 
