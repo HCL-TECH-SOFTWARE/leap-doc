@@ -1,4 +1,4 @@
-<p align="center"><strong><a href="https://opensource.hcltechsw.com/leap-doc/"> HCL Leap for on-premises product documentation</a></strong></p>
+<p align="center"><strong><a href="https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html"> HCL Leap for on-premises product documentation</a></strong></p>
 </p>
 
 
