@@ -131,7 +131,7 @@ nav:
             - JVM options: helm_jvm_options.md
             - Changing the log level: helm_changing_log_level.md
             - Enabling additional Open Liberty features: helm_extending_image.md
-          - Install commads to deploy: helm_install_commands.md
+          - Install commands to deploy: helm_install_commands.md
           - Uninstall Helm deployment: helm_uninstall.md
           - Update the settings of an existing installation: helm_update_install.md
           - Configuring Leap with OIDC: helm_oidc_config.md
