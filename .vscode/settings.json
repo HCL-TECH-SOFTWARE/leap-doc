@@ -1,0 +1,11 @@
+
+{
+    "search.exclude": {
+        "**/docs": true
+    }
+=======
+{
+    "search.exclude": {
+        "**/docs": true
+    }
+}
