@@ -2,7 +2,7 @@
 site_name: HCL Leap 9.3.5 Help Center
 site_description: >
   A next-gen documentation site for HCL Leap.
-site_url: https://opensource.hcltechsw.com/leap-doc/9.3.5/index.html
+site_url: https://opensource.hcltechsw.com/leap-doc/9.3.5/
 use_directory_urls: false
 docs_dir: 9.3.5
 site_dir: docs/9.3.5
