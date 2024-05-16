@@ -7,6 +7,25 @@ For a full list of fixes by release, see this [article](https://support.hcltechs
 
 -   Admin Config UI changes. For more information, see [Admin Configuration Page](admin_config_ui.md).
 
+## Behavior changes
+
+**Embedding Leap applications**
+
+- The 'xFrameOptions' property has been deprecated. Use ['embedDomainWhitelist'](co_configuration_properties.md#embeddomainwhitelist-section_embeddomainwhitelist-section).
+
+- The default behavior has changed to not allowing Leap forms to be embedded.
+
+**Roles/Permissions**
+
+- AdministrativeUsers now have the privileges of SuperAdminUsers; they can now see and edit all applications.
+
+- Users in the SuperAdminUsers role no longer have access to the application data by default. To access the data, they must be given the correct permission within the application.
+
+**Leap Kubernetes image**
+
+- A new PostgreSQL JDBC jar file has been included in the Leap image. The file name no longer includes the version number to prevent future breakages when it is updated. The original file 'postgresql-42.6.0.jar' will be removed from the image in the next release.
+
+
 ## 9.3.5 { .section}
 
 -   Bug fixes.
