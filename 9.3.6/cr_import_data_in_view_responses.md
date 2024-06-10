@@ -51,5 +51,5 @@ Import operations can not be undone and bulk deletion of records is not availabl
 -   To quickly remove all data from an application, on the **Manage** page, choose to **Export** your application without including submitted data and then choose to **Upgrade** your application and select the option to **Replace submitted data**.
 -   Prior to performing a large bulk data import into an application that already has submitted data, creating a backup of the application and all existing records is recommended. On the **Manage** page, select the **Export** operation for your application and be sure to select the option to **Include submitted data**. This will provide an archive of the application and data in the state it was in just prior to the import.
 
-**Parent topic: **[Deploying applications and viewing data responses](cr_deploy_and_launch_toc.md)
+**Parent topic:** [Working with application data](da_data_analysis_and_exporting_data.md)
 

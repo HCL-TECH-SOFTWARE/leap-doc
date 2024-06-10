@@ -36,5 +36,5 @@ You can assign users to roles dynamically using a web service with data, or meta
         3.  The applicable fields on the form appear in the "Value in Form" dropdown. Select the field that contains the value that represents the user to assign.
         4.  Select the Role from the dropdown to which the user will be assigned.
 
-**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic:** [Adding stages to an application](sub_adding_stages_toc.md)
 

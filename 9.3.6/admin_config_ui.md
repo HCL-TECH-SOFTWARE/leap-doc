@@ -6,13 +6,13 @@ The page must be enabled by setting the Leap property "ibm.nitro.NitroConfig.ena
 
 To access the admin configuration page visit http://myLeapServer/apps-admin/secure/org/admin/config/index.html.
 
-When you access the admin configuration page the first time, all config settings (the javaScript sandbox, services whitelist, service descriptions, image domain whitelist, admin info and anonymous settings) will be loaded from the current configuration.  Custom extensions are not currently supported through the admin configuration page, they will need to be deployed directly to the extensions directory.  Any services defined in a custom extension will not appear in the services section.
+When you access the admin configuration page the first time, all config settings (the javaScript sandbox, services whitelist, service descriptions, image domain whitelist, admin info and anonymous settings) will be loaded from the current configuration.
 
 After the feature is enabled, and the admin clicks 'save', the supported config properties are stored and read from the database.
  
 Changes made in the admin configuration page will take effect automatically within a few moments, the server/pod does not need to be restarted, but may need a browser refresh to take effect.
 
-Settings that are not supported in the Admin configuration page will continute to be configured using the leap_config.properties or the Helm chart properties.
+Settings that are not supported in the Admin configuration page will continue to be configured using the leap_config.properties or the Helm chart properties.
 
 
 ## HTTP Services whitelist {#section_adm_srv_whitelist .section}

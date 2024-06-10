@@ -1,14 +1,18 @@
 # Connecting to a Database
 To connect Leap with a database you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. Sample snippets have been provided, which will need to be updated with your specific details.
 
+**Note:** All user names and passwords should be managed using [custom secrets](helm_admin_customsecret.md#using-custom-secrets-for-credentials-section_nc2_1l4_hzb-section).
+
 ## Connecting to a DB2 database {#section_z4t_ckh_jzb .section}
 
 The DB2 jdbc driver has been included and can be found at $\{server.config.dir\}/lib.
 
-``` {#codeblock_y3q_vts_gxb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       db2Override: |  
         <server description="leapServer"> 
           <!-- Adds the jdbc library to the Leap application classpath -->
@@ -17,7 +21,7 @@ configuration:
           </application>          
           <!-- Disable the hard-coded derby datasource -->
           <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
-          <authData id="db2AuthAlias" user="db2inst1" password="diet4coke" /> 
+          <authData id="db2AuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
           <library id="jdbcDB2" > 
             <fileset dir ="${server.config.dir}/lib" includes="db2jcc4.jar db2jcc_license_cu.jar" /> 
           </library> 
@@ -47,7 +51,7 @@ The oracle jdbc driver has been included and can be found at $\{server.config.di
 
 1.  change the URL to:
 
-    ``` {#codeblock_qsm_b5s_gxb}
+    ```
     jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCPS)(PORT=2484)(HOST=leap-oracle-db.example.com))(CONNECT_DATA=(SERVICE_NAME=orclpdb1)))
     ```
 
@@ -58,10 +62,12 @@ The oracle jdbc driver has been included and can be found at $\{server.config.di
 
 Below is an example snippet for configuring the Leap application to use an Oracle database.
 
-``` {#codeblock_bc4_g5s_gxb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       oracleOverride: | 
         <server description="leapServer"> 
             <!-- Adds the jdbc library to the Leap application classpath -->
@@ -81,7 +87,7 @@ configuration:
                     purgePolicy="ValidateAllConnections" 
                 /> 
             </dataSource> 
-            <authData id="oracleAuthAlias" user="leap_admin" password="{xor}KDozPDAyOm5tbA==" /> 
+            <authData id="oracleAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
         </server>
 ```
 
@@ -89,9 +95,12 @@ configuration:
 
 The PostgreSQL jdbc driver has been included and can be found at $\{server.config.dir\}/lib.
 
-``` {#codeblock_nx3_4vk_gyb}
-leap: 
+```yaml
+configuration: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       postgreSQLOverride: |  
         <server description="leapServer"> 
           <!-- Adds the jdbc library to the Leap application classpath -->        
@@ -103,19 +112,17 @@ leap:
           <library id="jdbcPostgreSQL" > 
             <fileset dir ="${server.config.dir}/lib" includes="postgresql.jar" /> 
           </library> 
-          <dataSource id="febDataSource" jndiName="jdbc/BuilderDataSource"> 
+          <dataSource id="febDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="postgresAuthAlias"> 
             <properties.postgresql  
                 serverName="postgresql.acme.com"  
                 databaseName="leapDB"
-                portNumber="5432" 
-                user="dbuser"
-                password="dbpassword"
-            /> 
+                portNumber="5432"
+            />
+            <authData id="postgresAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" />  
             <jdbcDriver libraryRef="jdbcPostgreSQL"/> 
             <connectionManager connectionTimeout="180" maxPoolSize="100" minPoolSize="1" numConnectionsPerThreadLocal="1" /> 
           </dataSource> 
         </server>
-
 ```
 
 **Parent topic:** [Preparation](helm_preparation.md)

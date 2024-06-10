@@ -1,37 +1,54 @@
 # Form objects
 
-Table 1. Form Object (form) The form object provides access to a number of functions that affect the entire form.
+The form object (form) provides access to a number of functions that affect the entire form.
 
-<table class="table-wrap">
-<tr>
-<td> <b>Object</b> </td><td> <b>Description</b> </td><td> <b>Example</b> </td>
-</tr>
-<tr>
-<td>form.addClasses(classes)</td>
-<td>Adds a list of custom class names to the form for dynamic CSS styling. The <b>classes</b> parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and <b>false</b> is returned.</td>
-<td>
+## addClasses {.section}
+
+Adds a list of custom class names to the form for dynamic CSS styling. The **classes** parameter can be a single class name, multiple class names separated by spaces, or an Array of class names. If any of the given class names are invalid CSS class names, then no classes are added and **false** is returned.
+
+**Syntax**
+
+```javascript
+form.addClasses(classes)
+```
+
+**Example**
 
 ```javascript
 form.addClasses('emphasized error');
 ```
 
-</td>
-</tr>
-<tr>
-<td>form.backwardPage()</td>
-<td>Return the form to the previous page in navigation order. If the first page is reached, then nothing happens.</td>
-<td>The following could be used to turn a regular button into a navigation button. In the <b>onClick</b> event of a button:
+## backwardPage {.section}
+
+Return the form to the previous page in navigation order. If the first page is reached, then nothing happens.
+
+**Syntax**
+
+```javascript
+form.backwardPage()
+```
+
+**Example**
+
+The following could be used to turn a regular button into a navigation button. In the **onClick** event of a button:
 
 ```javascript
 form.backwardPage();
 ```
 
-</td>
-</tr>
-<tr>
-<td>form.connectEvent(eventName, callbackFunction)</td>
-<td>Connects a function to an event on the form. This is useful for utility functions defined in external JavaScript™ files to hook behavior into the form dynamically. Returns a handle object that represents the connection of the function to that event name. The handle can be used to disconnect this same event using <b>form.disconnectEvent</b>.</td>
-<td>If there is a F_CurrentUser field, then populate the currentUser:
+## connectEvent {.section}
+
+Connects a function to an event on the form. This is useful for utility functions defined in external JavaScript™ files to hook behavior into the form dynamically. Returns a handle object that represents the connection of the function to that event name. The handle can be used to disconnect this same event using [form.disconnectEvent](#disconnectevent-section).
+
+**Syntax**
+
+```javascript
+form.connectEvent(eventName, callbackFunction)
+```
+
+**Example**
+
+If there is a F_CurrentUser field, then populate the currentUser:
 
 ```javascript
 var hndl = form.connectEvent('onLoad', function()
@@ -43,12 +60,17 @@ var hndl = form.connectEvent('onLoad', function()
 });
 ```
 
-</td>
-</tr>
-<tr>
-<td>form.disconnectEvent(eventHandle)</td>
-<td>Disconnects the event handler specified by the passed-in event handle object that was returned by a form.connectEvent call.  To avoid duplicate event handlers being connected, connect to events from within the application <b>onStart</b> or form <b>onLoad</b> events. If you connect to an event outside of these two events, you should explicitly disconnect from the event using the <b>disconnectEvent</b> method.</td>
-<td>
+## disconnectEvent {.section}
+
+Disconnects the event handler specified by the passed-in event handle object that was returned by a [form.connectEvent](#connectevent-section) call.  To avoid duplicate event handlers being connected, connect to events from within the application **onStart** or form **onLoad** events. If you connect to an event outside of these two events, you should explicitly disconnect from the event using this method.
+
+**Syntax**
+
+```javascript
+form.disconnectEvent(eventHandle)
+```
+
+**Example**
 
 ```javascript
 var hndl = form.connectEvent('onLoad', function()
@@ -61,30 +83,47 @@ var hndl = form.connectEvent('onLoad', function()
 });
 ```
 
-</td>
-</tr>
-<tr>
-<td>form.forwardPage()</td>
-<td>Advance the form to the next page in navigation order. If the last page is reached, then nothing happens.</td>
-<td>The following could be used to turn a regular button into a navigation button. In the <b>onClick</b> event of a button:
+## forwardPage {.section}
+
+Advance the form to the next page in navigation order. If the last page is reached, then nothing happens.
+
+**Syntax**
+
+```javascript
+form.forwardPage()
+```
+
+**Example**
+
+The following could be used to turn a regular button into a navigation button. In the **onClick** event of a button:
 
 ```javascript
 form.forwardPage();
 ```
 
-</td>
-</tr>
-<tr>
-<td>form.getApp()</td>
-<td>Returns the application object: app. Not a commonly used function, because within the form scope the <b>app</b> variable is also available.</td>
-<td><!-- no example --></td>
-</tr>
-<tr>
-<td>form.getBO()</td>
-Returns the object that contains the Business Object data for the entire form.</td>
-<td>This is commonly used in the application <b>onStart</b>, since at this scope the <b>form</b> variable is not defined.  
+## getApp {.section}
 
-<td>
+Returns the application object: app. Not a commonly used function, because within the form scope the **app** variable is also available.
+
+**Syntax**
+
+```javascript
+form.getApp()
+```
+
+## getBO {.section}
+
+Returns the object that contains the Business Object data for the entire form.
+
+**Syntax**
+
+```javascript
+form.getBO()
+```
+
+**Example**
+
+This is commonly used in the application **onStart**, since at this scope the **form** variable is not defined.  
 
 ```javascript
 var myForm = app.getForm('F_Form1');
@@ -92,25 +131,27 @@ var formBO = myForm.getBO();
 formBO.F_SingleLine.setValue('setting the value using code!');
 ```
 
-</td>
-</tr>
+## getClasses {.section}
 
-<tr>
-<td>
-form.getClasses()
-<td>
 Returns an Array of custom class names currently applied to the form.
-<td>
-<!-- no example -->
-</td>
-</tr>
 
-<tr>
-<td>
+**Syntax**
+
+```javascript
+form.getClasses()
+```
+
+## getCurrentPage {.section}
+
+Gets the currently shown page. If there is no page shown, then **null** is returned. It is possible, though rarely desirable, to have all pages hidden.
+
+**Syntax**
+
+```javascript
 form.getCurrentPage()
-<td>
-Gets the currently shown page. If there is no page shown, then <code>null</code> is returned. It is possible, though rarely desirable, to have all pages hidden.
-<td>
+```
+
+**Example**
 
 ```javascript
 var pageShown = form.getCurrentPage();
@@ -118,88 +159,107 @@ if (pageShown === 'F_Page1')
    pageShown.F_Text.setContent('Changing the text of this text item when this page is shown.');
 ```
 
-</td>
-</tr>
+## getId {.section}
 
-<tr>
-<td>
-form.getId()
-<td>
-Returns the unique ID within the application of this form. For example, <code>'F_Form1'</code>.
-</td>
-<td>
-<!-- no example -->
-</td>
-</tr>
+Returns the unique ID within the application of this form. For example, **'F_Form1'**.
 
-<tr>
-<td>
-form.getPageIds()
-<td>
-Returns an array of the page IDs for the pages in this form.<br>
-<td><!-- no example --></td>
-</tr>
-
-<tr>
-<td>
-form.getPage(pageId)
-<td>
-Returns the page object, page, for the page specified. Returns <code>null</code> if the <b>pageId</b> is invalid.
-</td>
-<td>
-Get the specified page:<br>
+**Syntax**
 
 ```javascript
-var thePage = form.getPage('F_Page1');
+form.getId()
 ```
 
-If the page exists then, navigate to that page:<br>
+## getPage {.section}
+
+Returns the page object, page, for the page specified. Returns **null** if the **pageId** is invalid.
+
+**Syntax**
 
 ```javascript
+form.getPage(pageId)
+```
+
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| pageId     | The id of the page. |
+
+**Example**
+
+```javascript
+// Get the specified page
+var thePage = form.getPage('F_Page1');
+
+// If the page exists then, navigate to that page
 if(thePage !== null) 
   form.selectPage('thePage')
 ```
-</td>
-</tr>
 
-<tr>
-<td>
-form.getServiceConfigurationIds()
-<td>
+## getServiceConfigurationIds {.section}
+
 Returns an array of all the IDs for services mapped in this form.
-<td>
+
+**Syntax**
+
+```javascript
+form.getServiceConfigurationIds()
+```
+
+**Example**
 
 ```javascript
 var serviceConfigs = form.getServiceConfigurationIds();
 ```
-</td>
-</tr>
 
-<tr>
-<td>
-form.getServiceConfiguration(serviceId)
-<td>
-Gets the service object for a particular service ID.
-</td>
-<td>
-Lookup and execute a service from JavaScript:
+## getPageIds {.section}
+
+Returns an array of the page IDs for the pages in this form.
+
+**Syntax**
 
 ```javascript
+form.getPageIds()
+```
+
+## getServiceConfiguration {.section}
+
+Gets the service object for a particular service ID.
+
+**Syntax**
+
+```javascript
+form.getServiceConfiguration(serviceId)
+```
+
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| serviceId     | The id of the service configuration. |
+
+**Example**
+
+```javascript
+// Lookup and execute a service from JavaScript
 var service = form.getServiceConfiguration('SC_ServiceConfig');
 service.callService();
 ```
-</td>
-</tr>
 
-<td>
-form.getStageActions()
-<td>
+## getStageActions {.section}
+
 Returns an array of all the action buttons for the current stage. This includes any hidden action buttons as well.
-</td>
-<td>
-Trigger a specific action using JavaScript:
+
+**Syntax**
 
 ```javascript
+form.getStageActions()
+```
+
+**Example**
+
+```javascript
+// Trigger a specific action using JavaScript
 var actions = form.getStageActions():
 for (var i=0; i<actions.length; i++) {
   if(get(actions,i).getId() === 'S_Submit')
@@ -210,73 +270,130 @@ for (var i=0; i<actions.length; i++) {
 }
 ```
 
-<tr>
-<td>
-form.getType()
-</td>
-<td>
-Returns a string identifying the object type. For example, <code>'form'</code>.
-<td>
-  <!-- no example -->
-</td>
+```javascript
+/*
+* Hides all the stage buttons that are specified.
+* 
+* USAGE:
+* app.getSharedData().hideStageButtons(form, ["S_Submit", "S_Submit1"]);
+*/
+app.getSharedData().hideStageButtons = function(theForm, btnList) {
 
-<tr>
-<td>
-form.removeClasses(classes)
-<td>
+ var actionButtons = theForm.getStageActions();
+ for(var i=0; i<actionButtons.length; i++){
+  for(var j=0;j<btnList.length;j++) {
+    if(get(btnList, j) === get(actionButtons, i).getId())
+       get(actionButtons, i).setVisible(false);
+   }      
+ }
+}
+```
+
+## getType {.section}
+
+Returns a string identifying the object type. For example, **'form'**.
+
+**Syntax**
+
+```javascript
+form.getType()
+```
+
+## removeClasses {.section}
+
 Removes a list of custom class names from the form for dynamic CSS styling. The classes parameter can be a single class name, multiple class names separated by spaces, or an Array of class names.
-<td>
+
+**Syntax**
+
+```javascript
+form.removeClasses(classes)
+```
+
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| classes       | List of CSS classnames separated by spaces, or an array of class names. |
+
+**Example**
 
 ```javascript
 form.removeClasses('emphasized error');
 ```
-</td>
 
-<tr>
-<td>form.removePageFromNavigation(pageId)
-<td>Removes the specified page from the navigation list for the form. The page navigation item no longer visits that page when <b>next</b>, or <b>previous</b> is selected, nor can you switch to that page programmatically.
-<td>
-If the check is selected, remove page 2 from the navigation:
- 
+## removePageFromNavigation {.section}
+
+Removes the specified page from the navigation list for the form. The page navigation item no longer visits that page when **next**, or **previous** is selected, nor can you switch to that page programmatically.
+
+**Syntax**
+
 ```javascript
+form.removePageFromNavigation(pageId)
+```
+
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| pageId        | The id of the page. |
+
+**Example**
+
+```javascript
+// If the check is selected, remove page 2 from the navigation
 if(BO.F_Check.getValue())
   form.removePageFromNavigation('P_Page2');
 ```
-</td>
 
-<tr>
-<td>
-form.restorePageNavigation(pageId)
-<td>Restores a previously removed page back into the navigation list for the form.
-<td>
-If the check is not selected, restore page 2 into the navigation:<br>
+## restorePageNavigation {.section}
+
+Restores a previously removed page back into the navigation list for the form.
+
+**Syntax**
 
 ```javascript
+form.restorePageNavigation(pageId)
+```
+
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| pageId        | The id of the page. |
+
+**Example**
+
+```javascript
+// If the check is not selected, restore page 2 into the navigation
 if(!BO.F_Check.getValue())
   form.restorePageNavigation('P_Page2');
 ```
 
-<tr>
-<td>
-form.selectPage(pageId)
-<td>
+## selectPage {.section}
+
 Switches to the specified page. If the page is removed from navigation by Stages, Rules, or JavaScript, then you cannot select it.
-<td>Get the specified page:<br>
+
+**Syntax**
 
 ```javascript
-var thePage = form.getPage('F_Page1');
+form.selectPage(pageId)
 ```
 
-If the page exists then navigate to that page:<br>
+**Parameters**
+
+| Parameter     | Description |
+| :------------ | :---------- |
+| pageId        | The id of the page. |
+
+**Example**
 
 ```javascript
+// Get the specified page
+var thePage = form.getPage('F_Page1');
+
+// If the page exists then navigate to that page
 if (thePage !== null) 
   form.selectPage('F_Page1');
 ```
 
-</td>
-</tr>
-</table>
-
-**Parent topic: **[Interface objects](ref_jsapi_user_interface_objects.md)
-
+**Parent topic:** [Interface objects](ref_jsapi_user_interface_objects.md)

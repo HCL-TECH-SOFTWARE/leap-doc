@@ -10,7 +10,7 @@ This section outlines mandatory and optional tasks that need to be done before i
 -   [Prepare configuration](prepare_config_helm.md)
 -   [Load images](helm_load_images.md)
 -   [Persistent Volume Claims](helm_persistent_volume.md)
--   [Provide admin user a custom secret](helm_admin_customsecret.md)
+-   [Using custom secrets](helm_admin_customsecret.md)
 
 ## Optional {#section_bwh_bh4_hzb .section}
 

@@ -90,7 +90,7 @@ You also can export all data to a spreadsheet program, such as Open Office, or M
 This overview described the three high-level steps for creating Leap applications: building the form and adding workflow elements, deploying your completed application, and reviewing the submission results. For more Leap information, see:
 
 -   [Building a Survey application](tut_survey_application_OV.md) – Use Leap to design and publish a basic survey application.
--   [Creating and managing applications](cr_creating_and_managing_toc.md) for more specific instructions on various parts of creating a Leap application.
+-   [Building Apps](cr_creating_and_managing_toc.md) for more specific instructions on various parts of creating a Leap application.
 -   [HCL Software U: Application development](tut_video_overview.md) – a 7-minute video that walks you through the activities that are described in this overview. The video describes how to open a new application, add items to a form, publish an application, and review submitted results.
 -   [Leap Starter Packs](https://www.ibm.com/developerworks/community/wikis/home?lang=en-us#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20Starter%20Packs) – a series of prebuilt forms you can import into Leap and modify for your own use.
 

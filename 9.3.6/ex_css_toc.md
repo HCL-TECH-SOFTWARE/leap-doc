@@ -1,4 +1,4 @@
-# Using custom style sheets {#usingcustomstylesheets .concept}
+# Using CSS files {#usingcssfiles .concept}
 
 HCL Leap allows the use of custom CSS themes that can be uploaded into an application to style the user interface to meet customer needs.
 
@@ -9,5 +9,5 @@ You can add custom cascading style sheet \(CSS\) themes to your HCL Leap applica
 -   **[Removing a custom style sheet](ex_removing_a_css.md)**  
 The following instructions describe how to remove a custom style sheet from the drop-down menu of available options.
 
-**Parent topic: **[Extending](extending_toc.md)
+**Parent topic:** [Styling your application](st_style_application.md)
 

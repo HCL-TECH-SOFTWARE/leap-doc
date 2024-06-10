@@ -18,12 +18,26 @@ In a production environment, you must create DB2 database before you install HCL
         -   Managed by automatic storage extentsize 16
         -   <bufferpool-name\> is the name of your DB2 large buffer pool. Each DB2 server can have a different name.
         ```
-        db2 "CREATE DB FEBDB using codeset UTF-8 territory us PAGESIZE 32768"
-         db2 connect to FEBDB
+        db2 "CREATE DB LEAPDB using codeset UTF-8 territory us PAGESIZE 32768"
+         db2 connect to LEAPDB
         db2 "CREATE BUFFERPOOL bufferpool-name IMMEDIATE SIZE 250 PAGESIZE 32K"
         db2 "CREATE USER TEMPORARY TABLESPACE LARGE_USERTEMP PAGESIZE 32k MANAGED BY AUTOMATIC STORAGE EXTENTSIZE 16 PREFETCHSIZE 16 BUFFERPOOL bufferpool-name"
         ```
 
+## Minimum Permissions
 
-**Parent topic: **[Create a Database](in_create_db.md)
+If you do not want to give the DB2 user DBADM then you will need to assign the following permissions otherwise Leap will fail.
+
+- CONNECT
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- CREATETAB
+- IMPLICIT_SCHEMA
+- USE of tablespace
+
+
+
+**Parent topic:** [Create a Database](in_create_db.md)
 

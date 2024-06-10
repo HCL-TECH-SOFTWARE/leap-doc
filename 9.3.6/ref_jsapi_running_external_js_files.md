@@ -2,16 +2,16 @@
 
 Custom JavaScript™ can also be loaded from attached JavaScript files. Any .js file that is added to the application in the **Settings** \> **Files** section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.
 
-Table 1. JavaScript™ objects available in attached JavaScript™ files
+## JavaScript™ objects
 
-<table class="table-wrap">
-<tr>
-<td width="100"><b>Variable</b></td><td width="200"><b>Description</b></td><td><b>Example</b></td>
-</tr>
-<tr>
-<td>app
-<td>Contains functions for accessing global general information
-<td>   A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:<br>
+
+### app
+
+Contains functions for accessing global general information
+
+**Example**
+
+A common use case for external .js files is utility methods to be executed later in events by custom JavaScript. One example is a function to sum up all Number values in a section:
 
 ```javascript
 app.getSharedData().sumNumbers = function(section)
@@ -27,22 +27,12 @@ app.getSharedData().sumNumbers = function(section)
 	return total;
 };
 ```
-<br>
-<br>
-<br>
-Then from an event where you want to sum all numbers in a section:<br>
-<br>
+
+Then from an event where you want to sum all numbers in a section:
 
 ```javascript   
 var sub = app.getSharedData().sumNumbers(page.F_Expense);
 ```
-   
-
-</tr>
-</table>
-
-<br>
-<br>
 
 When JavaScript security is enabled: For added security, external JavaScript files that are referenced by URL do not load into the running application. Uploaded JavaScript files are evaluated in a safe sandbox and all content must adhere to the restrictions of the sandbox. See [JavaScript Security](ref_jsapi_javascript_security.md#) for more details. For example, functions must be defined by using the following format: `app.getSharedData().blat = function (...) { ... }`
 

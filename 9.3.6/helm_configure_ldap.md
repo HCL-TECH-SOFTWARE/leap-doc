@@ -23,10 +23,12 @@ For more specific details on what is supported by OpenLiberty, refer to their [l
 **Note:** For Leap to be able to send mail the loginProperty must be set to mail.
 
 ## Example connecting to OpenLdap
-```
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       ldapOverride: | 
         <server description="leapServer"> 
            <federatedRepository id="leapRepo"> 
@@ -62,10 +64,12 @@ configuration:
 ```
 
 ## Example Connecting to Domino LDAP
-```
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       ldapOverride: | 
         <server description="leapServer"> 
            <federatedRepository id="leapRepo"> 

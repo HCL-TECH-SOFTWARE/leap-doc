@@ -41,5 +41,5 @@ The following steps describe how to prepare a spreadsheet that you want to impor
 6.  Enter the name of the new application, and \(optional\) a description or tags for the application. Click **Create**.
 
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Application Management](cr_application_operations_toc.md)
 

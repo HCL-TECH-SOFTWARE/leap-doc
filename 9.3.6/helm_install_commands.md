@@ -70,5 +70,5 @@ https://yourserver/ibm/api/validation/dataSource/<dataSourceId>
 
 Endpoint attempts to make a database connection, the result is a json output that shows the result. If the connection fails, the output may contain more detail to assist in the troubleshooting.
 
-**Parent topic: **[Kubernetes Helm deployment](kubernetes_helm_deployment.md)
+**Parent topic:** [Kubernetes Helm deployment](kubernetes_helm_deployment.md)
 

@@ -39,5 +39,5 @@ HCL Leap can look up user information for you using a web service call. For exam
     When the user clicks **Submit**, Leap calls a service to populate the manager’s name into the selected form item.
 
 
-**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic:** [Adding stages to an application](sub_adding_stages_toc.md)
 

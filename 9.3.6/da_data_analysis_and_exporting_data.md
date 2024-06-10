@@ -1,4 +1,4 @@
-# Labeling data, performing data analysis, and exporting data {#danaanalysisandexportingdata .concept}
+# Working with application data {#danaanalysisandexportingdata .concept}
 
 You can add labels to data elements in your application that become the label in the export file.
 
@@ -6,12 +6,16 @@ After capturing data from users, you can label data elements to help analyze the
 
 With these topics, learn how to label data, how to export data, and how labels affect the exported data.
 
--   **[Changing the Saved Value of a form item](da_labeling_saved_values_in_forms.md)**  
+-   **[Changing the saved value of a form item](da_labeling_saved_values_in_forms.md)**  
 You can add “Saved Value” labels for any form items that have a constant value so they reflect different data during export.
--   **[Adding Data Labels to form items](da_labeling_fields_in_a_form.md)**  
+-   **[Adding data labels to form items](da_labeling_fields_in_a_form.md)**  
 Data labels added to form items provide descriptive column names when data is exported to a spreadsheet. If no data label is assigned, the Display Value is used.
 -   **[Exporting data from your application](da_exporting_data_from_your_application.md)**  
 After users complete and submit forms, you can export the data to a spreadsheet.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+- **[Importing data in View Data](cr_import_data_in_view_responses.md)**  
+
+Application Owners can use an Import Data operation on the **View Data** page to import spreadsheet data into their application. This can provide a quick start method for adding many records/rows of data into an application from an existing spreadsheet.
+
+**Parent topic:** [Building Apps](cr_creating_and_managing_toc.md)
 

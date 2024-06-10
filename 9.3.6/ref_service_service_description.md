@@ -416,6 +416,336 @@ There is much data in this response, but only some of it is needed for this Serv
 
 In lines 88-108, the service mapping section defines all the mapping that must be performed to extract the data from the XML response. Latitude, which is specified in lines 90-93, and longitude, which is specified in lines 94-97, each extract the data using a single **XPath** expression. The source type for each is set to XML. Mapping of a repeating structure is accomplished in a similar fashion. Lines 98-101 define the mapping for the address-information parameter. The **XPath** expression for **address-information** returns a **nodeset** as there are several nodes that match the expression GeocodeResponse/result/address\_component. For each node that is returned, a new structure is created to contain the result of each of the submappings. Each of the submappings places its target into the newly created structure. Since the source of each of the submappings is one of the matched nodes, the mapping elements do not specify a source. It is assumed to be the inherited context. Similarly, the reference is evaluated within the context of the source, which is inherited. After each of the submappings is evaluated for a single source, the structure is added to a running list and the submappings are evaluated again for the next result in the source list. When all the sources are processed, the list that was collecting the results of the map is assigned to the address-information parameter.
 
+**Example 5. Service Description for JSON response**
+
+This example uses the same lookup service but receives a JSON response instead of XML.
+
+This service description provides three different kinds of output based on what the Google API returns:
+
+1. Individual output parameters that will automatically select the first item returned
+
+2. A list of the search results that contains fields for all of the return parameters
+
+3. A list that returns the address components in the raw format of the service
+
+This demonstrates the variety of output formats and the flexibility that you have in manipulating the response data to suit your needs.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceDescription>
+  <id>address-lookup-json</id>
+  <defaultLocale>en-us</defaultLocale>
+  <transportId>HTTPServiceTransport</transportId>
+  <name xml:lang="en-us">Address Lookup (JSON)</name>
+  <description xml:lang="en-us">Returns information related to a postal code or address.</description>
+  <inbound>
+	<parameters>
+	  <parameter>
+			<id>address</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Address or Postal Code</name>
+			<description xml:lang="en-us">The address you want to search for</description>
+			<mandatory>true</mandatory>
+		</parameter>
+	  <parameter>
+			<id>components</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Components to Return</name>
+			<description xml:lang="en-us"><![CDATA[A filter consists of a list of component:value pairs separated by a pipe (|). Only the results that match all the filters will be returned.
+				The components that can be filtered include:
+	i) route matches long or short name of a route.
+	ii) locality matches against both locality and sublocality types. 
+	iii) administrative_area matches all the administrative_area levels. 
+	iv) postal_code matches postal_code and postal_code_prefix.
+	v) country matches a country name or a two letter ISO 3166-1 country code.]]></description>
+			<mandatory>false</mandatory>
+	  </parameter>
+	</parameters>
+	<serviceMapping>
+	  <constants>
+			<constant>
+			  <id>request-url</id>
+			  <value>http://maps.googleapis.com/maps/api/geocode/json</value>
+			</constant>
+			<constant>
+			  <id>false</id>
+			  <value>false</value>
+			</constant>
+			<constant>
+			  <id>request-method</id>
+			  <value>GET</value>
+			</constant>
+			<constant>
+			  <id>ignore_empty</id>
+			  <value>true</value>
+			</constant>
+	  </constants>
+	  <mapping xmlns="">
+			<mapping target="out:request-url" source="constant:request-url"/>
+			<mapping target="out:request-method" source="constant:request-method"/>
+			<mapping target="out:request-query-address" source="parameter:address"/>
+			<mapping target="out:request-query-components" source="parameter:components"/>
+			<mapping target="out:request-query-sensor" source="constant:false"/>
+			<mapping target="transport:request-ignore-empty-query" source="constant:ignore_empty" sourceType="STRING" targetType="STRING"/>
+	  </mapping>
+	</serviceMapping>
+  </inbound>
+  <outbound>
+	<parameters>
+		<parameter>
+			<id>status</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Status Code</name>
+			<description xml:lang="en-us">The "status" field within the Geocoding response object contains the status of the request, and may contain debugging information to help you track down why geocoding is not working. The "status" field may contain the following values:
+	i) "OK" indicates that no errors occurred; the address was successfully parsed and at least one geocode was returned. 
+	ii) "ZERO_RESULTS" indicates that the geocode was successful but returned no results. This may occur if the geocoder was passed a non-existent address. 
+	iii) "OVER_QUERY_LIMIT" indicates that you are over your quota.
+	iv) "REQUEST_DENIED" indicates that your request was denied.
+	v) "INVALID_REQUEST" generally indicates that the query (address, components or latlng) is missing. 
+	vi) "UNKNOWN_ERROR" indicates that the request could not be processed due to a server error. The request may succeed if you try again.</description>
+	  </parameter>
+	  <parameter>
+			<id>formatted-address</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Street Address</name>
+			<description xml:lang="en-us">The fully formatted street address.</description>
+	  </parameter>
+
+	  <parameter>
+			<id>street-number</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Street Number</name>
+			<description xml:lang="en-us">The street number of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>street-name</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Street Name</name>
+			<description xml:lang="en-us">The street name of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>city</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">City</name>
+			<description xml:lang="en-us">The city of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>state</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">State</name>
+			<description xml:lang="en-us">The state of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>country</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Country</name>
+			<description xml:lang="en-us">The country of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>postal-code</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Zip/Postal Code</name>
+			<description xml:lang="en-us">The zip/postal code of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>latitude</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Latitude</name>
+			<description xml:lang="en-us">The latitude of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>longitude</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Longitude</name>
+			<description xml:lang="en-us">The longitude of the specified address</description>
+	  </parameter>
+
+	  <parameter>
+			<id>latitude-longitude</id>
+			<type>STRING</type>
+			<name xml:lang="en-us">Latitude and Longitude</name>
+			<description xml:lang="en-us">The latitude and longitude of the address in one formatted string</description>
+	  </parameter>
+	  
+	  <!-- -->
+	  <parameter>
+			<id>results</id>
+			<type>LIST</type>
+			<name xml:lang="en-us">Results</name>
+			<description xml:lang="en-us"></description>
+			<parameters>
+			  <parameter>
+					<id>list-formatted-address</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Street Address</name>
+					<description xml:lang="en-us">The fully formatted street address.</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-street-number</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Street Number</name>
+					<description xml:lang="en-us">The street number of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-street-name</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Street Name</name>
+					<description xml:lang="en-us">The street name of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-city</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">City</name>
+					<description xml:lang="en-us">The city of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-state</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">State</name>
+					<description xml:lang="en-us">The state of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-country</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Country</name>
+					<description xml:lang="en-us">The country of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-postal-code</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Zip/Postal Code</name>
+					<description xml:lang="en-us">The zip/postal code of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-latitude</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Latitude</name>
+					<description xml:lang="en-us">The latitude of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-longitude</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Longitude</name>
+					<description xml:lang="en-us">The longitude of the specified address</description>
+			  </parameter>
+		
+			  <parameter>
+					<id>list-latitude-longitude</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Latitude and Longitude</name>
+					<description xml:lang="en-us">The latitude and longitude of the address in one formatted string</description>
+			  </parameter>
+			</parameters>
+	  </parameter>
+	  <!-- -->
+
+	  <parameter>
+			<id>address-information</id>
+			<type>LIST</type>
+			<name xml:lang="en-us">Address Information</name>
+			<description xml:lang="en-us"></description>
+			<parameters>
+			  <parameter>
+					<id>long-name</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Long Name</name>
+					<description xml:lang="en-us">The long name of an address component</description>
+			  </parameter>
+			  <parameter>
+					<id>short-name</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Short Name</name>
+					<description xml:lang="en-us">The short name of an address component</description>
+			  </parameter>
+			  <parameter>
+					<id>type-1</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Type</name>
+					<description xml:lang="en-us">The type of an address component</description>
+			  </parameter>
+			  <parameter>
+					<id>type-2</id>
+					<type>STRING</type>
+					<name xml:lang="en-us">Type(2)</name>
+					<description xml:lang="en-us">The secondary type of an address component</description>
+			  </parameter>
+			</parameters>
+	  </parameter>
+
+	</parameters>
+	<serviceMapping xmlns="">
+	  <mapping>
+		<!-- Returns the first item and breaks out each component into its own output parameter -->
+		<mapping source="transport:response-entity" sourceRef="status" sourceType="json" target="parameter:status"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/formatted_address" sourceType="json" target="parameter:formatted-address"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='street_number']/long_name" sourceType="json" target="parameter:street-number"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='route']/long_name" sourceType="json" target="parameter:street-name"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='locality']/long_name" sourceType="json" target="parameter:city"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='administrative_area_level_1']/long_name" sourceType="json" target="parameter:state"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='country']/long_name" sourceType="json" target="parameter:country"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/address_components[types='postal_code']/long_name" sourceType="json" target="parameter:postal-code"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/geometry/location/lat" sourceType="json" target="parameter:latitude"/>
+		<mapping source="transport:response-entity" sourceRef="results[1]/geometry/location/lng" sourceType="json" target="parameter:longitude"/>
+		<mapping source="transport:response-entity" sourceRef="concat(results[1]/geometry/location/lat, ',', results[1]/geometry/location/lng)"  sourceType="json" target="parameter:latitude-longitude"/>
+		
+		<!-- Returns all items as a table with each of its components defined as columns -->
+		<!-- the parent element is "results" all the children element can then be referenced as children to this root element -->
+		<mapping source="transport:response-entity" sourceRef="results" sourceType="json" target="parameter:results">
+		  <mapping sourceRef="status" sourceType="json" target="parameter:status"/>
+			<mapping sourceRef="formatted_address" sourceType="json" target="parameter:list-formatted-address"/>
+			<mapping sourceRef="address_components[types='street_number']/long_name" sourceType="json" target="parameter:list-street-number"/>
+			<mapping sourceRef="address_components[types='route']/long_name" sourceType="json" target="parameter:list-street-name"/>
+			<mapping sourceRef="address_components[types='locality']/long_name" sourceType="json" target="parameter:list-city"/>
+			<mapping sourceRef="address_components[types='administrative_area_level_1']/long_name" sourceType="json" target="parameter:list-state"/>
+			<mapping sourceRef="address_components[types='country']/long_name" sourceType="json" target="parameter:list-country"/>
+			<mapping sourceRef="address_components[types='postal_code']/long_name" sourceType="json" target="parameter:list-postal-code"/>
+			<mapping sourceRef="geometry/location/lat" sourceType="json" target="parameter:list-latitude"/>
+			<mapping sourceRef="geometry/location/lng" sourceType="json" target="parameter:list-longitude"/>
+			<mapping sourceRef="concat(geometry/location/lat, ',', geometry/location/lng)"  sourceType="json" target="parameter:list-latitude-longitude"/>
+		</mapping>
+
+ 		<!-- All the objects are returned in this table structure that mimics the JSON return structure -->
+		<mapping source="transport:response-entity" sourceRef="results/address_components" sourceType="json" target="parameter:address-information">
+		  <mapping sourceRef="long_name" target="parameter:long-name"/>
+		  <mapping sourceRef="short_name" target="parameter:short-name"/>
+		  <mapping sourceRef="types[1]" target="parameter:type-1"/>
+		  <mapping sourceRef="types[2]" target="parameter:type-2"/>
+		</mapping>
+
+	  </mapping>
+	</serviceMapping>
+  </outbound>
+</serviceDescription>
+```
+
+Note a few things:
+
+1. The outer mapping references the root results element
+
+2. All the rows will be represented by the child mappings.  The child mappings use relative references to specify where the source comes from (sourceRef).  This means that the "results" list object will contain all the rows that are returned from the service call.  Each row will have the parameters that are defined by all the inner/child mappings.
+
+3. XPath is used to parse the JSON results and place each data item into its own named parameter,  for example: 
+```xml
+address_components[types='route']/long_nameequals list-street-name
+```
+
+4. A new output parameter was added and set to the concatenation of the latitude and longitude.
+
 
 -   **[Localizing Service Descriptions](ref_service_localizing_service_description.md)**  
 The name and description elements allow you to localize an HCL Leap Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.
@@ -423,6 +753,8 @@ The name and description elements allow you to localize an HCL Leap Service Desc
 The serviceMapping element of the Service Description contains all the information needed for the HCL Leap server to map data from the Service Description inbound data to the Service Transport
 -   **[Deploying a Service Description](ref_service_deploying_service_description.md)**  
 This topic contains information about how to deploy an HCL Leap Service Description.
+-   **[Troubleshooting a service description](ref_service_troubleshooting_service_description.md)**
+How to troubleshoot a custom service description that is not working.
 
-**Parent topic: **[Services](ref_services_toc.md)
+**Parent topic:** [Services](ref_services_toc.md)
 

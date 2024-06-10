@@ -9,5 +9,5 @@ Once a file is uploaded, use the file manager to update, copy or delete files. H
 -   **[Uploading files for use in your application](cr_uploading_and_using_files.md)**  
 The following instructions describe how to upload files to Leap, and how to use the uploaded files within your application.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Using the editor](cr_using_the_editor_toc.md)
 

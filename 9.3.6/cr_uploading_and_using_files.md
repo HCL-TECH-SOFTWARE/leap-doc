@@ -36,8 +36,6 @@ The following instructions describe how to upload files to Leap, and how to use 
 11. Browse to the location of the file, or enter the URL, then click **OK**.
 
 
-**Parent topic: **[Managing the files associated with your application](wf_managing_the_files_associated_with_your_appl.md)
-
 ## Uploading files during form design {#usinguploadedfiles}
 
 To upload files while you build your form.
@@ -47,5 +45,9 @@ To upload files while you build your form.
 2.  Select whether to add a file from your computer, or use a file from the internet.
 
 3.  Browse to the location of the file, or enter the URL, then click **OK**.
+
+
+
+**Parent topic:** [Managing the files associated with your application](wf_managing_the_files_associated_with_your_appl.md)
 
 

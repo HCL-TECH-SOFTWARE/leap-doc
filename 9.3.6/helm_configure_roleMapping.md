@@ -11,9 +11,10 @@ The Edit and Use roles support an extra property that adds all authenticated use
 
 These properties are defined in the .yaml file.  Below is a basic example of mapping users to the roles.
 
-```
+```yaml
 configuration:
   leap:
+    . . .
     roleMapping:
        AdministrativeUsers:
          MappedUsers:
@@ -33,9 +34,10 @@ configuration:
 To reference a specific user or group from a connected LDAP requires specific syntax, "realmName/userOrGroupId".  The realmName referenced here is the property from the ldapRegistry object, refer to [Connect Leap to LDAP](helm_configure_ldap.md).
 
 ### Mapping a user from LDAP {#map_user_ldap .section}
-```
+```yaml
 configuration:
   leap:
+    . . .
     roleMapping:
        AdministrativeUsers:
          MappedUsersAccessIDs:
@@ -43,11 +45,14 @@ configuration:
 ```
 
 ### Mapping a group from LDAP {#map_group_ldap .section}
-```
+```yaml
 configuration:
   leap:
+    . . .
     roleMapping:
        AdministrativeUsers:
          MappedGroupsAccessIDs:
           - acmeRealm/cn=Sales,o=Acme
 ```
+
+**Parent topic:** [Preparation](helm_preparation.md)

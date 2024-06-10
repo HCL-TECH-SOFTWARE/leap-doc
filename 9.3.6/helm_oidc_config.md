@@ -35,6 +35,7 @@ Next, this secret can be referenced in the yaml file:
 ```yaml
 configuration:
   leap:
+    . . .
     customCertificateSecrets:
       keycloakCert: "keycloakcert"
 ```
@@ -54,32 +55,33 @@ The following snippet is an example of an OIDC definition:
 
 ```yaml
 configOverrideFiles:
-      openIdConnect: |
-        <server description="leapServer">
-          <openidConnectClient id="oidc"
-            clientId="hcl-leap-oidc-client"
-            clientSecret="clientSecretHash"
-            signatureAlgorithm="RS256"
-            authFilterRef="interceptedAuthFilter"
-            mapIdentityToRegistryUser="false"
-            httpsRequired="true"
-            scope="openid"
-            <!-- Defines a simple name that can be used to refer to this OIDC config -->
-            realmName="LeapOidc"
-            <!-- The property of the token that contains the user's group assignments -->
-	          groupIdentifier="group_membership"
-            userIdentityToCreateSubject="preferred_username"
-            discoveryEndpointUrl="https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration">
-          </openidConnectClient>
-          <authFilter id="interceptedAuthFilter">
-            <requestUrl id="authRequestUrl" matchType="contains" urlPattern="/apps/secure|/apps/secured"/>
-          </authFilter>
-          <httpEndpoint id="defaultHttpEndpoint"
-             host="*"
-             httpPort="9080"
-             httpsPort="9443">
-             <samesite none="*" />
-        </server> 
+  . . .
+  openIdConnect: |
+    <server description="leapServer">
+      <openidConnectClient id="oidc"
+        clientId="hcl-leap-oidc-client"
+        clientSecret="clientSecretHash"
+        signatureAlgorithm="RS256"
+        authFilterRef="interceptedAuthFilter"
+        mapIdentityToRegistryUser="false"
+        httpsRequired="true"
+        scope="openid"
+        <!-- Defines a simple name that can be used to refer to this OIDC config -->
+        realmName="LeapOidc"
+        <!-- The property of the token that contains the user's group assignments -->
+        groupIdentifier="group_membership"
+        userIdentityToCreateSubject="preferred_username"
+        discoveryEndpointUrl="https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration">
+      </openidConnectClient>
+      <authFilter id="interceptedAuthFilter">
+        <requestUrl id="authRequestUrl" matchType="contains" urlPattern="/apps/secure|/apps/secured"/>
+      </authFilter>
+      <httpEndpoint id="defaultHttpEndpoint"
+          host="*"
+          httpPort="9080"
+          httpsPort="9443">
+          <samesite none="*" />
+    </server> 
 ```
 
 For more details on defining a server customization, see [Open Liberty server customizations](helm_open_liberty_custom.md).
@@ -95,12 +97,12 @@ The following properties must be set to complete the OIDC configuration:
 
 ```yaml
 configuration:
-   leap:
-     leapProperties: |
-       ibm.nitro.NitroConfig.userLookup=false
-       ibm.nitro.NitroConfig.userGroups=false 
-       ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myoidcServer.com/realms/Leap/protocol/openid-
-                 connect/logout?client_id=hcl-leap-oidc-client&post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
+  leap:
+    . . .
+    leapProperties: |
+      ibm.nitro.NitroConfig.userLookup=false
+      ibm.nitro.NitroConfig.userGroups=false 
+      ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myoidcServer.com/realms/Leap/protocol/openid-connect/logout?client_id=hcl-leap-oidc-client&post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html
 ```
 
 For more details on setting Leap properties, see [Leap properties](helm_leap_properties.md).
@@ -135,3 +137,4 @@ Note: If the groupIds array is empty then the 'openidConnectClient' is not confi
 
 After restarting the Leap pod, accessing Leap should redirect you to authenticate using your OIDC IDP.
 
+**Parent topic:** [Kubernetes Helm deployment](kubernetes_helm_deployment.md)
