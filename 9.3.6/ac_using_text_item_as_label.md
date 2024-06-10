@@ -23,5 +23,5 @@ The following instructions describe how to set a text item as the title of a fie
 
 When you save and preview the form, the text item appears as the label for the entry field.
 
-**Parent topic: **[Creating an accessible application](ac_creating_accessible_application.md)
+**Parent topic:** [Creating an accessible application](ac_creating_accessible_application.md)
 

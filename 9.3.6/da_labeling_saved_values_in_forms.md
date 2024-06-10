@@ -1,4 +1,4 @@
-# Changing the Saved Value of a form item {#labelingsavedvaluesinforms .task}
+# Changing the saved value of a form item {#labelingsavedvaluesinforms .task}
 
 You can add “Saved Value” labels for any form items that have a constant value so they reflect different data during export.
 
@@ -19,5 +19,5 @@ Display Values are shown to users when they view forms. By default, the Display 
 5.  If you want to have one option display to the users as a preselected default, click the radio button for the **Saved Value** field.
 
 
-**Parent topic: **[Labeling data, performing data analysis, and exporting data](da_data_analysis_and_exporting_data.md)
+**Parent topic: **[Working with application data](da_data_analysis_and_exporting_data.md)
 

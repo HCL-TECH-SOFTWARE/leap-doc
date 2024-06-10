@@ -49,5 +49,5 @@ Locale settings can also affect dates. Countries can have specific requirements 
 -   **[Setting a language](gl_setting_a_language.md)**  
 The default language for an application is based on the web browser locale. You can change the language of your HCL Leap application in the **Settings** tab.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Building Apps](cr_creating_and_managing_toc.md)
 

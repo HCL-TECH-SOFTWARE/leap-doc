@@ -12,10 +12,11 @@ kubectl create secret tls myTlsCertSecret --key="certificate.key" --cert="certif
 
 The following is an example of adding a DB2 SSL certificate to another Secret:
 
-``` {#codeblock_o41_wss_gxb}
+```yaml
 kubectl create secret generic myDb2SslSecret --from-file=mydbservercert.arm 
 configuration: 
   leap: 
+    . . .
     customCertificateSecrets: 
       myTlsCertSecret: "myTlsCertSecret" 
       myDb2SslSecret: "myDb2SslSecret"
@@ -23,5 +24,5 @@ configuration:
 
 This adds the certificates and key to the keystore with the id defaultKeyStore which can then be referenced in the server.xml or any overrides. The defaultKeyStore is also used as the default by many configuration elements in Open Liberty that require a keystore.
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

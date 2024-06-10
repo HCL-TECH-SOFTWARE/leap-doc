@@ -6,9 +6,10 @@ The idpMetadata accepts IdP Metadata in xml format. Please use the [multiline st
 
 Example:
 
-``` {#codeblock_q15_y3m_gxb}
+```yaml
 security:
   leap:
+    . . .
     saml:
       idpMetadata: |
         <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" ID="SAMLtestIdP" entityID="https://samltest.id/saml/idp">
@@ -18,5 +19,5 @@ security:
         </EntityDescriptor>
 ```
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

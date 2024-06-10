@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.6/helm_service_catalog.html">
       
+      
+        <link rel="prev" href="helm_configure_ssl.html">
+      
+      
+        <link rel="next" href="helm_deploy_custom_extension.html">
+      
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -23,11 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.08040f6c.min.css">
-        
+      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -87,14 +89,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -148,7 +147,7 @@
       
     </div>
     
-      <div data-md-component="outdated" hidden>
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
         
           <aside class="md-banner md-banner--warning">
             <div class="md-banner__inner md-grid md-typeset">
@@ -228,7 +227,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -240,7 +239,7 @@
         <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     hcl-software/leap-doc
@@ -259,7 +258,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -281,7 +280,7 @@
 
   <li class="md-tabs__item">
     <a href="whats_new.html" class="md-tabs__link">
-      What&apos;s new&quest;
+      What&apos;s New&quest;
     </a>
   </li>
 
@@ -405,7 +404,7 @@
       <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     hcl-software/leap-doc
@@ -439,7 +438,7 @@
   
     <li class="md-nav__item">
       <a href="whats_new.html" class="md-nav__link">
-        What&apos;s new&quest;
+        What&apos;s New&quest;
       </a>
     </li>
   
@@ -456,8 +455,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -480,7 +480,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Overview
@@ -524,8 +524,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
       
       
         
@@ -546,7 +547,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Accessibility Overview" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           Accessibility Overview
@@ -605,8 +606,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -625,7 +627,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Guide Me" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Guide Me
@@ -641,8 +643,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
       
       
         
@@ -665,7 +668,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Tutorials for form design" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Tutorials for form design
@@ -695,8 +698,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
       
       
         
@@ -717,7 +721,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Building a Survey application" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1_2">
           <span class="md-nav__icon md-icon"></span>
           Building a Survey application
@@ -768,8 +772,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_3" type="checkbox" id="__nav_4_1_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
       
       
         
@@ -794,7 +799,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding tables and workflow elements to a Leap form" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1_3">
           <span class="md-nav__icon md-icon"></span>
           Adding tables and workflow elements to a Leap form
@@ -890,8 +895,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -920,7 +926,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Deploying
@@ -936,8 +942,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
       
       
         
@@ -956,7 +963,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Preparing to deploy" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           Preparing to deploy
@@ -972,8 +979,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1_1" type="checkbox" id="__nav_5_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" >
       
       
         
@@ -996,7 +1004,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Create a Database" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1_1">
           <span class="md-nav__icon md-icon"></span>
           Create a Database
@@ -1070,8 +1078,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
       
       
         
@@ -1100,7 +1109,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Kubernetes Helm deployment" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes Helm deployment
@@ -1118,8 +1127,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_1" type="checkbox" id="__nav_5_2_1" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" checked>
       
       
         
@@ -1176,7 +1186,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Preparation" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_2_1">
           <span class="md-nav__icon md-icon"></span>
           Preparation
@@ -1388,7 +1398,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -1566,8 +1576,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
       
       
         
@@ -1588,7 +1599,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying to a traditional platform" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Deploying to a traditional platform
@@ -1653,8 +1664,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
       
       
         
@@ -1673,7 +1685,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Upgrading" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
           Upgrading
@@ -1732,8 +1744,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
         
@@ -1764,7 +1777,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Administering" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Administering
@@ -1836,8 +1849,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
       
       
         
@@ -1858,7 +1872,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Configuring" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
           Configuring
@@ -1888,8 +1902,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_2" >
       
       
         
@@ -1908,7 +1923,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Configuring the properties file" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
           Configuring the properties file
@@ -1952,8 +1967,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
       
       
         
@@ -1982,7 +1998,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Securing" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_6">
           <span class="md-nav__icon md-icon"></span>
           Securing
@@ -2089,8 +2105,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
       
       
         
@@ -2111,7 +2128,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Troubleshooting
@@ -2170,32 +2187,11 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
+      
         
           
         
@@ -2224,10 +2220,63 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Building Apps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Building Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_application_operations_toc.html">Application Management</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Application Management
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2265,8 +2314,50 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_custom_theme.html" class="md-nav__link">
-        Styling your application with a custom theme
+      <a href="cr_deploying_an_application.html" class="md-nav__link">
+        Deploying an application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_launching_an_application.html" class="md-nav__link">
+        Launching an application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_viewing_submitted_responses.html" class="md-nav__link">
+        Viewing submitted responses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_view_app_history.html" class="md-nav__link">
+        Viewing application history
       </a>
     </li>
   
@@ -2286,6 +2377,88 @@
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_updating_and_stopping_deployment.html" class="md-nav__link">
+        Updating and stopping a deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_duplicating_application.html" class="md-nav__link">
+        Duplicating an application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_using_the_editor_toc.html">Using the editor</a>
+          
+            <label for="__nav_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Using the editor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -2324,8 +2497,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_3" >
       
       
         
@@ -2338,14 +2512,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ac_creating_accessible_application.html">Creating an accessible application</a>
           
-            <label for="__nav_7_7">
+            <label for="__nav_7_2_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Creating an accessible application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_7">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_3">
           <span class="md-nav__icon md-icon"></span>
           Creating an accessible application
         </label>
@@ -2395,10 +2569,15 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
       
       
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_5" >
       
+      
+        
+          
+        
+          
         
           
         
@@ -2407,18 +2586,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="gl_forms_experience_builder_globalization.html">Globalization features</a>
+          <a href="wi_introduction_to_specialized_form_items.html">Adding specialized form items</a>
           
-            <label for="__nav_7_9">
+            <label for="__nav_7_2_5">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Globalization features" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_9">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_5">
           <span class="md-nav__icon md-icon"></span>
-          Globalization features
+          Adding specialized form items
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2428,8 +2607,36 @@
   
   
     <li class="md-nav__item">
-      <a href="gl_setting_a_language.html" class="md-nav__link">
-        Setting a language
+      <a href="wi_echoing_text_with_a_text_item.html" class="md-nav__link">
+        Echoing text with a Text item
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wi_adding_tables_to_a_form.html" class="md-nav__link">
+        Adding tables to a form
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wi_adding_html_fragments_to_a_form.html" class="md-nav__link">
+        Adding HTML fragments to a form
       </a>
     </li>
   
@@ -2452,8 +2659,213 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_6" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="wf_managing_the_files_associated_with_your_appl.html">Managing the files associated with your application</a>
+          
+            <label for="__nav_7_2_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Managing the files associated with your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_uploading_and_using_files.html" class="md-nav__link">
+        Uploading files for use in your application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_adding_dynamic_behavior.html">Adding dynamic behavior</a>
+          
+            <label for="__nav_7_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adding dynamic behavior
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_adding_formulas_toc.html">Adding formulas to your application</a>
+          
+            <label for="__nav_7_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Adding formulas to your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formulas_from_properties_window.html" class="md-nav__link">
+        Creating a Formula from the Properties side panel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formula_from_settings_tab.html" class="md-nav__link">
+        Creating a formula from the Settings tab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formula_running_formula_from_event.html" class="md-nav__link">
+        Running a formula from an event
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
       
       
         
@@ -2470,14 +2882,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ru_creating_rules_in_your_form.html">Creating rules in your application</a>
           
-            <label for="__nav_7_10">
+            <label for="__nav_7_3_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Creating rules in your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_10">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_2">
           <span class="md-nav__icon md-icon"></span>
           Creating rules in your application
         </label>
@@ -2541,142 +2953,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="da_data_analysis_and_exporting_data.html">Labeling data, performing data analysis, and exporting data</a>
-          
-            <label for="__nav_7_11">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Labeling data, performing data analysis, and exporting data" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_11">
-          <span class="md-nav__icon md-icon"></span>
-          Labeling data, performing data analysis, and exporting data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_labeling_saved_values_in_forms.html" class="md-nav__link">
-        Changing the Saved Value of a form item
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_labeling_fields_in_a_form.html" class="md-nav__link">
-        Adding Data Labels to form items
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11_3" type="checkbox" id="__nav_7_11_3" >
-      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
       
       
         
           
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="da_exporting_data_from_your_application.html">Exporting data from your application</a>
-          
-            <label for="__nav_7_11_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Exporting data from your application" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_11_3">
-          <span class="md-nav__icon md-icon"></span>
-          Exporting data from your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_controlling_data_available_for_export.html" class="md-nav__link">
-        Controlling data available for export
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_12" type="checkbox" id="__nav_7_12" >
-      
-      
-      
         
           
         
@@ -2695,14 +2978,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="cr_using_apps_as_services_toc.html">Incorporating web services into your applications</a>
           
-            <label for="__nav_7_12">
+            <label for="__nav_7_3_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Incorporating web services into your applications" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_12">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_3">
           <span class="md-nav__icon md-icon"></span>
           Incorporating web services into your applications
         </label>
@@ -2770,6 +3053,20 @@
   
   
     <li class="md-nav__item">
+      <a href="se_cancel_submit-event.html" class="md-nav__link">
+        Cancelling user submit event
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="cr_using_other_apps_as_services.html" class="md-nav__link">
         Integrating your application with existing Leap applications
       </a>
@@ -2794,380 +3091,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_13" type="checkbox" id="__nav_7_13" >
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="cr_adding_formulas_toc.html">Adding formulas to your application</a>
-          
-            <label for="__nav_7_13">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Adding formulas to your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_13">
-          <span class="md-nav__icon md-icon"></span>
-          Adding formulas to your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formulas_from_properties_window.html" class="md-nav__link">
-        Creating a Formula from the Properties side panel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formula_from_settings_tab.html" class="md-nav__link">
-        Creating a formula from the Settings tab
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formula_running_formula_from_event.html" class="md-nav__link">
-        Running a formula from an event
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_14" type="checkbox" id="__nav_7_14" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="wi_introduction_to_specialized_form_items.html">Adding specialized form items</a>
-          
-            <label for="__nav_7_14">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Adding specialized form items" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_14">
-          <span class="md-nav__icon md-icon"></span>
-          Adding specialized form items
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_echoing_text_with_a_text_item.html" class="md-nav__link">
-        Echoing text with a Text item
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_tables_to_a_form.html" class="md-nav__link">
-        Adding tables to a form
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_html_fragments_to_a_form.html" class="md-nav__link">
-        Adding HTML fragments to a form
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_media_to_a_form.html" class="md-nav__link">
-        Adding media to a form
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_15" type="checkbox" id="__nav_7_15" >
-      
-      
-      
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="wf_managing_the_files_associated_with_your_appl.html">Managing the files associated with your application</a>
-          
-            <label for="__nav_7_15">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Managing the files associated with your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_15">
-          <span class="md-nav__icon md-icon"></span>
-          Managing the files associated with your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_uploading_and_using_files.html" class="md-nav__link">
-        Uploading files for use in your application
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_16" type="checkbox" id="__nav_7_16" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="di_pop_doc_with_app_data.html">Leap document integration</a>
-          
-            <label for="__nav_7_16">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Leap document integration" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_16">
-          <span class="md-nav__icon md-icon"></span>
-          Leap document integration
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_adding_pdf_to.html" class="md-nav__link">
-        Adding a PDF to Leap
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_mapping_form_items_to_pdf_fields.html" class="md-nav__link">
-        Mapping form items to PDF fields
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_mapping_form_items_to_pdf_fields_and_attaching.html" class="md-nav__link">
-        Mapping form items to PDF fields and storing the filled PDF
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_creating_the_pdf_trigger.html" class="md-nav__link">
-        Creating the PDF trigger
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_usage_details.html" class="md-nav__link">
-        Document integration usage details
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" type="checkbox" id="__nav_7_17" >
-      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" >
       
       
         
@@ -3196,14 +3122,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="sub_adding_stages_toc.html">Adding Stages to an application</a>
           
-            <label for="__nav_7_17">
+            <label for="__nav_7_3_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding Stages to an application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_17">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_4">
           <span class="md-nav__icon md-icon"></span>
           Adding Stages to an application
         </label>
@@ -3351,12 +3277,104 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" type="checkbox" id="__nav_7_18" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_5" >
       
       
         
           
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="js_adding_javascript.html">Adding JavaScript</a>
+          
+            <label for="__nav_7_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Adding JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="js_sample_functions.html" class="md-nav__link">
+        Sample Functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_custom_behavior.html" class="md-nav__link">
+        Adding Custom Behaviour
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_attachments.html" class="md-nav__link">
+        Working with attachments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+      
+      
         
           
         
@@ -3371,18 +3389,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="cr_deploy_and_launch_toc.html">Deploying applications and viewing data responses</a>
+          <a href="da_data_analysis_and_exporting_data.html">Working with application data</a>
           
-            <label for="__nav_7_18">
+            <label for="__nav_7_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying applications and viewing data responses" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_18">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
-          Deploying applications and viewing data responses
+          Working with application data
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3392,8 +3410,8 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_deploying_an_application.html" class="md-nav__link">
-        Deploying an application
+      <a href="da_labeling_saved_values_in_forms.html" class="md-nav__link">
+        Changing the Saved Value of a form item
       </a>
     </li>
   
@@ -3406,8 +3424,8 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_updating_and_stopping_deployment.html" class="md-nav__link">
-        Updating and stopping a deployment
+      <a href="da_labeling_fields_in_a_form.html" class="md-nav__link">
+        Adding Data Labels to form items
       </a>
     </li>
   
@@ -3419,14 +3437,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="cr_launching_an_application.html" class="md-nav__link">
-        Launching an application
-      </a>
-    </li>
-  
-
-            
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4_3" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="da_exporting_data_from_your_application.html">Exporting data from your application</a>
+          
+            <label for="__nav_7_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exporting data from your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -3434,9 +3475,16 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_viewing_submitted_responses.html" class="md-nav__link">
-        Viewing submitted responses
+      <a href="da_controlling_data_available_for_export.html" class="md-nav__link">
+        Controlling data available for export
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3463,16 +3511,8 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
+            
+              
   
   
   
@@ -3480,8 +3520,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
       
       
         
@@ -3494,20 +3535,34 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="extending_toc.html">Extending</a>
+          <a href="st_style_application.html">Styling your application</a>
           
-            <label for="__nav_8">
+            <label for="__nav_7_5">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Extending" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
-          Extending
+          Styling your application
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_custom_theme.html" class="md-nav__link">
+        Styling your application with a custom theme
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3518,8 +3573,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_2" >
       
       
         
@@ -3532,18 +3588,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="ex_css_toc.html">Using custom style sheets</a>
+          <a href="ex_css_toc.html">Using CSS files</a>
           
-            <label for="__nav_8_1">
+            <label for="__nav_7_5_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Using custom style sheets" data-md-level="2">
-        <label class="md-nav__title" for="__nav_8_1">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5_2">
           <span class="md-nav__icon md-icon"></span>
-          Using custom style sheets
+          Using CSS files
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3582,6 +3638,13 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
             
               
   
@@ -3591,8 +3654,234 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="gl_forms_experience_builder_globalization.html">Globalization features</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Globalization features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gl_setting_a_language.html" class="md-nav__link">
+        Setting a language
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="di_pop_doc_with_app_data.html">Leap document integration</a>
+          
+            <label for="__nav_7_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Leap document integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_adding_pdf_to.html" class="md-nav__link">
+        Adding a PDF to Leap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_mapping_form_items_to_pdf_fields.html" class="md-nav__link">
+        Mapping form items to PDF fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_mapping_form_items_to_pdf_fields_and_attaching.html" class="md-nav__link">
+        Mapping form items to PDF fields and storing the filled PDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_creating_the_pdf_trigger.html" class="md-nav__link">
+        Creating the PDF trigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_usage_details.html" class="md-nav__link">
+        Document integration usage details
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="extending_toc.html">Extending</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Extending
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
       
       
         
@@ -3609,14 +3898,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="services_toc.html">Adding services</a>
           
-            <label for="__nav_8_2">
+            <label for="__nav_8_1">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding services" data-md-level="2">
-        <label class="md-nav__title" for="__nav_8_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
           <span class="md-nav__icon md-icon"></span>
           Adding services
         </label>
@@ -3645,8 +3934,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2_2" type="checkbox" id="__nav_8_2_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_2" >
       
       
         
@@ -3661,14 +3951,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ser_provide_groups_of_dynamic_services.html">Providing Groups of Dynamic Services</a>
           
-            <label for="__nav_8_2_2">
+            <label for="__nav_8_1_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Providing Groups of Dynamic Services" data-md-level="3">
-        <label class="md-nav__title" for="__nav_8_2_2">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1_2">
           <span class="md-nav__icon md-icon"></span>
           Providing Groups of Dynamic Services
         </label>
@@ -3718,8 +4008,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2_3" type="checkbox" id="__nav_8_2_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_3" >
       
       
         
@@ -3732,14 +4023,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ex_soa_service_transport.html">Service Oriented Architecture -– Service Transport</a>
           
-            <label for="__nav_8_2_3">
+            <label for="__nav_8_1_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Service Oriented Architecture -– Service Transport" data-md-level="3">
-        <label class="md-nav__title" for="__nav_8_2_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1_3">
           <span class="md-nav__icon md-icon"></span>
           Service Oriented Architecture -– Service Transport
         </label>
@@ -3790,8 +4081,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
       
       
         
@@ -3822,7 +4114,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="References" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           References
@@ -3838,8 +4130,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
       
       
         
@@ -3862,7 +4155,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="REST API reference" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1">
           <span class="md-nav__icon md-icon"></span>
           REST API reference
@@ -3878,8 +4171,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1_1" type="checkbox" id="__nav_9_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
       
       
         
@@ -3912,7 +4206,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Data access REST API" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1_1">
           <span class="md-nav__icon md-icon"></span>
           Data access REST API
@@ -3928,8 +4222,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1_1_1" type="checkbox" id="__nav_9_1_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1_1" >
       
       
         
@@ -3948,7 +4243,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="List" data-md-level="4">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_1_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1_1_1">
           <span class="md-nav__icon md-icon"></span>
           List
@@ -4125,8 +4420,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
       
       
         
@@ -4149,7 +4445,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="JavaScript API" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_2">
           <span class="md-nav__icon md-icon"></span>
           JavaScript API
@@ -4165,8 +4461,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_1" type="checkbox" id="__nav_9_2_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_1" >
       
       
         
@@ -4191,7 +4488,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Running Custom JavaScript -– Events" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_2_1">
           <span class="md-nav__icon md-icon"></span>
           Running Custom JavaScript -– Events
@@ -4284,8 +4581,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_3" type="checkbox" id="__nav_9_2_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" >
       
       
         
@@ -4308,7 +4606,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Reference Objects and Functions" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_2_3">
           <span class="md-nav__icon md-icon"></span>
           Reference Objects and Functions
@@ -4324,8 +4622,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_3_1" type="checkbox" id="__nav_9_2_3_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" >
       
       
         
@@ -4341,12 +4640,18 @@
         
       
       
-        <label class="md-nav__link" for="__nav_9_2_3_1">
-          Interface objects
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="ref_jsapi_user_interface_objects.html">Interface objects</a>
+          
+            <label for="__nav_9_2_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
-      <nav class="md-nav" aria-label="Interface objects" data-md-level="4">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_2_3_1">
           <span class="md-nav__icon md-icon"></span>
           Interface objects
@@ -4481,8 +4786,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
       
       
         
@@ -4511,7 +4817,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Services" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3">
           <span class="md-nav__icon md-icon"></span>
           Services
@@ -4569,8 +4875,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_4" type="checkbox" id="__nav_9_3_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_4" >
       
       
         
@@ -4593,7 +4900,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Service Description" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3_4">
           <span class="md-nav__icon md-icon"></span>
           Service Description
@@ -4658,8 +4965,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_5" type="checkbox" id="__nav_9_3_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_5" >
       
       
         
@@ -4680,7 +4988,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Using the service description tool for WSDL web service" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3_5">
           <span class="md-nav__icon md-icon"></span>
           Using the service description tool for WSDL web service
@@ -4794,8 +5102,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_7" >
       
       
         
@@ -4844,7 +5153,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Custom Widget API v1.0.0" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
           Custom Widget API v1.0.0
@@ -5122,10 +5431,8 @@
                 
                   
 
-  <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc/edit/main/docs/helm_service_catalog.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 class="concept" id="helm_service_catalog">Service Catalog</h1>
@@ -5133,21 +5440,23 @@
 <p>Each service definition in the .yaml is made up of a label and the xml content of the service description. The XML content will be copied into a file and placed in the service catalog.</p>
 <p>For more information on creating service descriptions, see <a href="ref_service_service_description.html">Service Description</a>.</p>
 <p>Example:</p>
-<div id="codeblock_n2n_fkt_gxb" class="highlight"><pre><span></span><code>configuration:
-  leap:
-    serviceCatalog:
-       sampleServiceDescription.xml: |
-         &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-         &lt;serviceDescription&gt;
-         &lt;id&gt;sample-service-description&lt;/id&gt;
-         &lt;defaultLocale&gt;en&lt;/defaultLocale&gt;
-         &lt;transportId&gt;HTTPServiceTransport&lt;/transportId&gt;
-         &lt;name xml:lang=&quot;en&quot;&gt;Sample service Description&lt;/name&gt;
-         &lt;description xml:lang=&quot;en&quot;&gt;&lt;/description&gt;
-            . . . 
-         &lt;/serviceDescription&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">serviceCatalog</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">sampleServiceDescription.xml</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="w">        </span><span class="no">&lt;serviceDescription&gt;</span>
+<span class="w">        </span><span class="no">&lt;id&gt;sample-service-description&lt;/id&gt;</span>
+<span class="w">        </span><span class="no">&lt;defaultLocale&gt;en&lt;/defaultLocale&gt;</span>
+<span class="w">        </span><span class="no">&lt;transportId&gt;HTTPServiceTransport&lt;/transportId&gt;</span>
+<span class="w">        </span><span class="no">&lt;name xml:lang=&quot;en&quot;&gt;Sample service Description&lt;/name&gt;</span>
+<span class="w">        </span><span class="no">&lt;description xml:lang=&quot;en&quot;&gt;&lt;/description&gt;</span>
+<span class="w">          </span><span class="no">. . . </span>
+<span class="w">        </span><span class="no">&lt;/serviceDescription&gt;</span>
 </code></pre></div>
-<p><strong>Parent topic: </strong><a href="helm_preparation.html">Preparation</a></p>
+<p><strong>Parent topic:</strong> <a href="helm_preparation.html">Preparation</a></p>
 
 
 
@@ -5160,10 +5469,10 @@
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
@@ -5184,10 +5493,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

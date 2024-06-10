@@ -1,4 +1,4 @@
-# Adding Stages to an application {#configuringwhatusersseeaftersubmittingaform .concept}
+# Adding stages to an application {#configuringwhatusersseeaftersubmittingaform .concept}
 
 It is often desirable to have an application, or form, transition through a set of phases or stages. At each stage the form might be used by different people in different roles. The form also might be presented in a slightly different manner in each stage, such as having some items or pages hidden, or in a read-only state.
 
@@ -46,5 +46,5 @@ This scenario uses a Vacation Request application to describe how to use multipl
 -   **[Saving a PDF to a file location](sub_saving_pdf.md)**  
 Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the Leap submission record, or both.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Adding dynamic behavior](cr_adding_dynamic_behavior.md)
 

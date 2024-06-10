@@ -14,5 +14,5 @@ The option for **PDF Save Location** appears in your PDF fill service configurat
 
 If the file already exists a duplicate will be made - for example, sample.pdf, sample\(1\).pdf, etc.
 
-**Parent topic: **[Adding Stages to an application](sub_adding_stages_toc.md)
+**Parent topic:** [Adding stages to an application](sub_adding_stages_toc.md)
 

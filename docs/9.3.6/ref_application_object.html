@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/9.3.6/ref_application_object.html">
       
+      
+        <link rel="prev" href="ref_jsapi_user_interface_objects.html">
+      
+      
+        <link rel="next" href="ref_form_objects.html">
+      
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -23,11 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.08040f6c.min.css">
-        
+      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -87,14 +89,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#application-objects" class="md-skip">
+        <a href="#application-object" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +147,7 @@
       
     </div>
     
-      <div data-md-component="outdated" hidden>
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
         
           <aside class="md-banner md-banner--warning">
             <div class="md-banner__inner md-grid md-typeset">
@@ -228,7 +227,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -240,7 +239,7 @@
         <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     hcl-software/leap-doc
@@ -259,7 +258,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -281,7 +280,7 @@
 
   <li class="md-tabs__item">
     <a href="whats_new.html" class="md-tabs__link">
-      What&apos;s new&quest;
+      What&apos;s New&quest;
     </a>
   </li>
 
@@ -405,7 +404,7 @@
       <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     hcl-software/leap-doc
@@ -439,7 +438,7 @@
   
     <li class="md-nav__item">
       <a href="whats_new.html" class="md-nav__link">
-        What&apos;s new&quest;
+        What&apos;s New&quest;
       </a>
     </li>
   
@@ -456,8 +455,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -480,7 +480,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Overview
@@ -524,8 +524,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
       
       
         
@@ -546,7 +547,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Accessibility Overview" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           Accessibility Overview
@@ -605,8 +606,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -625,7 +627,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Guide Me" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Guide Me
@@ -641,8 +643,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
       
       
         
@@ -665,7 +668,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Tutorials for form design" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Tutorials for form design
@@ -695,8 +698,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_2" type="checkbox" id="__nav_4_1_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
       
       
         
@@ -717,7 +721,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Building a Survey application" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1_2">
           <span class="md-nav__icon md-icon"></span>
           Building a Survey application
@@ -768,8 +772,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1_3" type="checkbox" id="__nav_4_1_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
       
       
         
@@ -794,7 +799,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding tables and workflow elements to a Leap form" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1_3">
           <span class="md-nav__icon md-icon"></span>
           Adding tables and workflow elements to a Leap form
@@ -888,8 +893,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -918,7 +924,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Deploying
@@ -934,8 +940,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
       
       
         
@@ -954,7 +961,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Preparing to deploy" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           Preparing to deploy
@@ -970,8 +977,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1_1" type="checkbox" id="__nav_5_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" >
       
       
         
@@ -994,7 +1002,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Create a Database" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1_1">
           <span class="md-nav__icon md-icon"></span>
           Create a Database
@@ -1066,8 +1074,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
       
       
         
@@ -1096,7 +1105,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Kubernetes Helm deployment" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes Helm deployment
@@ -1112,8 +1121,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_1" type="checkbox" id="__nav_5_2_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
       
       
         
@@ -1170,7 +1180,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Preparation" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_2_1">
           <span class="md-nav__icon md-icon"></span>
           Preparation
@@ -1550,8 +1560,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
       
       
         
@@ -1572,7 +1583,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying to a traditional platform" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Deploying to a traditional platform
@@ -1637,8 +1648,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
       
       
         
@@ -1657,7 +1669,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Upgrading" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_5">
           <span class="md-nav__icon md-icon"></span>
           Upgrading
@@ -1716,8 +1728,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
         
@@ -1748,7 +1761,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Administering" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Administering
@@ -1820,8 +1833,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
       
       
         
@@ -1842,7 +1856,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Configuring" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
           Configuring
@@ -1872,8 +1886,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_2" >
       
       
         
@@ -1892,7 +1907,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Configuring the properties file" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
           Configuring the properties file
@@ -1936,8 +1951,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
       
       
         
@@ -1966,7 +1982,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Securing" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_6">
           <span class="md-nav__icon md-icon"></span>
           Securing
@@ -2073,8 +2089,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
       
       
         
@@ -2095,7 +2112,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Troubleshooting
@@ -2154,32 +2171,11 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
+      
         
           
         
@@ -2208,10 +2204,63 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Building Apps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Building Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_application_operations_toc.html">Application Management</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Application Management
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2249,8 +2298,50 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_custom_theme.html" class="md-nav__link">
-        Styling your application with a custom theme
+      <a href="cr_deploying_an_application.html" class="md-nav__link">
+        Deploying an application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_launching_an_application.html" class="md-nav__link">
+        Launching an application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_viewing_submitted_responses.html" class="md-nav__link">
+        Viewing submitted responses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_view_app_history.html" class="md-nav__link">
+        Viewing application history
       </a>
     </li>
   
@@ -2270,6 +2361,88 @@
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_updating_and_stopping_deployment.html" class="md-nav__link">
+        Updating and stopping a deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_duplicating_application.html" class="md-nav__link">
+        Duplicating an application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_using_the_editor_toc.html">Using the editor</a>
+          
+            <label for="__nav_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Using the editor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -2308,8 +2481,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_3" >
       
       
         
@@ -2322,14 +2496,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ac_creating_accessible_application.html">Creating an accessible application</a>
           
-            <label for="__nav_7_7">
+            <label for="__nav_7_2_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Creating an accessible application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_7">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_3">
           <span class="md-nav__icon md-icon"></span>
           Creating an accessible application
         </label>
@@ -2379,10 +2553,15 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
       
       
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_5" >
       
+      
+        
+          
+        
+          
         
           
         
@@ -2391,18 +2570,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="gl_forms_experience_builder_globalization.html">Globalization features</a>
+          <a href="wi_introduction_to_specialized_form_items.html">Adding specialized form items</a>
           
-            <label for="__nav_7_9">
+            <label for="__nav_7_2_5">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Globalization features" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_9">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_5">
           <span class="md-nav__icon md-icon"></span>
-          Globalization features
+          Adding specialized form items
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2412,8 +2591,36 @@
   
   
     <li class="md-nav__item">
-      <a href="gl_setting_a_language.html" class="md-nav__link">
-        Setting a language
+      <a href="wi_echoing_text_with_a_text_item.html" class="md-nav__link">
+        Echoing text with a Text item
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wi_adding_tables_to_a_form.html" class="md-nav__link">
+        Adding tables to a form
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wi_adding_html_fragments_to_a_form.html" class="md-nav__link">
+        Adding HTML fragments to a form
       </a>
     </li>
   
@@ -2436,8 +2643,213 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_6" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="wf_managing_the_files_associated_with_your_appl.html">Managing the files associated with your application</a>
+          
+            <label for="__nav_7_2_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Managing the files associated with your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_uploading_and_using_files.html" class="md-nav__link">
+        Uploading files for use in your application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_adding_dynamic_behavior.html">Adding dynamic behavior</a>
+          
+            <label for="__nav_7_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Adding dynamic behavior
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="cr_adding_formulas_toc.html">Adding formulas to your application</a>
+          
+            <label for="__nav_7_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Adding formulas to your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formulas_from_properties_window.html" class="md-nav__link">
+        Creating a Formula from the Properties side panel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formula_from_settings_tab.html" class="md-nav__link">
+        Creating a formula from the Settings tab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_formula_running_formula_from_event.html" class="md-nav__link">
+        Running a formula from an event
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
       
       
         
@@ -2454,14 +2866,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ru_creating_rules_in_your_form.html">Creating rules in your application</a>
           
-            <label for="__nav_7_10">
+            <label for="__nav_7_3_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Creating rules in your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_10">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_2">
           <span class="md-nav__icon md-icon"></span>
           Creating rules in your application
         </label>
@@ -2525,142 +2937,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="da_data_analysis_and_exporting_data.html">Labeling data, performing data analysis, and exporting data</a>
-          
-            <label for="__nav_7_11">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Labeling data, performing data analysis, and exporting data" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_11">
-          <span class="md-nav__icon md-icon"></span>
-          Labeling data, performing data analysis, and exporting data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_labeling_saved_values_in_forms.html" class="md-nav__link">
-        Changing the Saved Value of a form item
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_labeling_fields_in_a_form.html" class="md-nav__link">
-        Adding Data Labels to form items
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11_3" type="checkbox" id="__nav_7_11_3" >
-      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
       
       
         
           
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="da_exporting_data_from_your_application.html">Exporting data from your application</a>
-          
-            <label for="__nav_7_11_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Exporting data from your application" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_11_3">
-          <span class="md-nav__icon md-icon"></span>
-          Exporting data from your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="da_controlling_data_available_for_export.html" class="md-nav__link">
-        Controlling data available for export
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_12" type="checkbox" id="__nav_7_12" >
-      
-      
-      
         
           
         
@@ -2679,14 +2962,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="cr_using_apps_as_services_toc.html">Incorporating web services into your applications</a>
           
-            <label for="__nav_7_12">
+            <label for="__nav_7_3_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Incorporating web services into your applications" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_12">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_3">
           <span class="md-nav__icon md-icon"></span>
           Incorporating web services into your applications
         </label>
@@ -2754,6 +3037,20 @@
   
   
     <li class="md-nav__item">
+      <a href="se_cancel_submit-event.html" class="md-nav__link">
+        Cancelling user submit event
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="cr_using_other_apps_as_services.html" class="md-nav__link">
         Integrating your application with existing Leap applications
       </a>
@@ -2778,380 +3075,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_13" type="checkbox" id="__nav_7_13" >
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="cr_adding_formulas_toc.html">Adding formulas to your application</a>
-          
-            <label for="__nav_7_13">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Adding formulas to your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_13">
-          <span class="md-nav__icon md-icon"></span>
-          Adding formulas to your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formulas_from_properties_window.html" class="md-nav__link">
-        Creating a Formula from the Properties side panel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formula_from_settings_tab.html" class="md-nav__link">
-        Creating a formula from the Settings tab
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_adding_formula_running_formula_from_event.html" class="md-nav__link">
-        Running a formula from an event
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_14" type="checkbox" id="__nav_7_14" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="wi_introduction_to_specialized_form_items.html">Adding specialized form items</a>
-          
-            <label for="__nav_7_14">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Adding specialized form items" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_14">
-          <span class="md-nav__icon md-icon"></span>
-          Adding specialized form items
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_echoing_text_with_a_text_item.html" class="md-nav__link">
-        Echoing text with a Text item
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_tables_to_a_form.html" class="md-nav__link">
-        Adding tables to a form
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_html_fragments_to_a_form.html" class="md-nav__link">
-        Adding HTML fragments to a form
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="wi_adding_media_to_a_form.html" class="md-nav__link">
-        Adding media to a form
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_15" type="checkbox" id="__nav_7_15" >
-      
-      
-      
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="wf_managing_the_files_associated_with_your_appl.html">Managing the files associated with your application</a>
-          
-            <label for="__nav_7_15">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Managing the files associated with your application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_15">
-          <span class="md-nav__icon md-icon"></span>
-          Managing the files associated with your application
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cr_uploading_and_using_files.html" class="md-nav__link">
-        Uploading files for use in your application
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_16" type="checkbox" id="__nav_7_16" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="di_pop_doc_with_app_data.html">Leap document integration</a>
-          
-            <label for="__nav_7_16">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Leap document integration" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_16">
-          <span class="md-nav__icon md-icon"></span>
-          Leap document integration
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_adding_pdf_to.html" class="md-nav__link">
-        Adding a PDF to Leap
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_mapping_form_items_to_pdf_fields.html" class="md-nav__link">
-        Mapping form items to PDF fields
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_mapping_form_items_to_pdf_fields_and_attaching.html" class="md-nav__link">
-        Mapping form items to PDF fields and storing the filled PDF
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_creating_the_pdf_trigger.html" class="md-nav__link">
-        Creating the PDF trigger
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="di_usage_details.html" class="md-nav__link">
-        Document integration usage details
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" type="checkbox" id="__nav_7_17" >
-      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" >
       
       
         
@@ -3180,14 +3106,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="sub_adding_stages_toc.html">Adding Stages to an application</a>
           
-            <label for="__nav_7_17">
+            <label for="__nav_7_3_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding Stages to an application" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_17">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_4">
           <span class="md-nav__icon md-icon"></span>
           Adding Stages to an application
         </label>
@@ -3335,12 +3261,104 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" type="checkbox" id="__nav_7_18" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_5" >
       
       
         
           
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="js_adding_javascript.html">Adding JavaScript</a>
+          
+            <label for="__nav_7_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Adding JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="js_sample_functions.html" class="md-nav__link">
+        Sample Functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_adding_custom_behavior.html" class="md-nav__link">
+        Adding Custom Behaviour
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_attachments.html" class="md-nav__link">
+        Working with attachments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+      
+      
         
           
         
@@ -3355,18 +3373,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="cr_deploy_and_launch_toc.html">Deploying applications and viewing data responses</a>
+          <a href="da_data_analysis_and_exporting_data.html">Working with application data</a>
           
-            <label for="__nav_7_18">
+            <label for="__nav_7_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Deploying applications and viewing data responses" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_18">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
-          Deploying applications and viewing data responses
+          Working with application data
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3376,8 +3394,8 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_deploying_an_application.html" class="md-nav__link">
-        Deploying an application
+      <a href="da_labeling_saved_values_in_forms.html" class="md-nav__link">
+        Changing the Saved Value of a form item
       </a>
     </li>
   
@@ -3390,8 +3408,8 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_updating_and_stopping_deployment.html" class="md-nav__link">
-        Updating and stopping a deployment
+      <a href="da_labeling_fields_in_a_form.html" class="md-nav__link">
+        Adding Data Labels to form items
       </a>
     </li>
   
@@ -3403,14 +3421,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="cr_launching_an_application.html" class="md-nav__link">
-        Launching an application
-      </a>
-    </li>
-  
-
-            
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4_3" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="da_exporting_data_from_your_application.html">Exporting data from your application</a>
+          
+            <label for="__nav_7_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exporting data from your application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -3418,9 +3459,16 @@
   
   
     <li class="md-nav__item">
-      <a href="cr_viewing_submitted_responses.html" class="md-nav__link">
-        Viewing submitted responses
+      <a href="da_controlling_data_available_for_export.html" class="md-nav__link">
+        Controlling data available for export
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3447,16 +3495,8 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
+            
+              
   
   
   
@@ -3464,8 +3504,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
       
       
         
@@ -3478,20 +3519,34 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="extending_toc.html">Extending</a>
+          <a href="st_style_application.html">Styling your application</a>
           
-            <label for="__nav_8">
+            <label for="__nav_7_5">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Extending" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
-          Extending
+          Styling your application
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cr_custom_theme.html" class="md-nav__link">
+        Styling your application with a custom theme
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3502,8 +3557,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_2" >
       
       
         
@@ -3516,18 +3572,18 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="ex_css_toc.html">Using custom style sheets</a>
+          <a href="ex_css_toc.html">Using CSS files</a>
           
-            <label for="__nav_8_1">
+            <label for="__nav_7_5_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Using custom style sheets" data-md-level="2">
-        <label class="md-nav__title" for="__nav_8_1">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5_2">
           <span class="md-nav__icon md-icon"></span>
-          Using custom style sheets
+          Using CSS files
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3566,6 +3622,13 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
             
               
   
@@ -3575,8 +3638,234 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="gl_forms_experience_builder_globalization.html">Globalization features</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Globalization features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gl_setting_a_language.html" class="md-nav__link">
+        Setting a language
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="di_pop_doc_with_app_data.html">Leap document integration</a>
+          
+            <label for="__nav_7_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Leap document integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_adding_pdf_to.html" class="md-nav__link">
+        Adding a PDF to Leap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_mapping_form_items_to_pdf_fields.html" class="md-nav__link">
+        Mapping form items to PDF fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_mapping_form_items_to_pdf_fields_and_attaching.html" class="md-nav__link">
+        Mapping form items to PDF fields and storing the filled PDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_creating_the_pdf_trigger.html" class="md-nav__link">
+        Creating the PDF trigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="di_usage_details.html" class="md-nav__link">
+        Document integration usage details
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="extending_toc.html">Extending</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Extending
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
       
       
         
@@ -3593,14 +3882,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="services_toc.html">Adding services</a>
           
-            <label for="__nav_8_2">
+            <label for="__nav_8_1">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Adding services" data-md-level="2">
-        <label class="md-nav__title" for="__nav_8_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
           <span class="md-nav__icon md-icon"></span>
           Adding services
         </label>
@@ -3629,8 +3918,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2_2" type="checkbox" id="__nav_8_2_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_2" >
       
       
         
@@ -3645,14 +3935,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ser_provide_groups_of_dynamic_services.html">Providing Groups of Dynamic Services</a>
           
-            <label for="__nav_8_2_2">
+            <label for="__nav_8_1_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Providing Groups of Dynamic Services" data-md-level="3">
-        <label class="md-nav__title" for="__nav_8_2_2">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1_2">
           <span class="md-nav__icon md-icon"></span>
           Providing Groups of Dynamic Services
         </label>
@@ -3702,8 +3992,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2_3" type="checkbox" id="__nav_8_2_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_3" >
       
       
         
@@ -3716,14 +4007,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="ex_soa_service_transport.html">Service Oriented Architecture -– Service Transport</a>
           
-            <label for="__nav_8_2_3">
+            <label for="__nav_8_1_3">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Service Oriented Architecture -– Service Transport" data-md-level="3">
-        <label class="md-nav__title" for="__nav_8_2_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1_3">
           <span class="md-nav__icon md-icon"></span>
           Service Oriented Architecture -– Service Transport
         </label>
@@ -3776,8 +4067,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
         
@@ -3808,7 +4100,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="References" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           References
@@ -3824,8 +4116,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
       
       
         
@@ -3848,7 +4141,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="REST API reference" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1">
           <span class="md-nav__icon md-icon"></span>
           REST API reference
@@ -3864,8 +4157,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1_1" type="checkbox" id="__nav_9_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
       
       
         
@@ -3898,7 +4192,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Data access REST API" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1_1">
           <span class="md-nav__icon md-icon"></span>
           Data access REST API
@@ -3914,8 +4208,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1_1_1" type="checkbox" id="__nav_9_1_1_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1_1" >
       
       
         
@@ -3934,7 +4229,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="List" data-md-level="4">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_1_1_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1_1_1">
           <span class="md-nav__icon md-icon"></span>
           List
@@ -4113,8 +4408,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" checked>
       
       
         
@@ -4137,7 +4433,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="JavaScript API" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_2">
           <span class="md-nav__icon md-icon"></span>
           JavaScript API
@@ -4153,8 +4449,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_1" type="checkbox" id="__nav_9_2_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_1" >
       
       
         
@@ -4179,7 +4476,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Running Custom JavaScript -– Events" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_2_1">
           <span class="md-nav__icon md-icon"></span>
           Running Custom JavaScript -– Events
@@ -4274,8 +4571,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_3" type="checkbox" id="__nav_9_2_3" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" checked>
       
       
         
@@ -4298,7 +4596,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Reference Objects and Functions" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_2_3">
           <span class="md-nav__icon md-icon"></span>
           Reference Objects and Functions
@@ -4316,8 +4614,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_3_1" type="checkbox" id="__nav_9_2_3_1" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3_1" checked>
       
       
         
@@ -4333,12 +4632,18 @@
         
       
       
-        <label class="md-nav__link" for="__nav_9_2_3_1">
-          Interface objects
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="ref_jsapi_user_interface_objects.html">Interface objects</a>
+          
+            <label for="__nav_9_2_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
-      <nav class="md-nav" aria-label="Interface objects" data-md-level="4">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_2_3_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_2_3_1">
           <span class="md-nav__icon md-icon"></span>
           Interface objects
@@ -4354,15 +4659,285 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Application objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="ref_application_object.html" class="md-nav__link md-nav__link--active">
         Application objects
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getapppage" class="md-nav__link">
+    getAppPage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getapppageurl" class="md-nav__link">
+    getAppPageURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getappurl" class="md-nav__link">
+    getAppURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchartsurl" class="md-nav__link">
+    getChartsURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuser" class="md-nav__link">
+    getCurrentUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserid" class="md-nav__link">
+    getCurrentUserId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuseremail" class="md-nav__link">
+    getCurrentUserEmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserdisplayname" class="md-nav__link">
+    getCurrentUserDisplayName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserinfo" class="md-nav__link">
+    getCurrentUserInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserroles" class="md-nav__link">
+    getCurrentUserRoles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfilebaseurl" class="md-nav__link">
+    getFileBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getform" class="md-nav__link">
+    getForm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getformlaunchurl" class="md-nav__link">
+    getFormLaunchURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getimagebaseurl" class="md-nav__link">
+    getImageBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocale" class="md-nav__link">
+    getLocale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocation" class="md-nav__link">
+    getLocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getproductbaseurl" class="md-nav__link">
+    getProductBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrecordurl" class="md-nav__link">
+    getRecordURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshareddata" class="md-nav__link">
+    getSharedData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstylebaseurl" class="md-nav__link">
+    getStyleBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsuppresswarning" class="md-nav__link">
+    getSuppressWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuid" class="md-nav__link">
+    getUID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameter" class="md-nav__link">
+    getUrlParameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameters" class="md-nav__link">
+    getUrlParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getviewdataurl" class="md-nav__link">
+    getViewDataURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iscurrentuserinrole" class="md-nav__link">
+    isCurrentUserInRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issingleformview" class="md-nav__link">
+    isSingleFormView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapp" class="md-nav__link">
+    openApp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapppage" class="md-nav__link">
+    openAppPage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openform" class="md-nav__link">
+    openForm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openrecord" class="md-nav__link">
+    openRecord
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsuppresswarning" class="md-nav__link">
+    setSuppressWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showmessage" class="md-nav__link">
+    showMessage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4483,8 +5058,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
       
       
         
@@ -4513,7 +5089,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Services" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3">
           <span class="md-nav__icon md-icon"></span>
           Services
@@ -4571,8 +5147,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_4" type="checkbox" id="__nav_9_3_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_4" >
       
       
         
@@ -4595,7 +5172,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Service Description" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3_4">
           <span class="md-nav__icon md-icon"></span>
           Service Description
@@ -4660,8 +5237,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_5" type="checkbox" id="__nav_9_3_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_5" >
       
       
         
@@ -4682,7 +5260,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Using the service description tool for WSDL web service" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_3_5">
           <span class="md-nav__icon md-icon"></span>
           Using the service description tool for WSDL web service
@@ -4796,8 +5374,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_7" >
       
       
         
@@ -4846,7 +5425,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Custom Widget API v1.0.0" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
           Custom Widget API v1.0.0
@@ -5112,6 +5691,258 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getapppage" class="md-nav__link">
+    getAppPage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getapppageurl" class="md-nav__link">
+    getAppPageURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getappurl" class="md-nav__link">
+    getAppURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchartsurl" class="md-nav__link">
+    getChartsURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuser" class="md-nav__link">
+    getCurrentUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserid" class="md-nav__link">
+    getCurrentUserId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuseremail" class="md-nav__link">
+    getCurrentUserEmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserdisplayname" class="md-nav__link">
+    getCurrentUserDisplayName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserinfo" class="md-nav__link">
+    getCurrentUserInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentuserroles" class="md-nav__link">
+    getCurrentUserRoles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfilebaseurl" class="md-nav__link">
+    getFileBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getform" class="md-nav__link">
+    getForm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getformlaunchurl" class="md-nav__link">
+    getFormLaunchURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getimagebaseurl" class="md-nav__link">
+    getImageBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocale" class="md-nav__link">
+    getLocale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocation" class="md-nav__link">
+    getLocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getproductbaseurl" class="md-nav__link">
+    getProductBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrecordurl" class="md-nav__link">
+    getRecordURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshareddata" class="md-nav__link">
+    getSharedData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstylebaseurl" class="md-nav__link">
+    getStyleBaseURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsuppresswarning" class="md-nav__link">
+    getSuppressWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuid" class="md-nav__link">
+    getUID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameter" class="md-nav__link">
+    getUrlParameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameters" class="md-nav__link">
+    getUrlParameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getviewdataurl" class="md-nav__link">
+    getViewDataURL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iscurrentuserinrole" class="md-nav__link">
+    isCurrentUserInRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issingleformview" class="md-nav__link">
+    isSingleFormView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapp" class="md-nav__link">
+    openApp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapppage" class="md-nav__link">
+    openAppPage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openform" class="md-nav__link">
+    openForm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openrecord" class="md-nav__link">
+    openRecord
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsuppresswarning" class="md-nav__link">
+    setSuppressWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showmessage" class="md-nav__link">
+    showMessage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5124,372 +5955,718 @@
                 
                   
 
-  <a href="https://github.com/HCL-TECH-SOFTWARE/leap-doc/edit/main/docs/ref_application_object.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
-<h1 id="application-objects">Application objects</h1>
-<p>Table 1. Application Object (app) The Leap application object provides access to information relevant to the whole application.</p>
-<table class="table-wrap">
+<h1 id="application-object">Application object</h1>
+<p>The Leap application object, referenced by using 'app', provides access to information relevant to the whole application.  The object has several built-in functions.</p>
+<h2 id="functions">Functions</h2>
+<h3 class="section" id="getapppage">getAppPage</h3>
+<p>Returns the user interface app page object for the provided appPage id.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getAppPage</span><span class="p">(</span><span class="nx">appPageId</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
 <tr>
-<td width="225"> <b>Object</b> </td><td> <b>Description</b> <td><b>Example</b></td>
+<th>Parameter</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>app.getAppPage(appPageId)
-<td>Returns the user interface app page object for the provided
-<td>
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">myAppPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getAppPage</span><span class="p">(</span><span class="s2">&quot;AP_Welcome&quot;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
+<td>appPageId</td>
+<td>Optional. The id of the app page to retrieve, if not supplied the current app page id is used.</td>
 </tr>
-<tr>
-<td>app.getAppPageURL(appPageId, appUid)
-<td>Returns the URL for navigating directly to the app page for the provided app page id and application uid.<br>
-<br>
-
-<b>Note:</b> The appUid parameter is optional. If you do not supply a parameter, it will be set to the object in the current scope.
-<td>
-</tr>
-<tr>
-<td>app.getAppURL()
-<td>Returns the URL for navigating directly to the application.<br>
-<br>
-
-<b>Note:</b> The application will load the form or app page defined in the "Home Page" field on the Settings tab.
-<td></td>
-</tr>
-<tr>
-<td>app.getChartsURL(formId, appUid)
-<td>Returns the URL for navigating directly to the charts page of the form for the provided form uid and application uid.<br>
-<br>
-
-<b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
-<td>
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getChartsURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getCurrentUser()
-<td>Deprecated - Use app.getCurrentUserId()
-<td>
-</tr>
-<tr>
-<td>app.getCurrentUserId()
-<td>Returns the user's "identifier" - the identifying name of the currently logged in user.<br>
-<br>
-The identifying name is the property as defined by the ibm.was.MemberManager.userProps.id property that is located in the Leap_config.properties file. For example, <b>uid</b>, <b>cn</b>, <b>mail</b>, <b>displayName</b>.<br>
-<br>
-If the user is not authenticated, then the function returns the string "Anonymous Guest User".
-<td>
-To populate the current user's login name into a field in the form, place the following statement in the <b>onLoad</b> event of the form:<br>
-<br>
-<div class="highlight"><pre><span></span><code><span class="c1">// change F_SingleLine to the ID of the desired field </span><span class="w"></span>
-<span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUser</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getCurrentUserEmail()
-<td>Returns the user's email.
-<td>
-</tr>
-<tr>
-<td>app.getCurrentUserDisplayName()
-<td>Returns the user's full display name.
-<td>Ex. "Eduardo Ramírez López".
-</tr>
-<tr>
-<td>app.getCurrentUserInfo()
-<td>Returns the object containing the attributes of the current user.
-<td>For example:
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pflorez123&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedro.Flores@example.com&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">displayName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pedro Flores&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">userType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;owner&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<b>Note:</b> Not all attributes are available in all deployments. In that case, some of these values will be null.<br>
-<br>
-<b>userType</b> – possible values:
-<ul>
-<li>  "owner" – if current user is the app owner</li>
-<li>  "guest" – if the current user is anonymous</li>
-<li>   "" (empty string) – in all other cases</li>
-</ul>
-</tr>
-<tr>
-<td>app.getCurrentUserRoles
-<td>Returns a comma-separated list of all the roles for which the current user is a member.
-<td>For example:
-
-<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserRoles</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-</td>
-</tr>
-<td>app.getFileBaseURL()
-<td>Returns the relative URL to the current browser page where all files that are uploaded into the application at design time are stored. This does not include images and CSS files. All files are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/files/
-<td>
-</tr>
-<tr>
-<td>app.getForm(formID)
-<td>Returns the user interface form object for the provided formID. If used to return a form that is not shown or loaded, then the object that is returned is not fully operational and should be used for hooking up dynamic event handlers only.
-<td>Register an event listener to a service in order to do something when it returns:
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getServiceConfiguration</span><span class="p">(</span><span class="s1">&#39;SC_ServiceConfig0&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">service</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s1">&#39;onCallFinished&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">pSuccess</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;call finished&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getFormLaunchURL(formId, appUid)
-<td>Returns the URL for navigating directly to the form for the provided application uid and form uid.<br>
-<br>
-<b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
-
-<td>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">();</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getImageBaseURL()
-<td>Returns the relative URL to the current browser page where all images that are uploaded into the application at design time are stored. All images are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/image/
-<td>
-</tr>
-<tr>
-<td> app.getLocale()
-<td>Returns the current locale of the application, according to the application's settings or the current user's preferences. The returned value is a locale code, in accordance with <a href="https://www.ietf.org/rfc/rfc3066.txt" target="_blank">Tags for the Identification of Languages (RFC 3066)</a>.
-<td>
-</tr>
-<tr>
-<td>app.getLocation(callbackFunction, highAccuracy)
-<td>Allows the form designer to get the current user's location.<br>
-<br>
- <b>callbackFunction</b> - the callback that occurs after the location request finishes. The designer must define the function to have one argument which will be assigned a Position object if the location request was successful, or null if the request was unsuccessful. Inside the function the designer can assign location attributes to different fields. Five values can be accessed:
-
-<ul>
-<li>   position.coords.latitude</li>
-<li>   position.coords.longitude</li>
-<li>   position.coords.accuracy</li>
-<li>   position.coords.altitude</li>
-<li>   position.coords.altitudeAccuracy</li>
-</ul>
-<br>
-More information at <a href="https://developer.mozilla.org/en-US/docs/Web/API/Position/" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Position/</a>.<br>
-
-<td>Set the value of F_SingleLine1 to the current location:
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">highAccuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">myCallbackFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Location request failed&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(</span><span class="nx">myCallbackFunction</span><span class="p">,</span><span class="nx">highAccuracy</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>app.getProductBaseURL()
-<td>Returns the host and context of the Leap server.
-<td>
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getProductBaseURL</span><span class="p">();</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<td>app.getRecordURL(recordUid, formId, appUid)
-<td>Returns the URL for navigating directly to the record.
-
-<b>Note:</b> All parameters are optional. If you do not supply a parameter, it will be set to the object in the current scope.
-<td>
-
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">url2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">url3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-</tr>
-<tr>
-<td>
-app.getSharedData()
-<td>
-Returns a JavaScript™ object that can be easily accessed from all custom JavaScript code on the form, and is the suggested location to share data, or create reusable functions.
-
-<td>
-Create some data and functions to be used later:
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Welcome Form&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">v2</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">v2</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-</code></pre></div>
-
-Example of referencing the established variable and function:
-<div class="highlight"><pre><span></span><code><span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="p">);</span><span class="w"></span>
-<span class="nx">BO</span><span class="p">.</span><span class="nx">F_Number</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.getStyleBaseURL()
-<td>Returns the relative URL to the current browser page where all CSS style files that are uploaded into the application at design time are stored. All css files are saved as anonymous resources that can be viewed by anyone. An example url is ../../../../../anon/1/content/8.6.0.363/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/styles/| 
-<td>
-
-<tr>
-<td>app.getSuppressWarning()
-<td>Gets the current set value for suppressing the warning. See setSuppressWarning for information.
-<td>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getSuppressWarning</span><span class="p">();</span><span class="w"></span>
-<span class="k">if</span><span class="p">(</span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.getUID()
-<td>The UID of the application
-<td>Can be used to create a link to another form
-<div class="highlight"><pre><span></span><code><span class="nx">page</span><span class="p">.</span><span class="nx">F_StaticWebLink</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_ServerURL</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="s1">&#39;/apps/secure/1/app/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="s1">&#39;/launch/index.html?form=F_Form2&#39;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.getUrlParameter(parm)
-<td>Looks up a single URL query parameter.
-<td>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">param</span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameter</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">if</span><span class="p">(</span><span class="nx">param</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Shown only when debug param is present&#39;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.getUrlParameters()
-<td>Returns an object with all URL parameters.
-<td>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameters</span><span class="p">();</span><span class="w"></span>
-<span class="k">if</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">)</span><span class="w"></span>
-<span class="w">     </span><span class="nx">alert</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.getViewDataURL(appUid)
-<td>Returns the URL for navigating directly to the View Data page.<br>
-<br>
-<b>Note:</b> The parameter is optional. If you do not supply a parameter, it will be set to the object in the current scope.
-<td>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">();</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.isCurrentUserInRole (roleName)
-<td>Returns true if the current user is a member of the provided role, otherwise false.<br>
-<br>
-<b>Note:</b> The function does not validate the role with the provided roleName, therefore if the role does not exist <code>false</code> is returned.
-
-<td>For example:
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">app</span><span class="p">.</span><span class="nx">isCurrentUserInRole</span><span class="p">(</span><span class="s2">&quot;Manager&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">F_Instructions</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.isSingleFormView()
-<td>Returns true if the form is shown by itself in the browser and false if it is shown in view data.| 
-<td>
-
-<tr>
-<td>app.openApp(appUid, newTab)
-<td>Opens the home page of an application. The current app is used if you do not supply an app id. If <code>newTab</code> is <code>true</code>, the app is presented in a new browser tab. The default behavior is for the application to be opened in a new tab.
-<td>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">(),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.openAppPage(appPageId, appUid, newTab)
-<td>Opens the app page of an application that matches the provided <i>appPageid</i>.<br>
-<br>
-<b>Note:</b> appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-<td>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.openForm(formId, appUid, newTab)
-<td>Opens the form of an application that matches the provided <i>formId</i>.<br>
-<br>
-<b>Note:</b> appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-<td>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>openRecord(recordUid, formId, appUid, newTab)
-<td>Opens the record of a form that matches the provided <i>recordId</i> and <i>formId</i>.<br>
-<br>
-<b>Note:</b> formId, appUid and newTab are optional. If you do not supply a parameter, it will be set to the object in the current scope. The default behavior is for the application to be opened in a new tab.
-
-<td>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.setSuppressWarning (pSuppress)
-<td>If a user interacts with a form, or JavaScript, they are prompted with a warning message whenever the current browser page tries to navigate to a different URL. This function allows the suppression of that warning. When set to true the message is suppressed until it is set to false again
-<td>Can be used at any scope, for example in the application onStart, form onLoad, onItemChange, etc.
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<tr>
-<td>app.showMessage(title, message, type, subtitle)
-
-<td>Allow usage of a built-in dialog for end-user messages. title: The title to display in the dialog title bar.<br>
-<br>
- message: The message text to display.<br>
-<br>
- type (optional): can be one of "info", "success", "warn", or "error" and results in appropriate icon being displayed. If type is absent or not one of these values, then no icon will be displayed.<br>
-<br>
- subtitle (optional): Heading text for the message.
-
-<td>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">showMessage</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w"> </span><span class="s2">&quot;Error found in data&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="s2">&quot;The booking date cannot be after the event.&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w"> </span><span class="s2">&quot;Please change the booking or event date, then re-submit.&quot;</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
-</code></pre></div>
+</tbody>
 </table>
-<p><strong>Parent topic: </strong><a href="ref_jsapi_user_interface_objects.html">Interface objects</a></p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">myAppPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getAppPage</span><span class="p">(</span><span class="s2">&quot;AP_Welcome&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="getapppageurl">getAppPageURL</h3>
+<p>Returns the URL for navigating directly to the app page for the provided app page id and application uid.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">getAppPageURL</span><span class="p">(</span><span class="nx">appPageId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appPageId</td>
+<td>Optional. The id of the app page to retrieve, if not supplied the current app page id is used.</td>
+</tr>
+<tr>
+<td>appUid</td>
+<td>Optional. The uid of the app to retrieve, if not supplied the current app uid is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">appPageUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getAppPageUrl</span><span class="p">(</span><span class="s1">&#39;AP_Welcome&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;e09e7739-2214-4e64-88e3-9f54a47c3fdd&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="getappurl">getAppURL</h3>
+<p>Returns the URL for navigating directly to the application.</p>
+<p><strong>Note:</strong> The application will load the form or app page defined in the "Home Page" field on the Settings tab.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getAppURL</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">appUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getAppUrl</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 class="section" id="getchartsurl">getChartsURL</h3>
+<p>Returns the URL for navigating directly to the charts page of the form for the provided form uid and application uid.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getChartsURL</span><span class="p">(</span><span class="nx">formId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">formId</td>
+<td align="left">Optional. The id of the form to retrieve, if not supplied the current form id is used.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The uid of the app to retrieve, if not supplied the current app uid is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getChartsURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getcurrentuser">getCurrentUser</h3>
+<p><strong>Deprecated</strong> - Use app.getCurrentUserId()</p>
+<h3 class="section" id="getcurrentuserid">getCurrentUserId</h3>
+<p>Returns the user's "identifier" - the identifying name of the currently logged in user.</p>
+<p>The identifying name is the property as defined by the ibm.was.MemberManager.userProps.id property that is located in the Leap_config.properties file. For example, <em>uid</em>, <em>cn</em>, <em>mail</em>, <em>displayName</em>.</p>
+<p>If the user is not authenticated, then the function returns the string "Anonymous Guest User".</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserId</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong></p>
+<p>To populate the current user's login name into a field in the form, place the following statement in the <strong>onLoad</strong> event of the form:
+<div class="highlight"><pre><span></span><code><span class="c1">// change F_SingleLine to the ID of the desired field </span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserId</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getcurrentuseremail">getCurrentUserEmail</h3>
+<p>Returns the user's email.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserEmail</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">BO</span><span class="p">.</span><span class="nx">F_UserEmail</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserEmail</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getcurrentuserdisplayname">getCurrentUserDisplayName</h3>
+<p>Returns the user's full display name. Ex. "Eduardo Ramírez López".</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserDisplayName</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">BO</span><span class="p">.</span><span class="nx">F_UserName</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserDisplayName</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getcurrentuserinfo">getCurrentUserInfo</h3>
+<p>Returns the object containing the attributes of the current user.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserInfo</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pflorez123&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="err">email</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pedro.Flores@example.com&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="err">displayName</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pedro Flores&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="err">userType</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;owner&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Note:</strong> Not all attributes are available in all deployments. In that case, some of the values will be null.</p>
+<p><em>userType</em> – possible values:</p>
+<ul>
+<li>"owner" – if current user is the app owner</li>
+<li>"guest" – if the current user is anonymous</li>
+<li>"" (empty string) – in all other cases</li>
+</ul>
+<h3 class="section" id="getcurrentuserroles">getCurrentUserRoles</h3>
+<p>Returns a comma-separated list of all the roles for which the current user is a member.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserRoles</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getCurrentUserRoles</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getfilebaseurl">getFileBaseURL</h3>
+<p>Returns the relative URL to the current browser page where all files that are uploaded into the application at design time are stored. This does not include images and CSS files. All files are saved as anonymous resources that can be viewed by anyone. </p>
+<p>An example url is ../../../../../anon/1/content/9.3.6.33/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/files/</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong></p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
+<ol>
+<li>Attach a file (not image or CSS) to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Add a Link item to the form</li>
+<li>In the <strong>onShow</strong> event of the Link item add:
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedFile&quot;</span><span class="p">);</span>
+</code></pre></div></li>
+</ol>
+<h3 class="section" id="getform">getForm</h3>
+<p>Returns the user interface form object for the provided formID. If used to return a form that is not shown or loaded, then the object that is returned is not fully operational and should be used for hooking up dynamic event handlers only.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(</span><span class="nx">formID</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">formId</td>
+<td align="left">The id of the form to retrieve.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Register an event listener to a service in order to do something when it returns</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getServiceConfiguration</span><span class="p">(</span><span class="s1">&#39;SC_ServiceConfig0&#39;</span><span class="p">);</span>
+<span class="nx">service</span><span class="p">.</span><span class="nx">connectEvent</span><span class="p">(</span><span class="s1">&#39;onCallFinished&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">pSuccess</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;call finished&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></p>
+<h3 class="section" id="getformlaunchurl">getFormLaunchURL</h3>
+<p>Returns the URL for navigating directly to the form for the provided application uid and form uid.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">formId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">formId</td>
+<td align="left">Optional. The form id, if not specified the current form id is used.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The app uid, if not specified the current app uid is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getFormLaunchURL</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getimagebaseurl">getImageBaseURL</h3>
+<p>Returns the relative URL to the current browser page where all images that are uploaded into the application at design time are stored. All images are saved as anonymous resources that can be viewed by anyone. </p>
+<p>An example url is ../../../../../anon/1/content/9.3.6.33/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/image/</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getImageBaseURL</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong></p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
+<ol>
+<li>Attach an image file to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Add a Link item to the form</li>
+<li>In the <strong>onShow</strong> event of the Link item add:
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedImageFile&quot;</span><span class="p">);</span>
+</code></pre></div></li>
+</ol>
+<h3 class="section" id="getlocale">getLocale</h3>
+<p>Returns the current locale of the application, according to the application's settings or the current user's preferences. The returned value is a locale code, in accordance with <a href="https://www.ietf.org/rfc/rfc3066.txt" target="_blank">Tags for the Identification of Languages (RFC 3066)</a>.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getLocale</span><span class="p">()</span>
+</code></pre></div></p>
+<h3 class="section" id="getlocation">getLocation</h3>
+<p>Allows the form designer to get the current user's location.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">,</span><span class="w"> </span><span class="nx">highAccuracy</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">callbackFunction</td>
+<td align="left">the callback that occurs after the location request finishes.</td>
+</tr>
+<tr>
+<td align="left">highAccuracy</td>
+<td align="left">Optional. The form id, if not specified the current form id is used.</td>
+</tr>
+</tbody>
+</table>
+<p><em>callbackFunction</em> -  The designer must define the function to have one argument which will be assigned a Position object if the location request was successful, or null if the request was unsuccessful. Inside the function the designer can assign location attributes to different fields. Five values can be accessed:</p>
+<ul>
+<li>position.coords.latitude</li>
+<li>position.coords.longitude</li>
+<li>position.coords.accuracy</li>
+<li>position.coords.altitude</li>
+<li>position.coords.altitudeAccuracy</li>
+</ul>
+<p>More information at <a href="https://developer.mozilla.org/en-US/docs/Web/API/Position/" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Position/</a>.</p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set the value of F_SingleLine1 to the current location</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">highAccuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myCallbackFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">position</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine1</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Location request failed&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(</span><span class="nx">myCallbackFunction</span><span class="p">,</span><span class="nx">highAccuracy</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="getproductbaseurl">getProductBaseURL</h3>
+<p>Returns the host and context of the Leap server.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getProductBaseURL</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getProductBaseURL</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 class="section" id="getrecordurl">getRecordURL</h3>
+<p>Returns the URL for navigating directly to the record.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="nx">recordUid</span><span class="p">,</span><span class="w"> </span><span class="nx">formId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">recordUid</td>
+<td align="left">The submitted record uid.</td>
+</tr>
+<tr>
+<td align="left">formId</td>
+<td align="left">Optional. The form id, if not specified the current form id is used.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The app uid, if not specified the current app uid is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">());</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getRecordURL</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">(),</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="getshareddata">getSharedData</h3>
+<p>Returns a JavaScript™ object that can be easily accessed from all custom JavaScript code on the form, and is the suggested location to share data, or create reusable </p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">functions</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Create a variable</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Welcome Form&#39;</span><span class="p">;</span>
+
+<span class="c1">// Create a function</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">v2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">v2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Referencing the variable</span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_SingleLine</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">titleToShow</span><span class="p">);</span>
+
+<span class="c1">// Referencing the function</span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_Number</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">addTwoValues</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
+</code></pre></div></p>
+<h3 class="section" id="getstylebaseurl">getStyleBaseURL</h3>
+<p>Returns the relative URL to the current browser page where all CSS style files that are uploaded into the application at design time are stored. All css files are saved as anonymous resources that can be viewed by anyone. </p>
+<p>An example url is ../../../../../anon/1/content/9.3.6.33/97eeb588-2fff-49a7-89c1-5000885dafb4/1421171344944-2/desktop/en/en/en/desktop/styles/</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getStyleBaseURL</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong></p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
+<ol>
+<li>Attach a CSS file to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Add a Link item to the form</li>
+<li>In the <strong>onShow</strong> event of the Link item add:
+<div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedCSSFile&quot;</span><span class="p">);</span>
+</code></pre></div></li>
+</ol>
+<h3 class="section" id="getsuppresswarning">getSuppressWarning</h3>
+<p>Gets the current set value for suppressing the warning. See setSuppressWarning for information.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getSuppressWarning</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getSuppressWarning</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">suppressWarning</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="getuid">getUID</h3>
+<p>The UID of the application</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">();</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Can be stored in a field</span>
+<span class="nx">BO</span><span class="p">.</span><span class="nx">F_AppUid</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+
+<span class="c1">// Can be used to create a link to another form.</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">F_StaticWebLink</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_ServerURL</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="s1">&#39;/apps/secure/1/app/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">  </span><span class="s1">&#39;/launch/index.html?form=F_Form2&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="geturlparameter">getUrlParameter</h3>
+<p>Looks up a single URL query parameter.  If the parameter does not exist then 'undefined' is returned.  If the url parameter is repeated in the URL then all the values will be returned separated by a comma.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameter</span><span class="p">(</span><span class="nx">parm</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">parm</td>
+<td align="left">The name of parameter to retrieve from the url.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<ol>
+<li>
+<p>Trigger condition if specific url parameter is passed
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameter</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">param</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Shown only when debug param is present&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Set url parameter values into fields on the form
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">cityParam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameter</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">cityParam</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_City</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">cityParam</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>Given the URL 'http://myLeapServer.com/apps/secure/org/app/df102a80-fb5d-450b-8be2-9d3fde5f9b3d/launch/index.html?form=F_Form1&amp;city=Atlantis', 'Atlantis' would be placed into the field.</p>
+<p>Given the URL 'http://myLeapServer.com/apps/secure/org/app/df102a80-fb5d-450b-8be2-9d3fde5f9b3d/launch/index.html?form=F_Form1&amp;city=Atlantis&amp;city=Rome', 'Atlantis,Rome' would be placed into the field.</p>
+<h3 class="section" id="geturlparameters">getUrlParameters</h3>
+<p>Returns an object with all URL parameters.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameters</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUrlParameters</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">)</span>
+<span class="w">     </span><span class="nx">alert</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">CustomWarning</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="getviewdataurl">getViewDataURL</h3>
+<p>Returns the URL for navigating directly to the View Data page.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">(</span><span class="nx">appUid</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">appUid</td>
+<td align="left">The uid of the app, if not specified the current app will be used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getViewDataURL</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 class="section" id="iscurrentuserinrole">isCurrentUserInRole</h3>
+<p>Returns true if the current user is a member of the provided role, otherwise false.</p>
+<p><strong>Note:</strong> The function does not validate the role with the provided roleName, therefore if the role does not exist <em>false</em> is returned.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">isCurrentUserInRole</span><span class="w"> </span><span class="p">(</span><span class="nx">roleName</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">roleName</td>
+<td align="left">The name of the role to inspect if the current user is a member.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">app</span><span class="p">.</span><span class="nx">isCurrentUserInRole</span><span class="p">(</span><span class="s2">&quot;Manager&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">page</span><span class="p">.</span><span class="nx">F_Instructions</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 class="section" id="issingleformview">isSingleFormView</h3>
+<p>Returns true if the form is shown by itself in the browser and false if it is shown in view data.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">isSingleFormView</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">isSingleFormView</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 class="section" id="openapp">openApp</h3>
+<p>Opens the home page of an application. The current app is used if you do not supply an app id. If <code>newTab</code> is <code>true</code>, the app is presented in a new browser tab. The default behavior is for the application to be opened in a new tab.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="p">(</span><span class="nx">appUid</span><span class="p">,</span><span class="w"> </span><span class="nx">newTab</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">appPageId</td>
+<td align="left">The title to display in the dialog title bar.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">The message text to display.</td>
+</tr>
+<tr>
+<td align="left">newTab</td>
+<td align="left">Optional. Can be one of "info", "success", "warn", or "error" and results in appropriate icon being displayed. If type is absent or not one of these values, then no icon will be displayed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openApp</span><span class="w"> </span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">(),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="openapppage">openAppPage</h3>
+<p>Opens the app page of an application that matches the provided <em>appPageid</em>.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="p">(</span><span class="nx">appPageId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">,</span><span class="w"> </span><span class="nx">newTab</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">appPageId</td>
+<td align="left">The id of the app page.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The app uid, if not specified the current app uid is used.</td>
+</tr>
+<tr>
+<td align="left">newTab</td>
+<td align="left">Optional. True or False.  If true, the app page will be opened in a new browser tab. Default is True.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openAppPage</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AP_Page1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;d1f6eb71-9483-479c-8d47-dd30bd7e9de9&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="openform">openForm</h3>
+<p>Opens the form of an application that matches the provided <em>formId</em>.</p>
+<p><strong>syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="nx">formId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">,</span><span class="w"> </span><span class="nx">newTab</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">formId</td>
+<td align="left">The id of the form.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The app uid, if not specified the current app uid is used.</td>
+</tr>
+<tr>
+<td align="left">newTab</td>
+<td align="left">Optional. True or False.  If true, the form will be opened in a new browser tab. Default is True.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openForm</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;F_Form1&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="openrecord">openRecord</h3>
+<p>Opens the record of a form that matches the provided <em>recordId</em> and <em>formId</em>.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">openRecord</span><span class="p">(</span><span class="nx">recordUid</span><span class="p">,</span><span class="w"> </span><span class="nx">formId</span><span class="p">,</span><span class="w"> </span><span class="nx">appUid</span><span class="p">,</span><span class="w"> </span><span class="nx">newTab</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">recordUid</td>
+<td align="left">The submitted record uid.</td>
+</tr>
+<tr>
+<td align="left">formId</td>
+<td align="left">Optional. The form id, if not specified the current form id is used.</td>
+</tr>
+<tr>
+<td align="left">appUid</td>
+<td align="left">Optional. The app uid, if not specified the current app uid is used.</td>
+</tr>
+<tr>
+<td align="left">newTab</td>
+<td align="left">Optional. True or False.  If True, the record will be opened in a new browser tab. Default is True.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// open in new tab, only supply the record id</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">);</span>
+
+<span class="c1">// open in a new tab, specify record uid and form id</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F_Form2&#39;</span><span class="p">);</span>
+
+<span class="c1">// open form in a new tab, specify the record uid and app uid</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// open form in same tab, specify record uid, form id and app uid</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">openRecord</span><span class="p">(</span><span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F_Form2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="setsuppresswarning">setSuppressWarning</h3>
+<p>If a user interacts with a form, or JavaScript, they are prompted with a warning message whenever the current browser page tries to navigate to a different URL. This function allows the suppression of that warning. When set to true the message is suppressed until it is set to false again.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="w"> </span><span class="p">(</span><span class="nx">pSuppress</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pSuppress</td>
+<td align="left">True or False. When true, message is suppressed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Can be used at any scope, for example in the application onStart, form onLoad, onItemChange, etc.</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 class="section" id="showmessage">showMessage</h3>
+<p>Allow usage of a built-in dialog for end-user messages.</p>
+<p><strong>Syntax</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">showMessage</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="p">,</span><span class="w"> </span><span class="nx">subtitle</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">title</td>
+<td align="left">The title to display in the dialog title bar.</td>
+</tr>
+<tr>
+<td align="left">message</td>
+<td align="left">The message text to display.</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">Optional. Can be one of "info", "success", "warn", or "error" and results in appropriate icon being displayed. If type is absent or not one of these values, then no icon will be displayed.</td>
+</tr>
+<tr>
+<td align="left">subtitle</td>
+<td align="left">Optional. Heading text for the message.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_BookingDate</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_EventDate</span><span class="p">.</span><span class="nx">getValue</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">showMessage</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;Error found in data&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;The booking date cannot be after the event.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;Please change the booking or event date, then re-submit.&quot;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Parent topic:</strong> <a href="ref_jsapi_user_interface_objects.html">Interface objects</a></p>
 
 
 
@@ -5502,10 +6679,10 @@ Example of referencing the established variable and function:
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
@@ -5526,10 +6703,10 @@ Example of referencing the established variable and function:
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

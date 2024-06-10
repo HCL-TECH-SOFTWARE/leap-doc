@@ -4,7 +4,23 @@ The name and description elements allow you to localize an HCL Leap Service Desc
 
 Service Descriptions can be localized in two ways: using the xml:lang attribute, or providing translations in a separate .properties file. However, these approaches can be cumbersome if the Service Description is to be localized into many languages. An alternative is to use the key attribute on the name, and description elements.
 
-The value of the key attribute denotes the key in a Java™ style .properties file that maps the key to the value to display for the name or description element. When the Service Description is loaded, Leap loads the associated .properties files, and uses their contents as the messages to display for the name and description elements.
+The value of the key attribute denotes the key in a Java™ style .properties file that maps the key to the value to display for the name or description element.
+
+**Service Description**
+```xml
+<name key="email.service.name"></name>
+<description key="email.service.description"></description>
+```
+
+**Properties file:**
+```text
+email.service.name=Send Email Service
+email.service.description=This service enables the user to send an email
+email.parameter.to.name=To
+email.parameter.to.description=Email addresses separated with comma
+```
+
+When the Service Description is loaded, Leap loads the associated .properties files, and uses their contents as the messages to display for the name and description elements.
 
 When a Service Description uses this approach, the .properties files and Service Description must be placed in the same deployment directory. Changes to the .properties files are not automatically reloaded if they are changed. In order to refresh with new strings, the Service Description XML file must be changed or its modification date changed.
 
@@ -12,5 +28,5 @@ Naming the .properties files is important because the Leap looks for .properties
 
 For example, if the Service Description XML file is CurrencyConvService.xml, then the default .properties file is CurrencyConvService.properties and the French messages are in a file named CurrencyConvService\_fr.properties. For details on locale specifier formats, refer to the documentation of java.util.Locale.
 
-**Parent topic: **[Service Description](ref_service_service_description.md)
+**Parent topic:** [Service Description](ref_service_service_description.md)
 

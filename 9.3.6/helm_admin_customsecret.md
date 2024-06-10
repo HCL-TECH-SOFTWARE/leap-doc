@@ -1,26 +1,4 @@
-# Provide admin user a custom secret {#helm_admin_customsecret .concept}
-
-Instead of providing adminUser and adminPassword for Leap directly in the custom values, a secret can be used to pass the credentials to the deployments.
-
-1.  Create a secret that will be used to reference credentials, this secret should contain the required credential attributes \(e.g. "username", "password"\).
-
-    ``` {#codeblock_ggz_rk4_hzb}
-    kubectl create secret generic <secret-name> --from-literal=username=<your-username> --from-
-    literal=password=<your-password> --namespace=<namespace> 
-    ```
-
-2.  Reference the secret in the custom Helm values. When a secret is used, the adminUser and adminPassword values must be set to an empty string \(""\) or null. Example configuration:
-
-    ``` {#codeblock_t3c_5k4_hzb}
-    security: 
-      leap: 
-        adminUser: "" 
-        adminPassword: "" 
-        customAdminSecret: "my-custom-admin-secret"
-    ```
-
-
-## Custom secrets {#section_gsj_vk4_hzb .section}
+# Using Custom secrets {#section_gsj_vk4_hzb .concept}
 
 Apart from the admin credentials there can be use cases where credentials, secrets or additional key files are required. To pass them to the deployment, the configuration.leap.customSecrets value can be used to reference additional [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret/).
 
@@ -35,6 +13,28 @@ All keys and values under customSecrets must consist of lower-case alphanume
 1.  "configuration.leap.customSecrets: Additional property is not allowed"
 2.  "configuration.leap.customSecrets.: Does not match pattern '^\[a-z0-9\]\(\[-a-z0-9\]\*\[a-z0-9\]\)?$'"
 
+
+## Use custom secret for defining the admin user and password {#helm_admin_customsecret .section}
+
+Instead of providing adminUser and adminPassword for Leap directly in the custom values, a secret can be used to pass the credentials to the deployments.
+
+1.  Create a secret that will be used to reference credentials, this secret should contain the required credential attributes \(e.g. "username", "password"\).
+
+    ``` {#codeblock_ggz_rk4_hzb}
+    kubectl create secret generic <secret-name> --from-literal=username=<your-username> --from-
+    literal=password=<your-password> --namespace=<namespace> 
+    ```
+
+2.  Reference the secret in the custom Helm values. When a secret is used, the adminUser and adminPassword values must be set to an empty string \(""\) or null. Example configuration:
+
+    ```yaml
+    security: 
+      leap: 
+        adminUser: "" 
+        adminPassword: "" 
+        customAdminSecret: "my-custom-admin-secret"
+    ```
+
 ## Using custom secrets for credentials {#section_nc2_1l4_hzb .section}
 
 The following is an example of creating a secret `my-custom-db-credentials`, which contains two entries DB\_USERNAME and DB\_PASSWORD:
@@ -46,9 +46,10 @@ literal=DB_PASSWORD=<your-password> --namespace=<namespace>
 
 The secret is referenced as `db-credentials` in the custom Helm values:
 
-``` {#codeblock_tjm_2l4_hzb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     customSecrets: 
       db-credentials: my-custom-db-credentials
 ```
@@ -60,10 +61,12 @@ This will result in:
 
 The environment variables can then be referenced in any of the server configurations. For example, to extend the DB2 configuration:
 
-``` {#codeblock_fwl_3l4_hzb}
+```yaml
 configuration: 
-  leap: 
-    configOverrideFiles: 
+  leap:
+    . . . 
+    configOverrideFiles:
+      . . .
       db2Override: | 
         <server description="leapServer">  
           <authData id="db2AuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" />  
@@ -80,15 +83,16 @@ configuration:
 
 Below is an example of creating a secret `my-custom-ltpa-key`  from an LTPA key file including the entry LTPA\_KEY:
 
-``` {#codeblock_njw_nl4_hzb}
+```
 kubectl create secret generic my-custom-ltpa-key --from-file=./ltpa.keys --namespace=<namespace> 
 ```
 
 The secret is referenced as `ltpa-key` in the custom Helm values:
 
-``` {#codeblock_tny_pl4_hzb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     customSecrets: 
       ltpa-key: my-custom-ltpa-key 
 ```
@@ -100,15 +104,17 @@ This will result in:
 
 The file can then be referenced in any of the server configurations. For example, to use the LTPA key for the server:
 
-``` {#codeblock_tg4_tl4_hzb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
+      . . .
       ltpaOverride: | 
         <server description="leapServer">  
           <ltpa keysFileName="/mnt/customSecrets/ltpa-key/ltpa.keys" keysPassword="myLtpaKeyPassword" /> 
         </server> 
 ```
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

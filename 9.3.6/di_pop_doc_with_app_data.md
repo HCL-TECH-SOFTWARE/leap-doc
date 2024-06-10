@@ -24,5 +24,5 @@ The following instructions describe how to create a trigger that calls the PDF s
 -   **[Document integration usage details](di_usage_details.md)**  
 The following usage details describe the best practices and limitations for integrating your Leap application with a PDF.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Building Apps](cr_creating_and_managing_toc.md)
 

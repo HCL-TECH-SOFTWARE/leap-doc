@@ -30,7 +30,7 @@ The following steps are a general overview of the lifecycle of an application.
 
 7.  Use the **Workflow** tab to define stages within a form.
 
-    You can create as many stages as required for your form or workflow. For example, an employee completes a vacation request form. The employee does not see the part of the form where the supervisor approves or rejects the request. When the supervisor receives the form, the next stage is visible, and the request is granted, or refused. You can also use stages to set buttons at specific points in your form. For example, you might want to allow a user to save a draft copy of the form after they reach a specific stage. For more information, see [Adding Stages to an application](sub_adding_stages_toc.md).
+    You can create as many stages as required for your form or workflow. For example, an employee completes a vacation request form. The employee does not see the part of the form where the supervisor approves or rejects the request. When the supervisor receives the form, the next stage is visible, and the request is granted, or refused. You can also use stages to set buttons at specific points in your form. For example, you might want to allow a user to save a draft copy of the form after they reach a specific stage. For more information, see [Adding stages to an application](sub_adding_stages_toc.md).
 
 8.  Use the **Events** tab to review any custom Javascript added to the application.
 
@@ -47,5 +47,5 @@ The following steps are a general overview of the lifecycle of an application.
     **Note:** As an application creator, you can edit an application at any time. If you edit a live application, you must redeploy and relaunch it after your changes are saved. If a user is entering data into an application as you redeploy, their work is not saved.
 
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Application Management](cr_application_operations_toc.md)
 

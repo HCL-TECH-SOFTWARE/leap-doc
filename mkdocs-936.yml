@@ -72,7 +72,7 @@ nav:
 # HCL Connections Documentation
       - Introducing Leap: index.md
 # What's New
-      - What&apos;s new&quest;: whats_new.md   
+      - What&apos;s New&quest;: whats_new.md   
 # Overview
       - Overview: 
         - ovr_overview.md
@@ -175,55 +175,90 @@ nav:
           - tr_troubleshooting_toc.md
           - Troubleshooting and support: tr_troubleshooting_and_support.md
           - Troubleshooting Leap: tr_troubleshooting.md
-# Creating and managing applications (Building Apps)
+# Building Apps
       - Building Apps:
         - cr_creating_and_managing_toc.md
-        - Creating an application: cr_creating_application_overview.md
-        - Creating an application from an excel spreadsheet: cr_creating_application_excel.md
-        - Styling your application with a custom theme: cr_custom_theme.md
-        - Upgrading an application design: upgrade_application_design.md
-        - Copying items: cr_copying_items.md
-        - Moving items on a form: cr_moving_items_on_a_form.md
-        - Creating an accessible application:
-          - ac_creating_accessible_application.md
-          - Using a Text item as a label: ac_using_text_item_as_label.md
-        - Enabling dynamic layout: cr_enabling_dynamic_layout.md
-        - Globalization features:
-          - gl_forms_experience_builder_globalization.md
-          - Setting a language: gl_setting_a_language.md
-        - Creating rules in your application: 
-          - ru_creating_rules_in_your_form.md
-          - Setting rules on form items: ru_set_rule_on_form_items.md
-          - Setting rules on pages in an application: ru_setting_rules_on_pages_in_an_application.md
-          - Setting rules on Stages: ru_setting_rules_on_stage_actions.md
-        - Labeling data, performing data analysis, and exporting data:
+        - Application Management:
+          - cr_application_operations_toc.md
+          - Creating an application: cr_creating_application_overview.md
+          - Creating an application from an excel spreadsheet: cr_creating_application_excel.md
+          - Deploying an application: cr_deploying_an_application.md
+          - Launching an application: cr_launching_an_application.md
+          - Viewing submitted responses: cr_viewing_submitted_responses.md
+          - Viewing application history: cr_view_app_history.md
+          - Upgrading an application design: upgrade_application_design.md
+          - Updating and stopping a deployment: cr_updating_and_stopping_deployment.md
+          - Duplicating an application: cr_duplicating_application.md
+        - Using the editor:
+          - cr_using_the_editor_toc.md
+          - Copying items: cr_copying_items.md
+          - Moving items on a form: cr_moving_items_on_a_form.md
+          - Creating an accessible application:
+            - ac_creating_accessible_application.md
+            - Using a Text item as a label: ac_using_text_item_as_label.md
+          - Enabling dynamic layout: cr_enabling_dynamic_layout.md
+          - Adding specialized form items:
+            - wi_introduction_to_specialized_form_items.md
+            - Echoing text with a Text item: wi_echoing_text_with_a_text_item.md
+            - Adding tables to a form: wi_adding_tables_to_a_form.md
+            - Adding HTML fragments to a form: wi_adding_html_fragments_to_a_form.md
+          - Managing the files associated with your application:
+            - wf_managing_the_files_associated_with_your_appl.md
+            - Uploading files for use in your application: cr_uploading_and_using_files.md
+        - Adding dynamic behavior:
+          - cr_adding_dynamic_behavior.md
+          - Adding formulas to your application:
+            - cr_adding_formulas_toc.md
+            - Creating a Formula from the Properties side panel: cr_adding_formulas_from_properties_window.md
+            - Creating a formula from the Settings tab: cr_adding_formula_from_settings_tab.md
+            - Running a formula from an event: cr_adding_formula_running_formula_from_event.md
+          - Creating rules in your application: 
+            - ru_creating_rules_in_your_form.md
+            - Setting rules on form items: ru_set_rule_on_form_items.md
+            - Setting rules on pages in an application: ru_setting_rules_on_pages_in_an_application.md
+            - Setting rules on Stages: ru_setting_rules_on_stage_actions.md
+          - Incorporating web services into your applications:
+            - cr_using_apps_as_services_toc.md
+            - Adding and configuring a service: cr_in_app_service.md
+            - Service Oriented Architecture – Exposing a service to Leap: cr_using_apps_exposing_service_to.md
+            - Triggering a service from a button: se_triggering_a_web_service_from_a_button.md
+            - Using a service to populate form items: se_using_a_service_to_populate_a_drop_down.md
+            - Cancelling user submit event: se_cancel_submit-event.md
+            - Integrating your application with existing Leap applications: cr_using_other_apps_as_services.md
+          - Adding Stages to an application:
+            - sub_adding_stages_toc.md
+            - Editing the message a user sees upon form submission: sub_editing_the_message_a_user_sees.md
+            - Redirecting users after form submission: sub_editing_the_url_a_user_sees.md
+            - Sending an email after a user submits a form: sub_sending_an_email.md
+            - Populating information upon form submission using a web service: sub_use_service_to_populate_on_form_submission.md
+            - Assigning users to a role after submission: sub_assigning_a_user.md
+            - Configuring behavior of a form on submission: sub_sending_a_user_to_another_url.md
+            - Saving work as a draft: sad_allowing_users_to_save.md
+            - Scenario -- hidden or read-only form items in Stages: sub_hidden_or_read_only_items_in_stages.md
+            - Saving a PDF to a file location: sub_saving_pdf.md
+          - Adding JavaScript: 
+            - js_adding_javascript.md
+            - Sample Functions: js_sample_functions.md
+          - Adding Custom Behaviour: cr_adding_custom_behavior.md
+          - Working with attachments: cr_attachments.md
+        - Working with application data:
           - da_data_analysis_and_exporting_data.md
           - Changing the Saved Value of a form item: da_labeling_saved_values_in_forms.md
           - Adding Data Labels to form items: da_labeling_fields_in_a_form.md
           - Exporting data from your application:
             - da_exporting_data_from_your_application.md
             - Controlling data available for export: da_controlling_data_available_for_export.md
-        - Incorporating web services into your applications:
-          - cr_using_apps_as_services_toc.md
-          - Adding and configuring a service: cr_in_app_service.md
-          - Service Oriented Architecture – Exposing a service to Leap: cr_using_apps_exposing_service_to.md
-          - Triggering a service from a button: se_triggering_a_web_service_from_a_button.md
-          - Using a service to populate form items: se_using_a_service_to_populate_a_drop_down.md
-          - Integrating your application with existing Leap applications: cr_using_other_apps_as_services.md
-        - Adding formulas to your application:
-          - cr_adding_formulas_toc.md
-          - Creating a Formula from the Properties side panel: cr_adding_formulas_from_properties_window.md
-          - Creating a formula from the Settings tab: cr_adding_formula_from_settings_tab.md
-          - Running a formula from an event: cr_adding_formula_running_formula_from_event.md
-        - Adding specialized form items:
-          - wi_introduction_to_specialized_form_items.md
-          - Echoing text with a Text item: wi_echoing_text_with_a_text_item.md
-          - Adding tables to a form: wi_adding_tables_to_a_form.md
-          - Adding HTML fragments to a form: wi_adding_html_fragments_to_a_form.md
-          - Adding media to a form: wi_adding_media_to_a_form.md
-        - Managing the files associated with your application:
-          - wf_managing_the_files_associated_with_your_appl.md
-          - Uploading files for use in your application: cr_uploading_and_using_files.md
+          - Importing data in View Data: cr_import_data_in_view_responses.md 
+        - Styling your application:
+          - st_style_application.md
+          - Styling your application with a custom theme: cr_custom_theme.md
+          - Using CSS files:
+            - ex_css_toc.md
+            - Adding customized CSS to your application: ex_adding_ccs.md
+            - Removing a custom style sheet: ex_removing_a_css.md
+        - Globalization features:
+          - gl_forms_experience_builder_globalization.md
+          - Setting a language: gl_setting_a_language.md
         - Leap document integration:
           - di_pop_doc_with_app_data.md
           - Adding a PDF to Leap: di_adding_pdf_to.md
@@ -231,31 +266,9 @@ nav:
           - Mapping form items to PDF fields and storing the filled PDF: di_mapping_form_items_to_pdf_fields_and_attaching.md
           - Creating the PDF trigger: di_creating_the_pdf_trigger.md
           - Document integration usage details: di_usage_details.md
-        - Adding Stages to an application:
-          - sub_adding_stages_toc.md
-          - Editing the message a user sees upon form submission: sub_editing_the_message_a_user_sees.md
-          - Redirecting users after form submission: sub_editing_the_url_a_user_sees.md
-          - Sending an email after a user submits a form: sub_sending_an_email.md
-          - Populating information upon form submission using a web service: sub_use_service_to_populate_on_form_submission.md
-          - Assigning users to a role after submission: sub_assigning_a_user.md
-          - Configuring behavior of a form on submission: sub_sending_a_user_to_another_url.md
-          - Saving work as a draft: sad_allowing_users_to_save.md
-          - Scenario -- hidden or read-only form items in Stages: sub_hidden_or_read_only_items_in_stages.md
-          - Saving a PDF to a file location: sub_saving_pdf.md
-        - Deploying applications and viewing data responses:
-          - cr_deploy_and_launch_toc.md
-          - Deploying an application: cr_deploying_an_application.md
-          - Updating and stopping a deployment: cr_updating_and_stopping_deployment.md
-          - Launching an application: cr_launching_an_application.md
-          - Viewing submitted responses: cr_viewing_submitted_responses.md
-          - Importing data in View Data: cr_import_data_in_view_responses.md 
 # Extending
       - Extending:
         - extending_toc.md
-        - Using custom style sheets:
-          - ex_css_toc.md
-          - Adding customized CSS to your application: ex_adding_ccs.md
-          - Removing a custom style sheet: ex_removing_a_css.md
         - Adding services:
           - services_toc.md
           - Setting up your development environment: ser_setup_development_environment.md
@@ -297,6 +310,7 @@ nav:
           - Reference Objects and Functions: 
             - ref_jsapi_objects_and_functions.md
             - Interface objects:
+              - ref_jsapi_user_interface_objects.md
               - Application objects: ref_application_object.md
               - Form objects: ref_form_objects.md
               - Page and App Page objects: ref_page_app_page_objects.md

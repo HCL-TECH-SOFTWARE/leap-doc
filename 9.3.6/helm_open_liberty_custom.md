@@ -6,9 +6,10 @@ The snippets are merged into the Open Liberty server.xml. After making changes t
 
 **Note:** The name of the customization \(myCustomOverride1 in the following snippet\) can be any string, but you may want it to be descriptive of what is being provided.
 
-``` {#codeblock_t2s_pts_gxb}
+```yaml
 configuration: 
-  leap: 
+  leap:
+    . . . 
     configOverrideFiles: 
       myCustomOverride1: | 
         <server description="leapServer"> 
@@ -17,7 +18,13 @@ configuration:
           </basicRegistry> 
         </server>
 ```
-There are several configuration changes that leverage this mechanism: [SMTP](helm_configure_smtp.md), [Database](helm_configure_db.md), [LDAP](helm_configure_ldap.md).
+There are several configuration changes that leverage this mechanism: 
+
+- [Configure Database](helm_configure_db.md)
+- [Configure LDAP](helm_configure_ldap.md)
+- [Configure SMTP](helm_configure_smtp.md)
+- [Configure SSL](helm_configure_ssl.md)
+- [Configure LTPA](helm_admin_customsecret.md#using-custom-secrets-as-key-file-section_wc2_kl4_hzb-section)]
 
 **Parent topic:** [Preparation](helm_preparation.md)
 

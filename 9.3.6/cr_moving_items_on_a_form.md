@@ -22,5 +22,6 @@ You can move all Palette items between pages in a form. If you want to move an i
     -   **Ctrl+M**: Drop an item on the cell that has focus
     -   **Esc**: Cancel selection.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+
+**Parent topic:** [Using the editor](cr_using_the_editor_toc.md)
 

@@ -20,7 +20,7 @@ In this lesson, learn how to:
 
 Estimated time required to complete this module: 20 minutes
 
-## Adding Stages to your form {#lesson21}
+## Adding stages to your form {#lesson21}
 
 The workflow for this form is summarized as follows: The user accesses the form in the Start stage. When the user submits the form, it goes to the Awaiting Approval stage, where an approver can either accept or reject the Expense Report. If the reviewer accepts the Expense Report, the form goes to the Accepted stage. If the reviewer rejects the Expense Report, the form goes to the Approval Request stage so the submitter can make corrections and resubmit.
 

@@ -4,11 +4,11 @@ Sometimes you may need to increase the log level to troubleshoot unexpected beha
 
 Below is an example of how to change the log level.
 
-``` {#codeblock_akc_jhh_hxb}
+```yaml
 logging:
   leap:
     level: Leap:*=detail:com.ibm.form.nitro.*=finest
 ```
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

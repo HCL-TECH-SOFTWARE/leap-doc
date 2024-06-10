@@ -8,8 +8,5 @@ You can use the Text item to echo text, or build a summary page.
 The **Table** form item enables the user to add complex entries to a form.
 -   **[Adding HTML fragments to a form](wi_adding_html_fragments_to_a_form.md)**  
 Using the HTML Fragment item, you can add HTML anywhere in your form.
--   **[Adding media to a form](wi_adding_media_to_a_form.md)**  
-You can add media to the form anywhere you place the Media form item.
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
-
+**Parent topic:** [Using the editor](cr_using_the_editor_toc.md)

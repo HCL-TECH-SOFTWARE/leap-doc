@@ -36,5 +36,5 @@ Found mounted extension files in '/mnt/rwx/extensions'. Copying files to '/opt/o
 [4/18/24 16:33:29:454 PDT] 000000c2 id=00000000 com.ibm.form.platform.service.framework.DirectoryWatcher     I processArtifact FSPDI5: The Bundle, sampleExtension.jar loaded successfully.
 ```
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

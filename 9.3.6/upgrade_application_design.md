@@ -33,5 +33,5 @@ You many want to make significant changes to your application but do not want to
 7.  This will result in the older app \(MyApp\) being upgraded to the newer version. Decide if you are going to keep the copy for further future edits or delete it.
 
 
-**Parent topic: **[Creating and managing applications](cr_creating_and_managing_toc.md)
+**Parent topic:** [Application Management](cr_application_operations_toc.md)
 

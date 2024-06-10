@@ -8,21 +8,23 @@ For more information on creating service descriptions, see [Service Description]
 
 Example:
 
-``` {#codeblock_n2n_fkt_gxb}
+```yaml
 configuration:
   leap:
+    . . .
     serviceCatalog:
-       sampleServiceDescription.xml: |
-         <?xml version="1.0" encoding="utf-8"?>
-         <serviceDescription>
-         <id>sample-service-description</id>
-         <defaultLocale>en</defaultLocale>
-         <transportId>HTTPServiceTransport</transportId>
-         <name xml:lang="en">Sample service Description</name>
-         <description xml:lang="en"></description>
-            . . . 
-         </serviceDescription>
+      . . .
+      sampleServiceDescription.xml: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <serviceDescription>
+        <id>sample-service-description</id>
+        <defaultLocale>en</defaultLocale>
+        <transportId>HTTPServiceTransport</transportId>
+        <name xml:lang="en">Sample service Description</name>
+        <description xml:lang="en"></description>
+          . . . 
+        </serviceDescription>
 ```
 
-**Parent topic: **[Preparation](helm_preparation.md)
+**Parent topic:** [Preparation](helm_preparation.md)
 

@@ -19,7 +19,7 @@ In this tutorial, you learned how to:
 -   Review the submitted sample data
 -   Delete submitted sample data
 
-For more detailed information about specific topics that are covered in this tutorial, see [Creating and managing applications](cr_creating_and_managing_toc.md) in the HCL Leap product documentation.
+For more detailed information about specific topics that are covered in this tutorial, see [Building Apps](cr_creating_and_managing_toc.md) in the HCL Leap product documentation.
 
 **Parent topic: **[Building a Survey application](tut_survey_application_OV.md)
 
