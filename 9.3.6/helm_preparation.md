@@ -24,7 +24,7 @@ This section outlines mandatory and optional tasks that need to be done before i
 -   [Configure Role Mapping](helm_configure_roleMapping.md)
 -   [Open Liberty server customizations](helm_open_liberty_custom.md)
 -   [Service Catalog](helm_service_catalog.md)
--   [Deploy Custom Extensions](helm_deploy_custom_extension.md)
+-   [Deploy custom extensions](helm_deploy_custom_extension.md)
 -   [Leap properties](helm_leap_properties.md)
 -   [JVM options](helm_jvm_options.md)
 -   [Changing the log level](helm_changing_log_level.md)

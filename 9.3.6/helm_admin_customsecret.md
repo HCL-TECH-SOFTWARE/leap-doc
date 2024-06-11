@@ -1,4 +1,4 @@
-# Using Custom secrets {#section_gsj_vk4_hzb .concept}
+# Using custom secrets {#section_gsj_vk4_hzb .concept}
 
 Apart from the admin credentials there can be use cases where credentials, secrets or additional key files are required. To pass them to the deployment, the configuration.leap.customSecrets value can be used to reference additional [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret/).
 
