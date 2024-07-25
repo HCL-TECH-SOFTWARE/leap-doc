@@ -105,7 +105,7 @@ configuration:
 ```
 
 
-#### Create credential for Domino Leap (not included in the 9.3.7 docs)
+#### Create credential for Domino Leap not included in the 9.3.7 docs
 
 The credential object for Domino Leap is a service credential which can be defined in the Leap Config DB (.nsf).
 
@@ -126,6 +126,7 @@ Select the service and continue through the dialog to map inputs and outputs as 
 ## Troubleshooting the HCL Volt MX Integration
 
 If your Foundry Integration services are not appearing with in Leap, try the following procedures:
+
 - Verify that your Leap server can reach the Foundry server.
 - Verify that you have enabled the integration.
 - Verify that you have defined all three config settings for the Foundry application (app name, service url, and credential alias).
