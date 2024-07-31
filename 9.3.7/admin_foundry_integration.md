@@ -105,7 +105,7 @@ configuration:
 ```
 
 
-#### Create credential for Domino Leap not included in the 9.3.7 docs
+#### Create credential for Domino Leap 
 
 The credential object for Domino Leap is a service credential which can be defined in the Leap Config DB (.nsf).
 
