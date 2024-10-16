@@ -7,8 +7,13 @@ Below is an example of how to change the log level.
 ```yaml
 logging:
   leap:
-    level: Leap:*=detail:com.ibm.form.nitro.*=finest
+    level: Leap:*=detail,Leap:com.ibm.form.nitro.*=finest
 ```
+The general format is `Leap:[packageName1].*=[level1],Leap:[packageName2].*=[level2],...`
 
-**Parent topic:** [Preparation](helm_preparation.md)
+The default log configuration is `*=info`.
+
+See [logging levels](https://openliberty.io/docs/latest/log-trace-configuration.html#logging_levels) for more details.
+
+**Parent topic: **[Preparation](helm_preparation.md)
 
