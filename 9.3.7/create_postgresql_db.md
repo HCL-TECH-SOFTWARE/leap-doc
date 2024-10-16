@@ -8,9 +8,13 @@ In a production environment, you must create a PostgreSQL database before you in
 
 Create an empty PostgreSQL database following standard naming conventions. There are two methods:
 
-    -   Use PGAdmin.
-    -   Run psql.exe and execute the command create database mydbname;.
-    **Note:** The default page size will be 8KB.
+-   Use PGAdmin tooling
+-   Use the `psql` command 
+
+Default database settings are adequate; however, it is required that the user that is used for Leap's datasource has full permissions on the database. For example:   
+```
+GRANT ALL PRIVILEGES ON DATABASE leap_db TO leap_db_user
+```
 
 
 **Parent topic: **[Create a Database](in_create_db.md)

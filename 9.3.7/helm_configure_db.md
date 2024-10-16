@@ -14,18 +14,18 @@ configuration:
     configOverrideFiles: 
       . . .
       db2Override: |  
-        <server description="leapServer"> 
-          <!-- Adds the jdbc library to the Leap application classpath -->
-          <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
-            <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcDB2"/>
-          </application>          
+        <server> 
           <!-- Disable the hard-coded derby datasource -->
-          <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
-          <authData id="db2AuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
+          <dataSource id="leapDerbyDatasource" jndiName="disabled" />
+          <!-- Adds the DB2 JDBC library to the Leap application classpath -->
           <library id="jdbcDB2" > 
-            <fileset dir ="${server.config.dir}/lib" includes="db2jcc4.jar db2jcc_license_cu.jar" /> 
+            <fileset dir ="${server.config.dir}/lib" includes="db2jcc4.jar" /> 
           </library> 
-          <dataSource id="febDataSource" jndiName="jdbc/BuilderDataSource" statementCacheSize="30" containerAuthDataRef="db2AuthAlias"> 
+          <application id="leap">
+            <classloader id="leapClassloader" commonLibraryRef="jdbcDB2"/>
+          </application>          
+          <authData id="db2AuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
+          <dataSource id="leapDB2DataSource" jndiName="jdbc/BuilderDataSource" statementCacheSize="30" containerAuthDataRef="db2AuthAlias"> 
             <properties.db2.jcc  
                 databaseName="LEAPDB"  
                 driverType="4" 
@@ -69,17 +69,18 @@ configuration:
     configOverrideFiles: 
       . . .
       oracleOverride: | 
-        <server description="leapServer"> 
-            <!-- Adds the jdbc library to the Leap application classpath -->
-            <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
-                <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcOracle"/>
-          </application>            
+        <server> 
             <!-- Disable the hard-coded derby datasource -->
-            <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
+            <dataSource id="leapDerbyDatasource" jndiName="disabled" />
+            <!-- Adds the jdbc library to the Leap application classpath -->
             <library id="jdbcOracle" >
                 <fileset dir="${server.config.dir}/lib" includes='ojdbc8.jar' />
             </library>
-            <dataSource id="leapDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="oracleAuthAlias"> 
+            <application id="leap">
+                <classloader id="leapClassloader" commonLibraryRef="jdbcOracle"/>
+            </application>            
+            <authData id="oracleAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
+            <dataSource id="leapOracleDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="oracleAuthAlias"> 
                 <jdbcDriver libraryRef="jdbcOracle"/> 
                 <properties.oracle URL="jdbc:oracle:thin:@leap-oracle-db.example.com:1521/orclpdb1"/> 
                 <connectionManager  
@@ -87,7 +88,6 @@ configuration:
                     purgePolicy="ValidateAllConnections" 
                 /> 
             </dataSource> 
-            <authData id="oracleAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
         </server>
 ```
 
@@ -102,23 +102,23 @@ configuration:
     configOverrideFiles: 
       . . .
       postgreSQLOverride: |  
-        <server description="leapServer"> 
-          <!-- Adds the jdbc library to the Leap application classpath -->        
-          <application autoStart="true" type="ear" id="leap" name="HCL Leap" location="leap.ear">
-            <classloader id="leapClassloader" delegation="parentLast" commonLibraryRef="jdbcPostgreSQL"/>
-          </application>        
+        <server> 
           <!-- Disable the hard-coded derby datasource -->
-          <dataSource id="leapDerbyDatasource" jndiName="disabled" statementCacheSize="10" />
+          <dataSource id="leapDerbyDatasource" jndiName="disabled" />
+          <!-- Adds the jdbc library to the Leap application classpath -->        
           <library id="jdbcPostgreSQL" > 
             <fileset dir ="${server.config.dir}/lib" includes="postgresql.jar" /> 
           </library> 
-          <dataSource id="febDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="postgresAuthAlias"> 
+          <application id="leap">
+            <classloader id="leapClassloader" commonLibraryRef="jdbcPostgreSQL"/>
+          </application>        
+          <authData id="postgresAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" />  
+          <dataSource id="leapPostgresDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="postgresAuthAlias"> 
             <properties.postgresql  
                 serverName="postgresql.acme.com"  
                 databaseName="leapDB"
                 portNumber="5432"
             />
-            <authData id="postgresAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" />  
             <jdbcDriver libraryRef="jdbcPostgreSQL"/> 
             <connectionManager connectionTimeout="180" maxPoolSize="100" minPoolSize="1" numConnectionsPerThreadLocal="1" /> 
           </dataSource> 
