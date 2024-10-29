@@ -6,7 +6,7 @@ This action creates new records.
 
 ```
 curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" --header "Content-Type:application/atom+xml" --data-binary
-     @post.xml "http://<host>:<port>/volt-api/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1
+     @post.xml "http://<host>:<port>/apps-basic/secure/org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1
      ?freedomIdentifyKey=x" --header "Cookie: freedomIdentifyKey=x"
 ```
 

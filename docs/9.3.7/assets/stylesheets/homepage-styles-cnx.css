@@ -101,10 +101,11 @@
 /* Hero section styles */
 .dx-hero-container {
     padding-top: 0rem;
-    background: url(../images/MX_Hero_Sky.jpg) no-repeat;
-    background-position: left bottom;
+    background: url(../images/TX.jpeg) no-repeat;
+    background-position: center;
     background-size: cover;
-    height: 20rem;
+    /*height: 15rem;*/
+    min-height: auto;
 }
 
 .dx-hero__content {
