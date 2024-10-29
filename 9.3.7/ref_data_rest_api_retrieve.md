@@ -5,10 +5,10 @@ This action retrieves a single record.
 **Note:** The **curl** command must be entered as a single line.
 
 ```
-curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" "http://<host>:<port>/volt-api/secure/
+curl --user <loginId>:<passwd> --header "Accept:application/atom+xml" "http://<host>:<port>/apps-basic/secure/
      org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/f82e576f-cb67-4008-8219-f49a1b369f7d"
 
-curl --user <loginId>:<passwd> "http://<host>:<port>/volt-api/secure/
+curl --user <loginId>:<passwd> "http://<host>:<port>/apps-basic/secure/
       org/data/dd34da19-15c4-4267-8f1e-9f12ece743d7/F_Form1/f82e576f-cb67-4008-8219-f49a1b369f7d
       ?itemOnly=true&format=application%2fjson"
 ```
