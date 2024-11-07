@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -8591,7 +8591,7 @@
 <li>Update the clientSecret with the proper value obtained from your IDP</li>
 </ul>
 <p>The following snippet is an example of an OIDC definition:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">configOverrideFiles</span><span class="p">:</span>
+<p><div class="highlight"><pre><span></span><code><span class="nt">configOverrideFiles</span><span class="p">:</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">openIdConnect</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">    </span><span class="no">&lt;server description=&quot;leapServer&quot;&gt;</span>
@@ -8603,23 +8603,27 @@
 <span class="w">        </span><span class="no">mapIdentityToRegistryUser=&quot;false&quot;</span>
 <span class="w">        </span><span class="no">httpsRequired=&quot;true&quot;</span>
 <span class="w">        </span><span class="no">scope=&quot;openid&quot;</span>
-<span class="w">        </span><span class="no">&lt;!-- Defines a simple name that can be used to refer to this OIDC config --&gt;</span>
 <span class="w">        </span><span class="no">realmName=&quot;LeapOidc&quot;</span>
-<span class="w">        </span><span class="no">&lt;!-- The property of the token that contains the user&#39;s group assignments --&gt;</span>
 <span class="w">        </span><span class="no">groupIdentifier=&quot;group_membership&quot;</span>
 <span class="w">        </span><span class="no">userIdentityToCreateSubject=&quot;preferred_username&quot;</span>
 <span class="w">        </span><span class="no">discoveryEndpointUrl=&quot;https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration&quot;&gt;</span>
 <span class="w">      </span><span class="no">&lt;/openidConnectClient&gt;</span>
 <span class="w">      </span><span class="no">&lt;authFilter id=&quot;interceptedAuthFilter&quot;&gt;</span>
-<span class="w">        </span><span class="no">&lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure|/apps/secured&quot;/&gt;</span>
+<span class="w">        </span><span class="no">&lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure&quot;/&gt;</span>
 <span class="w">      </span><span class="no">&lt;/authFilter&gt;</span>
-<span class="w">      </span><span class="no">&lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;</span>
-<span class="w">          </span><span class="no">host=&quot;*&quot;</span>
-<span class="w">          </span><span class="no">httpPort=&quot;9080&quot;</span>
-<span class="w">          </span><span class="no">httpsPort=&quot;9443&quot;&gt;</span>
-<span class="w">          </span><span class="no">&lt;samesite none=&quot;*&quot; /&gt;</span>
 <span class="w">    </span><span class="no">&lt;/server&gt; </span>
 </code></pre></div>
+General Notes:  </p>
+<ul>
+<li><code>realmName</code>: Defines a qualify that can be used to refer to users and groups from this OIDC config</li>
+<li><code>groupIdentifier</code>: The property of the token that contains the user's group assignments</li>
+</ul>
+<p>Microsoft Azure AD Notes:  </p>
+<ul>
+<li><code>scope</code>: A value of <code>"openid profile"</code> is required to get the <code>preferred_username</code> claim, which is a reasonable claim to use for <code>userIdentityToCreateSubject</code>. The application registration in Azure AD is required to have the "openid" and "profile" permissions.</li>
+<li><code>groupIdentifier</code>: Recommended value is <code>"groups"</code>; however, this might depend on the Azure AD environment</li>
+<li><code>discoveryEndpointUrl</code>: Is likely to be <code>https://login.microsoftonline.com/[tenant id]/v2.0/.well-known/openid-configuration</code></li>
+</ul>
 <p>For more details on defining a server customization, see <a href="helm_open_liberty_custom.html">Open Liberty server customizations</a>.</p>
 <h2 class="section" id="section_r3z_knt_b1c">Add config properties related to OIDC config</h2>
 <p>The following properties must be set to complete the OIDC configuration:</p>
@@ -8627,6 +8631,7 @@
 <li>userLookups - By setting this to false it will disable user lookups, which is not available when configured with OIDC.</li>
 <li>userGroups - By setting this to false it will disable group lookups, which is not available when configured with OIDC.</li>
 <li>postLogoutRedirectURL - This is the URL to which Leap will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.</li>
+<li>reauthOnFailedRequest, reauthInNewWindow - When the user's session expires, these settings enable the user to reauthenticate in a pop-up window and not lose any unsaved work</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
@@ -8634,18 +8639,32 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">leapProperties</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">      </span><span class="no">ibm.nitro.NitroConfig.userLookup=false</span>
 <span class="w">      </span><span class="no">ibm.nitro.NitroConfig.userGroups=false </span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.reauthOnFailedRequest=true </span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.reauthInNewWindow=true </span>
 <span class="w">      </span><span class="no">ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myoidcServer.com/realms/Leap/protocol/openid-connect/logout?client_id=hcl-leap-oidc-client&amp;post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html</span>
 </code></pre></div>
 <p>For more details on setting Leap properties, see <a href="helm_leap_properties.html">Leap properties</a>.</p>
 <h2 id="referencing-users-and-groups-in-security-role-mapping">Referencing Users and Groups in Security Role Mapping</h2>
-<p>To assign a user or group from OIDC to one of the Leap roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user/group name.  </p>
+<p>To assign a user or group from OIDC to one of the Leap roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user or group name.  </p>
 <p>To assign a user from OIDC to a Leap security role you would use {realmName}/{userName}:
-<div class="highlight"><pre><span></span><code><span class="nt">MappedUsersAccessIDs</span><span class="p">:</span>
-<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc/john.oidc</span>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">roleMapping</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EditApplicationsUsers</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">MappedUsersAccessIDs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc/john.oidc</span>
 </code></pre></div></p>
 <p>To assign a group from OIDC to a Leap security role you would use {realmName}/{groupName}:
-<div class="highlight"><pre><span></span><code><span class="nt">MappedGroupsAccessIDs</span><span class="p">:</span>
-<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc//Group1</span>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">roleMapping</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EditApplicationsUsers</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">MappedGroupsAccessIDs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc//Group1</span>
 </code></pre></div>
 Note: there is an extra slash in the group name because that is part of the definition in the IDP used for this example. Other IDPs may differ in how they define the group name, if in doubt leverage the logging trace string to identify the correct value.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -8707,7 +8726,7 @@ Note: If the groupIds array is empty then the 'openidConnectClient' is not confi
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
