@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -8478,18 +8478,18 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">configOverrideFiles</span><span class="p p-Indicator">:</span><span class="w"> </span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">db2Override</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w">  </span>
-<span class="w">        </span><span class="no">&lt;server description=&quot;leapServer&quot;&gt; </span>
-<span class="w">          </span><span class="no">&lt;!-- Adds the jdbc library to the Leap application classpath --&gt;</span>
-<span class="w">          </span><span class="no">&lt;application autoStart=&quot;true&quot; type=&quot;ear&quot; id=&quot;leap&quot; name=&quot;HCL Leap&quot; location=&quot;leap.ear&quot;&gt;</span>
-<span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; delegation=&quot;parentLast&quot; commonLibraryRef=&quot;jdbcDB2&quot;/&gt;</span>
-<span class="w">          </span><span class="no">&lt;/application&gt;          </span>
+<span class="w">        </span><span class="no">&lt;server&gt; </span>
 <span class="w">          </span><span class="no">&lt;!-- Disable the hard-coded derby datasource --&gt;</span>
-<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; statementCacheSize=&quot;10&quot; /&gt;</span>
-<span class="w">          </span><span class="no">&lt;authData id=&quot;db2AuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
+<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; /&gt;</span>
+<span class="w">          </span><span class="no">&lt;!-- Adds the DB2 JDBC library to the Leap application classpath --&gt;</span>
 <span class="w">          </span><span class="no">&lt;library id=&quot;jdbcDB2&quot; &gt; </span>
-<span class="w">            </span><span class="no">&lt;fileset dir =&quot;${server.config.dir}/lib&quot; includes=&quot;db2jcc4.jar db2jcc_license_cu.jar&quot; /&gt; </span>
+<span class="w">            </span><span class="no">&lt;fileset dir =&quot;${server.config.dir}/lib&quot; includes=&quot;db2jcc4.jar&quot; /&gt; </span>
 <span class="w">          </span><span class="no">&lt;/library&gt; </span>
-<span class="w">          </span><span class="no">&lt;dataSource id=&quot;febDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; statementCacheSize=&quot;30&quot; containerAuthDataRef=&quot;db2AuthAlias&quot;&gt; </span>
+<span class="w">          </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
+<span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcDB2&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;/application&gt;          </span>
+<span class="w">          </span><span class="no">&lt;authData id=&quot;db2AuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
+<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDB2DataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; statementCacheSize=&quot;30&quot; containerAuthDataRef=&quot;db2AuthAlias&quot;&gt; </span>
 <span class="w">            </span><span class="no">&lt;properties.db2.jcc  </span>
 <span class="w">                </span><span class="no">databaseName=&quot;LEAPDB&quot;  </span>
 <span class="w">                </span><span class="no">driverType=&quot;4&quot; </span>
@@ -8528,17 +8528,18 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">configOverrideFiles</span><span class="p p-Indicator">:</span><span class="w"> </span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">oracleOverride</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"> </span>
-<span class="w">        </span><span class="no">&lt;server description=&quot;leapServer&quot;&gt; </span>
-<span class="w">            </span><span class="no">&lt;!-- Adds the jdbc library to the Leap application classpath --&gt;</span>
-<span class="w">            </span><span class="no">&lt;application autoStart=&quot;true&quot; type=&quot;ear&quot; id=&quot;leap&quot; name=&quot;HCL Leap&quot; location=&quot;leap.ear&quot;&gt;</span>
-<span class="w">                </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; delegation=&quot;parentLast&quot; commonLibraryRef=&quot;jdbcOracle&quot;/&gt;</span>
-<span class="w">          </span><span class="no">&lt;/application&gt;            </span>
+<span class="w">        </span><span class="no">&lt;server&gt; </span>
 <span class="w">            </span><span class="no">&lt;!-- Disable the hard-coded derby datasource --&gt;</span>
-<span class="w">            </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; statementCacheSize=&quot;10&quot; /&gt;</span>
+<span class="w">            </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; /&gt;</span>
+<span class="w">            </span><span class="no">&lt;!-- Adds the jdbc library to the Leap application classpath --&gt;</span>
 <span class="w">            </span><span class="no">&lt;library id=&quot;jdbcOracle&quot; &gt;</span>
 <span class="w">                </span><span class="no">&lt;fileset dir=&quot;${server.config.dir}/lib&quot; includes=&#39;ojdbc8.jar&#39; /&gt;</span>
 <span class="w">            </span><span class="no">&lt;/library&gt;</span>
-<span class="w">            </span><span class="no">&lt;dataSource id=&quot;leapDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;oracleAuthAlias&quot;&gt; </span>
+<span class="w">            </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
+<span class="w">                </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcOracle&quot;/&gt;</span>
+<span class="w">            </span><span class="no">&lt;/application&gt;            </span>
+<span class="w">            </span><span class="no">&lt;authData id=&quot;oracleAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
+<span class="w">            </span><span class="no">&lt;dataSource id=&quot;leapOracleDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;oracleAuthAlias&quot;&gt; </span>
 <span class="w">                </span><span class="no">&lt;jdbcDriver libraryRef=&quot;jdbcOracle&quot;/&gt; </span>
 <span class="w">                </span><span class="no">&lt;properties.oracle URL=&quot;jdbc:oracle:thin:@leap-oracle-db.example.com:1521/orclpdb1&quot;/&gt; </span>
 <span class="w">                </span><span class="no">&lt;connectionManager  </span>
@@ -8546,7 +8547,6 @@
 <span class="w">                    </span><span class="no">purgePolicy=&quot;ValidateAllConnections&quot; </span>
 <span class="w">                </span><span class="no">/&gt; </span>
 <span class="w">            </span><span class="no">&lt;/dataSource&gt; </span>
-<span class="w">            </span><span class="no">&lt;authData id=&quot;oracleAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
 <span class="w">        </span><span class="no">&lt;/server&gt;</span>
 </code></pre></div>
 <h2 class="section" id="section_cll_jkh_jzb">Connecting to a PostgreSQL database</h2>
@@ -8557,23 +8557,23 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">configOverrideFiles</span><span class="p p-Indicator">:</span><span class="w"> </span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">postgreSQLOverride</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w">  </span>
-<span class="w">        </span><span class="no">&lt;server description=&quot;leapServer&quot;&gt; </span>
-<span class="w">          </span><span class="no">&lt;!-- Adds the jdbc library to the Leap application classpath --&gt;        </span>
-<span class="w">          </span><span class="no">&lt;application autoStart=&quot;true&quot; type=&quot;ear&quot; id=&quot;leap&quot; name=&quot;HCL Leap&quot; location=&quot;leap.ear&quot;&gt;</span>
-<span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; delegation=&quot;parentLast&quot; commonLibraryRef=&quot;jdbcPostgreSQL&quot;/&gt;</span>
-<span class="w">          </span><span class="no">&lt;/application&gt;        </span>
+<span class="w">        </span><span class="no">&lt;server&gt; </span>
 <span class="w">          </span><span class="no">&lt;!-- Disable the hard-coded derby datasource --&gt;</span>
-<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; statementCacheSize=&quot;10&quot; /&gt;</span>
+<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDerbyDatasource&quot; jndiName=&quot;disabled&quot; /&gt;</span>
+<span class="w">          </span><span class="no">&lt;!-- Adds the jdbc library to the Leap application classpath --&gt;        </span>
 <span class="w">          </span><span class="no">&lt;library id=&quot;jdbcPostgreSQL&quot; &gt; </span>
 <span class="w">            </span><span class="no">&lt;fileset dir =&quot;${server.config.dir}/lib&quot; includes=&quot;postgresql.jar&quot; /&gt; </span>
 <span class="w">          </span><span class="no">&lt;/library&gt; </span>
-<span class="w">          </span><span class="no">&lt;dataSource id=&quot;febDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;postgresAuthAlias&quot;&gt; </span>
+<span class="w">          </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
+<span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcPostgreSQL&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;/application&gt;        </span>
+<span class="w">          </span><span class="no">&lt;authData id=&quot;postgresAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt;  </span>
+<span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapPostgresDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;postgresAuthAlias&quot;&gt; </span>
 <span class="w">            </span><span class="no">&lt;properties.postgresql  </span>
 <span class="w">                </span><span class="no">serverName=&quot;postgresql.acme.com&quot;  </span>
 <span class="w">                </span><span class="no">databaseName=&quot;leapDB&quot;</span>
 <span class="w">                </span><span class="no">portNumber=&quot;5432&quot;</span>
 <span class="w">            </span><span class="no">/&gt;</span>
-<span class="w">            </span><span class="no">&lt;authData id=&quot;postgresAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt;  </span>
 <span class="w">            </span><span class="no">&lt;jdbcDriver libraryRef=&quot;jdbcPostgreSQL&quot;/&gt; </span>
 <span class="w">            </span><span class="no">&lt;connectionManager connectionTimeout=&quot;180&quot; maxPoolSize=&quot;100&quot; minPoolSize=&quot;1&quot; numConnectionsPerThreadLocal=&quot;1&quot; /&gt; </span>
 <span class="w">          </span><span class="no">&lt;/dataSource&gt; </span>
@@ -8629,7 +8629,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
