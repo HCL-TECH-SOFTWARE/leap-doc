@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -8376,12 +8376,23 @@
 <h1 class="task" id="create_postgresql_db">Creating a PostgreSQL database</h1>
 <p>The following instructions describe how to manually create the PostgreSQL database for Leap.</p>
 <p>In a production environment, you must create a PostgreSQL database before you install HCL Leap to WebSphere Application Server.</p>
-<p><strong>Note:</strong> Do not create a new database if you want to continue using the same database with the existing user content.</p>
-<p>Create an empty PostgreSQL database following standard naming conventions. There are two methods:</p>
-<pre><code>-   Use PGAdmin.
--   Run psql.exe and execute the command create database mydbname;.
-**Note:** The default page size will be 8KB.
-</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not create a new database if you want to continue using the same database with the existing user content.</p>
+</div>
+<p>Create an empty PostgreSQL database following standard naming conventions. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unquoted database names that contain uppercase letters will be converted to lower case.</p>
+</div>
+<p>There are two methods:</p>
+<ul>
+<li>Use PGAdmin tooling</li>
+<li>Use the <code>psql</code> command </li>
+</ul>
+<p>Default database settings are adequate; however, it is required that the user that is used for Leap's datasource has full permissions on the database. For example: <br />
+<div class="highlight"><pre><span></span><code>GRANT ALL PRIVILEGES ON DATABASE leap_db TO leap_db_user
+</code></pre></div></p>
 <p><strong>Parent topic: </strong><a href="in_create_db.html">Create a Database</a></p>
 
 
@@ -8432,7 +8443,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

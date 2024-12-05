@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -8376,11 +8376,14 @@
 <h1 class="concept" id="helm_changing_log_level">Changing the log level</h1>
 <p>Sometimes you may need to increase the log level to troubleshoot unexpected behavior.</p>
 <p>Below is an example of how to change the log level.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">logging</span><span class="p">:</span>
+<p><div class="highlight"><pre><span></span><code><span class="nt">logging</span><span class="p">:</span>
 <span class="err"> </span><span class="w"> </span><span class="nt">leap</span><span class="p">:</span>
-<span class="err">   </span><span class="w"> </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Leap:*=detail:com.ibm.form.nitro.*=finest</span>
+<span class="err">   </span><span class="w"> </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Leap:*=detail,Leap:com.ibm.form.nitro.*=finest</span>
 </code></pre></div>
-<p><strong>Parent topic:</strong> <a href="helm_preparation.html">Preparation</a></p>
+The general format is <code>Leap:[packageName1].*=[level1],Leap:[packageName2].*=[level2],...</code></p>
+<p>The default log configuration is <code>*=info</code>.</p>
+<p>See <a href="https://openliberty.io/docs/latest/log-trace-configuration.html#logging_levels">logging levels</a> for more details.</p>
+<p><strong>Parent topic: </strong><a href="helm_preparation.html">Preparation</a></p>
 
 
 
@@ -8430,7 +8433,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.select", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
