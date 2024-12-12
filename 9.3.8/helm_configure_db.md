@@ -127,4 +127,4 @@ configuration:
         </server>
 ```
 
-**Parent topic:** [Preparation](helm_open_liberty_custom.md)
+**Parent topic:** [Open Liberty server customizations](helm_open_liberty_custom.md)
