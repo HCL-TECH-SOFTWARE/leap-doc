@@ -12,7 +12,7 @@ It is assumed that you have a repository configured and running, and is reachabl
 
 In the following guidance, the Docker CLI is used as a command reference. Tools like Podman may also be used, but are not described in this documentation. The procedure for the use of such tools are the same.
 
-**Authentication**
+### Authentication
 
 If your container registry requires authentication, you must configure the Docker CLI to authenticate prior to completing the procedure. If you are uncertain if you have configured authentication you can type in the command:
 ```
@@ -21,17 +21,55 @@ cat ~/.docker/config.json
 
 If the docker CLI not authenticated, follow the instructions from your cloud provider to authenticate. The steps vary depending on the type of authentication used.
 
+## Retrieve Leap Container Image
 
-### Procedure
+As of 9.3.8, the preferred method of retrieving the Leap container image is from Harbor.
 
-1. Download the Leap installation file labeled for Kubernetes from the [My HCLSoftware portal](https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0109011). 
+Older versions are still available from HCL Software portal.
+
+### Procedure A - Load Image from Harbor
+
+Before you begin, you will need the username and secret for connecting to [Harbor](https://hclcr.io/harbor/projects/96/repositories). 
+
+1. Login to the Harbor registry
+
+    ```
+    helm registry login -u <username> -p <password>  https://hclcr.io/chartrepo/leap/
+    ```
+
+2. Retrieve the Leap charts from Harbor
+
+    ```
+    helm pull oci://hclcr.io/leap/hcl-leap-deployment --version 1.1.0
+    ```
+
+3. Create a kubernetes secret with your Harbor username and secret
+
+    ```
+    kubectl create secret docker-registry my-harbor-secret --docker-server="hclcr.io" --docker-email='<user@acme.com>' --docker-username='user@acme.com' --docker-password='<cli_secret_from_harbor>' -n <namespace>
+    ```
+4. Open your custom-values.yaml file. Set the **imagePullSecrets** to the kubernetes secret created in the previous step.
+
+    ```yaml
+    images: 
+      . . .
+      imagePullSecrets:
+        - name: "my-harbor-secret"
+    ```
+
+5. Save and close the custom-values.yaml.
+
+
+### Procedure B - Load Image from HCL Software Portal
+
+1. Download the Leap installation file labeled for Kubernetes from the [My HCL Software portal](https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0109011). 
 
 2. Extract the downloaded zip file. The compressed file contains the Leap image as well as the helm chart that is used for the installation. The file labeled **image** is the container image that will be pushed to your container registry. (Do not further extract either of these two files).
 
 3. Run the ```docker load``` command and reference the image file. For example, if the image file name is hcl-leap-image-v1.0.0_20240507-2050-9.3.6.31.tar.gz then use the command:
-```
-docker load --input hcl-leap-image-v1.0.0_20240507-2050-9.3.6.31.tar.gz
-```
+  ```
+  docker load --input hcl-leap-image-v1.0.0_20240507-2050-9.3.6.31.tar.gz
+  ```
 
 4. Review the output from the screen, where you see “Loaded image” the part before the colon is the name of the source image. The version number is listed after. Note the source image name and version for a later step.
 
@@ -41,38 +79,39 @@ docker load --input hcl-leap-image-v1.0.0_20240507-2050-9.3.6.31.tar.gz
   c. **Tag name:** You can use the version of your Leap deployment, for example 9.3.8.15, or you can simply use the word “latest”. You will need to use this tag name in the custom-values.yaml file later.
 
 
-Now run the command:
-```
-docker tag <source_image_name> <target_image_path>:<tag_name>
-```
+  Now run the command:
+  ```
+  docker tag <source_image_name> <target_image_path>:<tag_name>
+  ```
 
-For example:
-```
-docker tag leap/hcl-leap:v1.0.0_20240507-2050 us-docker.pkg.dev/hclexample:latest
-```
+  For example:
+  ```
+  docker tag leap/hcl-leap:v1.0.0_20240507-2050 us-docker.pkg.dev/hclexample:latest
+  ```
 
 6. Run the ```docker push``` command to push the image into the repository. For this step you will need the target image path from step 5b and the tab name from step 5c.
-```
-docker push <target_image_path>:<tag_name>.
-```
+  ```
+  docker push <target_image_path>:<tag_name>.
+  ```
 
-For example:
-```
-docker push us-docker.pkg.dev/hclexample:latest
-```
+  For example:
+  ```
+  docker push us-docker.pkg.dev/hclexample:latest
+  ```
 
 7. Open your custom-values.yaml file.  You will need the hostname and port of your repository and the tag that was selected in step 5c. Substitute your values and modify the below lines to fit your environment.
 
-```yaml
-images: 
-  # repository name
-  repository: “docker.pkg.dev/hclexample”
-  # Image tag for each application 
-  tags: 
-    leap: latest
-```
+  ```yaml
+  images: 
+    # repository name
+    repository: “docker.pkg.dev/hclexample”
+    # Image tag for each application 
+    tags: 
+      leap: latest
+  ```
 
 8. Save and close the custom_values.yaml.
+
 
 ## What to do next
 

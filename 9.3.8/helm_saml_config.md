@@ -23,7 +23,7 @@ kubectl create secret generic saml-metadata --from-file=path/idpMetadata.xml --n
 kubectl create secret generic saml-metadata --from-file=./idpMetadata.xml --namespace=myns
 ```
 
-3. Add the secret to the ['customSecrets' property](https://opensource.hcltechsw.com/leap-doc/9.3.7/helm_admin_customsecret.html#as_key_file) of the yaml file.
+3. Add the secret to the ['customSecrets' property](helm_admin_customsecret.md#as_key_file) of the yaml file.
 
 ```yaml
 . . .
@@ -45,11 +45,11 @@ The SAML feature must be enabled. Optionally an authentication filter can be spe
 
 The following attributes must be defined:
 
-**id** - can be any url-safe string, 'defaultSP' is the default.  If modified, you will need to update the 
+**id** - can be any url-safe string, ```'defaultSP'``` is the default.  If modified, you will need to update the 
 
 **enabled** - value must be set to "true"
 
-**idpMetadata** - The location where the idpMetadata.xml file can be found. This should be set to /mnt/customSecrets/saml-metadata/idpMetadata.xml
+**idpMetadata** - The location where the idpMetadata.xml file can be found. This should be set to ```/mnt/customSecrets/saml-metadata/idpMetadata.xml```
 
 
 Additional optional attributes:
@@ -101,6 +101,8 @@ configuration:
 
 ### SAML Configuration with Authentication Filter
 
+The ```authFilter``` can be used to define url patterns that should be authenticated using SAML.  If the ```authFilter``` is not specified then ALL url patterns are authenticated using SAML.
+
 ```yaml
 . . .
 configuration:
@@ -125,9 +127,5 @@ configuration:
 . . .
 ```
 
-## Configuring LTPA (Optional)
-
-## Troubleshooting 
-
-**Parent topic:** [Preparation](helm_open_liberty_custom.md)
+**Parent topic:** [Open Liberty server customizations](helm_open_liberty_custom.md)
 
