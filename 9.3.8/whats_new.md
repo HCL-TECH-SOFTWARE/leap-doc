@@ -4,7 +4,7 @@
 ## 1.1.6
 
 !!! note
-    Domino Leap 1.1.6 supports the two most recent Domino releases: 12.0.2 and 14.0.
+    Domino Leap 1.1.6 supports the following Domino releases: 12.0.2 and 14.0.
 
 {% endif %}
 {% if isLeap %}
@@ -23,6 +23,25 @@
     - app.showConfirmation(...)
 - Added application title to manage page actions
 - Enhanced the BasicCredentialsProvider. It now takes an 'alias' parameter which can be a J2CAlias, environment variable, or Domino credential.
+
+{% if isLeap %}
+
+### Download changes on installation
+
+Leap 9.3.8 now employs two ways of downloading and installing the application to your system, namely:
+
+- **Traditional Install**: A single Leap Install file is used for traditional installations. Prior to 9.3.8, we had PVU install and License tracking install. 
+  With Traditional install:
+  
+    - Number of Apps License Tracking Install goes away
+        - Customers no longer need to install a Flexnet License Server
+    - Install file no longer has PVU in the name. Same functionality, just renamed
+        - Customers can download the install from [My HCL Software Downloads](https://my.hcltechsw.com/downloads)
+
+- **Container Install**:
+    - Leap Container is obtained from HCL Harbor Container Registry and no longer has PVU in the name. See the [Load images](helm_load_images.md) section for details on how to deploy the image from Harbor
+
+{% endif %}
 
 {% if isDominoLeap %}
 ## 1.1.5

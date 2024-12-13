@@ -563,6 +563,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#download-changes-on-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download changes on installation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6470,6 +6479,8 @@
       
         
       
+        
+      
     
     
       
@@ -6686,8 +6697,6 @@
   
     
     
-      
-        
       
         
       
@@ -6924,6 +6933,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -6940,14 +6957,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -7927,6 +7936,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#download-changes-on-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download changes on installation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8193,6 +8211,30 @@
 </li>
 <li>Added application title to manage page actions</li>
 <li>Enhanced the BasicCredentialsProvider. It now takes an 'alias' parameter which can be a J2CAlias, environment variable, or Domino credential.</li>
+</ul>
+<h3 id="download-changes-on-installation">Download changes on installation</h3>
+<p>Leap 9.3.8 now employs two ways of downloading and installing the application to your system, namely:</p>
+<ul>
+<li>
+<p><strong>Traditional Install</strong>: A single Leap Install file is used for traditional installations. Prior to 9.3.8, we had PVU install and License tracking install. 
+  With Traditional install:</p>
+<ul>
+<li>Number of Apps License Tracking Install goes away<ul>
+<li>Customers no longer need to install a Flexnet License Server</li>
+</ul>
+</li>
+<li>Install file no longer has PVU in the name. Same functionality, just renamed<ul>
+<li>Customers can download the install from <a href="https://my.hcltechsw.com/downloads">My HCL Software Downloads</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Container Install</strong>:</p>
+<ul>
+<li>Leap Container is obtained from HCL Harbor Container Registry and no longer has PVU in the name. See the <a href="helm_load_images.html">Load images</a> section for details on how to deploy the image from Harbor</li>
+</ul>
+</li>
 </ul>
 <h2 id="937">9.3.7</h2>
 <p>For a full list of fixes by release, see this <a href="https://support.hcltechsw.com/csm?id=kb_article&amp;sysparm_article=KB0104676">article</a>.</p>

@@ -154,7 +154,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.7/">    
+  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.8/">    
     <strong>Click here to go to the latest.</strong>
   </a>
 
@@ -5102,6 +5102,8 @@
       
         
       
+        
+      
     
     
       
@@ -5318,8 +5320,6 @@
   
     
     
-      
-        
       
         
       
@@ -5556,6 +5556,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -5572,14 +5580,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -6644,8 +6644,21 @@
 
 
 <h1 id="creating-rules-in-your-application">Creating rules in your application</h1>
-<p>Rules help you gather the correct information from users and organize your information after data is entered in a form. You can create composite rules that govern how your form, and the data in your form behaves.</p>
-<p>With the Rules feature, you can create a dynamic user experience that ensures accurate data capture, and enforcement of business rules. Rules allow you to guide the user through the form by hiding questions, or pages, that are not relevant. Rules also allow you to enforce your business validation rules within the form to ensure that data is valid before the form is submitted. The following steps describe how to set rules that require users to enter more information depending on how the first question is answered.</p>
+<p>With the Rules feature, you can create a dynamic user experience. Rules can make a field required, show or hide fields, activate or deactivate fields, and much more.  Implementing rules in your applications guides the user through the form-filling process.</p>
+<p>A rule is made up of:</p>
+<ul>
+<li><strong>name</strong>: this helps the author to identify and distinguish it from other rules within their application,</li>
+<li><strong>conditions</strong>: defined by the form author, it is when the state of a form object meets the specified criteria</li>
+<li><strong>actions</strong>: these are the changes that will be made in the form when the condition(s) is/are met.</li>
+</ul>
+<p>An example of a common pattern is to make a field visible and required when the value of another field is provided. Rules can also be more complicated, the form author can define one or more condition groups comprised of one or more conditions.</p>
+<p>Conditions within a condition group are evaluated using the same logical operator. The operators are: </p>
+<ul>
+<li><strong>AND</strong>: all conditions must be true</li>
+<li><strong>OR</strong>: only one must be true</li>
+</ul>
+<p>A rule may contain multiple condition groups which are also evaluated using a logical operator. </p>
+<p>This page describes the rules dialog, the operators and actions that can be used and provides some examples of rules that can be created within your form.</p>
 <h2 id="rule-dialog">Rule Dialog</h2>
 <p><img alt="Image of the rules dialog and its parts" src="graphics/rules_dialog_938.png" /></p>
 <ol>
@@ -6653,34 +6666,34 @@
 <p>The rule may be given a custom name by entering it into the Rule Name field.</p>
 </li>
 <li>
-<p>Each Rule can perform multiple actions; hide/show, enable/disable, required/not required, valid/not valid.  When you define an action, the inverse is also true.  For example in the above screenshot, if marital status equals “Married” of "Common-law" then name of spouse will be shown which also means if marital status is “Single” or not selected then name of spouse will be hidden.</p>
+<p>Each Rule can perform multiple actions: hide/show, enable/disable, required/not required, valid/not valid.  For example in the above screenshot, if marital status equals “Married” or "Common-law" then the "Name of spouse" field will be visible.  When this condition is not met then the "Name of spouse" field will be hidden.</p>
 </li>
 <li>
-<p>The action action to perform, see <a href="#rule-actions-section">Rule Actions</a>.</p>
+<p>The action to perform, see <a href="#rule-actions-section">Rule Actions</a>.</p>
 </li>
 <li>
-<p>The field that is part of the condition.</p>
+<p>The left-side operand of the condition.</p>
 </li>
 <li>
 <p>The operator, see <a href="#rule-operators-section">Rule Operators</a>.</p>
 </li>
 <li>
-<p>The field value that is part of the condition.</p>
+<p>The right-side operand of the condition.</p>
 </li>
 <li>
 <p><strong>Apply</strong> will create the rule but leave the dialog open, <strong>Apply and Close</strong> will create the rule and close the dialog, and <strong>Cancel</strong> will close the dialog and it will not keep any changes made since the last time “Apply” was clicked or the dialog was opened.  If you navigate to a different rule, before applying your changes you will see a dialog warning of unsaved changes.  If you click “Apply Changes” then your rule modifications will be saved.  If you click “Discard Changes” then any changes made will be thrown away.  If you click “Cancel” then the attempt to navigate away from the current rule will be canceled.</p>
 </li>
 <li>
-<p>Add additional actions to be performed when the condition is met.</p>
+<p>Add additional actions to be performed when the conditions are true.</p>
 </li>
 <li>
-<p>Save or delete a condition that is being edited.</p>
+<p>Minimize or delete a condition that is being edited.</p>
 </li>
 <li>
 <p>Edit a condition or delete a condition. Clicking the pencil icon will expand the condition, enabling the author to edit it.</p>
 </li>
 <li>
-<p>Change the relationship of the conditions.  If there are multiple conditions they will either be evaluated where all must be true ("AND") or where only one must be true ("OR").</p>
+<p>Change the relationship of the conditions. </p>
 </li>
 <li>
 <p>Filters the rules shown on the left based on the field selected.</p>
@@ -6693,13 +6706,11 @@
 </li>
 <li>
 <p>Click 'Add Rule' to add a new rule.</p>
-</li>
-</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As you create rules it is important to remember that rules can affect each other and in some cases completely counteract what you have defined.  You should never refer to the same item in the “Perform this action” section for multiple rules.  The general rule here is that if there are conflicts then the “last” rule wins.</p>
+<p>In creating rules, it is important to remember that rules can affect each other and in some cases completely counteract what you have defined.  You should never refer to the same item in the “<strong>Perform this action</strong>” section for multiple rules.  The general rule here is that if there are conflicts then the “last” rule wins.</p>
 </div>
-<ol>
+</li>
 <li>
 <p>Click <strong>+ Add Condition</strong> to add a new condition to the rule.  Conditions added with in a group must share the same relationship operator.</p>
 </li>
@@ -6727,11 +6738,11 @@
 </tr>
 <tr>
 <td style="text-align: left;">Between</td>
-<td style="text-align: left;">Checks if the value of the selected field falls alphabetically between either two fixed values or other form items.  i.e. “Red” is between “Green” and “Yellow” because “R” is between “G” and “Y” in the alphabet.  Case matters here, as the string is evaluated against the alphabet by first scanning the uppercase letters (A-Z) and then the lowercase (a-z).  For example if you specified between “Green” and “brown”, then “Red” would be valid but “red” would not, because the alphabet range would be A-Z + a-b.</td>
+<td style="text-align: left;">Checks if the value of the selected field falls alphabetically between either two fixed/form items. Such as, “Red” is between “Green” and “Yellow” because “R” is between “G” and “Y” in the alphabet.  Case matters here, as the string is evaluated against the alphabet by first scanning the uppercase letters (A-Z) and then the lowercase (a-z).  For example if you specified between “Green” and “brown”, then “Red” would be valid but “red” would not, because the alphabet range would be A-Z + a-b.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Contains</td>
-<td style="text-align: left;">Does the specified string contain the fixed value or other field value. This function recognizes case.</td>
+<td style="text-align: left;">Does the specified string contain the fixed/field value. This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Day is</td>
@@ -6739,31 +6750,31 @@
 </tr>
 <tr>
 <td style="text-align: left;">Does not equal</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">True if the fixed/field value does not equal the specified value.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Does not include</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">True if the fixed/field value does not contain the specified value.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Ends With</td>
-<td style="text-align: left;">Does the specified string end with the fixed value or other field value. This function recognizes case.</td>
+<td style="text-align: left;">Does the specified string end with the fixed/field value. This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Equals</td>
-<td style="text-align: left;">Does the specified string equal the fixed value or other field value. Case matters, “c” does not equal “C”.</td>
+<td style="text-align: left;">True if the specified string is equal to  the fixed/field value. Case matters, “c” does not equal “C”.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Follows</td>
-<td style="text-align: left;">Does the specified string come after the fixed value or other field value in the alphabet. i.e. “Red” follows “Green”.  This function recognizes case.</td>
+<td style="text-align: left;">True if the specified string come after the fixed/field value in the alphabet. i.e. “Red” follows “Green”.  This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Includes</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Can the specified string be found in the fixed/field value.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Matches</td>
-<td style="text-align: left;">Does the specified string match after the fixed value or other field value.  Similar to contains, it is true if the specified string can be found anywhere in the value.  This function recognizes case.</td>
+<td style="text-align: left;">True if the specified string match the fixed/field value.  Similar to contains, it is true if the specified string can be found anywhere in the value.  This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Month is</td>
@@ -6771,19 +6782,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">Precedes</td>
-<td style="text-align: left;">Does the specified string come before the fixed value or other field value in the alphabet. i.e. “Red” precedes “Yellow”.  This function recognizes case.</td>
+<td style="text-align: left;">True if the specified string is found at the start of the fixed/field value in the alphabet. i.e. “Red” precedes “Yellow”.  This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Starts with</td>
-<td style="text-align: left;">Does the specified string start with the fixed value or other field value. This function recognizes case.</td>
+<td style="text-align: left;">True if the specified string start with the fixed/field value. This function recognizes case.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Has value</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">True if the field has a value.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Has no value</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">True if the field is empty.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Year is</td>
@@ -6987,7 +6998,7 @@
 <h3 id="enable-or-disable">Enable or Disable</h3>
 <p>You can set buttons and data entry items as enabled or disabled.</p>
 <h3 id="valid-or-not-valid">Valid or Not Valid</h3>
-<p>In a data entry item, such as a <strong>Single Line Entry</strong> field, you can set conditions on what type of information is acceptable. For example, in a timesheet application, you can set a rule that the check-out time cannot occur before a check in time.</p>
+<p>In a data entry item, such as a <strong>Single Line Entry</strong> field, you can set conditions on what type of information is acceptable. For example, in a timesheet application, you can set a rule that the check-out time cannot occur before a check-in time.</p>
 <h3 id="required-or-not-required">Required or Not required</h3>
 <p>You can choose whether you want data entry items to be mandatory, or optional.</p>
 <h2 id="additional-general-information-on-rules">Additional general information on Rules</h2>
@@ -7035,11 +7046,11 @@ You can direct the workflow of an application by setting rules on buttons within
 <p><img alt="Runtime of mixed condition rule" src="graphics/ru_mixed_condition_runtime_2.png" /></p>
 <p><img alt="Runtime of mixed condition rule" src="graphics/ru_mixed_condition_runtime_3.png" /></p>
 <h3 id="handling-more-complex-logic">Handling more complex logic</h3>
-<p>The Rules dialog does have its limitations and you may find that you have certain scenarios where you need additional flexibility.  You can create your own customized behavior by using JavaScript.</p>
-<p>Within JavaScript we can create any complex comparison.  There are a few things that you need to know to get started creating your own logic:</p>
+<p>The Rules dialog does have its limitations and you may find that you have certain scenarios where you need additional flexibility.  You can create your own customized behavior by using javaScript.</p>
+<p>Within javaScript we can create any complex comparison.  There are a few things that you need to know to get started creating your own logic:</p>
 <ul>
-<li>The AND operator in JavaScript is &amp;&amp;</li>
-<li>The OR Operator in JavaScript is ||</li>
+<li>The AND operator in javaScript is &amp;&amp;</li>
+<li>The OR Operator in javaScript is ||</li>
 <li>You can control the order that conditions are evaluated by wrapping them in parenthesis. The example below, the condition will be true if a=1 AND b=2 OR if c=3 AND d=4.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
