@@ -154,7 +154,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.7/">    
+  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.8/">    
     <strong>Click here to go to the latest.</strong>
   </a>
 
@@ -5100,6 +5100,8 @@
       
         
       
+        
+      
     
     
       
@@ -5312,10 +5314,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -5323,19 +5323,17 @@
       
         
       
-        
-      
     
     
       
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" >
         
           
           
@@ -5357,7 +5355,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_3">
             <span class="md-nav__icon md-icon"></span>
             Reference Objects and Functions
@@ -5556,6 +5554,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -5631,14 +5637,6 @@
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -6621,35 +6619,41 @@
 </table>
 <p>The following functions for DOM manipulation and extra language features are provided by the <a href="https://dojotoolkit.org/">Dojo Toolkit</a> library. This represents a safe subset of Dojo. All Dojo library functions are provided as top-level functions. Namespacing is unnecessary because scripts do have access to modify the global object and can't define global variables. Thus, you can call Dojo functions directly, for example, you can call <code>mixin(obj,mixinObj)</code>. You might also use the traditional syntax (<code>dojox.mixin(...)</code>). Available functions include:</p>
 <ul>
-<li><code>mixin</code></li>
-<li><code>require</code></li>
-<li><code>isString</code></li>
-<li><code>isArray</code></li>
-<li><code>isFunction</code></li>
-<li><code>isObject</code></li>
-<li><code>isArrayLike</code></li>
-<li><code>isAlien</code></li>
-<li><code>hitch</code></li>
-<li><code>delegate</code></li>
-<li><code>partial</code></li>
-<li><code>trim</code></li>
-<li><code>connect</code></li>
-<li><code>disconnect</code></li>
-<li><code>subscribe</code></li>
-<li><code>unsubscribe</code></li>
-<li><code>Deferred</code></li>
-<li><code>toJson</code></li>
-<li><code>fromJson</code></li>
-<li><code>style</code></li>
-<li><code>attr</code></li>
-<li><code>query</code> - This only searches within the sandbox.</li>
-<li><code>byId</code></li>
-<li><code>body</code> - This returns the root element of the sandbox.</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/mixin.html"><code>mixin</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/require.html"><code>require</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isString.html"><code>isString</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isArray.html"><code>isArray</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isFunction.html"><code>isFunction</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isObject.html"><code>isObject</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isArrayLike.html"><code>isArrayLike</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/isAlien.html"><code>isAlien</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/hitch.html"><code>hitch</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/delegate.html"><code>delegate</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/partial.html"><code>partial</code></a> - a function that returns a function</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/trim.html"><code>trim</code></a>  - Removes whitespace from both ends of a string.</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/connect.html"><code>connect</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/disconnect.html"><code>disconnect</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/subscribe.html"><code>subscribe</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/unsubscribe.html"><code>unsubscribe</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/Deferred.html"><code>Deferred</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/toJson.html"><code>toJson</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/fromJson.html"><code>fromJson</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/style.html"><code>style</code></a> - A getter/setter for styles on a DOM node.</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/attr.html"><code>attr</code></a></li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/query.html"><code>query</code></a> - Returns a DOM node based on a CSS selector. This only searches within the sandbox.</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/byId.html"><code>byId</code></a> - Returns the DOM node that matches the specified id.</li>
+<li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/body.html"><code>body</code></a> - This returns the root element of the sandbox.</li>
 </ul>
 <h2 class="section" id="disabling-javascript-security">Disabling JavaScript Security</h2>
 <p>Under some circumstances, the limitations imposed by the dojox.secure library might be too restrictive. Therefore, the dojox.secure library can be disabled server-wide by  Once the configuration is changed, the Domino Leap server should be restarted to ensure that the configuration takes effect. For more information, see <a href="dleap_config_settings.html">Domino Leap configuration settings</a>.</p>
-<p><strong>Note</strong>: Changing this configuration setting to <strong>false</strong> should only be done if all the app authors on the server are known trusted users. Disabling JavaScript Security on a deployment of Domino Leap that allows unvetted users to create applications could pose a serious security risk.</p>
-<p>It should be noted that changes to this configuration setting are only applied to running applications when they are redeployed. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing this configuration setting to <strong>false</strong> should only be done if all the app authors on the server are known trusted users. Disabling javaScript Security on a deployment of Domino Leap that allows un-vetted users to create applications could pose a serious security risk.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes to this configuration setting are only applied to running applications when they are redeployed. </p>
+</div>
 <p><strong>Parent topic:</strong> <a href="ref_jsapi_objects_and_functions.html">Reference Objects and Functions</a></p>
 
 

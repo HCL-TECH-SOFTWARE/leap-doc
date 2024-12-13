@@ -59,38 +59,40 @@ The following special functions are available to compensate for the JavaScript s
 
 The following functions for DOM manipulation and extra language features are provided by the [Dojo Toolkit](https://dojotoolkit.org/) library. This represents a safe subset of Dojo. All Dojo library functions are provided as top-level functions. Namespacing is unnecessary because scripts do have access to modify the global object and can't define global variables. Thus, you can call Dojo functions directly, for example, you can call `mixin(obj,mixinObj)`. You might also use the traditional syntax \(`dojox.mixin(...)`\). Available functions include:
 
--   `mixin`
--   `require`
--   `isString`
--   `isArray`
--   `isFunction`
--   `isObject`
--   `isArrayLike`
--   `isAlien`
--   `hitch`
--   `delegate`
--   `partial`
--   `trim`
--   `connect`
--   `disconnect`
--   `subscribe`
--   `unsubscribe`
--   `Deferred`
--   `toJson`
--   `fromJson`
--   `style`
--   `attr`
--   `query` - This only searches within the sandbox.
--   `byId`
--   `body` - This returns the root element of the sandbox.
+-   [`mixin`](https://dojotoolkit.org/reference-guide/1.7/dojo/mixin.html)
+-   [`require`](https://dojotoolkit.org/reference-guide/1.7/dojo/require.html)
+-   [`isString`](https://dojotoolkit.org/reference-guide/1.7/dojo/isString.html)
+-   [`isArray`](https://dojotoolkit.org/reference-guide/1.7/dojo/isArray.html)
+-   [`isFunction`](https://dojotoolkit.org/reference-guide/1.7/dojo/isFunction.html)
+-   [`isObject`](https://dojotoolkit.org/reference-guide/1.7/dojo/isObject.html)
+-   [`isArrayLike`](https://dojotoolkit.org/reference-guide/1.7/dojo/isArrayLike.html)
+-   [`isAlien`](https://dojotoolkit.org/reference-guide/1.7/dojo/isAlien.html)
+-   [`hitch`](https://dojotoolkit.org/reference-guide/1.7/dojo/hitch.html)
+-   [`delegate`](https://dojotoolkit.org/reference-guide/1.7/dojo/delegate.html)
+-   [`partial`](https://dojotoolkit.org/reference-guide/1.7/dojo/partial.html) - a function that returns a function
+-   [`trim`](https://dojotoolkit.org/reference-guide/1.7/dojo/trim.html)  - Removes whitespace from both ends of a string.
+-   [`connect`](https://dojotoolkit.org/reference-guide/1.7/dojo/connect.html)
+-   [`disconnect`](https://dojotoolkit.org/reference-guide/1.7/dojo/disconnect.html)
+-   [`subscribe`](https://dojotoolkit.org/reference-guide/1.7/dojo/subscribe.html)
+-   [`unsubscribe`](https://dojotoolkit.org/reference-guide/1.7/dojo/unsubscribe.html)
+-   [`Deferred`](https://dojotoolkit.org/reference-guide/1.7/dojo/Deferred.html)
+-   [`toJson`](https://dojotoolkit.org/reference-guide/1.7/dojo/toJson.html)
+-   [`fromJson`](https://dojotoolkit.org/reference-guide/1.7/dojo/fromJson.html)
+-   [`style`](https://dojotoolkit.org/reference-guide/1.7/dojo/style.html) - A getter/setter for styles on a DOM node.
+-   [`attr`](https://dojotoolkit.org/reference-guide/1.7/dojo/attr.html)
+-   [`query`](https://dojotoolkit.org/reference-guide/1.7/dojo/query.html) - Returns a DOM node based on a CSS selector. This only searches within the sandbox.
+-   [`byId`](https://dojotoolkit.org/reference-guide/1.7/dojo/byId.html) - Returns the DOM node that matches the specified id.
+-   [`body`](https://dojotoolkit.org/reference-guide/1.7/dojo/body.html) - This returns the root element of the sandbox.
 
 ## Disabling JavaScript Security { .section }
 
 Under some circumstances, the limitations imposed by the dojox.secure library might be too restrictive. Therefore, the dojox.secure library can be disabled server-wide by {% if isLeap %}editing a Java™ properties file called **Leap\_config.properties** in the extensions directory \(**C:\\HCL\\Leap\\extensions** on Windows™, **/opt/HCL/Leap/extensions** on Linux™\)%{ endif %}{% if isDominoLeap %}modifying the configuration in VoltConfig.nsf{% endif %}. Set the value of the **{% if isLeap %}ibm.nitro.ApplicationCompilerService.{% endif %}secureJS** key to **false**.:% if isDominoLeap %} Also, be sure to enable the setting.{% endif %} Once the configuration is changed, the {{shortProductName}} server should be restarted to ensure that the configuration takes effect. For more information, see {% if isLeap %}[Configuring the properties file](co_configuring_the_properties_file.md){% endif %}{% if isDominoLeap %}[Domino Leap configuration settings](dleap_config_settings.md){% endif %}.
 
-**Note**: Changing this configuration setting to **false** should only be done if all the app authors on the server are known trusted users. Disabling JavaScript Security on a deployment of {{shortProductName}} that allows unvetted users to create applications could pose a serious security risk.
+!!! note
+    Changing this configuration setting to **false** should only be done if all the app authors on the server are known trusted users. Disabling javaScript Security on a deployment of {{shortProductName}} that allows un-vetted users to create applications could pose a serious security risk.
 
-It should be noted that changes to this configuration setting are only applied to running applications when they are redeployed. 
+!!! note
+    Changes to this configuration setting are only applied to running applications when they are redeployed. 
 
 **Parent topic:** [Reference Objects and Functions](ref_jsapi_objects_and_functions.md)
 

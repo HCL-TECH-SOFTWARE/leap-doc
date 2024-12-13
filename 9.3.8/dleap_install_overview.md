@@ -2,7 +2,7 @@
 
 The environment recommended for HCL Domino Leap includes the following prerequisites:
 
-- HCL Domino server 12.0.2 or above. Domino must be upgraded prior to installing Domino Leap.
+- HCL Domino server 12.0.2 or 14.0. Domino must be upgraded prior to installing Domino Leap.
 
 - Windows or Linux 64-bit operating system (specific versions listed in HCL Domino System Requirements).
 
