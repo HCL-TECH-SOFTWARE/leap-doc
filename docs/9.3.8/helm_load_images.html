@@ -154,7 +154,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.8/">    
+  <a href="https://opensource.hcltechsw.com/leap-doc/latest/">    
     <strong>Click here to go to the latest.</strong>
   </a>
 
@@ -7672,9 +7672,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#procedure-a-load-image-from-harbor" class="md-nav__link">
+  <a href="#procedure-a-load-image-from-hcl-harbor-container-registry" class="md-nav__link">
     <span class="md-ellipsis">
-      Procedure A - Load Image from Harbor
+      Procedure A - Load Image from HCL Harbor container registry
     </span>
   </a>
   
@@ -7743,34 +7743,32 @@
 </code></pre></div></p>
 <p>If the docker CLI not authenticated, follow the instructions from your cloud provider to authenticate. The steps vary depending on the type of authentication used.</p>
 <h2 id="retrieve-leap-container-image">Retrieve Leap Container Image</h2>
-<p>As of 9.3.8, the preferred method of retrieving the Leap container image is from Harbor.</p>
+<p>As of 9.3.8, the preferred method of retrieving the Leap container image is from the HCL Harbor container registry.</p>
 <p>Older versions are still available from HCL Software portal.</p>
-<h3 id="procedure-a-load-image-from-harbor">Procedure A - Load Image from Harbor</h3>
-<p>Before you begin, you will need the username and secret for connecting to <a href="https://hclcr.io/harbor/projects/96/repositories">Harbor</a>. </p>
+<h3 id="procedure-a-load-image-from-hcl-harbor-container-registry">Procedure A - Load Image from HCL Harbor container registry</h3>
+<p>It is possible to pull images directly from the HCL Harbor container registry.</p>
 <ol>
 <li>
-<p>Login to the Harbor registry</p>
-<div class="highlight"><pre><span></span><code>helm registry login -u &lt;username&gt; -p &lt;password&gt;  https://hclcr.io/chartrepo/leap/
+<p>Login to the Harbor registry. You can obtain the CLI secret from harbor by navigating to your <strong>User Profile</strong> in <a href="https://hclcr.io/harbor/projects/96/repositories">HCL Harbor</a>. You can copy it from the field called <strong>CLI secret</strong>.</p>
+<div class="highlight"><pre><span></span><code>helm registry login -u &lt;YOUR_HARBOR_USERNAME&gt; -p &lt;YOUR_HARBOR_CLI_SECRET&gt;  https://hclcr.io/
 </code></pre></div>
 </li>
 <li>
 <p>Retrieve the Leap charts from Harbor</p>
-<div class="highlight"><pre><span></span><code>helm pull oci://hclcr.io/leap/hcl-leap-deployment --version 1.1.0
+<div class="highlight"><pre><span></span><code>helm pull oci://hclcr.io/leap/hcl-leap-deployment --version &lt;X.X.X&gt;
 </code></pre></div>
 </li>
 <li>
-<p>Create a kubernetes secret with your Harbor username and secret</p>
-<p><div class="highlight"><pre><span></span><code>kubectl create secret docker-registry my-harbor-secret --docker-server=&quot;hclcr.io&quot; --docker-email=&#39;&lt;user@acme.com&gt;&#39; --docker-username=&#39;user@acme.com&#39; --docker-password=&#39;&lt;cli_secret_from_harbor&gt;&#39; -n &lt;namespace&gt;
+<p>Create a kubernetes secret with the name <strong>leap-harbor</strong> with your Harbor username and CLI secret</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>The values.yaml is already configured with an <strong>imagePullSecrets</strong> that points to a secret with the name of <strong>leap-harbor</strong>.</p>
+<p><div class="highlight"><pre><span></span><code>kubectl create secret -n &lt;YOUR_NAMESPACE&gt; docker-registry leap-harbor --docker-server=&quot;hclcr.io&quot; --docker-email=&#39;&lt;YOUR_HARBOR_EMAIL&gt;&#39; --docker-username=&#39;&lt;YOUR_HARBOR_USERNAME&gt;&#39; --docker-password=&#39;&lt;YOUR_HARBOR_CLI_SECRET&gt;&#39;
 </code></pre></div>
-4. Open your custom-values.yaml file. Set the <strong>imagePullSecrets</strong> to the kubernetes secret created in the previous step.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">images</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">imagePullSecrets</span><span class="p p-Indicator">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-harbor-secret&quot;</span>
+  After executing the command from the previous step, you should receive the following message:</p>
+<div class="highlight"><pre><span></span><code>secret/dx-harbor created
 </code></pre></div>
-</li>
-<li>
-<p>Save and close the custom-values.yaml.</p>
 </li>
 </ol>
 <h3 id="procedure-b-load-image-from-hcl-software-portal">Procedure B - Load Image from HCL Software Portal</h3>
