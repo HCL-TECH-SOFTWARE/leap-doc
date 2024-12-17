@@ -23,41 +23,39 @@ If the docker CLI not authenticated, follow the instructions from your cloud pro
 
 ## Retrieve Leap Container Image
 
-As of 9.3.8, the preferred method of retrieving the Leap container image is from Harbor.
+As of 9.3.8, the preferred method of retrieving the Leap container image is from the HCL Harbor container registry.
 
 Older versions are still available from HCL Software portal.
 
-### Procedure A - Load Image from Harbor
+### Procedure A - Load Image from HCL Harbor container registry
 
-Before you begin, you will need the username and secret for connecting to [Harbor](https://hclcr.io/harbor/projects/96/repositories). 
+It is possible to pull images directly from the HCL Harbor container registry.
 
-1. Login to the Harbor registry
+1. Login to the Harbor registry. You can obtain the CLI secret from harbor by navigating to your **User Profile** in [HCL Harbor](https://hclcr.io/harbor/projects/96/repositories). You can copy it from the field called **CLI secret**.
 
     ```
-    helm registry login -u <username> -p <password>  https://hclcr.io/chartrepo/leap/
+    helm registry login -u <YOUR_HARBOR_USERNAME> -p <YOUR_HARBOR_CLI_SECRET>  https://hclcr.io/
     ```
 
 2. Retrieve the Leap charts from Harbor
 
     ```
-    helm pull oci://hclcr.io/leap/hcl-leap-deployment --version 1.1.0
+    helm pull oci://hclcr.io/leap/hcl-leap-deployment --version <X.X.X>
     ```
 
-3. Create a kubernetes secret with your Harbor username and secret
+3. Create a kubernetes secret with the name **leap-harbor** with your Harbor username and CLI secret
+
+    !!!note
+      The values.yaml is already configured with an **imagePullSecrets** that points to a secret with the name of **leap-harbor**.
 
     ```
-    kubectl create secret docker-registry my-harbor-secret --docker-server="hclcr.io" --docker-email='<user@acme.com>' --docker-username='user@acme.com' --docker-password='<cli_secret_from_harbor>' -n <namespace>
+    kubectl create secret -n <YOUR_NAMESPACE> docker-registry leap-harbor --docker-server="hclcr.io" --docker-email='<YOUR_HARBOR_EMAIL>' --docker-username='<YOUR_HARBOR_USERNAME>' --docker-password='<YOUR_HARBOR_CLI_SECRET>'
     ```
-4. Open your custom-values.yaml file. Set the **imagePullSecrets** to the kubernetes secret created in the previous step.
+  After executing the command from the previous step, you should receive the following message:
 
-    ```yaml
-    images: 
-      . . .
-      imagePullSecrets:
-        - name: "my-harbor-secret"
     ```
-
-5. Save and close the custom-values.yaml.
+    secret/dx-harbor created
+    ```
 
 
 ### Procedure B - Load Image from HCL Software Portal

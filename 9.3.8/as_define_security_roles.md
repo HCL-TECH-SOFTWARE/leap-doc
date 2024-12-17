@@ -2,23 +2,20 @@
 
 Create roles for users in your organization so they can work with data that is relevant to them.
 
-{{fullProductName}} uses a customizable role-based model to define who can access data and who can modify the application. Roles allow the assignment of data access, and application maintenance permissions.Individuals or groups are then assigned to the roles with the access component, or programmatically through web services. There are three predefined roles:
+{{fullProductName}} employs a customizable, role-based access control model to define who can access and modify the application. Roles are assigned to individuals or groups, granting specific permissions for data access and application maintenance. These roles can be assigned manually or programmatically through web services.
 
-#### Administrator
+There are three predefined roles:
 
-A role that includes users, or groups, with administrator privileges for an application.
+- **Administrator**: A role that grants administrative privileges to users or groups for an application.
 
-#### Initiator
+- **Initiator**: A role which allows any user or group to submit forms or initiate applications. For instance, in a Vacation Request application, all users in an organization could be granted Initiator privileges allowing them to initiate and submit a Vacation Request.
 
-A role that includes any user, or group, who can submit a form or initiate an application. For example, if the application was for Vacation Requests, you can allow all users in your organization to initiate, or submit, a Vacation Request.
+- **Record Owner**: A role assigned to the user who submits a form.
 
-#### Record Owner
-A role that contains the user, or group, who submitted the form dynamically at run time.
+Roles can be Open \(dynamic\) or Closed \(static\).
 
-Each role can be Open \(dynamic\) or Closed \(static\).
-
--   Open roles – where assignments are done either statically, or dynamically with a web service call defined on a stage action within stages. Users are assigned based on data that is gathered during the form submission. For example, a web service looks up a manager for each user who submits a form, and assigns the manager a role.
--   Closed roles – where assignments of users and groups to the roles must be done explicitly from within the Access tab. Closed roles do not assign users dynamically with a web service.
+- **Open** roles – Assignments can be made statically or dynamically. Dynamic assignments are triggered by web service calls within stage actions, allowing for data-driven assignments. For example, a web service can look up a manager for each form submission and assign them a role.
+- **Closed** roles – Closed roles require explicit assignment of users or groups within the Access tab. Dynamic assignment through web services is not supported for closed roles.
 
 To add a role:
 
@@ -37,5 +34,5 @@ To add a role:
 4.  Use the radio buttons to select whether the role is **Open** or **Closed**.
 
 
-**Parent topic: **[Securing](se_security_toc.md)
+**Parent topic:** [Securing](se_security_toc.md)
 

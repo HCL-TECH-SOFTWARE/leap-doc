@@ -26,7 +26,7 @@ In this example a service account has been created that contains the required pe
 
 Run the command to create the secret:
 ```
-kubectl create secret docker-registry <secret_name> -n <namespace> --docker-server=repo_name --docker-username=_json_key –docker-password=$(cat example_key.json) --docker-email=example@example.com
+kubectl create secret -n <YOUR_NAMESPACE> docker-registry <secret_name> -n <YOUR_NAMESPACE> --docker-server=repo_name --docker-username=_json_key –docker-password=$(cat example_key.json) --docker-email=<YOUR_DOCKER_EMAIL>
 ```
 
 For example:
@@ -47,7 +47,7 @@ This is a less secure method of authenticating. In this example you have a user 
 - ***example@example.com***: Enter an email address for your Kubernetes administrator.
 
 ```
-kubectl create secret docker-registry <secret_name> -n <namespace> --docker-server=repo_name --docker-username=the_username –docker-password=the_password --docker-email=example@example.com
+kubectl create secret docker-registry <secret_name> -n <YOUR_NAMESPACE> --docker-server=repo_name --docker-username=<YOUR_DOCKER_USERNAME> –docker-password=<YOUR_DOCKER_PASSWORD> --docker-email=<YOUR_DOCKER_EMAIL>
 ```
 
 For example:

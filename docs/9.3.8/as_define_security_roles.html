@@ -154,7 +154,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.8/">    
+  <a href="https://opensource.hcltechsw.com/leap-doc/latest/">    
     <strong>Click here to go to the latest.</strong>
   </a>
 
@@ -4805,17 +4805,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Defining basic security roles for users
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="as_define_security_roles.html" class="md-nav__link md-nav__link--active">
         
   
@@ -4825,54 +4814,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Administrator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initiator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initiator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#record-owner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Record Owner
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -7687,41 +7628,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Administrator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initiator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initiator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#record-owner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Record Owner
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7740,17 +7646,23 @@
 
 <h1 id="defining-basic-security-roles-for-users">Defining basic security roles for users</h1>
 <p>Create roles for users in your organization so they can work with data that is relevant to them.</p>
-<p>HCL Leap uses a customizable role-based model to define who can access data and who can modify the application. Roles allow the assignment of data access, and application maintenance permissions.Individuals or groups are then assigned to the roles with the access component, or programmatically through web services. There are three predefined roles:</p>
-<h4 id="administrator">Administrator</h4>
-<p>A role that includes users, or groups, with administrator privileges for an application.</p>
-<h4 id="initiator">Initiator</h4>
-<p>A role that includes any user, or group, who can submit a form or initiate an application. For example, if the application was for Vacation Requests, you can allow all users in your organization to initiate, or submit, a Vacation Request.</p>
-<h4 id="record-owner">Record Owner</h4>
-<p>A role that contains the user, or group, who submitted the form dynamically at run time.</p>
-<p>Each role can be Open (dynamic) or Closed (static).</p>
+<p>HCL Leap employs a customizable, role-based access control model to define who can access and modify the application. Roles are assigned to individuals or groups, granting specific permissions for data access and application maintenance. These roles can be assigned manually or programmatically through web services.</p>
+<p>There are three predefined roles:</p>
 <ul>
-<li>Open roles – where assignments are done either statically, or dynamically with a web service call defined on a stage action within stages. Users are assigned based on data that is gathered during the form submission. For example, a web service looks up a manager for each user who submits a form, and assigns the manager a role.</li>
-<li>Closed roles – where assignments of users and groups to the roles must be done explicitly from within the Access tab. Closed roles do not assign users dynamically with a web service.</li>
+<li>
+<p><strong>Administrator</strong>: A role that grants administrative privileges to users or groups for an application.</p>
+</li>
+<li>
+<p><strong>Initiator</strong>: A role which allows any user or group to submit forms or initiate applications. For instance, in a Vacation Request application, all users in an organization could be granted Initiator privileges allowing them to initiate and submit a Vacation Request.</p>
+</li>
+<li>
+<p><strong>Record Owner</strong>: A role assigned to the user who submits a form.</p>
+</li>
+</ul>
+<p>Roles can be Open (dynamic) or Closed (static).</p>
+<ul>
+<li><strong>Open</strong> roles – Assignments can be made statically or dynamically. Dynamic assignments are triggered by web service calls within stage actions, allowing for data-driven assignments. For example, a web service can look up a manager for each form submission and assign them a role.</li>
+<li><strong>Closed</strong> roles – Closed roles require explicit assignment of users or groups within the Access tab. Dynamic assignment through web services is not supported for closed roles.</li>
 </ul>
 <p>To add a role:</p>
 <ol>
@@ -7770,7 +7682,7 @@
 <p>Use the radio buttons to select whether the role is <strong>Open</strong> or <strong>Closed</strong>.</p>
 </li>
 </ol>
-<p><strong>Parent topic: </strong><a href="se_security_toc.html">Securing</a></p>
+<p><strong>Parent topic:</strong> <a href="se_security_toc.html">Securing</a></p>
 
 
 

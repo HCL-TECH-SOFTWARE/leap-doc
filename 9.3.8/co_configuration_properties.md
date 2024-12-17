@@ -350,11 +350,11 @@ This property contains the following parts:
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.enabled = true
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.1.appName = Foundry App 1
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.1.serviceUrl = http://myFoundryServer/authService/100000002/appconfig
-{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.1.credentialAlias = 'FOUNDRY_APP1'
+{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.1.credentialAlias = FOUNDRY_APP1
 {% if isLeap %}ibm.nitro.NitroConfig.hclMXFoundryApps.1.userTracking = true{% endif %}
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.2.appName = Foundry App 2
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.2.serviceUrl = https://100002720.myFoundryCloudServer/appconfig
-{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.2.credentialAlias = 'FOUNDRY_APP2'
+{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}hclMXFoundryApps.2.credentialAlias = FOUNDRY_APP2
 {% if isLeap %}ibm.nitro.NitroConfig.hclMXFoundryApps.2.userTracking = false{% endif %}
 ```
 {% if isLeap %}
