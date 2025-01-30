@@ -154,7 +154,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/9.3.7/">    
+  <a href="https://opensource.hcltechsw.com/leap-doc/latest/">    
     <strong>Click here to go to the latest.</strong>
   </a>
 
@@ -8376,6 +8376,10 @@
 <h1 class="concept" id="createdb">Create a database</h1>
 <p>This section describes how to prepare a database for Leap.</p>
 <p>Leap is compatible with a DB2, Oracle, or PostgreSQL database.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keeping the Leap application and database servers co-located is essential.  Leap's frequent database calls necessitate rapid communication between the servers.  Co-location minimizes latency, resulting in faster data retrieval, quicker response times, and improved overall system efficiency.  Separating the servers introduces network latency, slowing performance.  Co-location supports smooth, real-time operations, especially for database-intensive tasks like querying, updating records, and transaction processing.</p>
+</div>
 <ul>
 <li><strong><a href="in_create_db2.html">Creating a DB2 database</a></strong><br />
 The following instructions describe how to manually create the DB2® database for Leap.</li>

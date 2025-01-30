@@ -130,13 +130,13 @@ nav:
           - Preparation: 
             - helm_preparation.md
             - Prepare a namespace: helm_prepare_namespace.md
-            - Prepare a custom configuration file: 
-              - prepare_config_helm.md
-              - Creating and formatting the custom-values.yaml: helm_creating_custom_values_file.md
             - Load images: 
               - helm_load_images.md
               - Creating a container registry secret: helm_container_registry_secret.md
             - Persistent Volume Claims: helm_persistent_volume.md
+            - Prepare a custom configuration file: 
+              - prepare_config_helm.md
+              - Creating and formatting the custom-values.yaml: helm_creating_custom_values_file.md
             - Using custom secrets: helm_admin_customsecret.md
             - Probes configuration in values.yaml file: helm_probes_config_valuesfile.md            
             - Certificates: helm_certificates.md
@@ -148,11 +148,11 @@ nav:
               - Configure LDAP: helm_configure_ldap.md
               - Configure SSL: helm_configure_ssl.md
               - SAML configuration: helm_saml_config.md
-            - Service Catalog: helm_service_catalog.md
-            - Deploy Custom Extensions: helm_deploy_custom_extension.md
+            - Service Catalog: helm_service_catalog.md            
             - Leap properties: helm_leap_properties.md
             - JVM options: helm_jvm_options.md
             - Changing the log level: helm_changing_log_level.md
+            - Deploy Custom Extensions: helm_deploy_custom_extension.md
             - Enabling additional Open Liberty features: helm_extending_image.md
           - Install commands to deploy: helm_install_commands.md
           - Uninstall Helm deployment: helm_uninstall.md
@@ -342,7 +342,7 @@ nav:
               - Item objects: ref_item_objects.md
               - Other objects: ref_other_objects.md
             - Data objects: ref_jsapi_ref_data_objects.md
-            - JavaScript Security: ref_jsapi_javascript_security.md
+          - JavaScript Security: ref_jsapi_javascript_security.md
         - Services:
           - ref_services_toc.md
           - Basic Credentials Provider: ref_service_basic_credentials_provider.md
