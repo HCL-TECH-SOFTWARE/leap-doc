@@ -1,5 +1,3 @@
-<!-- Custom HTML site displayed as the Home chapter -->
-
 <!-- Elements added to main will be displayed on all pages -->
 
 <!doctype html>
@@ -14,11 +12,13 @@
       
       
       
-        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/latest/index.html">
+        <link rel="canonical" href="https://opensource.hcltechsw.com/leap-doc/latest/helm_oidc_config.html">
       
       
+        <link rel="prev" href="helm_update_install.html">
       
-        <link rel="next" href="whats_new.html">
+      
+        <link rel="next" href="migrating_websphere_liberty.html">
       
       
       <link rel="icon" href="assets/favicon.png">
@@ -26,22 +26,16 @@
     
     
       
-        <title>Home - HCL Leap 9.3.9 Help Center</title>
+        <title>Authenticating a Helm deployment with OpenID Connect (OIDC) - HCL Leap 9.3.9 Help Center</title>
       
     
     
-<!-- Include already-configured Styles custom styles -->
-
       <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
       
       
 
 
     
-<!-- Add custom styles -->
-<link rel="stylesheet" href="assets/stylesheets/homepage-styles.css">
-
-
     
       
     
@@ -106,6 +100,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#authenticating-a-helm-deployment-with-openid-connect-oidc" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -189,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Authenticating a Helm deployment with OpenID Connect (OIDC)
             
           </span>
         </div>
@@ -265,7 +264,6 @@
     <div class="md-container" data-md-component="container">
       
       
-
         
           
             
@@ -276,10 +274,8 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -346,8 +342,10 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
+  
+    <li class="md-tabs__item md-tabs__item--active">
       <a href="in_overview.html" class="md-tabs__link">
         
   
@@ -434,35 +432,12 @@
           
         
       
-
-<!-- Hero Banner-->
-<section class="dx-hero-container">
-    <div class="md-grid md-typeset">
-        <div class="section-flexbox-row flex-start align-center">
-            <div class="dx-hero__content">
-                <div class="hero-heading">
-                    <!-- <h3>Welcome to the HCL Connections Help Center</h3> -->
-					<h2>Introducing HCL Leap</h2>
-                </div>
-                <div class="hero-body body-text white">
-                    <p>Easily create sophisticated web applications for data collection and process automation<br/>
-					   without code. HCL Leap offers users a low-code development platform to accelerate the<br/>
-					   design, build and deployment of applications.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -499,17 +474,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +486,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1142,8 +1109,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1162,14 +1131,17 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
@@ -1185,13 +1157,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Deploying
@@ -1408,8 +1380,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1431,11 +1405,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           
@@ -1457,7 +1431,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Kubernetes Helm deployment
@@ -2198,10 +2172,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="helm_oidc_config.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Authenticating a Helm deployment with OpenID Connect (OIDC)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="helm_oidc_config.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2210,6 +2204,124 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section_lmm_5mt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Leap with OIDC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_zj4_xmt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure OIDC identity Provider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_cch_1nt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a secret in Kubernetes container from the IDP certificate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_vxv_fnt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add OIDC definition as a server customization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_r3z_knt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add config properties related to OIDC config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add config properties related to OIDC config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-with-no-ldap-or-microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Config with no LDAP or Microsoft Entra ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-users-and-groups-in-security-role-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencing Users and Groups in Security Role Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_zq2_vmt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart the pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample_entra_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Microsoft Entra ID Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -7803,9 +7915,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -7816,6 +7926,112 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section_lmm_5mt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Leap with OIDC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_zj4_xmt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure OIDC identity Provider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_cch_1nt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a secret in Kubernetes container from the IDP certificate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_vxv_fnt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add OIDC definition as a server customization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_r3z_knt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add config properties related to OIDC config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add config properties related to OIDC config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-with-no-ldap-or-microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Config with no LDAP or Microsoft Entra ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-users-and-groups-in-security-role-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencing Users and Groups in Security Role Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section_zq2_vmt_b1c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart the pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample_entra_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Microsoft Entra ID Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -7827,84 +8043,250 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+                  
 
-    <div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"/></svg></span> <strong>What's New?</strong></p>
-<hr />
-<p>Find out what's new in the latest HCL Leap.</p>
-<hr />
-<p><a href="whats_new.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Go to What's New</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-8 5H9v2c0 1.1-.9 2-2 2 1.1 0 2 .9 2 2v2h2v2H9c-1.1 0-2-.9-2-2v-1c0-1.1-.9-2-2-2v-2c1.1 0 2-.9 2-2V8c0-1.1.9-2 2-2h2zm8 5c-1.1 0-2 .9-2 2v1c0 1.1-.9 2-2 2h-2v-2h2v-2c0-1.1.9-2 2-2-1.1 0-2-.9-2-2V8h-2V6h2c1.1 0 2 .9 2 2v1c0 1.1.9 2 2 2z"/></svg></span> <strong>Introducing Leap</strong></p>
-<hr />
-<p>HCL Leap builds dynamic forms and applications with a web-based interface. From a single interface, you can design a form, define access privileges, create workflow stages, deploy the application, and review submitted results.    </p>
-<hr />
-<p><a href="ovr_overview.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Learn about Leap</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-7zM4 3h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m5 4h1V5H9zm0 8h1v-2H9zM5 5v2h2V5zm0 8v2h2v-2z"/></svg></span> <strong>Deploying Leap</strong></p>
-<hr />
-<p>Learn how to deploy Leap.</p>
-<hr />
-<p><a href="in_overview.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Deploying Leap</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm10 2h-6v-2h6zm0-4h-6v-2h6zm0-4h-6V7h6z"/></svg></span> <strong>System Requirements</strong></p>
-<hr />
-<p>Know the minimum system requirements for HCL Leap version 9.3.9 and later.</p>
-<hr />
-<p><a href="ovr_release_notes.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Go to System Requirements</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Tutorials</strong></p>
-<hr />
-<p>The Leap Help Center contains a section for tutorials to help you use Leap.</p>
-<hr />
-<p><a href="tut_tutorials_toc.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Go to How To</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg></span> <strong>HCLSoftware U</strong></p>
-<hr />
-<!--![HCL Software U Logo](./assets/homepage-images/HCLSoftware-U-logo-blk.png)-->
-<p>Explore self-paced learning courses for using HCL Leap.</p>
-<hr />
-<p><a href="https://hclsoftwareu.hcltechsw.com/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Visit HCL Software U</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <strong>HCL Support</strong></p>
-<hr />
-<p>Discover HCL support bulletins and access your support cases.</p>
-<hr />
-<p><a href="https://support.hcltechsw.com/csm?id=csm_index" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Access Support</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 15h2a2 2 0 0 1 2 2v2h1v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2h1v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2h1v3H1v-3h1v-2a2 2 0 0 1 2-2m7-8 4 3-4 3zM4 2h16a2 2 0 0 1 2 2v9.54a3.9 3.9 0 0 0-2-.54V4H4v9c-.73 0-1.41.19-2 .54V4a2 2 0 0 1 2-2"/></svg></span> <strong>Community Forums</strong></p>
-<hr />
-<p>Join Leap community forums to connect with other Leap users, ask questions, and share insights.</p>
-<hr />
-<p><a href="https://support.hcltechsw.com/community" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Go to Community Forums</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg></span> <strong>Leap Ideas Portal</strong></p>
-<hr />
-<p>Join the Leap Ideas Portal to submit ideas for HCL Leap.</p>
-<hr />
-<p><a href="https://domino-ideas.hcltechsw.com/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Join Leap Ideas Portal</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2zm1-12a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2"/></svg></span> <strong>Leap 9.3.4 and earlier Help Center</strong></p>
-<hr />
-<p>This Help Center contains documentation for earlier HCL Leap versions.</p>
-<hr />
-<p><a href="https://help.hcl-software.com/Leap/9.3.4/index.html" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Go to Leap 9.3.4 and earlier Help Center</a></p>
-</li>
-</ul>
+  
+  
+
+
+<h1 id="authenticating-a-helm-deployment-with-openid-connect-oidc">Authenticating a Helm deployment with OpenID Connect (OIDC)</h1>
+<p>This topic describes how to configure an HCL Leap server that was deployed using Helm to authenticate with an external identity provider (IdP) using OpenID Connect (OIDC).</p>
+<h2 class="section" id="section_lmm_5mt_b1c">Configuring Leap with OIDC</h2>
+<p>Leap can be configured to leverage OpenID Connect (OIDC) as the primary authentication mechanism. This means that Leap will be turned into a Relying Party (RP) to the specified identify provider (IDP). When OIDC is used, the user and group lookup feature of Leap is not available and must be disabled as part of the configuration.</p>
+<p>The following tasks must be completed to establish this configuration:</p>
+<ol>
+<li>Configure the OIDC identity provider.</li>
+<li>Create a secret in Kubernetes container from the IDP server certificate.</li>
+<li>Add an OIDC definition as a server customization.</li>
+<li>Add configuration properties related to the OIDC configuration.</li>
+<li>Restart the pod.</li>
+</ol>
+<h2 class="section" id="section_zj4_xmt_b1c">Configure OIDC identity Provider</h2>
+<p>Many different identity providers offer OIDC capability. Refer to your chosen identity provider's documentation for more details on configuration.</p>
+<p>For detailed steps on configuring Microsoft Entra ID, refer to <a href="azure_config.html">Configuring Microsoft Entra ID for Leap</a>.</p>
+<h2 class="section" id="section_cch_1nt_b1c">Create a secret in Kubernetes container from the IDP certificate</h2>
+<p>As part of the configuration process for your identify provider, you will have created or obtained a digital certificate for configuring HTTPS. This certificate will also need to be deployed to Leap so that the two servers can communicate with each other.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SSL certificate (.crt) and public key (.key) should be in PKCS12 format.</p>
 </div>
+<p>After copying the <code>.key</code> and <code>.crt</code> to the kubernetes image, create a secret using the following command:</p>
+<div class="highlight"><pre><span></span><code>kubectl -n myns create secret tls oidccert --key=&quot;/tmp/oidc.key&quot; --cert=&quot;/tmp/oidc.crt&quot;
+</code></pre></div>
+<p>Next, this secret can be referenced in the yaml file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">customCertificateSecrets</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="nt">keycloakCert</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;keycloakcert&quot;</span>
+</code></pre></div>
+<p>For more information, see to <a href="helm_admin_customsecret.html">Provide admin user a custom secret</a>.</p>
+<h2 class="section" id="section_vxv_fnt_b1c">Add OIDC definition as a server customization</h2>
+<p>To configure OIDC you must define the <code>openidConnectClient</code>.  Take note of the following attributes when creating the <code>openidConnectClient</code> configuration:</p>
+<p>The <strong>clientId</strong> will refer to the environment variable, for the client secret id, that is created as a result of the Kubernetes secret.  The format is <aliasName>_key.</p>
+<p>The <strong>clientSecret</strong> will refer to the environment variable, for the client secret value, that is created as a result of the Kubernetes secret.  The format is <aliasName>_key.</p>
+<p>The <strong>scope</strong> must be set to "openid profile" to retrieve the preferred_username claim, which is a suitable claim to use for userIdentityToCreateSubject. The application registration in Azure AD is required to have the "openid" and "profile" permissions.</p>
+<p>For <strong>groupIdentifier</strong>,  the recommended value is <strong>groups</strong>, though this may vary depending on the Microsoft Entra ID environment.</p>
+<p>The <strong>discoveryEndpointUrl</strong> is likely to be https://login.microsoftonline.com/[tenant id]/v2.0/.well-known/openid-configuration</p>
+<p>The <strong>realmName</strong> is used when referencing members of this repository for role mapping.</p>
+<p>The properties that you need to specify may differ based on your identify provider. For additional information, see the <a href="https://openliberty.io/docs/latest/reference/config/openidConnectClient.html">Open Liberty documentation on OpenID Connect</a>.</p>
+<p>Before moving on from this step:</p>
+<ul>
+<li>Verify that the <strong>discoveryEndpointURL</strong> is valid by opening it in a browser prior to entering it in the yaml file.</li>
+<li>Update the <strong>clientId</strong> and <strong>clientSecret</strong> with the proper values obtained from your IDP, by <a href="helm_admin_customsecret.html">using a custom secret</a>.</li>
+</ul>
+<p>The entire configuration may look like the example provided:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">configOverrideFiles</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="nt">openIdConnect</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">&lt;server description=&quot;leapServer&quot;&gt;</span>
+<span class="w">        </span><span class="no">&lt;openidConnectClient id=&quot;oidc&quot;</span>
+<span class="w">          </span><span class="no">clientId=&quot;${OIDC_CLIENT_ID}&quot;</span>
+<span class="w">          </span><span class="no">clientSecret=&quot;${OIDC_CLIENT_SECRET}&quot;</span>
+<span class="w">          </span><span class="no">signatureAlgorithm=&quot;RS256&quot;</span>
+<span class="w">          </span><span class="no">authFilterRef=&quot;interceptedAuthFilter&quot;</span>
+<span class="w">          </span><span class="no">mapIdentityToRegistryUser=&quot;false&quot;</span>
+<span class="w">          </span><span class="no">httpsRequired=&quot;true&quot;</span>
+<span class="w">          </span><span class="no">scope=&quot;openid&quot;</span>
+<span class="w">          </span><span class="no">realmName=&quot;LeapOidc&quot;</span>
+<span class="w">          </span><span class="no">groupIdentifier=&quot;group_membership&quot;</span>
+<span class="w">          </span><span class="no">userIdentityToCreateSubject=&quot;preferred_username&quot;</span>
+<span class="w">          </span><span class="no">discoveryEndpointUrl=&quot;https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration&quot;&gt;</span>
+<span class="w">        </span><span class="no">&lt;/openidConnectClient&gt;</span>
+<span class="w">        </span><span class="no">&lt;authFilter id=&quot;interceptedAuthFilter&quot;&gt;</span>
+<span class="w">          </span><span class="no">&lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure&quot;/&gt;</span>
+<span class="w">        </span><span class="no">&lt;/authFilter&gt;</span>
+<span class="w">      </span><span class="no">&lt;/server&gt; </span>
+<span class="l l-Scalar l-Scalar-Plain">. . .</span>
+</code></pre></div>
+<p>For more details on defining a server customization, see <a href="helm_open_liberty_custom.html">Open Liberty server customizations</a>.</p>
+<h2 class="section" id="section_r3z_knt_b1c">Add config properties related to OIDC config</h2>
+<p>The following properties must be set to complete the OIDC configuration:</p>
+<ul>
+<li><strong>postLogoutRedirectURL</strong> - This is the URL to which Leap will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.</li>
+<li><strong>reauthOnFailedRequest</strong>, <strong>reauthInNewWindow</strong> - When the user's session expires, these settings enable the user to reauthenticate in a pop-up window and not lose any unsaved work</li>
+</ul>
+<p>For more details on setting Leap properties, see <a href="helm_leap_properties.html">Leap properties</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">leapProperties</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.reauthOnFailedRequest=true </span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.reauthInNewWindow=true </span>
+<span class="w">      </span><span class="no">ibm.nitro.LogoutServlet.postLogoutRedirectURL=https://myoidcServer.com/realms/Leap/protocol/openid-connect/logout?client_id=hcl-leap-oidc-client&amp;post_logout_redirect_uri=https://myLeapServer.com/apps/secure/org/ide/manager.html</span>
+</code></pre></div>
+<h3 id="config-with-no-ldap-or-microsoft-entra-id">Config with no LDAP or Microsoft Entra ID</h3>
+<p>If the OIDC configuration does not include an LDAP directory or Microsoft Entra ID, then you must define the following properties that will turn off user/group lookup features of Leap:</p>
+<ul>
+<li><strong>userLookup</strong> -  Set to <strong>false</strong> if LDAP directory is not available . Set to <strong>true</strong> if an LDAP is available and configure the <openidConnectClient mapIdentityToRegistryUser="true" userIdentityToCreateSubject="[attribute that matches to LDAP]" ...></li>
+<li><strong>userGroups</strong> - Set to <strong>false</strong> if group information is not available.  Set to <strong>true</strong> if ID token contains group information. If true, ensure <openidConnectClient groupIdentifier="..."> matches correct claim in the ID token</li>
+<li><strong>userLookupGroups</strong> - Set to <strong>false</strong> if LDAP directory is not available or if doesn't support searching for groups.  Set to <strong>true</strong> if directory has group information; Ensure that <openidConnectClient groupIdentifier="..."> matches to the attribute that identifies groups in the LDAP</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">leapProperties</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.userLookup=false</span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.userGroups=false</span>
+<span class="w">      </span><span class="no">ibm.nitro.NitroConfig.userLookupGroups=false</span>
+</code></pre></div>
+<h2 id="referencing-users-and-groups-in-security-role-mapping">Referencing Users and Groups in Security Role Mapping</h2>
+<p>To assign a user or group from OIDC to one of the Leap roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user or group name.  </p>
+<p>To assign a user from OIDC to a Leap security role you would use {realmName}/{userName}:
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">roleMapping</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EditApplicationsUsers</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">MappedUsersAccessIDs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc/john.oidc</span>
+</code></pre></div></p>
+<p>To assign a group from OIDC to a Leap security role you would use {realmName}/{groupName}:
+<div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">roleMapping</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">EditApplicationsUsers</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">MappedGroupsAccessIDs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LeapOidc//Group1</span>
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>there is an extra slash in the group name because that is part of the definition in the IDP used for this example. Other IDPs may differ in how they define the group name, if in doubt leverage the logging trace string to identify the correct value.</p>
+</div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>To get more information about how Liberty perceives the logged in user, add the trace string 'com.ibm.ws.security.authentication.*=all'.  This will provide useful information for understanding the user and group values.  An example output in the trace.log, after logging in, looks like:</p>
+<div class="highlight"><pre><span></span><code>    Principal: WSPrincipal:john.oidc
+    Public Credential: com.ibm.ws.security.credentials.wscred.WSCredentialImpl@cb847b2d,realmName=LeapOidc,securityName=john.oidc,realmSecurityName=LeapOidc/john.oidc,uniqueSecurityName=john.oidc,primaryGroupId=null,accessId=user:LeapOidc/john.oidc,groupIds=[group:LeapOidc//Group2]
+    Private Credential: IDToken:{&quot;exp&quot;:1710363581,&quot;iat&quot;:1710363281,&quot;auth_time&quot;:1710363280,&quot;jti&quot;:&quot;f343b1fe-6a9a-482f-a85e-1cf46f4eb1b8&quot;,&quot;iss&quot;:&quot;https://myoidcserver:8443/realms/Leapdev&quot;,&quot;aud&quot;:&quot;hcl-leap-oidc-client&quot;,&quot;sub&quot;:&quot;9b8cd571-5d09-4de2-ba2d-22b985424831&quot;,&quot;typ&quot;:&quot;ID&quot;,&quot;azp&quot;:&quot;hcl-leap-oidc-client&quot;,&quot;session_state&quot;:&quot;fff63a5e-8269-4e69-b4c3-9d4135c028da&quot;,&quot;at_hash&quot;:&quot;ePO9yDI6IGdX1iDG17CNWQ&quot;,&quot;acr&quot;:&quot;1&quot;,&quot;sid&quot;:&quot;fff63a5e-8269-4e69-b4c3-9d4135c028da&quot;,&quot;group_membership&quot;:[&quot;/Group2&quot;],&quot;email_verified&quot;:false,&quot;realmName&quot;:&quot;Leapdev&quot;,&quot;name&quot;:&quot;John Oidc&quot;,&quot;groups&quot;:[&quot;default-roles-leapdev&quot;,&quot;offline_access&quot;,&quot;uma_authorization&quot;],&quot;preferred_username&quot;:&quot;john.oidc&quot;,&quot;given_name&quot;:&quot;John&quot;,&quot;family_name&quot;:&quot;Oidc&quot;,&quot;email&quot;:&quot;john.oidc@acme.com&quot;} 
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the groupIds array is empty then the 'openidConnectClient' is not configured properly; the group claim may be missing from the token or the 'groupIdentifier' may not be set to the correct value.</p>
+</div>
+<h2 class="section" id="section_zq2_vmt_b1c">Restart the pod</h2>
+<p>After restarting the Leap pod, accessing Leap should redirect you to authenticate using your OIDC IDP.</p>
+<h2 class="section" id="sample_entra_config">Sample Microsoft Entra ID Configuration</h2>
+<p>The following is an example of a Leap configuration against Microsoft Entra ID as the IDP using ODIC and with user/group searches enabled.</p>
+<ol>
+<li>
+<p>You must <a href="azure_config.html">prepare the Microsoft Entra ID tenant for Leap</a>.</p>
+</li>
+<li>
+<p><a href="azure_lookups.html#kubernetes-create-credential-for-leap">Create a kubernetes secret</a> that references the Microsoft Entra ID application's client secret id and value. In this example, the secret name was "azureAlias".  Provide the name of the secret in the <strong>customSecrets</strong> section of the .yaml file.</p>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    customSecrets:
+      azure-credentials: &quot;leap-azure-credentials&quot;
+. . .
+</code></pre></div>
+</li>
+<li>
+<p>Define the Leap properties to enable the user/group searching against Microsoft Entra ID.  We have also included the properties that improve the re-authentication experience when a user session expires.</p>
+<p>For further details on the Leap configuration required to integrate with Microsoft Entra ID, refer to <a href="azure_lookups.html">Integrating with a Microsoft Entra ID directory</a>.</p>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    . . .
+    leapProperties: |
+      ibm.nitro.SetupAll.setupStatus = start
+      ibm.nitro.NitroConfig.reauthOnFailedRequest=true
+      ibm.nitro.NitroConfig.reauthInNewWindow=true
+      ibm.nitro.NitroConfig.memberManagerType=ms-azure-ad
+      ibm.nitro.NitroConfig.GraphApiMemberManager.credentialAlias=azureAlias
+      ibm.nitro.NitroConfig.GraphApiMemberManager.tenantId=11111111-1111-1111-1111-111111111111
+      . . .
+. . .
+</code></pre></div>
+</li>
+</ol>
+<p>Define the OIDC configuration for your Microsoft Entra ID tenant.</p>
+<p>Take note of the following points in creating the <code>openidConnectClient</code>:</p>
+<ul>
+<li><strong>clientId</strong> and <strong>clientSecret</strong> reference the environment variables created as a result of the kubernetes secret</li>
+<li>the <strong>discoveryEndpoint</strong> includes the Microsoft Entra ID <strong>tenant id</strong></li>
+<li>the <strong>realmName</strong> provides a handle that can be used in the <strong>roleMapping</strong> definition</li>
+</ul>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    . . .
+    configOverrideFiles:
+      azureOidc: |
+        &lt;server description=&quot;leapServer&quot;&gt;
+          &lt;openidConnectClient id=&quot;oidc&quot;
+            clientId=&quot;${azureAlias_key}&quot;
+            clientSecret=&quot;${azureAlias_secret}&quot;
+            signatureAlgorithm=&quot;RS256&quot;
+            authFilterRef=&quot;interceptedAuthFilter&quot;
+            mapIdentityToRegistryUser=&quot;false&quot;
+            httpsRequired=&quot;true&quot;
+            scope=&quot;openid profile&quot;
+            realmName=&quot;LeapOidc&quot;
+            groupIdentifier=&quot;groups&quot;
+            userIdentityToCreateSubject=&quot;preferred_username&quot;
+            discoveryEndpointUrl=&quot;https://login.microsoftonline.com/11111111-1111-1111-1111-111111111111/v2.0/.well-known/openid-configuration&quot;&gt;
+          &lt;/openidConnectClient&gt;
+          &lt;authFilter id=&quot;interceptedAuthFilter&quot;&gt;
+            &lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure&quot; /&gt;
+          &lt;/authFilter&gt;
+          &lt;ssl id=&quot;defaultSSLConfig&quot; trustDefaultCerts=&quot;true&quot; /&gt;
+        &lt;/server&gt;
+. . .
+</code></pre></div>
+<p>Define role mappings for users or groups access to Leap</p>
+<div class="highlight"><pre><span></span><code>configuration:
+  leap:
+    . . .
+    roleMapping:
+      EditApplicationsUsers:
+        # These are a couple of users provide by the Entra ID sample pack
+        # The &quot;LeapOidc/&quot; prefix matches the realmName of the &lt;openIdConnectClient&gt; config
+        MappedUsersAccessIDs:
+          - LeapOidc/AdeleV@vprl0.onmicrosoft.com
+          - LeapOidc/AlexW@vprl0.onmicrosoft.com
+        MappedGroupsAccessIDs:
+          # &quot;Leap Authors&quot; group
+          - LeapOidc/372863bc-001f-42b5-b877-38f6afc4b417
+. . .
+</code></pre></div>
+<p><strong>Parent topic:</strong> <a href="kubernetes_helm_deployment.html">Kubernetes Helm deployment</a></p>
 
 
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -7920,32 +8302,18 @@
         
       </main>
       
-
-<footer class="md-footer">
-    <div class="md-footer-meta md-typeset">
-        <div class="md-footer-meta__inner md-grid">
-            <!-- Copyright and theme information -->
-            <div class="md-footer-copyright">
-                <a href=" https://www.hcltechsw.com/ " title="MkDocs">None</a>
-                <br>Made with
-                <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-                    Material for MkDocs
-                </a>
-            </div>
-            <div class="md-social">
-                <a href="https://github.com/HCL-TECH-SOFTWARE" target="_blank" rel="noopener" title="github.com"
-                    class="md-social__link">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-        </div>
+        <footer class="md-footer">
+ 
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-hcl md-grid1">
+     <a href="https://www.hcltechsw.com/legal/disclaimer" class="nav-link footer-launch" target="_blank">Disclaimer</a>
+	 <a href="https://www.hcltechsw.com/legal/privacy" class="nav-link footer-launch" target="_blank">Privacy</a>
+	 <a href="https://www.hcltechsw.com/legal/terms-use" class="nav-link footer-launch" target="_blank">Terms of use</a>
+	 
     </div>
+  </div>
 </footer>
-
+      
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
