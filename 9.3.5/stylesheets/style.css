@@ -30,15 +30,14 @@
 }
 
 .table-wrap {
-  border: 1px solid #aaa;
+  border: 1px solid black;
   table-layout: fixed;
-  width: 100%;
-  font-size: 0.64rem;
+  width: 820px;
 }
 
-th, td {
-  border: 1px solid #aaa;
-  padding: 6px;
+td {
+  border: 1px solid black;
+ 
   overflow: hidden;
 }
 
