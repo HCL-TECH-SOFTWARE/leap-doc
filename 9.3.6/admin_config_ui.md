@@ -15,7 +15,7 @@ Changes made in the admin configuration page will take effect automatically with
 Settings that are not supported in the Admin configuration page will continue to be configured using the leap_config.properties or the Helm chart properties.
 
 
-## HTTP Services whitelist {#section_adm_srv_whitelist .section}
+## HTTP Services whitelist 
 
 The Leap admin can define a list of domains and operations that app authors are allowed to include in their applications.  The whitelist defaults to 'off, which means that app authors can use REST/JSON services from any domain'.  The admin can enable the feature and then click the "Add URL to whitelist" button, which will provide a dialog to define a URL and operations (get, post, put, patch, delete, and head) to allow.
 

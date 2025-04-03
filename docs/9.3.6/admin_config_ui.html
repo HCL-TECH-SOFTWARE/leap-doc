@@ -2431,7 +2431,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#section_adm_srv_whitelist" class="md-nav__link">
+  <a href="#http-services-whitelist" class="md-nav__link">
     <span class="md-ellipsis">
       HTTP Services whitelist
     </span>
@@ -7612,7 +7612,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#section_adm_srv_whitelist" class="md-nav__link">
+  <a href="#http-services-whitelist" class="md-nav__link">
     <span class="md-ellipsis">
       HTTP Services whitelist
     </span>
@@ -7850,7 +7850,7 @@
 <p>After the feature is enabled, and the admin clicks 'save', the supported config properties are stored and read from the database.</p>
 <p>Changes made in the admin configuration page will take effect automatically within a few moments, the server/pod does not need to be restarted, but may need a browser refresh to take effect.</p>
 <p>Settings that are not supported in the Admin configuration page will continue to be configured using the leap_config.properties or the Helm chart properties.</p>
-<h2 class="section" id="section_adm_srv_whitelist">HTTP Services whitelist</h2>
+<h2 id="http-services-whitelist">HTTP Services whitelist</h2>
 <p>The Leap admin can define a list of domains and operations that app authors are allowed to include in their applications.  The whitelist defaults to 'off, which means that app authors can use REST/JSON services from any domain'.  The admin can enable the feature and then click the "Add URL to whitelist" button, which will provide a dialog to define a URL and operations (get, post, put, patch, delete, and head) to allow.</p>
 <h2 class="section" id="section_adm_srv_catalog">Service catalogs and descriptions</h2>
 <p>Admins have always been able to add custom service descriptions to Leap (by placing them in the '.../ServiceCatalog/1' directory on the server).  Within the admin configuration page, admins will be able to upload existing XML service descriptions or create new service descriptions with the REST/JSON wizard.</p>
