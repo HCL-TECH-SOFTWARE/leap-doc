@@ -2,7 +2,7 @@
 site_name: HCL Leap 9.3.6 Help Center
 site_description: >
   A next-gen documentation site for HCL Leap.
-site_url: https://opensource.hcltechsw.com/leap-doc/9.3.6/
+site_url: https://opensource.hcltechsw.com/leap-doc/latest/
 use_directory_urls: false
 docs_dir: 9.3.6
 site_dir: docs/9.3.6
@@ -42,7 +42,10 @@ markdown_extensions:
   - md_in_html
   - toc:
       title: On this page
-
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      
 extra:
 #  analytics: 
 #    provider: custom
@@ -61,7 +64,7 @@ edit_uri: edit/main/docs
 
 # Customization
 extra_css:
-  - stylesheets/style.css
+  - assets/stylesheets/style.css
 
 plugins:
   - section-index
