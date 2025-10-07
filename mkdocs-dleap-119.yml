@@ -1,0 +1,368 @@
+#Project Information
+site_name: HCL Domino Leap 1.1.9 Help Center
+site_description: >
+  A next-gen documentation site for HCL Domino Leap.
+site_url: https://opensource.hcltechsw.com/leap-doc/latest/
+use_directory_urls: false
+docs_dir: 9.3.11
+site_dir: docs/dleap/1.1.9
+exclude_docs: |
+  helm_*
+  in_*
+  azure*
+  admin_config_ui.md
+  ser_*
+  ref_service_j2c*
+  services_toc.md
+  prepare_config_helm.md
+  migrating_websphere_liberty.md
+  kubernetes_helm_deployment.md
+  ex_soa_service_transport.md
+  deploytraditional_leap.md
+  create_postgresql_db.md
+  co_config_app_server_enviro.md
+  co_configuring_the_properties_file.md
+  ad_managing_db2_database.md
+  foundry_user_tracking.md
+  cr_updating_and_stopping_deployment.md
+  ex_add_custom_data_integrity_rules.md
+  ref_my_tasks_rest_api.md
+
+not_in_nav: |
+  ref_send_email.md
+  ovr_ckeditor_details.md
+
+# Theme Configuration
+theme:
+  name: material
+  # replace with dleap logo
+  logo: assets/CNX_logo.png
+  favicon: assets/favicon.png
+  language: en
+  features:
+    - content.code.select
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.instant
+    - search.highlight
+    - search.share
+    - search.suggest
+  custom_dir: theme_overrides/
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Static files
+  static_templates:
+    - 404.html
+
+# Markdown Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - toc:
+      title: On this page
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+#  analytics: 
+#    provider: custom
+#    property: UA-169645537-2
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HCL-TECH-SOFTWARE
+  version:
+    provider: mike
+  isLeap: false
+  isDominoLeap: true 
+  fullProductName: HCL Domino Leap
+  shortProductName: Domino Leap
+  dominoDocBaseUrl: https://help.hcltechsw.com/domino/11.0.0/
+  oldDocsUrl: https://help.hcl-software.com/domino-leap/1.1.5/
+  oldDocsVersionStr: Domino Leap 1.1.5
+  deployUrl: dleap_deploying.md
+  currentVersion: 1.1.9
+  leap_flavor: dleap
+  context: volt-apps
+  apiContext: volt-api
+
+# Repository
+repo_url: https://github.com/HCL-TECH-SOFTWARE/leap-doc
+repo_name: hcl-software/leap-doc
+edit_uri: edit/main/docs
+
+
+# Customization
+extra_css:
+  - assets/stylesheets/style.css
+
+plugins:
+  - section-index
+  - search
+  - macros
+  
+# Table of contents 
+nav:
+  - Introducing Domino Leap:
+    - index.md
+# What's New
+  - What&apos;s New&quest;:
+    - whats_new.md
+# Overview
+  - Overview: 
+    - ovr_overview.md
+    - What is HCL Domino Leap, and how is it used?: get_overview.md
+    - Release Notes: ovr_release_notes.md
+    - Accessibility Overview: 
+      - ac_experience_builder_accessibility.md
+      - Accessibility features for application designers: ac_accessibility_features_for_designers.md
+      - Accessibility features for application users: ac_accessibility_features_for_users.md
+# Guide Me
+  - Guide Me:
+    - guide_me.md
+    # Tutorials    
+    - Tutorials for form design:
+      - tut_tutorials_toc.md
+      - Video -- Creating and deploying an application using Domino Leap: tut_video_overview.md
+      - Building a Survey application:
+        - tut_survey_application_OV.md
+        - Building a survey with Domino Leap: tut_survey_application_module1.md
+        - Tutorial summary: tut_survey_application_SM.md
+      - Adding tables and workflow elements to a Domino Leap form:
+        - tut_roles_and_stages_OV.md
+        - Adding tables to forms: tut_roles_and_stages_module1.md
+        - Adding workflow Stages to a form: tut_roles_and_stages_module2.md
+        - Applying access control through Roles: tut_roles_and_stages_module3.md
+        - Tutorial summary: tut_roles_and_stages_SM.md 
+# Deploying
+  - Deploying:
+    - dleap_deploying.md
+    - Deploying Domino Leap in a Container:
+      - dleap_deploy_to_container.md
+      - Building an image: dleap_install_container_build_image.md
+      - Running an image - docker run: dleap_container_run_image_dockerrun.md
+      - Running an image - dominoctl: dleap_container_run_image_dominoctl.md
+    - Installing Domino Leap:
+      - dleap_install_overview.md
+      - Folder references: dleap_install_folder_ref.md
+      - Configuring the server: dleap_install_server_config.md
+      - Installing or upgrading Domino Leap: dleap_install_to_domino.md
+      - Post-installation tasks: dleap_post_install_tasks.md
+      - Troubleshooting installation: dleap_troubleshoot_install.md
+    - Uninstalling Domino Leap on Linux: dleap_uninstall_linux.md 
+# Administering and Configuring 
+  - Administering:
+    - administering_leap.md
+    - Controlling who creates HCL Domino Leap applications: dleap_control_creating_applications.md
+    - Domino Leap configuration properties: dleap_config_settings.md
+    - Core Domino server configuration: dleap_core_domino_config.md
+    - Upgrading:
+      - upgradingleap_sec.md
+      - Upgrading from prior releases: dleap_upgrading_prior_releases.md
+    - Domino Leap clean-up process: dleap_cleanup_agent.md
+    - Enabling basic authentication for HCL Domino Leap API requests: dleap_enable_basic_authentication.md
+    - Securing your Domino Leap deployment: dleap_securing_deployment.md
+    - Strict CSP: leap_strict_csp.md
+    - Admin Application Dashboard: admin_application_dashboard.md
+    - Integrating with HCL Volt MX Foundry: 
+      - foundry_integration.md
+      - Use integration services defined in HCL Volt MX Foundry: foundry_integration_services.md
+    # Configuring
+    - Configuring:
+      - co_config_toc.md
+      - Configuring Domino Leap: dleap_config_settings.md
+      - Configuration properties: co_configuration_properties.md   
+    # Troubleshooting
+    - Troubleshooting:
+      - tr_troubleshooting_toc.md
+      - Troubleshooting and support: tr_troubleshooting_and_support.md
+      - Troubleshooting Domino Leap: tr_troubleshooting.md
+# Building Apps
+  - Building Apps:
+    - cr_creating_and_managing_toc.md
+    - Application Management:
+      - cr_application_operations_toc.md
+      - Creating an application: cr_creating_application_overview.md
+      - Creating an application from an excel spreadsheet: cr_creating_application_excel.md
+      - Deploying an application: cr_deploying_an_application.md
+      - Launching an application: cr_launching_an_application.md
+      - Viewing submitted responses: cr_viewing_submitted_responses.md
+      - Viewing application history: cr_view_app_history.md
+      - Upgrading an application design: upgrade_application_design.md
+      - Duplicating an application: cr_duplicating_application.md
+    - Using the editor:
+      - cr_using_the_editor_toc.md
+      - Basic Concepts: editor_basics.md
+      - Palette items: editor_palette_items.md
+      - Copying items: cr_copying_items.md
+      - Moving items on a form: cr_moving_items_on_a_form.md
+      - Creating an accessible application:
+        - ac_creating_accessible_application.md
+        - Using a Text item as a label: ac_using_text_item_as_label.md
+      - Enabling dynamic layout: cr_enabling_dynamic_layout.md
+      - Adding specialized form items:
+        - wi_introduction_to_specialized_form_items.md
+        - Echoing text with a Text item: wi_echoing_text_with_a_text_item.md
+        - Adding tables to a form: wi_adding_tables_to_a_form.md
+        - Adding HTML fragments to a form: wi_adding_html_fragments_to_a_form.md
+      - Managing the files associated with your application:
+        - wf_managing_the_files_associated_with_your_appl.md
+        - Uploading files for use in your application: cr_uploading_and_using_files.md
+    - Adding dynamic behavior:
+      - cr_adding_dynamic_behavior.md
+      - Adding formulas to your application:
+        - cr_adding_formulas_toc.md
+        - Creating a Formula from the Properties side panel: cr_adding_formulas_from_properties_window.md
+        - Creating a formula from the Settings tab: cr_adding_formula_from_settings_tab.md
+        - Running a formula from an event: cr_adding_formula_running_formula_from_event.md
+      - Creating rules in your application:
+        - ru_creating_rules_in_your_form.md
+        - Setting rules on form items: ru_set_rule_on_form_items.md
+        - Setting rules on pages in an application: ru_setting_rules_on_pages_in_an_application.md
+        - Setting rules on Stages: ru_setting_rules_on_stage_actions.md
+      - Incorporating web services into your applications:
+        - cr_using_apps_as_services_toc.md
+        - Adding and configuring a service: cr_in_app_service.md
+        - Service Oriented Architecture – Exposing a service to Leap: cr_using_apps_exposing_service_to.md
+        - Triggering a service from a button: se_triggering_a_web_service_from_a_button.md
+        - Using a service to populate form items: se_using_a_service_to_populate_a_drop_down.md
+        - Directory Services: dleap_directory_services.md
+        - Accessing data from Existing Domino Applications: dleap_access_domino_data.md
+        - Cancelling user submit event: se_cancel_submit-event.md
+        - Integrating your application with existing Leap applications: cr_using_other_apps_as_services.md
+      - Adding Stages to an application:
+        - sub_adding_stages_toc.md
+        - Editing the message a user sees upon form submission: sub_editing_the_message_a_user_sees.md
+        - Redirecting users after form submission: sub_editing_the_url_a_user_sees.md
+        - Sending an email after a user submits a form: sub_sending_an_email.md
+        - Populating information upon form submission using a web service: sub_use_service_to_populate_on_form_submission.md
+        - Assigning users to a role after submission: sub_assigning_a_user.md
+        - Configuring behavior of a form on submission: sub_sending_a_user_to_another_url.md
+        - Saving work as a draft: sad_allowing_users_to_save.md
+        - Scenario -- hidden or read-only form items in Stages: sub_hidden_or_read_only_items_in_stages.md
+      - Adding JavaScript:
+        - js_adding_javascript.md
+        - Sample Functions: js_sample_functions.md
+      - Adding Custom Behaviour: cr_adding_custom_behavior.md
+      - Working with attachments: cr_attachments.md
+    - Working with application data:
+      - da_data_analysis_and_exporting_data.md
+      - Changing the Saved Value of a form item: da_labeling_saved_values_in_forms.md
+      - Adding Data Labels to form items: da_labeling_fields_in_a_form.md
+      - Exporting data from your application:
+        - da_exporting_data_from_your_application.md
+        - Controlling data available for export: da_controlling_data_available_for_export.md
+      - Importing data in View Data: cr_import_data_in_view_responses.md 
+    # Securing
+    - Securing your application:
+      - se_security_toc.md
+      - Defining basic security roles for users: as_define_security_roles.md
+      - Assigning users or groups to roles: as_assigning_users_or_groups_to_roles.md
+      - Setting Stage permissions: as_setting_stage_permissions.md
+      - Defining permissions to share data with other applications: se_permission_for_sharing_data_with_other_apps.md
+      - Assigning users to maintain the application: as_assigning_users_to_maintain_the_application.md
+      - Setting up security for anonymous access: as_setting_up_security_for_anon_access.md
+    - Styling your application:
+      - st_style_application.md
+      - Styling your application with a custom theme: cr_custom_theme.md
+      - Using CSS files:
+        - ex_css_toc.md
+        - Adding customized CSS to your application: ex_adding_ccs.md
+        - Removing a custom style sheet: ex_removing_a_css.md
+    - Globalization features:
+      - gl_forms_experience_builder_globalization.md
+      - Setting a language: gl_setting_a_language.md
+    - Domino Leap document integration:
+      - di_pop_doc_with_app_data.md
+      - Adding a PDF to Domino Leap: di_adding_pdf_to.md
+      - Mapping form items to PDF fields: di_mapping_form_items_to_pdf_fields.md
+      - Mapping form items to PDF fields and storing the filled PDF: di_mapping_form_items_to_pdf_fields_and_attaching.md
+      - Creating the PDF trigger: di_creating_the_pdf_trigger.md
+      - Document integration usage details: di_usage_details.md
+      - Saving a PDF to a file location: sub_saving_pdf.md
+    - Performance Recommendations: cr_performance_recommendations.md
+# Extending
+  - Extending: extending_toc.md
+# Reference  
+  - References:
+    - reference_toc.md
+    - REST API reference:
+      - ref_rest_api_ref.md
+      - Data access REST API:
+        - ref_data_access_rest_api.md
+        - List:
+          - ref_data_rest_api_list.md
+          - Filtering Data REST API results: ref_data_rest_api_list_filter.md
+        - Retrieve: ref_data_rest_api_retrieve.md
+        - Create: ref_data_rest_api_create.md
+        - Update: ref_data_rest_api_update.md
+        - Delete: ref_data_rest_api_delete.md
+        - Retrieve Attachment: ref_data_rest_api_retrieve_attachment.md
+        - Create Attachment: ref_data_rest_api_create_attachment.md
+      - Application management REST API: ref_rest_api_auto_deploy.md
+      - Application statistics REST API: app_stats_restapi.md
+      - Swagger UI: ref_swagger_ui.md
+    - JavaScript API:
+      - ref_javascript_api.md
+      - Running Custom JavaScript -– Events:
+        - ref_jsapi_running_custom_js_events.md
+        - Application Events: ref_jsapi_application_events.md
+        - Form Events: ref_jsapi_form_events.md
+        - Page Events: ref_jsapi_page_events.md
+        - Item Events: ref_jsapi_item_events.md
+      - Running Custom JavaScript Files: ref_jsapi_running_external_js_files.md
+      - Reference Objects and Functions:
+        - ref_jsapi_objects_and_functions.md
+        - Interface objects:
+          - ref_jsapi_user_interface_objects.md
+          - Application objects: ref_application_object.md
+          - Form objects: ref_form_objects.md
+          - Page and App Page objects: ref_page_app_page_objects.md
+          - Item objects: ref_item_objects.md
+          - Other objects: ref_other_objects.md
+        - Data objects: ref_jsapi_ref_data_objects.md
+      - JavaScript Security: ref_jsapi_javascript_security.md
+    - Services:
+      - ref_services_toc.md
+      - Leap Configuration Credentials Provider: dleap_config_credentials_provider.md
+      - Basic Credentials Provider: ref_service_basic_credentials_provider.md
+      - Cookie Credentials Provider: ref_service_cookie_credentials_provider.md
+      - Header Credentials Provider: ref_service_header_credentials_provider.md
+      - Service Description:
+        - ref_service_service_description.md
+        - Localizing Service Descriptions: ref_service_localizing_service_description.md
+        - Mapping Data for a Service Description: ref_service_mapping_service_description.md
+        - Deploying a Service Description: ref_service_deploying_service_description.md
+        - Troubleshooting a service description: ref_service_troubleshooting_service_description.md
+      - HTTP Service Transport: ref_service_http_service_transport.md
+    - Embedding items in an iframe: ref_embed_iframe.md
+    - Embedding API: ref_embedding_api.md
+    - Creating customized Cascading Style Sheets: ref_customized_css.md
+    - Custom Widget API v1.0.0:
+      - customwidgetapi_landing.md
+      - Data Widgets vs Display Widgets: datawidgets_displaywidgets.md
+      - Data Types: datatypes_widgets.md
+      - Rules: rules_widgets.md
+      - Built-In Properties: builtin_properties_widgets.md
+      - Custom Properties: custom_properties_widgets.md
+      - Widgets with Options: widgets_options.md
+      - Widget Instantiation: widget_instantiation.md
+      - Aggregation Widgets: widget_aggregation.md
+      - Validation: widget_validation.md
+      - Internationalization: widget_internationalization.md
+      - Usage of JavaScript API: widget_javaapi.md
+      - Versioning: widget_versioning.md
+      - Upgrading: widget_upgrade.md
+      - Security Considerations: widgets_security.md
+      - Incorporating third-party libraries: widgets_thirdpartylibraries.md
+      - Known limitations: widgets_limitations.md
+      - Examples: widgets_examples.md
+          
