@@ -2,9 +2,15 @@
 {% extends "base.html" %}
 {% block outdated %}
   You're not viewing the latest version.
-  <a href="https://opensource.hcltechsw.com/leap-doc/latest/">  
-    <strong>Click here to go to the latest.</strong>
-  </a>
+  {% if config.extra.leap_flavor == "dleap" %}
+    <a href="https://opensource.hcltechsw.com/leap-doc/dleap/latest/">
+      <strong>Click here to go to the latest.</strong>
+    </a>
+   {% else %}
+    <a href="https://opensource.hcltechsw.com/leap-doc/latest/">
+      <strong>Click here to go to the latest.</strong>
+    </a>
+  {% endif %}
 {% endblock %}
 
 
@@ -20,7 +26,7 @@
   <div class="dropdown-content">
   <a href="https://support.hcltechsw.com" target="_blank">Customer Support</a>
   <a href="https://hclsoftwareu.hcltechsw.com/" target="_blank">HCLSoftware U</a>
-  <a href="https://support.hcltechsw.com/community" target="_blank">Community Forums</a>
+  <a href="https://developer.ds.hcl-software.com/c/hcl-leap/11" target="_blank">Community Forums</a>
 
 </div>
 </div>
