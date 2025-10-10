@@ -2,6 +2,7 @@
 
 !!!note
       The following properties must be added: 
+      
       - **[ibm.nitro.SetupAll.setupStatus](co_configuration_properties.md#setupallsetupstatus)=start**
       - **[ibm.nitro.NitroConfig.loginIdIsEmail](co_configuration_properties.md#loginidisemail)=true**
       - **[ibm.nitro.NitroConfig.userLookup](co_configuration_properties.md#userlookup)=false**

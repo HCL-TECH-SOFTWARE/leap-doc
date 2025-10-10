@@ -31,7 +31,7 @@ Older versions are still available from HCL Software portal.
 
 It is possible to pull images directly from the HCL Harbor container registry.
 
-1. Login to the Harbor registry. Go to your **User Profile** in [HCL Harbor] (https://hclcr.io/harbor/projects/96/repositories) to get the CLI secret. You can copy it from the **CLI secret** field and you will then be asked to supply your harbor password.
+1. Login to the Harbor registry. Go to your **User Profile** in [HCL Harbor](https://hclcr.io/harbor/projects/96/repositories) to get the CLI secret. You can copy it from the **CLI secret** field and you will then be asked to supply your harbor password.
 
     ```
     helm registry login -u <YOUR_HARBOR_USERNAME> https://hclcr.io/
