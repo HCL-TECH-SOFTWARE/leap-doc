@@ -4,7 +4,11 @@ The open source [Swagger UI](https://swagger.io/tools/swagger-ui/) is embedded i
 
 Direct links to this page for application and form operations are available in the **URL Links** dropdown of an expanded application on the Manage page.
 
-To load other api definitions modify the 'url' parameter. For example, http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2Fsecure%2Forg%2Fapp%2Fopenapi.json
+To load other api definitions modify the 'url' parameter. 
+
+For example: 
+
+`http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2F{{context}}%2Fsecure%2Forg%2Fapp%2Fopenapi.json`
 
 
 ## Supported Definitions
@@ -15,26 +19,34 @@ This section describes the API definitions that are currently supported.
 
 Describes the programmatic operations that can be performed for any {{shortProductName}} applications.
 
-The URL to access this definition is http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2Fsecure%2Forg%2Fapp%2Fopenapi.json.
+The URL to access this definition is: 
+
+`http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2F{{context}}%2Fsecure%2Forg%2Fapp%2Fopenapi.json`
 
 ### Specific Application Operations
 
 Describes the programmatic operations that can be performed for a specific {{shortProductName}} application.
 
-http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2Fsecure%2Forg%2Fapp%2F22b68b24-d2ad-4477-8e1b-88dc1597d8b2%2Fopenapi.json
+The URL to access this definition is:
+
+`http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2F{{context}}%2Fsecure%2Forg%2Fapp%2F22b68b24-d2ad-4477-8e1b-88dc1597d8b2%2Fopenapi.json`
 
 ### Application Statistics
 
 Describes the programmatic operations that return statistics for all applications on the server.
 
-http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2Fsecure%2Forg%2Fadmin%2Fapps%2Fopenapi.json
+The URL to access this definition is:
+
+`http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2F{{context}}%2Fsecure%2Forg%2Fadmin%2Fapps%2Fopenapi.json`
 
 {% if isLeap %}
 ### My Tasks
 
 Describes the programmatic operations that return the tasks assigned to a specific user.
 
-http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2Fsecure%2Forg%2Ftasks%2Fopenapi.json
+The URL to access this definition is:
+
+`http://myLeapServer.com/{{context}}/open/swagger-ui/index.html?url=%2F{{context}}%2Fsecure%2Forg%2Ftasks%2Fopenapi.json`
 
 {% endif %}
 
