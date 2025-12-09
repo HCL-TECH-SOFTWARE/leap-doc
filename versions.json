@@ -1,8 +1,13 @@
 [
   {
+    "version": "9.3.12",
+    "title": "9.3.12", 
+    "aliases": ["latest"]
+  },
+  {
     "version": "9.3.11",
     "title": "9.3.11", 
-    "aliases": ["latest"]
+    "aliases": []
   },
   {
     "version": "9.3.10",
