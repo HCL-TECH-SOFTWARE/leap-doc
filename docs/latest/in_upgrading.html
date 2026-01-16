@@ -8009,7 +8009,21 @@
 
 
 <h1 id="upgrading-leap">Upgrading Leap</h1>
-<p>The following instructions describe how to upgrade Leap. Before you begin you must backup your DB2®, Oracle, or PostgreSQL database.</p>
+<p>This page describes how to upgrade Leap, using an official release or a fix provided by HCL Support.  The following is an outline of the entire process:</p>
+<ul>
+<li><a href="#back-up-the-database">Backup your DB2®, Oracle, or PostgreSQL database.</a></li>
+<li>Download the upgrade package from HCL Software Portal (or from HCL Support).</li>
+<li>Ensure you have administrative access to both WebSphere Application Server and Leap before starting the upgrade.</li>
+<li><a href="#back-up-the-existing-leap-ear-file">Back up your existing Leap .ear</a> before installing the update.</li>
+<li>If applicable, temporarily disable the web server or load balancer redirection, or the SAML filtering.</li>
+<li>If applicable, comment out the <code>serverURI</code> in the Leap properties file.</li>
+<li><a href="#install-the-new-leap-ear-file">Install the new Leap .ear file.</a></li>
+<li>After the upgrade completes, access Leap directly as an administrator to complete the setup.  Alternatively, you can configure the <a href="co_configuration_properties.html#setupallsetupstatus">setupStatus</a> to automatically trigger setup during Leap initialization.</li>
+<li>Once setup is complete, verify that Leap is functioning as expected.</li>
+<li>If applicable, restore the <code>serverURI</code> property.</li>
+<li>If applicable, re-enable the web server or load balancer redirection, or the SAML filtering.</li>
+<li>Leap is upgraded and ready for use.</li>
+</ul>
 <h2 id="back-up-the-database">Back up the database</h2>
 <p>Refer to the documentation of the configured database on how to perform a full backup. You will need to have a backup of all the tables in the FREEDOM, APP_DATA, and IF_CMIS schemas.</p>
 <h2 id="upgrading-leap-on-kubernetes">Upgrading Leap on Kubernetes</h2>
@@ -8027,10 +8041,6 @@
 </ol>
 <h2 class="task" id="upgradingformsexperiencebuilder">Upgrading Leap on WebSphere® Application Server</h2>
 <p>The following instructions describe how to upgrade Leap by using the WebSphere® Application Server Administrative console.</p>
-<ul>
-<li>Download the upgrade package from HCL Software Portal.</li>
-<li>Back up your existing installation prior to installing the update.</li>
-</ul>
 <h3 id="back-up-the-existing-leap-ear-file">Back up the existing Leap EAR file</h3>
 <p>To back up your current Leap installation, export the Leap EAR file by following the steps:</p>
 <ol>
