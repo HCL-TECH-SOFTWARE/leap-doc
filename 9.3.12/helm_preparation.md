@@ -15,6 +15,7 @@ This section outlines mandatory and optional tasks that need to be done before i
 
 ## Optional { #section_bwh_bh4_hzb .section }
 
+-   [Container resource management](helm_container_resource_management.md)
 -   [Probes configuration in values.yaml file](helm_probes_config_valuesfile.md)
 -   [SAML configuration](helm_saml_config.md)
 -   [Certificates](helm_certificates.md)

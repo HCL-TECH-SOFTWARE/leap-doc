@@ -141,6 +141,7 @@ nav:
               - helm_load_images.md
               - Creating a container registry secret: helm_container_registry_secret.md
             - Persistent Volume Claims: helm_persistent_volume.md
+            - Container resource management: helm_container_resource_management.md
             - Prepare a custom configuration file: 
               - prepare_config_helm.md
               - Creating and formatting the custom-values.yaml: helm_creating_custom_values_file.md
