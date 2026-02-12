@@ -58,4 +58,7 @@ The URL to access this definition is:
 
 - Only users with Administrator role (or a role with "create" permission) may access the api definition for a specific application.
 
+- Form IDs and Table IDs must match.  If the IDs are different, the table will not open and a 401 error will occur when opening the Swagger UI:  **"Failed to load API definition.  Fetch error  Unauthorized /volt-apps/secure/org/data/xxx-xxxx-xxx/F_Form1/openapi.json"**
+  
+
 **Parent topic:** [REST API reference](ref_rest_api_ref.md)

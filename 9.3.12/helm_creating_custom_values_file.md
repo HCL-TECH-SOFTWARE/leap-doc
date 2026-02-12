@@ -15,12 +15,12 @@ The Leap deployment requires a custom-values.yaml file that defines the settings
 
 1. Create a new file ```custom-values.yaml``` using a text editor on the machine where you will run helm. 
 
-For example using vi: 
-```vi custom-values.yaml```
+    For example using vi: 
+    ```vi custom-values.yaml```
 
 2. Create a new section name by adding a single line to the beginning of the file:
 
-```configuration:```
+    ```configuration:```
 
 3. Save and close the file.
 

@@ -18,6 +18,7 @@
 - Added the config property [dataImportTransactionSize](co_configuration_properties.md#dataimporttransactionsize)
 - Added support for IBM DB2 v12
 - Added a new [endpoint to decommission a user](ref_user_actions_rest_api.md)
+- Added ```leapAdminConfig``` configuration parameter to Leap's Helm chart for defining the admin url context, see the latest helm chart for details
 {% endif %}
 - Added *hasvalue* as a valid filter for *apps as a service* services.
 - Added [additional options to preserve existing content](upgrade_application_design.md#additional-upgrade-options) when upgrading an application
