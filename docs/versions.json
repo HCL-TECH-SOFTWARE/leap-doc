@@ -1,8 +1,12 @@
-[
+[{
+    "version": "9.3.13",
+    "title": "9.3.13", 
+    "aliases": ["latest"]
+  },
   {
     "version": "9.3.12",
     "title": "9.3.12", 
-    "aliases": ["latest"]
+    "aliases": []
   },
    {
     "version": "9.3.11",
