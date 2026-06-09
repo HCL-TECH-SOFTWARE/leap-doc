@@ -1,43 +1,32 @@
-[
-  {
-    "version": "9.3.12",
-    "title": "9.3.12", 
-    "aliases": ["latest"]
+[  {
+	"version": "1.1.11",
+	"title": "1.1.11", 
+	"aliases": ["latest"]
   },
   {
-    "version": "9.3.11",
-    "title": "9.3.11", 
-    "aliases": []
-  },
-  {
-    "version": "9.3.10",
-    "title": "9.3.10", 
-    "aliases": []
-  },
-  {
-    "version": "9.3.9",
-    "title": "9.3.9", 
-    "aliases": []
-  },
-  {
-	"version": "9.3.8",
-	"title": "9.3.8", 
+	"version": "1.1.10",
+	"title": "1.1.10", 
 	"aliases": []
   },
   {
-	"version": "9.3.7",
-	"title": "9.3.7", 
+	"version": "1.1.9",
+	"title": "1.1.9", 
 	"aliases": []
   },
   {
-	"version": "9.3.6",
-    "title": "9.3.6", 
+	"version": "1.1.8",
+	"title": "1.1.8", 
 	"aliases": []
   },
   {
-	"version": "9.3.5",
-	"title": "9.3.5", 
+	"version": "1.1.7",
+	"title": "1.1.7", 
+	"aliases": []
+  },
+  {
+	"version": "1.1.6",
+	"title": "1.1.6", 
 	"aliases": []
   }
-]
+  ]
 
