@@ -2489,7 +2489,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -3389,6 +3389,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3406,6 +3467,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10267,7 +10336,7 @@
 <li><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/body.html"><code>body</code></a> - This returns the root element of the sandbox.</li>
 </ul>
 <h2 class="section" id="disabling-javascript-security">Disabling JavaScript Security</h2>
-<p>Under some circumstances, the limitations imposed by the dojox.secure library might be too restrictive. Therefore, the dojox.secure library can be disabled server-wide by editing a Java™ properties file called <strong>Leap_config.properties</strong> in the extensions directory (<strong>C:\HCL\Leap\extensions</strong> on Windows™, <strong>/opt/HCL/Leap/extensions</strong> on Linux™)%{ endif %}. Set the value of the <strong>ibm.nitro.ApplicationCompilerService.secureJS</strong> key to <strong>false</strong>.:% if isDominoLeap %} Also, be sure to enable the setting. Once the configuration is changed, the Leap server should be restarted to ensure that the configuration takes effect. For more information, see <a href="co_configuring_the_properties_file.html">Configuring the properties file</a>.</p>
+<p>Under some circumstances, the limitations imposed by the dojox.secure library might be too restrictive. Therefore, the dojox.secure library can be disabled server-wide by editing a Java™ properties file called <strong>Leap_config.properties</strong> in the extensions directory (<strong>C:\HCL\Leap\extensions</strong> on Windows™, <strong>/opt/HCL/Leap/extensions</strong> on Linux™)%{ endif %}. Set the value of the <strong>ibm.nitro.ApplicationCompilerService.secureJS</strong> key to <strong>false</strong>.:% if isDominoLeap %} Also, be sure to enable the setting. Once the configuration is changed, the Leap server should be restarted to ensure that the configuration takes effect. For more information, see <a href="co_configuring_the_properties_file.html">Define configuration properties</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Changing this configuration setting to <strong>false</strong> should only be done if all the app authors on the server are known trusted users. Disabling javaScript Security on a deployment of Leap that allows un-vetted users to create applications could pose a serious security risk.</p>

@@ -2496,7 +2496,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -3561,6 +3561,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3578,6 +3639,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10367,7 +10436,7 @@
 <span class="w">  </span><span class="nt">leap</span><span class="p">:</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">customCertificateSecrets</span><span class="p p-Indicator">:</span>
-<span class="w">      </span><span class="nt">keycloakCert</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;keycloakcert&quot;</span>
+<span class="w">      </span><span class="nt">keycloakcert</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;keycloakcert&quot;</span>
 </code></pre></div>
 <p>For more information, see to <a href="helm_admin_customsecret.html">Provide admin user a custom secret</a>.</p>
 <h2 class="section" id="section_vxv_fnt_b1c">Add OIDC definition as a server customization</h2>
@@ -10396,17 +10465,18 @@
 <span class="w">          </span><span class="no">clientId=&quot;${OIDC_CLIENT_ID}&quot;</span>
 <span class="w">          </span><span class="no">clientSecret=&quot;${OIDC_CLIENT_SECRET}&quot;</span>
 <span class="w">          </span><span class="no">signatureAlgorithm=&quot;RS256&quot;</span>
+<span class="w">          </span><span class="no">pkceCodeChallengeMethod=&quot;S256&quot;</span>
 <span class="w">          </span><span class="no">authFilterRef=&quot;interceptedAuthFilter&quot;</span>
 <span class="w">          </span><span class="no">mapIdentityToRegistryUser=&quot;false&quot;</span>
 <span class="w">          </span><span class="no">httpsRequired=&quot;true&quot;</span>
-<span class="w">          </span><span class="no">scope=&quot;openid&quot;</span>
+<span class="w">          </span><span class="no">scope=&quot;openid profile&quot;</span>
 <span class="w">          </span><span class="no">realmName=&quot;LeapOidc&quot;</span>
 <span class="w">          </span><span class="no">groupIdentifier=&quot;group_membership&quot;</span>
 <span class="w">          </span><span class="no">userIdentityToCreateSubject=&quot;preferred_username&quot;</span>
 <span class="w">          </span><span class="no">discoveryEndpointUrl=&quot;https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration&quot;&gt;</span>
 <span class="w">        </span><span class="no">&lt;/openidConnectClient&gt;</span>
 <span class="w">        </span><span class="no">&lt;authFilter id=&quot;interceptedAuthFilter&quot;&gt;</span>
-<span class="w">          </span><span class="no">&lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;requestUrl id=&quot;authRequestUrl&quot; matchType=&quot;contains&quot; urlPattern=&quot;/apps/secure|apps-admin&quot;/&gt;</span>
 <span class="w">        </span><span class="no">&lt;/authFilter&gt;</span>
 <span class="w">      </span><span class="no">&lt;/server&gt; </span>
 <span class="l l-Scalar l-Scalar-Plain">. . .</span>

@@ -2489,7 +2489,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -3394,6 +3394,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3411,6 +3472,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10061,25 +10130,25 @@
 
 <h1 class="concept" id="concept_zdw_tzs_nv">Application server environment configuration</h1>
 <p>The following general information describes the requirements for configuring your application server environment.</p>
-<p>By default the settings available from WebSphere® Application Server are sufficient for general usage. Refer to the WebSphere Application Server documentation for general set-up. For basic architecture of Leap, see <a href="in_basic_architecture.html">Leap Basic Architecture</a>.</p>
-<p><strong>Loading/performance:</strong> When you set up your Application Server environment for HCL Leap, you should follow the performance tuning guidelines in the <a href="https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/welc6toptuning.html">WebSphere Application Server documentation</a>. To achieve the best performance for the workload on your system, you might want to consider altering the following settings:</p>
+<p>By default the settings available from WebSphere® Application Server are sufficient for general usage. Refer to the WebSphere Application Server documentation for general set-up. For basic architecture of Leap, see <a href="in_basic_architecture.html">LeapBasic Architecture</a>.</p>
+<p><strong>Loading/performance:</strong> When you set up your Application Server environment for HCL Leap, you should follow the performance tuning guidelines in the <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=overview-tuning-performance">WebSphere Application Server documentation</a>. To achieve the best performance for the workload on your system, you might want to consider altering the following settings:</p>
 <ul>
-<li>Use a web server and configure the <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/tins_webplugins.html">WebSphere Application Server plugins</a> to provide load balancing, fail-over, and the ability to deploy in a DMZ.</li>
-<li>Update the Java heap size for your server. For further information, see <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/tprf_tunejvm_v61.html?lang=en">WebSphere Application Server documentation</a>.</li>
+<li>Use a web server and configure the <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=ins-plug-configuration">WebSphere Application Server plugins</a> to provide load balancing, fail-over, and the ability to deploy in a DMZ.</li>
+<li>Update the Java heap size for your server. For further information, see <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=jvm-tuning-virtual-machine-java">WebSphere Application Server documentation</a>.</li>
 <li>Increase the web container threads within WebSphere Application Server</li>
 <li>Increase the JDBC connection pool to the Leap database.</li>
 </ul>
-<p>For more information, see <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/welc6toptuning.html?lang=en">WebSphere Application Server documentation</a>.</p>
+<p>For more information, see <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=websphere-application-server-overview">WebSphere Application Server documentation</a>.</p>
 <p><strong>Security:</strong> When you consider security, standard web application security practices must be considered. Leap provides application-level security. However it relies on the server environment for extra security.</p>
 <ul>
 <li>Ensure that your information is secure by using SSL whenever possible. Communication between the web browser and Leap when you use service descriptions and web services through the HTTP Service Transport, and the JDBC connection between Leap and the Leap database must be secured.</li>
-<li><a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.ihs.doc/ihs/tihs_hsts.html">Setting up an HTTP Strict Transport Security</a> provides a method to ensure SSL communications from your application environment.</li>
-<li><a href="http://www.ibm.com/developerworks/websphere/techjournal/1210_lansche/1210_lansche.html#step29">Restrict cookies to HTTP requests</a> whenever possible to prevent access from JavaScript, especially relating to sessions and authentication (LTPA tokens).</li>
+<li><a href="https://www.ibm.com/docs/en/was/9.0.5?topic=sate-securing-application-server-by-using-http-strict-transport-security-hsts">Setting up an HTTP Strict Transport Security</a> provides a method to ensure SSL communications from your application environment.</li>
+<li><a href="https://www.ibm.com/docs/en/was/9.0.5?topic=tracking-cookie-settings">Restrict cookies to HTTP requests</a> whenever possible to prevent access from JavaScript, especially relating to sessions and authentication (LTPA tokens).</li>
 <li>Restrict the ability to put Leap content in an iFrame if embedding is not part of your planned integration. Adding HTTP headers such as X-Frames-Options or Content-Security-Policy provides an extra layer of security.</li>
 <li>Use IBM HTTP Server as a front end server to prevent direct access to the Application Server environment. Using a front end server allows for clustering through the WebSphere Application Server plug-in.</li>
 <li>Keep your system updated with all security and maintenance patches to ensure a safe and stable environment. Watch for security bulletins in the HCL Support Portal, or by subscribing to My Notifications for updates.</li>
 </ul>
-<p>For more WebSphere Application Server information, see <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/tfullp_sec.html">WebSphere Application Server documentation</a>, and <a href="http://www.ibm.com/developerworks/websphere/techjournal/1210_lansche/1210_lansche.html">Advanced Security Hardening WebSphere Application Server</a>.</p>
+<p>For more WebSphere Application Server information, see <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=websphere-application-server-overview">WebSphere Application Server documentation</a>, and <a href="https://www.ibm.com/docs/en/was/9.0.5?topic=environment-tuning-hardening-maintaining-security-configurations">Security Hardening WebSphere Application Server</a>.</p>
 <p><strong>Parent topic:</strong> <a href="co_config_toc.html">Configuring</a></p>
 
 

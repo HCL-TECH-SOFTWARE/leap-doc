@@ -2571,7 +2571,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -3471,6 +3471,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3488,6 +3549,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10235,15 +10304,17 @@
 <span class="w">           </span><span class="no">&lt;ldapRegistry id=&quot;DominoLdap&quot; </span>
 <span class="w">              </span><span class="no">name=&quot;o=Acme&quot; </span>
 <span class="w">              </span><span class="no">ldapType=&quot;IBM Lotus Domino&quot; </span>
-<span class="w">              </span><span class="no">host=&quot;ldaphost.acme.com&quot; port=&quot;389&quot; </span>
+<span class="w">              </span><span class="no">host=&quot;ldaphost.acme.com&quot;</span>
+<span class="w">              </span><span class="no">port=&quot;636&quot; </span>
 <span class="w">              </span><span class="no">baseDN=&quot;o=Acme&quot; </span>
 <span class="w">              </span><span class="no">searchTimeout=&quot;8m&quot; </span>
 <span class="w">              </span><span class="no">ignoreCase=&quot;true&quot; </span>
-<span class="w">              </span><span class="no">bindDN=&quot;cn=Manager/o=Acme&quot; </span>
-<span class="w">              </span><span class="no">bindPassword=&quot;secret&quot;</span>
+<span class="w">              </span><span class="no">bindDN=&quot;${ldap-credentials/LDAP_BIND_DN}&quot;</span>
+<span class="w">              </span><span class="no">bindPassword=&quot;${ldap-credentials/LDAP_BIND_PASSWORD}&quot;</span>
 <span class="w">              </span><span class="no">realmName=&quot;acmeRealm&quot; </span>
-<span class="w">              </span><span class="no">sslEnabled=&quot;false&quot; </span>
-<span class="w">              </span><span class="no">derefAliases=&quot;never&quot;&gt; </span>
+<span class="w">              </span><span class="no">sslEnabled=&quot;true&quot; </span>
+<span class="w">              </span><span class="no">sslRef=&quot;defaultSSLConfig&quot;</span>
+<span class="w">              </span><span class="no">derefAliases=&quot;never&quot;&gt;</span>
 <span class="w">                </span><span class="no">&lt;loginProperty name=&quot;mail&quot;&gt;&lt;/loginProperty&gt; </span>
 <span class="w">                </span><span class="no">&lt;ldapEntityType name=&quot;PersonAccount&quot;&gt; </span>
 <span class="w">                  </span><span class="no">&lt;objectClass&gt;dominoPerson&lt;/objectClass&gt;</span>
@@ -10251,7 +10322,7 @@
 <span class="w">                </span><span class="no">&lt;ldapEntityType name=&quot;Group&quot;&gt; </span>
 <span class="w">                  </span><span class="no">&lt;objectClass&gt;dominoGroup&lt;/objectClass&gt; </span>
 <span class="w">                </span><span class="no">&lt;/ldapEntityType&gt; </span>
-<span class="w">                </span><span class="no">&lt;customFilters userIdMap=&quot;*:mail&quot; groupIdMap=&quot;*:cn&quot; groupMemberIdMap=&quot;dominoGroup:member&quot; userFilter=&quot;(&amp;amp;(mail=%v)(objectclass=dominoPerson))&quot; groupFilter=&quot;(&amp;amp;(cn=%v)(objectclass=dominoGroup))&quot;/&gt; </span>
+<span class="w">                </span><span class="no">&lt;customFilters userIdMap=&quot;*:mail&quot; groupIdMap=&quot;*:cn&quot; groupMemberIdMap=&quot;dominoGroup:member&quot; userFilter=&quot;(&amp;amp;(objectclass=dominoPerson)(mail=%v))&quot; groupFilter=&quot;(&amp;amp;(objectclass=dominoGroup)(cn=%v))&quot;/&gt; </span>
 <span class="w">           </span><span class="no">&lt;/ldapRegistry&gt; </span>
 <span class="w">        </span><span class="no">&lt;/server&gt;</span>
 </code></pre></div>
