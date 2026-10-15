@@ -1,6 +1,6 @@
 # Adding workflow Stages to a form { #addingworkflowtoaform .learningContent}
 
-{{shortProductName}} uses Stages to add workflow to your form. Workflow describes various lifecycle steps that are associated with the form. Defining multiple connected Stages creates the workflow, where each stage defines its own form behavior, access rights, and navigation steps. In this tutorial, define the workflow steps that are required for the approval of the form.
+{{shortLeapProductName}} uses Stages to add workflow to your form. Workflow describes various lifecycle steps that are associated with the form. Defining multiple connected Stages creates the workflow, where each stage defines its own form behavior, access rights, and navigation steps. In this tutorial, define the workflow steps that are required for the approval of the form.
 
 A Stage describes:
 
@@ -205,5 +205,5 @@ There is a rule on the form that states any expense reimbursement must be approv
 7.  Save the form.
 
 
-**Parent topic:** [Adding tables and workflow elements to a {{shortProductName}} form](tut_roles_and_stages_OV.md)
+**Parent topic:** [Adding tables and workflow elements to a {{shortLeapProductName}} form](tut_roles_and_stages_OV.md)
 

@@ -1,6 +1,6 @@
 # Page Events 
 
-This topic describes the Page Events, and their parameters when using JavaScript™ API in {{fullProductName}}.
+This topic describes the Page Events, and their parameters when using JavaScript™ API in {{fullLeapProductName}}.
 
 There are many events available to hook into on a page that are accessed from the page **Edit Properties** dialog.
 

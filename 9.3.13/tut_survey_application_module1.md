@@ -1,8 +1,8 @@
-# Building a survey with {{shortProductName}} 
+# Building a survey with {{shortLeapProductName}} 
 
 This tutorial contains two sections.
 
-In the first section, Opening {{shortProductName}} and building a form, learn how to:
+In the first section, Opening {{shortLeapProductName}} and building a form, learn how to:
 
 -   Open a new application
 -   Add form items to the form
@@ -32,18 +32,18 @@ Send out an email to all your coworkers and ask them to provide their opinions o
 
 **Create a survey**
 
-Create a survey form in {{shortProductName}}. You email the survey link to your coworkers, and they go online to provide you with feedback. All results are stored in a database and are easy to review and sort, and your email inbox is not filled with the sporadic responses.
+Create a survey form in {{shortLeapProductName}}. You email the survey link to your coworkers, and they go online to provide you with feedback. All results are stored in a database and are easy to review and sort, and your email inbox is not filled with the sporadic responses.
 
 Creating a survey is the option that you select.
 
 !!! note
-    Throughout the {{shortProductName}} documentation, the words “form” and “application” are both used to describe the output that is created by Leap. Forms are a single page, or collection of pages, that create the user interface with which people interact. When a form is combined with workflow, presentation logic and other elements of the {{shortProductName}} technology, it becomes an application. Applications gather information that is submitted by users when they complete the form, and automatically store the submissions in a database.
+    Throughout the {{shortLeapProductName}} documentation, the words “form” and “application” are both used to describe the output that is created by Leap. Forms are a single page, or collection of pages, that create the user interface with which people interact. When a form is combined with workflow, presentation logic and other elements of the {{shortLeapProductName}} technology, it becomes an application. Applications gather information that is submitted by users when they complete the form, and automatically store the submissions in a database.
 
 Estimated time that is required to complete this module: 50 - 60 minutes
 
-## Opening {{shortProductName}} and building a form { #lesson11}
+## Opening {{shortLeapProductName}} and building a form { #lesson11}
 
-The following steps describe how to open a new {{shortProductName}} application and build a form.
+The following steps describe how to open a new {{shortLeapProductName}} application and build a form.
 
 You want your coffee feedback to have:
 
@@ -51,7 +51,7 @@ You want your coffee feedback to have:
 -   An area that contains the name of the submitter. Also included in this area if the form is the basic question: "Do you drink the coffee that is brewed in the office?"
 -   An area that contains the survey questions.
 
-Creating an application – When you start {{shortProductName}}, a screen is displayed with two tabs on the Forms toolbar: {% if isLeap %}Use and {% endif %}Manage. {% if isLeap %}The Use tab displays a list of all applications that are created by other users to which you have access. {% endif %}The Manage tab is where you create and manage applications.
+Creating an application – When you start {{shortLeapProductName}}, a screen is displayed with two tabs on the Forms toolbar: {% if isLeap %}Use and {% endif %}Manage. {% if isLeap %}The Use tab displays a list of all applications that are created by other users to which you have access. {% endif %}The Manage tab is where you create and manage applications.
 
 1.  Click New Application.
 
@@ -148,7 +148,7 @@ Creating an application – When you start {{shortProductName}}, a screen is dis
         -   Yes
         -   No, I drink other hot beverages.
         -   No, I don’t drink hot beverages.
-        Displayed Value and Saved Value – When you use any form item that has Set Options, two fields are displayed: Displayed Value and Saved value. As you type in the Displayed Value, the Saved Value is automatically updated with the same value. There are some cases where the Saved Value differs from the Displayed Value. For example, our Displayed Value questions are long. If you export the data from a Leap application to a spreadsheet, the selected answers are truncated and the data might be difficult to interpret. If you change the Saved Values of the three questions to “Yes”, “Other”, and “No”, or assign numerical values, the results are easier to understand.
+        Displayed Value and Saved Value – When you use any form item that has Set Options, two fields are displayed: Displayed Value and Saved value. As you type in the Displayed Value, the Saved Value is automatically updated with the same value. There are some cases where the Saved Value differs from the Displayed Value. For example, our Displayed Value questions are long. If you export the data from a {{shortLeapProductName}} application to a spreadsheet, the selected answers are truncated and the data might be difficult to interpret. If you change the Saved Values of the three questions to “Yes”, “Other”, and “No”, or assign numerical values, the results are easier to understand.
 
     4.  Click OK.
 
@@ -382,7 +382,7 @@ Now that the form is complete and deployed, add some sample data.
 
 ### Viewing submitted data
 
-After the sample data is added, return to Leap to review the submitted data.
+After the sample data is added, return to {{shortLeapProductName}} to review the submitted data.
 
 1. In the Manage tab, click the View Data link.
 
@@ -415,7 +415,7 @@ Now that you tested the form, it is highly recommended that you delete all sampl
 
     1.  Close the View Data tab or browser window.
 
-        You are on the Leap Manage screen.
+        You are on the {{shortLeapProductName}} Manage screen.
 
     2.  Click Deploy.
 

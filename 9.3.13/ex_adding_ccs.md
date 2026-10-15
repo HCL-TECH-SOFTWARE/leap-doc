@@ -1,6 +1,6 @@
 # Adding customized CSS to your application { #addingcustomizedcascadingstylesheets .task }
 
-You can add custom cascading style sheet \(CSS\) themes to your {{fullProductName}} application.
+You can add custom cascading style sheet \(CSS\) themes to your {{fullLeapProductName}} application.
 
 Adding custom cascading style sheet \(CSS\) themes personalizes applications with the branding of your organization.
 

@@ -1,19 +1,19 @@
 # Incorporating web services into your applications { #usingapplicationsasservices .concept }
 
 ## What is a service
-A service is an operation that allows {{shortProductName}} to communicate with other systems.  Using a service you could call external applications like a servlet, web service or REST API.  You can also communicate internally with any {{shortProductName}} application on the same server.  Services can return a single item or a list of items.  Internal services can be used to search, retrieve, update, create or delete {{shortProductName}} records.
+A service is an operation that allows {{shortLeapProductName}} to communicate with other systems.  Using a service you could call external applications like a servlet, web service or REST API.  You can also communicate internally with any {{shortLeapProductName}} application on the same server.  Services can return a single item or a list of items.  Internal services can be used to search, retrieve, update, create or delete {{shortLeapProductName}} records.
 
 Services are specific to a form, and an application can contain multiple forms.
 
 ## Selecting a service
 
-The first step to configuring a service is to select the service that you want to use.  The service may be a globally available service, another {{shortProductName}} application or a custom service that you (or your organization) have created.  Regardless of the type of application the selection is made from the same screen.
+The first step to configuring a service is to select the service that you want to use.  The service may be a globally available service, another {{shortLeapProductName}} application or a custom service that you (or your organization) have created.  Regardless of the type of application the selection is made from the same screen.
 
 1. Click on the **Settings** tab.
 2. Under Services on the left side of the screen, select the form on which you want to register your service.
 3. Any global and custom services that you may have installed will appear in the General Service Catalog.
 
-You can also select {{shortProductName}} applications to create a service that will inspect an existing {{shortProductName}} application.  All applications you have permission to access will appear in the result list.
+You can also select {{shortLeapProductName}} applications to create a service that will inspect an existing {{shortLeapProductName}} application.  All applications you have permission to access will appear in the result list.
 
 ## Mapping inputs
 
@@ -49,20 +49,22 @@ To create an assignment, select an item from the left side and the corresponding
 
 ## Additional Topics
 
-The following topics describe how to incorporate web services into your {{fullProductName}} application.
+The following topics describe how to incorporate web services into your {{fullLeapProductName}} application.
 
 -   **[Adding and configuring a service](cr_in_app_service.md)**  
 The following instructions describe how to add and configure a service so you can map it within your application.
--   **[Service Oriented Architecture – Exposing a service to {{fullProductName}}](cr_using_apps_exposing_service_to.md)**  
-The following information is an overview of Service Oriented Architecture built into {{shortProductName}}, and describes how to expose a service to {{shortProductName}}.
+{% if not isDWLeap %}
+-   **[Service Oriented Architecture – Exposing a service to {{fullLeapProductName}}](cr_using_apps_exposing_service_to.md)**  
+The following information is an overview of Service Oriented Architecture built into {{shortLeapProductName}}, and describes how to expose a service to {{shortLeapProductName}}.
+{% endif %}
 -   **[Triggering a service](se_triggering_a_web_service_from_a_button.md)**  
 You can use a service to add information to a form automatically after a user triggered event.
 -   **[Using a service to populate form items](se_using_a_service_to_populate_a_drop_down.md)**  
 You can use a web service to populate to a Drop Down, Select One, and Select Many form item.
 -   **[Cancelling user submit event](se_cancel_submit-event.md)**
 Demonstrates how to cancel the user initiated submit event, call a service and then re-trigger the form submission.
--   **[Integrating your application with existing {{fullProductName}} applications](cr_using_other_apps_as_services.md)**  
-Each {{shortProductName}} application can be used within another {{shortProductName}} applications as a service.
+-   **[Integrating your application with existing {{fullLeapProductName}} applications](cr_using_other_apps_as_services.md)**  
+Each {{shortLeapProductName}} application can be used within another {{shortLeapProductName}} applications as a service.
 
 **Parent topic:** [Adding dynamic behavior](cr_adding_dynamic_behavior.md)
 

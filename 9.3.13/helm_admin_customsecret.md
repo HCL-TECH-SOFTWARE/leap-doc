@@ -3,7 +3,7 @@
 Apart from the admin credentials there can be use cases where credentials, secrets or additional key files are required. For example:
 
 - To abstract a username/password used in a [config override](helm_open_liberty_custom.md) so that it is not in plain text
-- To pass a username/password to Leap for an integration (for example, [MXFoundry](foundry_integration_services.md), [Microsoft Entra ID (Azure)](azure_toc.md))
+- To pass a username/password to {{shortLeapProductName}} for an integration {% if not isDWLeap %}(for example, [MXFoundry](foundry_integration_services.md), [Microsoft Entra ID (Azure)](azure_toc.md)){% endif %}
 
 
 To pass them to the deployment, the `configuration.leap.customSecrets ` value can be used to reference additional [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret/).
@@ -22,7 +22,7 @@ All keys and values under customSecrets must consist of lower-case alphanume
 
 ## Use custom secret for defining the admin user and password { #helm_admin_customsecret .section }
 
-Instead of providing adminUser and adminPassword for Leap directly in the custom values, a secret can be used to pass the credentials to the deployments.
+Instead of providing adminUser and adminPassword for {{shortLeapProductName}} directly in the custom values, a secret can be used to pass the credentials to the deployments.
 
 1.  Create a secret that will be used to reference credentials, this secret should contain the required credential attributes \(e.g. "username", "password"\).
 
@@ -84,7 +84,7 @@ configuration:
 
 ## Using custom secrets for third-party integrations
 
-Kubernetes secrets can also store the credentials that Leap uses to integrate with external products such as Microsoft Entra ID and HCL MX Foundry. Each integration requires an alias that points to the corresponding Kubernetes secret.
+Kubernetes secrets can also store the credentials that {{shortLeapProductName}} uses to integrate with external products such as Microsoft Entra ID and HCL MX Foundry. Each integration requires an alias that points to the corresponding Kubernetes secret.
 
 The first step is to create a secret.
 
@@ -108,7 +108,7 @@ This will create two files ```/mnt/customSecrets/credential-alias/credential-ali
 !!!note
      The name used to describe the customSecret in the YAML file is limited to lowercase alphanumeric characters and dash.
 
-Then reference the ```credential-alias``` in the Leap configuration for the third-party integration.
+Then reference the ```credential-alias``` in the {{shortLeapProductName}} configuration for the third-party integration.
 
 
 ## Using custom secrets as key file { #using-custom-secrets-as-key-file .section }
@@ -116,7 +116,8 @@ Then reference the ```credential-alias``` in the Leap configuration for the thir
 Below is an example of creating a secret `my-custom-ltpa-key`  from an LTPA key file including the entry LTPA\_KEY:
 
 ```
-kubectl create secret generic my-custom-ltpa-key --from-file=./ltpa.keys --namespace=<namespace> 
+kubectl create secret generic my-custom-ltpa-key --from-file=./ltpa.keys --namespace=<namespace>
+kubectl create secret generic ltpa-credentials --from-literal=LTPA_KEYS_USER=ltapUser --from-literal=LTPA_KEYS_PASSWORD=ltpaPasword
 ```
 
 The secret is referenced as `ltpa-key` in the custom Helm values:
@@ -126,7 +127,8 @@ configuration:
   leap:
     . . . 
     customSecrets: 
-      ltpa-key: "my-custom-ltpa-key" 
+      ltpa-key: "my-custom-ltpa-key"
+      ltpa-credentials: "my-ltpa-credentials"
 ```
 
 This will result in the file `ltpa.keys` being mounted in `/mnt/customSecrets/ltpa-key` inside the Pod containing the same content as the input file.
@@ -141,7 +143,7 @@ configuration:
       . . .
       ltpaOverride: | 
         <server description="leapServer">  
-          <ltpa keysFileName="/mnt/customSecrets/ltpa-key/ltpa.keys" keysPassword="myLtpaKeyPassword" /> 
+          <ltpa keysFileName="/mnt/customSecrets/ltpa-key/ltpa.keys" keysPassword="${ltpa-credentials/LTPA_KEYS_PASSWORD}" expiration="120"/> 
         </server> 
 ```
 

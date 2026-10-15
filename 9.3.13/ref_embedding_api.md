@@ -1,8 +1,8 @@
 # Embedding API 
 
-The Embedding API can be used to embed a {{shortProductName}} form directly in another webpage without using an <iframe\>. 
-The {{shortProductName}} form will be inserted into the DOM of the hosting page and can be interacted with using the {{shortProductName}} JavaScript API or any custom JavaScript. 
-Additionally, the style of items in the {{shortProductName}} form can be customized by the CSS of the hosting page.
+The Embedding API can be used to embed a {{shortLeapProductName}} form directly in another webpage without using an <iframe\>. 
+The {{shortLeapProductName}} form will be inserted into the DOM of the hosting page and can be interacted with using the {{shortLeapProductName}} JavaScript API or any custom JavaScript. 
+Additionally, the style of items in the {{shortLeapProductName}} form can be customized by the CSS of the hosting page.
 
 
 ## Example 1 - Declarative { .section}
@@ -12,7 +12,7 @@ Additionally, the style of items in the {{shortProductName}} form can be customi
 …  
 <body>
    … 
-   <div id="myLeapDiv"> <!-- {{shortProductName}} form will go here --> </div> 
+   <div id="myLeapDiv"> <!-- {{shortLeapProductName}} form will go here --> </div> 
    …
    <script src="https://leap.example.com/{% if isDominoLeap %}volt-{% endif %}apps/api/{%if isLeap %}leap{% endif %}{%if isDominoLeap %}volt{% endif %}.js" 
     data-leap-config="{launch: {appId: 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55', formId: 'F_Form1', targetId: 'myLeapDiv'}}">
@@ -28,7 +28,7 @@ Additionally, the style of items in the {{shortProductName}} form can be customi
 … 
 <body> 
   …
-  <div id="myLeapDiv"> <!-- {{shortProductName}} form will go here --> </div> 
+  <div id="myLeapDiv"> <!-- {{shortLeapProductName}} form will go here --> </div> 
   …
   <script src="https://leap.example.com/{% if isDominoLeap %}volt-{% endif %}apps/api/{%if isLeap %}leap{% endif %}{%if isDominoLeap %}volt{% endif %}.js"></script> 
 
@@ -62,7 +62,7 @@ Additionally, the style of items in the {{shortProductName}} form can be customi
       
 ```
 
-## Loading the {{shortProductName}} Embedding UI { .section}
+## Loading the {{shortLeapProductName}} Embedding UI { .section}
 
 ```html
 <script src="https://leap.example.com/{% if isDominoLeap %}volt-{% endif %}apps/api/{%if isLeap %}leap{% endif %}{%if isDominoLeap %}volt{% endif %}.js" data-leap-config="[leap configuration]" id="leapJS'"></script>
@@ -70,17 +70,17 @@ Additionally, the style of items in the {{shortProductName}} form can be customi
 
 -   **id** \(optional\) - fallback for older browsers; the value should always be `"leapJS"`
 -   **data-leap-config** \(optional\) - JSON or the name of an existing JavaScript object. Properties:
-    -   **locale** \(optional\) - indicates the preferred locale to the {{shortProductName}} API. For example, `"fr-FR"`
+    -   **locale** \(optional\) - indicates the preferred locale to the {{shortLeapProductName}} API. For example, `"fr-FR"`
     -   **launch** \(optional\) - equivalent to calling `{% if isLeap %}Leap{% endif %}{% if isDominoLeap %}Volt{% endif %}.launch({…})` function with respective parameters \(see below for more details\)
     -   **overwriteExistingDojoConfig** \(optional\) - In some environments, such as HCL Digital Experience or IBM WebSphere Portal, the **djConfig** or **dojoConfig** object may be defined on a page and not used. Set the value of this property to **true** to override it.
 
-Loading the {{shortProductName}} API will result in the creation of global object named `Leap`.
+Loading the {{shortLeapProductName}} API will result in the creation of global object named `Leap`.
 
-After initial load of the {% if isLeap %}leap{% endif %}{% if isDominoLeap %}volt{% endif %}.js, you can define a `{% if isLeap %}Leap{% endif %}{% if isDominoLeap %}Volt{% endif %}.onReady()` function which will be called when the necessary {{shortProductName}} resources have been loaded into the page and the API is ready to be used.
+After initial load of the {% if isLeap %}leap{% endif %}{% if isDominoLeap %}volt{% endif %}.js, you can define a `{% if isLeap %}Leap{% endif %}{% if isDominoLeap %}Volt{% endif %}.onReady()` function which will be called when the necessary {{shortLeapProductName}} resources have been loaded into the page and the API is ready to be used.
 
 ## Embedding a form programmatically { .section}
 
-To embed a {{shortProductName}} form programmatically, call `{% if isLeap %}Leap{% endif %}{% if isDominoLeap %}Volt{% endif %}.launch({launch_params})`;
+To embed a {{shortLeapProductName}} form programmatically, call `{% if isLeap %}Leap{% endif %}{% if isDominoLeap %}Volt{% endif %}.launch({launch_params})`;
 
 **`{launch_params}`** properties:
 
@@ -107,7 +107,7 @@ appId
 Yes
 </td>
 <td>
-The {{shortProductName}} application UUID.<br>
+The {{shortLeapProductName}} application UUID.<br>
 For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'
 </td>
 </tr>
@@ -120,7 +120,7 @@ formId
 Yes
 </td>
 <td>
-The {{shortProductName}} form ID.<br>
+The {{shortLeapProductName}} form ID.<br>
 For example, 'F_Form1'
 </td>
 </tr>
@@ -133,7 +133,7 @@ recordId
 No
 </td>
 <td>
-The {{shortProductName}} record ID.<br>
+The {{shortLeapProductName}} record ID.<br>
 For example, 'f7ab2ca2-c12b-4b5c-8f5e-7a6ff4800b69'
 </td>
 </tr>
@@ -146,7 +146,7 @@ targetId
 Either <b>target</b> or <b>targetId</b> must be provided.
 </td>
 <td>
-The id of the HTML DOM element to embed the {{shortProductName}} form within.<br>
+The id of the HTML DOM element to embed the {{shortLeapProductName}} form within.<br>
 For example, 'myLeapFormDiv'
 </td>
 </tr>
@@ -159,7 +159,7 @@ target
 Either <b>target</b> or <b>targetId</b> must be provided.
 </td>
 <td>
-The HTML DOM element to place the {{shortProductName}} form within.
+The HTML DOM element to place the {{shortLeapProductName}} form within.
 </td>
 </tr>
 
@@ -214,7 +214,7 @@ No
 <td>
 A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.  The callback function will be passed the following parameters:
 <ul>
-<li><code>app</code>: the {{shortProductName}} JavaScript API application object. <!-- For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)--></li>
+<li><code>app</code>: the {{shortLeapProductName}} JavaScript API application object. <!-- For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)--></li>
 <li><code>launchParams</code>: the original launch parameters object, for convenience</li></ul></td>
 </tr>
 </tbody>
@@ -222,15 +222,15 @@ A callback function which will be called when the application launch completes s
 
 ## Known Limitations { .section}
 
--   Only one {{shortProductName}} form can be embedded on the page at a time.
--   Once the {{shortProductName}} form is embedded, it cannot be changed to a different form or reloaded.
--   The hosting page cannot contain any version of the Dojo JavaScript library. The {{shortProductName}} Embedding API will load its own copy of the Dojo JavaScript library into the hosting page.
--   For authentication, it is expected that the hosting page and the {{shortProductName}} server are configured with single sign-on \(SSO\). {{shortProductName}}’s login UI will not display properly within the hosting page.
+-   Only one {{shortLeapProductName}} form can be embedded on the page at a time.
+-   Once the {{shortLeapProductName}} form is embedded, it cannot be changed to a different form or reloaded.
+-   The hosting page cannot contain any version of the Dojo JavaScript library. The {{shortLeapProductName}} Embedding API will load its own copy of the Dojo JavaScript library into the hosting page.
+-   For authentication, it is expected that the hosting page and the {{shortLeapProductName}} server are configured with single sign-on \(SSO\). {{shortLeapProductName}}’s login UI will not display properly within the hosting page.
 - The embedding API cannot be set to an App Page
 
 ## Cross-Domain Usage { .section}
 
-If {{shortProductName}} and the hosting page are in different domains, the {{shortProductName}} front-end must be configured to return appropriate CORS headers.
+If {{shortLeapProductName}} and the hosting page are in different domains, the {{shortLeapProductName}} front-end must be configured to return appropriate CORS headers.
 
 **Parent topic:** [Reference](reference_toc.md)
 

@@ -1,8 +1,8 @@
 # Prepare a namespace { #helm_prepare_namespace .concept }
 
-Namespaces are used to group and isolate resources in the Kubernetes cluster. Leap is a deployment in the cluster, and it is recommended to create a namespace, then scope related resources to the namespace. 
+Namespaces are used to group and isolate resources in the Kubernetes cluster. {{shortLeapProductName}} is a deployment in the cluster, and it is recommended to create a namespace, then scope related resources to the namespace. 
 
-Once you have created your namespace, you must append the namespace argument (-n namespace)  in helm and kubectl commands to ensure the command is scoped to the namespace that was created for the Leap deployment.
+Once you have created your namespace, you must append the namespace argument (-n namespace)  in helm and kubectl commands to ensure the command is scoped to the namespace that was created for the {{shortLeapProductName}} deployment.
 
 For information about namespaces, see https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ 
 

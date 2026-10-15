@@ -8,7 +8,7 @@ If you want to copy an item from one form to another, select the item and press 
 ## Usage details { #section_f3b_1vn_hvb .section }
 
 -   Use **Ctrl+C** to copy the selected item.
--   Use **Ctrl+V** to paste the item to the selected page within any {{shortProductName}} application.
+-   Use **Ctrl+V** to paste the item to the selected page within any {{shortLeapProductName}} application.
 -   Users can only copy one item at a time.
 -   If the browser clipboard is not accessible, the copy/paste action will not be allowed.
 -   Table items cannot be copied.

@@ -1,6 +1,6 @@
 # Launching an application { #launchinganapplication .task }
 
-After a {{shortProductName}} application is deployed, the **Launch** link is enabled. When you click **Launch**, the live application opens in a new window.
+After a {{shortLeapProductName}} application is deployed, the **Launch** link is enabled. When you click **Launch**, the live application opens in a new window.
 
 You must deploy your application before you can launch it. See [Deploying an application](cr_deploying_an_application.md#) for instructions on how to deploy your application.
 

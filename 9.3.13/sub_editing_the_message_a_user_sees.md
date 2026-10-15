@@ -1,6 +1,6 @@
 # Editing the message a user sees upon form submission { #editingthemessageauserseesaftercompletingaform .task}
 
-The administrator of a {{shortProductName}} application can edit the completion message a user sees when submitting a form.
+The administrator of a {{shortLeapProductName}} application can edit the completion message a user sees when submitting a form.
 
 In the Workflow tab, you can choose what message users see when they submit a form by editing the properties of the Submit button.
 

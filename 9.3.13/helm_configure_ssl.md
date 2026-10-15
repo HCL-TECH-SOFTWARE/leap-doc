@@ -10,7 +10,8 @@ configuration:
       . . .
       sslOverride: |
          <server description="leapServer">
-           <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+           <keystore id="ldapTrustStore" location="/mnt/customSecrets/ldap-ca/ldaptruststore.p12 password="changeit" type="PKCS12" />
+           <ssl id="defaultSSLConfig" trustDefaultCerts="true" trustStoreRef="ldapTrustStore"/>
          </server>
 ```
 

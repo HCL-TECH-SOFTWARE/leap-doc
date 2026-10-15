@@ -28,11 +28,11 @@ This topic provides details on improving the look of your application by apply a
 
 ## Creating a global corporate theme
 
-{{shortProductName}} provides the ability to create your own global (or corporate) theme that can be selected from the application creation dialog.
+{{shortLeapProductName}} provides the ability to create your own global (or corporate) theme that can be selected from the application creation dialog.
 
 ![create a new app dialog showing a global corporate theme](graphics/css_corporate_theme_new_app.png)
 
-- A global corporate theme must be configured by the {{shortProductName}} server admin using the {{shortProductName}} properties.
+- A global corporate theme must be configured by the {{shortLeapProductName}} server admin using the {{shortLeapProductName}} properties.
 - The CSS file that contains all the custom classes must be created and hosted in an accessible location.
 
 The following is an example of a corporate theme configuration:
@@ -158,7 +158,7 @@ Use one of the techniques for adding the CSS to your application, then add the s
 
 ### Hide Banner
 
-Hides the {{shortProductName}} header/banner at the top of the form.
+Hides the {{shortLeapProductName}} header/banner at the top of the form.
 
 ```css
 .lfMn.lotusui30 .lotusBanner
@@ -433,7 +433,7 @@ This example demonstrates how to change the font style and color of a section he
 
 ### Dynamically change table cell background based on value
 
-Here is a sample function, which will change the background color of a table cell based on the text it contains ('Complete' = green, 'Incomplete' = red and 'In Progress' = yellow). It uses the dojo functions query and style, which we do not document in {{shortProductName}} documentation but are part of the dojo documentation.  You can see [additional built-in functions](ref_jsapi_javascript_security.md) that work in {{shortProductName}}.
+Here is a sample function, which will change the background color of a table cell based on the text it contains ('Complete' = green, 'Incomplete' = red and 'In Progress' = yellow). It uses the dojo functions query and style, which we do not document in {{shortLeapProductName}} documentation but are part of the dojo documentation.  You can see [additional built-in functions](ref_jsapi_javascript_security.md) that work in {{shortLeapProductName}}.
 
 **dojo.query** returns all the nodes that match the specified criteria, generally a css class
 

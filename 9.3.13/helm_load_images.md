@@ -2,7 +2,7 @@
 
 ## About this task
 
-The Leap image must be in a container registry or repository that can be accessed by the Kubernetes or OpenShift cluster. 
+The {{shortLeapProductName}} image must be in a container registry or repository that can be accessed by the Kubernetes or OpenShift cluster. 
 
 ## Before you begin
 
@@ -21,13 +21,15 @@ cat ~/.docker/config.json
 
 If the docker CLI not authenticated, follow the instructions from your cloud provider to authenticate. The steps vary depending on the type of authentication used.
 
-## Retrieve Leap Container Image
+## Retrieve {{shortLeapProductName}} Container Image
 
-As of 9.3.8, the preferred method of retrieving the Leap container image is from the HCL Harbor container registry.
+{% if isLeap %}As of 9.3.8, t{% endif %}{% if isDWLeap %}T{% endif %}he preferred method of retrieving the {{shortLeapProductName}} container image is from the HCL Harbor container registry.
 
+{% if isLeap %}
 Older versions are still available from HCL Software portal.
+{% endif %}
 
-### Procedure A - Load Image from HCL Harbor container registry { #load-image-from-hcl-harbor .section }
+### {% if isLeap %}Procedure A - {% endif %}Load Image from HCL Harbor container registry { #load-image-from-hcl-harbor .section }
 
 It is possible to pull images directly from the HCL Harbor container registry.
 
@@ -37,19 +39,19 @@ It is possible to pull images directly from the HCL Harbor container registry.
     helm registry login -u <YOUR_HARBOR_USERNAME> https://hclcr.io/
     ```
 
-2. Retrieve the Leap charts from Harbor
+2. Retrieve the {{shortLeapProductName}} charts from Harbor
 
     ```
-    helm pull oci://hclcr.io/leap/hcl-leap-deployment --version <X.X.X>
+    helm pull oci://hclcr.io/{% if isLeap %}leap{% endif %}{% if isDWLeap %}domino-workspace{% endif %}/hcl-leap-deployment --version <X.X.X>
     ```
 
-3. Create a kubernetes secret with the name **leap-harbor** with your Harbor username and CLI secret
+3. Create a kubernetes secret with the name **{% if isLeap %}leap{% endif %}{% if isDWLeap %}forms{% endif %}-harbor** with your Harbor username and CLI secret
 
     !!!note
-        The values.yaml is already configured with an **imagePullSecrets** that points to a secret with the name of **leap-harbor**.
+        The values.yaml is already configured with an **imagePullSecrets** that points to a secret with the name of **{% if isLeap %}leap{% endif %}{% if isDWLeap %}forms{% endif %}-harbor**.
 
     ```
-    kubectl create secret -n <YOUR_NAMESPACE> docker-registry leap-harbor --docker-server="hclcr.io" --docker-email='<YOUR_HARBOR_EMAIL>' --docker-username='<YOUR_HARBOR_USERNAME>' --docker-password='<YOUR_HARBOR_CLI_SECRET>'
+    kubectl create secret -n <YOUR_NAMESPACE> docker-registry {% if isLeap %}leap{% endif %}{% if isDWLeap %}forms{% endif %}-harbor --docker-server="hclcr.io" --docker-email='<YOUR_HARBOR_EMAIL>' --docker-username='<YOUR_HARBOR_USERNAME>' --docker-password='<YOUR_HARBOR_CLI_SECRET>'
     ```
   After executing the command from the previous step, you should receive the following message:
 
@@ -57,25 +59,26 @@ It is possible to pull images directly from the HCL Harbor container registry.
     secret/dx-harbor created
     ```
 
-4. Modify the yaml file to point to the Leap package on Harbor.
+4. Modify the yaml file to point to the {{shortLeapProductName}} package on Harbor.
 
     ```yaml
       images:
         pullPolicy: "IfNotPresent"
         imagePullSecrets:
-          - name: "leap-harbor"
+          - name: "{% if isLeap %}leap{% endif %}{% if isDWLeap %}forms{% endif %}-harbor"
         repository: "hclcr.io"
         tags:
-          leap: "9.3.8.27"
+          leap: "{{currentLeapVersionWBuild}}"
         names:
-          leap: "leap/hcl-leap"
+          leap: "{% if isLeap %}leap/hcl-{% endif %}{% if isDWLeap %}domino-workspace/{% endif %}leap"
     ```
 
+{% if isLeap %}
 ### Procedure B - Load Image from HCL Software Portal
 
-1. Download the Leap installation file labeled for Kubernetes from the [My HCL Software portal](https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0109011). 
+1. Download the {{shortLeapProductName}} installation file labeled for Kubernetes from the [My HCL Software portal](https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0109011). 
 
-2. Extract the downloaded zip file. The compressed file contains the Leap image as well as the helm chart that is used for the installation. The file labeled **image** is the container image that will be pushed to your container registry. (Do not further extract either of these two files).
+2. Extract the downloaded zip file. The compressed file contains the {{shortLeapProductName}} image as well as the helm chart that is used for the installation. The file labeled **image** is the container image that will be pushed to your container registry. (Do not further extract either of these two files).
 
 3. Run the ```docker load``` command and reference the image file. For example, if the image file name is hcl-leap-image-v1.0.0_20240507-2050-9.3.6.31.tar.gz then use the command:
   ```
@@ -92,7 +95,7 @@ It is possible to pull images directly from the HCL Harbor container registry.
     
     - **Target image path:** The target image path is the hostname and port (if it is not 443) of your repository.
     
-    - **Tag name:** You can use the version of your Leap deployment, for example 9.3.8.15, or you can simply use the word “latest”. You will need to use this tag name in the custom-values.yaml file later.
+    - **Tag name:** You can use the version of your {{shortLeapProductName}} deployment, for example {{currentLeapVersionWBuild}}, or you can simply use the word “latest”. You will need to use this tag name in the custom-values.yaml file later.
 
     Now run the command:
     ```
@@ -127,7 +130,7 @@ It is possible to pull images directly from the HCL Harbor container registry.
     ```
 
 8. Save and close the custom_values.yaml.
-
+{% endif %}
 
 ## What to do next
 

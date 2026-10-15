@@ -10,7 +10,7 @@ To set up an Oracle database:
 
 2.  Create three users.
 
-    Each user is mapped to a schema, where Leap will create tables.
+    Each user is mapped to a schema, where {{shortLeapProductName}} will create tables.
 
     ```
     ALTER SESSION SET CONTAINER = <Pluggable Database Name>;
@@ -25,7 +25,7 @@ To set up an Oracle database:
 
 3.  Create the administrator role.
 
-    Leap accesses the Oracle database through a data source. An administrator is required to establish the connection to the database.
+    {{shortLeapProductName}} accesses the Oracle database through a data source. An administrator is required to establish the connection to the database.
 
     ```
     CREATE USER <admin> IDENTIFIED BY <password>;

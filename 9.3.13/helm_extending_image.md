@@ -1,8 +1,8 @@
 # Enabling additional Open Liberty features { #helm_extending_image .concept }
 
-Learn how to install additional Open Liberty server features by extending the Leap image.
+Learn how to install additional Open Liberty server features by extending the {{shortLeapProductName}} image.
 
-The Leap image is shipped with the following server features:
+The {{shortLeapProductName}} image is shipped with the following server features:
 
 -   adminCenter-1.0
 -   appSecurity-3.0

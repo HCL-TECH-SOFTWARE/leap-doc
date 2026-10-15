@@ -1,6 +1,6 @@
 # Swagger UI
 
-The open source [Swagger UI](https://swagger.io/tools/swagger-ui/) is embedded in {{shortProductName}} to simplify and accelerate integration using {{shortProductName}}'s REST APIs.  This page allows you to inspect and test different REST API operations.
+The open source [Swagger UI](https://swagger.io/tools/swagger-ui/) is embedded in {{shortLeapProductName}} to simplify and accelerate integration using {{shortLeapProductName}}'s REST APIs.  This page allows you to inspect and test different REST API operations.
 
 Direct links to this page for application and form operations are available in the **URL Links** dropdown of an expanded application on the Manage page.
 
@@ -17,7 +17,7 @@ This section describes the API definitions that are currently supported.
 
 ### Generic Application Operations
 
-Describes the programmatic operations that can be performed for any {{shortProductName}} applications.
+Describes the programmatic operations that can be performed for any {{shortLeapProductName}} applications.
 
 The URL to access this definition is: 
 
@@ -25,7 +25,7 @@ The URL to access this definition is:
 
 ### Specific Application Operations
 
-Describes the programmatic operations that can be performed for a specific {{shortProductName}} application.
+Describes the programmatic operations that can be performed for a specific {{shortLeapProductName}} application.
 
 The URL to access this definition is:
 

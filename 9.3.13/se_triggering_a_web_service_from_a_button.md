@@ -1,6 +1,6 @@
 # Triggering a service 
 
-You can use a service to add information to a form automatically after a user triggered event.  Services can be triggered from almost anywhere within a Leap application.  
+You can use a service to add information to a form automatically after a user triggered event.  Services can be triggered from almost anywhere within a {{shortLeapProductName}} application.  
 
 ## From a button { #triggeringawebservicefromabutton .task }
 

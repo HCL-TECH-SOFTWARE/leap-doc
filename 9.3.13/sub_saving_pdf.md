@@ -1,6 +1,6 @@
 # Saving a PDF to a file location { #savingpdf .concept}
 
-Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the {{shortProductName}} submission record, or both.
+Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the {{shortLeapProductName}} submission record, or both.
 
 File locations are whitelisted in the {% if isLeap %}Leap\_config.properties{% endif %}{% if isDominoLeap%}VoltConfig.nsf{% endif %}. Your file location can be any non-root directory. For example:
 

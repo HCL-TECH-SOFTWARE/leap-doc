@@ -802,7 +802,7 @@ item.setLinkValue(link)
 
 **Example**
 
-Demonstrates how to use a Link item to launch another {{shortProductName}} form in the same application. To launch a form from a different application replace 'app.getUID()' with the uid of the target application.
+Demonstrates how to use a Link item to launch another {{shortLeapProductName}} form in the same application. To launch a form from a different application replace 'app.getUID()' with the uid of the target application.
 
 ```javascript
 item.setLinkValue('/{{context}}/secure/1/app/' + app.getUID() + '/launch/index.html?form=F_NewForm1');

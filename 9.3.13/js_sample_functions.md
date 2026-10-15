@@ -1,9 +1,9 @@
 # Sample Functions
 
-This page is a collection of sample javascript functions that could be used in your {{shortProductName}} applications.
+This page is a collection of sample javascript functions that could be used in your {{shortLeapProductName}} applications.
 
 !!! note
-    these functions were collected from the community and you may need to modify them when implementing in your {{shortProductName}} application.
+    these functions were collected from the community and you may need to modify them when implementing in your {{shortLeapProductName}} application.
 
 ## Date Field Functions
 

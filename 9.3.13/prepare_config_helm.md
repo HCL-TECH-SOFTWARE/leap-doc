@@ -1,6 +1,6 @@
 # Prepare a custom configuration file { #prepare_config_helm .concept }
 
-Create a configuration file that fits the needs of your target HCL Leap Container deployment. The configuration file is the heart of your deployment using Helm. It defines how HCL Leap is deployed to supported platforms, and how it behaves during runtime operations.
+Create a configuration file that fits the needs of your target {{fullLeapProductName}} Container deployment. The configuration file is the heart of your deployment using Helm. It defines how {{shortLeapProductName}} is deployed to supported platforms, and how it behaves during runtime operations.
 
 This section explains how to create your own configuration file and how to leverage the existing values.yaml inside the Helm Chart. It also explains how to optionally overwrite settings in case the default set may not be sufficient.
 
@@ -13,7 +13,7 @@ Helm provides multiple ways to define values that can be processed to run an ins
 
 ## Helm Chart values.yaml { #section_mkj_134_hzb .section }
 
-Provided with the Leap installation is a TGZ bundle (hcl-leap-deployment-vX.X.X_XXXXXXXX-XXXX.tar.tgz) which contains the helm chart for Leap.  Within the TGZ bundle is a values.yaml file. Do not modify the values.yaml file inside the helm chart. It defines all configurable parameters that a Helm Chart accepts and the default values that are used during an installation. If you do not provide any other configuration during an installation, Helm extracts all deployment information from the values.yaml file inside the Helm Chart.
+Provided with the {{shortLeapProductName}} installation is a TGZ bundle (hcl-leap-deployment-vX.X.X_XXXXXXXX-XXXX.tar.tgz) which contains the helm chart for {{shortLeapProductName}}.  Within the TGZ bundle is a values.yaml file. Do not modify the values.yaml file inside the helm chart. It defines all configurable parameters that a Helm Chart accepts and the default values that are used during an installation. If you do not provide any other configuration during an installation, Helm extracts all deployment information from the values.yaml file inside the Helm Chart.
 
 All parameters that were not overwritten using any other configuration methods return to their default values from the values.yaml file inside the Helm Chart.
 
@@ -31,7 +31,7 @@ The output of the command contains the configurable parameters and their default
 
 ## Custom configuration file { #section_rmd_d34_hzb .section }
 
-When you install Leap using Helm, you will specify a custom values file that overrides the default settings. This file contains important details such as information to connect to the container registry, information about the database, authenticating, etc.  This is referred to as the custom-values.yaml file in the product documentation. You may choose a different file name if desired. 
+When you install {{shortLeapProductName}} using Helm, you will specify a custom values file that overrides the default settings. This file contains important details such as information to connect to the container registry, information about the database, authenticating, etc.  This is referred to as the custom-values.yaml file in the product documentation. You may choose a different file name if desired. 
 
 When you follow this product documentation, you will be copying values into this custom-values.yaml file.
 
@@ -44,7 +44,7 @@ For details on creating your custom-values.yaml file, see the topic [Creating an
 
 It is possible to define values using a --set parameter in the Helm CLI during the installation of a Helm Chart.
 
-Since there are many values that can be configured in the HCL Leap deployment, we do not recommend this technique, since it makes installation commands very large and confusing.
+Since there are many values that can be configured in the {{fullLeapProductName}} deployment, we do not recommend this technique, since it makes installation commands very large and confusing.
 
 
 ## Additional Topics

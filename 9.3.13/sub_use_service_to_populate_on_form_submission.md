@@ -2,7 +2,7 @@
 
 Web services can perform many functions, such as sending data to other forms or applications. The following instructions describe how to use a web service to add information to a form automatically after it is submitted.
 
-{{fullProductName}} can look up user information for you using a web service call. For example, you can connect a manager with a user submitted form using an intranet directory search.
+{{fullLeapProductName}} can look up user information for you using a web service call. For example, you can connect a manager with a user submitted form using an intranet directory search.
 
 1.  Click the **Workflow** tab.
 
@@ -36,7 +36,7 @@ Web services can perform many functions, such as sending data to other forms or 
 
 7.  Click **OK** to exit the **Call a Service** window.
 
-    When the user clicks **Submit**, {{shortProductName}} calls a service to populate the manager’s name into the selected form item.
+    When the user clicks **Submit**, {{shortLeapProductName}} calls a service to populate the manager’s name into the selected form item.
 
 
 **Parent topic:** [Adding stages to an application](sub_adding_stages_toc.md)

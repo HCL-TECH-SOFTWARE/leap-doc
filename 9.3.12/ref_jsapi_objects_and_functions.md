@@ -1,4 +1,4 @@
-# Reference Objects and Functions { #referenceobjectsandfunctions .reference }
+# Reference objects and functions { #referenceobjectsandfunctions .reference }
 
 Describes the Functions available on different parts of the {{fullProductName}} object model.
 

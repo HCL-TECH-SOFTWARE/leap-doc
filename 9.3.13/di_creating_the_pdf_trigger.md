@@ -15,10 +15,10 @@ When the user clicks the button, the service that maps information from the form
 4.  **Save** your application.
 
 
-When the application is deployed, you can click the **Create PDF** button and a PDF is populated containing the values that are entered in the {{shortProductName}} application.
+When the application is deployed, you can click the **Create PDF** button and a PDF is populated containing the values that are entered in the {{shortLeapProductName}} application.
 
 !!! note
     You can use other common form events as triggers, including **validateButtonPressed**. Stage action buttons cannot be used as triggers.
 
-**Parent topic:** [{{shortProductName}} document integration](di_pop_doc_with_app_data.md)
+**Parent topic:** [{{shortLeapProductName}} document integration](di_pop_doc_with_app_data.md)
 

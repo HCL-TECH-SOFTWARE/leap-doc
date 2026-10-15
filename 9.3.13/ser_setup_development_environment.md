@@ -1,13 +1,13 @@
-# Development process { #ser_setup_development_environment .task}
+Code# Development process { #ser_setup_development_environment .task}
 
-The HCL Leap runs within an OSGi framework environment. Code that extends the Leap needs to be packaged within OSGi bundles to run. Any Java™ development environment can be used to create custom bundles, but using the Eclipse IDE built-in OSGi tooling is recommended to minimize effort and errors.
+The {{shortLeapProductName}} runs within an OSGi framework environment. Code that extends the {{shortLeapProductName}} needs to be packaged within OSGi bundles to run. Any Java™ development environment can be used to create custom bundles, but using the Eclipse IDE built-in OSGi tooling is recommended to minimize effort and errors.
 
-To extend HCL Leap functionality, follow these instructions for creating and packaging custom code as OSGi bundles.
+To extend {{shortLeapProductName}} functionality, follow these instructions for creating and packaging custom code as OSGi bundles.
 
 
-1. Gather Leap JAR files
+1. Gather {{shortLeapProductName}} JAR files
 
-    Use the following script, or a similar script, to extract appropriate .jar files from the Leap .ear file. If you use the following script, update the variables to match your system.
+    Use the following script, or a similar script, to extract appropriate .jar files from the {{shortLeapProductName}} .ear file. If you use the following script, update the variables to match your system.
 
     The extracted JAR files are placed in the `%EXTRACT\_DIR%\Leap_bundles\` directory.
 
@@ -86,11 +86,11 @@ To extend HCL Leap functionality, follow these instructions for creating and pac
     2.  In the **Target Platform** section, select **an OSGi framework:**, and select **Equinox**.
 
     !!!note
-        Code should be compiled to 1.8 level of Java to work with the 1.8 JVM of IBM WebSphere Application server or the Leap image.
+        Code should be compiled to 1.8 level of Java to work with the 1.8 JVM of IBM WebSphere Application server or the {{shortLeapProductName}} image.
 
-3. Add Leap Jars to the Build Path
+3. Add {{shortLeapProductName}} Jars to the Build Path
 
-    To compile your custom bundle against the Leap jars extracted in Step 1, add them to the build path by changing the **Target Platform** that your plug-in builds against:
+    To compile your custom bundle against the {{shortLeapProductName}} jars extracted in Step 1, add them to the build path by changing the **Target Platform** that your plug-in builds against:
 
       1.  Select **Window** \> **Preferences** \> **Plug-in Development** \> **Target Platform**.
       2.  Select **Running Platform \(Active\)** \> **Edit** \> **Locations** \> **Add...** \> ****.
@@ -172,7 +172,7 @@ To extend HCL Leap functionality, follow these instructions for creating and pac
 
     1. **IBM WebSphere® Application Server deployment**
     
-        On the Leap server, put the exported .jar file in one the following directories or in a subdirectory of one of the following directories:
+        On the {{shortLeapProductName}} server, put the exported .jar file in one the following directories or in a subdirectory of one of the following directories:
 
         - Windows™:
           `[any drive]:\HCL\Leap\extensions\`
@@ -182,7 +182,7 @@ To extend HCL Leap functionality, follow these instructions for creating and pac
 
         Important notes on directories:
 
-        -   If the extensions directory does not exist, then the Leap server must be restarted after the directory is created.
+        -   If the extensions directory does not exist, then the {{shortLeapProductName}} server must be restarted after the directory is created.
         -   `/opt/HCL/Leap/` is not case sensitive.
 
     2. **Kubernetes deployment**
@@ -201,7 +201,7 @@ To extend HCL Leap functionality, follow these instructions for creating and pac
 
         2. **Kubernetes deployment**
       
-            To start the Leap container in debug mode, add the following to your values.yaml:
+            To start the {{shortLeapProductName}} container in debug mode, add the following to your values.yaml:
 
             ```yaml
             # Environment variables 
@@ -232,7 +232,7 @@ To extend HCL Leap functionality, follow these instructions for creating and pac
 
     2. Debug Logging
 
-        You can enable debug logging or finer logging for the com.ibm.form.nitro.service.services package and other packages to get more information from the Leap code.
+        You can enable debug logging or finer logging for the com.ibm.form.nitro.service.services package and other packages to get more information from the {{shortLeapProductName}} code.
 
           1. **IBM WebSphere® Application Server Server deployment**
 

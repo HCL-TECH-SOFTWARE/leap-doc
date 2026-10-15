@@ -23,7 +23,7 @@ const myWidgetDefintion = {
 ```
 
 !!! note
-    An id of `'customOptions'` is meaningful to {{shortProductName}}. All other custom property id's are arbitrary.
+    An id of `'customOptions'` is meaningful to {{shortLeapProductName}}. All other custom property id's are arbitrary.
 
 ## Hardcoded Options { #section_rnj_wfn_jyb .section}
 

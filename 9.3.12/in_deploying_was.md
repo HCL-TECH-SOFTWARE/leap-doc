@@ -113,6 +113,36 @@ Go to **Application Servers** \> **server1** \> **Java and Process Management** 
 
 12. Click **Finish** to deploy the ear file.
 
+### Configuring LDAP over SSL in WebSphere Application Server
+
+The following instructions describe how to configure LDAP over SSL in a **WebSphere Application Server**.
+
+1. Confirm the LDAP team has configured the SSL keystore and certificate in the LDAP directory server.
+
+2. In the **WAS (WebSphere Application Server)** console, add the LDAP server signer certificate in NodeDefaultTrustStore.
+
+    - Click on SSL certificate and Key Management then click Key Stores and Certificates.
+
+    - Click on NodeDefaultTrustStore.
+
+    - Click on Signer Certificates under "additional properties" on the right.
+
+    - Click on the Retrieve from Port button.
+
+    - Enter LDAP host name, LDAP SSL port and any alias name.
+
+    - Click on Retrieve signer Information and click on Apply at the bottom.
+
+    The Signer certificate should now be saved in NodeDefaultTrustStore.
+
+3. Navigate to to **Security** -> **Global Security** and click on **Configure** at the bottom.
+
+    - Click on the LDAP Repository Identifier.
+
+    - Change LDAP SSL port number and select Require SSL communications.
+
+    - Click on **Apply** and restart server to reflect the changes.
+
 
 ## Post-deployment steps
 

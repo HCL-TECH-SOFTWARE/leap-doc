@@ -1,6 +1,6 @@
 # Configuration Sharing for co-deployments
 
-This guide explains how to use the standardized Configuration Sharing feature between HCL products such as HCL Leap and HCL Digital Experience (DX) when they are deployed within the same Kubernetes namespace. The feature simplifies integration, reduces manual configuration, and establishes a single source of truth for common settings.
+This guide explains how to use the standardized Configuration Sharing feature between HCL products such as {{fullLeapProductName}} and HCL Digital Experience (DX) when they are deployed within the same Kubernetes namespace. The feature simplifies integration, reduces manual configuration, and establishes a single source of truth for common settings.
 
 ## Prerequisites
     
@@ -25,7 +25,7 @@ Once enabled, the process is automatically managed by the products' Helm charts.
     When configuration sharing is enabled on a product (the producer, such as Leap), its Helm chart automatically creates a Kubernetes Secret that stores the shared settings.
 
     - The Secret follows a strict naming convention: `<product-name>-shared-config-v<major-version>`.
-    - For example, HCL Leap creates a Secret named `leap-shared-config-v1`.
+    - For example, {{shortLeapProductName}} creates a Secret named `leap-shared-config-v1`.
     - The major version (`v1`) increments only when there are breaking changes to the configuration schema.
     - The Secret contains integration-related settings, such as Lightweight Third-Party Authentication (LTPA) keys provided by Leap
     - The shared Secret is recreated during a Helm upgrade if the values used to generate the configuration have changed (for example, a password update).

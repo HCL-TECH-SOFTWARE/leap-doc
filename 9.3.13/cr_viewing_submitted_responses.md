@@ -45,7 +45,7 @@ The following list is a **Summary** of page chart features:
     !!! note
         When you share charts, the people to whom you send the chart URL must have appropriate access permissions. Otherwise, an error message rather than the chart is displayed.
 
--   **iFrame embedding of charts** – You can share charts by embedding the charts into an iFrame. You can use the embedding feature to show a chart on your own HTML page, or with an iFrame capable Portlet, such as the Web Clipping portlet. The iFrame content is also used to host the chart in a {{shortProductName}} application using the **HTML** form item.
+-   **iFrame embedding of charts** – You can share charts by embedding the charts into an iFrame. You can use the embedding feature to show a chart on your own HTML page, or with an iFrame capable Portlet, such as the Web Clipping portlet. The iFrame content is also used to host the chart in a {{shortLeapProductName}} application using the **HTML** form item.
 -   **Statistical data provided** – Each chart displays the number of times the question was answered from the total number of submitted responses. If questions in your form are not mandatory, you can see how many people answered the question, and how many did not answer the question. Charts that are based on Number or Currency form items display statistical data, such as the minimum, maximum, range, and average of the submitted values.
 -   **Reflecting new data submission in existing charts** – Click **Refresh** to reflect newly submitted data in existing charts.
 

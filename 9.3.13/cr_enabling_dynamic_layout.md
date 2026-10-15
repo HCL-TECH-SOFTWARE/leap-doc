@@ -1,6 +1,6 @@
 # Enabling dynamic layout { #enablingdynamiclayout .task }
 
-When you build applications, you can now set the display width of your {{shortProductName}} application. Setting this feature reduces or removes the need for horizontal scrolling when you have an unknown or limited amount of space, such as when the application is displayed on a mobile device.
+When you build applications, you can now set the display width of your {{shortLeapProductName}} application. Setting this feature reduces or removes the need for horizontal scrolling when you have an unknown or limited amount of space, such as when the application is displayed on a mobile device.
 
 To set dynamic width on a page:
 

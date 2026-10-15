@@ -1,6 +1,6 @@
 # CKEditor modifications and licensing details
 
-CKEditor included in HCL Leap and HCL Domino Leap is included under the [Mozilla Public License 1.1](https://www.mozilla.org/MPL/1.1/).
+CKEditor included in {{fullLeapProductName}} is included under the [Mozilla Public License 1.1](https://www.mozilla.org/MPL/1.1/).
 
 ## Modifications
 

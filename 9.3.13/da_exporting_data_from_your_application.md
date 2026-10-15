@@ -2,7 +2,7 @@
 
 After users complete and submit forms, you can export the data to a spreadsheet.
 
-{{fullProductName}} exports the data from your application to an Atom feed in XML format, JSON, or Microsoft™ Excel. By default, all data for a specific application to which you have access is exported, unless you restrict the data set using Search.
+{{fullLeapProductName}} exports the data from your application to an Atom feed in XML format, JSON, or Microsoft™ Excel. By default, all data for a specific application to which you have access is exported, unless you restrict the data set using Search.
 
 1.  From the Manage tab, click **View Data** under the application you want to export.
 

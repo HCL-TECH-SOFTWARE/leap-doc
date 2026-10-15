@@ -1,20 +1,20 @@
 # Application Management { #applicationoperations .concept }
 
-This topic gives an overview of the types of operations that you can perform for a {{shortProductName}} application.
+This topic gives an overview of the types of operations that you can perform for a {{shortLeapProductName}} application.
 
 - **[Creating an application](cr_creating_application_overview.md)**  
-This topic gives a general overview of the application creation process, from opening the {{fullProductName}} interface to launching a completed application.
+This topic gives a general overview of the application creation process, from opening the {{fullLeapProductName}} interface to launching a completed application.
 
 - **[Creating an application from an excel spreadsheet](cr_creating_application_excel.md)**  
-{{shortProductName}} allows you to create an application from an excel spreadsheet, automatically creating the widgets and importing the data found in the spreadsheet.
+{{shortLeapProductName}} allows you to create an application from an excel spreadsheet, automatically creating the widgets and importing the data found in the spreadsheet.
 
-<!--**[Importing an existing application](cr_importing_application.md)**Import an existing Leap application.-->
+<!--**[Importing an existing application](cr_importing_application.md)**Import an existing {{shortLeapProductName}} application.-->
 
 - **[Deploying an application](cr_deploying_an_application.md)**
-Deploying an {{fullProductName}} application makes it available for users. 
+Deploying an {{fullLeapProductName}} application makes it available for users. 
 
 - **[Launching an application](cr_launching_an_application.md)**  
-After an {{fullProductName}} application is deployed, the **Launch** link is enabled. When you click **Launch**, the live application opens in a new window.
+After an {{fullLeapProductName}} application is deployed, the **Launch** link is enabled. When you click **Launch**, the live application opens in a new window.
 
 - **[Viewing submitted responses](cr_viewing_submitted_responses.md)**  
 After users complete and submit forms, you can view the submitted responses. Responses are available compiled into summary charts, or as a list of individual forms.
@@ -27,14 +27,14 @@ The upgrade feature allows an application design to be replaced by a new version
 
 {% if isLeap %}
 - **[Updating and stopping a deployment](cr_updating_and_stopping_deployment.md)**  
-The following instructions describe how to update, or stop, the deployment of an {{fullProductName}} application.
+The following instructions describe how to update, or stop, the deployment of an {{fullLeapProductName}} application.
 {% endif %}
 
 - **[Duplicating an application](cr_duplicating_application.md)**
 Create a new application by duplicating an existing application.
 
 - **[Importing and exporting an application](cr_import_export_applications.md)**
-Application import and export allows you to migrate an application between environments. You can export an application from one {{fullProductName}} environment and import it into another {{fullProductName}} environment.
+Application import and export allows you to migrate an application between environments. You can export an application from one {{fullLeapProductName}} environment and import it into another {{fullLeapProductName}} environment.
 
 
 **Parent topic:** [Building Apps](cr_creating_and_managing_toc.md)

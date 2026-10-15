@@ -1,6 +1,6 @@
 # Application Events 
 
-This topic describes the Application Events, and their parameters when using JavaScript™ API in {{fullProductName}}.
+This topic describes the Application Events, and their parameters when using JavaScript™ API in {{fullLeapProductName}}.
 
 There is one event at the application level in **Settings** \> **Events** that is called from the context of the application, regardless of what form is going to be displayed.
 

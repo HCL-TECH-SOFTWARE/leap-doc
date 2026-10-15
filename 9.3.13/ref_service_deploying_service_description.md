@@ -1,6 +1,6 @@
 # Deploying a Service Description 
 
-This topic contains information about how to deploy a {{shortProductName}} service description.
+This topic contains information about how to deploy a {{shortLeapProductName}} service description.
 
 {% if isLeap %}
 To deploy a service description, place the XML document in one of the following directories, or in a subdirectory of one of the following directories:
@@ -17,10 +17,10 @@ To deploy a service description, place the XML document in one of the following 
 Important notes on directories:
 
 -   There must be an extensions directory in the same parent directory as the ServiceCatalog directory. Otherwise, the ServiceCatalog directory is not found. For example, /opt/HCL/Leap/extensions/.
--   If the extensions directory or ServiceCatalog/1 directory does not exist, then the Leap server must be restarted after the directories are created.
+-   If the extensions directory or ServiceCatalog/1 directory does not exist, then the {{shortLeapProductName}} server must be restarted after the directories are created.
 -   /opt/HCL/Leap/ is not case-sensitive.
 
-When {{shortProductName}} server starts, the ServiceCatalog directory and its subdirectories are scanned for new, deleted, and changed Service Descriptions.
+When {{shortLeapProductName}} server starts, the ServiceCatalog directory and its subdirectories are scanned for new, deleted, and changed Service Descriptions.
 {% endif %}
 {% if isDominoLeap %}
 To add a new Service Description, you must have at least Editor access to VoltConfig.nsf. Perform the following steps:
@@ -39,10 +39,10 @@ Optionally give your service a description. The Description field is not require
 
 6. Select Done. Then select Yes to save the new document.
 
-When the Domino Leap server starts, it scans the All Service Descriptions view for new, deleted, and changed Service Descriptions.  
+When the {{shortLeapProductName}} server starts, it scans the All Service Descriptions view for new, deleted, and changed Service Descriptions.  
 {% endif %}
 
-New and changed service descriptions are loaded and registered with the {{shortProductName}} server, and become available immediately. Service descriptions that fail to load, or do not have an appropriate service transport registered, are not available.
+New and changed service descriptions are loaded and registered with the {{shortLeapProductName}} server, and become available immediately. Service descriptions that fail to load, or do not have an appropriate service transport registered, are not available.
 
 Access to a service description may be given to a specific user, group, or special assignment \(i.e. Authenticated, Anonymous, etc\). The access control is made up of two parts: who may discover and work with the service while designing an application, and who may run the service. Users or Groups provided must be in the proper format - it is recommended to use the dialog \(by clicking the button with the down arrow\) when adding permissions. Adding or removing users does not require a server restart, but there will be a short delay before the changes take effect.
 

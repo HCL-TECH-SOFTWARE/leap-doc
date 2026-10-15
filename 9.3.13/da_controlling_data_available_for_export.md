@@ -20,7 +20,7 @@ You can set rules about which search results you see, as well as what is exporte
 
     This time, select **Last Updated by** from the **Select Items** menu. Select **Equals** from the **Choose Operator** menu, and enter text in the field, such as Amadou Alain. Select the **And** radio button.
 
-6.  Click **Search**. {{shortProductName}} searches the records for any that were created by Frank Adams and last updated by Amadou Alain.
+6.  Click **Search**. {{shortLeapProductName}} searches the records for any that were created by Frank Adams and last updated by Amadou Alain.
 
 7.  To return to your full result set, click **Clear Filters**.
 

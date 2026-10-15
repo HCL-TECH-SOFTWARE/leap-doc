@@ -1,14 +1,14 @@
 # Uploading files for use in your application { #uploadingfiles .task }
 
-The following instructions describe how to upload files to {{shortProductName}}, and how to use the uploaded files within your application.
+The following instructions describe how to upload files to {{shortLeapProductName}}, and how to use the uploaded files within your application.
 
-1.  There are two ways to upload files into a {{shortProductName}} application:
+1.  There are two ways to upload files into a {{shortLeapProductName}} application:
 
     1.  Upload all files in the Settings tab before building the application.
     2.  Upload files one by one as needed when you build the application.
     To upload files in the Settings tab:
 
-2.  Open your {{shortProductName}} application, and click the **Settings** tab at the top of the page.
+2.  Open your {{shortLeapProductName}} application, and click the **Settings** tab at the top of the page.
 
 3.  Click **Files** from the menu on the left side of the screen, then click **Add**.
 

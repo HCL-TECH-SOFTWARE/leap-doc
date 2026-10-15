@@ -1,8 +1,8 @@
-# What is {{fullProductName}}, and how is it used? 
+# What is {{fullLeapProductName}}, and how is it used? 
 
-This document provides an overview of the three main activities that are involved in using {{shortProductName}}.
+This document provides an overview of the three main activities that are involved in using {{shortLeapProductName}}.
 
-There are three main activities that are involved in using {{shortProductName}}:
+There are three main activities that are involved in using {{shortLeapProductName}}:
 
 -   Building forms
 -   Publishing applications
@@ -10,11 +10,11 @@ There are three main activities that are involved in using {{shortProductName}}:
 
 ## Forms and Applications { .section}
 
-Throughout the {{shortProductName}} documentation, the words form and application are both used to describe the output that is created by {{shortProductName}}. Forms are a single page, or collection of pages, that create the user interface with which people interact. When a form is combined with workflow, presentation logic and other elements of the {{shortProductName}} technology, it becomes an application. Applications gather the submitted input and automatically store the submissions in a database.
+Throughout the {{shortLeapProductName}} documentation, the words form and application are both used to describe the output that is created by {{shortLeapProductName}}. Forms are a single page, or collection of pages, that create the user interface with which people interact. When a form is combined with workflow, presentation logic and other elements of the {{shortLeapProductName}} technology, it becomes an application. Applications gather the submitted input and automatically store the submissions in a database.
 
 ## Building forms { .section}
 
-When you start {{shortProductName}}, you are shown a screen with two tabs on the Forms toolbar: Use and Manage. The **Use** tab shows a list of all applications that are created by other users to which you have access. The **Manage** tab is where you create and manage applications. When {{shortProductName}} opens, you are shown the **Manage** tab, which displays any applications you created, or for which you have edit permissions.
+When you start {{shortLeapProductName}}, you are shown a screen with two tabs on the Forms toolbar: Use and Manage. The **Use** tab shows a list of all applications that are created by other users to which you have access. The **Manage** tab is where you create and manage applications. When {{shortLeapProductName}} opens, you are shown the **Manage** tab, which displays any applications you created, or for which you have edit permissions.
 
 To create an application, click **New Application**, enter a descriptive application name, and select **Create**. A blank form is displayed.
 
@@ -53,13 +53,9 @@ By default, every form has a **Start** and **Submitted** stage. The **Start** st
 
 To create a workflow, add stages in the **Workflow** tab. You may hover over the stage and click the plus icon, or click on “+ Add Stage” in the properties pane.
 
-![This graphic displays the mouse over the plus sign in the Stages tab. Clicking the icon adds a stage between the Start and End stages.](graphics/add_new_stage.jpg)
-
 When a new stage is added, you can modify its properties to build the form workflow as needed. For example, you can add a stage to a survey that thanks the user for submitting feedback and sends the curriculum supervisor an email that indicates that new feedback is available. After the feedback is reviewed by the supervisor, another stage can be added to block the user's name and company information and then forward the feedback to the course instructor.
 
 At any time during the form building process, you can save and preview your work in a web browser by clicking **Preview**.
-
-![This graphic displays the mouse over the Preview button with the Outline view.](graphics/preview_button.jpg)
 
 Ensure that your browser does not block pop-up windows because the preview form opens in a new window. The **Submit** and **Cancel** buttons are automatically added to your form, and are displayed when you preview the form.
 
@@ -70,8 +66,6 @@ When you complete building your form and adding workflow elements, you must depl
 To deploy your application, click **Deploy**. A menu of deployment options is available. You can set your application to have a specific start and end date, and provide a custom message to instruct users when the application is unavailable.
 
 After an application is deployed, you can provide the URL link to your users.
-
-![This graphic displays the details of an application after it is deployed, including the URL link.](graphics/URL_link.jpg)
 
 You can also get the URL to the application by clicking **Launch** and copying the address in the web browser. If you must change a form after it is deployed, you can do so at any time. However, you must deploy the form again after you complete your changes.
 
@@ -87,10 +81,12 @@ You also can export all data to a spreadsheet program, such as Open Office, or M
 
 ## Conclusion { .section}
 
-This overview described the three high-level steps for creating {{shortProductName}} applications: building the form and adding workflow elements, deploying your completed application, and reviewing the submission results. For more {{shortProductName}} information, see:
+This overview described the three high-level steps for creating {{shortLeapProductName}} applications: building the form and adding workflow elements, deploying your completed application, and reviewing the submission results. For more {{shortLeapProductName}} information, see:
 
--   [Building a Survey application](tut_survey_application_OV.md) – Use {{shortProductName}} to design and publish a basic survey application.
--   [Building Apps](cr_creating_and_managing_toc.md) for more specific instructions on various parts of creating a {{shortProductName}} application.
+-   [Building a Survey application](tut_survey_application_OV.md) – Use {{shortLeapProductName}} to design and publish a basic survey application.
+-   [Building Apps](cr_creating_and_managing_toc.md) for more specific instructions on various parts of creating a {{shortLeapProductName}} application.
 -   [HCL Software U: Application development](tut_video_overview.md) – a 7-minute video that walks you through the activities that are described in this overview. The video describes how to open a new application, add items to a form, publish an application, and review submitted results.
--   [{{shortProductName}} Starter Packs](https://www.ibm.com/developerworks/community/wikis/home?lang=en-us#!/wiki/W65fd19fc117a_4d18_87e4_5f7b8a6727cc/page/FEB%20Starter%20Packs) – a series of prebuilt forms you can import into {{shortProductName}} and modify for your own use.
+{% if not isDWLeap %}
+-   [{{shortLeapProductName}} Starter Packs](https://leap.sandbox-hclsoftware.com/Sandbox2/demos.html) – a series of prebuilt forms you can import into {{shortLeapProductName}} and modify for your own use.
+{% endif %}
 

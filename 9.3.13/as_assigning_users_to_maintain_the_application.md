@@ -1,6 +1,6 @@
 # Assigning users to maintain the application { #assigninguserstomaintaintheapplication .task }
 
-To define who can edit an {{fullProductName}} application, use the design settings in the **Access** tab.
+To define who can edit an {{fullLeapProductName}} application, use the design settings in the **Access** tab.
 
 By default, only administrators can edit and maintain an application. However, you can also assign other roles to do the task. In the **Manage** tab, an administrator can grant permission for other users to edit applications.
 

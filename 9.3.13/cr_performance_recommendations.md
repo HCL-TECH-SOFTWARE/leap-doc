@@ -1,8 +1,8 @@
 # Performance Recommendations
 
-The applications that you build can affect the overall health and performance of the {{shortProductName}} server.
+The applications that you build can affect the overall health and performance of the {{shortLeapProductName}} server.
 
-1. Inform the server administrator if you expect your application to experience high usage, capture large volumes of data, or collect attachments. Note that Leap is not intended as a file storage application.
+1. Inform the server administrator if you expect your application to experience high usage, capture large volumes of data, or collect attachments. Note that {{shortLeapProductName}} is not intended as a file storage application.
 
 2. Applications with service calls incur more overhead.  Choose carefully how and when you use services within your application.
 
@@ -14,7 +14,7 @@ The applications that you build can affect the overall health and performance of
     - open the console, which is part of the browser debugging tools, and verify that there are no javaScript errors 
     - open the network tab, which is part of the browser debugging tools, and verify there are no looping service calls
 
-  4. Offload static content by referencing images or files from a central location instead of embedding them within your application. Avoid using {{shortProductName}} to deliver static web pages, as this adds unnecessary overhead and can slow down rendering compared to traditional HTML pages.
+  4. Offload static content by referencing images or files from a central location instead of embedding them within your application. Avoid using {{shortLeapProductName}} to deliver static web pages, as this adds unnecessary overhead and can slow down rendering compared to traditional HTML pages.
 
   5. If you plan to export your application or its data, schedule the export outside of peak hours to minimize the impact on system performance.
 

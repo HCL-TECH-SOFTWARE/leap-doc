@@ -1,7 +1,7 @@
 # Including multiple CSS files in your application
 
 
-You can add multiple custom cascading style sheet \(CSS\) themes to your {{fullProductName}} application.  For example, use `style1.css`  for table styling, and `style2.css` for button styling.
+You can add multiple custom cascading style sheet \(CSS\) themes to your {{fullLeapProductName}} application.  For example, use `style1.css`  for table styling, and `style2.css` for button styling.
 
 Adding custom cascading style sheet \(CSS\) themes personalizes applications to match your organization’s branding.
 

@@ -2,7 +2,7 @@
 
 Create roles for users in your organization so they can work with data that is relevant to them.
 
-{{fullProductName}} employs a customizable, role-based access control model to define who can access and modify the application. Roles are assigned to individuals or groups, granting specific permissions for data access and application maintenance. These roles can be assigned manually or programmatically through web services.
+{{fullLeapProductName}} employs a customizable, role-based access control model to define who can access and modify the application. Roles are assigned to individuals or groups, granting specific permissions for data access and application maintenance. These roles can be assigned manually or programmatically through web services.
 
 There are three predefined roles:
 

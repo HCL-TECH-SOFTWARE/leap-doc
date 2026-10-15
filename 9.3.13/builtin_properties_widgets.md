@@ -25,7 +25,7 @@ const myWidgetDefinition = {
 ```
 
 !!! note
-    All widgets will be implicitly given an `ID` property. The default value of this property will be auto-incrementing unique value based on the last substring of the widget definition's id. For example, a widget with an id of `'example.YesNo'` will result in a default ID of '`F_YesNo1'.` Similar to {{shortProductName}}'s built-in widgets, the app author is free to alter the ID to suit their needs.
+    All widgets will be implicitly given an `ID` property. The default value of this property will be auto-incrementing unique value based on the last substring of the widget definition's id. For example, a widget with an id of `'example.YesNo'` will result in a default ID of '`F_YesNo1'.` Similar to {{shortLeapProductName}}'s built-in widgets, the app author is free to alter the ID to suit their needs.
 
 **Parent topic:** [Custom Widget API](customwidgetapi_landing.md)
 

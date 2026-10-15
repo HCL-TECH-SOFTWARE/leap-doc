@@ -1,6 +1,6 @@
 # Service Catalog { #helm_service_catalog .concept }
 
-The serviceCatalog parameter can be used to pass service descriptions to Leap, which will be picked up by Leap automatically.
+The serviceCatalog parameter can be used to pass service descriptions to Leap, which will be picked up by {{shortLeapProductName}} automatically.
 
 Each service definition in the .yaml is made up of a label and the xml content of the service description. The XML content will be copied into a file and placed in the service catalog.
 

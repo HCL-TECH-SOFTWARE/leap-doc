@@ -1,8 +1,8 @@
 # Accessibility features for application designers 
 
-{{fullProductName}} contains accessibility features so users with disabilities can create forms and applications.
+{{fullLeapProductName}} contains accessibility features so users with disabilities can create forms and applications.
 
-To make designing forms and applications easier for users with disabilities, Leap has the following keyboard shortcuts:
+To make designing forms and applications easier for users with disabilities, {{shortLeapProductName}} has the following keyboard shortcuts:
 
 #### Adding items to your form
 
@@ -34,7 +34,7 @@ You can navigate between the Common, and Specialized palettes. When the focus is
 
 #### Keyboard commands for common items
 
-Leap has three menu items: **Save**, **Preview**, and **Cancel**. The following keyboard commands are available so you do not have to navigate away from your form.
+{{shortLeapProductName}} has three menu items: **Save**, **Preview**, and **Cancel**. The following keyboard commands are available so you do not have to navigate away from your form.
 
   - Save: Ctrl+s
   - Preview: Ctrl+e

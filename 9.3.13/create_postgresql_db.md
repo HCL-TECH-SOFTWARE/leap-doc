@@ -1,8 +1,8 @@
 # Creating a PostgreSQL database { #create_postgresql_db .task }
 
-The following instructions describe how to manually create the PostgreSQL database for Leap.
+The following instructions describe how to manually create the PostgreSQL database for {{shortLeapProductName}}.
 
-In a production environment, you must create a PostgreSQL database before you install HCL Leap to WebSphere Application Server.
+In a production environment, you must create a PostgreSQL database before you install {{fullLeapProductName}}.
 
 
 !!! note
@@ -20,13 +20,13 @@ There are two methods:
 -   Use PGAdmin tooling
 -   Use the `psql` command 
 
-The default database settings are adequate; however, the user that is used for Leap's datasource must have full permissions on the database. For example:
+The default database settings are adequate; however, the user that is used for {{shortLeapProductName}}'s datasource must have full permissions on the database. For example:
 ```
-GRANT ALL PRIVILEGES ON DATABASE leap_db TO leap_db_user
+GRANT ALL PRIVILEGES ON DATABASE {% if isLeap %}leap_db TO leap_db_user{% endif %}{% if isDWLeap %}forms_db TO forms_db_user{% endif %}
 ```
 
 !!!warning
-    The Leap DB should be the only database in the PostgreSQL deployment.
+    The {{shortLeapProductName}} DB should be the only database in the PostgreSQL deployment.
 
     The privileges are not set correctly, if you see an error like:
     

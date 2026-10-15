@@ -1,6 +1,6 @@
 # Form Events 
 
-This topic describes the Form Events, and their parameters when using JavaScript™ API in {{fullProductName}}.
+This topic describes the Form Events, and their parameters when using JavaScript™ API in {{fullLeapProductName}}.
 
 There are many events available to hook into on a form that are accessed from the forms **Edit Properties** dialog.
 

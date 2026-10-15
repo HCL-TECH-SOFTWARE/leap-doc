@@ -1,6 +1,6 @@
 # Updating and stopping a deployment { #updatingandstoppingadeployment .task }
 
-The following instructions describe how to update, or stop, the deployment of a {{shortProductName}} application.
+The following instructions describe how to update, or stop, the deployment of a {{shortLeapProductName}} application.
 
 There are many reasons why you might need to update, or stop, a deployed application. You might want to update the deployment parameters, such as adding a start and stop date. Or, you might need to stop the deployment to perform updates to the application, and do not want to impact existing data. To update, or stop, a deployment:
 

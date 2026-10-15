@@ -1,8 +1,8 @@
 # Redirecting users after form submission { #editingtheurlauserseesaftersubmittingaform .task}
 
-The administrator of a {{shortProductName}} application can add a URL that is triggered when a form is submitted.
+The administrator of a {{shortLeapProductName}} application can add a URL that is triggered when a form is submitted.
 
-You can set {{shortProductName}} to redirect the user to another application, URL, form, or app page upon form submission. Redirecting users to a secondary URL is useful if the user must complete another application that is directly related to the first. The user is redirected to the second URL in a dialog when the first form is submitted.
+You can set {{shortLeapProductName}} to redirect the user to another application, URL, form, or app page upon form submission. Redirecting users to a secondary URL is useful if the user must complete another application that is directly related to the first. The user is redirected to the second URL in a dialog when the first form is submitted.
 
 1.  Click the **Workflow** tab.
 
@@ -10,7 +10,7 @@ You can set {{shortProductName}} to redirect the user to another application, UR
 
 3.  In the **Properties tab**, under **On action completion redirect to:**, select one of the following options from the drop-down:
 
-    -   Another {{shortProductName}} application
+    -   Another {{shortLeapProductName}} application
     -   Website URL
     -   A Form or App Page
 

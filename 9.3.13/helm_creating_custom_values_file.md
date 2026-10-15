@@ -2,7 +2,7 @@
 
 ## About this task
 
-The Leap deployment requires a custom-values.yaml file that defines the settings for your deployment. When working with yaml files in Kubernetes it is important to understand and remember the following guidelines:
+The {{shortLeapProductName}} deployment requires a custom-values.yaml file that defines the settings for your deployment. When working with yaml files in Kubernetes it is important to understand and remember the following guidelines:
 
 - The file has section names, some of which have nested section names. Values must be placed in the correct section using the correct indentation in order for them to be valid.
 - Do not duplicate top-level section names. If you are configuring a setting that belongs in a certain section, check your file for the section name first, then add the value to the existing section. If no such section exists, you can create a new section with the required section name.

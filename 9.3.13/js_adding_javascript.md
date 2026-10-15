@@ -1,10 +1,10 @@
 # Adding JavaScript
 
-You can also further customize your form's behavior by adding custom javaScript.  {{shortProductName}} provides a javaScript API that provides objects and functions to modify the form programmatically.  JavaScript is triggered in the browser by an *event*, there are many events that can be used for this purpose.  For more details on the events available, refer to [Running Custom JavaScript - Events](ref_jsapi_running_custom_js_events.md).
+You can also further customize your form's behavior by adding custom javaScript.  {{shortLeapProductName}} provides a javaScript API that provides objects and functions to modify the form programmatically.  JavaScript is triggered in the browser by an *event*, there are many events that can be used for this purpose.  For more details on the events available, refer to [Running Custom JavaScript - Events](ref_jsapi_running_custom_js_events.md).
 
 ## Form item events
 
-Every item within a {{shortProductName}} form has a set of events that can be used for applying custom javaScript.  You can access the events by clicking on the form item and then clicking the 'Events' tab in the properties pane.
+Every item within a {{shortLeapProductName}} form has a set of events that can be used for applying custom javaScript.  You can access the events by clicking on the form item and then clicking the 'Events' tab in the properties pane.
 
 ![An image of a field's properties pane showing the applicable events](graphics/js_field_properties_events.png)
 

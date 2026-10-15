@@ -1,10 +1,10 @@
 # JavaScript API { #ref_jsapi .reference }
 
-This topic provides details on {{shortProductName}} JavaScript API structure. 
+This topic provides details on {{shortLeapProductName}} JavaScript API structure. 
 
 ## JavaScript™ API Structure { .section }
 
-{{shortProductName}} JavaScript API structure.
+{{shortLeapProductName}} JavaScript API structure.
 
 ![](graphics/jsapi.png)
 
@@ -12,7 +12,7 @@ The graphic provides a high-level view of the JavaScript API object structure at
 
 **Usage Details:**
 
--   This library follows a security protocol as defined in [Securing {{shortProductName}} overview](se_security_toc.md).
+-   This library follows a security protocol as defined in [Securing {{shortLeapProductName}} overview](se_security_toc.md).
 -   For applications with multiple forms, only the form user interface displayed has a Business Object assigned to it. The other forms are hidden, and do not point to data.
 -   Tables point to a data element that is a list of Business Object data instances. These Business Object elements are of the same structure as the Business Objects used for a full form. The sub form that you create for editing the table data works only on one item in this list at a time. When it is not in use, it is hidden and does not point to any data.
 
@@ -52,9 +52,9 @@ Custom JavaScript is run in response to events in the form. These events can be 
 -   **[Running Custom JavaScript Files](ref_jsapi_running_external_js_files.md)**  
 Custom JavaScript can also be loaded from attached JavaScript files. Any .js file that is added to the application in the **Settings** \> **Files** section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.
 -   **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)**  
- Describes the Functions available on different parts of the {{fullProductName}} object model.
+ Describes the Functions available on different parts of the {{fullLeapProductName}} object model.
 -   **[Running third party libraries](ref_jsapi_running_third_party_libraries.md)**  
-Third party JavaScript libraries can be used in your application to extend the functionality of the {{shortProductName}} API.
+Third party JavaScript libraries can be used in your application to extend the functionality of the {{shortLeapProductName}} API.
 
 **Parent topic:** [Reference](reference_toc.md)
 

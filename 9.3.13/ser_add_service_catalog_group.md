@@ -1,12 +1,12 @@
 # Adding a Service Catalog Group { #ser_provide_groups_of_dynamic_services .task}
 
-A Service Catalog Group provides a way to group web services in HCL Leap.
+A Service Catalog Group provides a way to group web services in {{shortLeapProductName}}.
 
 Refer to [Development process](ser_setup_development_environment.md) before starting.
 
-A new Service Catalog Group can be added toLeap by creating and deploying an appropriate OSGi .jar bundle.
+A new Service Catalog Group can be added to {{shortLeapProductName}} by creating and deploying an appropriate OSGi .jar bundle.
 
-To the application designer, Service Catalog Groups are listed in the **Service Catalog** dropdown in the Leap **Service Configuration** dialog. This dropdown allows the application designer to filter services by the Service Catalog Group to which they belong. By default, there are two predefined groups: General and HCL Leap Applications. Providing a new implementation of a Service Catalog Group creates a group as an option in the **Service Catalog** dropdown. Services can be added to a particular Service Catalog Group by implementing a Service Catalog that belongs to that group.
+To the application designer, Service Catalog Groups are listed in the **Service Catalog** dropdown in the {{shortLeapProductName}} **Service Configuration** dialog. This dropdown allows the application designer to filter services by the Service Catalog Group to which they belong. By default, there are two predefined groups: General and {{shortLeapProductName}} Applications. Providing a new implementation of a Service Catalog Group creates a group as an option in the **Service Catalog** dropdown. Services can be added to a particular Service Catalog Group by implementing a Service Catalog that belongs to that group.
 
 1.  Create a Java class
 
@@ -93,7 +93,7 @@ To the application designer, Service Catalog Groups are listed in the **Service 
                 MyServiceCatalogGroup.classn
     ```
 
-    On the Leap server, put the .jar file in one the following directories or in a subdirectory of one of the following directories:
+    On the {{shortLeapProductName}} server, put the .jar file in one the following directories or in a subdirectory of one of the following directories:
 
     -   Windows™:
 
@@ -104,7 +104,7 @@ To the application designer, Service Catalog Groups are listed in the **Service 
         /opt/HCL/Leap/extensions/
 
     !!! note
-        -   If the extensions directory does not exist, you must restart the Leap server after the directory is created.
+        -   If the extensions directory does not exist, you must restart the {{shortLeapProductName}} server after the directory is created.
         -   /opt/HCL/Leap/ is not case-sensitive.
 
 **Parent topic:** [Providing Groups of Dynamic Services](ser_provide_groups_of_dynamic_services.md)
