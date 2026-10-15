@@ -1,8 +1,8 @@
 # Troubleshooting and support { #troubleshootingandsupport .task}
 
-Troubleshooting and support information for {{fullProductName}}.
+Troubleshooting and support information for {{fullLeapProductName}}.
 
-If you are experiencing a problem with the {{shortProductName}}:
+If you are experiencing a problem with the {{shortLeapProductName}}:
 
 1.  Refer to the documentation for the task you are performing or the product component you are working with. These topics may contain troubleshooting information for common problems.
 
@@ -61,9 +61,9 @@ com.hcl.nitro.level=FINEST
 dleap.level=FINEST
 ```
 
-HCL Domino Leap operates as an OSGI Plug-In on the Domino Server. Log files for exceptions and logged events can be found on the Domino server in [Domino_DATA]\domino\workspace\logs.
+{{shortLeapProductName}} operates as an OSGI Plug-In on the Domino Server. Log files for exceptions and logged events can be found on the Domino server in [Domino_DATA]\domino\workspace\logs.
 {% endif %}
 
-Setting a log level to FINE, FINER or FINEST may result in very verbose logging. On a busy server, this could mean hundreds of log messages per minute and it could have a significant impact on {{shortProductName}} performance. After you have gathered logs to troubleshoot a specific problem, we recommend you reduce the logging level to INFO or completely remove them.
+Setting a log level to FINE, FINER or FINEST may result in very verbose logging. On a busy server, this could mean hundreds of log messages per minute and it could have a significant impact on {{shortLeapProductName}} performance. After you have gathered logs to troubleshoot a specific problem, we recommend you reduce the logging level to INFO or completely remove them.
 
 **Parent topic:** [Troubleshooting](tr_troubleshooting_toc.md)

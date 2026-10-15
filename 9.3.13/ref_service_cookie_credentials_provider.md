@@ -4,13 +4,13 @@ This topic describes Cookie Credentials Provider used within a service descripti
 
 ## Purpose of the Cookie Credentials Provider { .section }
 
-The Cookie Credentials Provider provides a mechanism through which cookies between the {{shortProductName}} and the web browser can be made available to a Service Transport.
+The Cookie Credentials Provider provides a mechanism through which cookies between the {{shortLeapProductName}} and the web browser can be made available to a Service Transport.
 
 ## When to use the Cookie Credentials Provider { .section }
 
-The Cookie Credentials Provider is used when {{shortProductName}} and the endpoint of a service share common Single Sign-On \(SSO\) credentials.
+The Cookie Credentials Provider is used when {{shortLeapProductName}} and the endpoint of a service share common Single Sign-On \(SSO\) credentials.
 
-For example, {{shortProductName}} and a service application are installed into the same SSO domain configured using Lightweight Third-Party Authentication \(LTPA\). The Cookie Credentials Provider is used to pass the LTPA tokens that were generated at login by {{shortProductName}} to the service application when a service call is made.
+For example, {{shortLeapProductName}} and a service application are installed into the same SSO domain configured using Lightweight Third-Party Authentication \(LTPA\). The Cookie Credentials Provider is used to pass the LTPA tokens that were generated at login by {{shortLeapProductName}} to the service application when a service call is made.
 
 ## How to Configure the Cookie Credentials Provider { .section }
 

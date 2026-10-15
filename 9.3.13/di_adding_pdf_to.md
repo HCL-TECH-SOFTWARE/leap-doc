@@ -1,6 +1,6 @@
-# Adding a PDF to {{shortProductName}} { #addingapdftofeb .task }
+# Adding a PDF to {{shortLeapProductName}} { #addingapdftofeb .task }
 
-The following instructions describe how to add a PDF to {{shortProductName}}.
+The following instructions describe how to add a PDF to {{shortLeapProductName}}.
 
 1.  Go to **Settings** \> **Files**.
 
@@ -24,5 +24,5 @@ The following instructions describe how to add a PDF to {{shortProductName}}.
         You must save the application after the PDF is loaded. Without saving the application, the PDF is not available when you attempt to create a Service Configuration.
 
 
-**Parent topic:** [{{shortProductName}} document integration](di_pop_doc_with_app_data.md)
+**Parent topic:** [{{shortLeapProductName}} document integration](di_pop_doc_with_app_data.md)
 

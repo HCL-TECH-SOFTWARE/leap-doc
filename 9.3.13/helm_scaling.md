@@ -1,24 +1,24 @@
-# Scaling the Leap deployment
+# Scaling the {{shortLeapProductName}} deployment
 
-There are two supported ways to run multiple Leap pods in Kubernetes: fixed scaling and horizontal pod autoscaling (HPA). These approaches increase capacity but serve different goals.
+There are two supported ways to run multiple {{shortLeapProductName}} pods in Kubernetes: fixed scaling and horizontal pod autoscaling (HPA). These approaches increase capacity but serve different goals.
 
 ## Option 1: Fixed scaling (recommended for high availability)
 
-With fixed scaling, Leap runs with a predefined number of pods that you configure explicitly. All pods are started at deployment time and remain running continuously.
+With fixed scaling, {{shortLeapProductName}} runs with a predefined number of pods that you configure explicitly. All pods are started at deployment time and remain running continuously.
 
 This approach is recommended when:
   - Your primary goal is high availability and failover
   - You want predictable resource usage
   - Your workload is relatively stable
 
-In this configuration, Leap always runs multiple pods, and Kubernetes automatically routes traffic to healthy pods if one becomes unavailable. Horizontal pod autoscaling is not required. For new deployments, start with fixed scaling and add the HPA later if workload patterns change.
+In this configuration, {{shortLeapProductName}} always runs multiple pods, and Kubernetes automatically routes traffic to healthy pods if one becomes unavailable. Horizontal pod autoscaling is not required. For new deployments, start with fixed scaling and add the HPA later if workload patterns change.
 
 ## Option 2: Horizontal pod autoscaling (HPA)
 
-With horizontal pod autoscaling, Kubernetes dynamically adjusts the number of Leap pods based on resource usage, such as CPU or memory.
+With horizontal pod autoscaling, Kubernetes dynamically adjusts the number of {{shortLeapProductName}} pods based on resource usage, such as CPU or memory.
 
 In this configuration:
-  - Leap typically starts with a single pod
+  - {{shortLeapProductName}} typically starts with a single pod
   - Additional pods are created automatically when defined thresholds are exceeded
   - Pods may scale back down when demand decreases
 
@@ -32,22 +32,22 @@ HPA can be used in combination with multiple pods, but it is not required solely
 
 ## Prerequisite – Configure ingress session affinity (required for multiple replicas)
 
-Before increasing the number of Leap replicas (fixed or autoscaled), configure session affinity (also known as sticky sessions) on the ingress. This ensures that a user’s session is consistently routed to the same Leap pod.
+Before increasing the number of {{shortLeapProductName}} replicas (fixed or autoscaled), configure session affinity (also known as sticky sessions) on the ingress. This ensures that a user’s session is consistently routed to the same {{shortLeapProductName}} pod.
 
-Leap does not require a specific ingress controller. However, the following instructions apply to the NGINX Ingress Controller. If you use a different ingress controller, see your controller documentation or contact HCL Support for information
+{{shortLeapProductName}} does not require a specific ingress controller. However, the following instructions apply to the NGINX Ingress Controller. If you use a different ingress controller, see your controller documentation or contact HCL Support for information
 
-**Important:** This step is required when running more than one Leap pod. Without session affinity, user sessions can be routed to different pods, resulting in authentication or application errors.
+**Important:** This step is required when running more than one {{shortLeapProductName}} pod. Without session affinity, user sessions can be routed to different pods, resulting in authentication or application errors.
 
 ### Steps
 
 !!!note
-    Use the namespace where Leap is installed instead of <namespace> in the commands below
+    Use the namespace where {{shortLeapProductName}} is installed instead of <namespace> in the commands below
 
-1. Identify the Leap ingress resource:
+1. Identify the {{shortLeapProductName}} ingress resource:
 
     ```kubectl get ingress -n <namespace>```
 
-2. From the output, note the name of the ingress associated with Leap.
+2. From the output, note the name of the ingress associated with {{shortLeapProductName}}.
 
 3. Edit the ingress resource:
 
@@ -58,7 +58,7 @@ Leap does not require a specific ingress controller. However, the following inst
     ```
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/affinity-mode: "persistent"
-    nginx.ingress.kubernetes.io/session-cookie-name: "LEAP_affinity"
+    nginx.ingress.kubernetes.io/session-cookie-name: "leap_affinity"
     nginx.ingress.kubernetes.io/session-cookie-path: "/"
     nginx.ingress.kubernetes.io/session-cookie-samesite: "Lax"
     nginx.ingress.kubernetes.io/session-cookie-expires: "86400"
@@ -66,7 +66,7 @@ Leap does not require a specific ingress controller. However, the following inst
     ```
 
     !!!note
-        If Leap is embedded in another application (for example, HCL Digital Experience), you may need to change session-cookie-samesite from Lax to None. When using SameSite=None, the cookie must also be marked as Secure, which NGINX Ingress enforces automatically for HTTPS connections.
+        If {{shortLeapProductName}} is embedded in another application (for example, HCL Digital Experience), you may need to change session-cookie-samesite from Lax to None. When using SameSite=None, the cookie must also be marked as Secure, which NGINX Ingress enforces automatically for HTTPS connections.
 
 5. Save and exit the editor.
 
@@ -75,15 +75,15 @@ Leap does not require a specific ingress controller. However, the following inst
 Before proceeding with scaling:
 
   1. Open your browser’s developer tools.
-  2. Load the Leap application.
+  2. Load the {{shortLeapProductName}} application.
   3. Inspect a network request and view the Cookies section.
-  4. Confirm that a cookie named LEAP_affinity is present.
+  4. Confirm that a cookie named {{shortLeapProductName}} is present.
 
 The presence of this cookie confirms that session affinity is configured correctly.
 
-## Scaling Leap without autoscaling (fixed replicas)
+## Scaling {{shortLeapProductName}} without autoscaling (fixed replicas)
 
-To run multiple Leap pods without autoscaling, configure a fixed number of replicas in your Helm values file.
+To run multiple {{shortLeapProductName}} pods without autoscaling, configure a fixed number of replicas in your Helm values file.
 
 1. Open your custom values.yaml file.
 
@@ -101,19 +101,19 @@ scaling:
 
     ```helm upgrade <release-name> <chart> -f values.yaml```
 
-4. Verify that multiple Leap pods are running (substitute your namespace as needed):
+4. Verify that multiple {{shortLeapProductName}} pods are running (substitute your namespace as needed):
 
     ```kubectl get pods -n <namespace>```
 
 ## Autoscaling
 
-The following Kubernetes components are used when configuring autoscaling for HCL Leap.
+The following Kubernetes components are used when configuring autoscaling for {{fullLeapProductName}}.
 
 - **Horizontal Pod Autoscaler (HPA)** A Kubernetes controller that automatically adjusts the number of running pods based on observed resource usage, such as CPU or memory.
 
 - **metrics-server** A cluster-wide service that collects CPU and memory usage metrics from kubelets and makes them available to the HPA.
 
-- **Leap autoscaler configuration (HPA manifest)** A Kubernetes YAML file that defines scaling thresholds, minimum and maximum pod counts, and the Leap workload to be scaled.
+- **{{shortLeapProductName}} autoscaler configuration (HPA manifest)** A Kubernetes YAML file that defines scaling thresholds, minimum and maximum pod counts, and the {{shortLeapProductName}} workload to be scaled.
 
 ### Platform considerations
 
@@ -121,7 +121,7 @@ Each Kubernetes distribution (for example, OpenShift, GKE, EKS, AKS) has its own
 
 ### Prerequisites
 
-Before enabling autoscaling for Leap, ensure the following prerequisites are met:
+Before enabling autoscaling for {{shortLeapProductName}}, ensure the following prerequisites are met:
 
 1. **HPA support is enabled in the cluster**
 
@@ -167,13 +167,13 @@ Before enabling autoscaling for Leap, ensure the following prerequisites are met
 
     For more information, see [https://github.com/kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server).
 
-3. **CPU requests are defined for Leap pods**
+3. **CPU requests are defined for {{shortLeapProductName}} pods**
 
 The HPA calculates utilization as a percentage of the pod’s CPU request. If CPU requests are not defined, autoscaling will not function. You can use the default, or override them based on your workload requirements.
 
 ### Creating the Horizontal Pod Autoscaler
 
-Once the metrics pipeline is in place and CPU requests are configured for Leap, you can create a Horizontal Pod Autoscaler resource to enable autoscaling for the Leap StatefulSet.
+Once the metrics pipeline is in place and CPU requests are configured for {{shortLeapProductName}}, you can create a Horizontal Pod Autoscaler resource to enable autoscaling for the {{shortLeapProductName}} StatefulSet.
 
 Steps:
 
@@ -207,13 +207,13 @@ Steps:
       Modify the example to match your environment:
 
       - **Namespace**
-        Set this to your Leap namespace. If Leap is deployed in the default namespace, use default.
+        Set this to your {{shortLeapProductName}} namespace. If {{shortLeapProductName}} is deployed in the default namespace, use default.
       - **minReplicas**
-        The minimum number of Leap pods that will run at all times. In larger or production environments, consider starting with a value of 2.
+        The minimum number of {{shortLeapProductName}} pods that will run at all times. In larger or production environments, consider starting with a value of 2.
       - **maxReplicas**
         The maximum number of pods the autoscaler is allowed to create. Ensure that sufficient CPU and memory resources are available on the cluster nodes to support the maximum replica count.
       - **averageUtilization**
-        The target average CPU utilization percentage across all Leap pods. When this threshold is exceeded, the HPA scales out by creating additional pods.
+        The target average CPU utilization percentage across all {{shortLeapProductName}} pods. When this threshold is exceeded, the HPA scales out by creating additional pods.
         
         Avoid setting this value too high, as short bursts of demand may not trigger scaling quickly enough to handle incoming requests.
 
@@ -223,14 +223,14 @@ Steps:
 
   5. **Verify that the HPA was created successfully**
 
-      Run the following command, substituting the namespace used for Leap:
+      Run the following command, substituting the namespace used for {{shortLeapProductName}}:
 
       ```kubectl describe hpa -n <namespace>```
 
       Confirm that:
 
       - The HPA named leap-hpa is listed
-      - The Target references the Leap StatefulSet
+      - The Target references the {{shortLeapProductName}} StatefulSet
       - The Metrics section shows CPU utilization
       - No error messages are displayed in the Events section
 

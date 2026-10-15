@@ -4,7 +4,7 @@ You can set rules that govern how pages are shown or hidden in a form.
 
 Before using the following steps, create an application with two pages.
 
-Rules in {{fullProductName}} can help you administer a form so different groups of users are asked for different information. You can add multiple Boolean conditions, such as AND, or OR, for each rule. The following example hides form pages from users whose salary does not meet the rule qualification of $30,000. To use the following steps, you must have multiple pages in your form.
+Rules in {{fullLeapProductName}} can help you administer a form so different groups of users are asked for different information. You can add multiple Boolean conditions, such as AND, or OR, for each rule. The following example hides form pages from users whose salary does not meet the rule qualification of $30,000. To use the following steps, you must have multiple pages in your form.
 
 1.  On Page 1 of your form, add a **Currency** item to your form and title it **Salary**.
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-LTPA (Lightweight Third Party Authentication) enables single sign-on (SSO) capabilities for Leap. Leap uses custom Kubernetes secrets for LTPA configuration.
+LTPA (Lightweight Third Party Authentication) enables single sign-on (SSO) capabilities for {{shortLeapProductName}}. {{shortLeapProductName}} uses custom Kubernetes secrets for LTPA configuration.
 
 ## Configuration Method
 
@@ -20,7 +20,7 @@ configuration:
 
 To generate LTPA keys for Leap, you can use the OpenLiberty `securityUtility` command:
 
-1. Exec into the Leap pod:
+1. Exec into the {{shortLeapProductName}} pod:
    ```bash
    kubectl -n <namespace> exec -it pod/<release>-leap-0 -- /bin/bash
    ```
@@ -79,7 +79,7 @@ data:
 
 ## Configuration Examples
 
-### Example 1: Basic Leap LTPA Setup
+### Example 1: Basic {{shortLeapProductName}} LTPA Setup
 
 ```yaml
 configuration:
@@ -97,7 +97,7 @@ kubectl create secret generic my-leap-ltpa-secret \
   -n production
 ```
 
-### Example 2: Leap with Configuration Sharing
+### Example 2: {{shortLeapProductName}} with Configuration Sharing
 
 Enable shared LTPA configuration for other applications:
 
@@ -111,7 +111,7 @@ configuration:
       customLtpaSecret: "my-leap-ltpa-secret"
 ```
 
-The Leap LTPA configuration is exported to `leap-shared-config-v1` secret for consumption by other products (DX, etc.).
+The {{shortLeapProductName}} LTPA configuration is exported to `leap-shared-config-v1` secret for consumption by other products (DX, etc.).
 
 ## Kubernetes Secret Details
 
@@ -134,7 +134,7 @@ stringData:
 
 ### Issue: LTPA Keys File Not Found
 
-**Symptom:** Leap pod fails with error indicating LTPA keys file is missing.
+**Symptom:** {{shortLeapProductName}} pod fails with error indicating LTPA keys file is missing.
 
 **Solution:**
 1. Verify secret exists:

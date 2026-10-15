@@ -81,6 +81,10 @@ Add the option `-Dfsp.extensions.dirs` to the jvm where Leap is deployed. The va
 2.  Copy the file and paste it to the location you defined above.
 3.  Open the ```Leap\_config.properties``` file and configure the settings to match your system.
 
+!!! note
+    Only one file with an extension of .properties should exist in the extensions folder. Having more than one file in the same directory with the .properties extension will lead to confusion about which properties file is actually being loaded.  Check the server logs after restarting Leap, to confirm which file is being loaded.
+
+
 ### Validate which directory is loaded { #section_h25_tt5_jzb .section }
 
 Check the **Leap SystemOut.log**. There is an entry that indicates which directory is recognized and loaded. For example:

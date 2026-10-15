@@ -1,6 +1,6 @@
 # Install commands to deploy { #helm_install_commands .concept }
 
-This topic details install commands that are used to deploy HCL Leap Helm Charts.
+This topic details install commands that are used to deploy {{fullLeapProductName}} Helm Charts.
 
 ## Install commands { #section_ogm_n44_hzb .section }
 
@@ -14,13 +14,13 @@ helm install -n my-namespace -f path/to/your/custom-values.yaml your-release-nam
 deployment-vX.X.X_XXXXXXXX-XXXX.tar.gz 
 ```
 
--   The `my-namespace` is the namespace where your HCL Leap deployment is installed to.
+-   The `my-namespace` is the namespace where your {{shortLeapProductName}} deployment is installed to.
 
 -   The `-f path/to/your/custom-values.yaml` must point to the custom-values.yaml you have created, which contains all deployment configuration.
 
 -   `your-release-name` is the Helm release name and prefixes all resources created in that installation, such as Pods, Services, and others.
 
--   `path/to/hcl-leap-deployment-vX.X.X_XXXXXXXX-XXXX.tar.gz` is the HCL Leap Helm Chart that you have extracted as described earlier in the planning and preparation steps.
+-   `path/to/hcl-leap-deployment-vX.X.X_XXXXXXXX-XXXX.tar.gz` is the {{shortLeapProductName}} Helm Chart that you have extracted as described earlier in the planning and preparation steps.
 
 
 After a successful deployment, Helm responds with the following message:
@@ -38,15 +38,15 @@ NAME: leap
 
 During the configuration process, you might need the following URLs to access different user interfaces.
 
-Use the following default URLs to access HCL Leap and OpenLiberty Console:
+Use the following default URLs to access {{shortLeapProductName}} and OpenLiberty Console:
 
-**HCL Leap**
+**{{fullLeapProductName}}**
 
 ```
 http://yourserver/apps
 ```
 
-**HCL Leap Rest API**
+**{{fullLeapProductName}} Rest API**
 
 ```
 http://yourserver/apps-basic

@@ -58,7 +58,7 @@ The users who submit Expense Reports are Initiators, and for this scenario the u
 
     1.  In the Individual Users field, add your own name.
 
-        As you manually enter Individual Users or Groups, {{shortProductName}} provides you with predictive matches based on your entry. These predictive matches are taken from your company LDAP{% if isLeap %}, users that are configured in your IBM® WebSphere® Application Server, or IBM WebSphere Portal Server{% endif %}. By adding your name to the Human Resources Group, you are able to enter sample data into the form, and review all submitted responses.
+        As you manually enter Individual Users or Groups, {{shortLeapProductName}} provides you with predictive matches based on your entry. These predictive matches are taken from your company LDAP{% if isLeap %}, users that are configured in your IBM® WebSphere® Application Server, or IBM WebSphere Portal Server{% endif %}. By adding your name to the Human Resources Group, you are able to enter sample data into the form, and review all submitted responses.
 
     2.  Click Add User icon.
 
@@ -103,5 +103,5 @@ The users who submit Expense Reports are Initiators, and for this scenario the u
     Accept or reject the sample data to test the workflow elements you built into the form.
 
 
-**Parent topic:** [Adding tables and workflow elements to a {{shortProductName}} form](tut_roles_and_stages_OV.md)
+**Parent topic:** [Adding tables and workflow elements to a {{shortLeapProductName}} form](tut_roles_and_stages_OV.md)
 

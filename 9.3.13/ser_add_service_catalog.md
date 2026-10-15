@@ -1,8 +1,8 @@
 # Adding a Service Catalog { #ser_add_service_catalog .task}
 
-A Service Catalog serves two purposes. First, a Service Catalog is a programmatic mechanism to dynamically provide Service Descriptions to HCL Leap instead of using static XML files. Second, a Service Catalog is linked to a Service Catalog Group and provides a mechanism to assign Service Descriptions to a specific Service Catalog Group.
+A Service Catalog serves two purposes. First, a Service Catalog is a programmatic mechanism to dynamically provide Service Descriptions to {{shortLeapProductName}} instead of using static XML files. Second, a Service Catalog is linked to a Service Catalog Group and provides a mechanism to assign Service Descriptions to a specific Service Catalog Group.
 
-A Service Catalog is implemented similarly to a Service Catalog Group. Begin by creating an implementation of the IServiceCatalog interface. The recommended approach is to extend the AbstractServiceCatalog class. Your implementation and supporting files are then packaged into an OSGi bundle and deployed to the extensions directory on the Leap server. Refer to [Development process](ser_setup_development_environment.md) before using the following instructions.
+A Service Catalog is implemented similarly to a Service Catalog Group. Begin by creating an implementation of the IServiceCatalog interface. The recommended approach is to extend the AbstractServiceCatalog class. Your implementation and supporting files are then packaged into an OSGi bundle and deployed to the extensions directory on the {{shortLeapProductName}} server. Refer to [Development process](ser_setup_development_environment.md) before using the following instructions.
 
 1.  Create a Java class
 

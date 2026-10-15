@@ -1,6 +1,6 @@
 # Configuring behavior of a form on submission { #sendingausertoanotherurlaftercompletingaform .task}
 
-Once a user completes a {{shortProductName}} form, you can send them to another stage of that form.
+Once a user completes a {{shortLeapProductName}} form, you can send them to another stage of that form.
 
 After a user submits a form, you can show them the next stage of a form. For example, to confirm what they submitted by pressing a confirmation button, or to show a read-only copy of the information they submitted. You can also limit authenticated users from submitting multiple forms.
 

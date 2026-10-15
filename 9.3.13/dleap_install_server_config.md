@@ -50,7 +50,7 @@ If using Internet Site documents, create and enable a Web Site document for the 
 
 6. Review the settings on the **Security** tab and ensure they are appropriate for your environment.
 
-    To enable anonymous access to {{shortProductName}}, *Anonymous*, under *TCP Authentication* must be set to *Yes*.
+    To enable anonymous access to {{shortLeapProductName}}, *Anonymous*, under *TCP Authentication* must be set to *Yes*.
 
     ![image of security tab with anonymous set to yes](graphics/dleap/dleap_enable_anonymous.png)
 

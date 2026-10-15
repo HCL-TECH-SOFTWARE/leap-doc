@@ -8,41 +8,41 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-new-box:{ .lg .middle } __What's New?__
+<!-- -   :material-new-box:{ .lg .middle } __What's New?__
 
     ---
 
-    Find out what's new in the latest {{fullProductName}}.
+    Find out what's new in the latest {{fullLeapProductName}}.
     
     ---
 
-    [:octicons-arrow-right-24: Go to What's New](./whats_new.md)
+    [:octicons-arrow-right-24: Go to What's New](./whats_new.md) -->
     
--   :material-code-braces-box:{ .lg .middle } __Introducing {{shortProductName}}__
+-   :material-code-braces-box:{ .lg .middle } __Introducing {{shortLeapProductName}}__
 
     ---
 
-    {{fullProductName}} builds dynamic forms and applications with a web-based interface. From a single interface, you can design a form, define access privileges, create workflow stages, deploy the application, and review submitted results.    
+    {{fullLeapProductName}} builds dynamic forms and applications with a web-based interface. From a single interface, you can design a form, define access privileges, create workflow stages, deploy the application, and review submitted results.    
 
     ---
 
-    [:octicons-arrow-right-24: Learn about {{shortProductName}}](./ovr_overview.md)
+    [:octicons-arrow-right-24: Learn about {{shortLeapProductName}}](./ovr_overview.md)
 
--   :material-server-network:{ .lg .middle } __Deploying {{shortProductName}}__
+-   :material-server-network:{ .lg .middle } __Deploying {{shortLeapProductName}}__
 
     ---
 
-    Learn how to deploy {{shortProductName}}.
+    Learn how to deploy {{shortLeapProductName}}.
     
     ---
 
-    [:octicons-arrow-right-24: Deploying {{shortProductName}}](./{{deployUrl}})
+    [:octicons-arrow-right-24: Deploying {{shortLeapProductName}}](./{{deployUrl}})
 
 -   :material-list-box:{ .lg .middle } __System Requirements__
 
     ---
 
-    Know the minimum system requirements for {{fullProductName}} version {{currentVersion}} and later.
+    Know the minimum system requirements for {{fullLeapProductName}} version {{currentLeapVersion}} and later.
 
     ---
 
@@ -52,7 +52,7 @@ hide:
 
     ---
 
-    The {{shortProductName}} Help Center contains a section for tutorials to help you use {{shortProductName}}.
+    The {{shortLeapProductName}} Help Center contains a section for tutorials to help you use {{shortLeapProductName}}.
 
     ---
 
@@ -64,7 +64,7 @@ hide:
 
     <!--![HCL Software U Logo](./assets/homepage-images/HCLSoftware-U-logo-blk.png)-->
 
-    Explore self-paced learning courses for using {{fullProductName}}.
+    Explore self-paced learning courses for using {{fullLeapProductName}}.
     
     ---
 
@@ -84,31 +84,31 @@ hide:
 
     ---
 
-    Join {{shortProductName}} community forums to connect with other {{shortProductName}} users, ask questions, and share insights.
+    Join {{shortLeapProductName}} community forums to connect with other {{shortLeapProductName}} users, ask questions, and share insights.
 
     ---
 
     [:octicons-arrow-right-24: Go to Community Forums](https://support.hcltechsw.com/community){target="_blank"}
 
--   :material-account-group:{ .lg .middle } __{{shortProductName}} Ideas Portal__
+-   :material-account-group:{ .lg .middle } __{{shortLeapProductName}} Ideas Portal__
 
     ---
 
-    Join the {{shortProductName}} Ideas Portal to submit ideas for {{fullProductName}}.
+    Join the {{shortLeapProductName}} Ideas Portal to submit ideas for {{fullLeapProductName}}.
 
     ---
 
-    [:octicons-arrow-right-24: Join {{shortProductName}} Ideas Portal](https://domino-ideas.hcltechsw.com/){target="_blank"}
+    [:octicons-arrow-right-24: Join {{shortLeapProductName}} Ideas Portal](https://domino-ideas.hcltechsw.com/){target="_blank"}
 
--   :material-help-box:{ .lg .middle } __{{oldDocsVersionStr}} and earlier Help Center__
-
-    ---
-
-    This Help Center contains documentation for earlier {{fullProductName}} versions.
+-   :material-help-box:{ .lg .middle } __{{oldLeapDocsVersionStr}} and earlier Help Center__
 
     ---
 
-    [:octicons-arrow-right-24: Go to {{oldDocsVersionStr}} and earlier Help Center]({{oldDocsUrl}}){target="_blank"}
+    This Help Center contains documentation for earlier {{fullLeapProductName}} versions.
+
+    ---
+
+    [:octicons-arrow-right-24: Go to {{oldLeapDocsVersionStr}} and earlier Help Center]({{oldLeapDocsUrl}}){target="_blank"}
 
 
 </div>

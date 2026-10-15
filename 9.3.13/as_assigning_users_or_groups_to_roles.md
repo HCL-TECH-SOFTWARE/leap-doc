@@ -2,7 +2,7 @@
 
 Give the users in your organization permission to work with the data relevant to them by assigning them roles.
 
-After you establish roles for the users in your organization, you can start assigning users to those roles by adding them individually, or in groups using the **Access** tab in {{fullProductName}}. For example, you can assign users or groups as defined in your LDAP to **Roles**. You can use the search to find users and groups within your company directory, or database. There are several predefined groups from which to choose:
+After you establish roles for the users in your organization, you can start assigning users to those roles by adding them individually, or in groups using the **Access** tab in {{fullLeapProductName}}. For example, you can assign users or groups as defined in your LDAP to **Roles**. You can use the search to find users and groups within your company directory, or database. There are several predefined groups from which to choose:
 
 #### All Authenticated Users
 
@@ -42,10 +42,10 @@ To add users from predefined groups:
     -   To use an existing group, select the group and click the **Add group** plus sign.
     The **Role Members** window shows the members that are assigned to the role.
 
-3.  You can remove members from a role by clicking **Delete user** for the name of the member., or run a test to see whether {{shortProductName}} can find the member.
+3.  You can remove members from a role by clicking **Delete user** for the name of the member., or run a test to see whether {{shortLeapProductName}} can find the member.
 
     -   To remove a member from a group, click **Delete group** for the name of the member.
-    -   To test if {{shortProductName}} can find a group member, click **Validate**.
+    -   To test if {{shortLeapProductName}} can find a group member, click **Validate**.
 
 **Parent topic:** [Securing](se_security_toc.md)
 

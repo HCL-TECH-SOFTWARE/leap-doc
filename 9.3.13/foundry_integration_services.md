@@ -1,10 +1,10 @@
 # Use the integration services defined in HCL Volt MX Foundry
 
-{{fullProductName}} can now use the integration services defined in [HCL Volt MX Foundry](https://opensource.hcltechsw.com/volt-mx-docs/docs/documentation/tutorials/voltmxFoundryOverview.html).
+{{fullLeapProductName}} can now use the integration services defined in [HCL Volt MX Foundry](https://opensource.hcltechsw.com/volt-mx-docs/docs/documentation/tutorials/voltmxFoundryOverview.html).
 
-{{shortProductName}} can be connected to more than one Foundry application and can even be located on different Foundry cloud or on-premise servers.  This integration does not require any identity services because all requests will be made using the app key and the app secret of the application.
+{{shortLeapProductName}} can be connected to more than one Foundry application and can even be located on different Foundry cloud or on-premise servers.  This integration does not require any identity services because all requests will be made using the app key and the app secret of the application.
 
-Once configured, {{shortProductName}} will connect with Foundry to determine the services and operations that need to appear in {{shortProductName}}.  Each service in the Foundry application will be represented as a Service Catalog in {{shortProductName}}.  Each operation in the Foundry service will appear as a service in the {{shortProductName}} catalog.  {{shortProductName}} will periodically reach out to Foundry to insure that its service catalogs and services are kept in sync.
+Once configured, {{shortLeapProductName}} will connect with Foundry to determine the services and operations that need to appear in {{shortLeapProductName}}.  Each service in the Foundry application will be represented as a Service Catalog in {{shortLeapProductName}}.  Each operation in the Foundry service will appear as a service in the {{shortLeapProductName}} catalog.  {{shortLeapProductName}} will periodically reach out to Foundry to insure that its service catalogs and services are kept in sync.
 
 Before configuring the integration you will need to have a published Foundry application that includes at least 1 integration service and operation.
 
@@ -37,11 +37,11 @@ Before configuring the integration you will need to have a published Foundry app
     - **Public**: no security
     - **Private**: no external access
 
-    In most scenarios, you must select **Anonymous App Users**. The current Leap integration does not support Foundry identity services. If you select **Authenticated App Users** without configuring an identity service, Foundry will function as if **Anonymous App Users** was selected.
+    In most scenarios, you must select **Anonymous App Users**. The current {{shortLeapProductName}} integration does not support Foundry identity services. If you select **Authenticated App Users** without configuring an identity service, Foundry will function as if **Anonymous App Users** was selected.
 
 11. Click **Save Operation**.
 12. Click on the **Publish** tab.
-13. Click the **Publish** button. Once the app is published, you can proceed to the next step: setting up the {{shortProductName}} configuration.
+13. Click the **Publish** button. Once the app is published, you can proceed to the next step: setting up the {{shortLeapProductName}} configuration.
 
 You will need the service URL, primary app key, and primary app secret. If you did not copy them from the publish dialog, you can access them by clicking on the **Key** button in the upper-right corner of the application card on the **Publish** tab.
 
@@ -49,11 +49,11 @@ For more detailed information on the HCL Volt MX Foundry integration services re
 
 ## Enabling and configuring the MX Foundry Integration
 
-In this section we will configure {{shortProductName}} so that it can communicate with MX Foundry and its integration services.
+In this section we will configure {{shortLeapProductName}} so that it can communicate with MX Foundry and its integration services.
 
-The process for enabling and configuring the integration depends on your {{shortProductName}} environment. 
+The process for enabling and configuring the integration depends on your {{shortLeapProductName}} environment. 
 
-If you have the Admin Configuration page enabled you will use it, otherwise the settings are defined as [{{shortProductName}} properties](co_configuration_properties.md).
+If you have the Admin Configuration page enabled you will use it, otherwise the settings are defined as [{{shortLeapProductName}} properties](co_configuration_properties.md).
 
 There are 3 things that are required for each Foundry application:
 
@@ -61,7 +61,7 @@ There are 3 things that are required for each Foundry application:
 
 2. the service url (serviceUrl) - This is the url for the integration service.  It can be copied from the Foundry "publish" dialog.
 
-3. the credential alias (credentialAlias) - This is the name of the credential object that contains the app key and app secret which is used to communicate with MX Foundry.  The credential setup depends on where {{shortProductName}} is deployed.
+3. the credential alias (credentialAlias) - This is the name of the credential object that contains the app key and app secret which is used to communicate with MX Foundry.  The credential setup depends on where {{shortLeapProductName}} is deployed.
 
 
 ### How to create credential for accessing MX Foundry
@@ -69,22 +69,22 @@ There are 3 things that are required for each Foundry application:
 The process for creating the credential object is based on the deployment environment: WebSphere, Kubernetes, or Domino.
 
 {% if isLeap %}
-#### Create credential for Leap on WebSphere
+#### Create credential for {{shortLeapProductName}} on WebSphere
 
-The credential object for Leap running on WebSphere is a J2c Alias.
+The credential object for {{shortLeapProductName}} running on WebSphere is a J2c Alias.
 
 1. Login to the **WebSphere Administration** console.
 2. Create a new J2C Alias.
-3. Provide a name for the alias.  This is the value that will be given to the ```credentialAlias``` in the Leap configuration.
+3. Provide a name for the alias.  This is the value that will be given to the ```credentialAlias``` in the {{shortLeapProductName}} configuration.
 4. Copy the app key from the MX Foundry publish dialog into the username field.
 5. Copy the app secret from the MX Foundry publish dialog into the password field.
 6. Save the alias.
 7. Restart WebSphere.
 
 
-#### Create credential for Leap on Kubernetes
+#### Create credential for {{shortLeapProductName}} on Kubernetes
 
-The credential object for Leap running on WebSphere is a Kubernetes Secret. The value you supply is the same as the one you have used in creating the kubernetes secret.
+The credential object for {{shortLeapProductName}} running on WebSphere is a Kubernetes Secret. The value you supply is the same as the one you have used in creating the kubernetes secret.
 
 First, create a kubernetes secret using the command below:
 
@@ -94,7 +94,7 @@ First, create a kubernetes secret using the command below:
 
 - The ```<secretName>``` will be how the object is identified within Kubernetes.
 
-- The ```<credentialAlias>``` is the value provided to the 'credentialAlias' property. This is how Leap will locate/use this object.
+- The ```<credentialAlias>``` is the value provided to the 'credentialAlias' property. This is how {{shortLeapProductName}} will locate/use this object.
 
 - The ```<appKey>``` is the app key for the Foundry application.
 
@@ -120,37 +120,37 @@ configuration:
 {% endif %}
 
 {% if isDominoLeap %}
-#### Create credential for Domino Leap 
+#### Create credential for Domino {{shortLeapProductName}} 
 
-The credential object for Domino Leap is a service credential which can be defined in the Leap Config DB (.nsf).
+The credential object for {{shortLeapProductName}} is a service credential which can be defined in the {{shortLeapProductName}} Config DB (.nsf).
 
 1. Open the **Leap Configuration** database in **HCL Domino Designer** or **HCL Notes**.
 2. Create a new service credential.
-3. Provide a name for the credential, this is the value that is given to the ```credentialAlias``` in the Leap configuration.
+3. Provide a name for the credential, this is the value that is given to the ```credentialAlias``` in the {{shortLeapProductName}} configuration.
 4. Copy the app key from the MX Foundry publish dialog into the username field.
 5. Copy the app secret from the MX Foundry publish dialog into the password field.
 6. Save the service credential.
 {% endif %}
 
 
-## Using a service from MX Foundry in your {{shortProductName}} application
+## Using a service from MX Foundry in your {{shortLeapProductName}} application
 
-The MX Foundry services will appear in the service configuration dialog.  The Foundry service will be the name of the service catalog.  After selecting the catalog, the Foundry operations will be listed as the {{shortProductName}} services.
+The MX Foundry services will appear in the service configuration dialog.  The Foundry service will be the name of the service catalog.  After selecting the catalog, the Foundry operations will be listed as the {{shortLeapProductName}} services.
 
 Select the service and continue through the dialog to map inputs and outputs as you would for any other service.
 
 ## Troubleshooting the HCL Volt MX Integration
 
-If your Foundry Integration services are not appearing with in {{shortProductName}}, try the following procedures:
+If your Foundry Integration services are not appearing with in {{shortLeapProductName}}, try the following procedures:
 
-- Verify that your {{shortProductName}} server can reach the Foundry server.
+- Verify that your {{shortLeapProductName}} server can reach the Foundry server.
 - Verify that you have enabled the integration.
 - Verify that you have defined all three config settings for the Foundry application (app name, service url, and credential alias).
 - Verify that the username and password in the credential alias is using the correct app key (should be used as the username) and app secret (used as the password).
-- Verify that your Foundry application is published.  If it was published recently, then you may need to wait at least 5 minutes before the change will appear in {{shortProductName}}.  Restarting {{shortProductName}} will also force a refresh of content from Foundry.
-- {{shortProductName}} caches (default is 60 minutes) the artifacts that define the foundry services, if your changes are not appearing in {{shortProductName}} then you may need to restart {{shortProductName}}.
+- Verify that your Foundry application is published.  If it was published recently, then you may need to wait at least 5 minutes before the change will appear in {{shortLeapProductName}}.  Restarting {{shortLeapProductName}} will also force a refresh of content from Foundry.
+- {{shortLeapProductName}} caches (default is 60 minutes) the artifacts that define the foundry services, if your changes are not appearing in {{shortLeapProductName}} then you may need to restart {{shortLeapProductName}}.
 - You may need to install the trusted root certificate for the SSL certificate that was used to secure the MX Foundry server.
 - Increase the log level by adding the trace string "com.ibm.form.nitro.service.*=finest".
 - If the catalogs and services are still not appearing, contact [Support](https://support.hcltechsw.com/csm?id=csm_index).
 
-**Parent topic:** [Administering {{shortProductName}}](administering_leap.md)
+**Parent topic:** [Administering](administering_leap.md)

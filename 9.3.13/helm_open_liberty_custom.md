@@ -1,6 +1,6 @@
 # Open Liberty server customizations 
 
-The configOverrideFiles parameter allows configuration snippets to be passed to the Leap server.
+The configOverrideFiles parameter allows configuration snippets to be passed to the {{shortLeapProductName}} server.
 
 The snippets are merged into the Open Liberty server.xml. After making changes to the .yaml, apply them using the `helm upgrade ...` command. Changes are picked up by Open Liberty and applied at runtime - this does not require a restart.
 

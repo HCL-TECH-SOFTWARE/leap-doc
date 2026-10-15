@@ -1,7 +1,7 @@
 # Examples { #widgets_examples .concept}
 
 !!! note
-    The 'Acme' examples mentioned here are deployed with {{shortProductName}}.
+    The 'Acme' examples mentioned here are deployed with {{shortLeapProductName}}.
 
 Each 'Acme' widget requires the Acme_Widgets.css and Acme_common.js, these files only need to be defined once.
 ```

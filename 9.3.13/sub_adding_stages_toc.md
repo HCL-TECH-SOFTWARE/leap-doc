@@ -2,7 +2,7 @@
 
 It is often desirable to have an application, or form, transition through a set of phases or stages. At each stage the form might be used by different people in different roles. The form also might be presented in a slightly different manner in each stage, such as having some items or pages hidden, or in a read-only state.
 
-Each form in a {{shortProductName}} application can have multiple stages. By default, a newly created form has two stages:
+Each form in a {{shortLeapProductName}} application can have multiple stages. By default, a newly created form has two stages:
 
 -   **Start** – The initial state of every form. Once the form transitions away from the **Start** stage it cannot return.
 -   **Submitted** – A submitted form is stored in this stage. Forms in this stage may be updated by users with permission.
@@ -31,7 +31,7 @@ Refer to [Incorporating web services into your applications](cr_using_apps_as_se
 
 ## Controlling item visibility by stage
 
-The **Visibility** tab also allows the application designer to disable or hide individual form items or entire pages within a specific stage of a form. {{shortProductName}} provides control over which users can access or modify form data at each stage. Permissions can be configured by selecting a stage and navigating to **Permissions**, or by using the **Visibility** tab. For more information, see [Application and Security overview](se_security_toc.md).
+The **Visibility** tab also allows the application designer to disable or hide individual form items or entire pages within a specific stage of a form. {{shortLeapProductName}} provides control over which users can access or modify form data at each stage. Permissions can be configured by selecting a stage and navigating to **Permissions**, or by using the **Visibility** tab. For more information, see [Application and Security overview](se_security_toc.md).
 
 ## Branching { #section_hjd_3rw_rvb .section}
 
@@ -143,12 +143,12 @@ The **My Tasks** page is accessible from the main page. This page shows records 
 
 ## Additional Topics
 
-The following topics describe scenarios related to stages and workflow in your HCL Leap application.
+The following topics describe scenarios related to stages and workflow in your {{shortLeapProductName}} application.
 
 -   **[Editing the message a user sees upon form submission](sub_editing_the_message_a_user_sees.md)**  
-The administrator of a {{shortProductName}} application can edit the completion message a user sees when submitting a form.
+The administrator of a {{shortLeapProductName}} application can edit the completion message a user sees when submitting a form.
 -   **[Redirecting users after form submission](sub_editing_the_url_a_user_sees.md)**  
-The administrator of a {{shortProductName}} application can add a URL that is triggered when a form is submitted.
+The administrator of a {{shortLeapProductName}} application can add a URL that is triggered when a form is submitted.
 -   **[Sending an email after a user submits a form](sub_sending_an_email.md)**  
 You can send email notifications to managers or other users by adding an activity to the Submit button in a form.
 -   **[Populating information upon form submission using a web service](sub_use_service_to_populate_on_form_submission.md)**  
@@ -158,13 +158,13 @@ You can dynamically add a user to a role as part of a form submission.
 -   **[Removing users from a role after submission](sub_removing_a_user.md)**  
 You can dynamically remove a user from a role as part of a form submission.
 -   **[Configuring behavior of a form on submission](sub_sending_a_user_to_another_url.md)**  
-Once a user completes a {{shortProductName}} form, you can send them to another stage of that form.
+Once a user completes a {{shortLeapProductName}} form, you can send them to another stage of that form.
 -   **[Saving work as a draft](sad_allowing_users_to_save.md)**  
 Some applications cannot be completed by the user in one session. If your application is very large or complicated, you can allow users to save their work as a draft before submitting it.
 -   **[Scenario: hidden or read-only form items in Stages](sub_hidden_or_read_only_items_in_stages.md)**  
 This scenario uses a Vacation Request application to describe how to use multiple Stages to make sections of a form that is either hidden, or read-only.
 -   **[Saving a PDF to a file location](sub_saving_pdf.md)**  
-Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the {{shortProductName}} submission record, or both.
+Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the {{shortLeapProductName}} submission record, or both.
 
 **Parent topic:** [Adding dynamic behavior](cr_adding_dynamic_behavior.md)
 

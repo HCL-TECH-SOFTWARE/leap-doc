@@ -2,9 +2,9 @@
 
 Application Owners can use an Import Data operation on the **View Data** page to import spreadsheet data into their application. This can provide a quick start method for adding many records/rows of data into an application from an existing spreadsheet.
 
-The import operation is available for application Owners to use as an alternative to keying each row of data into the Launch experience of their {{shortProductName}} application and as an alternative to using the Data Access Rest API to programmatically add the data.
+The import operation is available for application Owners to use as an alternative to keying each row of data into the Launch experience of their {{shortLeapProductName}} application and as an alternative to using the Data Access Rest API to programmatically add the data.
 
-Each row of data in the spreadsheet is imported into the Start stage of your {{shortProductName}} application as a new submitted record. Supported spreadsheet formats are Microsoft Excel 97 workbook and Microsoft Excel workbook \(.xls and .xlsx\).
+Each row of data in the spreadsheet is imported into the Start stage of your {{shortLeapProductName}} application as a new submitted record. Supported spreadsheet formats are Microsoft Excel 97 workbook and Microsoft Excel workbook \(.xls and .xlsx\).
 
 !!! note
     Microsoft Excel 5.0/95 workbooks are not supported.
@@ -39,7 +39,7 @@ The data import operation stops when it encounters blank columns or rows in the 
 
 The data import operation supports a maximum of 1000 rows of data.
 
-To import data that has been exported from a {{fullProductName}} application:
+To import data that has been exported from a {{fullLeapProductName}} application:
 
 -   You must replace the column header label with the item IDs required for mapping.
 -   The metadata can not be imported and must be removed from the spreadsheet or mapped to a form item.

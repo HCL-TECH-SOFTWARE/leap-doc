@@ -1,8 +1,9 @@
-# Connect Leap to LDAP
-To connect Leap with an LDAP you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. A sample snippet has been provided, which will need to be updated with your specific details.
+# Connect {{shortLeapProductName}} to LDAP
+To connect {{shortLeapProductName}} with an LDAP you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. A sample snippet has been provided, which will need to be updated with your specific details.
 
-Below is an example snippet of configuring Leap to use an LDAP server as part of a federated repository. The baseDN, bindDN and bindPassword will need to be replaced with the proper values. The searchBase for the ldap entity types will also need to be updated. The participatingBaseEntry will need to match the baseDN defined in the LDAP server snippet.
+Below is an example snippet of configuring {{shortLeapProductName}} to use an LDAP server as part of a federated repository. The baseDN, bindDN and bindPassword will need to be replaced with the proper values. The searchBase for the ldap entity types will also need to be updated. The participatingBaseEntry will need to match the baseDN defined in the LDAP server snippet.
 
+{% if isLeap %}
 Valid values for the "ldapType" are:
 
 -   Custom
@@ -13,17 +14,23 @@ Valid values for the "ldapType" are:
 -   Netscape Directory Server
 -   Novell eDirectory
 -   Sun Java System Directory Server
+{% endif %}
 
-It is recommended to specify a "realmName" as it makes it easier to reference entries from this LDAP configuration, specifically in the Leap role assignments.
+{% if isDWLeap %}
+{{shortLeapProductName}} uses Domino as the LDAP.
+{% endif %}
+
+It is recommended to specify a "realmName" as it makes it easier to reference entries from this LDAP configuration, specifically in the {{shortLeapProductName}} role assignments.
 
 For more specific details on what is supported by OpenLiberty, refer to their [ldap registry documentation](https://openliberty.io/docs/latest/reference/config/ldapRegistry.html).
 
 !!! note
-    The userSecurityNameMapping and groupSecurityNameMapping are required. These properties control how users and groups are displayed while using Leap.
+    The userSecurityNameMapping and groupSecurityNameMapping are required. These properties control how users and groups are displayed while using {{shortLeapProductName}}.
 
 !!! note
-    For Leap to be able to send mail the loginProperty must be set to mail.
+    For {{shortLeapProductName}} to be able to send mail the loginProperty must be set to mail.
 
+{% if isLeap %}
 ## Example connecting to OpenLdap
 ```yaml
 configuration: 
@@ -64,6 +71,7 @@ configuration:
            </ldapRegistry> 
         </server>
 ```
+{% endif %}
 
 ## Example Connecting to Domino LDAP
 ```yaml
@@ -84,15 +92,17 @@ configuration:
            <ldapRegistry id="DominoLdap" 
               name="o=Acme" 
               ldapType="IBM Lotus Domino" 
-              host="ldaphost.acme.com" port="389" 
+              host="ldaphost.acme.com"
+              port="636" 
               baseDN="o=Acme" 
               searchTimeout="8m" 
               ignoreCase="true" 
-              bindDN="cn=Manager/o=Acme" 
-              bindPassword="secret"
+              bindDN="${ldap-credentials/LDAP_BIND_DN}"
+              bindPassword="${ldap-credentials/LDAP_BIND_PASSWORD}"
               realmName="acmeRealm" 
-              sslEnabled="false" 
-              derefAliases="never"> 
+              sslEnabled="true" 
+              sslRef="defaultSSLConfig"
+              derefAliases="never">
                 <loginProperty name="mail"></loginProperty> 
                 <ldapEntityType name="PersonAccount"> 
                   <objectClass>dominoPerson</objectClass>
@@ -100,7 +110,7 @@ configuration:
                 <ldapEntityType name="Group"> 
                   <objectClass>dominoGroup</objectClass> 
                 </ldapEntityType> 
-                <customFilters userIdMap="*:mail" groupIdMap="*:cn" groupMemberIdMap="dominoGroup:member" userFilter="(&amp;(mail=%v)(objectclass=dominoPerson))" groupFilter="(&amp;(cn=%v)(objectclass=dominoGroup))"/> 
+                <customFilters userIdMap="*:mail" groupIdMap="*:cn" groupMemberIdMap="dominoGroup:member" userFilter="(&amp;(objectclass=dominoPerson)(mail=%v))" groupFilter="(&amp;(objectclass=dominoGroup)(cn=%v))"/> 
            </ldapRegistry> 
         </server>
 ```

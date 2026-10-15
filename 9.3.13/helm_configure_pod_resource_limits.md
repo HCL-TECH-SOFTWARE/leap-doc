@@ -2,7 +2,7 @@
 
 ## Default pod resources
 
-By default, a Leap pod is deployed with the following resource settings:
+By default, a {{shortLeapProductName}} pod is deployed with the following resource settings:
 
 - Requests
   - CPU: 1 core
@@ -18,16 +18,16 @@ These defaults provide a starting point for development and testing environments
 
 Consider overriding the default pod resources in the following scenarios:
 
-- Your Leap application serves a moderate to high volume of users
+- Your {{shortLeapProductName}} application serves a moderate to high volume of users
 - The cluster is busy or resource-constrained
-- You are migrating an existing, larger Leap deployment
+- You are migrating an existing, larger {{shortLeapProductName}} deployment
 - You observe performance symptoms such as slow response times or thread starvation
 
 In production environments, explicitly request the resources your workload requires instead of relying on Kubernetes to scale CPU.
 
 ## CPU throttling considerations (important)
 
-Leap runs on Open Liberty, which is highly performant but sensitive to CPU throttling. When a pod reaches its CPU limit, Kubernetes may throttle the container, even if additional CPU is available on the node.
+{{shortLeapProductName}} runs on Open Liberty, which is highly performant but sensitive to CPU throttling. When a pod reaches its CPU limit, Kubernetes may throttle the container, even if additional CPU is available on the node.
 
 CPU throttling can lead to:
 
@@ -43,7 +43,7 @@ For these reasons, it is strongly recommended to:
 
 Reserving adequate CPU up front allows the Kubernetes scheduler to place the pod appropriately and helps prevent throttling-related performance issues. 
 
-To effectively reserve the resources and prevent CPU throttling, set the CPU requests and CPU limits to be the same. This ensures the scheduler places the Leap pod only on nodes that can support the workload.
+To effectively reserve the resources and prevent CPU throttling, set the CPU requests and CPU limits to be the same. This ensures the scheduler places the {{shortLeapProductName}} pod only on nodes that can support the workload.
 
 ## Memory sizing guidance
 
@@ -70,6 +70,6 @@ resources:
       memory: "4Gi"
 ```
 
-Monitor your Kubernetes cluster and the Leap container for performance. If the Leap container reaches capacity or is restarts because of out of memory kills, increase the pod size.
+Monitor your Kubernetes cluster and the {{shortLeapProductName}} container for performance. If the {{shortLeapProductName}} container reaches capacity or is restarts because of out of memory kills, increase the pod size.
 
 **Parent topic:** [Preparation](helm_preparation.md)

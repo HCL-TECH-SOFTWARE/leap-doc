@@ -1,11 +1,20 @@
 # Configuration properties 
 
-This topic contains a list of properties in the {{shortProductName}} {% if isLeap %}Leap_config.properties file or defined in the Kubernetes .yaml file{% endif %}{% if isDominoLeap %}VoltConfig.nsf{% endif %}. You can adjust the settings listed in the file, or add your own for a custom configuration.
+This topic contains a list of properties in the {{shortLeapProductName}} {% if isLeap %}Leap_config.properties file or defined in the Kubernetes .yaml file{% endif %}{% if isDominoLeap %}VoltConfig.nsf{% endif %}. You can adjust the settings listed in the file, or add your own for a custom configuration.
+
+{% if not isDominoLeap %}
+Properties that are managed by the [Admin configuration page](admin_config_ui.md) cannot be modified by any other mechanism.
+{% endif %}
 
 
 ## Properties { #section_config_properties .section }
 
 ### adminInfo { #section_admininfo .section }
+
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
 
 Allows admin contact information to be shown within error messages.
 
@@ -25,7 +34,7 @@ If neither are provided, the error message will be “We are unable to process y
 
 ### anonBlockedMsg { #section_anonblockedmsg }
 
-When a user attempts to access a {{shortProductName}} application anonymously, an error message is displayed. The default message is “Anonymous access blocked”. You can change the default message to provide additional information to the user.<br>
+When a user attempts to access a {{shortLeapProductName}} application anonymously, an error message is displayed. The default message is “Anonymous access blocked”. You can change the default message to provide additional information to the user.<br>
 
 **Example:**
 ```
@@ -131,10 +140,13 @@ File types can be specified as:
 ```
 
 
-{% if isLeap %}
+{% if not isDominoLeap %}
 ### blockAnonAccess { #section_blockanonaccess .section }
 
-Anonymous access is not allowed by default which means that to use a {{shortProductName}} application or survey, users must authenticate with a valid user ID and password.<br>
+!!!note
+    This property is managed by the Admin configuration page.
+
+Anonymous access is not allowed by default which means that to use a {{shortLeapProductName}} application or survey, users must authenticate with a valid user ID and password.<br>
 This setting determines anonymous access, where:<br>
 
 - enabled - anonymous access is blocked
@@ -174,7 +186,7 @@ ibm.nitro.NitroConfig.customUserLookupProperties=sn
 
 ### customThemes { #section_customthemes .section }
 
-The **customThemes config** settings define a list of customer-provided themes that can be used in {{shortProductName}} applications.
+The **customThemes config** settings define a list of customer-provided themes that can be used in {{shortLeapProductName}} applications.
 
 For each theme, two parameters must be set:
 
@@ -185,7 +197,7 @@ For each theme, two parameters must be set:
 **[ID]** - An identifier for the custom theme (e.g. "corpTheme1").
 The id can contain the letters 'a' through 'z' and numbers, and must start with a letter.<br>
 
-**displayName** - The theme name to be displayed in the {{shortProductName}} authoring UI.
+**displayName** - The theme name to be displayed in the {{shortLeapProductName}} authoring UI.
 
 **location** -The full URL of the theme's .css file.
 
@@ -199,7 +211,7 @@ For each theme, there are 2 optional parameters:
 
 **nl.[LOCALE]** - For globalization support of the theme's display name. **[LOCALE]** is the locale code that identifies the language (e.g.,"en", "fr", "fr_CA", "zh").
 
-After modifying these settings, restart the {{shortProductName}} server to see the changes in the authoring environment. If the location property of a theme is modified, any deployed applications using that custom theme need to be redeployed for changes to take affect.
+After modifying these settings, restart the {{shortLeapProductName}} server to see the changes in the authoring environment. If the location property of a theme is modified, any deployed applications using that custom theme need to be redeployed for changes to take affect.
 
 **Examples:**
 ```
@@ -212,7 +224,7 @@ After modifying these settings, restart the {{shortProductName}} server to see t
 
 ### dataImportTransactionSize
 
-When importing an application with data, this property will cause {{shortProductName}} to save after the specified number of records are processed.
+When importing an application with data, this property will cause {{shortLeapProductName}} to save after the specified number of records are processed.
 
 **Example:**
 
@@ -223,7 +235,7 @@ When importing an application with data, this property will cause {{shortProduct
 
 ### detectBrowser { #section_detectbrowser .section }
 
-If Leap detects an unsupported browser, a warning message is displayed to the user. The user can still see the form after the warning message is closed.Where:
+If {{shortLeapProductName}} detects an unsupported browser, a warning message is displayed to the user. The user can still see the form after the warning message is closed.Where:
 
 - warn - The user is warned that the browser is unsupported. A list of supported browsers is displayed in the warning message. When the user closes the warning message, the form is displayed.
 - ignore - The user is not warned that the browser is unsupported, and the form is displayed.
@@ -268,9 +280,10 @@ Default value: false
 ``` 
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}disableUseTab=true
 ```
+{% endif %}
 
-
-### enableAdminConfigUI { #section_enableAdminConfigUI .section }
+{% if not isDominoLeap %}
+### enableAdminConfigUI
 
 Enables the admin configuration page. Valid values are true or false.  For more information, refer to [Admin Configuration Page](admin_config_ui.md).
 
@@ -285,7 +298,12 @@ Default value: false
 
 ### embedDomainWhitelist { #embedDomainWhitelist .section }
 
-The domains where {{shortProductName}} may be embedded. If the whitelist is enabled and the domain is not listed then {{shortProductName}} applications will not be allowed to be presented as part of that content.
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
+
+The domains where {{shortLeapProductName}} may be embedded. If the whitelist is enabled and the domain is not listed then {{shortLeapProductName}} applications will not be allowed to be presented as part of that content.
 
 This property contains 2 parts:
 
@@ -293,11 +311,11 @@ This property contains 2 parts:
 - embedDomainWhitelist.[N].domain
 
 
-**enabled** - Enables/Disables the whitelist.  If the whitelist is disabled, {{shortProductName}} will allow itself to be embedded into any domain.
+**enabled** - Enables/Disables the whitelist.  If the whitelist is disabled, {{shortLeapProductName}} will allow itself to be embedded into any domain.
 
 Default value: true
 
-**[N].domain** - '[N]' is an incrementing number starting with '1'. Provide the domain where embedding {{shortProductName}} applications should be allowed.
+**[N].domain** - '[N]' is an incrementing number starting with '1'. Provide the domain where embedding {{shortLeapProductName}} applications should be allowed.
 
 **Example:**
 
@@ -323,7 +341,7 @@ The following will output Events information in Application Server's system log 
 
 The content of the event output is in CSV format, the description of the data: Event topic, Event time stamp, User id, User email, Application uid, Application title, Form id, Record uid, Result
 
-The following is the list of event topics that Leap sends out:
+The following is the list of event topics that {{shortLeapProductName}} sends out:
 
 - builder/app/delete – Application is deleted
 - builder/app/deploy – Application is deployed for the first time
@@ -387,7 +405,7 @@ ibm.nitro.NitroConfig.GraphApiMemberManager.credentialAlias=azureAlias
 ```
 
 !!!note
-    To enable Leap to search for users or groups in {{msEntraName}}, you must also configure the [tenantId](#graphapimembermanagertenantid), and the [member manager type](#membermanagertype).
+    To enable {{shortLeapProductName}} to search for users or groups in {{msEntraName}}, you must also configure the [tenantId](#graphapimembermanagertenantid), and the [member manager type](#membermanagertype).
 
 
 ### GraphApiMemberManager.tenantId ###
@@ -400,12 +418,17 @@ ibm.nitro.NitroConfig.GraphApiMemberManager.tenantId=11111111-1111-1111-1111-111
 ```
 
 !!!note
-    To enable Leap to search for users or groups in {{msEntraName}}, you must also configure a [credential alias](#graphapimembermanagercredentialalias) and the [member manager type](#membermanagertype).
+    To enable {{shortLeapProductName}} to search for users or groups in {{msEntraName}}, you must also configure a [credential alias](#graphapimembermanagercredentialalias) and the [member manager type](#membermanagertype).
 {% endif %}
 
 ### hclMXFoundryApps { #section_mxfoundry .section }
 
-The **hclMXFoundryApps** property defines the settings for connecting {{shortProductName}} to HCL Volt MX Foundry integration services.
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
+
+The **hclMXFoundryApps** property defines the settings for connecting {{shortLeapProductName}} to HCL Volt MX Foundry integration services.
 
 This property contains the following parts:
 
@@ -447,6 +470,11 @@ The **hclMXFoundryAppsCacheRefreshMins** property defines the amount of time in 
 
 ### imageDomainWhitelist { #section_imagedomain .section }
 
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
+
 The **imageDomainWhitelist** config settings define a white-list of domains from where images can be uploaded to a Rich Text Entry field.
 
 In addition to setting the following:
@@ -472,13 +500,13 @@ domain - The domain property implicitly allows sub-domains. For example, a domai
 Provides HTML content that is shown in the login screen. Can be used for status messages, or help.
 
 ``` 
-{% if isLeap %}ibm.nitro.{% endif %}InfoEntryPoint.dailyInfo = Welcome to **HCL {{shortProductName}}**
+{% if isLeap %}ibm.nitro.{% endif %}InfoEntryPoint.dailyInfo = Welcome to **HCL {{shortLeapProductName}}**
 ```
 
-{% if isLeap %}
+{% if not isDominoLeap %}
 ### loginIdIsEmail
 
-This property is required for Leap on Kubernetes.  There is a limitation in OpenLiberty that restricts Leap from retrieving the mail attribute of a user.This property enables Leap's email functionality to work correctly. You must configure the server to use mail as the login attribute.
+This property is required for {{shortLeapProductName}} on Kubernetes.  There is a limitation in OpenLiberty that restricts {{shortLeapProductName}} from retrieving the mail attribute of a user.This property enables Leap's email functionality to work correctly. You must configure the server to use mail as the login attribute.
 
 The properties following properties must also be set:
     - [ibm.nitro.NitroConfig.userLookup](#userlookup)=false
@@ -492,7 +520,7 @@ ibm.nitro.NitroConfig.loginIdIsEmail = true
 
 ### LogoutServlet.postLogoutRedirectURL { #section_logout .section }
 
-The value of this parameter tells {{shortProductName}} where to redirect user after log off. If the parameter is not configured or left blank, the user is redirected to the login page.
+The value of this parameter tells {{shortLeapProductName}} where to redirect user after log off. If the parameter is not configured or left blank, the user is redirected to the login page.
 
 **Example:**
 
@@ -519,7 +547,7 @@ Maximum number of records that are permitted for export from the View Data page 
 {% if isLeap %}
 ### MemberManager { #section_membermanager .section }
 
-For WebSphere Application Server only, to configure the Leap to use the WebSphere VMM.
+For WebSphere Application Server only, to configure the {{shortLeapProductName}} to use the WebSphere VMM.
 
 - MemberManager.adminAlias
 - MemberManager.userProps.loginName
@@ -550,7 +578,7 @@ Represents a unique key for the group. The value is the LDAP property that is us
 Default setting: cn
 
 **MemberManager.userProps.email**
-The email address of the user. Leap uses this email address to send notifications and other emails to the user.
+The email address of the user. {{shortLeapProductName}} uses this email address to send notifications and other emails to the user.
 Default setting: mail
 
 **MemberManager.userProps.displayName**
@@ -570,10 +598,10 @@ ibm.was.MemberManager.userProps.displayName = cn
 
 ### MemberManagerType ###
 
-Used to configure Leap to perform user/group lookups against a configured {{msEntraName}} (Azure Active Directory).  The only valid value is **ms-azure-ad**.
+Used to configure {{shortLeapProductName}} to perform user/group lookups against a configured {{msEntraName}} (Azure Active Directory).  The only valid value is **ms-azure-ad**.
 
 !!!note
-    To enable Leap to search for users or groups in {{msEntraName}}, you must also configure the [GraphApiMemberManager.credentialAlias](#graphapimembermanagercredentialalias) and [GraphApiMemberManager.tenantId](#graphapimembermanagertenantid).
+    To enable {{shortLeapProductName}} to search for users or groups in {{msEntraName}}, you must also configure the [GraphApiMemberManager.credentialAlias](#graphapimembermanagercredentialalias) and [GraphApiMemberManager.tenantId](#graphapimembermanagertenantid).
 
 **Example:**
 
@@ -610,7 +638,7 @@ Default value: 48
 
 ### reauthInNewWindow { #section_reauthInNewWindow .section }
 
-Helps with seamless re-authentication when {{shortProductName}} is using an external IdP (in SAML or OIDC configurations), so that {{shortProductName}} users do not lose their work.  When set to `true`, the authentication flow is presented in a pop-up window, which is typically adequate for most external IdPs. It is recommended to use this setting in conjunction with `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}reauthOnFailedRequest`.
+Helps with seamless re-authentication when {{shortLeapProductName}} is using an external IdP (in SAML or OIDC configurations), so that {{shortLeapProductName}} users do not lose their work.  When set to `true`, the authentication flow is presented in a pop-up window, which is typically adequate for most external IdPs. It is recommended to use this setting in conjunction with `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}reauthOnFailedRequest`.
 
 Default value: false
 
@@ -622,9 +650,9 @@ Default value: false
 
 ### reauthOnFailedRequest { #section_reauthOnFailedRequest .section }
 
-Helps with seamless re-authentication when {{shortProductName}} is using an external IdP (in SAML or OIDC configurations) so that {{shortProductName}} users do not lose their work.  When set to `true`, a failed XHR request triggers the authentication flow. A failed request is the typical result when an SAML or OIDC session has timed-out. It is recommended to use this setting in conjunction with `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}reauthInNewWindow`. 
+Helps with seamless re-authentication when {{shortLeapProductName}} is using an external IdP (in SAML or OIDC configurations) so that {{shortLeapProductName}} users do not lose their work.  When set to `true`, a failed XHR request triggers the authentication flow. A failed request is the typical result when an SAML or OIDC session has timed-out. It is recommended to use this setting in conjunction with `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}reauthInNewWindow`. 
 
-**Known Limitations**: There is no mechanism in the browser for the {{shortProductName}} code to distinguish a session time-out failure from other types of failures, such as a loss of internet connectivity. Enabling this setting means that *any* XHR request failure will trigger an authentication flow, even if it is not appropriate. However, for the majority of cases this setting will help {{shortProductName}} users to not lose their work, therefore it is recommended.
+**Known Limitations**: There is no mechanism in the browser for the {{shortLeapProductName}} code to distinguish a session time-out failure from other types of failures, such as a loss of internet connectivity. Enabling this setting means that *any* XHR request failure will trigger an authentication flow, even if it is not appropriate. However, for the majority of cases this setting will help {{shortLeapProductName}} users to not lose their work, therefore it is recommended.
 
 Default value: false
 
@@ -634,8 +662,8 @@ Default value: false
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}reauthOnFailedRequest=true
 ```
 
-{% if isLeap %}
-### rootAdminId { #section_rootAdminId .section }
+{% if not isDominoLeap %}
+### rootAdminId
 
 The **rootAdminId** setting defines the login id of a user that will always have access to the Admin Configuration page.
 
@@ -668,7 +696,7 @@ For more information on <i>Strict</i> CSP, see [Strict CSP](leap_strict_csp.md)
 
 ### runtimeResources.[N]
 
-This property specifies additional web resources to load into the {{shortProductName}} UI to use the [Custom Widget API](customwidgetapi_landing.md). The values from these settings are injected into the `<head>` section of {{shortProductName}}'s HTML pages.
+This property specifies additional web resources to load into the {{shortLeapProductName}} UI. The values from these settings are injected into the `<head>` section of {{shortLeapProductName}}'s HTML pages.  {% if not isDWLeap %}The property is also used to configure [custom widgets](customwidgetapi_landing.md).{% endif %}
 
 **Example:**
 
@@ -709,12 +737,17 @@ this is the 2nd line
 
 ### secureJS { #section_securejs .section }
 
-Enables or disables JavaScript restrictions in run time forms. When a form designer adds custom JavaScript to an application, this flag restricts the scope of that custom JavaScript. This flag applies to the entire {{shortProductName}} server for all users.
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
+
+Enables or disables JavaScript restrictions in run time forms. When a form designer adds custom JavaScript to an application, this flag restricts the scope of that custom JavaScript. This flag applies to the entire {{shortLeapProductName}} server for all users.
 
 !!! note
-    Setting this parameter to `false` might expose users to malicious JavaScript. Only set to `false` in a secured environment where {{shortProductName}} applications are created by trusted users.
+    Setting this parameter to `false` might expose users to malicious JavaScript. Only set to `false` in a secured environment where {{shortLeapProductName}} applications are created by trusted users.
 
-For more information, see <a href="ref_javascript_api.html">JavaScript API</a> for {{shortProductName}}.
+For more information, see <a href="ref_javascript_api.html">JavaScript API</a> for {{shortLeapProductName}}.
 
 Default value: true
 
@@ -748,7 +781,7 @@ Special assignment valid values are:
 To enable service authorizations, set `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}serviceAuthorization.enabled=true`. Multiple services may be defined. To define a service authorization, add `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}serviceAuthorization.serviceIdN` where **serviceIdN** is the 'id' of the service description. The value must be a valid JSON string, see provided samples.
 
 !!! note
-    A backslash (\) at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.
+    A backslash ("\\") at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.
 
 **Examples:**
 
@@ -765,9 +798,9 @@ To enable service authorizations, set `{% if isLeap %}ibm.nitro.NitroConfig.{% e
 
 ### serverURI { #section_serveruri .section }
 
-Indicates the base URI used for critical functions, including editing applications, and email. Must include everything necessary to connect to the {{shortProductName}} context, for example, /{{context}}.
+Indicates the base URI used for critical functions, including editing applications, and email. Must include everything necessary to connect to the {{shortLeapProductName}} context, for example, /{{context}}.
 
-With this entry, all emailed links, and absolute links visible during {{shortProductName}} design time start with the following base URI regardless of what the user enters in the address bar.
+With this entry, all emailed links, and absolute links visible during {{shortLeapProductName}} design time start with the following base URI regardless of what the user enters in the address bar.
 
 **Example:**
 
@@ -778,6 +811,11 @@ With this entry, all emailed links, and absolute links visible during {{shortPro
 
 
 ### servicesWhitelist { #section_servicewhitelist .section }
+
+{% if not isDominoLeap %}
+!!!note
+    This property is managed by the Admin configuration page.
+{% endif %}
 
 The **servicesWhitelist** config settings define a white list of domains and HTTP actions that app authors are allowed to call directly from their applications using URL based services.
 
@@ -809,10 +847,10 @@ Default value: true
     This white-list has no effect on service descriptions and custom service transports that were installed on the server by the administrator.
 
 
-{% if isLeap %}
+{% if not isDominoLeap %}
 ### SetupAll.setupStatus
 
-After deploying {{shortProductName}} for the first time or upgrading to a newer version, there is a setup screen that is presented upon accessing the manage page. This setup screen shows the status of detecting and updating the database tables, checks that security is properly enabled, and a mail session is configured. This page requires the admin to click a button to fully progress through the setup.
+After deploying {{shortLeapProductName}} for the first time or upgrading to a newer version, there is a setup screen that is presented upon accessing the manage page. This setup screen shows the status of detecting and updating the database tables, checks that security is properly enabled, and a mail session is configured. This page requires the admin to click a button to fully progress through the setup.
 
 To disable this setup page and required admin interaction add the property: 
 ``` 
@@ -820,23 +858,23 @@ ibm.nitro.SetupAll.setupStatus = start
 ```
 
 !!!note
-    This property is required for Leap running on Kubernetes.
+    This property is required for {{shortLeapProductName}} running on Kubernetes.
 {% endif %}
 
 
-{% if isLeap %}
+{% if not isDominoLeap %}
 ### userGroups ###
 
-It is set to **false** if group information is not available and to **true** if ID token contains group information. If **true**, ensure OIDC  groupIdentifier attribute matches correct claim in the ID token, for more details refer to [Configuring Leap with OIDC](helm_oidc_config.md).
+It is set to **false** if group information is not available and to **true** if ID token contains group information. If **true**, ensure OIDC  groupIdentifier attribute matches correct claim in the ID token, for more details refer to [Configuring {{shortLeapProductName}} with OIDC](helm_oidc_config.md).
 
 **Example:**
 
 ```
 ibm.nitro.NitroConfig.userGroups=false
 ```
-### userLookup ###
+### userLookup ### { #userlookup .section}
 
-It is set to **false** if LDAP directory is not available and to **true** if an LDAP is available and configured an OIDC client with mapIdentityToRegistryUser="true".  For more details refer to [Configuring Leap with OIDC](helm_oidc_config.md).
+It is set to **false** if LDAP directory is not available and to **true** if an LDAP is available and configured an OIDC client with mapIdentityToRegistryUser="true".  For more details refer to [Configuring {{shortLeapProductName}} with OIDC](helm_oidc_config.md).
 
 **Example:**
 
@@ -846,7 +884,7 @@ ibm.nitro.NitroConfig.userLookup=false
 
 ### userLookupGroups ###
 
-It is set to **false** if LDAP directory is not available or if it does not support searching for groups.  And it is set to **true** if directory has group information and the OIDC groupIdentifier matches the attribute that identifies groups in the directory.  For more details refer to [Configuring Leap with OIDC](helm_oidc_config.md).
+It is set to **false** if LDAP directory is not available or if it does not support searching for groups.  And it is set to **true** if directory has group information and the OIDC groupIdentifier matches the attribute that identifies groups in the directory.  For more details refer to [Configuring {{shortLeapProductName}} with OIDC](helm_oidc_config.md).
 
 **Example:**
 

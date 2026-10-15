@@ -3,15 +3,15 @@
 A custom widget with a datatype of `'aggregation'` is a special type of data widget that can achieve the use-case of a "repeating section". The section is a sub-form which the author can design as they wish, with required fields and others. The end-user can then create and fill multiple instances of that section, shown sequentially on the page.  For example, the widget could be used by the app author to ask for a list of vehicles owned by the end-user, with maker, model, and year for each vehicle. 
 
 
-The data type of the instantiated custom widget will be a "business object list" (BOL). It is expected that a custom repeating section widget will utilize the existing API for BOLs. See [Business Object List (BOL) for lists of Business Objects](ref_jsapi_ref_data_objects.md#business-object-list-for-lists-of-business-objects). It is the responsibility of the custom widget to provide the UI for the end-user to trigger the addition (or deletion) of items in the BOL. In turn, {{shortProductName}} will create an instance of the UI (the sub-form) and pass that to the custom widget to place into its DOM. Hence, it is the manipulation of *data* that drives the UI.
+The data type of the instantiated custom widget will be a "business object list" (BOL). It is expected that a custom repeating section widget will utilize the existing API for BOLs. See [Business Object List (BOL) for lists of Business Objects](ref_jsapi_ref_data_objects.md#business-object-list-for-lists-of-business-objects). It is the responsibility of the custom widget to provide the UI for the end-user to trigger the addition (or deletion) of items in the BOL. In turn, {{shortLeapProductName}} will create an instance of the UI (the sub-form) and pass that to the custom widget to place into its DOM. Hence, it is the manipulation of *data* that drives the UI.
 
 The instantiated custom widget must include the following functions:
 
-- `placeDesignForm(formNode)`: When the {{shortProductName}} app author places a repeating section widget on the canvas, {{shortProductName}} will create a sub-form (ie. `formNode`) for the app author to add fields to. {{shortProductName}} will call this function for the sub-form to be placed into the custom widget's DOM.  
+- `placeDesignForm(formNode)`: When the {{shortLeapProductName}} app author places a repeating section widget on the canvas, {{shortLeapProductName}} will create a sub-form (ie. `formNode`) for the app author to add fields to. {{shortLeapProductName}} will call this function for the sub-form to be placed into the custom widget's DOM.  
 
-- `addEntry(entryNode, entryId)`: When a new item is added to the custom widget's BOL, {{shortProductName}} will instantiate the corresponding sub-form (ie. `entryNode`) and pass it to this function to be placed into the custom widget's DOM. `entryId` is a transient UUID that can be used by the custom widget to keep track of entries, if needed, for the current user session.
+- `addEntry(entryNode, entryId)`: When a new item is added to the custom widget's BOL, {{shortLeapProductName}} will instantiate the corresponding sub-form (ie. `entryNode`) and pass it to this function to be placed into the custom widget's DOM. `entryId` is a transient UUID that can be used by the custom widget to keep track of entries, if needed, for the current user session.
 
-- `removeEntry(entryNode, entryId)`: When an item is removed from the custom widget's BOL, {{shortProductName}} will call this function to ensure the corresponding sub-form (ie. `entryNode`) is removed from the custom widget's DOM.  
+- `removeEntry(entryNode, entryId)`: When an item is removed from the custom widget's BOL, {{shortLeapProductName}} will call this function to ensure the corresponding sub-form (ie. `entryNode`) is removed from the custom widget's DOM.  
 
 **Important**: `formNode` and `entryNode` (and their ancestors), should not be manipulated or inspected in any way; treat each as a black-box.
 

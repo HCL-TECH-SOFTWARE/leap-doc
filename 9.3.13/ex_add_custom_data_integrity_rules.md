@@ -1,10 +1,10 @@
 # Adding custom data integrity logic
 
-{{fullProductName}} includes built-in server-side validation and sanitization of incoming data, detecting issues such as missing required fields or values that violate constraints like data type, length, format, or range.
+{{fullLeapProductName}} includes built-in server-side validation and sanitization of incoming data, detecting issues such as missing required fields or values that violate constraints like data type, length, format, or range.
 
-{{shortProductName}} can be extended with additional business logic that is meaningful to your organization.
+{{shortLeapProductName}} can be extended with additional business logic that is meaningful to your organization.
 
-To extend HCL Leap with custom business logic tailored to your organization, review its built-in server-side validation capabilities and the [Development process](ser_setup_development_environment.md) before starting. Then follow the instructions below: 
+To extend {{shortLeapProductName}} with custom business logic tailored to your organization, review its built-in server-side validation capabilities and the [Development process](ser_setup_development_environment.md) before starting. Then follow the instructions below: 
 
 
 
@@ -71,7 +71,7 @@ To extend HCL Leap with custom business logic tailored to your organization, rev
 
 ## Aligning with custom widgets
 
-Custom validation rules can work in lock-step with custom widgets. For details on creating custom widgets for {{shortProductName}}, see [Custom Widget API](customwidgetapi_landing.md).
+Custom validation rules can work in lock-step with custom widgets. For details on creating custom widgets for {{shortLeapProductName}}, see [Custom Widget API](customwidgetapi_landing.md).
 
 Specifically, a custom widget can define a `customDataType` property which can be utilized by custom validation code. 
 
@@ -124,7 +124,7 @@ public class YesNoValidator
 
 ## Custom sanitization
 
-Your organization might require additional data sanitization before the information is stored in the Leap database or used in downstream processing.
+Your organization might require additional data sanitization before the information is stored in the {{shortLeapProductName}} database or used in downstream processing.
   
 A custom integrity service can modify field values. For example:
 ```java

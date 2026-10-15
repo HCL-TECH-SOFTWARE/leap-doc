@@ -4,7 +4,7 @@ This topic describes Basic Credentials Providers used within a service descripti
 
 ## Purpose of the Basic Credentials Provider { .section }
 
-The Basic Credentials Provider provides a mechanism that allows user name and password credentials to be gathered, and provided to a Service Transport. The credentials that are gathered are specific to a single user session with {{fullProductName}}. These credentials are not shared between multiple sessions and are not accessible to other users or administrators of {{shortProductName}}.  The credentials may also be defined by the {{shortProductName}} server administrator and associated with an alias that is used in the service description. {% if isLeap %}The value of the alias will depend on the deployment environment of Leap.  The alias can refer to environment variables (when deployed to Kubernetes) or a Java 2 Connector (J2C) Authentication Data (when deployed to WebSphere).{% endif %}
+The Basic Credentials Provider provides a mechanism that allows user name and password credentials to be gathered, and provided to a Service Transport. The credentials that are gathered are specific to a single user session with {{fullLeapProductName}}. These credentials are not shared between multiple sessions and are not accessible to other users or administrators of {{shortLeapProductName}}.  The credentials may also be defined by the {{shortLeapProductName}} server administrator and associated with an alias that is used in the service description. {% if isLeap %}The value of the alias will depend on the deployment environment of Leap.  The alias can refer to environment variables (when deployed to Kubernetes) or a Java 2 Connector (J2C) Authentication Data (when deployed to WebSphere).{% endif %}
 
 ## When to use the Basic Credentials Provider { .section }
 
@@ -12,14 +12,14 @@ When a service description needs a set of credentials and the credentials vary b
 
 ## How to Configure the Basic Credentials Provider { .section }
 
-In general, the Basic Credentials Provider does not need any custom configuration to work. By configuring the service description to use the Basic Credentials Provider, {{shortProductName}} collects credentials, and makes them available to the Service Transport configured in the service description.
+In general, the Basic Credentials Provider does not need any custom configuration to work. By configuring the service description to use the Basic Credentials Provider, {{shortLeapProductName}} collects credentials, and makes them available to the Service Transport configured in the service description.
 
 {% if isLeap %}
 To use the 'alias' with an authentication data credential, the WebSphere Application Server administrator must first define a user identity (User ID, Password, and Alias name) within the JAAS – J2C authentication data section of the WebSphere Application Server administrative console. For an example of the WebSphere Application Server Network Deployment 9.0.5, see the [WebSphere Application Server documentation](https://www.ibm.com/docs/en/was-nd/9.0.5?topic=jaas-java-2-connector-authentication-data-entry-settings).
 {% endif %}
 
 {% if isDominoLeap %}
-To use the 'alias' property, the Domino Leap administrator must first define a user identity (User name, Password, and alias name) within the Domino Leap configuration database (VoltConfig.nsf). To do this, complete the following steps: 
+To use the 'alias' property, the {{shortLeapProductName}} administrator must first define a user identity (User name, Password, and alias name) within the {{shortLeapProductName}} configuration database (VoltConfig.nsf). To do this, complete the following steps: 
 
 ### Use the HCL Notes client to open VoltConfig.nsf.
 
@@ -38,7 +38,7 @@ To use the 'alias' property, the Domino Leap administrator must first define a u
 1. Select Done and choose to save the credentials.
 
 !!! note
-    When you save your credentials, the user name and password fields are automatically encrypted. Another administrator of the same Leap Configuration database cannot read the encrypted data unless you have added them to the Consumers field. However, all administrators may read the credentials alias and description.
+    When you save your credentials, the user name and password fields are automatically encrypted. Another administrator of the same {{shortLeapProductName}} Configuration database cannot read the encrypted data unless you have added them to the Consumers field. However, all administrators may read the credentials alias and description.
 {% endif %}
 
 ## Sharing Credentials Between Service Descriptions { .section }

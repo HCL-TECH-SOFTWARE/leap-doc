@@ -9,7 +9,7 @@ The steps to create the secret will vary depending on the type of authentication
 Some general guidance:
 - The secret type is ```docker-registry```
 - You must know the name of the registry.
-- You must include the namespace argument -n, followed by the namespace where you are installing Leap.
+- You must include the namespace argument -n, followed by the namespace where you are installing {{shortLeapProductName}}.
 
 There are several methods of authenticating, this guidance will provide some examples in different scenarios.
 
@@ -18,7 +18,7 @@ There are several methods of authenticating, this guidance will provide some exa
 In this example a service account has been created that contains the required permissions to access your container registry. In this example, the following names are used:
 
 - ***secret_name***: the name of the secret you are creating. For example ```registry-secret```
-- ***namespace***: the Leap namespace. For example, “leap”.
+- ***namespace***: the namespace. For example, “leap”.
 - ***repo_name***: the repository you are authenticating with. For example us-docker.pkg.dev
 - ***_json_key***: If you are using a key file, leave this at _json_key.
 - ***example_key.json***: Enter the full path to your key file.
@@ -40,7 +40,7 @@ kubectl create secret docker-registry registry-secret -n leap --docker-server=us
 This is a less secure method of authenticating. In this example you have a user name and a password for the container repository. Execute the commands and ensure to replace the following elements with your environment details.
 
 - ***secret_name***: the name of the secret you are creating. For example ```registry-secret```
-- ***namespace***: the Leap namespace. For example, “leap”.
+- ***namespace***: the namespace. For example, “leap”.
 - ***repo_name***: the repository you are authenticating with. For example us-docker.pkg.dev
 - ***the_username***: User name used to authenticate.
 - ***the_password***: The password used to authenticate.

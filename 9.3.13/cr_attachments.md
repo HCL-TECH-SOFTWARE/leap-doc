@@ -1,6 +1,6 @@
 # Working with attachments
 
-A file that is added to a form using the attachment item is uploaded to the {{shortProductName}} server as soon the user adds it.  The attached file is associated with the form **after** it is submitted.  If the form is not submitted then the uploaded file will be removed by the server after 48 hours.
+A file that is added to a form using the attachment item is uploaded to the {{shortLeapProductName}} server as soon the user adds it.  The attached file is associated with the form **after** it is submitted.  If the form is not submitted then the uploaded file will be removed by the server after 48 hours.
 
 An attachment item is made up of an id, uid and filename and it can be used in many different ways.  There is a [REST API for working with attachments](ref_data_rest_api_retrieve_attachment.md), this can be used to produce some dynamic behavior in your application.
 
@@ -96,7 +96,7 @@ This will only work after the form has been submitted.
 
 ## Reading contents of an uploaded file
 
-If you are running on a server that has JavaScript sandbox turned off (secureJs=false), a setting found in the {{shortProductName}} properties, then you could use AJAX to retrieve the content of the file that was uploaded.  
+If you are running on a server that has JavaScript sandbox turned off (secureJs=false), a setting found in the {{shortLeapProductName}} properties, then you could use AJAX to retrieve the content of the file that was uploaded.  
 
 For this example, the code was placed in the *onShow* event of a multi-line text field that is visible after the form has been submitted.  When the field is shown it will contain the content of the file that was previously uploaded.
 

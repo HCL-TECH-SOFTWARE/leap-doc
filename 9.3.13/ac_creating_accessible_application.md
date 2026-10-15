@@ -2,9 +2,9 @@
 
 When you create a form or application, the following information helps you design an accessible form for users with disabilities.
 
-{{fullProductName}} is designed to make building accessible forms easy. For example, the tab order of form items is set to start at the first item on the page, and work through consecutive items. You do not have to reset the tab order if you must add items to the beginning of a form. There are several things that you can do to make your forms more accessible to users with disabilities:
+{{fullLeapProductName}} is designed to make building accessible forms easy. For example, the tab order of form items is set to start at the first item on the page, and work through consecutive items. You do not have to reset the tab order if you must add items to the beginning of a form. There are several things that you can do to make your forms more accessible to users with disabilities:
 
--   During the creation of your application, accessibility standards, such as [WCAG 2.0](http://www.w3.org/TR/WCAG20/), should be considered with regards to layout and content. Leap does not prevent authors from creating non-accessible forms.
+-   During the creation of your application, accessibility standards, such as [WCAG 2.0](http://www.w3.org/TR/WCAG20/), should be considered with regards to layout and content. {{shortLeapProductName}} does not prevent authors from creating non-accessible forms.
 -   When you add items to your form, give each form item a clear description or name. Screen readers read the name that is associated with a form item. You can also use a Text item as a data label instead of the field provided. For more information, see [Using a Text item as a label](ac_using_text_item_as_label.md).
 -   Add hints to each form item by modifying the **Add hint** field. The Hint provides more information when read to the user. For example, if your form has a **Name** field, the hint tells the user your preference for how to enter their given and surnames.
 -   Text blocks are not automatically part of the tab order. Screen readers do not put focus on text blocks, and your users might miss vital information. To ensure that text information is not omitted, select the text item, in the properties side panel, select the check box for **Add to tab order**. The text is added to the tab order, and is read by screen readers.

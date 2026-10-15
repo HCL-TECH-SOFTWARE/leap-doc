@@ -1,6 +1,6 @@
 # Item Events 
 
-This topic describes the Item Events, and their parameters when using JavaScript™ API in {{fullProductName}}.
+This topic describes the Item Events, and their parameters when using JavaScript™ API in {{fullLeapProductName}}.
 
 There are many events available to hook into on an item that is accessed from the item **Edit Properties** dialog.
 

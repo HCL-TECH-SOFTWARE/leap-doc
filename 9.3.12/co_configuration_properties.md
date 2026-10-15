@@ -748,7 +748,7 @@ Special assignment valid values are:
 To enable service authorizations, set `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}serviceAuthorization.enabled=true`. Multiple services may be defined. To define a service authorization, add `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}serviceAuthorization.serviceIdN` where **serviceIdN** is the 'id' of the service description. The value must be a valid JSON string, see provided samples.
 
 !!! note
-    A backslash (\) at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.
+    A backslash ("\\") at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.
 
 **Examples:**
 

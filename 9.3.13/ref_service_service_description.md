@@ -1,6 +1,6 @@
 # Service Description 
 
-A Service Description provides a specific interface to a Service Transport. The Service Description describes the inputs and outputs when you configure services within the {{fullProductName}} mapping user interface.
+A Service Description provides a specific interface to a Service Transport. The Service Description describes the inputs and outputs when you configure services within the {{fullLeapProductName}} mapping user interface.
 
 ## Elements of a Service Description { .section}
 
@@ -8,7 +8,7 @@ A Service Description is represented as an XML document that follows an XML sche
 
 **ID**
 
-Each Service Description must contain a unique id that identifies it to the {{shortProductName}} server. The id can contain any characters that are valid as a component of a URL path. These characters include:
+Each Service Description must contain a unique id that identifies it to the {{shortLeapProductName}} server. The id can contain any characters that are valid as a component of a URL path. These characters include:
 
    - Alphabetical letters – \[A-Z\], and \[a-z\]
     -   Numerals – \[0-9\]
@@ -19,11 +19,11 @@ Each Service Description must contain a unique id that identifies it to the {{sh
 
 **Transport ID**
 
-A Service Description must reference a Service Transport to perform its underlying operation. Each Service Transport has its own unique transportId that uniquely identifies it to the {{shortProductName}} server. The ID for a Service Transport must be made available by its developer.
+A Service Description must reference a Service Transport to perform its underlying operation. Each Service Transport has its own unique transportId that uniquely identifies it to the {{shortLeapProductName}} server. The ID for a Service Transport must be made available by its developer.
 
 **Name and Description**
 
-To help users build {{shortProductName}} applications with services, each Service Description contains both a name, and a description. The name and description elements allow you to localize a {{shortProductName}} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.See [Localizing Service Descriptions](ref_service_localizing_service_description.md) for information about how to provide names and descriptions in multiple languages.
+To help users build {{shortLeapProductName}} applications with services, each Service Description contains both a name, and a description. The name and description elements allow you to localize a {{shortLeapProductName}} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.See [Localizing Service Descriptions](ref_service_localizing_service_description.md) for information about how to provide names and descriptions in multiple languages.
 
 **Default Locale**
 
@@ -40,15 +40,15 @@ Not all **Credentials** Providers are applicable to all Service Transports. Ther
 
 Every Service Description must specify its input and output structures. These structures outline the ID, name, description, and type of each parameter and any **subparameters**. In addition to the parameter structure, bindings might also contain a section that declares how data going into the Service Transport is mapped from the input structure and how data coming from the Service Transport is mapped to the output structure.
 
-There are two top-level elements for bindings: inbound, and outbound. Inbound defines the binding for data coming into the Service Description from the Builder Application. Outbound defines the data going to the {{shortProductName}} application from the Service Description. Only one of each of these elements can be present within a single Service Description, and each must be placed as a child of the **serviceDescription** element.
+There are two top-level elements for bindings: inbound, and outbound. Inbound defines the binding for data coming into the Service Description from the Builder Application. Outbound defines the data going to the {{shortLeapProductName}} application from the Service Description. Only one of each of these elements can be present within a single Service Description, and each must be placed as a child of the **serviceDescription** element.
 
-Directly underneath inbound and outbound are two elements that define the main components of a binding: parameters and **serviceMapping**. The parameters element contains all the information that is related to the parameters. The contents of the **serviceMapping** element instructs {{shortProductName}} how to map data coming from the parameters into data for the transport and vice versa.
+Directly underneath inbound and outbound are two elements that define the main components of a binding: parameters and **serviceMapping**. The parameters element contains all the information that is related to the parameters. The contents of the **serviceMapping** element instructs {{shortLeapProductName}} how to map data coming from the parameters into data for the transport and vice versa.
 
 **Parameters**
 
 The **parameters** element contains zero or more **parameter** elements. Each parameter element defines a single parameter coming into or being returned from the Service Description. Each **parameter** element must have an **id**, **type**, **name**, and **description**. The id element uniquely identifies the parameter within the binding. The type element specifies the type of data that is expected to be contained within the parameter. The following data types are supported: **STRING, BOOLEAN, DECIMAL, FLOAT, DOUBLE, INTEGER, DATETIME, TIME, DATE,** and **LIST**.
 
-As with the name and description child elements of the **serviceDescription** element, these childs of parameter specify the name and description of the parameter that is used in {{shortProductName}}. These elements can also be localized using the **xml:lang** attribute.
+As with the name and description child elements of the **serviceDescription** element, these childs of parameter specify the name and description of the parameter that is used in {{shortLeapProductName}}. These elements can also be localized using the **xml:lang** attribute.
 
 Optionally, the mandatory element can be included for inbound bindings to specify whether the parameter must be bound before starting the Service Description. Valid values for this element are true and false, with the latter being the default.
 
@@ -56,7 +56,7 @@ Each parameter element can have a child element that is called parameters which 
 
 **Service Mapping**
 
-The **serviceMapping** element contains all the information that is needed for the {{shortProductName}} server to map data between the Service Description parameters, and the Service Transport. For more information, see [Mapping Data for a Service Description](ref_service_mapping_service_description.md).
+The **serviceMapping** element contains all the information that is needed for the {{shortLeapProductName}} server to map data between the Service Description parameters, and the Service Transport. For more information, see [Mapping Data for a Service Description](ref_service_mapping_service_description.md).
 
 ## XML Namespaces { .section}
 
@@ -481,7 +481,7 @@ Provided is the schema definition for the service description XML file.  This ca
 
 ## Sample Service Descriptions { .section}
 
-Each example in this section includes a list of the Service Descriptions and a discussion of how each Service Description operates. The Service Descriptions in this section rely solely on the Service Transports that are shipped with the {{shortProductName}} server. Where applicable, sample and setup instructions are included.
+Each example in this section includes a list of the Service Descriptions and a discussion of how each Service Description operates. The Service Descriptions in this section rely solely on the Service Transports that are shipped with the {{shortLeapProductName}} server. Where applicable, sample and setup instructions are included.
 
 **Example 1: Simple Mapping**
 
@@ -521,7 +521,7 @@ The following Service Description uses the HTTP Service Transport to make a requ
 31: </serviceDescription>
 ```
 
-All Service Descriptions begin with a **serviceDescription** element, and in this example, it is defined in line 2. The **serviceDescription** element contains all the information that is needed for the {{shortProductName}} server to work with the Service Description. The unique ID of this Service Description is **get-content-type** as defined in line 3. The unique ID is not exposed to a user, but it must be unique. 
+All Service Descriptions begin with a **serviceDescription** element, and in this example, it is defined in line 2. The **serviceDescription** element contains all the information that is needed for the {{shortLeapProductName}} server to work with the Service Description. The unique ID of this Service Description is **get-content-type** as defined in line 3. The unique ID is not exposed to a user, but it must be unique. 
 Line 5 declares the ID of the Service Transport to use, which is **HTTPServiceTransport**, and this is the unique ID of the HTTP Service Transport. Lines 7 and 8 define the **name** and **description** of the Service Description, which are presented to the user when designing applications.
 
 Lines 10-20 define the inbound bindings, and lines 21-30 define the outbound bindings. As mentioned previously, the inbound bindings refer to the parameters that are flowing from the application to the Service Transport. The outbound bindings refer to the parameters that are flowing in the opposite direction.
@@ -538,7 +538,7 @@ Lines 21-30 define the outbound parameters for the Service Description. In this 
 
 **Example 2: Augmenting Parameters with Constants**
 
-The following Service Description returns the same information as Example 1. However, in this case, we do not want the {{shortProductName}} application to supply the URL. Instead, the URL is declared using a constant, and mapped into the inbound parameters for the Service Transport.
+The following Service Description returns the same information as Example 1. However, in this case, we do not want the {{shortLeapProductName}} application to supply the URL. Instead, the URL is declared using a constant, and mapped into the inbound parameters for the Service Transport.
 
 ```xml
 1: <?xml version="1.0" encoding="UTF-8"?>
@@ -584,7 +584,7 @@ Lines 18-20 contain the mapping information. Since there is only one parameter t
 
 **Example 3: Lists of Data**
 
-The following Service Description demonstrates the use of nested parameters. This example is the same as the Service Description used for the Countries by Region service that is shipped with {{shortProductName}}. This example describes how to specify a region and return a list of the names of countries within that region.
+The following Service Description demonstrates the use of nested parameters. This example is the same as the Service Description used for the Countries by Region service that is shipped with {{shortLeapProductName}}. This example describes how to specify a region and return a list of the names of countries within that region.
 
 ```xml
 1: <?xml version="1.0" encoding="UTF-8"?>
@@ -632,7 +632,7 @@ The following Service Description demonstrates the use of nested parameters. Thi
 43: </serviceDescription>
 ```
 
-As with the other Service Description examples, this Service Description has its own unique ID, defined in line 3, a name, which is defined in lines 6-8, and a description, which is defined in lines 9-11. This Service Description uses the sample Countries by Region Service Transport, which is shipped with the {{shortProductName}} , and is identified by its id in line 5.
+As with the other Service Description examples, this Service Description has its own unique ID, defined in line 3, a name, which is defined in lines 6-8, and a description, which is defined in lines 9-11. This Service Description uses the sample Countries by Region Service Transport, which is shipped with the {{shortLeapProductName}} , and is identified by its id in line 5.
 
 Because this Service Description has a single inbound parameter, the parameters element, in lines 13-23, of the inbound bindings in lines 12-24. parameters contains only a single parameter, which is defined in lines 14-22. The id of this parameter is region, which is what is expected by the Countries by Region Service Transport.
 
@@ -1165,11 +1165,11 @@ address_components[types='route']/long_nameequals list-street-name
 
 
 -   **[Localizing Service Descriptions](ref_service_localizing_service_description.md)**  
-The name and description elements allow you to localize a {{shortProductName}} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.
+The name and description elements allow you to localize a {{shortLeapProductName}} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.
 -   **[Mapping Data for a Service Description](ref_service_mapping_service_description.md)**  
-The serviceMapping element of the Service Description contains all the information needed for the {{fullProductName}} server to map data from the Service Description inbound data to the Service Transport
+The serviceMapping element of the Service Description contains all the information needed for the {{fullLeapProductName}} server to map data from the Service Description inbound data to the Service Transport
 -   **[Deploying a Service Description](ref_service_deploying_service_description.md)**  
-This topic contains information about how to deploy a {{shortProductName}} Service Description.
+This topic contains information about how to deploy a {{shortLeapProductName}} Service Description.
 -   **[Troubleshooting a service description](ref_service_troubleshooting_service_description.md)**
 How to troubleshoot a custom service description that is not working.
 

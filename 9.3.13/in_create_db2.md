@@ -2,7 +2,7 @@
 
 The following instructions describe how to manually create the DB2® database for Leap.
 
-In a production environment, you must create DB2 database before you install HCL Leap to WebSphere® Application Server.
+In a production environment, you must create DB2 database before you install {{shortLeapProductName}} to WebSphere® Application Server.
 
 !!! note
     Do not create a database if you want to continue using the same database with the existing user content.
@@ -27,7 +27,7 @@ In a production environment, you must create DB2 database before you install HCL
 
 ## Minimum Permissions
 
-If you do not want to give the DB2 user DBADM then you will need to assign the following permissions otherwise Leap will fail.
+If you do not want to give the DB2 user DBADM then you will need to assign the following permissions otherwise {{shortLeapProductName}} will fail.
 
 - CONNECT
 - SELECT

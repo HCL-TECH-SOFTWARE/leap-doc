@@ -1,6 +1,6 @@
 # Setting a language { #settingalanguage .task }
 
-The default language for an application is based on the web browser locale. You can change the language of your {{fullProductName}} application in the **Settings** tab.
+The default language for an application is based on the web browser locale. You can change the language of your {{fullLeapProductName}} application in the **Settings** tab.
 
 To set a language for an application other than your default locale:
 

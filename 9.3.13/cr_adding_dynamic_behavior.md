@@ -1,10 +1,10 @@
-# Adding dynamic behavior to {{shortProductName}} applications { #addingdynamicbehavior .concept }
+# Adding dynamic behavior to {{shortLeapProductName}} applications { #addingdynamicbehavior .concept }
 
-This topic provides details on adding dynamic behavior to your {{shortProductName}} applications.
+This topic provides details on adding dynamic behavior to your {{shortLeapProductName}} applications.
 
 **[Adding formulas to your application](cr_adding_formulas_toc.md)**  
 
-You can create and edit formulas to assign values to an item on your {{fullProductName}} form.
+You can create and edit formulas to assign values to an item on your {{fullLeapProductName}} form.
 
 **[Creating rules in your application](ru_creating_rules_in_your_form.md)**  
 
@@ -12,7 +12,7 @@ Rules help you gather the correct information from users and organize your infor
 
 **[Incorporating web services into your applications](cr_using_apps_as_services_toc.md)**  
 
-The following topics describe how to incorporate web services into your {{fullProductName}} application.
+The following topics describe how to incorporate web services into your {{fullLeapProductName}} application.
 
 **[Adding Stages to an application](sub_adding_stages_toc.md)**  
 

@@ -1,8 +1,8 @@
 # Creating an application from an excel spreadsheet { #creatinganapplicationexcel .task }
 
-{{shortProductName}} allows you to create an application from an excel spreadsheet, automatically creating the widgets and importing the data found in the spreadsheet.
+{{shortLeapProductName}} allows you to create an application from an excel spreadsheet, automatically creating the widgets and importing the data found in the spreadsheet.
 
-The following steps describe how to prepare a spreadsheet that you want to import into {{shortProductName}} and how to create the application from the spreadsheet.
+The following steps describe how to prepare a spreadsheet that you want to import into {{shortLeapProductName}} and how to create the application from the spreadsheet.
 
 1.  Prepare the spreadsheet for importation.
 
@@ -24,7 +24,7 @@ The following steps describe how to prepare a spreadsheet that you want to impor
     -   Select many widgets can be created when the contents of a cell contains \[value\],\[value\],\[value\].... with no spaces between values and commas. Values cannot be duplicated, and the cell cannot begin or end with a comma. Commas are used as delimiters for multi select widgets; therefore, any comma will not be part of the value itself and will separate values.
     -   For a widget to be selectable \(i.e. a Dropdown, Select One, Select Many, etc.\), then the number of possible values must be greater than one and less than a certain value, currently set at 30.
     -   If there are only numbers and currency cells in a column, then the column widget type will be whichever count is greater.
-2.  Log on to {{shortProductName}}. By default you see the **Manage** window which displays the **New Application** button, any previously created applications, and any applications to which you have edit permissions.
+2.  Log on to {{shortLeapProductName}}. By default you see the **Manage** window which displays the **New Application** button, any previously created applications, and any applications to which you have edit permissions.
 
 3.  Click **New Application**.
 
@@ -32,7 +32,7 @@ The following steps describe how to prepare a spreadsheet that you want to impor
 
 4.  Click **From Spreadsheet**.
 
-    An upload file dialog will open. Upload the prepared excel spreadsheet here, then click **Next**. {{shortProductName}} will parse the spreadsheet one sheet at a time. Each column in the main data range will be used to create a widget in the form. {{shortProductName}} will go through the rows of each column within that range, then attempt to assign a type based on the contents of the cells of the column.
+    An upload file dialog will open. Upload the prepared excel spreadsheet here, then click **Next**. {{shortLeapProductName}} will parse the spreadsheet one sheet at a time. Each column in the main data range will be used to create a widget in the form. {{shortLeapProductName}} will go through the rows of each column within that range, then attempt to assign a type based on the contents of the cells of the column.
 
 5.  Choose the fields, names, and types of your application.
 

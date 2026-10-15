@@ -1,6 +1,6 @@
 # SAML configuration { #helm_saml_config .concept}
 
-The Leap Helm chart and container offer a basic SAML configuration through the Helm values. 
+The {{shortLeapProductName}} Helm chart and container offer a basic SAML configuration through the Helm values. 
 
 To enable SAML you must:
 - pass the IdP Metadata of the identity provider

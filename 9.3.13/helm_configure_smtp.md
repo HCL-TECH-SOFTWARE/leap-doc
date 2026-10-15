@@ -1,8 +1,8 @@
 # Connecting to an SMTP Server
 
-To connect Leap with an SMTP server you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. 
+To connect {{shortLeapProductName}} with an SMTP server you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. 
 
-Below is an example snippet of configuring Leap to use a mail server. The smtp host will need to be replaced with the proper hostname of the mail server. If authentication is required to communicate with the mail server then replace smtpUser and smtpPassword with the correct values, otherwise remove those likes from the snippet.
+Below is an example snippet of configuring {{shortLeapProductName}} to use a mail server. The smtp host will need to be replaced with the proper hostname of the mail server. If authentication is required to communicate with the mail server then replace smtpUser and smtpPassword with the correct values, otherwise remove those likes from the snippet.
 
 ```yaml 
 configuration: 

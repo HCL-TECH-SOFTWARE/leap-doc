@@ -1,5 +1,7 @@
 # What's new
 
+{% if not isDWLeap %}
+
 {% if isDominoLeap %}
 ## 1.1.11
 {% endif %}
@@ -89,7 +91,7 @@
 {% if isLeap %}
 ### Other Changes
 
-- Deprecated and removed the WSDL tool for generating Leap service descriptions from the release packaging.
+- Deprecated and removed the WSDL tool for generating {{shortLeapProductName}} service descriptions from the release packaging.
 {% endif %}
 - General fixes and security patches
 
@@ -103,9 +105,9 @@
 ### New features
 
 {% if isLeap %}
-- Leap can be configured to perform user/group searches against [{{msEntraName}} (Azure AD)](azure_toc.md)
+- {{shortLeapProductName}} can be configured to perform user/group searches against [{{msEntraName}} (Azure AD)](azure_toc.md)
 {% endif %}
-- A new default theme has been created and it is called **Enchanted**. New Leap applications will use the Enchanted theme by default.
+- A new default theme has been created and it is called **Enchanted**. New {{shortLeapProductName}} applications will use the Enchanted theme by default.
 {% if isDominoLeap %}
 - Enabled the feature where an application author can import or export a theme.  This can be found on the **Styles** tab.
 {% endif %}
@@ -169,7 +171,7 @@ Leap 9.3.8 now employs two ways of downloading and installing the application to
 {% if isDominoLeap %}
 ## 1.1.5
 
-Refer to [1.1.5 documentation]({{oldDocsUrl}}dominoleap_whatsnew.html)
+Refer to [1.1.5 documentation]({{oldLeapDocsUrl}}dominoleap_whatsnew.html)
 {% endif %}
 
 {% if isLeap %}
@@ -478,5 +480,7 @@ New features include:
   - **Default view changed**: When you click the **View Responses** link, the default view is now **Responses**, rather than**Summary**.
 - A number of upgrade routine fixes, accessibility, and usability changes were implemented.
 - Values entered into the password item are not stored in your application. Since the password is never stored, it is never exported or shown in any field. The password field is empty when the form is rendered in its next stage. Using the password for calling server-side services during stage transitions still work as the value is included as part of the submitted data and not stored as part of the application record.
+
+{% endif %}
 
 {% endif %}

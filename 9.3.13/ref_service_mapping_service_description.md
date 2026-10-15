@@ -1,6 +1,6 @@
 # Mapping Data for a Service Description 
 
-The serviceMapping element of the Service Description contains all the information needed for the {{fullProductName}} server to map data from the Service Description inbound data to the Service Transport
+The serviceMapping element of the Service Description contains all the information needed for the {{fullLeapProductName}} server to map data from the Service Description inbound data to the Service Transport
 
 ## Mapping Data { .section}
 
@@ -16,11 +16,11 @@ Mapping Service Description parameters to Service Transport parameters, and vice
 
 ### Mapping Structure
 
-The input and output of both Service Descriptions and Service Transports is a simple map of key value pairs. A value can be either a string, or a list of maps of key value pairs. {{shortProductName}} does not support a map as a value. A value of a key in one map cannot be another map, it must be either a string or a list of maps. The mapping elements within a Service Description instruct {{shortProductName}} on how to produce one such structure from another, potentially extracting values from strings treated as XML or JSON.
+The input and output of both Service Descriptions and Service Transports is a simple map of key value pairs. A value can be either a string, or a list of maps of key value pairs. {{shortLeapProductName}} does not support a map as a value. A value of a key in one map cannot be another map, it must be either a string or a list of maps. The mapping elements within a Service Description instruct {{shortLeapProductName}} on how to produce one such structure from another, potentially extracting values from strings treated as XML or JSON.
 
 ### Mapping Definition
 
-Each mapping element within a Service Description describes how {{shortProductName}} must map data from a source to a destination. Each mapping is made up of a source, and a target. The value of the source and target attributes is a colon separated value containing the scheme of the value and its name. Valid values for the scheme depend on the binding in which the mapping is located, and whether the scheme refers to the source or target of the mapping. For inbound mapping, the source scheme must be parameter or constant, and the target must be transport. For outbound mapping, the source scheme must be transport or constant, and the target must be parameter. A summary of the valid schemes and their contexts are listed in Table 1. The name component of a scheme identifies the key to use when looking up a value or where to place the result.
+Each mapping element within a Service Description describes how {{shortLeapProductName}} must map data from a source to a destination. Each mapping is made up of a source, and a target. The value of the source and target attributes is a colon separated value containing the scheme of the value and its name. Valid values for the scheme depend on the binding in which the mapping is located, and whether the scheme refers to the source or target of the mapping. For inbound mapping, the source scheme must be parameter or constant, and the target must be transport. For outbound mapping, the source scheme must be transport or constant, and the target must be parameter. A summary of the valid schemes and their contexts are listed in Table 1. The name component of a scheme identifies the key to use when looking up a value or where to place the result.
 
 Table 1. Summary of valid schemes and their contexts
 <br>
@@ -34,10 +34,10 @@ Table 1. Summary of valid schemes and their contexts
 <br>
 
 
-Both the source and target have a type which instructs {{shortProductName}} how to work with the value. Both ends of a mapping can contain a reference, which allows a subset of the source to be placed at a specific location within the target. Valid values for type are string, xml, json and list, with string being the default. If the type is xml or json, the reference represents an XPath expression that determines which nodes are affected by the mapping. A source reference is used to extract a subset of the value identified by the source scheme. A target reference is used to construct the path where the value extracted from the source is placed. If there are no nodes that match a target reference, the node and its missing parent nodes are created. For this reason, only simple XPath predicates, those that use only the and operator, are permitted. In all other cases, the value of the reference is not used and is omitted.
+Both the source and target have a type which instructs {{shortLeapProductName}} how to work with the value. Both ends of a mapping can contain a reference, which allows a subset of the source to be placed at a specific location within the target. Valid values for type are string, xml, json and list, with string being the default. If the type is xml or json, the reference represents an XPath expression that determines which nodes are affected by the mapping. A source reference is used to extract a subset of the value identified by the source scheme. A target reference is used to construct the path where the value extracted from the source is placed. If there are no nodes that match a target reference, the node and its missing parent nodes are created. For this reason, only simple XPath predicates, those that use only the and operator, are permitted. In all other cases, the value of the reference is not used and is omitted.
 <br>
 
-Each mapping element can also contain sub-mappings, which allow repeating structures to be iterated over and built. At run time, {{shortProductName}} server processes the mapping elements in top-down order. Nested mappings evaluate their source and target in the context of their parent source or target mapping.
+Each mapping element can also contain sub-mappings, which allow repeating structures to be iterated over and built. At run time, {{shortLeapProductName}} server processes the mapping elements in top-down order. Nested mappings evaluate their source and target in the context of their parent source or target mapping.
 
 ### Examples
 
@@ -202,7 +202,7 @@ Inserting "tags" is a bit more complicated because that is a list and we need to
 
 ## Run time Mapping { .section}
 
-At runtime, {{shortProductName}} server performs the following operations for each mapping element. Each mapping element is evaluated in the order in which it occurs within the root mapping element.
+At runtime, {{shortLeapProductName}} server performs the following operations for each mapping element. Each mapping element is evaluated in the order in which it occurs within the root mapping element.
 
 1.  Look up the source.
 2.  Convert the source value if required \(parse as XML or JSON\).
@@ -213,7 +213,7 @@ At runtime, {{shortProductName}} server performs the following operations for ea
 7.  Map the source value to the target value.
 8.  Evaluate child mapping elements.
 
-To look up the source, the {{shortProductName}} server first needs to determine the scheme. If the scheme is constant, the identified constant is looked up and returned. If there is no constant with the given name, an empty string is used. If the scheme is parameter or transport, then the current context is searched for the named item. For top-level mapping elements, this is the root of the parameter structure. For child mapping elements, this is the result of the lookup, conversion, and resolve operation on its parent. If the named value cannot be found in the current context, the parent context is checked until there are no more parent contexts. If the value does not exist in any context, an empty string is used.
+To look up the source, the {{shortLeapProductName}} server first needs to determine the scheme. If the scheme is constant, the identified constant is looked up and returned. If there is no constant with the given name, an empty string is used. If the scheme is parameter or transport, then the current context is searched for the named item. For top-level mapping elements, this is the root of the parameter structure. For child mapping elements, this is the result of the lookup, conversion, and resolve operation on its parent. If the named value cannot be found in the current context, the parent context is checked until there are no more parent contexts. If the value does not exist in any context, an empty string is used.
 
 The value returned by the lookup operation is then converted into the type specified for the source or target. If the conversion produced an XML or JSON value, the reference is resolved, which returns a subset of the original value.
 

@@ -1,6 +1,6 @@
 # Widget Instantiation { #widget_instantiation .concept}
 
-The widget `instantiate()` function is called when an instance of the custom widget needs to be created. The function is expected to return an `object` that allows {{shortProductName}} to interact with the instantiated widget.
+The widget `instantiate()` function is called when an instance of the custom widget needs to be created. The function is expected to return an `object` that allows {{shortLeapProductName}} to interact with the instantiated widget.
 
 `instantiate()` is called with the following arguments:
 
@@ -22,7 +22,7 @@ The returned `object` is expected to supply the following functions:
 -   `setRequired(isRequired)`: \(optional\) to tailor the widget's behaviour when the data is required, or not required.
 -   `getOptions()`: \(optional\) see [Widgets with Options](widgets_options.md).
 -   `validateValue(value)`: \(optional\) - see [Validation](widget_validation.md).
--   `getJSAPIFacade()`: \(optional\) returns an object that supplies additional custom functions that will be available to app authors to use in their custom JavaScript. Special care must be taken to ensure that app authors have a limited range of possibilities and cannot take over the whole page with their custom JavaScript. When {{shortProductName}}'s secure sandbox mode is enabled \(`secureJS=true`\), an author's custom JavaScript cannot access any variables prefixed with a double-underscore.
+-   `getJSAPIFacade()`: \(optional\) returns an object that supplies additional custom functions that will be available to app authors to use in their custom JavaScript. Special care must be taken to ensure that app authors have a limited range of possibilities and cannot take over the whole page with their custom JavaScript. When {{shortLeapProductName}}'s secure sandbox mode is enabled \(`secureJS=true`\), an author's custom JavaScript cannot access any variables prefixed with a double-underscore.
 
 The widget creator is free to decide how they want to code and manage the widget instance internally.
 

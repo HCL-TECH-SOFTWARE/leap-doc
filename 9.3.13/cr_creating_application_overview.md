@@ -1,10 +1,10 @@
 # Creating an application { #creatinganapplication .task }
 
-This topic gives a general overview of the application creation process, from opening the {{fullProductName}} interface to launching a completed application.
+This topic gives a general overview of the application creation process, from opening the {{fullLeapProductName}} interface to launching a completed application.
 
 The following steps are a general overview of the lifecycle of an application.
 
-1.  Log on to {{shortProductName}}. By default you see the **Manage** window which displays the **New Application** button, any previously created applications, and any applications to which you have edit permissions.
+1.  Log on to {{shortLeapProductName}}. By default you see the **Manage** window which displays the **New Application** button, any previously created applications, and any applications to which you have edit permissions.
 
 2.  Click **New Application**.
 

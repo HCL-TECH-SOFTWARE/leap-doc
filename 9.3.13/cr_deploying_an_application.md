@@ -1,8 +1,8 @@
 # Deploying an application { #deployinganapplication .task }
 
-Deploying an {{fullProductName}} application makes it available for users. When you click **Deploy**, the application is loaded onto a server. You can deploy an application immediately, or set a timer to deploy the application for a specific period of time.
+Deploying an {{fullLeapProductName}} application makes it available for users. When you click **Deploy**, the application is loaded onto a server. You can deploy an application immediately, or set a timer to deploy the application for a specific period of time.
 
-You can update {{shortProductName}} applications with existing data that are currently deployed. However, these types of changes might impact existing data, and forms in-progress, depending on the type of changes made to the application. The impact occurs when the application is deployed, not during the design phase. The following changes might result in data loss, or prevent in-progress forms from being completed:
+You can update {{shortLeapProductName}} applications with existing data that are currently deployed. However, these types of changes might impact existing data, and forms in-progress, depending on the type of changes made to the application. The impact occurs when the application is deployed, not during the design phase. The following changes might result in data loss, or prevent in-progress forms from being completed:
 
 -   If you delete fields that capture data from a form, any existing data for those fields is removed.
 -   If you change the ID of a field that contains data, any existing data is removed.
@@ -20,7 +20,7 @@ You can update {{shortProductName}} applications with existing data that are cur
 
 3.  Set the deployment options for your application from the **Basic** and **Advanced** tabs.
 
-    {{shortProductName}} can send out email notifications when an application is deployed or stopped. These notifications are triggered from the Email Notifications section on the Deployment Setting window. The notifications are not triggered if the application is stopped on a preset Stop Date. The Stop notifications are only sent if the deployment is stopped manually using the Deployment Settings dialog.
+    {{shortLeapProductName}} can send out email notifications when an application is deployed or stopped. These notifications are triggered from the Email Notifications section on the Deployment Setting window. The notifications are not triggered if the application is stopped on a preset Stop Date. The Stop notifications are only sent if the deployment is stopped manually using the Deployment Settings dialog.
 {% endif %}
 
 4.  Click **Start** to deploy the application.

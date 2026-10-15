@@ -1,10 +1,10 @@
-# Understanding Leap roles
+# Understanding {{shortLeapProductName}} roles
 
-Leap usage is separated into 4 roles: UseApplicationsUsers, EditApplicationUsers, SuperAdminUsers, AdministrativeUsers.
+{{shortLeapProductName}} usage is separated into 4 roles: UseApplicationsUsers, EditApplicationUsers, SuperAdminUsers, AdministrativeUsers.
 
 ## AdministrativeUsers
 
-Administrative users are able to set up the Leap server. You must have an administrative user to complete the installation process as described in [Completing the installation](in_setting_up_environment.md).
+Administrative users are able to set up the {{shortLeapProductName}} server. {% if not isDWLeap %}You must have an administrative user to complete the installation process as described in [Completing the installation](in_setting_up_environment.md).{% endif %}
 
 A sample setting is: “Special subject: None, Mapped users, admin\_user\_name ”. 
 
@@ -17,13 +17,13 @@ Users in this role have access to the Admin configuration page and admin dashboa
 
 ## SuperAdminUsers
 
-Super Administrative Users are users, or groups, that may edit all Leap applications without explicit security settings. They do not have access to application data. To access the data, a user must be added to a role within the application and the application must be redeployed.  
+Super Administrative Users are users, or groups, that may edit all {{shortLeapProductName}} applications without explicit security settings. They do not have access to application data. To access the data, a user must be added to a role within the application and the application must be redeployed.  
 
 Users in this role also have access to the Admin dashboard.
 
 ## EditApplicationUsers
 
-Authenticated users that can design, deploy, and use Leap applications. 
+Authenticated users that can design, deploy, and use {{shortLeapProductName}} applications. 
 
 A sample setting is: “Special subject: All authenticated in Application's Realms”.
 
@@ -32,7 +32,7 @@ A sample setting is: “Special subject: All authenticated in Application's Real
 
 ## UseApplicationsUsers
 
-Authenticated users that can use deployed Leap applications. 
+Authenticated users that can use deployed {{shortLeapProductName}} applications. 
 
 All users in the **AdministrativeUsers**, **SuperAdminUsers**, and **EditApplicationUsers** automatically have access to use deployed applications. 
 

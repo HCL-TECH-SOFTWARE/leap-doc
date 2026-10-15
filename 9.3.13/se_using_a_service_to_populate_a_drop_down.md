@@ -52,7 +52,7 @@ The following instructions describe how to populate a Drop Down, however the sam
 
 {% if isLeap %}
 !!! note
-    All form item data is stored in database columns. For Drop Down, Select One, Select Many, and Survey items, the data column must be large enough to accommodate the largest value a user can select. The amount of space that is allocated to a database column is based on the larger of either the Storage Size parameter \(50 characters\), or the largest defined static value. As it is possible to pull information from a web service or from JavaScript™ into the previously listed form items, Leap cannot calculate the largest size needed. To set larger database columns, modify the **Saved Value character limit** field to ensure that it is large enough to hold the largest value expected.
+    All form item data is stored in database columns. For Drop Down, Select One, Select Many, and Survey items, the data column must be large enough to accommodate the largest value a user can select. The amount of space that is allocated to a database column is based on the larger of either the Storage Size parameter \(50 characters\), or the largest defined static value. As it is possible to pull information from a web service or from JavaScript™ into the previously listed form items, {{shortLeapProductName}} cannot calculate the largest size needed. To set larger database columns, modify the **Saved Value character limit** field to ensure that it is large enough to hold the largest value expected.
 {% endif %}
 
 10. Change the size of the **Saved Value character limit** field to the required number of characters.

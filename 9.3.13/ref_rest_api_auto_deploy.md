@@ -1,6 +1,6 @@
 # Application management REST API { #ref_rest_api_auto_deploy .reference }
 
-The Application management REST API allows for programmatic import, export, upgrade, and delete of {{shortProductName}} applications. 
+The Application management REST API allows for programmatic import, export, upgrade, and delete of {{shortLeapProductName}} applications. 
 
 To get the API definition for a specific application, expand the application details and select **Application Operations** in the **URL Links** dropdown.
 
@@ -10,7 +10,7 @@ To get the generic application management operations, use {{context}}/open/swagg
 
 ## Authentication { .section}
 
-All REST API calls must be made as an authenticated user. If you want to exercise the API with code, then, you can use basic authentication. The authenticated user must be a valid user of {{shortProductName}} and must have the appropriate permission. The primary mechanism is to use basic authentication where the username and password are a Base64 encoded string.
+All REST API calls must be made as an authenticated user. If you want to exercise the API with code, then, you can use basic authentication. The authenticated user must be a valid user of {{shortLeapProductName}} and must have the appropriate permission. The primary mechanism is to use basic authentication where the username and password are a Base64 encoded string.
 
 ## REST actions { .section}
 
@@ -49,7 +49,7 @@ The upgraded application must be uploaded to the server as multipart/form-data i
 
 ## Import { .section}
 
-Imports the specified application into the {{shortProductName}} server. The user that performs the import is automatically added as an administrator. You can use the following parameters to import the application:
+Imports the specified application into the {{shortLeapProductName}} server. The user that performs the import is automatically added as an administrator. You can use the following parameters to import the application:
 
 #### `deploy=false`
 Can be set to **true** or **false**. **true** automatically deploys the application as part of the import.
@@ -78,17 +78,17 @@ Deletes the specified application from the server.
 
 ## Export App To File { .section}
 
-If you have a {{shortProductName}} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin export the application directly to the server file system.  Saving the file directly to the server will avoid browser or HTTP time-outs that you might experience with large files.
+If you have a {{shortLeapProductName}} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin export the application directly to the server file system.  Saving the file directly to the server will avoid browser or HTTP time-outs that you might experience with large files.
 
 This endpoint is only accessible by users in the AdministrativeUsers security role.
 
 #### `filePath=x`
-The value of *x* must be a valid local path on the {{shortProductName}} server.
+The value of *x* must be a valid local path on the {{shortLeapProductName}} server.
 
 #### `exportData=false`
 Can be set to **true** or **false**. If **true**, all the data will be extracted with the application.
 
-The instruction can be issued from a browser where {{shortProductName}} is loaded.  Using the browser console enter the content as:
+The instruction can be issued from a browser where {{shortLeapProductName}} is loaded.  Using the browser console enter the content as:
 
 ```
 dojo.xhrGet({ 
@@ -100,7 +100,7 @@ The application will be exported, there will be no confirmation message returned
 
 ## Import App From File { .section}
 
-If you have a {{shortProductName}} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin import the application directly from the server file system.  Load in the file directly from the server will avoid browser or HTTP time-outs that you might experience with large files.
+If you have a {{shortLeapProductName}} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin import the application directly from the server file system.  Load in the file directly from the server will avoid browser or HTTP time-outs that you might experience with large files.
 
 This endpoint is only accessible by users in the AdministrativeUsers security role.
 
@@ -116,12 +116,12 @@ The request body must be a JSON object.
 }
 ```
 
-- filePath. The local path on the {{shortProductName}} server where the app resides
+- filePath. The local path on the {{shortLeapProductName}} server where the app resides
 - cleanIds. Valid values are true and false.  If true, all user and groups will be purged from roles within the app
 - deploy. Valid values are true and false.  If true, the app will be deployed.
 - importData. Valid values are true and false. If true, the app data will be imported.
 
-The instruction can be issued from a browser where {{shortProductName}} is loaded.  Using the browser console enter the content as:
+The instruction can be issued from a browser where {{shortLeapProductName}} is loaded.  Using the browser console enter the content as:
 
 ```
 importFileData = { 
@@ -141,7 +141,7 @@ The application will be imported, there will be no confirmation message returned
 
 ## Basic Application Flow { .section}
 
-This is the basic flow of an application communicating with the {{shortProductName}} REST API:
+This is the basic flow of an application communicating with the {{shortLeapProductName}} REST API:
 
 1.  Establish a URLConnection with the URL that matches the action you want.
 2.  Set the basic authentication credentials into the URLConnection.

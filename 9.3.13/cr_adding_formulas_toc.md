@@ -1,8 +1,8 @@
 # Adding formulas to your application { #addingformulastoyourapplication .concept }
 
-You can create and edit formulas to assign values to an item on your {{fullProductName}} form.
+You can create and edit formulas to assign values to an item on your {{fullLeapProductName}} form.
 
-There are two places within {{shortProductName}} where you can access the Formula editor:
+There are two places within {{shortLeapProductName}} where you can access the Formula editor:
 
 -   The Formula tab of the Properties side panel.
 -   The Formula menu item from the **Settings** tab.

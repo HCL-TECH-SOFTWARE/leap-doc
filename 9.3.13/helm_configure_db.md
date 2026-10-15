@@ -1,9 +1,10 @@
 # Connecting to a Database
-To connect Leap with a database you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. Sample snippets have been provided, which will need to be updated with your specific details.
+To connect {{shortLeapProductName}} with a database you must use the [configOverrideFiles](helm_open_liberty_custom.md) parameter. Sample snippets have been provided, which will need to be updated with your specific details.
 
 !!! note
     All user names and passwords should be managed using [custom secrets](helm_admin_customsecret.md#helm_admin_customsecret).
 
+{% if isLeap %}
 ## Connecting to a DB2 database { #section_z4t_ckh_jzb .section }
 
 The DB2 jdbc driver has been included and can be found at $\{server.config.dir\}/lib.
@@ -18,14 +19,14 @@ configuration:
         <server description="leapServer">
           <!-- Disable the hard-coded derby datasource -->
           <dataSource id="leapDerbyDatasource" jndiName="disabled" />
-          <!-- Adds the DB2 JDBC library to the Leap application classpath -->
+          <!-- Adds the DB2 JDBC library to the {{shortLeapProductName}} application classpath -->
           <library id="jdbcDB2" > 
             <fileset dir ="${server.config.dir}/lib" includes="db2jcc4.jar" /> 
           </library> 
           <application id="leap">
             <classloader id="leapClassloader" commonLibraryRef="jdbcDB2"/>
           </application>          
-          <authData id="db2AuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
+          <authData id="db2AuthAlias" user="${db-credentials/DB_USERNAME}" password="${db-credentials/DB_USERNAME}" /> 
           <dataSource id="leapDB2DataSource" jndiName="jdbc/BuilderDataSource" statementCacheSize="30" containerAuthDataRef="db2AuthAlias"> 
             <properties.db2.jcc  
                 databaseName="LEAPDB"  
@@ -62,7 +63,7 @@ The oracle jdbc driver has been included and can be found at $\{server.config.di
 2.  Create a secret for the SSL certificate used by the Oracle instance.
 3.  Specify the connection properties that point to the trust or key store that contain the certificate used by your Oracle instance `${shared.resource.dir}/security/key.p12`
 
-Below is an example snippet for configuring the Leap application to use an Oracle database.
+Below is an example snippet for configuring the {{shortLeapProductName}} application to use an Oracle database.
 
 ```yaml
 configuration: 
@@ -74,14 +75,14 @@ configuration:
         <server description="leapServer">
             <!-- Disable the hard-coded derby datasource -->
             <dataSource id="leapDerbyDatasource" jndiName="disabled" />
-            <!-- Adds the jdbc library to the Leap application classpath -->
+            <!-- Adds the jdbc library to the {{shortLeapProductName}} application classpath -->
             <library id="jdbcOracle" >
                 <fileset dir="${server.config.dir}/lib" includes='ojdbc8.jar' />
             </library>
             <application id="leap">
                 <classloader id="leapClassloader" commonLibraryRef="jdbcOracle"/>
             </application>            
-            <authData id="oracleAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" /> 
+            <authData id="oracleAuthAlias" user="${db-credentials/DB_USERNAME}" password="${db-credentials/DB_USERNAME}" /> 
             <dataSource id="leapOracleDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="oracleAuthAlias"> 
                 <jdbcDriver libraryRef="jdbcOracle"/> 
                 <properties.oracle URL="jdbc:oracle:thin:@leap-oracle-db.example.com:1521/orclpdb1"/> 
@@ -92,6 +93,7 @@ configuration:
             </dataSource> 
         </server>
 ```
+{% endif %}
 
 ## Connecting to a PostgreSQL database { #section_cll_jkh_jzb .section }
 
@@ -107,14 +109,14 @@ configuration:
         <server description="leapServer">
           <!-- Disable the hard-coded derby datasource -->
           <dataSource id="leapDerbyDatasource" jndiName="disabled" />
-          <!-- Adds the jdbc library to the Leap application classpath -->        
+          <!-- Adds the jdbc library to the {{shortLeapProductName}} application classpath -->        
           <library id="jdbcPostgreSQL" > 
             <fileset dir ="${server.config.dir}/lib" includes="postgresql.jar" /> 
           </library> 
           <application id="leap">
             <classloader id="leapClassloader" commonLibraryRef="jdbcPostgreSQL"/>
           </application>        
-          <authData id="postgresAuthAlias" user="${DB_USERNAME}" password="${DB_PASSWORD}" />  
+          <authData id="postgresAuthAlias" user="${db-credentials/DB_USERNAME}" password="${db-credentials/DB_USERNAME}" />  
           <dataSource id="leapPostgresDataSource" jndiName="jdbc/BuilderDataSource" containerAuthDataRef="postgresAuthAlias"> 
             <properties.postgresql  
                 serverName="postgresql.acme.com"  

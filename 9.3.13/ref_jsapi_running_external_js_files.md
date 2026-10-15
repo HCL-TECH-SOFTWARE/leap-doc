@@ -36,7 +36,7 @@ var sub = app.getSharedData().sumNumbers(page.F_Expense);
 
 When JavaScript security is enabled: For added security, external JavaScript files that are referenced by URL do not load into the running application. Uploaded JavaScript files are evaluated in a safe sandbox and all content must adhere to the restrictions of the sandbox. See [JavaScript Security](ref_jsapi_javascript_security.md) for more details. For example, functions must be defined by using the following format: `app.getSharedData().blat = function (...) { ... }`
 
-When JavaScript security is disabled: External JavaScript files that are referenced by URL are loaded by using a `<script>` tag and does not have access to the app variable. These scripts must use `window.NitroApplication` to access the {{shortProductName}} API functions. JavaScript files that are uploaded to the application are evaluated by using the `eval()` function.
+When JavaScript security is disabled: External JavaScript files that are referenced by URL are loaded by using a `<script>` tag and does not have access to the app variable. These scripts must use `window.NitroApplication` to access the {{shortLeapProductName}} API functions. JavaScript files that are uploaded to the application are evaluated by using the `eval()` function.
 
 **Parent topic:** [JavaScript API](ref_javascript_api.md)
 

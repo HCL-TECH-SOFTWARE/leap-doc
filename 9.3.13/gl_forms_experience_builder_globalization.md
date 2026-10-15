@@ -1,10 +1,10 @@
 # Globalization features { #experiencebuilderglobalization .concept }
 
-The following information describes the languages formatting features supported by {{fullProductName}}.
+The following information describes the languages formatting features supported by {{fullLeapProductName}}.
 
 ## Supported languages { .section }
 
-{{shortProductName}} supports the following languages:
+{{shortLeapProductName}} supports the following languages:
 
 -   Arabic
 -   Catalan
@@ -47,7 +47,7 @@ Form items, such as currency, date, and time, are based on the locale of the for
 Locale settings can also affect dates. Countries can have specific requirements for how dates are written. For example, one country might want a date written month/day/year: 06/29/2012. While another country has a standard of day/month/date/year: Friday June 29, 2012. How the date is shown is determined by the locale of the form. You can manually change the date format, with the date field selected, in the Properties side panel.
 
 -   **[Setting a language](gl_setting_a_language.md)**  
-The default language for an application is based on the web browser locale. You can change the language of your {{fullProductName}} application in the **Settings** tab.
+The default language for an application is based on the web browser locale. You can change the language of your {{fullLeapProductName}} application in the **Settings** tab.
 
 **Parent topic:** [Building Apps](cr_creating_and_managing_toc.md)
 

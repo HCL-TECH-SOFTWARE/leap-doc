@@ -1,10 +1,10 @@
 # Send Email service 
 
-This topic provides reference information on the Send Email service in {{fullProductName}}.
+This topic provides reference information on the Send Email service in {{fullLeapProductName}}.
 
 ## Purpose { #section_jkm_qck_d1c .section }
 
-The Send Email service provides a mechanism to send an email from a {{shortProductName}} application. The service enables an application author to bind fields from their form to the parameters of the service and it can be executed at any time, which is what distinguishes it from the submit activity email functionality \(which can only be sent as part of a submit event\).
+The Send Email service provides a mechanism to send an email from a {{shortLeapProductName}} application. The service enables an application author to bind fields from their form to the parameters of the service and it can be executed at any time, which is what distinguishes it from the submit activity email functionality \(which can only be sent as part of a submit event\).
 
 This feature is disabled by default and must be enabled by the administrator. To enable this service, add \(or modify\) the following property in the {% if isLeap %}Leap\_config.properties{% endif %}{% if isDominoLeap %}VoltConfig.nsf{% endif %}:
 
@@ -12,7 +12,7 @@ This feature is disabled by default and must be enabled by the administrator. To
 {% if isLeap %}ibm.nitro.NitroConfig.{% endif %}enableEmailService=true
 ```
 
-{{shortProductName}} does not need to be restarted, but it may take a few minutes for the service to appear in the authoring environment.
+{{shortLeapProductName}} does not need to be restarted, but it may take a few minutes for the service to appear in the authoring environment.
 
 ## Service parameters { #section_qgm_tck_d1c .section }
 
@@ -60,7 +60,7 @@ The service does not return any parameters. The service could throw the followin
 |-------|--------|
 |CLFNI1803E: Email must define at least one address \('to', 'cc' or 'bcc'\).|If the to, cc and bcc are empty|
 |CLFNI1804E: Email body may not be empty.|If the text content and the html content are empty|
-|CLFNI1805E: Failed to send email.|If an error is received from the mail server configured with {{shortProductName}}.|
+|CLFNI1805E: Failed to send email.|If an error is received from the mail server configured with {{shortLeapProductName}}.|
 
 **Parent topic:** [Services](ref_services_toc.md)
 

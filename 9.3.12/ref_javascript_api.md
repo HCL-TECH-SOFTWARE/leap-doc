@@ -48,11 +48,13 @@ Business Object Attribute
     Some items do not collect data. These items do not have a corresponding Business Object Attributes in the Business Object. For example: PageNavigation.
 
 -   **[Running Custom JavaScript – Events](ref_jsapi_running_custom_js_events.md)**  
-Custom JavaScript is run in response to events in the form. These events can be triggered at the application, form, page, and item level in response to form lifecycle changes, and to user interactions. A list of the events available, and how to interact with the form using them is shown in the following list.
+Custom JavaScript is run in response to events in the form. These events can be triggered at the application, form, page, and item level in response to form lifecycle changes, and to user interactions. A list of the events available, and how to interact with the form using them is shown..
 -   **[Running Custom JavaScript Files](ref_jsapi_running_external_js_files.md)**  
 Custom JavaScript can also be loaded from attached JavaScript files. Any .js file that is added to the application in the **Settings** \> **Files** section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.
 -   **[Reference Objects and Functions](ref_jsapi_objects_and_functions.md)**  
  Describes the Functions available on different parts of the {{fullProductName}} object model.
+-   **[Running third party libraries](ref_jsapi_running_third_party_libraries.md)**  
+Third party JavaScript libraries can be used in your application to extend the functionality of the {{shortProductName}} API.
 
 **Parent topic:** [Reference](reference_toc.md)
 

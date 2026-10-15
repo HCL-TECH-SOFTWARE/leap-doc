@@ -1,10 +1,10 @@
 # Authenticating a Helm deployment with OpenID Connect (OIDC)
 
-This topic describes how to configure an HCL Leap server that was deployed using Helm to authenticate with an external identity provider (IdP) using OpenID Connect (OIDC).
+This topic describes how to configure an {{fullLeapProductName}} server that was deployed using Helm to authenticate with an external identity provider (IdP) using OpenID Connect (OIDC).
 
-## Configuring Leap with OIDC { #section_lmm_5mt_b1c .section }
+## Configuring {{shortLeapProductName}} with OIDC { #section_lmm_5mt_b1c .section }
 
-Leap can be configured to leverage OpenID Connect \(OIDC\) as the primary authentication mechanism. This means that Leap will be turned into a Relying Party \(RP\) to the specified identify provider \(IDP\). When OIDC is used, the user and group lookup feature of Leap is not available and must be disabled as part of the configuration.
+Leap can be configured to leverage OpenID Connect \(OIDC\) as the primary authentication mechanism. This means that {{shortLeapProductName}} will be turned into a Relying Party \(RP\) to the specified identify provider \(IDP\). When OIDC is used, the user and group lookup feature of {{shortLeapProductName}} is not available and must be disabled as part of the configuration.
 
 The following tasks must be completed to establish this configuration:
 
@@ -18,11 +18,13 @@ The following tasks must be completed to establish this configuration:
 
 Many different identity providers offer OIDC capability. Refer to your chosen identity provider's documentation for more details on configuration.
 
+{% if not isDWLeap %}
 For detailed steps on configuring {{msEntraName}}, refer to [Configuring Microsoft Entra ID for Leap](azure_config.md).
+{% endif %}
 
 ## Create a secret in Kubernetes container from the IDP certificate { #section_cch_1nt_b1c .section }
 
-As part of the configuration process for your identify provider, you will have created or obtained a digital certificate for configuring HTTPS. This certificate will also need to be deployed to Leap so that the two servers can communicate with each other.
+As part of the configuration process for your identify provider, you will have created or obtained a digital certificate for configuring HTTPS. This certificate will also need to be deployed to {{shortLeapProductName}} so that the two servers can communicate with each other.
 
 !!! note
     The SSL certificate \(.crt\) and public key \(.key\) should be in PKCS12 format.
@@ -40,7 +42,7 @@ configuration:
   leap:
     . . .
     customCertificateSecrets:
-      keycloakCert: "keycloakcert"
+      keycloakcert: "keycloakcert"
 ```
 
 For more information, see to [Provide admin user a custom secret](helm_admin_customsecret.md).
@@ -82,17 +84,18 @@ configuration:
           clientId="${OIDC_CLIENT_ID}"
           clientSecret="${OIDC_CLIENT_SECRET}"
           signatureAlgorithm="RS256"
+          pkceCodeChallengeMethod="S256"
           authFilterRef="interceptedAuthFilter"
           mapIdentityToRegistryUser="false"
           httpsRequired="true"
-          scope="openid"
+          scope="openid profile"
           realmName="LeapOidc"
           groupIdentifier="group_membership"
           userIdentityToCreateSubject="preferred_username"
           discoveryEndpointUrl="https://myoidcserver:8443/realms/Leapdev/.well-known/openid-configuration">
         </openidConnectClient>
         <authFilter id="interceptedAuthFilter">
-          <requestUrl id="authRequestUrl" matchType="contains" urlPattern="/apps/secure"/>
+          <requestUrl id="authRequestUrl" matchType="contains" urlPattern="/apps/secure|apps-admin"/>
         </authFilter>
       </server> 
 . . .
@@ -105,10 +108,10 @@ For more details on defining a server customization, see [Open Liberty server cu
 
 The following properties must be set to complete the OIDC configuration:
 
--   **postLogoutRedirectURL** - This is the URL to which Leap will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.
+-   **postLogoutRedirectURL** - This is the URL to which {{shortLeapProductName}} will redirect the browser after a user chooses to log out. This is necessary to complete the loop with the OIDC IDP.
 -   **reauthOnFailedRequest**, **reauthInNewWindow** - When the user's session expires, these settings enable the user to reauthenticate in a pop-up window and not lose any unsaved work
 
-For more details on setting Leap properties, see [Leap properties](helm_leap_properties.md).
+For more details on setting {{shortLeapProductName}} properties, see [Leap properties](helm_leap_properties.md).
 
 ```yaml
 configuration:
@@ -139,9 +142,9 @@ configuration:
 ```
 
 ## Referencing Users and Groups in Security Role Mapping 
-To assign a user or group from OIDC to one of the Leap roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user or group name.  
+To assign a user or group from OIDC to one of the {{shortLeapProductName}} roles (AdministrativeUsers, EditApplicationUsers, UseApplicationUsers) you must use their access id.  The access id is made up of the realmName (defined in the 'openidConnectClient' definition) and the user or group name.  
 
-To assign a user from OIDC to a Leap security role you would use {realmName}/{userName}:
+To assign a user from OIDC to a {{shortLeapProductName}} security role you would use {realmName}/{userName}:
 ```yaml
 configuration:
   leap:
@@ -153,7 +156,7 @@ configuration:
         - LeapOidc/john.oidc
 ```
 
-To assign a group from OIDC to a Leap security role you would use {realmName}/{groupName}:
+To assign a group from OIDC to a {{shortLeapProductName}} security role you would use {realmName}/{groupName}:
 ```yaml
 configuration:
   leap:
@@ -180,11 +183,12 @@ To get more information about how Liberty perceives the logged in user, add the 
 
 ## Restart the pod { #section_zq2_vmt_b1c .section }
 
-After restarting the Leap pod, accessing Leap should redirect you to authenticate using your OIDC IDP.
+After restarting the {{shortLeapProductName}} pod, accessing {{shortLeapProductName}} should redirect you to authenticate using your OIDC IDP.
 
+{% if not isDWLeap %}
 ## Sample {{msEntraName}} Configuration { #sample_entra_config .section }
 
-The following is an example of a Leap configuration against {{msEntraName}} as the IDP using ODIC and with user/group searches enabled.
+The following is an example of a {{shortLeapProductName}} configuration against {{msEntraName}} as the IDP using ODIC and with user/group searches enabled.
 
 1. You must [prepare the {{msEntraName}} tenant for Leap](azure_config.md).
 
@@ -198,9 +202,9 @@ The following is an example of a Leap configuration against {{msEntraName}} as t
     . . .
     ```
 
-3. Define the Leap properties to enable the user/group searching against {{msEntraName}}.  We have also included the properties that improve the re-authentication experience when a user session expires.
+3. Define the {{shortLeapProductName}} properties to enable the user/group searching against {{msEntraName}}.  We have also included the properties that improve the re-authentication experience when a user session expires.
 
-    For further details on the Leap configuration required to integrate with {{msEntraName}}, refer to [Integrating with a Microsoft Entra ID directory](azure_lookups.md).
+    For further details on the {{shortLeapProductName}} configuration required to integrate with {{msEntraName}}, refer to [Integrating with a Microsoft Entra ID directory](azure_lookups.md).
 
     ```
     configuration:
@@ -271,5 +275,6 @@ configuration:
           - LeapOidc/372863bc-001f-42b5-b877-38f6afc4b417
 . . .
 ```
+{% endif %}
 
 **Parent topic:** [Kubernetes Helm deployment](kubernetes_helm_deployment.md)

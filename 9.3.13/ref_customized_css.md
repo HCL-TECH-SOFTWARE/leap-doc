@@ -1,8 +1,8 @@
 # Creating customized Cascading Style Sheets { #customizedcascadingstylesheets .reference }
 
-You can apply your own custom Cascading Style Sheet \(CSS\) to the rendering of your {{fullProductName}} application. To create a custom theme, you must be familiar with the basic concepts of CSS.
+You can apply your own custom Cascading Style Sheet \(CSS\) to the rendering of your {{fullLeapProductName}} application. To create a custom theme, you must be familiar with the basic concepts of CSS.
 
-Elements are assigned specific class names, prefaced by lf in the custom theme. The following code is an example of a {{shortProductName}} custom theme.
+Elements are assigned specific class names, prefaced by lf in the custom theme. The following code is an example of a {{shortLeapProductName}} custom theme.
 
 ```css
 /* Form - centered with a drop shadow*/
@@ -241,7 +241,7 @@ The following graphic shows where the class names for creating dialog windows ar
 
 Your custom CSS is the last style sheet that is applied in an application. However, you must ensure that your CSS rules are more specific \(higher weighted\) than the ones already specified in the base CSS rules.
 
--   In some cases, you must append the !important declaration to your rules to override the {{shortProductName}} base rules. For example, to change the font color of all item titles use `.lfMn .lfFormLabel {color: #094291 !important}`.
+-   In some cases, you must append the !important declaration to your rules to override the {{shortLeapProductName}} base rules. For example, to change the font color of all item titles use `.lfMn .lfFormLabel {color: #094291 !important}`.
 -   In some cases you must add the universal, “\*”, selector to your rules. For example, to change the font color of all buttons use `.lfMn .lfFormBtn * {color: white}`
 
 To reference image files that are contained within the same application, use a relative URL of ../image/.... For example, to reference the image named background.jpg contained within your application, use `url('../image/background.jpg')`. For more information about referencing image files within an application, see [Managing the files associated with your application](wf_managing_the_files_associated_with_your_appl.md)
@@ -254,9 +254,9 @@ To reference image files that are contained within the same application, use a r
 There are no technical limitations to the CSS rules that can be applied to a form; however there are the following best practices:
 
 -   All CSS rules must begin with the .lfMn class selector. This is important for forms that might be shown within the context of another web page, such as in the IBM® WebSphere® Portal environment.
--   Base your CSS rules around class names that are prefixed with “lf”. For example: lfFormFieldSingleLine. These class names that are likely to remain consistent between {{shortProductName}} releases.
--   Your custom styles are not restricted, so you must be specific with your selectors. Selectors that are too broad affect all aspects of the{{shortProductName}} interface, including all dialogs and all elements within the **View Data** interface.
--   Your CSS must target the browsers that are supported by {{shortProductName}}.
+-   Base your CSS rules around class names that are prefixed with “lf”. For example: lfFormFieldSingleLine. These class names that are likely to remain consistent between {{shortLeapProductName}} releases.
+-   Your custom styles are not restricted, so you must be specific with your selectors. Selectors that are too broad affect all aspects of the{{shortLeapProductName}} interface, including all dialogs and all elements within the **View Data** interface.
+-   Your CSS must target the browsers that are supported by {{shortLeapProductName}}.
 -   If possible, avoid CSS rules that affect the size and positioning of elements. You might want to specify some custom padding and margins, but it is your responsibility to ensure that no erroneous cropping or extra scroll-bars are displayed. We recommend that you limit your theme to the following properties:
     -   background color
     -   background image – typically for background gradients
@@ -278,9 +278,9 @@ You can assign a custom CSS class name to any form, page, item, or stage action 
 
 ## Testing your custom CSS changes { .section }
 
-Use a CSS development tool to test your custom CSS changes. Most web browsers contain such a tool, which you can use to discover the wanted styling class. You can even make CSS rule modifications online, so you immediately see how a change affects the form visually. After the rules are determined, copy them to your custom CSS file for uploading into your {{shortProductName}} application.
+Use a CSS development tool to test your custom CSS changes. Most web browsers contain such a tool, which you can use to discover the wanted styling class. You can even make CSS rule modifications online, so you immediately see how a change affects the form visually. After the rules are determined, copy them to your custom CSS file for uploading into your {{shortLeapProductName}} application.
 
-If you do not have access to a CSS development tool, an alternative approach is to place the CSS file on a web server. Reference the web location when you add the CSS file to your {{shortProductName}} application. You can modify the CSS file on the web server, then refresh the {{shortProductName}} application to pick up the changes. This approach quickly tests style changes without requiring you to repeatedly upload a new CSS file into your application, save the application, and then redeploy.
+If you do not have access to a CSS development tool, an alternative approach is to place the CSS file on a web server. Reference the web location when you add the CSS file to your {{shortLeapProductName}} application. You can modify the CSS file on the web server, then refresh the {{shortLeapProductName}} application to pick up the changes. This approach quickly tests style changes without requiring you to repeatedly upload a new CSS file into your application, save the application, and then redeploy.
 
 **Parent topic:** [Reference](reference_toc.md)
 

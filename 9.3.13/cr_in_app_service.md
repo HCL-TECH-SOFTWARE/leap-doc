@@ -12,14 +12,14 @@ These instructions provide a general overview of adding and configuring services
     {% if isDominoLeap %}
     - **Select from Domino Database** -- Use this option to build a service that accesses data in a Domino database. For more details, see [Accessing data from Existing Domino Applications](dleap_access_domino_data.md).
     {% endif %}
-    - **Select from service catalog** -- Use this option to select a predefined service. For more details, see [Service Oriented Architecture – Exposing a service to {{ shortProductName }}](cr_using_apps_exposing_service_to.md){% if isLeap %} or {% endif %} {% if isDominoLeap %}, {% endif %}[Integrating your application with other {{ shortProductName }} applications](cr_using_other_apps_as_services.md){% if isDominoLeap %}, and [Directory services](dleap_directory_services.md){% endif %}.
+    - **Select from service catalog** -- Use this option to select a predefined service. For more details, see [Integrating your application with other {{ shortLeapProductName }} applications](cr_using_other_apps_as_services.md){% if not isDWLeap %}, or [Service Oriented Architecture – Exposing a service to {{ shortLeapProductName }}](cr_using_apps_exposing_service_to.md){% endif %}{% if isDominoLeap %}, and [Directory services](dleap_directory_services.md){% endif %}.
 
     !!! note
         Continue to step 3 only if you have selected **Enter a URL**.
 
 3.  To specify options for the URL, click the Properties icon located to the right of **URL** field.
 
-    Use the **Service Details** dialog to configure how {{shortProductName}} should call the service.
+    Use the **Service Details** dialog to configure how {{shortLeapProductName}} should call the service.
 
     -   You can add details to the URL in the **URL** field.
     -   Specify the HTTP method for the service

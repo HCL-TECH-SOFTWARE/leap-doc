@@ -1,10 +1,10 @@
 # HTTP Service Transport 
 
-This topic provides reference information on HTTP Service Transports used in {{fullProductName}}.
+This topic provides reference information on HTTP Service Transports used in {{fullLeapProductName}}.
 
 ## Purpose of the HTTP Service Transport { .section}
 
-The HTTP Service Transport provides a mechanism to communicate with HTTP servers. The transport allows configuration of the URL to request, HTTP method to use, query parameters, and request headers. When combined with the {{shortProductName}} service mapping engine, the HTTP Service Transport extracts data from an HTTP response and makes it available to your application.
+The HTTP Service Transport provides a mechanism to communicate with HTTP servers. The transport allows configuration of the URL to request, HTTP method to use, query parameters, and request headers. When combined with the {{shortLeapProductName}} service mapping engine, the HTTP Service Transport extracts data from an HTTP response and makes it available to your application.
 
 ## When to use the HTTP Service Transport { .section}
 

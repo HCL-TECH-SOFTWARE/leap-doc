@@ -4,7 +4,7 @@ The following instructions explain how to apply CSS to table buttons.
 
 ## Procedure
 
-1. Create a {{fullProductName}} application.
+1. Create a {{fullLeapProductName}} application.
 
 2. Add a Table to the canvas.  
 

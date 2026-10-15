@@ -1,18 +1,18 @@
 # Manually deploying to WebSphere Application Server { #settingupwas .task }
 
-The following instructions describe how to manually deploy HCL Leap to WebSphere® Application Server.
+The following instructions describe how to manually deploy {{fullLeapProductName}} to WebSphere® Application Server.
 
 ## Prepare database
 
-Prior to deploying HCL Leap to WebSphere Application Server, you must create a new DB2®, Oracle, or PostgreSQL database.
+Prior to deploying HCL {{shortLeapProductName}} to WebSphere Application Server, you must create a new DB2®, Oracle, or PostgreSQL database.
 
 -  To set up the DB2 database, see [Creating a DB2 database](in_create_db2.md).
 -  To set up an Oracle database, see [Creating an Oracle database](in_oracle_creating_db.md#)
 -  To set up a PostgreSQL database, see [Creating a PostgreSQL database](create_postgresql_db.md).
 
-## Deploy Leap to WebSphere Application Server
+## Deploy {{shortLeapProductName}} to WebSphere Application Server
 
-To deploy Leap to WebSphere Application Server, open the WebSphere Application Server Administrative console.
+To deploy {{shortLeapProductName}} to WebSphere Application Server, open the WebSphere Application Server Administrative console.
 
 ### Configure data source
 
@@ -76,7 +76,7 @@ Go to **Application Servers** \> **server1** \> **Java and Process Management** 
 4.  Click **Apply** to apply your changes.
 
 
-### Deploy the Leap .ear file
+### Deploy the {{shortLeapProductName}} .ear file
 
 1.  Go to **Applications** \> **Application Types** \> **WebSphere Enterprise Applications**.
 
@@ -107,7 +107,7 @@ Go to **Application Servers** \> **server1** \> **Java and Process Management** 
     -   Select the **AdministrativeUsers** role, and click **Map Users...** or **Map Groups...**. Select the administrative users or groups to map to the role.
     -   Select the **UseApplicationUsers** role, and click **Map Special Subjects**. Select either All authenticated in Application's Realms, or All authenticated in Trusted Realms to map the value to the role. If both options are available, select All authenticated in Trusted Realms.
     
-    For detailed information about the available roles, refer to [Understanding Leap roles](in_leap_roles.md).    
+    For detailed information about the available roles, refer to [Understanding {{shortLeapProductName}} roles](in_leap_roles.md).    
 
 11. Continue to the summary page.
 

@@ -1,4 +1,4 @@
-# Running Custom JavaScript Files 
+# Running custom JavaScript files 
 
 Custom JavaScript™ can also be loaded from attached JavaScript files. Any .js file that is added to the application in the **Settings** \> **Files** section is automatically loaded into your running application. An associated JavaScript file is evaluated once when the browser first loads the running application, and is not called in response to any events.
 

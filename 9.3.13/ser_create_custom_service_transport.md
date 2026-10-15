@@ -1,10 +1,10 @@
 # Creating your own custom Service Transport { #ser_create_custom_service_transport .task}
 
-By creating a custom Service Transport, you can allow HCL Leap applications to use services from any external system, or access any data source. Alternatively, the transport can implement a custom service itself without communicating with any external system or data source.
+By creating a custom Service Transport, you can allow {{shortLeapProductName}} applications to use services from any external system, or access any data source. Alternatively, the transport can implement a custom service itself without communicating with any external system or data source.
 
 If you plan to call an external service using HTTP, consider using the HTTP Service Transport instead. Refer to [HTTP Service Transport](ref_service_http_service_transport.md) for more information.
 
-A custom Service Transport can be added to the Leap environment by creating and deploying an appropriate OSGi JAR bundle. Refer to [Development process](ser_setup_development_environment.md) before starting.
+A custom Service Transport can be added to the {{shortLeapProductName}} environment by creating and deploying an appropriate OSGi JAR bundle. Refer to [Development process](ser_setup_development_environment.md) before starting.
 
 1.  Create a Java class
 
@@ -123,7 +123,7 @@ A custom Service Transport can be added to the Leap environment by creating and 
 
     Multiple OSGi services can be packaged within the same OSGi bundle. Therefore, the same .jar file can be used for a custom Service Transport, a custom Service Catalog Group, and a custom Service Catalog.
 
-    On the Leap server, put the .jar file in one the following directories or in a subdirectory of one of the following directories:
+    On the {{shortLeapProductName}} server, put the .jar file in one the following directories or in a subdirectory of one of the following directories:
 
     -   Windows™:
 
@@ -135,7 +135,7 @@ A custom Service Transport can be added to the Leap environment by creating and 
 
     Important notes on directories:
 
-    -   If the extensions directory does not exist, then the Leap server must be restarted after the directory is created.
+    -   If the extensions directory does not exist, then the {{shortLeapProductName}} server must be restarted after the directory is created.
     -   /opt/HCL/Leap/ is not case-sensitive.
 
 ## Sample LDAP query Service Transport { .example}

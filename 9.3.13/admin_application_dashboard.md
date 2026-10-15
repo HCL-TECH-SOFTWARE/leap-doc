@@ -2,7 +2,7 @@
 
 The Admin Application Dashboard is a page that is available to members of the Admin or SuperAdmin groups.
 
-An **Admin** tab will appear in the top banner for users with permission. The page provides information about all the applications on the {{shortProductName}} server. To manage the load on the server, the details are gathered using a timer task that runs at a regular configurable interval \(see Application Statistics collection timer in [Configuration properties](co_configuration_properties.md)\).
+An **Admin** tab will appear in the top banner for users with permission. The page provides information about all the applications on the {{shortLeapProductName}} server. To manage the load on the server, the details are gathered using a timer task that runs at a regular configurable interval \(see Application Statistics collection timer in [Configuration properties](co_configuration_properties.md)\).
 
 The dashboard shows the following:
 
@@ -15,5 +15,5 @@ The data may be updated by clicking **Refresh**. The data may be exported to a s
 
 For more information, see [Application statistics REST API](app_stats_restapi.md).
 
-**Parent topic: **[Administering {{shortProductName}}](administering_leap.md)
+**Parent topic: **[Administering](administering_leap.md)
 

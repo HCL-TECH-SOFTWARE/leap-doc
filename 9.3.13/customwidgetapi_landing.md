@@ -1,16 +1,16 @@
 # Custom Widget API { #customwidgetapi_landing .concept }
 
-This API provides a mechanism to incorporate custom widgets into the {{fullProductName}} product.
+This API provides a mechanism to incorporate custom widgets into the {{fullLeapProductName}} product.
 
 
 ## Product Configuration
 
-Additional resources can be loaded into {{shortProductName}} UI's by adding `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}runtimeResources` properties to {% if isLeap %}`Leap_config.properties`{% endif %}{% if isDominoLeap %}the VoltConfig.nsf{% endif %}. These additional resources are expected to include definitions of your custom widgets and any auxiliary styles or libraries that are required to support them.
+Additional resources can be loaded into {{shortLeapProductName}} UI's by adding `{% if isLeap %}ibm.nitro.NitroConfig.{% endif %}runtimeResources` properties to {% if isLeap %}`Leap_config.properties`{% endif %}{% if isDominoLeap %}the VoltConfig.nsf{% endif %}. These additional resources are expected to include definitions of your custom widgets and any auxiliary styles or libraries that are required to support them.
 
 For example:
 
 {% if isLeap %}
-Create a single Leap Configuration setting:
+Create a single {{shortLeapProductName}} Configuration setting:
 
 ```
 ibm.nitro.NitroConfig.runtimeResources.1 = \
@@ -32,7 +32,7 @@ ibm.nitro.NitroConfig.runtimeResources.4 = <script src='https://myWidgets.exampl
 {% endif %}
 
 {% if isDominoLeap %}
-Create a single Leap Configuration setting:
+Create a single {{shortLeapProductName}} Configuration setting:
 
 Setting Name = runtimeResources.1
 
@@ -113,7 +113,7 @@ const myWidgetDefinition = {
     builtInProperties: [...], // use existing properties: 'title', 'required', etc
     properties: [...], // custom properties, of prescribed types
 
-    // called by Leap to initialize widget in the DOM with initial properties, and set-up event handling
+    // called by {{shortLeapProductName}} to initialize widget in the DOM with initial properties, and set-up event handling
     instantiate: function (context, domNode, initialProps, eventManager) {
         return {
              // (optional) for display in various parts of the UI
@@ -121,12 +121,12 @@ const myWidgetDefinition = {
                 return ...
             },
 
-            // (required) for Leap to get widget's data value
+            // (required) for {{shortLeapProductName}} to get widget's data value
             getValue: function () {
                 return ...
             },
 
-            // (required) for Leap to set widget's data value
+            // (required) for {{shortLeapProductName}} to set widget's data value
             setValue: function (val) {
                 ...
             },
@@ -172,13 +172,13 @@ The custom widget can define an array of custom properties for the app author to
 -   **[Widgets with Options](widgets_options.md)**  
 Widgets that allow the end-user to select from a set of options require specific treatment. This includes widgets such as dropdowns, radio groups, or checkbox groups. These options could be hardcoded in the custom widget, or defined by the app author.
 -   **[Widget Instantiation](widget_instantiation.md)**  
-The widget `instantiate()` function is called when an instance of the custom widget needs to be created. The function is expected to return an `object` that allows {{shortProductName}} to interact with the instantiated widget.
+The widget `instantiate()` function is called when an instance of the custom widget needs to be created. The function is expected to return an `object` that allows {{shortLeapProductName}} to interact with the instantiated widget.
 -   **[Validation](widget_validation.md)**  
 Some intrinsic validation will be done according to the `type` and `constraints` declared in the widget's `datatype` property; however, it might be necessary for a widget to supply its own custom validation logic.
 -   **[Internationalization](widget_internationalization.md)**  
 Certain attributes of the widget definition can be displayed to app authors working in different locales. To support multiple languages during authoring, some properties can be specified as "multi-string" objects rather than a plain `string` values.
 -   **[Usage of JavaScript API](widget_javaapi.md)**  
-Custom widgets can use {{shortProductName}}'s JavaScript API to help achieve their objectives.
+Custom widgets can use {{shortLeapProductName}}'s JavaScript API to help achieve their objectives.
 -   **[Versioning](widget_versioning.md)**  
 This topic describes the widget's `version`.
 -   **[Upgrading](widget_upgrade.md)**  

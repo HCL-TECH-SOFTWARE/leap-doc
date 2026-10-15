@@ -1,6 +1,6 @@
 # Importing and exporting applications { #importingandexportinganapplication .task }
 
-This topic provides an overview of importing and exporting applications in {{fullProductName}}.  You can import or export applications from the **Manage** page to migrate an application between environments.
+This topic provides an overview of importing and exporting applications in {{fullLeapProductName}}.  You can import or export applications from the **Manage** page to migrate an application between environments.
 
 ## Importing an application
 
@@ -27,7 +27,7 @@ The following steps provide a general overview of how to **export** an applicati
     !!! note
         To export the application with data, select **Include submission data?** in **Existing data options**.  
 
-3.  Click **OK**. The `.leap` file is downloaded to the local machine and can be imported into another {{fullProductName}} environment.  
+3.  Click **OK**. The `.leap` file is downloaded to the local machine and can be imported into another {{fullLeapProductName}} environment.  
 
     
 **Parent topic:** [Application Management](cr_application_operations_toc.md)

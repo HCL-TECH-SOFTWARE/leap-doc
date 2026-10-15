@@ -2,7 +2,7 @@
 
 The data access REST API exposes operations on application submitted data, also known as records.
 
-The data that is captured by a {{fullProductName}} application is stored in a {% if isLeap %}relational{% endif %}{% if isDominoLeap %} Domino {% endif %} database. {{shortProductName}} provides secure access to that data through the View Data function, which lets you filter and search, as well as export data for analysis and reports. When accessing the data using the API, all security permissions defined in the Access rules for the application are enforced.
+The data that is captured by a {{fullLeapProductName}} application is stored in a {% if isLeap %}relational{% endif %}{% if isDominoLeap %} Domino {% endif %} database. {{shortLeapProductName}} provides secure access to that data through the View Data function, which lets you filter and search, as well as export data for analysis and reports. When accessing the data using the API, all security permissions defined in the Access rules for the application are enforced.
 
 Each form in an application has its own set of REST endpoints.  
 
@@ -45,7 +45,7 @@ The Swagger UI can be used to execute any of the API operations.
 -   **attachment-uid**: is the UID of the attachment
 -   **x**: is a randomly generated, difficult to guess single-use numerical value
 
--   The context for the REST API \(/{{apiContext}}/\) is different from accessing {{shortProductName}} in the browser \(/{{context}}/\).
+-   The context for the REST API \(/{{apiContext}}/\) is different from accessing {{shortLeapProductName}} in the browser \(/{{context}}/\).
 -   The /{{apiContext}}/ context uses basic authentication rather than form-based authentication.
 -   The credentials used for authentication must match the users and permissions specified by the application designer in the **Access** tab. Each form and stage can have different permissions set for each REST API action.
 -   Use /anon if your applications allow anonymous access.

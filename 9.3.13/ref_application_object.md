@@ -1,6 +1,6 @@
 # Application object 
 
-The {{shortProductName}} application object, referenced by using 'app', provides access to information relevant to the whole application.  The object has several built-in functions.
+The {{shortLeapProductName}} application object, referenced by using 'app', provides access to information relevant to the whole application.  The object has several built-in functions.
 
 ## Functions
 
@@ -216,9 +216,9 @@ app.getFileBaseURL()
 
 **Example**
 
-This example demonstrates how to create a link item in a form that refers to a file included in the {{shortProductName}} application.
+This example demonstrates how to create a link item in a form that refers to a file included in the {{shortLeapProductName}} application.
 
-1. Attach a file (not image or CSS) to your {{shortProductName}} application. Go to Settings...Files and click the 'Add' button.
+1. Attach a file (not image or CSS) to your {{shortLeapProductName}} application. Go to Settings...Files and click the 'Add' button.
 2. Add a Link item to the form
 3. In the **onShow** event of the Link item add:
 ```javascript
@@ -289,9 +289,9 @@ app.getImageBaseURL()
 
 **Example**
 
-This example demonstrates how to create a link item in a form that refers to a file included in the {{shortProductName}} application.
+This example demonstrates how to create a link item in a form that refers to a file included in the {{shortLeapProductName}} application.
 
-1. Attach an image file to your {{shortProductName}} application. Go to Settings...Files and click the 'Add' button.
+1. Attach an image file to your {{shortLeapProductName}} application. Go to Settings...Files and click the 'Add' button.
 2. Add a Link item to the form
 3. In the **onShow** event of the Link item add:
 ```javascript
@@ -352,7 +352,7 @@ app.getLocation(myCallbackFunction,highAccuracy);
 
 ### getProductBaseURL {.section}
 
-Returns the host and context of the {{shortProductName}} server.
+Returns the host and context of the {{shortLeapProductName}} server.
 
 **Syntax**
 ```javascript
@@ -431,9 +431,9 @@ app.getStyleBaseURL()
 
 **Example**
 
-This example demonstrates how to create a link item in a form that refers to a file included in the {{shortProductName}} application.
+This example demonstrates how to create a link item in a form that refers to a file included in the {{shortLeapProductName}} application.
 
-1. Attach a CSS file to your {{shortProductName}} application. Go to Settings...Files and click the 'Add' button.
+1. Attach a CSS file to your {{shortLeapProductName}} application. Go to Settings...Files and click the 'Add' button.
 2. Add a Link item to the form
 3. In the **onShow** event of the Link item add:
 ```javascript
@@ -743,7 +743,7 @@ app.setSuppressWarning(true);
 
 ### showConfirmation {.section}
 
-This function presents the user with a {{shortProductName}}-themed dialog that requires their input.  The input can be captured and used to control other form behavior.
+This function presents the user with a {{shortLeapProductName}}-themed dialog that requires their input.  The input can be captured and used to control other form behavior.
 
 You can configure any combination of buttons to appear in the dialog. You can also change the label of each button, this does not affect the return value when the button is pressed.
 

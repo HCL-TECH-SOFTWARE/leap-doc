@@ -1,6 +1,6 @@
 # Data objects { #dataobjects .reference }
 
-This topic describes and gives samples for data objects used within the {{fullProductName}} JavaScript™ API.
+This topic describes and gives samples for data objects used within the {{fullLeapProductName}} JavaScript™ API.
 
 ## Business Object (BO)
 

@@ -1,12 +1,12 @@
 # Persistent Volume Claims { #helm_persistant_volume .concept }
 
-Defining persistent volumes \(PVs\) for Leap is optional and dependent on your needs.
+Defining persistent volumes \(PVs\) for {{shortLeapProductName}} is optional and dependent on your needs.
 
-The 3 volumes that may be required to operate Leap:
+The 3 volumes that may be required to operate {{shortLeapProductName}}:
 
--   A volume specified as “ReadWriteMany”. This will be used to pass database drivers or LTPA key files to be used by Leap. When the container is started, any files in this directory are copied into /opt/openliberty/wlp/usr/servers/defaultServer/misc. To reference files in this directory within your configuration snippets, use $\{SERVER\_CONFIG\_DIR\}/misc.
+-   A volume specified as “ReadWriteMany”. This will be used to pass database drivers or LTPA key files to be used by {{shortLeapProductName}}. When the container is started, any files in this directory are copied into /opt/openliberty/wlp/usr/servers/defaultServer/misc. To reference files in this directory within your configuration snippets, use $\{SERVER\_CONFIG\_DIR\}/misc.
 
-    In order to pass custom extensions to Leap, create an "extensions" directory in this volume. For more information see [Deploy custom extensions](helm_deploy_custom_extension.md).
+    In order to pass custom extensions to {{shortLeapProductName}}, create an "extensions" directory in this volume. For more information see [Deploy custom extensions](helm_deploy_custom_extension.md).
 
     !!! note
         If files are added to this volume while the system is running then it will need to be restarted.
@@ -30,16 +30,16 @@ ReadWriteMany PVs support read and write operations by multiple pods. This means
 
 ## Configuration parameters { #section_hpf_xj4_hzb .section }
 
-To access the PersistentVolumes \(PVs\) on your cluster, the HCL Leap Kubernetes or OpenShift deployment using Helm creates PersistentVolumeClaims \(PVCs\) that binds the PVs to the corresponding pods.
+To access the PersistentVolumes \(PVs\) on your cluster, the {{fullLeapProductName}} Kubernetes or OpenShift deployment using Helm creates PersistentVolumeClaims \(PVCs\) that binds the PVs to the corresponding pods.
 
-Each PVC that Leap requires allows you to configure the following parameters, as shown below. For a PVC of the Leap application:
+Each PVC that {{shortLeapProductName}} requires allows you to configure the following parameters, as shown below. For a PVC of the {{shortLeapProductName}} application:
 
 ```
 # Persistent Volume Setup 
 volumes: 
-  # Persistent Volumes for Leap 
+  # Persistent Volumes for {{shortLeapProductName}} 
   leap: 
-    # RWX PVC shared by all Leap pods - RWX. Used to pass auxiliary binary files to all Pods on startup 
+    # RWX PVC shared by all {{shortLeapProductName}} pods - RWX. Used to pass auxiliary binary files to all Pods on startup 
     rwx: 
       storageClassName: "manual" 
       requests: 
@@ -50,7 +50,7 @@ volumes:
 
 **StorageClassName**
 
-Depending on your Cluster configuration, you may have configured a specific StorageClass that should be used for your PVs and the PVCs of HCL Leap.
+Depending on your Cluster configuration, you may have configured a specific StorageClass that should be used for your PVs and the PVCs of {{fullLeapProductName}}.
 
 This property allows you to enter the name of the StorageClass you want the deployment to use. PVCs then only accepts PVs that match the StorageClassName you have defined in the configuration. If there are no PVs that match, the pods remain pending and do not start until a fitting PV is provided by the cluster.
 
@@ -124,11 +124,11 @@ If the persistent volume is not working as expected, then verify that it is conn
 
 1. Execute the following command to list out all the volumes registered with the pod
 
-```
-[...]$ kubectl -n dxns get pv
-NAME                   CAPACITY  ACCESS MODES RECLAIM POLICY STATUS CLAIM                         STORAGECLASS REASON AGE
-rwxvol-core-profile-1  100Gi     RWX          Retain         Bound  dxns/leap-deployment-leap-rwx manual              153d
-```
+    ```
+    [...]$ kubectl -n dxns get pv
+    NAME                   CAPACITY  ACCESS MODES RECLAIM POLICY STATUS CLAIM                         STORAGECLASS REASON AGE
+    rwxvol-core-profile-1  100Gi     RWX          Retain         Bound  dxns/leap-deployment-leap-rwx manual              153d
+    ```
 
 2. Location the 'leap-deployment-leap-rwx' claim and verify that the directory listed in the 'name' exists and has the necessary r-w-x permissions.  For example, this may be located in a directory like '/home/centos/native-kube/volumes/rwxvol-core-profile-1'
 
