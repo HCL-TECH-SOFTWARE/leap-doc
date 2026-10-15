@@ -29,7 +29,7 @@
     
     
       
-        <title>Leap properties - HCL Leap 9.3.13 Help Center</title>
+        <title>Defining configuration properties - HCL Leap 9.3.13 Help Center</title>
       
     
     
@@ -192,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Leap properties
+              Defining configuration properties
             
           </span>
         </div>
@@ -2500,6 +2500,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining configuration properties
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="helm_leap_properties.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2507,7 +2525,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -2516,6 +2534,60 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3408,6 +3480,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3425,6 +3558,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10043,6 +10184,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -10061,29 +10243,50 @@
   
 
 
-<h1 class="concept" id="helm_leap_properties">Leap properties</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h1 class="concept" id="helm_leap_properties">Defining configuration properties</h1>
+<h2 id="required-properties">Required properties</h2>
 <p>The following properties must be added: </p>
 <ul>
-<li><strong><a href="co_configuration_properties.html#setupallsetupstatus">ibm.nitro.SetupAll.setupStatus</a>=start</strong></li>
-<li><strong><a href="co_configuration_properties.html#loginidisemail">ibm.nitro.NitroConfig.loginIdIsEmail</a>=true</strong></li>
-<li><strong><a href="co_configuration_properties.html#userlookup">ibm.nitro.NitroConfig.userLookup</a>=false</strong></li>
-<li><strong><a href="co_configuration_properties.html#usergroups">ibm.nitro.NitroConfig.userGroups</a>=false</strong>  </li>
+<li><strong><a href="co_configuration_properties.html#setupallsetupstatus">ibm.nitro.SetupAll.setupStatus</a></strong>=start</li>
+<li><strong><a href="co_configuration_properties.html#loginidisemail">ibm.nitro.NitroConfig.loginIdIsEmail</a></strong>=true</li>
+<li><strong><a href="co_configuration_properties.html#userlookup">ibm.nitro.NitroConfig.userLookup</a></strong>=false</li>
+<li><strong><a href="co_configuration_properties.html#usergroups">ibm.nitro.NitroConfig.userGroups</a></strong>=false</li>
+<li><strong><a href="co_configuration_properties.html#enableadminconfigui">ibm.nitro.NitroConfig.enableAdminConfigUI</a></strong>=true</li>
+<li><strong><a href="co_configuration_properties.html#rootadminid">ibm.nitro.NitroConfig.rootAdminId</a></strong>=adminUser</li>
+<li><strong><a href="co_configuration_properties.html#section_reauthOnFailedRequest">ibm.nitro.NitroConfig.reauthOnFailedRequest</a></strong>=true</li>
+<li><strong><a href="co_configuration_properties.html#section_reauthInNewWindow">ibm.nitro.NitroConfig.reauthInNewWindow</a></strong>=true</li>
+<li><strong>ibm.nitro.NitroConfig.memberManagerType</strong>=liberty-user-registry</li>
 </ul>
-<p>If this does not suit your organizational needs, contact HCL Support for a possible workaround.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the configuration regarding <strong>loginIdIsEmail</strong>, <strong>userLookup</strong>, and <strong>userGroups</strong> does not suit your organizational needs, contact HCL Support for a possible workaround.</p>
 </div>
-<p>Below is an example snippet of setting leap-specific properties:</p>
+<h2 id="optional-properties">Optional properties</h2>
+<ul>
+<li><strong><a href="co_configuration_properties.html#section_serveruri">ibm.nitro.NitroConfig.serverURI</a></strong>=https://forms.example.com/leap</li>
+<li>
+<p><strong><a href="co_configuration_properties.html#section_blockanonaccess">ibm.nitro.NitroConfig.blockAnonAccess</a></strong>=disabled</p>
+</li>
+<li>
+<p><strong><a href="co_configuration_properties.html#appfiles">ibm.nitro.NitroConfig.appFilesWhiteList</a></strong> = css js svg png gif bmp jpg webp txt pdf ttf otf woff woff2 swf mpg mp4 xml</p>
+</li>
+<li><strong><a href="co_configuration_properties.html#section_attachmentfiles">ibm.nitro.NitroConfig.attachmentFilesWhiteList</a></strong> = png gif bmp jpg webp txt pdf odt ods odp doc docx ppt pptx xls xlsx csv tsv log leap mpg mp4 xml</li>
+</ul>
+<p>For additional optional properties, see <a href="co_configuration_properties.html">Configuration properties</a>.</p>
+<h2 id="example">Example</h2>
+<p>Below is an example snippet of setting product-specific properties:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">configuration</span><span class="p">:</span>
 <span class="w">   </span><span class="nt">leap</span><span class="p">:</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">. . .</span>
 <span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">leapProperties</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"> </span>
-<span class="w">        </span><span class="no">ibm.nitro.SetupAll.setupStatus = start</span>
-<span class="w">        </span><span class="no">ibm.nitro.InfoEntryPoint.dailyInfo = &lt;div&gt;Welcome to &lt;b&gt;HCL Leap 9.3.13&lt;/b&gt; in Kubernetes!&lt;/div&gt; </span>
+<span class="w">        </span><span class="no">ibm.nitro.SetupAll.setupStatus=start</span>
+<span class="w">        </span><span class="no">ibm.nitro.InfoEntryPoint.dailyInfo=&lt;div&gt;Welcome to &lt;b&gt;HCL Leap 9.3.13&lt;/b&gt; in Kubernetes!&lt;/div&gt; </span>
 <span class="w">        </span><span class="no">ibm.nitro.NitroConfig.serverURI=http://myleapserver.example.com</span>
-<span class="w">        </span><span class="no">ibm.nitro.NitroConfig.loginIdIsEmail = true</span>
+<span class="w">        </span><span class="no">ibm.nitro.NitroConfig.loginIdIsEmail=true</span>
 <span class="w">        </span><span class="no">ibm.nitro.NitroConfig.userLookup=false</span>
 <span class="w">        </span><span class="no">ibm.nitro.NitroConfig.userGroups=false</span>
+<span class="w">        </span><span class="no">ibm.nitro.NitroConfig.enableAdminConfigUI=true</span>
+<span class="w">        </span><span class="no">ibm.nitro.NitroConfig.rootAdminId=adminUser</span>
 </code></pre></div>
 <p>For more information, see <a href="co_configuration_properties.html">Configuration properties</a>.</p>
 <p><strong>Parent topic:</strong> <a href="helm_preparation.html">Preparation</a></p>

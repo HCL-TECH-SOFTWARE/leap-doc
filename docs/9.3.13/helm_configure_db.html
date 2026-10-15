@@ -2582,7 +2582,7 @@
   <span class="md-ellipsis">
     
   
-    Leap properties
+    Defining configuration properties
   
 
     
@@ -3482,6 +3482,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -3499,6 +3560,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10200,7 +10269,7 @@
 <span class="w">          </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
 <span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcDB2&quot;/&gt;</span>
 <span class="w">          </span><span class="no">&lt;/application&gt;          </span>
-<span class="w">          </span><span class="no">&lt;authData id=&quot;db2AuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
+<span class="w">          </span><span class="no">&lt;authData id=&quot;db2AuthAlias&quot; user=&quot;${db-credentials/DB_USERNAME}&quot; password=&quot;${db-credentials/DB_USERNAME}&quot; /&gt; </span>
 <span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapDB2DataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; statementCacheSize=&quot;30&quot; containerAuthDataRef=&quot;db2AuthAlias&quot;&gt; </span>
 <span class="w">            </span><span class="no">&lt;properties.db2.jcc  </span>
 <span class="w">                </span><span class="no">databaseName=&quot;LEAPDB&quot;  </span>
@@ -10253,7 +10322,7 @@
 <span class="w">            </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
 <span class="w">                </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcOracle&quot;/&gt;</span>
 <span class="w">            </span><span class="no">&lt;/application&gt;            </span>
-<span class="w">            </span><span class="no">&lt;authData id=&quot;oracleAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt; </span>
+<span class="w">            </span><span class="no">&lt;authData id=&quot;oracleAuthAlias&quot; user=&quot;${db-credentials/DB_USERNAME}&quot; password=&quot;${db-credentials/DB_USERNAME}&quot; /&gt; </span>
 <span class="w">            </span><span class="no">&lt;dataSource id=&quot;leapOracleDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;oracleAuthAlias&quot;&gt; </span>
 <span class="w">                </span><span class="no">&lt;jdbcDriver libraryRef=&quot;jdbcOracle&quot;/&gt; </span>
 <span class="w">                </span><span class="no">&lt;properties.oracle URL=&quot;jdbc:oracle:thin:@leap-oracle-db.example.com:1521/orclpdb1&quot;/&gt; </span>
@@ -10282,7 +10351,7 @@
 <span class="w">          </span><span class="no">&lt;application id=&quot;leap&quot;&gt;</span>
 <span class="w">            </span><span class="no">&lt;classloader id=&quot;leapClassloader&quot; commonLibraryRef=&quot;jdbcPostgreSQL&quot;/&gt;</span>
 <span class="w">          </span><span class="no">&lt;/application&gt;        </span>
-<span class="w">          </span><span class="no">&lt;authData id=&quot;postgresAuthAlias&quot; user=&quot;${DB_USERNAME}&quot; password=&quot;${DB_PASSWORD}&quot; /&gt;  </span>
+<span class="w">          </span><span class="no">&lt;authData id=&quot;postgresAuthAlias&quot; user=&quot;${db-credentials/DB_USERNAME}&quot; password=&quot;${db-credentials/DB_USERNAME}&quot; /&gt;  </span>
 <span class="w">          </span><span class="no">&lt;dataSource id=&quot;leapPostgresDataSource&quot; jndiName=&quot;jdbc/BuilderDataSource&quot; containerAuthDataRef=&quot;postgresAuthAlias&quot;&gt; </span>
 <span class="w">            </span><span class="no">&lt;properties.postgresql  </span>
 <span class="w">                </span><span class="no">serverName=&quot;postgresql.acme.com&quot;  </span>
