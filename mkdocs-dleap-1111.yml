@@ -83,13 +83,15 @@ extra:
     provider: mike
   isLeap: false
   isDominoLeap: true 
-  fullProductName: HCL Domino Leap
-  shortProductName: Domino Leap
+  isDWLeap: false
+  fullLeapProductName: HCL Domino Leap
+  shortLeapProductName: Domino Leap
   dominoDocBaseUrl: https://help.hcl-software.com/domino/14.0.0/
-  oldDocsUrl: https://help.hcl-software.com/domino-leap/1.1.5/
-  oldDocsVersionStr: Domino Leap 1.1.5
+  oldLeapDocsUrl: https://help.hcl-software.com/domino-leap/1.1.5/
+  oldLeapDocsVersionStr: Domino Leap 1.1.5
   deployUrl: dleap_deploying.md
-  currentVersion: 1.1.11
+  currentLeapVersion: 1.1.11
+  currentLeapVersionWBuild: 1.1.11.34
   leap_flavor: dleap
   context: volt-apps
   apiContext: volt-api
@@ -170,7 +172,9 @@ nav:
     - Domino Leap clean-up process: dleap_cleanup_agent.md
     - Enabling basic authentication for HCL Domino Leap API requests: dleap_enable_basic_authentication.md
     - Securing your Domino Leap deployment: dleap_securing_deployment.md
-    - Strict CSP: leap_strict_csp.md
+    - Content Security Policy (CSP):
+      - csp.md
+      - Strict CSP: leap_strict_csp.md
     - Admin Application Dashboard: admin_application_dashboard.md
     - Integrating with HCL Volt MX Foundry: 
       - foundry_integration.md

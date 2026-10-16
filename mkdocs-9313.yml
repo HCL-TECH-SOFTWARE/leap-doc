@@ -66,12 +66,14 @@ extra:
     provider: mike
   isLeap: true
   isDominoLeap: false 
-  fullProductName: HCL Leap
-  shortProductName: Leap 
-  oldDocsUrl: https://help.hcl-software.com/Leap/9.3.4/index.html
-  oldDocsVersionStr: Leap 9.3.4
+  isDWLeap: false
+  fullLeapProductName: HCL Leap
+  shortLeapProductName: Leap 
+  oldLeapDocsUrl: https://help.hcl-software.com/Leap/9.3.4/index.html
+  oldLeapDocsVersionStr: Leap 9.3.4
   deployUrl: in_overview.md
-  currentVersion: 9.3.13
+  currentLeapVersion: 9.3.13
+  currentLeapVersionWBuild: 9.3.13.35
   msEntraName: Microsoft Entra ID
   leap_flavor: leap
   context: apps
@@ -162,7 +164,7 @@ nav:
               - Configure SSL: helm_configure_ssl.md
               - SAML configuration: helm_saml_config.md
             - Service Catalog: helm_service_catalog.md            
-            - Leap properties: helm_leap_properties.md
+            - Defining configuration properties: helm_leap_properties.md
             - JVM options: helm_jvm_options.md
             - Changing the log level: helm_changing_log_level.md
             - Deploy Custom Extensions: helm_deploy_custom_extension.md
@@ -195,7 +197,9 @@ nav:
       - Administering:
         - administering_leap.md
         - Backing up and restoring the DB2 database: ad_managing_db2_database.md
-        - Strict CSP: leap_strict_csp.md
+        - Content Security Policy (CSP):
+          - csp.md
+          - Strict CSP: leap_strict_csp.md
         - Admin Configuration Page: admin_config_ui.md
         - Admin Application Dashboard: admin_application_dashboard.md
         - Integrating with HCL Volt MX Foundry: 

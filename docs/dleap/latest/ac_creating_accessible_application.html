@@ -29,7 +29,7 @@
     
     
       
-        <title>Creating an accessible application - HCL Domino Leap 1.1.11 Help Center</title>
+        <title>Creating an accessible application - HCL Domino Leap 1.1.12 Help Center</title>
       
     
     
@@ -173,7 +173,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="HCL Domino Leap 1.1.11 Help Center" class="md-header__button md-logo" aria-label="HCL Domino Leap 1.1.11 Help Center" data-md-component="logo">
+    <a href="." title="HCL Domino Leap 1.1.12 Help Center" class="md-header__button md-logo" aria-label="HCL Domino Leap 1.1.12 Help Center" data-md-component="logo">
       
   <img src="assets/CNX_logo.png" alt="logo">
 
@@ -186,7 +186,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            HCL Domino Leap 1.1.11 Help Center
+            HCL Domino Leap 1.1.12 Help Center
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -473,12 +473,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="HCL Domino Leap 1.1.11 Help Center" class="md-nav__button md-logo" aria-label="HCL Domino Leap 1.1.11 Help Center" data-md-component="logo">
+    <a href="." title="HCL Domino Leap 1.1.12 Help Center" class="md-nav__button md-logo" aria-label="HCL Domino Leap 1.1.12 Help Center" data-md-component="logo">
       
   <img src="assets/CNX_logo.png" alt="logo">
 
     </a>
-    HCL Domino Leap 1.1.11 Help Center
+    HCL Domino Leap 1.1.12 Help Center
   </label>
   
     <div class="md-nav__source">
@@ -2115,6 +2115,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -2132,6 +2193,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -8297,7 +8366,7 @@
 <p>When you create a form or application, the following information helps you design an accessible form for users with disabilities.</p>
 <p>HCL Domino Leap is designed to make building accessible forms easy. For example, the tab order of form items is set to start at the first item on the page, and work through consecutive items. You do not have to reset the tab order if you must add items to the beginning of a form. There are several things that you can do to make your forms more accessible to users with disabilities:</p>
 <ul>
-<li>During the creation of your application, accessibility standards, such as <a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0</a>, should be considered with regards to layout and content. Leap does not prevent authors from creating non-accessible forms.</li>
+<li>During the creation of your application, accessibility standards, such as <a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0</a>, should be considered with regards to layout and content. Domino Leap does not prevent authors from creating non-accessible forms.</li>
 <li>When you add items to your form, give each form item a clear description or name. Screen readers read the name that is associated with a form item. You can also use a Text item as a data label instead of the field provided. For more information, see <a href="ac_using_text_item_as_label.html">Using a Text item as a label</a>.</li>
 <li>Add hints to each form item by modifying the <strong>Add hint</strong> field. The Hint provides more information when read to the user. For example, if your form has a <strong>Name</strong> field, the hint tells the user your preference for how to enter their given and surnames.</li>
 <li>Text blocks are not automatically part of the tab order. Screen readers do not put focus on text blocks, and your users might miss vital information. To ensure that text information is not omitted, select the text item, in the properties side panel, select the check box for <strong>Add to tab order</strong>. The text is added to the tab order, and is read by screen readers.</li>
@@ -8306,7 +8375,7 @@
 <li>The <strong>Alternative text</strong> and <strong>Accessibility – Alternative label ID</strong> field properties are mutually exclusive.  The application author should only use one of these properties.  If both are specified, <strong>Accessibility – Alternative label ID</strong> will be used.</li>
 <li>When using the new dynamic layout, it might be necessary to group items into Sections to convey the proper meaning to users. For example, when creating a custom label via the alternative text ID option.</li>
 <li>
-<p>When using <strong>Sections</strong>, if a label exists, it is assigned a 'heading' role using WAI-ARIA that is available to assistive technologies. For more information, <a href="https://www.w3.org/TR/wai-aria/#introroles">WAI_ARIA roles</a>.</p>
+<p>When using <strong>Sections</strong>, if a label exists, it is assigned a 'heading' role using WAI-ARIA that is available to assistive technologies. For more information, see <a href="https://www.w3.org/TR/wai-aria/#introroles">WAI_ARIA roles</a>.</p>
 </li>
 <li>
 <p><strong><a href="ac_using_text_item_as_label.html">Using a Text item as a label</a></strong><br />
