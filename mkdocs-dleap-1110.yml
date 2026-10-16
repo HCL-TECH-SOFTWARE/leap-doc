@@ -83,13 +83,13 @@ extra:
     provider: mike
   isLeap: false
   isDominoLeap: true 
-  fullProductName: HCL Domino Leap
-  shortProductName: Domino Leap
+  fullLeapProductName: HCL Domino Leap
+  shortLeapProductName: Domino Leap
   dominoDocBaseUrl: https://help.hcl-software.com/domino/14.0.0/
-  oldDocsUrl: https://help.hcl-software.com/domino-leap/1.1.5/
-  oldDocsVersionStr: Domino Leap 1.1.5
+  oldLeapDocsUrl: https://help.hcl-software.com/domino-leap/1.1.5/
+  oldLeapDocsVersionStr: Domino Leap 1.1.5
   deployUrl: dleap_deploying.md
-  currentVersion: 1.1.10
+  currentLeapVersion: 1.1.10
   leap_flavor: dleap
   context: volt-apps
   apiContext: volt-api
@@ -198,6 +198,7 @@ nav:
       - Viewing application history: cr_view_app_history.md
       - Upgrading an application design: upgrade_application_design.md
       - Duplicating an application: cr_duplicating_application.md
+      - Importing and exporting an application: cr_import_export_applications.md
     - Using the editor:
       - cr_using_the_editor_toc.md
       - Basic Concepts: editor_basics.md
@@ -270,6 +271,7 @@ nav:
       - Defining permissions to share data with other applications: se_permission_for_sharing_data_with_other_apps.md
       - Assigning users to maintain the application: as_assigning_users_to_maintain_the_application.md
       - Setting up security for anonymous access: as_setting_up_security_for_anon_access.md
+      - Using the correct URLs for anonymous access: as_using_the_correct_urls_for_anonymous_access.md
     - Styling your application:
       - st_style_application.md
       - Styling your application with a custom theme: cr_custom_theme.md
@@ -277,6 +279,8 @@ nav:
         - ex_css_toc.md
         - Adding customized CSS to your application: ex_adding_ccs.md
         - Removing a custom style sheet: ex_removing_a_css.md
+        - Including Multiple CSS files: ex_including_multiple_css.md
+        - Adding CSS to buttons in your application: ex_adding_css_button.md
     - Globalization features:
       - gl_forms_experience_builder_globalization.md
       - Setting a language: gl_setting_a_language.md
@@ -313,14 +317,14 @@ nav:
       - Swagger UI: ref_swagger_ui.md
     - JavaScript API:
       - ref_javascript_api.md
-      - Running Custom JavaScript -– Events:
+      - Running custom JavaScript -– Events:
         - ref_jsapi_running_custom_js_events.md
         - Application Events: ref_jsapi_application_events.md
         - Form Events: ref_jsapi_form_events.md
         - Page Events: ref_jsapi_page_events.md
         - Item Events: ref_jsapi_item_events.md
-      - Running Custom JavaScript Files: ref_jsapi_running_external_js_files.md
-      - Reference Objects and Functions:
+      - Running custom JavaScript files: ref_jsapi_running_external_js_files.md
+      - Reference objects and functions:
         - ref_jsapi_objects_and_functions.md
         - Interface objects:
           - ref_jsapi_user_interface_objects.md
@@ -330,7 +334,8 @@ nav:
           - Item objects: ref_item_objects.md
           - Other objects: ref_other_objects.md
         - Data objects: ref_jsapi_ref_data_objects.md
-      - JavaScript Security: ref_jsapi_javascript_security.md
+        - JavaScript security: ref_jsapi_javascript_security.md
+      - Running third party libraries: ref_jsapi_running_third_party_libraries.md
     - Services:
       - ref_services_toc.md
       - Leap Configuration Credentials Provider: dleap_config_credentials_provider.md

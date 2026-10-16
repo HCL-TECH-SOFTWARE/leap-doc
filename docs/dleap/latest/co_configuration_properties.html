@@ -29,7 +29,7 @@
     
     
       
-        <title>Configuration properties - HCL Domino Leap 1.1.11 Help Center</title>
+        <title>Configuration properties - HCL Domino Leap 1.1.12 Help Center</title>
       
     
     
@@ -173,7 +173,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="HCL Domino Leap 1.1.11 Help Center" class="md-header__button md-logo" aria-label="HCL Domino Leap 1.1.11 Help Center" data-md-component="logo">
+    <a href="." title="HCL Domino Leap 1.1.12 Help Center" class="md-header__button md-logo" aria-label="HCL Domino Leap 1.1.12 Help Center" data-md-component="logo">
       
   <img src="assets/CNX_logo.png" alt="logo">
 
@@ -186,7 +186,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            HCL Domino Leap 1.1.11 Help Center
+            HCL Domino Leap 1.1.12 Help Center
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -473,12 +473,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="HCL Domino Leap 1.1.11 Help Center" class="md-nav__button md-logo" aria-label="HCL Domino Leap 1.1.11 Help Center" data-md-component="logo">
+    <a href="." title="HCL Domino Leap 1.1.12 Help Center" class="md-nav__button md-logo" aria-label="HCL Domino Leap 1.1.12 Help Center" data-md-component="logo">
       
   <img src="assets/CNX_logo.png" alt="logo">
 
     </a>
-    HCL Domino Leap 1.1.11 Help Center
+    HCL Domino Leap 1.1.12 Help Center
   </label>
   
     <div class="md-nav__source">
@@ -2120,6 +2120,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="csp.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Security Policy (CSP)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Content Security Policy (CSP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="leap_strict_csp.html" class="md-nav__link">
         
@@ -2137,6 +2198,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -9129,7 +9198,7 @@ customThemes.corpTheme1.location =https://mycompany.com/theme1.css
 <div class="highlight"><pre><span></span><code>dataImportTransactionSize=1000
 </code></pre></div>
 <h3 class="section" id="section_detectbrowser">detectBrowser</h3>
-<p>If Leap detects an unsupported browser, a warning message is displayed to the user. The user can still see the form after the warning message is closed.Where:</p>
+<p>If Domino Leap detects an unsupported browser, a warning message is displayed to the user. The user can still see the form after the warning message is closed.Where:</p>
 <ul>
 <li>warn - The user is warned that the browser is unsupported. A list of supported browsers is displayed in the warning message. When the user closes the warning message, the form is displayed.</li>
 <li>ignore - The user is not warned that the browser is unsupported, and the form is displayed.</li>
@@ -9254,7 +9323,7 @@ imageDomainWhitelist.[2].domain=http://acme2.com
 <div class="highlight"><pre><span></span><code>runtimeCSP=default-src &#39;self&#39; *.example.com; img-src *
 </code></pre></div>
 <h3 id="runtimeresourcesn">runtimeResources.[N]</h3>
-<p>This property specifies additional web resources to load into the Domino Leap UI to use the <a href="customwidgetapi_landing.html">Custom Widget API</a>. The values from these settings are injected into the <code>&lt;head&gt;</code> section of Domino Leap's HTML pages.</p>
+<p>This property specifies additional web resources to load into the Domino Leap UI. The values from these settings are injected into the <code>&lt;head&gt;</code> section of Domino Leap's HTML pages.  The property is also used to configure <a href="customwidgetapi_landing.html">custom widgets</a>.</p>
 <p><strong>Example:</strong></p>
 <p><strong>All resources defined together:</strong></p>
 <div class="highlight"><pre><span></span><code>runtimeResources.1 = \
@@ -9304,7 +9373,7 @@ runtimeResources.3 = &lt;script type=&#39;text/javascript&#39; src=&#39;/custom-
 <p>To enable service authorizations, set <code>serviceAuthorization.enabled=true</code>. Multiple services may be defined. To define a service authorization, add <code>serviceAuthorization.serviceIdN</code> where <strong>serviceIdN</strong> is the 'id' of the service description. The value must be a valid JSON string, see provided samples.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A backslash () at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.</p>
+<p>A backslash ("\") at the end of a line can be used to present a value over multiple lines. The backslash must be the very last character on the line.</p>
 </div>
 <p><strong>Examples:</strong></p>
 <div class="highlight"><pre><span></span><code>serviceAuthorization.enabled = true
