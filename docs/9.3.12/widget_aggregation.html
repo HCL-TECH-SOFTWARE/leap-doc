@@ -9971,17 +9971,17 @@
 
 <h1 class="concept" id="widget_aggregation">Aggregation Widgets</h1>
 <p>A custom widget with a datatype of <code>'aggregation'</code> is a special type of data widget that can achieve the use-case of a "repeating section". The section is a sub-form which the author can design as they wish, with required fields and others. The end-user can then create and fill multiple instances of that section, shown sequentially on the page.  For example, the widget could be used by the app author to ask for a list of vehicles owned by the end-user, with maker, model, and year for each vehicle. </p>
-<p>The data type of the instantiated custom widget will be a "business object list" (BOL). It is expected that a custom repeating section widget will utilize the existing API for BOLs. See <a href="ref_jsapi_ref_data_objects.html#business-object-list-for-lists-of-business-objects">Business Object List (BOL) for lists of Business Objects</a>. It is the responsibility of the custom widget to provide the UI for the end-user to trigger the addition (or deletion) of items in the BOL. In turn, {{ shortProductName }} will create an instance of the UI (the sub-form) and pass that to the custom widget to place into its DOM. Hence, it is the manipulation of <em>data</em> that drives the UI.</p>
+<p>The data type of the instantiated custom widget will be a "business object list" (BOL). It is expected that a custom repeating section widget will utilize the existing API for BOLs. See <a href="ref_jsapi_ref_data_objects.html#business-object-list-for-lists-of-business-objects">Business Object List (BOL) for lists of Business Objects</a>. It is the responsibility of the custom widget to provide the UI for the end-user to trigger the addition (or deletion) of items in the BOL. In turn, Leap will create an instance of the UI (the sub-form) and pass that to the custom widget to place into its DOM. Hence, it is the manipulation of <em>data</em> that drives the UI.</p>
 <p>The instantiated custom widget must include the following functions:</p>
 <ul>
 <li>
-<p><code>placeDesignForm(formNode)</code>: When the {{ shortProductName }} app author places a repeating section widget on the canvas, {{ shortProductName }} will create a sub-form (ie. <code>formNode</code>) for the app author to add fields to. {{ shortProductName }} will call this function for the sub-form to be placed into the custom widget's DOM.  </p>
+<p><code>placeDesignForm(formNode)</code>: When the Leap app author places a repeating section widget on the canvas, Leap will create a sub-form (ie. <code>formNode</code>) for the app author to add fields to. Leap will call this function for the sub-form to be placed into the custom widget's DOM.  </p>
 </li>
 <li>
-<p><code>addEntry(entryNode, entryId)</code>: When a new item is added to the custom widget's BOL, {{ shortProductName }} will instantiate the corresponding sub-form (ie. <code>entryNode</code>) and pass it to this function to be placed into the custom widget's DOM. <code>entryId</code> is a transient UUID that can be used by the custom widget to keep track of entries, if needed, for the current user session.</p>
+<p><code>addEntry(entryNode, entryId)</code>: When a new item is added to the custom widget's BOL, Leap will instantiate the corresponding sub-form (ie. <code>entryNode</code>) and pass it to this function to be placed into the custom widget's DOM. <code>entryId</code> is a transient UUID that can be used by the custom widget to keep track of entries, if needed, for the current user session.</p>
 </li>
 <li>
-<p><code>removeEntry(entryNode, entryId)</code>: When an item is removed from the custom widget's BOL, {{ shortProductName }} will call this function to ensure the corresponding sub-form (ie. <code>entryNode</code>) is removed from the custom widget's DOM.  </p>
+<p><code>removeEntry(entryNode, entryId)</code>: When an item is removed from the custom widget's BOL, Leap will call this function to ensure the corresponding sub-form (ie. <code>entryNode</code>) is removed from the custom widget's DOM.  </p>
 </li>
 </ul>
 <p><strong>Important</strong>: <code>formNode</code> and <code>entryNode</code> (and their ancestors), should not be manipulated or inspected in any way; treat each as a black-box.</p>

@@ -10778,7 +10778,7 @@
 
 
 <h1 id="application-object">Application object</h1>
-<p>The {{ shortProductName }} application object, referenced by using 'app', provides access to information relevant to the whole application.  The object has several built-in functions.</p>
+<p>The Leap application object, referenced by using 'app', provides access to information relevant to the whole application.  The object has several built-in functions.</p>
 <h2 id="functions">Functions</h2>
 <h3 id="getappdescription">getAppDescription</h3>
 <p>Returns the content of the application description field on the General settings page.</p>
@@ -10945,9 +10945,9 @@
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span>
 </code></pre></div></p>
 <p><strong>Example</strong></p>
-<p>This example demonstrates how to create a link item in a form that refers to a file included in the {{ shortProductName }} application.</p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
 <ol>
-<li>Attach a file (not image or CSS) to your {{ shortProductName }} application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Attach a file (not image or CSS) to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
 <li>Add a Link item to the form</li>
 <li>In the <strong>onShow</strong> event of the Link item add:
 <div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedFile&quot;</span><span class="p">);</span>
@@ -11018,9 +11018,9 @@
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getImageBaseURL</span><span class="p">()</span>
 </code></pre></div></p>
 <p><strong>Example</strong></p>
-<p>This example demonstrates how to create a link item in a form that refers to a file included in the {{ shortProductName }} application.</p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
 <ol>
-<li>Attach an image file to your {{ shortProductName }} application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Attach an image file to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
 <li>Add a Link item to the form</li>
 <li>In the <strong>onShow</strong> event of the Link item add:
 <div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedImageFile&quot;</span><span class="p">);</span>
@@ -11077,7 +11077,7 @@
 <span class="nx">app</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(</span><span class="nx">myCallbackFunction</span><span class="p">,</span><span class="nx">highAccuracy</span><span class="p">);</span>
 </code></pre></div></p>
 <h3 class="section" id="getproductbaseurl">getProductBaseURL</h3>
-<p>Returns the host and context of the {{ shortProductName }} server.</p>
+<p>Returns the host and context of the Leap server.</p>
 <p><strong>Syntax</strong>
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getProductBaseURL</span><span class="p">()</span>
 </code></pre></div></p>
@@ -11145,9 +11145,9 @@
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getStyleBaseURL</span><span class="p">()</span>
 </code></pre></div></p>
 <p><strong>Example</strong></p>
-<p>This example demonstrates how to create a link item in a form that refers to a file included in the {{ shortProductName }} application.</p>
+<p>This example demonstrates how to create a link item in a form that refers to a file included in the Leap application.</p>
 <ol>
-<li>Attach a CSS file to your {{ shortProductName }} application. Go to Settings...Files and click the 'Add' button.</li>
+<li>Attach a CSS file to your Leap application. Go to Settings...Files and click the 'Add' button.</li>
 <li>Add a Link item to the form</li>
 <li>In the <strong>onShow</strong> event of the Link item add:
 <div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">getFileBaseURL</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;sampleAttachedCSSFile&quot;</span><span class="p">);</span>
@@ -11463,7 +11463,7 @@
 <span class="nx">app</span><span class="p">.</span><span class="nx">setSuppressWarning</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div></p>
 <h3 class="section" id="showconfirmation">showConfirmation</h3>
-<p>This function presents the user with a {{ shortProductName }}-themed dialog that requires their input.  The input can be captured and used to control other form behavior.</p>
+<p>This function presents the user with a Leap-themed dialog that requires their input.  The input can be captured and used to control other form behavior.</p>
 <p>You can configure any combination of buttons to appear in the dialog. You can also change the label of each button, this does not affect the return value when the button is pressed.</p>
 <p><strong>Syntax</strong>
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">showConfirmation</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="p">,</span><span class="w"> </span><span class="nx">subtitle</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackFn</span><span class="p">,</span><span class="w"> </span><span class="nx">showYes</span><span class="p">,</span><span class="w"> </span><span class="nx">yesBtnTitle</span><span class="p">,</span><span class="w"> </span><span class="nx">showNo</span><span class="p">,</span><span class="w"> </span><span class="nx">noBtnTitle</span><span class="p">,</span><span class="w"> </span><span class="nx">showCancel</span><span class="p">,</span><span class="w"> </span><span class="nx">cancelBtnTitle</span><span class="p">,</span><span class="w"> </span><span class="nx">primaryBtn</span><span class="p">)</span>

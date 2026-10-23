@@ -9990,14 +9990,14 @@
 
 
 <h1 class="concept" id="leap_strict_csp">Strict CSP</h1>
-<p>{{ fullProductName }} has a limited capability to restrict the rendering of {{ shortProductName }} Forms using a “Strict CSP” policy.</p>
+<p>HCL Leap has a limited capability to restrict the rendering of Leap Forms using a “Strict CSP” policy.</p>
 <p>Strict CSP mode can be enabled using the <code>ibm.nitro.NitroConfig.runtimeCSP</code> configuration parameter. For example:</p>
 <div class="highlight"><pre><span></span><code>ibm.nitro.NitroConfig.runtimeCSP=script-src &#39;self&#39; 
 https://trusted.example.com &#39;nonce-{nonce}&#39;; object-src &#39;none&#39;; 
 base-uri &#39;none&#39;; style-src &#39;self&#39; https://trusted.example.com 
 &#39;nonce-{nonce}&#39;;
 </code></pre></div>
-<p>The <code>{nonce}</code> token is replaced with a generated, cryptographically strong random nonce when serving up the {{ shortProductName }} form’s HTML page. The nonce is applied as an attribute to all <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> tags on the page.</p>
+<p>The <code>{nonce}</code> token is replaced with a generated, cryptographically strong random nonce when serving up the Leap form’s HTML page. The nonce is applied as an attribute to all <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> tags on the page.</p>
 <p>When using the <a href="ref_embedding_api.html">Embedding API</a>, the product is not in control of the page and therefore needs to be informed of the nonce value in the <code>data-leap-config</code> attribute so that it can load the product’s scripts in a secure manner. Furthermore, the value of the <code>data-leap-config</code> attribute must be valid JSON syntax. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span>
    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://leap.example.com/apps/api/leap.js&quot;</span>  
@@ -10014,14 +10014,14 @@ base-uri &#39;none&#39;; style-src &#39;self&#39; https://trusted.example.com
 </code></pre></div>
 <h2 class="section" id="section_gb5_qp3_rvb">Limitations</h2>
 <ul>
-<li>Strict CSP only covers the rendering of {{ shortProductName }} Forms. This includes fill and submit of a new record, and the update of existing records:<ul>
+<li>Strict CSP only covers the rendering of Leap Forms. This includes fill and submit of a new record, and the update of existing records:<ul>
 <li>As a stand-alone HTML page</li>
 <li>Embedded within an IFRAME</li>
 <li>Embedded with the non-IFRAME <a href="ref_embedding_api.html">Embedding API</a></li>
 </ul>
 </li>
 <li>Strict CSP is not applied to any other runtime pages or scenarios, such as App Pages, View Data, or Summary Charts.</li>
-<li>Strict CSP is not applied to any aspects of {{ shortProductName }}’s authoring environment.</li>
+<li>Strict CSP is not applied to any aspects of Leap’s authoring environment.</li>
 <li>When using the Embedding API, if you want a callback function to be called after the form has been launched, it cannot be specified in the <code>data-leap-config</code> attribute. It must be supplied by providing as a parameter to <code>Leap.launch()</code> function.</li>
 <li>JavaScript (.js) files contained in the application will no longer be evaluated in context, therefore the <code>app</code> variable will not be available. The global <code>NitroApplication</code> variable should be used instead.</li>
 <li>All existing applications must be redeployed if the <code>ibm.nitro.NitroConfig.runtimeCSP</code> config value contains the <code>{nonce}</code> token.</li>
@@ -10035,10 +10035,10 @@ base-uri &#39;none&#39;; style-src &#39;self&#39; https://trusted.example.com
 <h2 class="section" id="section_zbc_jq3_rvb">Known risks</h2>
 <ul>
 <li>As mentioned above, the non-IFRAME Embedding API does not have control of the page, and therefore needs to be informed of the nonce token by the hosting page. The Embedding API will nullify the cspNonce value once the form launch is complete; however, there will be a short period of time where the nonce is available to other scripts running on the page. It is the responsibility of the customer to ensure that this temporary exposure of the nonce cannot be exploited.</li>
-<li>As mentioned above, Strict CSP only applies to the rendering of {{ shortProductName }} Forms. It is the responsibility of the customer to ensure other product pages (ex. App Pages) are not exposed to an audience that is meant to be protected by Strict CSP.</li>
+<li>As mentioned above, Strict CSP only applies to the rendering of Leap Forms. It is the responsibility of the customer to ensure other product pages (ex. App Pages) are not exposed to an audience that is meant to be protected by Strict CSP.</li>
 <li>Not all browsers may support CSP equally. It is the responsibility of the customer to ensure the CSP header is configured with suitable fallbacks, if necessary for their user-base.</li>
 </ul>
-<p><strong>Parent topic:</strong> <a href="administering_leap.html">Administering {{ shortProductName }}</a></p>
+<p><strong>Parent topic:</strong> <a href="administering_leap.html">Administering Leap</a></p>
 
 
 

@@ -9903,7 +9903,7 @@
 
 
 <h1 id="deploying-a-service-description">Deploying a Service Description</h1>
-<p>This topic contains information about how to deploy a {{ shortProductName }} service description.</p>
+<p>This topic contains information about how to deploy a Leap service description.</p>
 <p>To deploy a service description, place the XML document in one of the following directories, or in a subdirectory of one of the following directories:</p>
 <ul>
 <li>
@@ -9921,8 +9921,8 @@
 <li>If the extensions directory or ServiceCatalog/1 directory does not exist, then the Leap server must be restarted after the directories are created.</li>
 <li>/opt/HCL/Leap/ is not case-sensitive.</li>
 </ul>
-<p>When {{ shortProductName }} server starts, the ServiceCatalog directory and its subdirectories are scanned for new, deleted, and changed Service Descriptions.</p>
-<p>New and changed service descriptions are loaded and registered with the {{ shortProductName }} server, and become available immediately. Service descriptions that fail to load, or do not have an appropriate service transport registered, are not available.</p>
+<p>When Leap server starts, the ServiceCatalog directory and its subdirectories are scanned for new, deleted, and changed Service Descriptions.</p>
+<p>New and changed service descriptions are loaded and registered with the Leap server, and become available immediately. Service descriptions that fail to load, or do not have an appropriate service transport registered, are not available.</p>
 <p>Access to a service description may be given to a specific user, group, or special assignment (i.e. Authenticated, Anonymous, etc). The access control is made up of two parts: who may discover and work with the service while designing an application, and who may run the service. Users or Groups provided must be in the proper format - it is recommended to use the dialog (by clicking the button with the down arrow) when adding permissions. Adding or removing users does not require a server restart, but there will be a short delay before the changes take effect.</p>
 <p>Deleting service descriptions and changing service descriptions must be done with care. Applications might depend on any or all of the parameters for the service description, as well as data returned within the service description. Therefore, modifying the structure or ID of parameters, or how data is mapped into the parameters, can potentially cause failures within deployed applications.</p>
 <p>Deleted service descriptions are unregistered and immediately become unavailable to any applications, deployed or otherwise. It is critical that before de-registering a service description, a check is performed to ensure that there are no applications that are using the service description.</p>

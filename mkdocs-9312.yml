@@ -63,10 +63,10 @@ extra:
     provider: mike
   isLeap: true
   isDominoLeap: false 
-  fullLeapProductName: HCL Leap
-  shortLeapProductName: Leap 
-  oldLeapDocsUrl: https://help.hcl-software.com/Leap/9.3.4/index.html
-  oldLeapDocsVersionStr: Leap 9.3.4
+  fullProductName: HCL Leap
+  shortProductName: Leap 
+  oldDocsUrl: https://help.hcl-software.com/Leap/9.3.4/index.html
+  oldDocsVersionStr: Leap 9.3.4
   deployUrl: in_overview.md
   currentVersion: 9.3.12
   msEntraName: Microsoft Entra ID
