@@ -9985,7 +9985,7 @@
 
 <h1 class="concept" id="configuringwhatusersseeaftersubmittingaform">Adding stages to an application</h1>
 <p>It is often desirable to have an application, or form, transition through a set of phases or stages. At each stage the form might be used by different people in different roles. The form also might be presented in a slightly different manner in each stage, such as having some items or pages hidden, or in a read-only state.</p>
-<p>Each form in a {{ shortProductName }} application can have multiple stages. By default, a newly created form has two stages:</p>
+<p>Each form in a Leap application can have multiple stages. By default, a newly created form has two stages:</p>
 <ul>
 <li><strong>Start</strong> – The initial state of every form. Once the form transitions away from the <strong>Start</strong> stage it cannot return.</li>
 <li><strong>Submitted</strong> – A submitted form is stored in this stage. Forms in this stage may be updated by users with permission.</li>
@@ -10004,7 +10004,7 @@
 <p>The <strong>Call a Service</strong> activity can invoke an external service or another Leap application. It can be executed either before or after the form data is saved. If configured to trigger before save, return values can be mapped to fields in the form. If configured to trigger after save, return values are not saved in the form, regardless of any output mappings defined in the service configuration.</p>
 <p>Refer to <a href="cr_using_apps_as_services_toc.html">Incorporating web services into your applications</a> for more details.</p>
 <h2 id="controlling-item-visibility-by-stage">Controlling item visibility by stage</h2>
-<p>The <strong>Visibility</strong> tab also allows the application designer to disable or hide individual form items or entire pages within a specific stage of a form. {{ shortProductName }} provides control over which users can access or modify form data at each stage. Permissions can be configured by selecting a stage and navigating to <strong>Permissions</strong>, or by using the <strong>Visibility</strong> tab. For more information, see <a href="se_security_toc.html">Application and Security overview</a>.</p>
+<p>The <strong>Visibility</strong> tab also allows the application designer to disable or hide individual form items or entire pages within a specific stage of a form. Leap provides control over which users can access or modify form data at each stage. Permissions can be configured by selecting a stage and navigating to <strong>Permissions</strong>, or by using the <strong>Visibility</strong> tab. For more information, see <a href="se_security_toc.html">Application and Security overview</a>.</p>
 <h2 class="section" id="section_hjd_3rw_rvb">Branching</h2>
 <p>Each stage action may define one (or more) conditional branch by clicking on the diamond icon below the stage object in the workflow diagram, or with the action selected by clicking on <strong>+ Add conditional branch</strong>. A branch defines an alternate path the form takes when submitted. A branch must define a condition that determines when it will be followed. Branch conditions may be based on a user in/not in a role or the value of an item on the form. Each branch may have its own distinct activities that are executed when followed.</p>
 <h2 id="designating-a-primary-assignee">Designating a Primary Assignee</h2>
@@ -10023,9 +10023,9 @@
 <p>The following topics describe scenarios related to stages and workflow in your HCL Leap application.</p>
 <ul>
 <li><strong><a href="sub_editing_the_message_a_user_sees.html">Editing the message a user sees upon form submission</a></strong><br />
-The administrator of a {{ shortProductName }} application can edit the completion message a user sees when submitting a form.</li>
+The administrator of a Leap application can edit the completion message a user sees when submitting a form.</li>
 <li><strong><a href="sub_editing_the_url_a_user_sees.html">Redirecting users after form submission</a></strong><br />
-The administrator of a {{ shortProductName }} application can add a URL that is triggered when a form is submitted.</li>
+The administrator of a Leap application can add a URL that is triggered when a form is submitted.</li>
 <li><strong><a href="sub_sending_an_email.html">Sending an email after a user submits a form</a></strong><br />
 You can send email notifications to managers or other users by adding an activity to the Submit button in a form.</li>
 <li><strong><a href="sub_use_service_to_populate_on_form_submission.html">Populating information upon form submission using a web service</a></strong><br />
@@ -10033,13 +10033,13 @@ Web services can perform many functions, such as sending data to other forms or 
 <li><strong><a href="sub_assigning_a_user.html">Assigning users to a role after submission</a></strong><br />
 You can dynamically assign roles to a form after form submission.</li>
 <li><strong><a href="sub_sending_a_user_to_another_url.html">Configuring behavior of a form on submission</a></strong><br />
-Once a user completes a {{ shortProductName }} form, you can send them to another stage of that form.</li>
+Once a user completes a Leap form, you can send them to another stage of that form.</li>
 <li><strong><a href="sad_allowing_users_to_save.html">Saving work as a draft</a></strong><br />
 Some applications cannot be completed by the user in one session. If your application is very large or complicated, you can allow users to save their work as a draft before submitting it.</li>
 <li><strong><a href="sub_hidden_or_read_only_items_in_stages.html">Scenario: hidden or read-only form items in Stages</a></strong><br />
 This scenario uses a Vacation Request application to describe how to use multiple Stages to make sections of a form that is either hidden, or read-only.</li>
 <li><strong><a href="sub_saving_pdf.html">Saving a PDF to a file location</a></strong><br />
-Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the {{ shortProductName }} submission record, or both.</li>
+Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the Leap submission record, or both.</li>
 </ul>
 <p><strong>Parent topic:</strong> <a href="cr_adding_dynamic_behavior.html">Adding dynamic behavior</a></p>
 

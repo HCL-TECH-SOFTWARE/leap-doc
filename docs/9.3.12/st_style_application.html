@@ -10196,10 +10196,10 @@
 <h2 id="using-css-files">Using CSS files</h2>
 <p><a href="ex_css_toc.html">Using CSS files</a> details the use of custom CSS themes that can be uploaded into an application to style the user interface to meet customer needs.</p>
 <h2 id="creating-a-global-corporate-theme">Creating a global corporate theme</h2>
-<p>{{ shortProductName }} provides the ability to create your own global (or corporate) theme that can be selected from the application creation dialog.</p>
+<p>Leap provides the ability to create your own global (or corporate) theme that can be selected from the application creation dialog.</p>
 <p><img alt="create a new app dialog showing a global corporate theme" src="graphics/css_corporate_theme_new_app.png" /></p>
 <ul>
-<li>A global corporate theme must be configured by the {{ shortProductName }} server admin using the {{ shortProductName }} properties.</li>
+<li>A global corporate theme must be configured by the Leap server admin using the Leap properties.</li>
 <li>The CSS file that contains all the custom classes must be created and hosted in an accessible location.</li>
 </ul>
 <p>The following is an example of a corporate theme configuration:</p>
@@ -10290,7 +10290,7 @@ ibm.nitro.NitroConfig.customThemes.1.location = http://pnp.hcl.com/theme1.css
 <h2 id="samples">Samples</h2>
 <p>Use one of the techniques for adding the CSS to your application, then add the style name to the <strong>Custom CSS class names</strong> field of the item being styled.</p>
 <h3 id="hide-banner">Hide Banner</h3>
-<p>Hides the {{ shortProductName }} header/banner at the top of the form.</p>
+<p>Hides the Leap header/banner at the top of the form.</p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">lfMn</span><span class="p">.</span><span class="nc">lotusui30</span><span class="w"> </span><span class="p">.</span><span class="nc">lotusBanner</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
@@ -10508,7 +10508,7 @@ You can start seeing a pattern with the naming convention of the buttons with th
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="dynamically-change-table-cell-background-based-on-value">Dynamically change table cell background based on value</h3>
-<p>Here is a sample function, which will change the background color of a table cell based on the text it contains ('Complete' = green, 'Incomplete' = red and 'In Progress' = yellow). It uses the dojo functions query and style, which we do not document in {{ shortProductName }} documentation but are part of the dojo documentation.  You can see <a href="ref_jsapi_javascript_security.html">additional built-in functions</a> that work in {{ shortProductName }}.</p>
+<p>Here is a sample function, which will change the background color of a table cell based on the text it contains ('Complete' = green, 'Incomplete' = red and 'In Progress' = yellow). It uses the dojo functions query and style, which we do not document in Leap documentation but are part of the dojo documentation.  You can see <a href="ref_jsapi_javascript_security.html">additional built-in functions</a> that work in Leap.</p>
 <p><strong>dojo.query</strong> returns all the nodes that match the specified criteria, generally a css class</p>
 <p><strong>dojo.style</strong> applies a style to the specified node </p>
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">getSharedData</span><span class="p">().</span><span class="nx">applyTableStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span>

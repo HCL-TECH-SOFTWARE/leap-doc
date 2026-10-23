@@ -9932,9 +9932,9 @@
 
 
 <h1 class="concept" id="customwidgetapi_landing">Custom Widget API</h1>
-<p>This API provides a mechanism to incorporate custom widgets into the {{ fullProductName }} product.</p>
+<p>This API provides a mechanism to incorporate custom widgets into the HCL Leap product.</p>
 <h2 id="product-configuration">Product Configuration</h2>
-<p>Additional resources can be loaded into {{ shortProductName }} UI's by adding <code>ibm.nitro.NitroConfig.runtimeResources</code> properties to <code>Leap_config.properties</code>. These additional resources are expected to include definitions of your custom widgets and any auxiliary styles or libraries that are required to support them.</p>
+<p>Additional resources can be loaded into Leap UI's by adding <code>ibm.nitro.NitroConfig.runtimeResources</code> properties to <code>Leap_config.properties</code>. These additional resources are expected to include definitions of your custom widgets and any auxiliary styles or libraries that are required to support them.</p>
 <p>For example:</p>
 <p>Create a single Leap Configuration setting:</p>
 <div class="highlight"><pre><span></span><code>ibm.nitro.NitroConfig.runtimeResources.1 = \
@@ -10032,13 +10032,13 @@ The custom widget can define an array of custom properties for the app author to
 <li><strong><a href="widgets_options.html">Widgets with Options</a></strong><br />
 Widgets that allow the end-user to select from a set of options require specific treatment. This includes widgets such as dropdowns, radio groups, or checkbox groups. These options could be hardcoded in the custom widget, or defined by the app author.</li>
 <li><strong><a href="widget_instantiation.html">Widget Instantiation</a></strong><br />
-The widget <code>instantiate()</code> function is called when an instance of the custom widget needs to be created. The function is expected to return an <code>object</code> that allows {{ shortProductName }} to interact with the instantiated widget.</li>
+The widget <code>instantiate()</code> function is called when an instance of the custom widget needs to be created. The function is expected to return an <code>object</code> that allows Leap to interact with the instantiated widget.</li>
 <li><strong><a href="widget_validation.html">Validation</a></strong><br />
 Some intrinsic validation will be done according to the <code>type</code> and <code>constraints</code> declared in the widget's <code>datatype</code> property; however, it might be necessary for a widget to supply its own custom validation logic.</li>
 <li><strong><a href="widget_internationalization.html">Internationalization</a></strong><br />
 Certain attributes of the widget definition can be displayed to app authors working in different locales. To support multiple languages during authoring, some properties can be specified as "multi-string" objects rather than a plain <code>string</code> values.</li>
 <li><strong><a href="widget_javaapi.html">Usage of JavaScript API</a></strong><br />
-Custom widgets can use {{ shortProductName }}'s JavaScript API to help achieve their objectives.</li>
+Custom widgets can use Leap's JavaScript API to help achieve their objectives.</li>
 <li><strong><a href="widget_versioning.html">Versioning</a></strong><br />
 This topic describes the widget's <code>version</code>.</li>
 <li><strong><a href="widget_upgrade.html">Upgrading</a></strong><br />

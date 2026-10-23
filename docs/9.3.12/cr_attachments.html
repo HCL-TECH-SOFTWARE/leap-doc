@@ -10080,7 +10080,7 @@
 
 
 <h1 id="working-with-attachments">Working with attachments</h1>
-<p>A file that is added to a form using the attachment item is uploaded to the {{ shortProductName }} server as soon the user adds it.  The attached file is associated with the form <strong>after</strong> it is submitted.  If the form is not submitted then the uploaded file will be removed by the server after 48 hours.</p>
+<p>A file that is added to a form using the attachment item is uploaded to the Leap server as soon the user adds it.  The attached file is associated with the form <strong>after</strong> it is submitted.  If the form is not submitted then the uploaded file will be removed by the server after 48 hours.</p>
 <p>An attachment item is made up of an id, uid and filename and it can be used in many different ways.  There is a <a href="ref_data_rest_api_retrieve_attachment.html">REST API for working with attachments</a>, this can be used to produce some dynamic behavior in your application.</p>
 <h2 id="get-attachment-file-name">Get Attachment File Name</h2>
 <p>You can retrieve the file name of an attachment item by using javascript.</p>
@@ -10158,7 +10158,7 @@
 <p>When the user selects a row of the table, the URL of the attachment is set to the Link value and its display value is set to the attachment name.</p>
 <p>This will only work after the form has been submitted.</p>
 <h2 id="reading-contents-of-an-uploaded-file">Reading contents of an uploaded file</h2>
-<p>If you are running on a server that has JavaScript sandbox turned off (secureJs=false), a setting found in the {{ shortProductName }} properties, then you could use AJAX to retrieve the content of the file that was uploaded.  </p>
+<p>If you are running on a server that has JavaScript sandbox turned off (secureJs=false), a setting found in the Leap properties, then you could use AJAX to retrieve the content of the file that was uploaded.  </p>
 <p>For this example, the code was placed in the <em>onShow</em> event of a multi-line text field that is visible after the form has been submitted.  When the field is shown it will contain the content of the file that was previously uploaded.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">attachmentUid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BO</span><span class="p">.</span><span class="nx">F_Attachment</span><span class="p">.</span><span class="nx">getValue</span><span class="p">().</span><span class="nx">uid</span><span class="p">;</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/apps/secure/org/data/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;/attachment/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">attachmentUid</span><span class="p">;</span>

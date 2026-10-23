@@ -9299,10 +9299,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loading-the-shortproductname-embedding-ui-section" class="md-nav__link">
+  <a href="#loading-the-leap-embedding-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loading the {{ shortProductName }} Embedding UI { .section}
+        Loading the Leap Embedding UI
       
     </span>
   </a>
@@ -10014,10 +10014,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loading-the-shortproductname-embedding-ui-section" class="md-nav__link">
+  <a href="#loading-the-leap-embedding-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loading the {{ shortProductName }} Embedding UI { .section}
+        Loading the Leap Embedding UI
       
     </span>
   </a>
@@ -10078,15 +10078,15 @@
 
 
 <h1 id="embedding-api">Embedding API</h1>
-<p>The Embedding API can be used to embed a {{ shortProductName }} form directly in another webpage without using an &lt;iframe&gt;. 
-The {{ shortProductName }} form will be inserted into the DOM of the hosting page and can be interacted with using the {{ shortProductName }} JavaScript API or any custom JavaScript. 
-Additionally, the style of items in the {{ shortProductName }} form can be customized by the CSS of the hosting page.</p>
+<p>The Embedding API can be used to embed a Leap form directly in another webpage without using an &lt;iframe&gt;. 
+The Leap form will be inserted into the DOM of the hosting page and can be interacted with using the Leap JavaScript API or any custom JavaScript. 
+Additionally, the style of items in the Leap form can be customized by the CSS of the hosting page.</p>
 <h2 class="section" id="example-1-declarative">Example 1 - Declarative</h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
 …  
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
    … 
-   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myLeapDiv&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- {{ shortProductName }} form will go here --&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myLeapDiv&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Leap form will go here --&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
    …
    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://leap.example.com/apps/api/leap.js&quot;</span> 
     <span class="na">data-leap-config</span><span class="o">=</span><span class="s">&quot;{launch: {appId: &#39;e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55&#39;, formId: &#39;F_Form1&#39;, targetId: &#39;myLeapDiv&#39;}}&quot;</span><span class="p">&gt;</span>
@@ -10099,7 +10099,7 @@ Additionally, the style of items in the {{ shortProductName }} form can be custo
 … 
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
   …
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myLeapDiv&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- {{ shortProductName }} form will go here --&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myLeapDiv&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Leap form will go here --&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
   …
   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://leap.example.com/apps/api/leap.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> 
 
@@ -10131,22 +10131,22 @@ Additionally, the style of items in the {{ shortProductName }} form can be custo
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>  
 </code></pre></div>
-<h2 id="loading-the-shortproductname-embedding-ui-section">Loading the {{ shortProductName }} Embedding UI { .section}</h2>
+<h2 class="section" id="loading-the-leap-embedding-ui">Loading the Leap Embedding UI</h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://leap.example.com/apps/api/leap.js&quot;</span> <span class="na">data-leap-config</span><span class="o">=</span><span class="s">&quot;[leap configuration]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;leapJS&#39;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <ul>
 <li><strong>id</strong> (optional) - fallback for older browsers; the value should always be <code>"leapJS"</code></li>
 <li><strong>data-leap-config</strong> (optional) - JSON or the name of an existing JavaScript object. Properties:<ul>
-<li><strong>locale</strong> (optional) - indicates the preferred locale to the {{ shortProductName }} API. For example, <code>"fr-FR"</code></li>
+<li><strong>locale</strong> (optional) - indicates the preferred locale to the Leap API. For example, <code>"fr-FR"</code></li>
 <li><strong>launch</strong> (optional) - equivalent to calling <code>Leap.launch({…})</code> function with respective parameters (see below for more details)</li>
 <li><strong>overwriteExistingDojoConfig</strong> (optional) - In some environments, such as HCL Digital Experience or IBM WebSphere Portal, the <strong>djConfig</strong> or <strong>dojoConfig</strong> object may be defined on a page and not used. Set the value of this property to <strong>true</strong> to override it.</li>
 </ul>
 </li>
 </ul>
-<p>Loading the {{ shortProductName }} API will result in the creation of global object named <code>Leap</code>.</p>
-<p>After initial load of the leap.js, you can define a <code>Leap.onReady()</code> function which will be called when the necessary {{ shortProductName }} resources have been loaded into the page and the API is ready to be used.</p>
+<p>Loading the Leap API will result in the creation of global object named <code>Leap</code>.</p>
+<p>After initial load of the leap.js, you can define a <code>Leap.onReady()</code> function which will be called when the necessary Leap resources have been loaded into the page and the API is ready to be used.</p>
 <h2 class="section" id="embedding-a-form-programmatically">Embedding a form programmatically</h2>
-<p>To embed a {{ shortProductName }} form programmatically, call <code>Leap.launch({launch_params})</code>;</p>
+<p>To embed a Leap form programmatically, call <code>Leap.launch({launch_params})</code>;</p>
 <p><strong><code>{launch_params}</code></strong> properties:</p>
 <table class="table-wrap">
 <thead>
@@ -10171,7 +10171,7 @@ appId
 Yes
 </td>
 <td>
-The {{ shortProductName }} application UUID.<br>
+The Leap application UUID.<br>
 For example, 'e9ec1ed3-c12b-4b5c-8f5e-7a6ff4800a55'
 </td>
 </tr>
@@ -10184,7 +10184,7 @@ formId
 Yes
 </td>
 <td>
-The {{ shortProductName }} form ID.<br>
+The Leap form ID.<br>
 For example, 'F_Form1'
 </td>
 </tr>
@@ -10197,7 +10197,7 @@ recordId
 No
 </td>
 <td>
-The {{ shortProductName }} record ID.<br>
+The Leap record ID.<br>
 For example, 'f7ab2ca2-c12b-4b5c-8f5e-7a6ff4800b69'
 </td>
 </tr>
@@ -10210,7 +10210,7 @@ targetId
 Either <b>target</b> or <b>targetId</b> must be provided.
 </td>
 <td>
-The id of the HTML DOM element to embed the {{ shortProductName }} form within.<br>
+The id of the HTML DOM element to embed the Leap form within.<br>
 For example, 'myLeapFormDiv'
 </td>
 </tr>
@@ -10223,7 +10223,7 @@ target
 Either <b>target</b> or <b>targetId</b> must be provided.
 </td>
 <td>
-The HTML DOM element to place the {{ shortProductName }} form within.
+The HTML DOM element to place the Leap form within.
 </td>
 </tr>
 
@@ -10278,7 +10278,7 @@ No
 <td>
 A callback function which will be called when the application launch completes successfully and the form is ready to be interacted with.  The callback function will be passed the following parameters:
 <ul>
-<li><code>app</code>: the {{ shortProductName }} JavaScript API application object. <!-- For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)--></li>
+<li><code>app</code>: the Leap JavaScript API application object. <!-- For more details, see [Interface objects](ref_jsapi_user_interface_objects.md)--></li>
 <li><code>launchParams</code>: the original launch parameters object, for convenience</li></ul></td>
 </tr>
 </tbody>
@@ -10286,14 +10286,14 @@ A callback function which will be called when the application launch completes s
 
 <h2 class="section" id="known-limitations">Known Limitations</h2>
 <ul>
-<li>Only one {{ shortProductName }} form can be embedded on the page at a time.</li>
-<li>Once the {{ shortProductName }} form is embedded, it cannot be changed to a different form or reloaded.</li>
-<li>The hosting page cannot contain any version of the Dojo JavaScript library. The {{ shortProductName }} Embedding API will load its own copy of the Dojo JavaScript library into the hosting page.</li>
-<li>For authentication, it is expected that the hosting page and the {{ shortProductName }} server are configured with single sign-on (SSO). {{ shortProductName }}’s login UI will not display properly within the hosting page.</li>
+<li>Only one Leap form can be embedded on the page at a time.</li>
+<li>Once the Leap form is embedded, it cannot be changed to a different form or reloaded.</li>
+<li>The hosting page cannot contain any version of the Dojo JavaScript library. The Leap Embedding API will load its own copy of the Dojo JavaScript library into the hosting page.</li>
+<li>For authentication, it is expected that the hosting page and the Leap server are configured with single sign-on (SSO). Leap’s login UI will not display properly within the hosting page.</li>
 <li>The embedding API cannot be set to an App Page</li>
 </ul>
 <h2 class="section" id="cross-domain-usage">Cross-Domain Usage</h2>
-<p>If {{ shortProductName }} and the hosting page are in different domains, the {{ shortProductName }} front-end must be configured to return appropriate CORS headers.</p>
+<p>If Leap and the hosting page are in different domains, the Leap front-end must be configured to return appropriate CORS headers.</p>
 <p><strong>Parent topic:</strong> <a href="reference_toc.html">Reference</a></p>
 
 

@@ -9945,11 +9945,11 @@
 
 
 <h1 id="service-description">Service Description</h1>
-<p>A Service Description provides a specific interface to a Service Transport. The Service Description describes the inputs and outputs when you configure services within the {{ fullProductName }} mapping user interface.</p>
+<p>A Service Description provides a specific interface to a Service Transport. The Service Description describes the inputs and outputs when you configure services within the HCL Leap mapping user interface.</p>
 <h2 class="section" id="elements-of-a-service-description">Elements of a Service Description</h2>
 <p>A Service Description is represented as an XML document that follows an XML schema. This single XML document contains all the information for a single Service Description: name, description, input and output parameters, and input and output mapping. For a full listing of the XML schema, refer to <a href="ref_service_service_description.html#ServDescAppendixA">Appendix A - Service Description schema</a>. The top-level element in a <strong>Service Description</strong> is the serviceDescription element. This element, and all of its childs, must be in the XML namespace with a URI of http://www.ibm.com/xmlns/prod/forms/services/serviceDescription/1.0.</p>
 <p><strong>ID</strong></p>
-<p>Each Service Description must contain a unique id that identifies it to the {{ shortProductName }} server. The id can contain any characters that are valid as a component of a URL path. These characters include:</p>
+<p>Each Service Description must contain a unique id that identifies it to the Leap server. The id can contain any characters that are valid as a component of a URL path. These characters include:</p>
 <ul>
 <li>Alphabetical letters – [A-Z], and [a-z]<ul>
 <li>Numerals – [0-9]</li>
@@ -9960,9 +9960,9 @@
 </ul>
 <p>Because a Service Description ID is a surrogate for the Service Description itself, this ID does not must be descriptive. Any UUID is a valid choice for a Service Description ID because it guarantees uniqueness and contains only characters that are valid in a URL path component.</p>
 <p><strong>Transport ID</strong></p>
-<p>A Service Description must reference a Service Transport to perform its underlying operation. Each Service Transport has its own unique transportId that uniquely identifies it to the {{ shortProductName }} server. The ID for a Service Transport must be made available by its developer.</p>
+<p>A Service Description must reference a Service Transport to perform its underlying operation. Each Service Transport has its own unique transportId that uniquely identifies it to the Leap server. The ID for a Service Transport must be made available by its developer.</p>
 <p><strong>Name and Description</strong></p>
-<p>To help users build {{ shortProductName }} applications with services, each Service Description contains both a name, and a description. The name and description elements allow you to localize a {{ shortProductName }} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.See <a href="ref_service_localizing_service_description.html">Localizing Service Descriptions</a> for information about how to provide names and descriptions in multiple languages.</p>
+<p>To help users build Leap applications with services, each Service Description contains both a name, and a description. The name and description elements allow you to localize a Leap Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.See <a href="ref_service_localizing_service_description.html">Localizing Service Descriptions</a> for information about how to provide names and descriptions in multiple languages.</p>
 <p><strong>Default Locale</strong></p>
 <p>If the Service Description is not localized in the language of a particular user, the defaultLocale contains the locale in which the name and description must be presented. For example, if a user asks for the Service Description in French, but the Service Description has only English and Spanish strings, the English is returned if en is set as the defaultLocale.</p>
 <p><strong>Credentials</strong></p>
@@ -9971,15 +9971,15 @@
 Not all <strong>Credentials</strong> Providers are applicable to all Service Transports. Therefore, the documentation for each Service Transport must be consulted before you configure the <strong>credentials</strong> element. If the configured Service Transport does not understand the provider that is specified by <strong>providerId</strong>, the Service Description is not available.</p>
 <p><strong>Bindings</strong></p>
 <p>Every Service Description must specify its input and output structures. These structures outline the ID, name, description, and type of each parameter and any <strong>subparameters</strong>. In addition to the parameter structure, bindings might also contain a section that declares how data going into the Service Transport is mapped from the input structure and how data coming from the Service Transport is mapped to the output structure.</p>
-<p>There are two top-level elements for bindings: inbound, and outbound. Inbound defines the binding for data coming into the Service Description from the Builder Application. Outbound defines the data going to the {{ shortProductName }} application from the Service Description. Only one of each of these elements can be present within a single Service Description, and each must be placed as a child of the <strong>serviceDescription</strong> element.</p>
-<p>Directly underneath inbound and outbound are two elements that define the main components of a binding: parameters and <strong>serviceMapping</strong>. The parameters element contains all the information that is related to the parameters. The contents of the <strong>serviceMapping</strong> element instructs {{ shortProductName }} how to map data coming from the parameters into data for the transport and vice versa.</p>
+<p>There are two top-level elements for bindings: inbound, and outbound. Inbound defines the binding for data coming into the Service Description from the Builder Application. Outbound defines the data going to the Leap application from the Service Description. Only one of each of these elements can be present within a single Service Description, and each must be placed as a child of the <strong>serviceDescription</strong> element.</p>
+<p>Directly underneath inbound and outbound are two elements that define the main components of a binding: parameters and <strong>serviceMapping</strong>. The parameters element contains all the information that is related to the parameters. The contents of the <strong>serviceMapping</strong> element instructs Leap how to map data coming from the parameters into data for the transport and vice versa.</p>
 <p><strong>Parameters</strong></p>
 <p>The <strong>parameters</strong> element contains zero or more <strong>parameter</strong> elements. Each parameter element defines a single parameter coming into or being returned from the Service Description. Each <strong>parameter</strong> element must have an <strong>id</strong>, <strong>type</strong>, <strong>name</strong>, and <strong>description</strong>. The id element uniquely identifies the parameter within the binding. The type element specifies the type of data that is expected to be contained within the parameter. The following data types are supported: <strong>STRING, BOOLEAN, DECIMAL, FLOAT, DOUBLE, INTEGER, DATETIME, TIME, DATE,</strong> and <strong>LIST</strong>.</p>
-<p>As with the name and description child elements of the <strong>serviceDescription</strong> element, these childs of parameter specify the name and description of the parameter that is used in {{ shortProductName }}. These elements can also be localized using the <strong>xml:lang</strong> attribute.</p>
+<p>As with the name and description child elements of the <strong>serviceDescription</strong> element, these childs of parameter specify the name and description of the parameter that is used in Leap. These elements can also be localized using the <strong>xml:lang</strong> attribute.</p>
 <p>Optionally, the mandatory element can be included for inbound bindings to specify whether the parameter must be bound before starting the Service Description. Valid values for this element are true and false, with the latter being the default.</p>
 <p>Each parameter element can have a child element that is called parameters which is a container for child parameters. The contents of the parameters element is one or more parameter elements. If a parameter contains <strong>subparameters</strong>, its type is set to LIST. At run time, the parameter contains a list of structures with each of the <strong>subparameters</strong>.</p>
 <p><strong>Service Mapping</strong></p>
-<p>The <strong>serviceMapping</strong> element contains all the information that is needed for the {{ shortProductName }} server to map data between the Service Description parameters, and the Service Transport. For more information, see <a href="ref_service_mapping_service_description.html">Mapping Data for a Service Description</a>.</p>
+<p>The <strong>serviceMapping</strong> element contains all the information that is needed for the Leap server to map data between the Service Description parameters, and the Service Transport. For more information, see <a href="ref_service_mapping_service_description.html">Mapping Data for a Service Description</a>.</p>
 <h2 class="section" id="xml-namespaces">XML Namespaces</h2>
 <p>XML namespace declarations must be defined on the <strong>serviceMapping</strong> element or higher.</p>
 <h2 class="section" id="ServDescAppendixA">Service Description Schema</h2>
@@ -10396,7 +10396,7 @@ Not all <strong>Credentials</strong> Providers are applicable to all Service Tra
 &lt;/schema&gt;
 </code></pre></div>
 <h2 class="section" id="sample-service-descriptions">Sample Service Descriptions</h2>
-<p>Each example in this section includes a list of the Service Descriptions and a discussion of how each Service Description operates. The Service Descriptions in this section rely solely on the Service Transports that are shipped with the {{ shortProductName }} server. Where applicable, sample and setup instructions are included.</p>
+<p>Each example in this section includes a list of the Service Descriptions and a discussion of how each Service Description operates. The Service Descriptions in this section rely solely on the Service Transports that are shipped with the Leap server. Where applicable, sample and setup instructions are included.</p>
 <p><strong>Example 1: Simple Mapping</strong></p>
 <p>The following Service Description uses the HTTP Service Transport to make a request to a web server and return the content type of the response. In this example, the URL to which the request is made comes as an inbound parameter from the Builder application.</p>
 <div class="highlight"><pre><span></span><code>1:<span class="w"> </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="w">  </span>
@@ -10431,7 +10431,7 @@ Not all <strong>Credentials</strong> Providers are applicable to all Service Tra
 30:<span class="w">   </span><span class="nt">&lt;/outbound&gt;</span><span class="w"> </span>
 31:<span class="w"> </span><span class="nt">&lt;/serviceDescription&gt;</span>
 </code></pre></div>
-<p>All Service Descriptions begin with a <strong>serviceDescription</strong> element, and in this example, it is defined in line 2. The <strong>serviceDescription</strong> element contains all the information that is needed for the {{ shortProductName }} server to work with the Service Description. The unique ID of this Service Description is <strong>get-content-type</strong> as defined in line 3. The unique ID is not exposed to a user, but it must be unique. 
+<p>All Service Descriptions begin with a <strong>serviceDescription</strong> element, and in this example, it is defined in line 2. The <strong>serviceDescription</strong> element contains all the information that is needed for the Leap server to work with the Service Description. The unique ID of this Service Description is <strong>get-content-type</strong> as defined in line 3. The unique ID is not exposed to a user, but it must be unique. 
 Line 5 declares the ID of the Service Transport to use, which is <strong>HTTPServiceTransport</strong>, and this is the unique ID of the HTTP Service Transport. Lines 7 and 8 define the <strong>name</strong> and <strong>description</strong> of the Service Description, which are presented to the user when designing applications.</p>
 <p>Lines 10-20 define the inbound bindings, and lines 21-30 define the outbound bindings. As mentioned previously, the inbound bindings refer to the parameters that are flowing from the application to the Service Transport. The outbound bindings refer to the parameters that are flowing in the opposite direction.</p>
 <p>Lines 11-19 contain all the inbound parameters, of which there is only one.
@@ -10441,7 +10441,7 @@ The parameter that is defined in lines 12-18 represents the URL to which a reque
 <p>The <strong>name</strong> and <strong>description</strong> are defined in lines 15 and 16, and line 17 specifies that this parameter must be supplied in order for this Service Description to operate.</p>
 <p>Lines 21-30 define the outbound parameters for the Service Description. In this case, there is only one output parameter: the content type of the response. The HTTP Service Transport dynamically creates new parameters that are based on the information that is returned in the HTTP response. In particular, response headers are converted to lowercase and are prefixed with <strong>response-header-</strong>. Since this Service Description is interested in the Content-Type header, the outbound parameter <strong>response-header-content-type</strong> is created in lines 23-28 to contain this data.</p>
 <p><strong>Example 2: Augmenting Parameters with Constants</strong></p>
-<p>The following Service Description returns the same information as Example 1. However, in this case, we do not want the {{ shortProductName }} application to supply the URL. Instead, the URL is declared using a constant, and mapped into the inbound parameters for the Service Transport.</p>
+<p>The following Service Description returns the same information as Example 1. However, in this case, we do not want the Leap application to supply the URL. Instead, the URL is declared using a constant, and mapped into the inbound parameters for the Service Transport.</p>
 <div class="highlight"><pre><span></span><code>1:<span class="w"> </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 2:<span class="w"> </span><span class="nt">&lt;serviceDescription&gt;</span>
 3:<span class="w">   </span><span class="nt">&lt;id&gt;</span>get-content-type-with-constant<span class="nt">&lt;/id&gt;</span>
@@ -10480,7 +10480,7 @@ The parameter that is defined in lines 12-18 represents the URL to which a reque
 <p>Lines 12-17 define the constants section. There is a single constant that is defined in lines 13-16. This constant has an id of <strong>url-to-request</strong> specified in line 14, and a value of http://www.hcl.com, specified in line 15. The id of the constant is used when creating the parameter structure that is passed to the Service Transport. This constant is referenced in line 19 within the mapping section.</p>
 <p>Lines 18-20 contain the mapping information. Since there is only one parameter to be sent, there is only one mapping, which is defined in line 19. This mapping specifies that the value of the Service Transport parameter named <strong>request-url</strong> is specified by the value of the constant named <strong>url-to-request</strong>.</p>
 <p><strong>Example 3: Lists of Data</strong></p>
-<p>The following Service Description demonstrates the use of nested parameters. This example is the same as the Service Description used for the Countries by Region service that is shipped with {{ shortProductName }}. This example describes how to specify a region and return a list of the names of countries within that region.</p>
+<p>The following Service Description demonstrates the use of nested parameters. This example is the same as the Service Description used for the Countries by Region service that is shipped with Leap. This example describes how to specify a region and return a list of the names of countries within that region.</p>
 <div class="highlight"><pre><span></span><code>1:<span class="w"> </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 2:<span class="w"> </span><span class="nt">&lt;serviceDescription&gt;</span>
 3:<span class="w">   </span><span class="nt">&lt;id&gt;</span>countries-by-region<span class="nt">&lt;/id&gt;</span>
@@ -10525,7 +10525,7 @@ The parameter that is defined in lines 12-18 represents the URL to which a reque
 42:<span class="w">   </span><span class="nt">&lt;/outbound&gt;</span>
 43:<span class="w"> </span><span class="nt">&lt;/serviceDescription&gt;</span>
 </code></pre></div>
-<p>As with the other Service Description examples, this Service Description has its own unique ID, defined in line 3, a name, which is defined in lines 6-8, and a description, which is defined in lines 9-11. This Service Description uses the sample Countries by Region Service Transport, which is shipped with the {{ shortProductName }} , and is identified by its id in line 5.</p>
+<p>As with the other Service Description examples, this Service Description has its own unique ID, defined in line 3, a name, which is defined in lines 6-8, and a description, which is defined in lines 9-11. This Service Description uses the sample Countries by Region Service Transport, which is shipped with the Leap , and is identified by its id in line 5.</p>
 <p>Because this Service Description has a single inbound parameter, the parameters element, in lines 13-23, of the inbound bindings in lines 12-24. parameters contains only a single parameter, which is defined in lines 14-22. The id of this parameter is region, which is what is expected by the Countries by Region Service Transport.</p>
 <p>Since there can be multiple countries within a region, the outbound bindings, which are defined in lines 25-42, must contain a list parameter to contain all the information for each country. The outbound structure for this Service Description consists of a parameter that is called countries that contains a list of maps. Each of the maps that are contained within the countries list consists of a single name key that contains the name of a country. This structure is defined within the parameters element, which is defined in lines 26-41, of the outbound bindings section. The top-level parameter, countries, is defined between lines 27 and 40. Since the countries parameter contains other parameters, its type is set as LIST in line 29. All the parameters of the list entries are defined within the parameters element inside the countries parameter that is defined in lines 32-39. The single name <strong>subparameter</strong> is defined in lines 33-38.</p>
 <p>Since the inbound and outbound bindings directly match what is returned by the Countries by Region Service Transport, there is no need for any mapping information. This service can be set up such that the name <strong>subparameter</strong> is mapped to list-like items such as drop-down options or an item in a table.</p>
@@ -11043,12 +11043,12 @@ The parameter that is defined in lines 12-18 represents the URL to which a reque
 </li>
 <li>
 <p><strong><a href="ref_service_localizing_service_description.html">Localizing Service Descriptions</a></strong><br />
-The name and description elements allow you to localize a {{ shortProductName }} Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.</p>
+The name and description elements allow you to localize a Leap Service Description in multiple languages using duplicate elements, each with a different xml:lang attribute and contents.</p>
 </li>
 <li><strong><a href="ref_service_mapping_service_description.html">Mapping Data for a Service Description</a></strong><br />
-The serviceMapping element of the Service Description contains all the information needed for the {{ fullProductName }} server to map data from the Service Description inbound data to the Service Transport</li>
+The serviceMapping element of the Service Description contains all the information needed for the HCL Leap server to map data from the Service Description inbound data to the Service Transport</li>
 <li><strong><a href="ref_service_deploying_service_description.html">Deploying a Service Description</a></strong><br />
-This topic contains information about how to deploy a {{ shortProductName }} Service Description.</li>
+This topic contains information about how to deploy a Leap Service Description.</li>
 <li><strong><a href="ref_service_troubleshooting_service_description.html">Troubleshooting a service description</a></strong>
 How to troubleshoot a custom service description that is not working.</li>
 </ol>

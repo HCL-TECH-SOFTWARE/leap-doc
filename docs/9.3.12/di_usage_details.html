@@ -9901,43 +9901,43 @@
 
 
 <h1 class="concept" id="documentintegrationusagedetails">Document integration usage details</h1>
-<p>The following usage details describe the best practices and limitations for integrating your {{ shortProductName }} application with a PDF.</p>
+<p>The following usage details describe the best practices and limitations for integrating your Leap application with a PDF.</p>
 <ul>
 <li><strong>Selecting PDF types</strong>:<ul>
-<li>PDFs must allow the input of information to be populated by data that is collected in a {{ shortProductName }} application. Adobe™ Acrobat Pro is the primary tool that is used for creating PDFs where you can complete fields, and can be used to reliably create or modify existing PDFs to make them compatible with the {{ shortProductName }} document integration feature.</li>
+<li>PDFs must allow the input of information to be populated by data that is collected in a Leap application. Adobe™ Acrobat Pro is the primary tool that is used for creating PDFs where you can complete fields, and can be used to reliably create or modify existing PDFs to make them compatible with the Leap document integration feature.</li>
 <li>In some cases, Adobe Acrobat Reader extensions are removed by Reader after the document is populated.</li>
 <li>XFA PDFs have partial support when they have “compatibility mode” enabled.</li>
 <li>Encrypted PDFs cannot be populated.</li>
 <li>Some PDF documents are intended only for printing and have no data entry fields. These PDFs cannot be populated.</li>
 <li>A number of freely available PDF authoring tools on the web do not create compatible PDFs. Some PDF documents that are created or modified with these tools might appear to have direct text entry support but do not allow completion of fields.</li>
-<li>If a PDF has limitations that make it unusable for populating with data from {{ shortProductName }}, you can still attach the PDF to the form and it is returned unmodified. This is useful if you want to return a static PDF containing detailed instructions.</li>
+<li>If a PDF has limitations that make it unusable for populating with data from Leap, you can still attach the PDF to the form and it is returned unmodified. This is useful if you want to return a static PDF containing detailed instructions.</li>
 <li>Populating fields in a signed PDF document results in a validation warning message that is displayed by the PDF Reader. The warning message tells users unsigned changes were added after the document was signed.</li>
-<li>When you work with languages that contain extended character sets, be sure to match the language of the {{ shortProductName }} form with the Language/Font of the PDF item. Any character or glyph that is missing from a font is omitted from the value that is passed.</li>
+<li>When you work with languages that contain extended character sets, be sure to match the language of the Leap form with the Language/Font of the PDF item. Any character or glyph that is missing from a font is omitted from the value that is passed.</li>
 <li>The built-in PDF viewer on iOS/Safari does not properly render values of filled PDF's. This is an iOS/Safari limitation.</li>
 </ul>
 </li>
 <li><strong>Mapping information</strong>:<ul>
-<li>Values can be mapped to PDF <strong>Text Fields</strong> that are marked as readonly. You can populate a PDF from values that are collected in the {{ shortProductName }} form, while the PDF remains unmodifiable through direct entry.</li>
-<li>The design time exercise of creating a map to indicate how data moves from application to the PDF are made much easier when items on both sides are properly named. When you use the {{ shortProductName }} mapping dialog, if items in the PDF do not have recognizable names, Adobe Acrobat Pro can be used to modify the PDF.</li>
+<li>Values can be mapped to PDF <strong>Text Fields</strong> that are marked as readonly. You can populate a PDF from values that are collected in the Leap form, while the PDF remains unmodifiable through direct entry.</li>
+<li>The design time exercise of creating a map to indicate how data moves from application to the PDF are made much easier when items on both sides are properly named. When you use the Leap mapping dialog, if items in the PDF do not have recognizable names, Adobe Acrobat Pro can be used to modify the PDF.</li>
 <li>Take care to understand the format and constraints of the item you are mapping to and from. In some cases, a poorly matched map results in a blank item in the PDF because no value is mapped. For example, mapping a <strong>Number</strong> into a PDF <strong>Date Text Field</strong>, or mapping multiple selections from a <strong>Select Many</strong> choice item into a PDF <strong>Radio Group</strong>. In other cases, a value appears in the PDF but might result in constraint violations within the PDF. For example, mapping an unconstrained <strong>Single-Line Entry</strong>into a PDF <strong>Field</strong>.</li>
 <li>Multi-lined values cannot be mapped to single lined text fields in a PDF.</li>
-<li>The <strong>Export Values</strong> for PDF choice type items can be determined by inspecting the PDF with an editing tool. The <strong>Export Values</strong> are also displayed as part of the <strong>Description</strong> property in the extra information hover text within the {{ shortProductName }} mapping dialog. To see the <strong>Export Values</strong>, hover over the information icon next to any PDF item in the list to be mapped. For a successful map, the <strong>Saved Value</strong> for the {{ shortProductName }} item should be adjusted to match the <strong>Export Value</strong>.</li>
-<li>To map choice items, the <strong>Saved Value</strong> for the selected choice must match the <strong>Export Value</strong> for the available choice in the PDF item. The <strong>Export Value</strong> is used as an indicator of whether a particular choice in the item is marked as selected, or turned “on”. This note is applicable to {{ shortProductName }} choice items such as <strong>Select One</strong>, <strong>Select Many</strong>, <strong>Drop Down</strong>, <strong>Survey</strong>, and <strong>Choice Slider</strong>.</li>
+<li>The <strong>Export Values</strong> for PDF choice type items can be determined by inspecting the PDF with an editing tool. The <strong>Export Values</strong> are also displayed as part of the <strong>Description</strong> property in the extra information hover text within the Leap mapping dialog. To see the <strong>Export Values</strong>, hover over the information icon next to any PDF item in the list to be mapped. For a successful map, the <strong>Saved Value</strong> for the Leap item should be adjusted to match the <strong>Export Value</strong>.</li>
+<li>To map choice items, the <strong>Saved Value</strong> for the selected choice must match the <strong>Export Value</strong> for the available choice in the PDF item. The <strong>Export Value</strong> is used as an indicator of whether a particular choice in the item is marked as selected, or turned “on”. This note is applicable to Leap choice items such as <strong>Select One</strong>, <strong>Select Many</strong>, <strong>Drop Down</strong>, <strong>Survey</strong>, and <strong>Choice Slider</strong>.</li>
 <li>When you map a <strong>Check Box</strong> to a PDF <strong>Check Box</strong>, the <strong>Export Value</strong> is automatically determined so no special consideration needs to be made around matching the Export Value.</li>
 <li><strong>Select Many</strong><ul>
 <li>A <strong>Select Many</strong> can be mapped into a PDF <strong>Radio Group</strong>. However, configure the<strong>Select Many</strong> with a constraint that allows only one choice selection so the constraints of the PDF <strong>Radio Group</strong> are not violated</li>
-<li>A <strong>Select Many</strong> should <strong>not</strong> be mapped to a cluster of PDF <strong>Check Boxes</strong> if the PDF <strong>Check Boxes</strong> do not have unique <strong>Export Values</strong>. In this case, the {{ shortProductName }} form might need to be altered to replace the <strong>Select Many</strong> item with a cluster of individual <strong>Checkboxes</strong>.</li>
+<li>A <strong>Select Many</strong> should <strong>not</strong> be mapped to a cluster of PDF <strong>Check Boxes</strong> if the PDF <strong>Check Boxes</strong> do not have unique <strong>Export Values</strong>. In this case, the Leap form might need to be altered to replace the <strong>Select Many</strong> item with a cluster of individual <strong>Checkboxes</strong>.</li>
 <li>A <strong>Select Many</strong> maps well to a PDF<strong>List Box Multi-Select</strong> but can also be mapped to a cluster of PDF <strong>Check Boxes</strong> by creating multiple maps. One map from the <strong>Select Many</strong> to each <strong>Check Box</strong> in the cluster. When mapping from a <strong>Select Many</strong> to a PDF <strong>Check Box</strong>, the <strong>Saved Value</strong> of a selected choice must match the <strong>Export Value</strong> of the PDF <strong>Check Box</strong> for the PDF check box to be turned on.</li>
 </ul>
 </li>
 <li>Each question in a <strong>Survey</strong> must be mapped separately, and must use the same rules for mapping as a <strong>Select One</strong> or <strong>Select Many</strong>.</li>
-<li>{{ shortProductName }} tables are repeating rows of data and cannot be mapped directly into a PDF.</li>
-<li>Some {{ shortProductName }} items that cannot be mapped are <strong>Image</strong>, <strong>HTML Fragments</strong>, <strong>Text</strong>, <strong>Button</strong>, <strong>Line</strong>, <strong>Media</strong>, <strong>Web Link</strong>, <strong>Attachment</strong>, <strong>Page Navigation</strong>, <strong>Section</strong>, and <strong>Tabbed Folder</strong>.</li>
+<li>Leap tables are repeating rows of data and cannot be mapped directly into a PDF.</li>
+<li>Some Leap items that cannot be mapped are <strong>Image</strong>, <strong>HTML Fragments</strong>, <strong>Text</strong>, <strong>Button</strong>, <strong>Line</strong>, <strong>Media</strong>, <strong>Web Link</strong>, <strong>Attachment</strong>, <strong>Page Navigation</strong>, <strong>Section</strong>, and <strong>Tabbed Folder</strong>.</li>
 <li>Some PDF items that cannot be mapped are <strong>Button</strong>, <strong>Digital Signature</strong>, <strong>Image</strong>, and <strong>Text</strong>.</li>
 </ul>
 </li>
 </ul>
-<p><strong>Parent topic:</strong> <a href="di_pop_doc_with_app_data.html">{{ shortProductName }} document integration</a></p>
+<p><strong>Parent topic:</strong> <a href="di_pop_doc_with_app_data.html">Leap document integration</a></p>
 
 
 

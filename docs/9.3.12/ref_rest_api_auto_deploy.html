@@ -10382,12 +10382,12 @@
 
 
 <h1 class="reference" id="ref_rest_api_auto_deploy">Application management REST API</h1>
-<p>The Application management REST API allows for programmatic import, export, upgrade, and delete of {{ shortProductName }} applications. </p>
+<p>The Application management REST API allows for programmatic import, export, upgrade, and delete of Leap applications. </p>
 <p>To get the API definition for a specific application, expand the application details and select <strong>Application Operations</strong> in the <strong>URL Links</strong> dropdown.</p>
 <p><img alt="image of URL Links field in the application detail" src="graphics/rest_api_app_operations.png" /></p>
 <p>To get the generic application management operations, use apps/open/swagger-ui/index.html?url=%2Fapps%2Fsecure%2Forg%2Fapp%2Fopenapi.json</p>
 <h2 class="section" id="authentication">Authentication</h2>
-<p>All REST API calls must be made as an authenticated user. If you want to exercise the API with code, then, you can use basic authentication. The authenticated user must be a valid user of {{ shortProductName }} and must have the appropriate permission. The primary mechanism is to use basic authentication where the username and password are a Base64 encoded string.</p>
+<p>All REST API calls must be made as an authenticated user. If you want to exercise the API with code, then, you can use basic authentication. The authenticated user must be a valid user of Leap and must have the appropriate permission. The primary mechanism is to use basic authentication where the username and password are a Base64 encoded string.</p>
 <h2 class="section" id="rest-actions">REST actions</h2>
 <p>The following table lists the types of actions that are available and the URLs associated with those actions.</p>
 <table>
@@ -10449,7 +10449,7 @@
 </div>
 <p>The upgraded application must be uploaded to the server as multipart/form-data in the body of the POST.</p>
 <h2 class="section" id="import">Import</h2>
-<p>Imports the specified application into the {{ shortProductName }} server. The user that performs the import is automatically added as an administrator. You can use the following parameters to import the application:</p>
+<p>Imports the specified application into the Leap server. The user that performs the import is automatically added as an administrator. You can use the following parameters to import the application:</p>
 <h4 id="deployfalse"><code>deploy=false</code></h4>
 <p>Can be set to <strong>true</strong> or <strong>false</strong>. <strong>true</strong> automatically deploys the application as part of the import.</p>
 <div class="admonition note">
@@ -10472,20 +10472,20 @@
 <h2 class="section" id="delete">Delete</h2>
 <p>Deletes the specified application from the server.</p>
 <h2 class="section" id="export-app-to-file">Export App To File</h2>
-<p>If you have a {{ shortProductName }} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin export the application directly to the server file system.  Saving the file directly to the server will avoid browser or HTTP time-outs that you might experience with large files.</p>
+<p>If you have a Leap application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin export the application directly to the server file system.  Saving the file directly to the server will avoid browser or HTTP time-outs that you might experience with large files.</p>
 <p>This endpoint is only accessible by users in the AdministrativeUsers security role.</p>
 <h4 id="filepathx"><code>filePath=x</code></h4>
-<p>The value of <em>x</em> must be a valid local path on the {{ shortProductName }} server.</p>
+<p>The value of <em>x</em> must be a valid local path on the Leap server.</p>
 <h4 id="exportdatafalse"><code>exportData=false</code></h4>
 <p>Can be set to <strong>true</strong> or <strong>false</strong>. If <strong>true</strong>, all the data will be extracted with the application.</p>
-<p>The instruction can be issued from a browser where {{ shortProductName }} is loaded.  Using the browser console enter the content as:</p>
+<p>The instruction can be issued from a browser where Leap is loaded.  Using the browser console enter the content as:</p>
 <div class="highlight"><pre><span></span><code>dojo.xhrGet({ 
   url : &quot;../app/&lt;appid&gt;/archive/exportAppToFile?filePath=&lt;exportPathOnServer&gt;&amp;exportData=&lt;true/false&gt;&quot; 
 });
 </code></pre></div>
 <p>The application will be exported, there will be no confirmation message returned by the endpoint.</p>
 <h2 class="section" id="import-app-from-file">Import App From File</h2>
-<p>If you have a {{ shortProductName }} application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin import the application directly from the server file system.  Load in the file directly from the server will avoid browser or HTTP time-outs that you might experience with large files.</p>
+<p>If you have a Leap application that is very large (i.e. lots of submitted records and/or lots of attachments), then you may want to have your admin import the application directly from the server file system.  Load in the file directly from the server will avoid browser or HTTP time-outs that you might experience with large files.</p>
 <p>This endpoint is only accessible by users in the AdministrativeUsers security role.</p>
 <h4 id="request-body"><code>request-body</code></h4>
 <p>The request body must be a JSON object.</p>
@@ -10497,12 +10497,12 @@
 }
 </code></pre></div>
 <ul>
-<li>filePath. The local path on the {{ shortProductName }} server where the app resides</li>
+<li>filePath. The local path on the Leap server where the app resides</li>
 <li>cleanIds. Valid values are true and false.  If true, all user and groups will be purged from roles within the app</li>
 <li>deploy. Valid values are true and false.  If true, the app will be deployed.</li>
 <li>importData. Valid values are true and false. If true, the app data will be imported.</li>
 </ul>
-<p>The instruction can be issued from a browser where {{ shortProductName }} is loaded.  Using the browser console enter the content as:</p>
+<p>The instruction can be issued from a browser where Leap is loaded.  Using the browser console enter the content as:</p>
 <div class="highlight"><pre><span></span><code>importFileData = { 
     &quot;filePath&quot; : &quot;/apps/feb/_export_import/MyApp.nitro_s&quot;,
     &quot;cleanIds&quot; : false,
@@ -10517,7 +10517,7 @@ dojo.xhrPost({
 </code></pre></div>
 <p>The application will be imported, there will be no confirmation message returned by the endpoint.  Refresh the Manage page to see the application once the import is complete.</p>
 <h2 class="section" id="basic-application-flow">Basic Application Flow</h2>
-<p>This is the basic flow of an application communicating with the {{ shortProductName }} REST API:</p>
+<p>This is the basic flow of an application communicating with the Leap REST API:</p>
 <ol>
 <li>Establish a URLConnection with the URL that matches the action you want.</li>
 <li>Set the basic authentication credentials into the URLConnection.</li>

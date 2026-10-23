@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrating-your-application-with-existing-fullproductname-applications-definingaservicetotheexperiencebuilder-concept" class="md-skip">
+        <a href="#definingaservicetotheexperiencebuilder" class="md-skip">
           Skip to content
         </a>
       
@@ -9902,13 +9902,13 @@
   
 
 
-<h1 id="integrating-your-application-with-existing-fullproductname-applications-definingaservicetotheexperiencebuilder-concept">Integrating your application with existing {{ fullProductName }} applications { #definingaservicetotheexperiencebuilder .concept }</h1>
-<p>Each {{ shortProductName }} application can be used within another {{ shortProductName }} applications as a service.</p>
-<p>You can use another application to provide data to populate a drop-down menu on your form. Or, you can search a list of products that are maintained by another application. The ability to share data is a powerful feature of {{ shortProductName }}.</p>
+<h1 class="concept" id="definingaservicetotheexperiencebuilder">Integrating your application with existing HCL Leap applications</h1>
+<p>Each Leap application can be used within another Leap applications as a service.</p>
+<p>You can use another application to provide data to populate a drop-down menu on your form. Or, you can search a list of products that are maintained by another application. The ability to share data is a powerful feature of Leap.</p>
 <p>To use an application as a service, the designer of an application must set the requisite permissions on the <strong>Access</strong> tab of the application. Access can be set for <strong>Read</strong>, or <strong>Read/Write</strong>. If you set <strong>Read</strong> access, other applications are able to Retrieve and Search information from a specific application. If you set <strong>Read/Write</strong> access, other applications are able to Retrieve, Search, Delete, and Submit information to and from a specific application. For more information about setting permissions, see <a href="se_permission_for_sharing_data_with_other_apps.html">Defining permissions to share data with other applications</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you use another {{ shortProductName }} application as a service, mandatory items must be explicitly mapped in the service mapping Inputs and Outputs. Default Items in the form do not satisfy the mandatory requirement as they are not evaluated on the server. If any value is marked as mandatory, it must have a value that is mapped to it in the mappings dialog.</p>
+<p>When you use another Leap application as a service, mandatory items must be explicitly mapped in the service mapping Inputs and Outputs. Default Items in the form do not satisfy the mandatory requirement as they are not evaluated on the server. If any value is marked as mandatory, it must have a value that is mapped to it in the mappings dialog.</p>
 </div>
 <p>When mapping input parameters, each target has a Search Operator that can change how the inputs are interpreted. For example, you can apply a search operator to create an assignment that links the input with the target, and the operator. To apply the operator, you have to set the <strong>View</strong> to constant and then type the operator keyword in the editable field. The following table contains the list of available search operators.</p>
 <table>
@@ -9987,11 +9987,11 @@
 </tbody>
 </table>
 <p>You can also limit the results by setting a Page Size that limits how many entries you return, or a Page, which limits pages to return. If you do not provide paging values, then all records that meet your filters are returned.</p>
-<p>To see the list of applications available as services select the {{ fullProductName }} Applications entry in the <strong>Service Catalog</strong> list. A list of all applications and methods available for Service mapping is shown. Each application can expose the following methods that are based on Access settings:</p>
+<p>To see the list of applications available as services select the HCL Leap Applications entry in the <strong>Service Catalog</strong> list. A list of all applications and methods available for Service mapping is shown. Each application can expose the following methods that are based on Access settings:</p>
 <p><strong>Retrieve</strong></p>
 <p>Use <strong>Retrieve</strong> to retrieve a single record from another application. For example, use <strong>Retrieve</strong> to pre-populate information that is based on an employee serial number that is entered by the user into the form. The retrieve returns a single row, and cannot be mapped to a repeating or list item.</p>
 <p><strong>Search</strong></p>
-<p>Use <strong>Search</strong> to return a list of records from another application that meets the search criteria. For example, use <strong>Search</strong> to populate a drop-down with a list of values from another {{ shortProductName }} application. The results from a search must be mapped to a repeating/list, drop-down, or table item.</p>
+<p>Use <strong>Search</strong> to return a list of records from another application that meets the search criteria. For example, use <strong>Search</strong> to populate a drop-down with a list of values from another Leap application. The results from a search must be mapped to a repeating/list, drop-down, or table item.</p>
 <p><strong>Delete</strong></p>
 <p>When the Delete service is called, it removes the record in the target application that matches the specified parameters. Use this method with caution, as the data cannot be recovered once deleted.</p>
 <p><strong>Create</strong></p>

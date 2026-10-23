@@ -13324,7 +13324,7 @@ The object (item/apItem) represents a particular item on a page or appPage, and 
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>Demonstrates how to use a Link item to launch another {{ shortProductName }} form in the same application. To launch a form from a different application replace 'app.getUID()' with the uid of the target application.</p>
+<p>Demonstrates how to use a Link item to launch another Leap form in the same application. To launch a form from a different application replace 'app.getUID()' with the uid of the target application.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">item</span><span class="p">.</span><span class="nx">setLinkValue</span><span class="p">(</span><span class="s1">&#39;/apps/secure/1/app/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">getUID</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/launch/index.html?form=F_NewForm1&#39;</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">setDisplayValue</span><span class="p">(</span><span class="s1">&#39;Launch New Form&#39;</span><span class="p">);</span>
 </code></pre></div>
