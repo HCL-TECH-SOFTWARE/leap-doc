@@ -10191,10 +10191,10 @@
 <h1 class="concept" id="savingpdf">Saving a PDF to a file location</h1>
 <p>Determining where you want to save your filled PDF is useful considering how many processes "pick up" documents from watched folders. Designers have the option of saving the file to a specific location, as an attachment to the Leap submission record, or both.</p>
 <p>File locations are whitelisted in the Leap_config.properties. Your file location can be any non-root directory. For example:</p>
-<p><code>storageBaseDirWhiteList = /Leap/PDFs</code></p>
+<p><code>ibm.nitro.NitroConfig.storageBaseDirWhiteList = /Leap/PDFs</code></p>
 <p>Multiple locations can be whitelisted by separating them with a comma:</p>
-<p><code>storageBaseDirWhiteList = /Leap/locationA , /Leap/locationB</code></p>
-<p>The option for <strong>PDF Save Location</strong> appears in your PDF fill service configuration if a location has been whitelisted as described above. You need to map the location you want to save to the option in your service configuration. This can be done as an input item from the form or a constant (shown in the following graphic). The path must match exactly to what is whitelisted and the location must include the file name and path.</p>
+<p><code>ibm.nitro.NitroConfig.storageBaseDirWhiteList = /Leap/locationA , /Leap/locationB</code></p>
+<p>The option for <strong>PDF Save Location</strong> appears in your PDF fill service configuration if a location has been whitelisted as described above. You need to map the location you want to save to the option in your service configuration. This can be done as an input item from the form or a constant. The path must match exactly to what is whitelisted and the location must include the file name and path.</p>
 <p>If the file already exists a duplicate will be made - for example, sample.pdf, sample(1).pdf, etc.</p>
 <p><strong>Parent topic:</strong> <a href="sub_adding_stages_toc.html">Adding stages to an application</a></p>
 

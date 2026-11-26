@@ -1,8 +1,17 @@
 # Configuring {{msEntraName}} for Leap { #Azure .concept}
 
-A {{msEntraName}} tenant is a prerequisite and must be set up before proceeding.
+## Prerequisites
 
-There are a few steps to the configuration:
+- A {{msEntraName}} tenant must be set up before proceeding
+- Access to the IBM Integrated Solutions Console
+- Leap needs to be working and installed on IBM WebSphere or OpenLiberty
+- Leap must be secured with TLS and accessed over the https protocol
+- Access to the operating system where HCL Leap is installed
+- Access to the {{msEntraName}} Portal, with access to create an App Registration
+- Users in {{msEntraName}} must have an email attribute to be shared with Leap
+
+
+## Steps for the configuration:
 
 1. Register HCL Leap as an application in the {{msEntraName}} tenant.
 

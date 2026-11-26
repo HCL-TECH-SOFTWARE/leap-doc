@@ -18,6 +18,33 @@ curl --user <loginId>:<passwd> "http://<host>:<port>/{{apiContext}}/secure/
 
 There are several optional query parameters that can affect the output.
 
+### columns
+
+Limits the response to the specified properties, which can only be the id of a field in the form. Columns must be separated by spaces (%20). Invalid column names will be ignored. Only applies to JSON response format.
+
+!!!note
+    You may encounter issues trying to specify a url with a large number of columns.  There is no official length restriction on a URL, however in practice urls that are more than 2048 characters may experience issues.
+
+**Sample URL**
+```
+http://.../secure/org/data/e46fe2c0-8414-40ff-9890-c9d795990480/F_Form1/b464befb-fbe9-4afe-8fb8-8e7c3bc9fe46?columns=F_SingleLine1%20F_SingleLine3%20F_Invalid
+```
+
+**Sample output**
+```
+{
+    "application_uid": "e46fe2c0-8414-40ff-9890-c9d795990480",
+    "formId": "F_Form1",
+    "recordCount": -1,
+    "items": [
+        {
+            "F_SingleLine1": "1",
+            "F_SingleLine3": ""
+        }
+    ]
+}
+```
+
 ### Save Draft
 
 Returns drafts in non-Start stage.

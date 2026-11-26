@@ -3222,6 +3222,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-for-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps for the configuration:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registering-leap-application-with-microsoft-entra-id" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10249,6 +10271,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-for-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps for the configuration:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registering-leap-application-with-microsoft-entra-id" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10302,8 +10346,17 @@
 
 
 <h1 class="concept" id="Azure">Configuring Microsoft Entra ID for Leap</h1>
-<p>A Microsoft Entra ID tenant is a prerequisite and must be set up before proceeding.</p>
-<p>There are a few steps to the configuration:</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A Microsoft Entra ID tenant must be set up before proceeding</li>
+<li>Access to the IBM Integrated Solutions Console</li>
+<li>Leap needs to be working and installed on IBM WebSphere or OpenLiberty</li>
+<li>Leap must be secured with TLS and accessed over the https protocol</li>
+<li>Access to the operating system where HCL Leap is installed</li>
+<li>Access to the Microsoft Entra ID Portal, with access to create an App Registration</li>
+<li>Users in Microsoft Entra ID must have an email attribute to be shared with Leap</li>
+</ul>
+<h2 id="steps-for-the-configuration">Steps for the configuration:</h2>
 <ol>
 <li>
 <p>Register HCL Leap as an application in the Microsoft Entra ID tenant.</p>

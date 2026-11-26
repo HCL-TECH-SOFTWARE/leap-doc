@@ -10560,7 +10560,10 @@
 <h3 id="config-with-no-ldap-or-microsoft-entra-id">Config with no LDAP or Microsoft Entra ID</h3>
 <p>If the OIDC configuration does not include an LDAP directory or Microsoft Entra ID, then you must define the following properties that will turn off user/group lookup features of Leap:</p>
 <ul>
-<li><strong>userLookup</strong> -  Set to <strong>false</strong> if LDAP directory is not available . Set to <strong>true</strong> if an LDAP is available and configure the <openidConnectClient mapIdentityToRegistryUser="true" userIdentityToCreateSubject="[attribute that matches to LDAP]" ...></li>
+<li><strong>userLookup</strong> -  Set to <strong>false</strong> if LDAP directory is not available . Set to <strong>true</strong> if an LDAP is available and set <code>mapIdentityToRegistryUser</code> and <code>userIdentityToCreateSubject</code> in the <code>openidConnectClient</code> config:</li>
+</ul>
+<p><code>&lt;openidConnectClient mapIdentityToRegistryUser="true" userIdentityToCreateSubject="[attribute that matches to LDAP]" ...&gt;</code></p>
+<ul>
 <li><strong>userGroups</strong> - Set to <strong>false</strong> if group information is not available.  Set to <strong>true</strong> if ID token contains group information. If true, ensure <openidConnectClient groupIdentifier="..."> matches correct claim in the ID token</li>
 <li><strong>userLookupGroups</strong> - Set to <strong>false</strong> if LDAP directory is not available or if doesn't support searching for groups.  Set to <strong>true</strong> if directory has group information; Ensure that <openidConnectClient groupIdentifier="..."> matches to the attribute that identifies groups in the LDAP</li>
 </ul>

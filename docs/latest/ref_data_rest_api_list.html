@@ -10238,6 +10238,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#count" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10386,6 +10397,49 @@
 <p class="admonition-title">Note</p>
 <p>When using <strong>to</strong> and <strong>from</strong> properties the recordCount is not calculated and its value is set to "-1".</p>
 </div>
+<h3 id="columns">columns</h3>
+<p>Limits the response to the specified properties, which can be a metadata column or the id of a field in the form. Columns must be separated by spaces (%20). Invalid column names will be ignored. Only applies to JSON response format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may encounter issues trying to specify a url with a large number of columns.  There is no official length restriction on a URL, however in practice urls that are more than 2048 characters may experience issues.</p>
+</div>
+<p><strong>Metadata columns</strong>
+|flowState|flow_state|
+|createdBy display name|author_name|
+|createdBy email|author_email|
+|created date|creation_time|
+|updatedBy display name|updater_name|
+|updatedBy display email|updater_email|
+|lastUpdated|updated|
+|record id|uid|</p>
+<p><strong>Sample URL</strong>
+<div class="highlight"><pre><span></span><code>http://.../secure/org/data/e46fe2c0-8414-40ff-9890-c9d795990480/F_Form1?columns=uid%20F_SingleLine1%20F_SingleLine3%20F_Invalid
+</code></pre></div></p>
+<p><strong>Sample output</strong>
+<div class="highlight"><pre><span></span><code>{
+    &quot;application_uid&quot;: &quot;e46fe2c0-8414-40ff-9890-c9d795990480&quot;,
+    &quot;formId&quot;: &quot;F_Form1&quot;,
+    &quot;recordCount&quot;: -1,
+    &quot;items&quot;: [
+        {
+            &quot;uid&quot;: &quot;b464befb-fbe9-4afe-8fb8-8e7c3bc9fe46&quot;,
+            &quot;F_SingleLine1&quot;: &quot;1&quot;,
+            &quot;F_SingleLine3&quot;: &quot;&quot;
+        },
+        {
+            &quot;uid&quot;: &quot;fa71cfd1-f746-402d-ba85-9ba7559b8e31&quot;,
+            &quot;F_SingleLine1&quot;: &quot;2&quot;,
+            &quot;F_SingleLine3&quot;: &quot;&quot;
+        },
+        {
+            &quot;uid&quot;: &quot;b878ea92-abf4-437d-903c-d9b6583e714a&quot;,
+            &quot;F_SingleLine1&quot;: &quot;3&quot;,
+            &quot;F_SingleLine3&quot;: &quot;&quot;
+        },
+        . . .
+    ]
+}
+</code></pre></div></p>
 <h3 id="count">count</h3>
 <p>Forces the recordCount to be calculated.  You may use this property along with <strong>to</strong> and <strong>from</strong> if you require an accurate record count.</p>
 <div class="highlight"><pre><span></span><code>http://.../secure/org/data/86fdbd99-439d-49dd-b62c-1f7da197aed9/F_Form1?from=0&amp;to=10&amp;count=true
