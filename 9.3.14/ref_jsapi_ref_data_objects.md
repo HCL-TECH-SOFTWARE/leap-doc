@@ -250,12 +250,15 @@ BOA.getValid()
 ### getValue
 
 Returns the current value. The type of the returned value depends on the type of item.
-   - Boolean: Checkbox
-   - Number : Number, Currency, Numeric Slider
-   - Date: Date, Time, Timestamp
-   - Object: Attachment
-   - Multi-Value String: Select Many, Survey Question (when "Allow selection of multiple values" checked). Values will be delimited with "__#__"
-   - String: All other items
+
+|Data Type| Field Type |
+|--|--|
+|Boolean| Checkbox|
+|Number|Number, Currency, Numeric Slider|
+|Date |Date, Time, Timestamp|
+|Object |Attachment|
+|Multi-Value String| Select Many, Survey Question (when "Allow selection of multiple values" checked). Values will be delimited with "__#__"|
+|String| All other items|
 
 
 **Syntax**

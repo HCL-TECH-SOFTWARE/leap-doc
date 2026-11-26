@@ -54,9 +54,57 @@ The ending offset of a range of results. The default value is the end of the lis
 http://.../secure/org/data/86fdbd99-439d-49dd-b62c-1f7da197aed9/F_Form1?from=0&to=10
 ```
 
-{% if isLeap %}
 !!!note
     When using **to** and **from** properties the recordCount is not calculated and its value is set to "-1".
+
+### columns
+
+Limits the response to the specified properties, which can be a metadata column or the id of a field in the form. Columns must be separated by spaces (%20). Invalid column names will be ignored. Only applies to JSON response format.
+
+!!!note
+    You may encounter issues trying to specify a url with a large number of columns.  There is no official length restriction on a URL, however in practice urls that are more than 2048 characters may experience issues.
+
+**Metadata columns**
+|flowState|flow_state|
+|createdBy display name|author_name|
+|createdBy email|author_email|
+|created date|creation_time|
+|updatedBy display name|updater_name|
+|updatedBy display email|updater_email|
+|lastUpdated|updated|
+|record id|uid|
+
+**Sample URL**
+```
+http://.../secure/org/data/e46fe2c0-8414-40ff-9890-c9d795990480/F_Form1?columns=uid%20F_SingleLine1%20F_SingleLine3%20F_Invalid
+```
+
+**Sample output**
+```
+{
+    "application_uid": "e46fe2c0-8414-40ff-9890-c9d795990480",
+    "formId": "F_Form1",
+    "recordCount": -1,
+    "items": [
+        {
+            "uid": "b464befb-fbe9-4afe-8fb8-8e7c3bc9fe46",
+            "F_SingleLine1": "1",
+            "F_SingleLine3": ""
+        },
+        {
+            "uid": "fa71cfd1-f746-402d-ba85-9ba7559b8e31",
+            "F_SingleLine1": "2",
+            "F_SingleLine3": ""
+        },
+        {
+            "uid": "b878ea92-abf4-437d-903c-d9b6583e714a",
+            "F_SingleLine1": "3",
+            "F_SingleLine3": ""
+        },
+        . . .
+    ]
+}
+```
 
 ### count
 
@@ -65,7 +113,6 @@ Forces the recordCount to be calculated.  You may use this property along with *
 ```
 http://.../secure/org/data/86fdbd99-439d-49dd-b62c-1f7da197aed9/F_Form1?from=0&to=10&count=true
 ```
-{% endif %}
 
 ### maxToRetrieve
 

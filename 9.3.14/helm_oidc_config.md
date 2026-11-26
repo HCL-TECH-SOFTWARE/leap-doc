@@ -127,7 +127,10 @@ configuration:
 
 If the OIDC configuration does not include an LDAP directory or {{msEntraName}}, then you must define the following properties that will turn off user/group lookup features of Leap:
 
--   **userLookup** -  Set to **false** if LDAP directory is not available . Set to **true** if an LDAP is available and configure the <openidConnectClient mapIdentityToRegistryUser="true" userIdentityToCreateSubject="[attribute that matches to LDAP]" ...>
+-   **userLookup** -  Set to **false** if LDAP directory is not available . Set to **true** if an LDAP is available and set ```mapIdentityToRegistryUser``` and ```userIdentityToCreateSubject``` in the ```openidConnectClient``` config:
+
+```<openidConnectClient mapIdentityToRegistryUser="true" userIdentityToCreateSubject="[attribute that matches to LDAP]" ...>```
+
 -   **userGroups** - Set to **false** if group information is not available.  Set to **true** if ID token contains group information. If true, ensure <openidConnectClient groupIdentifier="..."> matches correct claim in the ID token
 - **userLookupGroups** - Set to **false** if LDAP directory is not available or if doesn't support searching for groups.  Set to **true** if directory has group information; Ensure that <openidConnectClient groupIdentifier="..."> matches to the attribute that identifies groups in the LDAP
 

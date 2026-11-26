@@ -8382,7 +8382,7 @@
 <li>A number of freely available PDF authoring tools on the web do not create compatible PDFs. Some PDF documents that are created or modified with these tools might appear to have direct text entry support but do not allow completion of fields.</li>
 <li>If a PDF has limitations that make it unusable for populating with data from Domino Leap, you can still attach the PDF to the form and it is returned unmodified. This is useful if you want to return a static PDF containing detailed instructions.</li>
 <li>Populating fields in a signed PDF document results in a validation warning message that is displayed by the PDF Reader. The warning message tells users unsigned changes were added after the document was signed.</li>
-<li>When you work with languages that contain extended character sets, be sure to match the language of the Domino Leap form with the Language/Font of the PDF item. Any character or glyph that is missing from a font is omitted from the value that is passed.</li>
+<li>When you work with languages that contain extended character sets, be sure to match the language of the Domino Leap form with the Language/Font of the PDF item. The application used to view the filled pdf will not be able to render special characters that are not represented in the specified font.</li>
 <li>The built-in PDF viewer on iOS/Safari does not properly render values of filled PDF's. This is an iOS/Safari limitation.</li>
 </ul>
 </li>

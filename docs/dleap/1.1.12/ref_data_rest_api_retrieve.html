@@ -6369,6 +6369,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#save-draft" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8473,6 +8484,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#save-draft" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8556,6 +8578,28 @@ curl --user &lt;loginId&gt;:&lt;passwd&gt; &quot;http://&lt;host&gt;:&lt;port&gt
 </code></pre></div>
 <h2 id="optional-parameters">Optional Parameters</h2>
 <p>There are several optional query parameters that can affect the output.</p>
+<h3 id="columns">columns</h3>
+<p>Limits the response to the specified properties, which can only be the id of a field in the form. Columns must be separated by spaces (%20). Invalid column names will be ignored. Only applies to JSON response format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may encounter issues trying to specify a url with a large number of columns.  There is no official length restriction on a URL, however in practice urls that are more than 2048 characters may experience issues.</p>
+</div>
+<p><strong>Sample URL</strong>
+<div class="highlight"><pre><span></span><code>http://.../secure/org/data/e46fe2c0-8414-40ff-9890-c9d795990480/F_Form1/b464befb-fbe9-4afe-8fb8-8e7c3bc9fe46?columns=F_SingleLine1%20F_SingleLine3%20F_Invalid
+</code></pre></div></p>
+<p><strong>Sample output</strong>
+<div class="highlight"><pre><span></span><code>{
+    &quot;application_uid&quot;: &quot;e46fe2c0-8414-40ff-9890-c9d795990480&quot;,
+    &quot;formId&quot;: &quot;F_Form1&quot;,
+    &quot;recordCount&quot;: -1,
+    &quot;items&quot;: [
+        {
+            &quot;F_SingleLine1&quot;: &quot;1&quot;,
+            &quot;F_SingleLine3&quot;: &quot;&quot;
+        }
+    ]
+}
+</code></pre></div></p>
 <h3 id="save-draft">Save Draft</h3>
 <p>Returns drafts in non-Start stage.</p>
 <p><code>GET /secure/org/data/[app_uid]/[form_id]/[record_uid]</code> will return the original record,  the <code>has_draft=”true”</code> attribute indicates that the current user has a draft for the specified record id. </p>

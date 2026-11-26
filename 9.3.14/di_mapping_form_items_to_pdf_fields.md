@@ -14,7 +14,7 @@ The following instructions describe how to create a Service Configuration to map
 
     The Service Configuration window opens.
 
-3.  From the **Service Catalog** menu, select **Documents**.
+3.  From the **Service Catalog** menu, select **Fillable PDF**.
 
     A list of available documents is displayed.
 

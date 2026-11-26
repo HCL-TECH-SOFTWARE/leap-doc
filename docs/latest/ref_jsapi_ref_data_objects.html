@@ -11320,13 +11320,41 @@
 <div class="highlight"><pre><span></span><code><span class="nx">BOA</span><span class="p">.</span><span class="nx">getValid</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="getvalue">getValue</h3>
-<p>Returns the current value. The type of the returned value depends on the type of item.
-   - Boolean: Checkbox
-   - Number : Number, Currency, Numeric Slider
-   - Date: Date, Time, Timestamp
-   - Object: Attachment
-   - Multi-Value String: Select Many, Survey Question (when "Allow selection of multiple values" checked). Values will be delimited with "<strong>#</strong>"
-   - String: All other items</p>
+<p>Returns the current value. The type of the returned value depends on the type of item.</p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Field Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td>Checkbox</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>Number, Currency, Numeric Slider</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>Date, Time, Timestamp</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>Attachment</td>
+</tr>
+<tr>
+<td>Multi-Value String</td>
+<td>Select Many, Survey Question (when "Allow selection of multiple values" checked). Values will be delimited with "<strong>#</strong>"</td>
+</tr>
+<tr>
+<td>String</td>
+<td>All other items</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Syntax</strong>
 <div class="highlight"><pre><span></span><code><span class="nx">BOA</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span>
 </code></pre></div></p>
